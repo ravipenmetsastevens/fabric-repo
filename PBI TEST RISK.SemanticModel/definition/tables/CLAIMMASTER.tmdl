@@ -1,0 +1,489 @@
+table CLAIMMASTER
+	lineageTag: 7f994182-0657-4075-92d0-400e0d558cf5
+
+	column COMPANYRECORDID
+		dataType: double
+		lineageTag: c83eb7d1-95f0-4393-a800-5006f866ee05
+		summarizeBy: count
+		sourceColumn: COMPANYRECORDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLAIMMASTERRECORDID
+		dataType: double
+		lineageTag: 983bcd92-4857-4d63-8cd9-876fbc217d94
+		summarizeBy: count
+		sourceColumn: CLAIMMASTERRECORDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRECLAIMRECORDID
+		dataType: double
+		lineageTag: 653f1ef1-c5c3-4586-8399-f46724b2bcb1
+		summarizeBy: count
+		sourceColumn: PRECLAIMRECORDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLAIMMASTERTYPECODE
+		dataType: double
+		lineageTag: b8ebae2a-a68f-4e9e-a22b-92db8b278cc8
+		summarizeBy: sum
+		sourceColumn: CLAIMMASTERTYPECODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BRANCHRECORDID
+		dataType: double
+		lineageTag: 67b2bfb8-e213-4504-88bc-d57aeb3ca289
+		summarizeBy: count
+		sourceColumn: BRANCHRECORDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLAIMNUMBER
+		dataType: string
+		lineageTag: 5d721519-3f9a-4e82-9d56-2b44bbf1c4eb
+		summarizeBy: none
+		sourceColumn: CLAIMNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column OCCURANCEDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d5cde447-2782-4834-8e3b-c1a8aa8e86ce
+		summarizeBy: none
+		sourceColumn: OCCURANCEDATE
+
+		variation Variation
+			isDefault
+			relationship: dce51ac7-20fa-4a46-a378-cfc7cdde364a
+			defaultHierarchy: LocalDateTable_0a6def7f-f575-4ba6-a46b-02b10205b9d2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMMONCATRECORDID
+		dataType: double
+		lineageTag: 97b45e1a-83a5-4ac8-a52d-147f772c3c2d
+		summarizeBy: count
+		sourceColumn: COMMONCATRECORDID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INCLUDECARGOCLAIMYN
+		dataType: string
+		lineageTag: 36b7f06c-11b7-4dcf-ab65-3ff958ca0088
+		summarizeBy: none
+		sourceColumn: INCLUDECARGOCLAIMYN
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPORTEDBYCODE
+		dataType: double
+		lineageTag: fcc48b80-fe4d-43d4-9018-cd42580921bd
+		summarizeBy: sum
+		sourceColumn: REPORTEDBYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLAIMANTCOMPANYNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: a1571a23-1093-4297-a96b-3e1d5a3b027f
+		summarizeBy: sum
+		sourceColumn: CLAIMANTCOMPANYNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAIMANTINDIVIDUALNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 22c47856-2624-44ef-9e38-781e9eed0557
+		summarizeBy: sum
+		sourceColumn: CLAIMANTINDIVIDUALNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSUREDCOMPANYNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: bbdf102a-4594-4496-bc26-e0abc02a0e66
+		summarizeBy: sum
+		sourceColumn: INSUREDCOMPANYNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOLVEDDRIVERNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 94d63601-f9a6-448b-8f39-9d98b9a6ef38
+		summarizeBy: sum
+		sourceColumn: INVOLVEDDRIVERNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAIMANTCUSTOMERNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 65173f5e-a3b4-4872-8e4a-19dcb6c260b6
+		summarizeBy: sum
+		sourceColumn: CLAIMANTCUSTOMERNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WCCLAIMANTNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: c056da07-8125-4dbc-aeb2-c555b4694600
+		summarizeBy: sum
+		sourceColumn: WCCLAIMANTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WITNESSNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 400b7a98-705a-4e8e-913e-48a59381f025
+		summarizeBy: sum
+		sourceColumn: WITNESSNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATEDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1de1462d-87f7-4a19-981b-4e3ddcc3c007
+		summarizeBy: none
+		sourceColumn: CREATEDATE
+
+		variation Variation
+			isDefault
+			relationship: d8aa8229-3229-42f5-b7a4-610d9c4ae0ab
+			defaultHierarchy: LocalDateTable_3ba916c3-4ce0-4aab-9cd8-d45a54ef4e6f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATEUSER
+		dataType: string
+		lineageTag: e40c3587-f2f3-4df0-be68-41f87284fdc7
+		summarizeBy: none
+		sourceColumn: CREATEUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANGEDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c2b4a719-ad69-4c5e-a57b-d88b27db6813
+		summarizeBy: none
+		sourceColumn: CHANGEDATE
+
+		variation Variation
+			isDefault
+			relationship: 4895ceab-5db1-4972-b233-32a66afb553a
+			defaultHierarchy: LocalDateTable_f9f807f4-92aa-4313-9c1d-19d6179bf777.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANGEUSER
+		dataType: string
+		lineageTag: deb0f51c-0757-4c4b-a320-e1a1a2e7d21a
+		summarizeBy: none
+		sourceColumn: CHANGEUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSUREDINDIVIDUALNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 5730efca-620a-40b3-8a90-01cd35c336bc
+		summarizeBy: sum
+		sourceColumn: INSUREDINDIVIDUALNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column MISCELLANEOUSNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 8409a456-badc-46c9-8cec-8d839f82c21e
+		summarizeBy: sum
+		sourceColumn: MISCELLANEOUSNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column COEQUIPMENTNUM
+		dataType: int64
+		formatString: 0
+		lineageTag: a7ec9c3a-0815-4457-a67a-fc4fdcb518f3
+		summarizeBy: sum
+		sourceColumn: COEQUIPMENTNUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFA1
+		dataType: string
+		lineageTag: 665441f2-b43c-4a4a-bdc7-1ba426df948e
+		summarizeBy: none
+		sourceColumn: UDFA1
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFA2
+		dataType: string
+		lineageTag: 2f0c2267-8818-4e41-bcd6-dc338e716ec2
+		summarizeBy: none
+		sourceColumn: UDFA2
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFA3
+		dataType: string
+		lineageTag: 79a02780-e57c-462e-a61e-ed6858a4e42e
+		summarizeBy: none
+		sourceColumn: UDFA3
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFA4
+		dataType: string
+		lineageTag: 08b63eaf-caf0-47f2-87f0-c24bd80b1105
+		summarizeBy: none
+		sourceColumn: UDFA4
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFD1
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ae37ef97-ede8-40a7-a4d3-a851c07a9287
+		summarizeBy: none
+		sourceColumn: UDFD1
+
+		variation Variation
+			isDefault
+			relationship: 6bc18383-d021-4bd0-9fda-c858a4566270
+			defaultHierarchy: LocalDateTable_7e224adc-a69d-4bdf-9755-ab63ef9a0a5d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFD2
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2ae99d93-d2e7-4c6e-a70c-d7f5f97757fd
+		summarizeBy: none
+		sourceColumn: UDFD2
+
+		variation Variation
+			isDefault
+			relationship: 9ba68dd1-b53c-4f3b-ac75-1ef75d51b93e
+			defaultHierarchy: LocalDateTable_5736297f-8edf-4350-93c6-20523003b97e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFD3
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3e28567d-cc1c-4365-993b-17ac103b1b5a
+		summarizeBy: none
+		sourceColumn: UDFD3
+
+		variation Variation
+			isDefault
+			relationship: f61a5c52-fa8b-4bb1-a810-5272bc5f44d3
+			defaultHierarchy: LocalDateTable_b12d101b-c02e-4dbc-ade4-5b09679c6cd3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFD4
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7f3bdec4-7d95-4cfe-a881-973dd1dae415
+		summarizeBy: none
+		sourceColumn: UDFD4
+
+		variation Variation
+			isDefault
+			relationship: 783ff5a7-4664-475b-86ad-4cf456e2e24b
+			defaultHierarchy: LocalDateTable_046bcef4-c12e-4a30-9911-562b7018e351.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFN1
+		dataType: double
+		lineageTag: 13b9fd18-1388-4e17-9de3-a6e96566b94d
+		summarizeBy: sum
+		sourceColumn: UDFN1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UDFN2
+		dataType: double
+		lineageTag: 557287a7-1831-4929-b263-9c90b97460d6
+		summarizeBy: sum
+		sourceColumn: UDFN2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UDFN3
+		dataType: double
+		lineageTag: 1d4fe965-097d-47eb-93e6-1507d8a902e8
+		summarizeBy: sum
+		sourceColumn: UDFN3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UDFN4
+		dataType: double
+		lineageTag: a1d32b43-b662-4635-8f04-72e3d6b44b4d
+		summarizeBy: sum
+		sourceColumn: UDFN4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UDFL1
+		dataType: string
+		lineageTag: ea0e7874-b0e1-4d03-9e74-34b4f565a787
+		summarizeBy: none
+		sourceColumn: UDFL1
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL2
+		dataType: string
+		lineageTag: 4257bb70-8a96-4a7c-89f9-b98752149093
+		summarizeBy: none
+		sourceColumn: UDFL2
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL3
+		dataType: string
+		lineageTag: 3b7ca3ca-f776-4cdd-a35a-ba8eb91129f5
+		summarizeBy: none
+		sourceColumn: UDFL3
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL4
+		dataType: string
+		lineageTag: 7a02a720-0449-4529-ae7a-776c73616115
+		summarizeBy: none
+		sourceColumn: UDFL4
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL5
+		dataType: string
+		lineageTag: f25e1371-8279-44f6-b138-735564937fe4
+		summarizeBy: none
+		sourceColumn: UDFL5
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL6
+		dataType: string
+		lineageTag: 908d351a-22b1-4ee8-9c8f-c754d0b73acd
+		summarizeBy: none
+		sourceColumn: UDFL6
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL7
+		dataType: string
+		lineageTag: e2295d50-26d8-4e50-b599-48cf394ca8de
+		summarizeBy: none
+		sourceColumn: UDFL7
+
+		annotation SummarizationSetBy = Automatic
+
+	column UDFL8
+		dataType: string
+		lineageTag: c10e1199-2d7a-4662-a739-f2abf8232f23
+		summarizeBy: none
+		sourceColumn: UDFL8
+
+		annotation SummarizationSetBy = Automatic
+
+	column INCLWCC
+		dataType: string
+		lineageTag: 02afaf97-76cc-42b2-b8c6-1e837a7e69b2
+		summarizeBy: none
+		sourceColumn: INCLWCC
+
+		annotation SummarizationSetBy = Automatic
+
+	column FTADJRID
+		dataType: int64
+		formatString: 0
+		lineageTag: d9777532-fd8e-4e64-b399-07672a70ff73
+		summarizeBy: count
+		sourceColumn: FTADJRID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENTSTATUS
+		dataType: int64
+		formatString: 0
+		lineageTag: 71790e45-94e8-488f-a1f7-676df3e926e3
+		summarizeBy: sum
+		sourceColumn: CURRENTSTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSINGDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 04a117a4-52be-4084-9296-2a7501872d05
+		summarizeBy: none
+		sourceColumn: CLOSINGDATE
+
+		variation Variation
+			isDefault
+			relationship: 5367bd84-256b-457b-84af-ce2771e4c531
+			defaultHierarchy: LocalDateTable_1bff3faa-5155-4483-920a-7419680d25b3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQFROM400
+		dataType: int64
+		formatString: 0
+		lineageTag: 7df6ba1e-60b1-4aa0-9d44-9dce3af2c5a7
+		summarizeBy: sum
+		sourceColumn: SEQFROM400
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CLAIMMASTER = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Firebird DSN", [HierarchicalNavigation=true]),
+				    CLAIMMASTER_Table = Source{[Name="CLAIMMASTER",Kind="Table"]}[Data]
+				in
+				    CLAIMMASTER_Table
+
+	annotation PBI_ResultType = Table
+

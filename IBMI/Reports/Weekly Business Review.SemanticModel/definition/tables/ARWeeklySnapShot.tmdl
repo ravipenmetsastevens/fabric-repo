@@ -1,0 +1,280 @@
+table ARWeeklySnapShot
+	lineageTag: 8f658edd-0e02-4123-976b-6e07a581bf83
+
+	column record_code
+		dataType: string
+		lineageTag: c7c350e2-9936-4ae1-a47e-74be6f84bf45
+		summarizeBy: none
+		sourceColumn: record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_code
+		dataType: string
+		lineageTag: 5d2e4be6-f18f-4252-be1d-f963099b5b3c
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		lineageTag: 56307fe0-ca14-4219-9da1-96ee66c71c6b
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column adj_batch_code
+		dataType: string
+		lineageTag: 7d5f9b6f-1b6a-4422-abf4-f0b69b4ab86e
+		summarizeBy: none
+		sourceColumn: adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_type
+		dataType: string
+		lineageTag: 5e4da766-5585-453b-b814-d79baede809e
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_number
+		dataType: double
+		lineageTag: 7c943b5b-edac-4a79-9185-c8d378343e3e
+		summarizeBy: sum
+		sourceColumn: record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_name
+		dataType: string
+		lineageTag: 70920c13-ecd8-475e-b158-489da6c0225d
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sequence_code
+		dataType: string
+		lineageTag: 68680c6f-f8cf-47f2-bdb2-2d9f16215c33
+		summarizeBy: none
+		sourceColumn: sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement_number
+		dataType: string
+		lineageTag: 818241b6-6974-4330-bbe0-6031179656c7
+		summarizeBy: none
+		sourceColumn: statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1377da14-1ed6-48cb-baaf-1ea6357672d2
+		summarizeBy: none
+		sourceColumn: dispatch_date
+
+		variation Variation
+			isDefault
+			relationship: 5ff7e2a5-4f7b-4122-b966-aedc97d00eef
+			defaultHierarchy: LocalDateTable_6f2ada38-583d-4285-821c-dd7dec5f422c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: de6081d4-7113-4fe5-91ac-90b67d0fb04f
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column balance_forward
+		dataType: double
+		lineageTag: b4ae9db9-c3f9-4849-9c19-b529d9f486e4
+		summarizeBy: sum
+		sourceColumn: balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_daily_pro_register
+		dataType: string
+		lineageTag: 7fdf4f5f-cc73-499c-95cd-ac3de23e5a7c
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekly_pro_register
+		dataType: string
+		lineageTag: 846ce311-ec6f-452b-b914-0b8dd220de44
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_monthly_pro_register
+		dataType: string
+		lineageTag: 13f2a898-e41c-49b4-9217-01059565f087
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_non_current
+		dataType: string
+		lineageTag: 1e4e670f-16a9-45be-bf8d-1a305e903996
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7521e8cc-3977-494f-88eb-5bf64b90309c
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		variation Variation
+			isDefault
+			relationship: a6b4f454-4089-4937-a13b-9a1bbb0bd7ad
+			defaultHierarchy: LocalDateTable_b29e7d86-2de0-4e30-b44c-1311626cc490.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column load_number
+		dataType: string
+		lineageTag: 3c225768-9e12-4dcf-8699-9da60358d238
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposit_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5c294c56-6fab-4f7a-87a3-51a6f9e68795
+		summarizeBy: none
+		sourceColumn: deposit_date
+
+		variation Variation
+			isDefault
+			relationship: 31dfedbb-3d7c-4ed2-9a53-96fff7ff53ed
+			defaultHierarchy: LocalDateTable_64b7dbf8-69e7-4b3a-ab7f-094e60326df8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_order_number
+		dataType: string
+		lineageTag: 48486393-2fe8-4dba-9584-3bf7c2656d07
+		summarizeBy: none
+		sourceColumn: cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_month
+		dataType: string
+		lineageTag: 045d4846-6301-41d1-88cf-5958084316c9
+		summarizeBy: none
+		sourceColumn: book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_year
+		dataType: string
+		lineageTag: ff7b2f78-6ae9-4aff-a21d-13890acfe099
+		summarizeBy: none
+		sourceColumn: book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 797a9f26-5184-4923-b109-ba5d91b34b89
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DaysOpen
+		dataType: int64
+		formatString: 0
+		lineageTag: 7904abd4-a743-4d68-9f9c-e52cc4323860
+		summarizeBy: sum
+		sourceColumn: DaysOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_30
+		dataType: string
+		lineageTag: 3c0098d2-b920-497c-8dbf-52354a6333a1
+		summarizeBy: none
+		sourceColumn: Open_30
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_45
+		dataType: string
+		lineageTag: 02da9ee5-9b36-4573-a617-fc83e4ebbc76
+		summarizeBy: none
+		sourceColumn: Open_45
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_60
+		dataType: string
+		lineageTag: 1275a751-90af-4821-97de-f4d22839b34f
+		summarizeBy: none
+		sourceColumn: Open_60
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_90
+		dataType: string
+		lineageTag: 26acab97-cc2f-48ba-95d8-77386bab0856
+		summarizeBy: none
+		sourceColumn: Open_90
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_120
+		dataType: string
+		lineageTag: bc739b29-b5c1-42c2-83ee-c84e148c18c3
+		summarizeBy: none
+		sourceColumn: Open_120
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ARWeeklySnapShot = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    gold_ar_weekly_snapshot = data_central_wh{[Schema="gold",Item="fact_ar_weekly_snapshot"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(gold_ar_weekly_snapshot,{{"Open_120", type text}, {"Open_30", type text}, {"Open_45", type text}, {"Open_60", type text}, {"Open_90", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

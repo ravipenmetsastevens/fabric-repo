@@ -1,0 +1,32 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - FinanceDashboard","DirectQuery to AS - Driver Scorecard"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
+
+ref table BusinessUnit
+ref table BillingFact
+ref table BillingCategories
+ref table DriverMaster
+ref table DriverAlerts
+ref table DriverScore
+ref table LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec
+ref table LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471
+ref table LocalDateTable_a41e322f-317b-47e8-800c-42bd52f34842
+ref table LocalDateTable_b4718b78-2bb0-4263-b477-373ec24b7030
+ref table LocalDateTable_5a9f702e-aab3-4ae1-8651-bce1e989dbd3
+ref table LocalDateTable_f003ec72-f6f3-420a-b5ba-3eeb9c1477dc
+ref table LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7
+ref table LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e
+ref table LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047
+
+ref cultureInfo en-US
+

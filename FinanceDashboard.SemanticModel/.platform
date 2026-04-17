@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FinanceDashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4b44259c-cdf0-9b44-4f55-7e1676484b31"
+  }
+}

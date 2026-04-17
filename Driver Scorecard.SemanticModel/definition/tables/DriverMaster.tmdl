@@ -1,0 +1,367 @@
+table DriverMaster
+	lineageTag: 76089c5c-5a17-4b03-836c-ae318389957d
+
+	measure IsDriverFiltered =
+			
+			INT(ISFILTERED('DriverMaster'[drv_code]))
+		formatString: 0
+		lineageTag: fe009b78-2c61-41bc-a049-c3fb6ba7d93b
+
+	measure ShowCardMeasure =
+			
+			If(ISFILTERED(DriverMaster[drv_code]),1,BLANK())
+		formatString: 0
+		lineageTag: cb3855b1-e543-4459-bf90-db597362a443
+
+	column drv_code
+		dataType: string
+		lineageTag: f17fa8a9-1f47-4309-b3ea-4c15994cf1b1
+		summarizeBy: none
+		sourceColumn: drv_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_birth_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 6139a50b-e010-4743-8a95-5f53b774d38b
+		summarizeBy: none
+		sourceColumn: drv_birth_date
+
+		variation Variation
+			isDefault
+			relationship: 48cb6cda-6bb9-4848-9eca-a9a4cb716deb
+			defaultHierarchy: LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_hire_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 48e89712-8158-4102-baf7-937ce7def4e8
+		summarizeBy: none
+		sourceColumn: drv_hire_date
+
+		variation Variation
+			isDefault
+			relationship: 5f2935e7-ce8d-40cf-8666-82fb8133295c
+			defaultHierarchy: LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_grad_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 9b1c77b5-e49b-42d3-82e9-77d5c3f69448
+		summarizeBy: none
+		sourceColumn: drv_grad_date
+
+		variation Variation
+			isDefault
+			relationship: 34a4c08c-23b3-4293-b2e1-74edbda71bce
+			defaultHierarchy: LocalDateTable_a41e322f-317b-47e8-800c-42bd52f34842.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_full_name
+		dataType: string
+		lineageTag: 8a4d0b6d-b49a-47fb-8185-8d54e4e84452
+		summarizeBy: none
+		sourceColumn: drv_full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_line_1
+		dataType: string
+		lineageTag: 676f1f21-d577-4bf7-bbd0-0718ff1d9b11
+		summarizeBy: none
+		sourceColumn: drv_address_line_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_city
+		dataType: string
+		lineageTag: 7d3506ac-57ec-4601-b203-548937183df1
+		summarizeBy: none
+		sourceColumn: drv_address_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_state
+		dataType: string
+		lineageTag: bd3d4e7e-1362-4406-9ce6-3a3acf90b2e5
+		summarizeBy: none
+		sourceColumn: drv_address_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_zip
+		dataType: string
+		lineageTag: 81afa802-3082-4f90-b999-f8888a6152b2
+		summarizeBy: none
+		sourceColumn: drv_address_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_area_code
+		dataType: string
+		lineageTag: 0f0fb322-9c5f-46f6-80ce-d36dee55c455
+		summarizeBy: none
+		sourceColumn: drv_cell_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_number
+		dataType: string
+		lineageTag: a2be7a93-0ad9-40d0-a3f1-014980669b58
+		summarizeBy: none
+		sourceColumn: drv_cell_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_assigned_truck
+		dataType: string
+		lineageTag: 2380f2ce-71f4-42de-b7a4-c9973e37c161
+		summarizeBy: none
+		sourceColumn: drv_assigned_truck
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dm_code
+		dataType: string
+		lineageTag: 076615bf-7c3a-40a1-a372-3a0887386700
+		summarizeBy: none
+		sourceColumn: drv_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dmol_code
+		dataType: string
+		lineageTag: 81b1d575-b851-4ba1-a2fc-35d507fdfd56
+		summarizeBy: none
+		sourceColumn: drv_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_hobbies
+		dataType: string
+		lineageTag: 845bc697-be27-4a22-8773-7419af483dba
+		summarizeBy: none
+		sourceColumn: drv_bio_hobbies
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_hist_last_home_arrival_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ffd59e1d-0d27-40b3-9d4d-941839c76345
+		summarizeBy: none
+		sourceColumn: drv_home_hist_last_home_arrival_date
+
+		variation Variation
+			isDefault
+			relationship: 440f42a4-23c6-4813-b55d-7d463258be4a
+			defaultHierarchy: LocalDateTable_b4718b78-2bb0-4263-b477-373ec24b7030.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_home_hist_last_days_home
+		dataType: int64
+		formatString: 0
+		lineageTag: cf47a374-de8d-4526-9f1d-beff2a5c7138
+		summarizeBy: sum
+		sourceColumn: drv_home_hist_last_days_home
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_greenzone_score
+		dataType: double
+		formatString: 0
+		lineageTag: 714bf254-6a94-4c83-98b5-6bffd7747d1f
+		summarizeBy: sum
+		sourceColumn: drv_greenzone_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_minutes_analyzed
+		dataType: int64
+		formatString: 0
+		lineageTag: 42c6bb49-6d63-44fe-b2d2-98dffb530603
+		summarizeBy: sum
+		sourceColumn: drv_minutes_analyzed
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_green_minutes_pct
+		dataType: double
+		lineageTag: d507d99d-c643-4b56-856c-a1df5e29dfa1
+		summarizeBy: sum
+		sourceColumn: drv_green_minutes_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_overspeeding_pct
+		dataType: double
+		lineageTag: c267011e-84b0-4626-9478-a49ab6d06b54
+		summarizeBy: sum
+		sourceColumn: drv_overspeeding_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_full_address = ```
+			
+			'DriverMaster'[drv_address_line_1] & ", "
+			    & 'DriverMaster'[drv_address_city] & ", "
+			    & 'DriverMaster'[drv_address_state] & " "
+			    & 'DriverMaster'[drv_address_zip]
+			
+			```
+		lineageTag: fb409fd3-c9da-4232-987f-37ccf40d2c47
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_phone_number = ```
+			
+			'DriverMaster'[drv_cell_area_code] & ""
+			    & 'DriverMaster'[drv_cell_number] 
+			```
+		lineageTag: 1bd27005-b13a-4d82-a83d-98c1cbe4671c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_tenure_months = ```
+			
+			DATEDIFF ( 'DriverMaster'[drv_hire_date], TODAY(), MONTH )
+			
+			```
+		formatString: 0
+		lineageTag: 58c4e449-bf5f-46f5-9db8-650ccfbac2e1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_last_arrival
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: bdf613a5-2a88-4057-a1f8-c82de469c8ad
+		summarizeBy: none
+		sourceColumn: drv_home_last_arrival
+
+		variation Variation
+			isDefault
+			relationship: b98795fa-e9ea-48fd-88ec-647050c30413
+			defaultHierarchy: LocalDateTable_5a9f702e-aab3-4ae1-8651-bce1e989dbd3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_home_last_departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 66801f3d-8c8a-4267-9cb8-c535deb64e86
+		summarizeBy: none
+		sourceColumn: drv_home_last_departure
+
+		variation Variation
+			isDefault
+			relationship: 5e5f8e43-9216-4a48-9be1-9f006aca1249
+			defaultHierarchy: LocalDateTable_f003ec72-f6f3-420a-b5ba-3eeb9c1477dc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_last_home_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: e408323c-4eb7-4007-a54a-772ab133cea4
+		summarizeBy: sum
+		sourceColumn: drv_last_home_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_canada_cert
+		dataType: string
+		lineageTag: 3a727d3f-ead2-4d39-bd3f-3f8cd6caab19
+		summarizeBy: none
+		sourceColumn: is_canada_cert
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_nyc_cert
+		dataType: string
+		lineageTag: 1d7ac10d-bd83-4e76-bfb1-b2a9ee91a94d
+		summarizeBy: none
+		sourceColumn: is_nyc_cert
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_level_code
+		dataType: string
+		lineageTag: a6f64492-1b99-4f63-a213-83e2fc54a449
+		summarizeBy: none
+		sourceColumn: drv_level_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_combined
+		dataType: string
+		lineageTag: c0232b1c-ca20-433c-83ad-fc50bdbfb641
+		summarizeBy: none
+		sourceColumn: drv_cell_combined
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_full
+		dataType: string
+		lineageTag: daf0e62d-6bc5-4df2-9a65-babd874f487c
+		summarizeBy: none
+		sourceColumn: drv_cell_full
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DriverMaster = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="gold",Item="vv_dim_active_driver_details"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(silver_plsc_asset_master, {"drv_code"}, DriverScore, {"driver_id"}, "DriverScore", JoinKind.LeftOuter),
+				    #"Expanded DriverScore" = Table.ExpandTableColumn(#"Merged Queries", "DriverScore", {"driver_score", "minutes_analyzed", "green_minutes_pct", "overspeeding_pct"}, {"DriverScore.driver_score", "DriverScore.minutes_analyzed", "DriverScore.green_minutes_pct", "DriverScore.overspeeding_pct"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded DriverScore",{{"DriverScore.driver_score", "drv_greenzone_score"}, {"DriverScore.minutes_analyzed", "drv_minutes_analyzed"}, {"DriverScore.green_minutes_pct", "drv_green_minutes_pct"}, {"DriverScore.overspeeding_pct", "drv_overspeeding_pct"}}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Renamed Columns", {"drv_code"}, DrvHomeHistory, {"drv_home_hist_driver_code"}, "DrvHomeHistory", JoinKind.LeftOuter),
+				    #"Expanded DrvHomeHistory" = Table.ExpandTableColumn(#"Merged Queries1", "DrvHomeHistory", {"drv_home_hist_driver_code", "LastArrival", "LastDeparture", "LastHomeTimeDuration", "LastHomeTimeDays"}, {"DrvHomeHistory.drv_home_hist_driver_code", "DrvHomeHistory.LastArrival", "DrvHomeHistory.LastDeparture", "DrvHomeHistory.LastHomeTimeDuration", "DrvHomeHistory.LastHomeTimeDays"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded DrvHomeHistory",{"DrvHomeHistory.drv_home_hist_driver_code"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"DrvHomeHistory.LastArrival", "DrvHomeLastArrival"}, {"DrvHomeHistory.LastDeparture", "DrvHomeLastDeparture"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns1",{"DrvHomeHistory.LastHomeTimeDuration"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns1",{{"DrvHomeHistory.LastHomeTimeDays", "drv_last_home_time_days"}, {"DrvHomeLastArrival", "drv_home_last_arrival"}, {"DrvHomeLastDeparture", "drv_home_last_departure"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns2", "drv_cell_full", each "("&Text.Start([drv_cell_area_code],3)&")-"&Text.End([drv_cell_area_code],1)&Text.Start([drv_cell_number],2)&"-"&Text.End([drv_cell_number],4)),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom",{"drv_code", "drv_birth_date", "drv_hire_date", "drv_grad_date", "drv_full_name", "drv_address_line_1", "drv_address_city", "drv_address_state", "drv_address_zip", "drv_cell_area_code", "drv_cell_number", "drv_assigned_truck", "drv_dm_code", "drv_dmol_code", "drv_bio_hobbies", "drv_home_hist_last_home_arrival_date", "drv_home_hist_last_days_home", "is_canada_cert", "is_nyc_cert", "drv_cell_combined", "drv_cell_full", "drv_level_code", "drv_greenzone_score", "drv_minutes_analyzed", "drv_green_minutes_pct", "drv_overspeeding_pct", "drv_home_last_arrival", "drv_home_last_departure", "drv_last_home_time_days"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Reordered Columns", each ([drv_dmol_code] <> "" and [drv_dmol_code] <> "BEHB" and [drv_dmol_code] <> "DFW" and [drv_dmol_code] <> "DRED" and [drv_dmol_code] <> "OPEN" and [drv_dmol_code] <> "RAIL" and [drv_dmol_code] <> "TRAIN" and [drv_dmol_code] <> "TTRUCK"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

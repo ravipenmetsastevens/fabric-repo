@@ -1,0 +1,170 @@
+table 'EDI Processing History'
+	lineageTag: 08783ba3-2d58-4a5b-942c-76a007ec978d
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: e8b7f186-8dfe-4021-b7b5-647e863c60b4
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Ship Number'
+		dataType: string
+		lineageTag: ea301e08-7a5b-4c71-9d9e-3fe8dc90d3e3
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_customer_ship_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sequence Number'
+		dataType: double
+		lineageTag: c2e7802c-f276-472a-989d-7f46f9f43581
+		summarizeBy: sum
+		sourceColumn: edi_proc_hist_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'STV Load Number'
+		dataType: string
+		lineageTag: 95edc7c9-dc45-4425-8710-1d87a4a340e9
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_stv_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: 3cfe81ec-2ae6-49d8-b467-c7a70e7f82f8
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5d744847-e491-4e69-bd41-afd3bdeeacbc
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_action_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Action Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 485ac2be-f594-449b-8b15-c45ac24efb93
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_action_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Event Code'
+		dataType: string
+		lineageTag: 46692e19-f935-46a5-9412-9d3083d00090
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_event_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f9e741cd-c881-4d26-87b0-d13054376924
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_event_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Event Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 9e2607ec-f511-41e0-aba8-1fcbf7efe26b
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_event_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Event Description'
+		dataType: string
+		lineageTag: e1ab7853-108b-4cc8-aaeb-e7efb013c8ec
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_event_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transmit Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9e419a29-f849-4da5-b88d-95a9ec331e7a
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_trasmit_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Transmit Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 81d93624-78bb-4b15-bc50-1759b2f66717
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_transmit_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Pillsbury Load Number'
+		dataType: string
+		lineageTag: 048c11c0-22dd-4cb6-bd61-31ce1a77eef3
+		summarizeBy: none
+		sourceColumn: edi_proc_hist_pillsbury_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Event DateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ab6a388e-2820-4e72-ae80-def676033778
+		summarizeBy: none
+		sourceColumn: event_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action DateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a9f51b54-d7da-497c-83ff-3824e23363d4
+		summarizeBy: none
+		sourceColumn: action_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'EDI Processing History' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_vw_ibmi_edi_processing_history = Source{[Schema="gold",Item="vw_ibmi_edi_processing_history"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(gold_vw_ibmi_edi_processing_history, each [edi_proc_hist_action_date] >= OrderStartDate),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"edi_proc_hist_action_date", type date}, {"edi_proc_hist_action_time", type time}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "action_datetime", each if [edi_proc_hist_action_date] <> null and [edi_proc_hist_action_time] <> null then [edi_proc_hist_action_date] & [edi_proc_hist_action_time] else null),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"action_datetime", type datetime}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,1090 @@
+table MeasuresTable
+	lineageTag: 14c15e2e-6a13-4989-bba8-7a6d137614e6
+
+	measure 'Total Warranty Amount' = SUM('RepairOrdersFact'[ro_credit_amount])
+		displayFolder: Maintenance
+		lineageTag: 4fe35d5d-45eb-4eaf-991e-1a46c0d8daa6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Number of RO' = DISTINCTCOUNT('RepairOrdersFact'[repair_order_id])
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: 0c1fb327-f56a-44b0-b320-99426107ec93
+
+	measure 'Maintenance Total Truck Miles' = CALCULATE(SUM(Units[unit_odometer_miles]),USERELATIONSHIP(Units[unit_vin],'RepairOrdersFact'[ro_vin]))
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: a55c3325-9760-4c58-8cb0-48715205ad67
+
+	measure 'Total Labor Hours' = SUM(Tasks[task_labor_hours])
+		displayFolder: Maintenance
+		lineageTag: 1d13d04a-0501-4fae-9180-25e7ed21d575
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Jobs' = DISTINCTCOUNT(Tasks[ro_task_id])
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: 8632e530-641f-4d84-989f-ebbda703fb2e
+
+	measure 'Total Down Days' = SUM('RepairOrdersFact'[Down Days])
+		displayFolder: Maintenance
+		lineageTag: 64788265-794a-4d95-bfaa-4129e0382528
+
+	measure 'Maintenance Total Cost' = SUM('RepairOrdersFact'[ro_grand_total])
+		displayFolder: Maintenance
+		lineageTag: ca90e1f0-b4a1-4a4e-b959-260342e98587
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total CPM' = DIVIDE([Maintenance Total Cost], [Maintenance Total Truck Miles])
+		displayFolder: Maintenance
+		lineageTag: abbfb171-b883-44cb-8d29-2d4a86d1e674
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost per RO' = DIVIDE([Maintenance Total Cost], [Total Number of RO])
+		displayFolder: Maintenance
+		lineageTag: 5891c228-1434-4af1-af07-f666698f2f87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Jobs per RO' = DIVIDE([Total Jobs], [Total Number of RO])
+		displayFolder: Maintenance
+		lineageTag: e7a9ddac-6417-438f-a51b-e5bc4faf9bc2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Down Days' = DIVIDE([Total Down Days], [Total Number of RO])
+		displayFolder: Maintenance
+		lineageTag: c72036ca-ab9e-4f57-bddf-e7b81e1be79a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Number of RO with Task' = DISTINCTCOUNT(Tasks[repair_order_id])
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: d552f39d-adcb-4bc0-a8f7-8324c2307232
+
+	measure 'Total RO Closed' = CALCULATE([Total Number of RO], 'RepairOrdersFact'[ro_open_closed] = "Closed")
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: a815673f-3645-4ef4-b0eb-3ded11fafedb
+
+	measure 'Total RO Open' = CALCULATE([Total Number of RO], 'RepairOrdersFact'[ro_open_closed] = "Open")
+		formatString: 0
+		displayFolder: Maintenance
+		lineageTag: f3637f8a-a584-474a-b3ce-bebba9603c78
+
+	measure 'Total Revenue' = ```
+			sum(BillingFact[billing_billed_amount]) 
+			```
+		lineageTag: 508667c9-d557-46a6-b496-3d4b85439540
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Accidents Count' = DISTINCTCOUNT(AccidentDetails[claim_mast_record_code])
+		formatString: #,0
+		displayFolder: Safety
+		lineageTag: f372e423-8cec-417d-b9a2-bb2943a19bc4
+
+	measure 'Accident Cost' = sum(AccidentDetails[reserve_ttl_reserve_total_amount])
+		displayFolder: Safety
+		lineageTag: c657dea6-b980-438f-bb62-9506c58be7d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost Per Accident' = [Accident Cost]/ [Accidents Count]
+		displayFolder: Safety
+		lineageTag: 73f17b5c-69c3-463c-a49a-134829fcb062
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Low Skill Accidents Count' = CALCULATE([Accidents Count], FILTER(AccidentCategories, AccidentCategories[accident_category] = "Low Skill"))
+		formatString: #,0
+		displayFolder: Safety
+		lineageTag: cc126933-ab13-4fef-8498-cadbd51e644d
+
+	measure 'On Road Accidents Count' = CALCULATE([Accidents Count], FILTER(AccidentCategories, AccidentCategories[accident_category] = "On Road"))
+		formatString: #,0
+		displayFolder: Safety
+		lineageTag: cedf4b01-a5a1-413a-a01d-5ddec3521fe0
+
+	measure 'Open Invoice Count' = DISTINCTCOUNT(ARWeeklySnapShot[invoice_number])
+		formatString: 0
+		displayFolder: AR Aging
+		lineageTag: 49f424bf-f887-45e6-85a8-d143e530778c
+
+	measure 'Open Invoice Amount' = ```
+			sum(ARWeeklySnapShot[amount]) 
+			```
+		displayFolder: AR Aging
+		lineageTag: 4f274282-87a4-4286-bd28-6704b884ff0f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Open Over 45 Days Amt' = CALCULATE([Open Invoice Amount], FILTER(ARWeeklySnapShot, ARWeeklySnapShot[Open_45] = "1"))
+		displayFolder: AR Aging
+		lineageTag: ebdc5c6a-088b-4d07-9777-2b549ea7a358
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Open Over 60 Days Amt' = CALCULATE([Open Invoice Amount], FILTER(ARWeeklySnapShot, ARWeeklySnapShot[Open_60] = "1"))
+		displayFolder: AR Aging
+		lineageTag: c39c6c7f-869d-4e18-b532-87e5524b87c9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Over 45 Days' = [Open Over 45 Days Amt]/ [Open Invoice Amount]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AR Aging
+		lineageTag: 84d5d0c0-4165-4169-87fb-e7ff5d6572f7
+
+	measure '% Over 60 Days' = [Open Over 60 Days Amt]/ [Open Invoice Amount]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AR Aging
+		lineageTag: 4e266b8f-ce6c-441b-88db-578d3f6a9724
+
+	measure 'Load Count' =
+			
+			DISTINCTCOUNT ( 'LoadFact'[load_load_number] )
+		formatString: #,0
+		lineageTag: 44761c45-d69b-4395-a186-bb16ae8a3482
+
+		changedProperty = IsHidden
+
+	measure 'Total Brokerage Revenue' = CALCULATE([Total Revenue], FILTER(DivisionGroup, DivisionGroup[division_fleet_name] = "Brokerage"))
+		displayFolder: Brokerage
+		lineageTag: 63165760-cbc8-4bf0-b226-28ee3765b80b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Broker Order Count' = CALCULATE(DISTINCTCOUNT(OrderFact[order_load_number]), FILTER(OrderFact, [division] = "Broker"))
+		formatString: #,0
+		displayFolder: Brokerage
+		lineageTag: 27013667-026c-4958-a4b0-789764ec3847
+
+	measure 'Earnings Amount' = ```
+			sum(EarningsHistory[earnings_history_gross_amount]) 
+			```
+		lineageTag: f75084f3-7a01-4724-84f5-69bba293ad53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Settlement Amount' = ```
+			sum(SettlRevenueHistory[set_rev_hist_revenue_amount]) 
+			```
+		lineageTag: 91b470cb-ec07-4ad3-97c8-256f7ef4a6a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Company' = CALCULATE([Earnings Amount], FILTER(PayGroup, PayGroup[paypo_type_code] IN {"LO", "LV", "RC", "XR"}))
+		displayFolder: Training
+		lineageTag: eaf7b0f9-4e82-42f5-9a1e-f3cd1fd87f81
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Settlement Layover' = CALCULATE([Settlement Amount], FILTER(SettlementCodes, SettlementCodes[stcodes_settlement_code] = "LO"))
+		displayFolder: Training
+		lineageTag: 06a85333-e5cf-42c7-9e55-198a1c47b95b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Layover' = [Add Pay Company] + [Add Pay Settlement Layover]
+		displayFolder: Training
+		lineageTag: 4c540db0-6981-4c2d-8412-d461fdc14f17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Contractor' = ```
+			
+			CALCULATE(
+			    [Settlement Amount],
+			    FILTER(
+			        SettlementCodes,
+			        SettlementCodes[stcodes_settlement_code] IN {"DF", "LR", "XR", "LO", "RC"}
+			    )
+			)
+			
+			```
+		displayFolder: Training
+		lineageTag: a5b6a7f6-b5e9-47a6-bb4b-1a65658d037b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Earnings Repower' = CALCULATE([Earnings Amount], FILTER(PayGroup, PayGroup[paypo_type_code] IN {"RC","RP"} ))
+		displayFolder: Training
+		lineageTag: 95e90145-4195-4f2b-9af6-13327d038a0b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Settlement Repower' = CALCULATE([Settlement Amount], FILTER(SettlementCodes, SettlementCodes[stcodes_settlement_code] = "RC"))
+		displayFolder: Training
+		lineageTag: f0770cfe-eb2b-4c05-bcfa-33bbb14f24e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Repower' = ```
+			[Add Pay Earnings Repower] + [Add Pay Settlement Repower] 
+			```
+		displayFolder: Training
+		lineageTag: a346ea80-06cb-4010-97b6-4400218c8d52
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SrvExpStopCount = sum(ServiceExceptions[Count])
+		formatString: 0
+		lineageTag: 483a6a7f-aadd-4966-a6de-02d1d0ebe572
+
+	measure StopOffStopCount = count(StopOff[Count])
+		formatString: 0
+		lineageTag: c4e28396-673a-4c22-a8e0-f575febe4f52
+
+	measure SrvExpStopsDelivery = CALCULATE([SrvExpStopCount], FILTER(ServiceExceptions, ServiceExceptions[stop_type] = "DELIVERY"))
+		formatString: 0
+		lineageTag: b937f862-7802-4923-a53e-3629e789aa98
+
+	measure SrvExpStopsPickUp = CALCULATE([SrvExpStopCount], FILTER(ServiceExceptions, ServiceExceptions[stop_type] = "PICKUP"))
+		formatString: 0
+		lineageTag: cb511103-31df-4067-a0be-0d9a6625a938
+
+	measure StopOffStopsDelivery = CALCULATE([StopOffStopCount], FILTER(StopOff, StopOff[stopoff_stop_type] = "DELIVERY"))
+		formatString: 0
+		lineageTag: 98b8b9b4-0924-44a5-87a1-514309bb5e72
+
+	measure StopOffStopsPickup = CALCULATE([StopOffStopCount], FILTER(StopOff, StopOff[stopoff_stop_type] = "PICKUP"))
+		formatString: 0
+		lineageTag: c6625896-0bc2-48e2-a762-45cf241445b0
+
+	measure 'On Time Delivery %' = 1 - ([SrvExpStopsDelivery]/ [StopOffStopsDelivery])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5abf3c65-37d1-47a4-b765-cc031596b26d
+
+	measure 'On Time Pickup %' = 1 - ([SrvExpStopsPickUp]/ [StopOffStopsPickup])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 65f5c597-bf64-4d7d-a8c7-78f212d3de69
+
+	measure 'Total Grads' = DISTINCTCOUNT(Driver[drv_code])
+		formatString: 0
+		displayFolder: Training
+		lineageTag: 60b5b60f-7934-4d73-8469-b09abb64cc33
+
+	measure 'Avg. Days to Complete Trn' = AVERAGE(Driver[daysBetween_grad_to_hire])
+		displayFolder: Training
+		lineageTag: 120fdeba-230a-443c-b3aa-4b0b34e6b2cc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg. Days to Complete Grad' = AVERAGE(Driver[daysBetween_grad_to_complete])
+		displayFolder: Training
+		lineageTag: cc264acc-ff6b-472c-8621-00acb89414f3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue per load' = [Total Revenue]/ [Load Count]
+		lineageTag: 6e0f9e00-691d-476a-8cff-ecd79b5d54de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Broker Load Count' = DISTINCTCOUNT(OrdTabFact[tlb_ordtlb_load_number])
+		formatString: #,0
+		displayFolder: Brokerage
+		lineageTag: e22e7a86-098b-4f8a-befd-191e1d88f338
+
+	measure 'Number of Brokers' = DISTINCTCOUNT(OrdTabFact[tlb_ordtlb_broker_code])
+		formatString: 0
+		displayFolder: Brokerage
+		lineageTag: 5f12d152-a422-41dc-a1a7-dd0ecf9bae13
+
+	measure 'Miles Loaded' = sum(LoadFact[load_miles_loaded])
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: 1afda857-bd5e-4edb-a8e2-6f2e0d00e0d1
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Brokerage Profit Per Load' = ( [Total Brokerage Revenue] - [Brokerage Cost] )/ [Broker Order Count]
+		displayFolder: Brokerage
+		lineageTag: 8db3c69a-9617-456c-a5f6-dc7d5df586bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Brokerage Revenue per load' = [Total Brokerage Revenue]/ [Broker Load Count]
+		displayFolder: Brokerage
+		lineageTag: 4e259f46-83e9-4054-bc96-218a772b7b77
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Orders per Broker' = [Broker Order Count]/ [Number of Brokers]
+		formatString: #,0
+		displayFolder: Brokerage
+		lineageTag: 2fb425d7-301a-4a86-8376-5716a008bcf3
+
+	measure 'Trainer Company Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] = "TRAINER PAY"))
+		displayFolder: Training
+		lineageTag: e24d55b0-aa7f-4387-8837-f7de94654b5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainer Contractor Pay' = CALCULATE(SUM(SettlRevenueHistory[set_rev_hist_additional_pay_amount]), FILTER(SettlRevenueHistory, SettlRevenueHistory[set_rev_hist_origin_city] = "TRAINER PAY"))
+		displayFolder: Training
+		lineageTag: 6ad8d267-867d-45e4-9bf8-ab7eaaf3b32c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainee Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] = "TRAINEE PAY"))
+		displayFolder: Training
+		lineageTag: d84ccf45-40df-4294-a012-5dabf3492ea2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainer Pay' = [Trainer Company Pay] + [Trainer Contractor Pay]
+		displayFolder: Training
+		lineageTag: 16006156-e6df-43cf-a857-5093b502e5a9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Training Add Company Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] IN {"CRS GENDER TRAN","TRAINER BONUS", "OUTSIDE HELP"}))
+		displayFolder: Training
+		lineageTag: eefca578-b856-41bd-9713-711dbde3c336
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Training Add Contractor Pay' = CALCULATE(SUM(SettlRevenueHistory[set_rev_hist_additional_pay_amount]), FILTER(SettlRevenueHistory, SettlRevenueHistory[set_rev_hist_origin_city] IN {"X-GENDER TRAINI", "TRAINER ASSIST"}))
+		displayFolder: Training
+		lineageTag: a43a4dd4-8a81-46ec-9338-64e6f607aad1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Training Add Pay' = [Training Add Company Pay] + [Training Add Contractor Pay]
+		displayFolder: Training
+		lineageTag: 2bfc2daf-1c46-4859-86cf-17ad0d532248
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Miles' = sum(LoadFact[load_miles_total])
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: cab3891f-83cb-4858-88cd-3c83ce56b222
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Miles Dead Head' = sum(LoadFact[load_miles_dead_head])
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: 59910e4c-496b-4381-9191-22e6e6718d4f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Dead Head %' = [Miles Dead Head]/ [Total Miles]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Mileage Stats
+		lineageTag: 6f2adcbc-75b4-4975-96e2-acbb7f7743ca
+
+	measure 'Revenue Per Mile' = [Total Revenue]/ [Total Miles]
+		lineageTag: 852b102f-5541-4b6f-9f69-3e607e6acc56
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Truck Count' = DISTINCTCOUNT ( 'UtlFile'[utlfile_truck_number] )
+		formatString: #,0
+		lineageTag: 772be3fb-36e0-45cf-b23e-6c1746ca5e31
+
+	measure 'Add Pay All' = [Add Pay Company] + [Add Pay Contractor]
+		displayFolder: Training
+		lineageTag: 977e0874-26aa-49db-acbc-a272cd7d054c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Brokerage Profit' = ```
+			[Total Brokerage Revenue] - [Brokerage Cost] 
+			```
+		displayFolder: Brokerage
+		lineageTag: 55fbefc2-1f18-4e03-ad56-9f22f56dc1fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Order Count' =
+			
+			DISTINCTCOUNT ( 'OrderFact'[order_load_number] )
+		formatString: #,0
+		lineageTag: e8192d76-45bb-4264-85c7-79e75e14dc1f
+
+	measure 'Maintenance Truck Cost' = CALCULATE([Maintenance Total Cost], FILTER(RepairOrdersFact, RepairOrdersFact[ro_unit_type] = "Tandem Axle Tractor" ))
+		formatString: #,0.00
+		displayFolder: Maintenance
+		lineageTag: cdfebee8-f83c-4677-90c6-94dc90d515e6
+
+	measure 'Maintenance Trailer Cost' = CALCULATE([Maintenance Total Cost], FILTER(RepairOrdersFact, RepairOrdersFact[ro_unit_type] IN {"Refrigerated Trailer", "Trailer"}))
+		displayFolder: Maintenance
+		lineageTag: 1fb5bcf5-0af1-49f3-b493-f7d3da40b519
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Low Skill Accidents Cost' = CALCULATE([Accident Cost], FILTER(AccidentCategories, AccidentCategories[accident_category] = "Low Skill"))
+		displayFolder: Safety
+		lineageTag: 3ebeb6a1-c162-4370-bcc2-8f40092a6d12
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'On Road Accidents Cost' = CALCULATE([Accident Cost], FILTER(AccidentCategories, AccidentCategories[accident_category] = "On Road"))
+		displayFolder: Safety
+		lineageTag: 7d9ecd3c-6f88-4f5d-8e7a-965418cb42af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Low Skill Cost Per Accident' = [Low Skill Accidents Cost]/ [Low Skill Accidents Count]
+		displayFolder: Safety
+		lineageTag: a1f9d656-5510-4d27-8138-31e078482c05
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'On Road Cost Per Accident' = [On Road Accidents Cost]/ [On Road Accidents Count]
+		displayFolder: Safety
+		lineageTag: 4c317ed2-b47b-4bc7-a44e-1311de31e35f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DOT Repoartable Accident Count' = CALCULATE([Accidents Count], FILTER(AccidentDetails, AccidentDetails[is_dot_reportable] = "TRUE"))
+		formatString: 0
+		displayFolder: Safety
+		lineageTag: 7c11ec5f-5754-4669-9947-519974a1e417
+
+	measure RevenueMaxDate =
+			
+			CALCULATE(
+			    MAX(BillingFact[billing_billed_date]),
+			    REMOVEFILTERS('DateTime'[Date]))
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: 4538aa5a-40dc-414d-a2dc-63777b4d3d00
+
+	measure MilesMaxDate =
+			
+			CALCULATE(
+			    MAX(LoadFact[OrderLoadedCallDate]),
+			    REMOVEFILTERS('DateTime'[Date]))
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: 6d5f1f1e-1dd6-4729-aa53-63c8c07486f8
+
+	measure RevenueMinDate =
+			
+			CALCULATE(
+			    MIN(BillingFact[billing_billed_date]),
+			    REMOVEFILTERS('DateTime'[Date]))
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: c4e0ab8a-0d36-490c-a8a9-5f89b9c1e748
+
+	measure MilesMinDate =
+			
+			CALCULATE(
+			    MIN(LoadFact[OrderLoadedCallDate]),
+			    REMOVEFILTERS('DateTime'[Date]))
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: 247916ad-600e-4855-b69e-ba536784fbdc
+
+	measure 'Selected Dates' = SELECTEDVALUE('Date Selection'[Date Selection])
+		displayFolder: Visual Measures
+		lineageTag: 958c83ed-387f-4de4-b6f4-31d61e1ad27d
+
+	measure 'Revenue Selected Measure' =
+			
+			SWITCH(
+			    SELECTEDVALUE('Revenue Measure Sel'[Measure Name]),
+			    "Total Revenue", [Total Revenue],
+			    "Brokerage Revenue", [Total Brokerage Revenue])
+		displayFolder: Visual Measures
+		lineageTag: ffa43a46-2347-441b-abb7-50f2e7d260e9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles Selected Measure' =
+			
+			SWITCH(
+			    SELECTEDVALUE('Miles Measure Sel'[Measure Name]),
+			    "Total Miles", [Total Miles],
+			    "Line Haul Miles", [Miles Loaded],
+			    "Empty Miles", [Miles Dead Head],
+			    "Dedicated Miles", [Total Miles Dedicated],
+			    "Local Miles", [Total Miles Local],
+			    "OTR Miles", [Total Miles OTR],
+			    "Rail Miles", [Total Miles Rail],
+			    "Regional Miles",[Total Miles Regional])
+		displayFolder: Visual Measures
+		lineageTag: 8b08d424-16ea-4cae-be8a-c60bff8d9059
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Miles OTR' = CALCULATE(sum(LoadFact[load_miles_total]), FILTER('BusinessUnit',BusinessUnit[business_unit_class]="Truckload"))
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: a722e1f1-9e7e-4c7f-86d9-51f23e78b642
+
+	measure 'Total Miles Dedicated' = CALCULATE(sum(LoadFact[load_miles_total]), FILTER('BusinessUnit',BusinessUnit[business_unit_class]="Dedicated"))
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: ffdfdbf8-0403-40cd-90eb-eabd16b1179a
+
+	measure 'Total Miles Regional' = CALCULATE(sum(LoadFact[load_miles_total]), FILTER('BusinessUnit',BusinessUnit[business_unit_class]="Regional"))
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: bdc0fa9d-4e1c-4153-86cc-8f5d6b86c8a9
+
+	measure 'Total Miles Local' = CALCULATE(sum(LoadFact[load_miles_total]), FILTER('BusinessUnit',BusinessUnit[business_unit_class]="Local" && BusinessUnit[business_unit_description] <> "Intermodal"))
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: ecf29a94-d834-4967-85dd-a231e41d1362
+
+	measure 'Total Miles Rail' = CALCULATE(sum(LoadFact[load_miles_total]), FILTER('BusinessUnit',BusinessUnit[business_unit_description]="Intermodal"))
+		formatString: #,0
+		displayFolder: Mileage Stats
+		lineageTag: c92d787b-92ba-4cb5-9e1a-604c0a13d70e
+
+	measure 'Total Revenue OTR' = CALCULATE(sum(LoadFact[ProratedRevenue]),FILTER(BusinessUnit,BusinessUnit[business_unit_class]="Truckload"))
+		lineageTag: d6c44182-5e4c-4068-9255-947295d6e1dc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Revenue Rail' = CALCULATE(sum(LoadFact[ProratedRevenue]),FILTER(BusinessUnit,BusinessUnit[business_unit_description]="Intermodal"))
+		lineageTag: 3655cf53-d2e6-40c4-a167-64284e68ce44
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FSC Revenue' = CALCULATE([Total Revenue],FILTER(BillingCategories,BillingCategories[billing_category] = "Fuel Surcharge"))
+		lineageTag: 53d69a99-effe-4f1c-ac58-c79da4c4b0d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue Selected Min Date' =
+			
+			Var MaxDate = [RevenueMaxDate] +1
+			VAR MinDate = [RevenueMinDate] -1
+			RETURN
+			
+			SWITCH([Selected Dates],
+			    "1W",MaxDate -7,
+			    "1M",EDATE(MaxDate, -1),
+			    "3M",EDATE(MaxDate, -3),
+			    "YTD",DATE(YEAR(MaxDate), 1, 1),
+			    "1Y",EDATE(MaxDate, -12),
+			    "ALL",MinDate )
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: d74684f8-0834-4934-a953-64416d67995e
+
+	measure 'Miles Selected Min Date' =
+			
+			Var MaxDate = [MilesMaxDate] +1
+			VAR MinDate = [MilesMinDate] -1
+			RETURN
+			
+			SWITCH([Selected Dates],
+			    "1W",MaxDate -7,
+			    "1M",EDATE(MaxDate, -1),
+			    "3M",EDATE(MaxDate, -3),
+			    "YTD",DATE(YEAR(MaxDate), 1, 1),
+			    "1Y",EDATE(MaxDate, -12),
+			    "ALL",MinDate )
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: b32ab961-a359-4e11-b593-e1151dac6836
+
+	measure 'Revenue Selected Min Date Past Period' =
+			
+			Var MaxDate = [Revenue Selected Min Date] -1
+			VAR MinDate2 = [RevenueMinDate] -1
+			RETURN
+			
+			SWITCH([Selected Dates],
+			    "1W",MaxDate -7,
+			    "1M",EDATE(MaxDate, -1),
+			    "3M",EDATE(MaxDate, -3),
+			    "YTD",DATE(YEAR(MaxDate), 1, 1),
+			    "1Y",EDATE(MaxDate, -12),
+			    "ALL",MinDate2 )
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: c729335f-8f39-4425-b6b9-570c800124e4
+
+	measure 'Miles Selected Min Date Past Period' =
+			
+			Var MaxDate = [Miles Selected Min Date] -1
+			VAR MinDate2 = [MilesMinDate] -1
+			RETURN
+			
+			SWITCH([Selected Dates],
+			    "1W",MaxDate -7,
+			    "1M",EDATE(MaxDate, -1),
+			    "3M",EDATE(MaxDate, -3),
+			    "YTD",DATE(YEAR(MaxDate), 1, 1),
+			    "1Y",EDATE(MaxDate, -12),
+			    "ALL",MinDate2 )
+		formatString: General Date
+		displayFolder: Visual Measures
+		lineageTag: 0c4da14b-abfc-410a-b42c-52e5a935ac32
+
+	measure 'Revenue SM Date Param' = ```
+			
+			CALCULATE(
+			    [Revenue Selected Measure],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Revenue Selected Min Date],
+			            [RevenueMaxDate]
+			         ))
+			    )
+			```
+		displayFolder: Visual Measures
+		lineageTag: 993e0a60-ba5e-41b8-bd35-2b725d3e6fdb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Date Param' = ```
+			
+			CALCULATE(
+			    [Miles Selected Measure],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Miles Selected Min Date],
+			            [MilesMaxDate]
+			         ))
+			    )
+			```
+		displayFolder: Visual Measures
+		lineageTag: c9649e53-ee35-4d5b-9ef7-6b4cf04bf72b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue SM Date Param Past Period' = ```
+			
+			CALCULATE(
+			    [Revenue Selected Measure],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],       
+			            [Revenue Selected Min Date Past Period],                      
+			            [Revenue Selected Min Date]
+			         ))
+			    )
+			```
+		displayFolder: Visual Measures
+		lineageTag: 76d25ee5-21ee-4287-90dd-3aa37ca57dff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Date Param Past Period' = ```
+			
+			CALCULATE(
+			    [Miles Selected Measure],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],       
+			            [Miles Selected Min Date Past Period],                      
+			            [Miles Selected Min Date]
+			         ))
+			    )
+			```
+		displayFolder: Visual Measures
+		lineageTag: a7de9455-08eb-48a5-a01f-58b9bf02bb15
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Moving Average Selection' =
+			
+			//get the selected moving average value from the disconnected table
+			
+			SELECTEDVALUE('Moving Average'[Days])
+		formatString: 0
+		displayFolder: Visual Measures
+		lineageTag: 8558c27b-dfdf-4da3-ba01-ed946c58ad4d
+
+	measure 'Revenue SM Moving Average' = ```
+			
+			    
+			    AVERAGEX(                                   
+			    DATESINPERIOD(                          //the dates from:                     
+			        'DateTime'[Date],                       //Current Date
+			        LASTDATE(                           //Current Date - #Selected Months
+			            'DateTime'[Date] ), 
+			            -[Moving Average Selection], 
+			            DAY                           
+			            ),                              
+			         [Revenue Selected Measure]               //For the selected measure
+			         )
+			         
+			```
+		displayFolder: Visual Measures
+		lineageTag: 797f96be-801a-4092-bb4f-65b5139bd933
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Moving Average' = ```
+			
+			    
+			    AVERAGEX(                                   
+			    DATESINPERIOD(                          //the dates from:                     
+			        'DateTime'[Date],                       //Current Date
+			        LASTDATE(                           //Current Date - #Selected Months
+			            'DateTime'[Date] ), 
+			            -[Moving Average Selection], 
+			            DAY                           
+			            ),                              
+			         [Miles Selected Measure]               //For the selected measure
+			         )
+			         
+			```
+		displayFolder: Visual Measures
+		lineageTag: b17ac308-fac8-481b-9422-85495dbd4d5f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue SM Moving Average Date Param' = ```
+			
+			if(ISBLANK([Revenue Selected Measure]), blank(),
+			CALCULATE(
+			    [Revenue SM Moving Average],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Revenue Selected Min Date],
+			            [RevenueMaxDate]
+			         ))
+			    )
+			)
+			```
+		displayFolder: Visual Measures
+		lineageTag: 68d99677-af32-47e2-b7b1-aa8dbc28fcae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Moving Average Date Param' = ```
+			
+			if(ISBLANK([Miles Selected Measure]), blank(),
+			CALCULATE(
+			    [Miles SM Moving Average],
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Miles Selected Min Date],
+			            [MilesMaxDate]
+			         ))
+			    )
+			)
+			```
+		displayFolder: Visual Measures
+		lineageTag: 0d9dade0-72ed-4a3d-aff4-305562f9fea0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue SM Date Param Delta' = ```
+			
+			[Revenue SM Date Param] - [Revenue SM Date Param Past Period]
+			
+			```
+		displayFolder: Visual Measures
+		lineageTag: 14be4fa9-d976-4b13-a693-8ad63df6e1c2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Date Param Delta' =
+			
+			[Miles SM Date Param] - [Miles SM Date Param Past Period]
+		displayFolder: Visual Measures
+		lineageTag: 9e01d671-2a23-46db-b49a-0d356869ad9a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue SM Date Param Delta %' =
+			
+			DIVIDE( [Revenue SM Date Param Delta], [Revenue SM Date Param Past Period])
+		displayFolder: Visual Measures
+		lineageTag: dcd1f17f-2719-488d-8135-f2585c9cd4d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles SM Date Param Delta %' =
+			
+			DIVIDE( [Miles SM Date Param Delta], [Miles SM Date Param Past Period])
+		displayFolder: Visual Measures
+		lineageTag: 41d5679b-60b1-485c-ab4e-e83084632d83
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue SM Past Period Reference Label' = ```
+			
+			
+			
+			var _Current = [Revenue SM Date Param]
+			var _LY = [Revenue SM Date Param Past Period]
+			var _Growth = DIVIDE(_Current - _LY, _LY)
+			VAR NumOfDigits =
+			    IFERROR(
+			            LEN( 
+			                CONVERT( 
+			                        INT( 
+			                           [Revenue SM Date Param])
+			                        , STRING ))
+			            ,0)
+			VAR Suffix =
+			    ".0" &
+			    SWITCH(
+			        TRUE( ),
+			        NumOfDigits >= 13,  "T",
+			        NumOfDigits >= 10,  "B",
+			        NumOfDigits >= 7,   "M",
+			        NumOfDigits >= 4,   "K"
+			    )
+			VAR Commas =
+			    REPT(",",
+			        SWITCH(
+			            TRUE( ),
+			            NumOfDigits >= 13,  "4",
+			            NumOfDigits >= 10,  "3",
+			            NumOfDigits >= 7,   "2",
+			            NumOfDigits >= 4,   "1"
+			        )
+			    )
+			var _Format =     "#,##0" & Commas & Suffix & ";-#,##0" & Commas &Suffix 
+			return
+			IF (_Growth <> 0, 
+			    
+			"" &FORMAT(_Current-_LY, _Format)
+			    &  
+			        FORMAT(_Growth," | 0.0% ▲; | 0.0% ▼;")& ""," ")
+			```
+		displayFolder: Visual Measures
+		lineageTag: 306658f1-9b08-416e-9d69-97b17f5f4fd9
+
+	measure 'Miles SM Past Period Reference Label' = ```
+			
+			
+			
+			var _Current = [Miles SM Date Param]
+			var _LY = [Miles SM Date Param Past Period]
+			var _Growth = DIVIDE(_Current - _LY, _LY)
+			VAR NumOfDigits =
+			    IFERROR(
+			            LEN( 
+			                CONVERT( 
+			                        INT( 
+			                           [Miles SM Date Param])
+			                        , STRING ))
+			            ,0)
+			VAR Suffix =
+			    ".0" &
+			    SWITCH(
+			        TRUE( ),
+			        NumOfDigits >= 13,  "T",
+			        NumOfDigits >= 10,  "B",
+			        NumOfDigits >= 7,   "M",
+			        NumOfDigits >= 4,   "K"
+			    )
+			VAR Commas =
+			    REPT(",",
+			        SWITCH(
+			            TRUE( ),
+			            NumOfDigits >= 13,  "4",
+			            NumOfDigits >= 10,  "3",
+			            NumOfDigits >= 7,   "2",
+			            NumOfDigits >= 4,   "1"
+			        )
+			    )
+			var _Format =     "#,##0" & Commas & Suffix & ";-#,##0" & Commas &Suffix 
+			return
+			IF (_Growth <> 0, 
+			    
+			"" &FORMAT(_Current-_LY, _Format)
+			    &  
+			        FORMAT(_Growth," | 0.0% ▲; | 0.0% ▼;")& ""," ")
+			```
+		displayFolder: Visual Measures
+		lineageTag: 275320a2-9cc4-4f92-b823-3f421303b092
+
+	measure 'Revenue SM Past Period subtitle' = ```
+			
+			var _LY = [Revenue SM Date Param Past Period]
+			VAR NumOfDigits =
+			    IFERROR(
+			            LEN( 
+			                CONVERT( 
+			                        INT( 
+			                           _LY)
+			                        , STRING ))
+			            ,0)
+			VAR Suffix =
+			    ".00" &
+			    SWITCH(
+			        TRUE( ),
+			        NumOfDigits >= 13,  "T",
+			        NumOfDigits >= 10,  "B",
+			        NumOfDigits >= 7,   "M",
+			        NumOfDigits >= 4,   "K"
+			    )
+			VAR Commas =
+			    REPT(",",
+			        SWITCH(
+			            TRUE( ),
+			            NumOfDigits >= 13,  "4",
+			            NumOfDigits >= 10,  "3",
+			            NumOfDigits >= 7,   "2",
+			            NumOfDigits >= 4,   "1"
+			        )
+			    )
+			var _Format =     "#,##0" & Commas & Suffix & ";-#,##0" & Commas &Suffix 
+			var _Time = 
+			    SWITCH([Selected Dates],
+			    "1W", "Previous Week: ",
+			    "1M","Previous Month: ",
+			    "3M","Previous 3 Months: ",
+			    "YTD","Previous Year Period: ",
+			    "1Y","Previous Year: ")
+			return
+			_Time  &FORMAT(_LY, _Format)
+			```
+		displayFolder: Visual Measures
+		lineageTag: d4732630-5b1b-42fb-a733-866155fd67ba
+
+	measure 'Miles SM Past Period subtitle' = ```
+			
+			var _LY = [Miles SM Date Param Past Period]
+			VAR NumOfDigits =
+			    IFERROR(
+			            LEN( 
+			                CONVERT( 
+			                        INT( 
+			                           _LY)
+			                        , STRING ))
+			            ,0)
+			VAR Suffix =
+			    ".00" &
+			    SWITCH(
+			        TRUE( ),
+			        NumOfDigits >= 13,  "T",
+			        NumOfDigits >= 10,  "B",
+			        NumOfDigits >= 7,   "M",
+			        NumOfDigits >= 4,   "K"
+			    )
+			VAR Commas =
+			    REPT(",",
+			        SWITCH(
+			            TRUE( ),
+			            NumOfDigits >= 13,  "4",
+			            NumOfDigits >= 10,  "3",
+			            NumOfDigits >= 7,   "2",
+			            NumOfDigits >= 4,   "1"
+			        )
+			    )
+			var _Format =     "#,##0" & Commas & Suffix & ";-#,##0" & Commas &Suffix 
+			var _Time = 
+			    SWITCH([Selected Dates],
+			    "1W", "Previous Week: ",
+			    "1M","Previous Month: ",
+			    "3M","Previous 3 Months: ",
+			    "YTD","Previous Year Period: ",
+			    "1Y","Previous Year: ")
+			return
+			_Time  &FORMAT(_LY, _Format)
+			```
+		displayFolder: Visual Measures
+		lineageTag: 117f2214-4e97-4341-a168-18a270466615
+
+	measure 'Revenue Reference Label Background Color' =
+			
+			VAR x = [Revenue SM Date Param Delta] RETURN
+			SWITCH(TRUE(),
+			    x > 0 , "#E7F3F5", //Green
+			    x < 0, "#F6EDED") // red
+		displayFolder: Visual Measures
+		lineageTag: 13590dac-dc3a-4a54-a02e-c7e74bc938f3
+
+	measure 'Miles Reference Label Background Color' =
+			
+			VAR x = [Miles SM Date Param Delta] RETURN
+			SWITCH(TRUE(),
+			    x > 0 , "#E7F3F5", //Green
+			    x < 0, "#F6EDED") // red
+		displayFolder: Visual Measures
+		lineageTag: 0eba18cf-232d-4ad1-baf7-ce91cc13595f
+
+	measure 'Revenue Reference Label Font Color' =
+			
+			VAR x = [Revenue SM Date Param Delta] RETURN
+			SWITCH(TRUE(),
+			    x > 0 , "#038D96", //Green
+			    x < 0, "#A84545") // red
+		displayFolder: Visual Measures
+		lineageTag: 30122e45-3f58-4ea3-9e4a-0f62c9a3b1bc
+
+	measure 'Miles Reference Label Font Color' =
+			
+			VAR x = [Miles SM Date Param Delta] RETURN
+			SWITCH(TRUE(),
+			    x > 0 , "#038D96", //Green
+			    x < 0, "#A84545") // red
+		displayFolder: Visual Measures
+		lineageTag: 427488c3-c97b-4bf2-a125-ad4e7f0347a2
+
+	measure 'Revenue Selected measure Text' = SELECTEDVALUE('Revenue Measure Sel'[Measure Name])
+		displayFolder: Visual Measures
+		lineageTag: 54d2e905-f908-4ae7-b166-1fcd8f4dddfe
+
+	measure 'Miles Selected measure Text' = SELECTEDVALUE('Miles Measure Sel'[Measure Name])
+		displayFolder: Visual Measures
+		lineageTag: 9f2ad625-6f55-44a9-baca-8e4447be0406
+
+	measure 'Revenue Y axis MAX' = ```
+			
+			
+			CALCULATE (
+			    MAXX ( VALUES ( BillingFact[billing_billed_date] ), [Revenue Selected Measure] ),
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Revenue Selected Min Date],
+			            [RevenueMaxDate]
+			         ))
+			)
+			```
+		displayFolder: Visual Measures
+		lineageTag: e36e62df-3108-407e-b11c-6b66eaebd18d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Miles Y axis MAX' = ```
+			
+			
+			CALCULATE (
+			    MAXX ( VALUES ( LoadFact[OrderLoadedCallDate] ), [Miles Selected Measure] ),
+			    KEEPFILTERS(
+			        DATESBETWEEN(
+			            'DateTime'[Date],                 
+			            [Miles Selected Min Date],
+			            [MilesMaxDate]
+			         ))
+			)
+			```
+		displayFolder: Visual Measures
+		lineageTag: 89bd657e-4f83-4f06-b589-a591193c6dac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition MeasuresTable = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Dummy = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Dummy", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Dummy"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

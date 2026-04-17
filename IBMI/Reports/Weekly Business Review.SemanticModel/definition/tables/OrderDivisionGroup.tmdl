@@ -1,0 +1,48 @@
+table OrderDivisionGroup
+	lineageTag: ea499686-a263-4199-8579-17cefa317f0c
+
+	column division_code
+		dataType: string
+		lineageTag: 8d885083-0938-4051-8224-90564723efaa
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_status
+		dataType: string
+		lineageTag: 7aa57937-30b0-40f6-8913-0045a6407595
+		summarizeBy: none
+		sourceColumn: division_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		lineageTag: 5e82407c-ce7f-42c8-b92b-0e96863705ec
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_fleet_name
+		dataType: string
+		lineageTag: 2947e98d-cf62-4d9b-a9b4-5010432562ff
+		summarizeBy: none
+		sourceColumn: division_fleet_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OrderDivisionGroup = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_division]"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

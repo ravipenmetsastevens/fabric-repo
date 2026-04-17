@@ -1,0 +1,50 @@
+relationship 0652361d-b991-4309-a949-7b28b5d74a01
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ACCIDENTTYPETABLE.CREATEDATE
+	toColumn: LocalDateTable_14c8f226-b638-4af4-ad48-d81ccb901cf7.Date
+
+relationship ca65051b-3692-4138-9668-c9dc6fa86f45
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ACCIDENTTYPETABLE.CHANGEDATE
+	toColumn: LocalDateTable_7c4e38e3-32a9-4534-b774-c50b00931e10.Date
+
+relationship dce51ac7-20fa-4a46-a378-cfc7cdde364a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.OCCURANCEDATE
+	toColumn: LocalDateTable_0a6def7f-f575-4ba6-a46b-02b10205b9d2.Date
+
+relationship d8aa8229-3229-42f5-b7a4-610d9c4ae0ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.CREATEDATE
+	toColumn: LocalDateTable_3ba916c3-4ce0-4aab-9cd8-d45a54ef4e6f.Date
+
+relationship 4895ceab-5db1-4972-b233-32a66afb553a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.CHANGEDATE
+	toColumn: LocalDateTable_f9f807f4-92aa-4313-9c1d-19d6179bf777.Date
+
+relationship 6bc18383-d021-4bd0-9fda-c858a4566270
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.UDFD1
+	toColumn: LocalDateTable_7e224adc-a69d-4bdf-9755-ab63ef9a0a5d.Date
+
+relationship 9ba68dd1-b53c-4f3b-ac75-1ef75d51b93e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.UDFD2
+	toColumn: LocalDateTable_5736297f-8edf-4350-93c6-20523003b97e.Date
+
+relationship f61a5c52-fa8b-4bb1-a810-5272bc5f44d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.UDFD3
+	toColumn: LocalDateTable_b12d101b-c02e-4dbc-ade4-5b09679c6cd3.Date
+
+relationship 783ff5a7-4664-475b-86ad-4cf456e2e24b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.UDFD4
+	toColumn: LocalDateTable_046bcef4-c12e-4a30-9911-562b7018e351.Date
+
+relationship 5367bd84-256b-457b-84af-ce2771e4c531
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CLAIMMASTER.CLOSINGDATE
+	toColumn: LocalDateTable_1bff3faa-5155-4483-920a-7419680d25b3.Date
+

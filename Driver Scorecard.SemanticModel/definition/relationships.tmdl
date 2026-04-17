@@ -1,0 +1,227 @@
+relationship fbb58ca5-3c1c-48b7-b517-50bb3e5166f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTime.Date
+	toColumn: LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2.Date
+
+relationship 48cb6cda-6bb9-4848-9eca-a9a4cb716deb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_birth_date
+	toColumn: LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec.Date
+
+relationship 5f2935e7-ce8d-40cf-8666-82fb8133295c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_hire_date
+	toColumn: LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471.Date
+
+relationship 34a4c08c-23b3-4293-b2e1-74edbda71bce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_grad_date
+	toColumn: LocalDateTable_a41e322f-317b-47e8-800c-42bd52f34842.Date
+
+relationship 440f42a4-23c6-4813-b55d-7d463258be4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_home_hist_last_home_arrival_date
+	toColumn: LocalDateTable_b4718b78-2bb0-4263-b477-373ec24b7030.Date
+
+relationship a4807a32-b767-4d79-a508-f53326b40601
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AccidentDetails.claim_mast_occurance_datetime
+	toColumn: LocalDateTable_7330828b-ef05-45a3-bd05-6ca9b3dd3645.Date
+
+relationship 4fd79863-3d2a-46a6-a988-b46b905f2636
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_est_arrival_date
+	toColumn: LocalDateTable_c2af5ad0-d368-4a48-ad96-2a4f2b124f65.Date
+
+relationship c82ac675-d89d-49f4-90ee-9ed9bf034acc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_appt_early_date
+	toColumn: LocalDateTable_f364c046-80dc-4e32-b75f-768192dfe749.Date
+
+relationship ddc52d63-90cc-44c6-aac5-ad42b7a1add5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_appt_late_date
+	toColumn: LocalDateTable_11a8c700-762d-4fa0-a21e-83857a69f5c2.Date
+
+relationship b3620ed5-a61c-40fb-a973-9b95640130db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_arrival_date
+	toColumn: LocalDateTable_b91ddfc1-850f-4c6b-9255-2dbaf6f9071d.Date
+
+relationship c4082b0e-1ce8-41cf-9d41-d905dfc04655
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_load_unload_date
+	toColumn: LocalDateTable_3cfed3d5-7eb4-403c-8112-f43ed26d88e8.Date
+
+relationship c80475e1-25ad-43c1-b5e5-f9f624021432
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.stopoff_appt_date_at_dispatch
+	toColumn: LocalDateTable_c1650c70-17ca-4902-b863-45bb476b53d9.Date
+
+relationship bfe882e1-8db6-4c41-b3ea-409a52c3e2c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.actual_arrival_dt
+	toColumn: LocalDateTable_dc560521-cfd7-43f0-97a9-36cb9b703924.Date
+
+relationship 470e5354-f350-4ad2-9b69-ffafee8d24df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StopOff.est_arrival_dt
+	toColumn: LocalDateTable_b7cc1013-d182-46d7-a99f-e69bbc630513.Date
+
+relationship d23dd774-11d8-4d6d-86b5-2303801b17c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadDetails.load_dispatch_end_date
+	toColumn: LocalDateTable_2da06a7a-c960-47f9-af38-7fd045b198c9.Date
+
+relationship be4dcc0b-7f06-4dc3-bc36-60cdd389b764
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadDetails.load_trip_jacket_received_date
+	toColumn: LocalDateTable_f7a04461-84ad-4fd5-86d2-fe58b5969839.Date
+
+relationship 6723df81-c1ad-47dd-98c1-ed110a22f964
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_pay_date
+	toColumn: LocalDateTable_8a1988fa-6fc6-4aee-bdf7-eec88e41d0f5.Date
+
+relationship f6092ae4-f69a-4221-a7e0-393819b82a62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_pay_period_end_date
+	toColumn: LocalDateTable_ae7eb3c8-48a7-442a-b71c-f4832ddd53aa.Date
+
+relationship 1456a92e-70fb-4656-9120-73320b2e767d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_audit_date
+	toColumn: LocalDateTable_6c439c4c-e9da-410d-b825-aecfef0452e6.Date
+
+relationship 537aa789-50ce-49e0-864e-d18b13ce8e63
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverAlerts.alert_gps_date
+	toColumn: LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7.Date
+
+relationship 630bf87f-e9c4-48c2-b783-5147657a3f29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverScore.loaded_at_utc
+	toColumn: LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047.Date
+
+relationship b18747c0-23af-ca12-1980-89f32b3bc16a
+	fromColumn: DriverAlerts.alert_driver_id
+	toColumn: DriverMaster.drv_code
+
+relationship 370bdd6f-2f95-5ea0-0faa-0d8bdd04d071
+	fromColumn: EarningsHistory.earnings_history_employee_code
+	toColumn: DriverMaster.drv_code
+
+relationship c16a10b9-d5ce-9435-43a3-228766dbfa2e
+	fromColumn: AccidentDetails.claim_mast_occurance_date
+	toColumn: DateTime.Date
+
+relationship 3071c3df-f4c7-f9cd-f069-b93853fe50be
+	fromColumn: DriverAlerts.alert_date
+	toColumn: DateTime.Date
+
+relationship f5bc6c19-ec96-e7b7-5fa5-ccca70ff830c
+	fromColumn: EarningsHistory.earnings_history_check_date
+	toColumn: DateTime.Date
+
+relationship e2a22c2d-9cf9-ff96-07bd-035b37409ecd
+	fromColumn: LoadDetails.load_dispatch_date
+	toColumn: DateTime.Date
+
+relationship 76fc9799-b22a-9fd5-f0a4-1c618c9e01dd
+	fromColumn: StopOff.stopoff_appt_created_date
+	toColumn: DateTime.Date
+
+relationship b15cb4f6-539f-4c6f-8011-a1ae96972dcc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverScore.snapshot_date
+	toColumn: LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e.Date
+
+relationship 517c2e2f-d0bd-4169-9b7f-d592afbac74c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DrvHomeHistory.LastArrival
+	toColumn: LocalDateTable_d8355c7b-9f7a-426d-855a-3aa6706a676c.Date
+
+relationship fc051687-20da-4fa1-86ff-f9a26f476b41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DrvHomeHistory.LastDeparture
+	toColumn: LocalDateTable_ce3c06c1-4ab7-4c7c-ab5b-52bf55ffb4b5.Date
+
+relationship b98795fa-e9ea-48fd-88ec-647050c30413
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_home_last_arrival
+	toColumn: LocalDateTable_5a9f702e-aab3-4ae1-8651-bce1e989dbd3.Date
+
+relationship 5e5f8e43-9216-4a48-9be1-9f006aca1249
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverMaster.drv_home_last_departure
+	toColumn: LocalDateTable_f003ec72-f6f3-420a-b5ba-3eeb9c1477dc.Date
+
+relationship 9f229ff9-e10b-4fff-b5c9-80ae30b9f227
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Utlfile.utlfile_projected_date_available
+	toColumn: LocalDateTable_94177a3f-3552-447f-84e6-08c500e68420.Date
+
+relationship 6e2155e7-16ca-5d17-f3c0-18832932fa2d
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: TruckBusinessUnit.unit_truck_number
+	toColumn: LoadDetails.load_truck_number
+
+relationship d19b9a00-c616-ffc7-c1e7-a1749a4d7c15
+	fromColumn: Utlfile.utlfile_driver_code
+	toColumn: DriverMaster.drv_code
+
+relationship 64d9e091-e75c-db35-9404-dc198332b267
+	fromColumn: Utlfile.utlfile_record_date
+	toColumn: DateTime.Date
+
+relationship f063ca61-db96-1248-16de-c0ff25a0e12c
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: DriverMaster.drv_code
+	toColumn: DrvHomeHistory.drv_home_hist_driver_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2685d2dd-1be4-4251-43ed-eddfaac827fb
+	fromColumn: AccidentDetails.'DriverMaster.drv_code'
+	toColumn: DriverMaster.drv_code
+
+relationship b680c824-6a1b-74ab-65f0-eeaf056ace48
+	fromColumn: StopOff.'LoadDetails.driver_code'
+	toColumn: DriverMaster.drv_code
+
+relationship ed68ed6b-f5a6-886a-be4e-8b872316e1b0
+	fromColumn: LoadDetails.driver_code
+	toColumn: DriverMaster.drv_code
+
+relationship 527415e9-3aad-4e4e-83af-05a43501c5bd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SetRevHistory.set_rev_hist_load_date_revised
+	toColumn: LocalDateTable_96e9f8c5-c631-4be2-bfcd-a892b71c04ef.Date
+
+relationship 948c6f8f-e839-4e2a-998c-8cb6d5afdc62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SetRevHistory.set_rev_hist_domestic_expensed_date
+	toColumn: LocalDateTable_e3356809-c2e6-49a9-b23b-c15d9c11df0a.Date
+
+relationship 9930cc8a-5f17-4ce4-a793-8b427ef9343e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SetRevHistory.set_rev_hist_last_update_date
+	toColumn: LocalDateTable_c9f39903-1875-4f25-b984-9b14b3c9d52b.Date
+
+relationship a739f515-ebc9-46e8-b76c-b545f3ceab08
+	isActive: false
+	fromColumn: AccidentDetails.'DriverMaster.drv_code'
+	toColumn: DrvHomeHistory.drv_home_hist_driver_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 64451f1a-9c79-fa2d-8b7a-206ace115ac6
+	fromColumn: SetRevHistory.set_rev_hist_record_date
+	toColumn: DateTime.Date
+
+relationship 5f9abd78-a072-2394-3d01-04195c7ff47f
+	fromColumn: SetRevHistory.set_rev_hist_owner_code
+	toColumn: DriverMaster.drv_code
+

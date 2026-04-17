@@ -1,0 +1,810 @@
+table 'silver ibmi_driver'
+	isHidden
+	lineageTag: af6c77fe-2cf9-4ab5-a72b-7883ebe6f1db
+
+	column drv_code
+		dataType: string
+		isHidden
+		lineageTag: a1a40d75-9492-4c6a-b0ab-9d401bb2a9e9
+		summarizeBy: none
+		sourceColumn: drv_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_full_name
+		dataType: string
+		isHidden
+		lineageTag: 32aa791e-9ac5-4483-a35a-19590439697b
+		summarizeBy: none
+		sourceColumn: drv_full_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_last_name
+		dataType: string
+		isHidden
+		lineageTag: 247356bc-8db9-4957-b8d3-5226259ea43b
+		summarizeBy: none
+		sourceColumn: drv_last_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_first_name
+		dataType: string
+		isHidden
+		lineageTag: 8e43c531-eb52-4407-b13d-f2ab203acc13
+		summarizeBy: none
+		sourceColumn: drv_first_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_short_name
+		dataType: string
+		isHidden
+		lineageTag: be0b66e4-b1bd-4afe-8a47-de10e37b99c8
+		summarizeBy: none
+		sourceColumn: drv_short_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_line_1
+		dataType: string
+		isHidden
+		lineageTag: 777657d1-9553-46c7-909f-0ac5c73dbd84
+		summarizeBy: none
+		sourceColumn: drv_address_line_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_city
+		dataType: string
+		isHidden
+		lineageTag: 3429a7fd-5f6c-4659-bed3-8b296b981c6d
+		summarizeBy: none
+		sourceColumn: drv_address_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_state
+		dataType: string
+		isHidden
+		lineageTag: c244ff1b-9dff-4320-9b21-90f41a702746
+		summarizeBy: none
+		sourceColumn: drv_address_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_zip
+		dataType: string
+		isHidden
+		lineageTag: d03e1c6c-93c8-4ed9-99c3-ab01ba982c7d
+		summarizeBy: none
+		sourceColumn: drv_address_zip
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_zip_extn
+		dataType: string
+		isHidden
+		lineageTag: 7bbc7012-146a-4a1f-af55-cbd3f6ae7502
+		summarizeBy: none
+		sourceColumn: drv_address_zip_extn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_area_code
+		dataType: string
+		isHidden
+		lineageTag: 144677a1-32dc-4b7e-8b42-09ee3b20d67d
+		summarizeBy: none
+		sourceColumn: drv_area_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_phone_number
+		dataType: string
+		isHidden
+		lineageTag: 4371754d-c1d3-4f76-b4f3-e6137d3602dd
+		summarizeBy: none
+		sourceColumn: drv_phone_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_social_security
+		dataType: string
+		isHidden
+		lineageTag: d6b959ce-73e0-438b-83bf-802bc126d346
+		summarizeBy: none
+		sourceColumn: drv_social_security
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_supervisor_code
+		dataType: string
+		isHidden
+		lineageTag: 509b4805-ae90-4699-8a2e-7c7ed3539f7a
+		summarizeBy: none
+		sourceColumn: drv_supervisor_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_fleet_mgr_code
+		dataType: string
+		isHidden
+		lineageTag: dd09fbca-685c-449e-95a8-92f5123ec7fe
+		summarizeBy: none
+		sourceColumn: drv_fleet_mgr_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_create_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 40bfa725-ffd3-42b3-9be3-dab6a18e6525
+		summarizeBy: none
+		sourceColumn: drv_create_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_create_time
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		lineageTag: a301c7cd-e50d-4082-8b1f-56283f575397
+		summarizeBy: none
+		sourceColumn: drv_create_time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column drv_create_initial
+		dataType: string
+		isHidden
+		lineageTag: 7695288b-adb9-405e-a9a5-14a358451662
+		summarizeBy: none
+		sourceColumn: drv_create_initial
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_update_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 10300723-909d-47d4-99d9-b97aac1fcd4c
+		summarizeBy: none
+		sourceColumn: drv_update_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_update_time
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		lineageTag: 9423927b-8ee8-45a8-aaeb-b70902ac5a32
+		summarizeBy: none
+		sourceColumn: drv_update_time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column drv_update_initial
+		dataType: string
+		isHidden
+		lineageTag: 48db6673-05f0-4433-a909-7c3b94f52c8d
+		summarizeBy: none
+		sourceColumn: drv_update_initial
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_company
+		dataType: string
+		isHidden
+		lineageTag: a641ade6-6f6a-409e-81c5-ee42226b35ee
+		summarizeBy: none
+		sourceColumn: drv_company
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_division
+		dataType: string
+		isHidden
+		lineageTag: 7bdffc9b-ac30-4352-9288-ffb727951d13
+		summarizeBy: none
+		sourceColumn: drv_division
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_terminal_number
+		dataType: string
+		isHidden
+		lineageTag: 31b4dd45-e66e-46ca-aa0c-93b9426c331d
+		summarizeBy: none
+		sourceColumn: drv_terminal_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_birth_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 1c1fbbc2-3d57-472c-a769-00a44016c4b4
+		summarizeBy: none
+		sourceColumn: drv_birth_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_hire_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 5b10749d-0dc0-487c-af75-a39af35b0902
+		summarizeBy: none
+		sourceColumn: drv_hire_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_review_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 3cadc9af-ac36-45cd-9226-8ed41eb4185b
+		summarizeBy: none
+		sourceColumn: drv_review_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_termination_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 3dba2e0a-3eb6-4f19-9ce9-7d22f8ad1bdf
+		summarizeBy: none
+		sourceColumn: drv_termination_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_license_expiry_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 32d3dc6d-e35c-4a60-b670-b0fff6d5eb14
+		summarizeBy: none
+		sourceColumn: drv_license_expiry_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_physical_expiry_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: af519b7d-4db7-4cb1-85ee-2575c16ffb4c
+		summarizeBy: none
+		sourceColumn: drv_physical_expiry_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_license_number
+		dataType: string
+		isHidden
+		lineageTag: 4ce21394-502a-468b-88b8-188f3d01babc
+		summarizeBy: none
+		sourceColumn: drv_license_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_license_state
+		dataType: string
+		isHidden
+		lineageTag: 4fa75eaa-9978-44fc-8695-7b2b2304441e
+		summarizeBy: none
+		sourceColumn: drv_license_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_type
+		dataType: string
+		isHidden
+		lineageTag: 9dc86e9b-4218-411c-9b2b-f92d09a8d283
+		summarizeBy: none
+		sourceColumn: drv_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_status
+		dataType: string
+		isHidden
+		lineageTag: ee77cb2b-75e7-4394-b7eb-151c685c0657
+		summarizeBy: none
+		sourceColumn: drv_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_previous_order
+		dataType: string
+		isHidden
+		lineageTag: 230f59d8-a11d-4a14-8c43-21ec9c11af6f
+		summarizeBy: none
+		sourceColumn: drv_previous_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_previous_dispatch
+		dataType: string
+		isHidden
+		lineageTag: 4c3a8343-5e41-408f-913f-ac04bdc430f4
+		summarizeBy: none
+		sourceColumn: drv_previous_dispatch
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_current_order
+		dataType: string
+		isHidden
+		lineageTag: 2368a952-204c-4d7f-bafa-1cbf2b2ddaf1
+		summarizeBy: none
+		sourceColumn: drv_current_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_current_dispatch
+		dataType: string
+		isHidden
+		lineageTag: 563536b1-9129-4f5d-9561-fc5cb3ee2957
+		summarizeBy: none
+		sourceColumn: drv_current_dispatch
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_assigned_unit
+		dataType: string
+		isHidden
+		lineageTag: 75a8fb6f-f116-4c1a-a684-1421fb076136
+		summarizeBy: none
+		sourceColumn: drv_assigned_unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_city
+		dataType: string
+		isHidden
+		lineageTag: eb7c73f9-797b-4898-8cf4-197aaf9f930b
+		summarizeBy: none
+		sourceColumn: drv_dispatch_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_state
+		dataType: string
+		isHidden
+		lineageTag: 5502daf7-4b01-4582-a0f6-9416b5a12460
+		summarizeBy: none
+		sourceColumn: drv_dispatch_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_city_code
+		dataType: string
+		isHidden
+		lineageTag: 3ee38f3c-6e66-4582-bab3-3526720f497a
+		summarizeBy: none
+		sourceColumn: drv_dispatch_city_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_drv_messages
+		dataType: string
+		isHidden
+		lineageTag: 3a397858-9127-4305-b8d8-421946710a05
+		summarizeBy: none
+		sourceColumn: has_drv_messages
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_drv_deleted
+		dataType: string
+		isHidden
+		lineageTag: 64603b3e-b3bf-4579-b3bf-4e5a5c8a8a96
+		summarizeBy: none
+		sourceColumn: is_drv_deleted
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_emerg_contact_name
+		dataType: string
+		isHidden
+		lineageTag: f73ff750-b7e7-4683-b534-ee2ef405203b
+		summarizeBy: none
+		sourceColumn: drv_emerg_contact_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_emerg_contact_phone
+		dataType: string
+		isHidden
+		lineageTag: 6bc5ba27-6eff-404a-8869-b2d16733c0a8
+		summarizeBy: none
+		sourceColumn: drv_emerg_contact_phone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_hazard_permit
+		dataType: string
+		isHidden
+		lineageTag: f722f53d-1107-4a5e-b6d1-337ac26bf4b8
+		summarizeBy: none
+		sourceColumn: drv_hazard_permit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_normal_unit
+		dataType: string
+		isHidden
+		lineageTag: f86c9e22-c70c-4789-98c1-d3e276a3d2a6
+		summarizeBy: none
+		sourceColumn: drv_normal_unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_spouse
+		dataType: string
+		isHidden
+		lineageTag: fccefda3-5472-4a26-b661-3f860437177d
+		summarizeBy: none
+		sourceColumn: drv_spouse
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_misc_info
+		dataType: string
+		isHidden
+		lineageTag: 28b0c7ca-eb92-4398-98dd-92b291f258b2
+		summarizeBy: none
+		sourceColumn: drv_misc_info
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_fund_code
+		dataType: string
+		isHidden
+		lineageTag: 178e2991-02f3-4410-920e-deb68afab34e
+		summarizeBy: none
+		sourceColumn: drv_fund_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_city_code
+		dataType: string
+		isHidden
+		lineageTag: a34cd79e-bae6-4476-9449-a1caf2835afc
+		summarizeBy: none
+		sourceColumn: drv_home_city_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_voice_box
+		dataType: string
+		isHidden
+		lineageTag: a15c0edc-3939-4271-af95-7a19f044f0cf
+		summarizeBy: none
+		sourceColumn: drv_voice_box
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_jit_drv
+		dataType: string
+		isHidden
+		lineageTag: 326a2224-1d7b-4022-8e70-9d0c6a4f6ca2
+		summarizeBy: none
+		sourceColumn: is_jit_drv
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_trainee_drv
+		dataType: string
+		isHidden
+		lineageTag: c47e1d0b-c4a3-42fe-bfc2-f0e29cfb6865
+		summarizeBy: none
+		sourceColumn: is_trainee_drv
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_adv_balance
+		dataType: double
+		isHidden
+		lineageTag: 711903f5-afc5-42cf-a4f2-1e78cce17535
+		summarizeBy: sum
+		sourceColumn: drv_adv_balance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_company_adv_balance
+		dataType: double
+		isHidden
+		lineageTag: a1fdd020-f017-4de0-97df-9883d259e564
+		summarizeBy: sum
+		sourceColumn: drv_company_adv_balance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_mailbox_pwd
+		dataType: double
+		isHidden
+		lineageTag: 2e1995c9-044a-4f4d-85c0-70c34d10f22d
+		summarizeBy: sum
+		sourceColumn: drv_mailbox_pwd
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_last_pay_amount
+		dataType: double
+		isHidden
+		lineageTag: ea1948f9-13b7-4778-ba41-74394c95bb70
+		summarizeBy: sum
+		sourceColumn: drv_last_pay_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_fuel_card
+		dataType: string
+		isHidden
+		lineageTag: e177c026-386c-4630-b6c3-c60c27df96f4
+		summarizeBy: none
+		sourceColumn: drv_fuel_card
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_solo_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: cd9413a5-96c8-4176-b044-4f2d49e8f4b9
+		summarizeBy: none
+		sourceColumn: drv_solo_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_drv_smoker
+		dataType: string
+		isHidden
+		lineageTag: ae5e2519-6cb0-4892-bad0-c9594473ff7d
+		summarizeBy: none
+		sourceColumn: is_drv_smoker
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_race
+		dataType: string
+		isHidden
+		lineageTag: b4057446-1cd8-43b8-8bf3-3aa8a9db693d
+		summarizeBy: none
+		sourceColumn: drv_race
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_gender
+		dataType: string
+		isHidden
+		lineageTag: b5cd18d9-9412-47d6-b85b-b663a8e96a0d
+		summarizeBy: none
+		sourceColumn: drv_gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_longevity
+		dataType: string
+		isHidden
+		lineageTag: bff7c879-81fd-4b54-bded-613d1914c15e
+		summarizeBy: none
+		sourceColumn: has_longevity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_longevity_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 95e4acf7-faf4-49c4-8983-c1f34742d28d
+		summarizeBy: none
+		sourceColumn: drv_longevity_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_type_code
+		dataType: string
+		isHidden
+		lineageTag: 0f7fbda2-c99f-478c-974a-00501ccbc8b3
+		summarizeBy: none
+		sourceColumn: drv_type_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_terminal
+		dataType: string
+		isHidden
+		lineageTag: 281ee24c-2527-4065-8158-bb8bc8abc180
+		summarizeBy: none
+		sourceColumn: drv_home_terminal
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'silver ibmi_driver' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_ibmi_driver = data_central_wh{[Schema="silver",Item="ibmi_driver"]}[Data]
+				in
+				    silver_ibmi_driver
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

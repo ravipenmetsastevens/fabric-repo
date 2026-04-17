@@ -1,0 +1,447 @@
+table LoadDetails
+	lineageTag: 64a71bfb-db8e-4311-9f08-b2407d81e9ac
+
+	measure LoadMiles = sum(LoadDetails[load_miles_total])
+		lineageTag: c4ca79d5-9e0e-422f-be26-11605cf73b6f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Loadscount =
+			
+			DISTINCTCOUNT ( 'LoadDetails'[load_load_number] )
+		formatString: 0
+		lineageTag: 44761c45-d69b-4395-a186-bb16ae8a3482
+
+	measure GrossWageAmount = sum(EarningsHistory[earnings_history_gross_amount])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 52a87027-bac7-4229-b967-6f29351b39fa
+
+	measure WageRatePerRevenueMile = [GrossWageAmount]/[LoadMiles]
+		lineageTag: 31c5b328-e761-4af8-8017-bb605e873116
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalAlerts = DISTINCTCOUNT ( DriverAlerts[alert_id])
+		formatString: 0
+		lineageTag: fa24c4c3-cf52-46cd-834b-b28758e0a727
+
+	column load_origin_area_code
+		dataType: string
+		lineageTag: 7effcea3-7b34-4fd0-b1c2-4bf86b876c5f
+		summarizeBy: none
+		sourceColumn: load_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_load_number
+		dataType: string
+		lineageTag: deb41321-5ac9-473f-b08a-0ae11b82bd67
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch
+		dataType: string
+		lineageTag: 6c5370f0-e778-4c64-aba7-189b32ad4020
+		summarizeBy: none
+		sourceColumn: load_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_status
+		dataType: string
+		lineageTag: 4e02f4ba-c486-47ff-bd4f-0e47e163ff9e
+		summarizeBy: none
+		sourceColumn: load_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 05cca3e0-968b-428b-b140-c874d9d2f815
+		summarizeBy: none
+		sourceColumn: load_dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_time
+		dataType: string
+		lineageTag: ccbdef73-ca5e-49f9-85c0-770129ec0681
+		summarizeBy: none
+		sourceColumn: load_dispatch_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_number
+		dataType: string
+		lineageTag: c316a400-ea90-431a-97c5-a4e72d34dc0c
+		summarizeBy: none
+		sourceColumn: load_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trailer_number
+		dataType: string
+		lineageTag: e3bb63ee-87aa-492d-af69-ca7a8ac91037
+		summarizeBy: none
+		sourceColumn: load_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_codes
+		dataType: string
+		lineageTag: 1d7d3517-f0c1-43f2-8e4b-ebae7031ea0e
+		summarizeBy: none
+		sourceColumn: load_route_line_codes
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_status
+		dataType: string
+		lineageTag: 9fe007d9-120a-4179-8e64-4d38e99c7985
+		summarizeBy: none
+		sourceColumn: load_route_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_mile_flag
+		dataType: string
+		lineageTag: 139e20ec-8bd2-4031-bcc8-a070718aace2
+		summarizeBy: none
+		sourceColumn: load_mile_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_initials
+		dataType: string
+		lineageTag: 42f997b9-37e3-4ecf-a826-3a5299db2c81
+		summarizeBy: none
+		sourceColumn: load_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_destination_area_code
+		dataType: string
+		lineageTag: d85830d3-06a0-40ab-b9e8-3cafb4bf8b53
+		summarizeBy: none
+		sourceColumn: load_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_extension
+		dataType: string
+		lineageTag: dee4fa2f-c66a-4e83-8741-ac032b0971f8
+		summarizeBy: none
+		sourceColumn: load_route_line_extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3d4f9fbb-0954-402a-b4e1-401f8fec7868
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_date
+
+		variation Variation
+			isDefault
+			relationship: d23dd774-11d8-4d6d-86b5-2303801b17c2
+			defaultHierarchy: LocalDateTable_2da06a7a-c960-47f9-af38-7fd045b198c9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_time
+		dataType: string
+		lineageTag: 2d04fb11-9ad7-4df7-87a0-caf20ed2bd36
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_multiple_trailers_on_dispatch
+		dataType: string
+		lineageTag: 20f1de40-7a8e-4019-85f0-73ccba159f86
+		summarizeBy: none
+		sourceColumn: load_multiple_trailers_on_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_settlement_flag
+		dataType: string
+		lineageTag: 9f2c3950-1349-4a49-8e38-fe5006de4f4b
+		summarizeBy: none
+		sourceColumn: load_settlement_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_payroll_approval_flag
+		dataType: string
+		lineageTag: 55b8d6ab-2a54-4dc3-96b9-698f107b12d5
+		summarizeBy: none
+		sourceColumn: load_payroll_approval_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dmol_code
+		dataType: string
+		lineageTag: d80a49c1-8e05-4eaf-8c52-119f8c5dd763
+		summarizeBy: none
+		sourceColumn: load_truck_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dm_code
+		dataType: string
+		lineageTag: 757c0970-c511-4433-961a-55ddce486a64
+		summarizeBy: none
+		sourceColumn: load_truck_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dmol_code
+		dataType: string
+		lineageTag: f915f403-f1e9-43b3-ab96-f1f659115a5c
+		summarizeBy: none
+		sourceColumn: load_driver_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dm_code
+		dataType: string
+		lineageTag: 074891d3-0298-4883-96f1-4344527fc55e
+		summarizeBy: none
+		sourceColumn: load_driver_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_flag
+		dataType: string
+		lineageTag: 987ab8a9-c311-4494-82b3-ff90ff2eebc7
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 62af5876-db74-4f65-a491-bbac172ce82f
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_date
+
+		variation Variation
+			isDefault
+			relationship: be4dcc0b-7f06-4dc3-bc36-60cdd389b764
+			defaultHierarchy: LocalDateTable_f7a04461-84ad-4fd5-86d2-fe58b5969839.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_hub_start
+		dataType: double
+		lineageTag: 6ae35bc1-e861-4c8b-bc03-208e1df82c25
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_hub_end
+		dataType: double
+		lineageTag: 7fae4b1b-051e-4f23-bd32-b064915d88f0
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_end
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_unit_division_code
+		dataType: string
+		lineageTag: a0d10ab0-d346-4303-bb13-a7f294469350
+		summarizeBy: none
+		sourceColumn: load_unit_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_team_status_code
+		dataType: string
+		lineageTag: adb71917-2c84-45f1-a8f7-84aa7032c9b0
+		summarizeBy: none
+		sourceColumn: load_team_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trainer_team_code
+		dataType: string
+		lineageTag: bbab6ff0-a84e-42a6-af62-339970e7bf62
+		summarizeBy: none
+		sourceColumn: load_trainer_team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a6bdcee7-c9b8-4326-a2b7-39c306e26a7b
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDetailsKey
+		dataType: string
+		lineageTag: 3f36f679-8234-4856-b36e-b8fe7fa321e0
+		summarizeBy: none
+		sourceColumn: LoadDetailsKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_code
+		dataType: string
+		lineageTag: 85ff46c5-6529-47bb-ade3-2087d2981bca
+		summarizeBy: none
+		sourceColumn: driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_dead_head
+		dataType: double
+		lineageTag: 613130ca-29d0-45e8-816f-bd0f969d227e
+		summarizeBy: sum
+		sourceColumn: load_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_total
+		dataType: double
+		lineageTag: a4eef87c-26e0-4313-ab88-7311ce2ad9a1
+		summarizeBy: sum
+		sourceColumn: load_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_loaded
+		dataType: double
+		lineageTag: 8a37ffd3-a65f-4019-acc4-c004a86c23b9
+		summarizeBy: sum
+		sourceColumn: load_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition LoadDetails = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [
+				                Query = "
+				SELECT *
+				FROM [data_central_wh].[gold].[vw_ibmi_load_combined]
+				WHERE load_dispatch_date >= DATEADD(MONTH, -6, CAST(GETDATE() AS DATE))
+				"
+				            ]
+				        ),
+				
+				    // Key
+				    AddLoadDetailsKey = Table.AddColumn(
+				        Source,
+				        "LoadDetailsKey",
+				        each Text.From([load_load_number]) & "-" & Text.From([load_dispatch]),
+				        type text
+				    ),
+				
+				    // Will we split? (2 when both seats populated, else 1)
+				    AddSplitFactor = Table.AddColumn(
+				        AddLoadDetailsKey,
+				        "SplitFactor",
+				        each
+				            let
+				                s1 =
+				                    try Text.Trim(Text.From([load_seat_1_driver_code])) otherwise "",
+				                s2 =
+				                    try Text.Trim(Text.From([load_seat_2_driver_code])) otherwise ""
+				            in
+				                if (s1 <> "" and s2 <> "") then 2 else 1,
+				        Int64.Type
+				    ),
+				
+				    // Build list of drivers present (1 or 2)
+				    AddDriverList = Table.AddColumn(
+				        AddSplitFactor,
+				        "DriverList",
+				        each List.RemoveNulls(
+				            {
+				                let s = try Text.Trim(Text.From([load_seat_1_driver_code])) otherwise "" in if s = "" then null else s,
+				                let s = try Text.Trim(Text.From([load_seat_2_driver_code])) otherwise "" in if s = "" then null else s
+				            }
+				        ),
+				        type list
+				    ),
+				
+				    // Keep only rows where at least one driver exists
+				    KeepRowsWithDrivers = Table.SelectRows(AddDriverList, each List.Count([DriverList]) > 0),
+				
+				    // Duplicate rows per driver
+				    ExpandDrivers = Table.ExpandListColumn(KeepRowsWithDrivers, "DriverList"),
+				    RenameDriverCol = Table.RenameColumns(ExpandDrivers, {{"DriverList", "driver_code"}}),
+				    ChangeDriverType = Table.TransformColumnTypes(RenameDriverCol, {{"driver_code", type text}}),
+				
+				    // Adjust miles by SplitFactor (always divide; 1 leaves unchanged, 2 splits 50/50)
+				    AddAdjDeadHead = Table.AddColumn(
+				        ChangeDriverType,
+				        "load_miles_dead_head_adj",
+				        each try Number.From([load_miles_dead_head]) / Number.From([SplitFactor]) otherwise null,
+				        type number
+				    ),
+				    AddAdjTotal = Table.AddColumn(
+				        AddAdjDeadHead,
+				        "load_miles_total_adj",
+				        each try Number.From([load_miles_total]) / Number.From([SplitFactor]) otherwise null,
+				        type number
+				    ),
+				    AddAdjLoaded = Table.AddColumn(
+				        AddAdjTotal,
+				        "load_miles_loaded_adj",
+				        each try Number.From([load_miles_loaded]) / Number.From([SplitFactor]) otherwise null,
+				        type number
+				    ),
+				
+				    // Drop old miles, rename adjusted to original names
+				    RemoveOldMiles = Table.RemoveColumns(
+				        AddAdjLoaded,
+				        {"load_miles_dead_head", "load_miles_total", "load_miles_loaded"}
+				    ),
+				    RenameAdjMiles = Table.RenameColumns(
+				        RemoveOldMiles,
+				        {
+				            {"load_miles_dead_head_adj", "load_miles_dead_head"},
+				            {"load_miles_total_adj", "load_miles_total"},
+				            {"load_miles_loaded_adj", "load_miles_loaded"}
+				        }
+				    ),
+				
+				    // Clean up: remove original seat columns + SplitFactor
+				    Final =
+				        Table.RemoveColumns(
+				            RenameAdjMiles,
+				            {"load_seat_1_driver_code", "load_seat_2_driver_code", "SplitFactor"}
+				        )
+				in
+				    Final
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,126 @@
+table ACCIDENTTYPETABLE
+	lineageTag: 261be0f9-4682-4ed8-8194-112cbbfd92ca
+
+	column ACCIDENTTYPECODE
+		dataType: double
+		lineageTag: 8757d20b-41a2-4f43-88cb-2155ac6d6ab3
+		summarizeBy: sum
+		sourceColumn: ACCIDENTTYPECODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ACCIDENTTYPEDESC
+		dataType: string
+		lineageTag: ed80fd64-9a3c-4164-bc19-463c2e7aabb8
+		summarizeBy: none
+		sourceColumn: ACCIDENTTYPEDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATEDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: caeff347-7289-487a-920f-382d177c4976
+		summarizeBy: none
+		sourceColumn: CREATEDATE
+
+		variation Variation
+			isDefault
+			relationship: 0652361d-b991-4309-a949-7b28b5d74a01
+			defaultHierarchy: LocalDateTable_14c8f226-b638-4af4-ad48-d81ccb901cf7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATEUSER
+		dataType: string
+		lineageTag: 049be146-dfa4-42be-a8e5-e0c5ecb02135
+		summarizeBy: none
+		sourceColumn: CREATEUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANGEDATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd1231da-0005-439c-b26e-0206f555a5b7
+		summarizeBy: none
+		sourceColumn: CHANGEDATE
+
+		variation Variation
+			isDefault
+			relationship: ca65051b-3692-4138-9668-c9dc6fa86f45
+			defaultHierarchy: LocalDateTable_7c4e38e3-32a9-4534-b774-c50b00931e10.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANGEUSER
+		dataType: string
+		lineageTag: deff060d-cb04-4eb0-a325-0cae35be398b
+		summarizeBy: none
+		sourceColumn: CHANGEUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column POINTS
+		dataType: int64
+		formatString: 0
+		lineageTag: 753e4b57-52cd-49d7-b7ae-c121bf1b8530
+		summarizeBy: sum
+		sourceColumn: POINTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONGDESC
+		dataType: string
+		lineageTag: 6dae08ab-89a1-4db1-bbb9-4b689a753d89
+		summarizeBy: none
+		sourceColumn: LONGDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTSTS
+		dataType: string
+		lineageTag: 50fffe6c-a3f4-4044-a271-2e6b5fca4578
+		summarizeBy: none
+		sourceColumn: ACTSTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPOINTS
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c9c2c2b-819b-4ae4-a83c-161e1053a126
+		summarizeBy: sum
+		sourceColumn: IPOINTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ONROAD
+		dataType: string
+		lineageTag: cfcaac99-a75c-4ee7-abe2-6c0732cdb1a3
+		summarizeBy: none
+		sourceColumn: ONROAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SAFETYACCDTYPE
+		dataType: string
+		lineageTag: 4b67e82b-9865-4ec7-9f44-1e64a451f727
+		summarizeBy: none
+		sourceColumn: SAFETYACCDTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ACCIDENTTYPETABLE = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Firebird DSN", [HierarchicalNavigation=true]),
+				    ACCIDENTTYPETABLE_Table = Source{[Name="ACCIDENTTYPETABLE",Kind="Table"]}[Data]
+				in
+				    ACCIDENTTYPETABLE_Table
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,73 @@
+table vw_wd_worker_org
+	lineageTag: 8442699e-76c4-49a4-a7f7-3c4f8199a705
+	sourceLineageTag: [dbo].[vw_wd_worker_org]
+
+	column employee_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 18c348f7-8bb1-44a2-b369-1d269a7e104c
+		sourceLineageTag: employee_id
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_wid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4abeb389-4e27-4d3d-b39c-8a1be2fa02db
+		sourceLineageTag: worker_wid
+		summarizeBy: none
+		sourceColumn: worker_wid
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e4ddbd65-0f58-4285-986f-3ed3d5550327
+		sourceLineageTag: employee_name
+		summarizeBy: none
+		sourceColumn: employee_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisory_org_ref_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1c80e6e9-8a92-4841-b750-0b51e5ec7f97
+		sourceLineageTag: supervisory_org_ref_id
+		summarizeBy: none
+		sourceColumn: supervisory_org_ref_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisory_org_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0820daf8-d752-4b0d-bbc5-579200078814
+		sourceLineageTag: supervisory_org_name
+		summarizeBy: none
+		sourceColumn: supervisory_org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_manager_employee_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 531990f6-ad64-4ee8-af3c-fa46fc94e2d9
+		sourceLineageTag: org_manager_employee_id
+		summarizeBy: none
+		sourceColumn: org_manager_employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_wd_worker_org = entity
+		mode: directLake
+		source
+			entityName: vw_wd_worker_org
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

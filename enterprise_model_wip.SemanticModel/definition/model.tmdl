@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.142.1277.0 (25.04)+014fde450f93691fc9537f0758d73d1c5df153ef
+
+annotation PBI_QueryOrder = ["gold dim_date","Customer","silver ibmi_driver","silver ibmi_trailer","Order","OrdBill"]
+
+ref table 'gold dim_date'
+ref table Customer
+ref table 'silver ibmi_driver'
+ref table 'silver ibmi_trailer'
+ref table Order
+ref table OrdBill
+
+ref cultureInfo en-US
+

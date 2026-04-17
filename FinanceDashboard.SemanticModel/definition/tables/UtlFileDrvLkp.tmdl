@@ -1,0 +1,65 @@
+table UtlFileDrvLkp
+	excludeFromModelRefresh
+	lineageTag: 2791ac64-f7fa-44cc-918d-6ea8a3e9a19f
+
+	column utlfile_driver_code
+		dataType: string
+		lineageTag: 0e25a0cd-d4de-4906-9aec-f4026ab14f82
+		summarizeBy: none
+		sourceColumn: utlfile_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_record_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a23fe18e-6520-45d2-8398-b8b51f09f554
+		summarizeBy: none
+		sourceColumn: min_record_date
+
+		variation Variation
+			isDefault
+			relationship: b15dfc19-0459-439d-a2ed-22b7265421af
+			defaultHierarchy: LocalDateTable_2c492810-9493-4ab9-86f2-a0374f2c9521.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition UtlFileDrvLkp = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [Query="SELECT * FROM [data_central_wh].[gold].[vw_ibmi_utlfile]"]
+				        ),
+				    // keep only blank training level rows (adjust if you meant <> "")
+				    Filtered =
+				        Table.SelectRows(Source, each [utlfile_training_level_code] = "" or [utlfile_training_level_code] = null),
+				    KeptCols =
+				        Table.SelectColumns(Filtered, {"utlfile_driver_code", "utlfile_record_date"}),
+				    Typed =
+				        Table.TransformColumnTypes(
+				            KeptCols,
+				            {{"utlfile_driver_code", type text}, {"utlfile_record_date", type datetime}}
+				        ),
+				    NoNulls =
+				        Table.SelectRows(Typed, each [utlfile_driver_code] <> null and [utlfile_driver_code] <> "" and [utlfile_record_date] <> null),
+				    GroupedMin =
+				        Table.Group(
+				            NoNulls,
+				            {"utlfile_driver_code"},
+				            {{"min_record_date", each List.Min([utlfile_record_date]), type datetime}}
+				        ),
+				    AsDate =
+				        Table.TransformColumns(GroupedMin, {{"min_record_date", DateTime.Date, type date}})
+				in
+				    AsDate
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

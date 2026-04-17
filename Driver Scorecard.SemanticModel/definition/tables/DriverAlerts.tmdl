@@ -1,0 +1,210 @@
+table DriverAlerts
+	lineageTag: d4733c52-c1b3-4dce-b835-13779c9f20a8
+
+	column alert_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 64da76e2-e43b-4ea9-b041-c8b6abd24688
+		summarizeBy: sum
+		sourceColumn: alert_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_driver_id
+		dataType: string
+		lineageTag: 2273d1a1-011a-409b-ba9f-c2ab95ffd2f7
+		summarizeBy: none
+		sourceColumn: alert_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_vin
+		dataType: string
+		lineageTag: 3a5b6f99-6653-46b9-9f27-173db0973041
+		summarizeBy: none
+		sourceColumn: alert_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_device_id
+		dataType: string
+		lineageTag: 26acf084-b69c-40ac-81da-59f5f91ab315
+		summarizeBy: none
+		sourceColumn: alert_device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d16be733-d7b7-43e4-8aca-55fa730ef224
+		summarizeBy: none
+		sourceColumn: alert_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 5a2f0cb2-d8d9-40b6-b979-6179a274d915
+		summarizeBy: none
+		sourceColumn: alert_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column alert_duration
+		dataType: int64
+		formatString: 0
+		lineageTag: e877550b-b834-483d-a106-437ffd68b751
+		summarizeBy: sum
+		sourceColumn: alert_duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type
+		dataType: string
+		lineageTag: 2a130884-801a-43c2-a372-0679d915f2b3
+		summarizeBy: none
+		sourceColumn: alert_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_sub_type
+		dataType: string
+		lineageTag: cb72f1a1-ea2b-4870-9353-f4a92a725726
+		summarizeBy: none
+		sourceColumn: alert_sub_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_severity
+		dataType: string
+		lineageTag: 845fbbb7-b8d0-42a1-87fb-2df4b9404c78
+		summarizeBy: none
+		sourceColumn: alert_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_category
+		dataType: string
+		lineageTag: a4c7979d-f630-4f1c-a1fe-fb3cc9335c56
+		summarizeBy: none
+		sourceColumn: alert_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_cause
+		dataType: string
+		lineageTag: 63f969aa-815e-4518-b6bb-585a06abcae6
+		summarizeBy: none
+		sourceColumn: alert_cause
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_weather
+		dataType: string
+		lineageTag: a3132a63-dbb9-4894-80f8-39a491c953ab
+		summarizeBy: none
+		sourceColumn: alert_weather
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_status
+		dataType: string
+		lineageTag: af43667c-025f-423c-9b5c-1288884b779f
+		summarizeBy: none
+		sourceColumn: alert_vehicle_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b091d390-4799-4f85-adb4-6de04b0172d2
+		summarizeBy: none
+		sourceColumn: alert_gps_date
+
+		variation Variation
+			isDefault
+			relationship: 537aa789-50ce-49e0-864e-d18b13ce8e63
+			defaultHierarchy: LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 619445b9-881b-4daa-8fe7-c04eb764e378
+		summarizeBy: none
+		sourceColumn: alert_gps_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column alert_gps_latitude
+		dataType: double
+		lineageTag: ce48f869-5497-4dc0-834c-3662c7eef3fe
+		summarizeBy: sum
+		sourceColumn: alert_gps_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_gps_longitude
+		dataType: double
+		lineageTag: 453f1d6d-347e-4b42-9a7b-f14d5fae149d
+		summarizeBy: sum
+		sourceColumn: alert_gps_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed
+		dataType: double
+		lineageTag: f5989356-7c7e-4ff3-bede-5e18db29ab5c
+		summarizeBy: sum
+		sourceColumn: alert_speed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed_limit
+		dataType: double
+		lineageTag: 0373fca1-b6f4-4628-bbd1-0a4fa36006a0
+		summarizeBy: sum
+		sourceColumn: alert_speed_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_status
+		dataType: string
+		lineageTag: a0aee832-5dd7-4c7a-9534-a9550961a31c
+		summarizeBy: none
+		sourceColumn: alert_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DriverAlerts = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT * FROM [data_central_wh].[gold].[fact_netr_alert]#(lf)"]),
+				    #"Merged Queries" = Table.NestedJoin(Source, {"alert_type"}, AlertsTable, {"Alerts"}, "AlertsTable", JoinKind.Inner),
+				    #"Expanded AlertsTable" = Table.ExpandTableColumn(#"Merged Queries", "AlertsTable", {"Alerts"}, {"AlertsTable.Alerts"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded AlertsTable",{"AlertsTable.Alerts"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each Date.IsInCurrentYear([alert_date]))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

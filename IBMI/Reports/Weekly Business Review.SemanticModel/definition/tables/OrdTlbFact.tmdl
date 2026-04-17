@@ -1,0 +1,131 @@
+table OrdTlbFact
+	lineageTag: 0417d5f0-2f40-4de7-8cb1-60d31145148a
+
+	measure 'Brokerage Cost' = ```
+			sum(OrdTlbFact[tlb_ordtlb_truck_pay_amount]) 
+			```
+		lineageTag: b8067efb-390f-4f26-8da0-3367ee29f21b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_ordtlb_load_number
+		dataType: string
+		lineageTag: 77a6540a-74b3-41db-b456-ed0576021225
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_carrier_code
+		dataType: string
+		lineageTag: 80e48837-c6a9-4397-9c1c-ee3f0fb1f721
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_carrier_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_broker_code
+		dataType: string
+		lineageTag: 5be84152-b957-41a6-b731-7e28e0fb0c25
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_broker_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_driver_full_name
+		dataType: string
+		lineageTag: 055c2aac-54b7-40fa-86ec-a8541953d32c
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_driver_full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_truck_number
+		dataType: string
+		lineageTag: b1586b4c-2f6f-4658-b125-5e7fdd4cd462
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_trailer_number
+		dataType: string
+		lineageTag: 4753518f-3eff-484e-ab13-6669e0a82979
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_truck_pay_amount
+		dataType: double
+		lineageTag: 55856ffb-9ddb-4b84-9069-db37f6e597e6
+		summarizeBy: sum
+		sourceColumn: tlb_ordtlb_truck_pay_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_trip_settled
+		dataType: string
+		lineageTag: 599718bd-00f5-41cd-adb9-ef5b91adde2e
+		summarizeBy: none
+		sourceColumn: is_trip_settled
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_expense_accrued
+		dataType: string
+		lineageTag: 8dba19d1-b20d-4b34-8b9f-002ac94c7c16
+		summarizeBy: none
+		sourceColumn: is_expense_accrued
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_expense_accrual_amount
+		dataType: double
+		lineageTag: 05a57933-4bae-4605-afa5-887ff260a772
+		summarizeBy: sum
+		sourceColumn: tlb_ordtlb_expense_accrual_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_ordtlb_check_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a3e4a41b-1a7f-497c-a446-8ec781f068c3
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column division_code
+		dataType: string
+		lineageTag: 549401af-7c99-4dab-b226-6746a7a43da6
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OrdTlbFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_tlb_ordtlb];"]),
+				    #"Merged Queries" = Table.NestedJoin(Source, {"tlb_ordtlb_load_number"}, OrderFact, {"order_load_number"}, "OrderFact", JoinKind.LeftOuter),
+				    #"Expanded OrderFact" = Table.ExpandTableColumn(#"Merged Queries", "OrderFact", {"order_division_code"}, {"OrderFact.order_division_code"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded OrderFact",{{"OrderFact.order_division_code", "division_code"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each [tlb_ordtlb_check_date] >= #datetime(2024, 1, 1, 0, 0, 0)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"tlb_ordtlb_check_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,451 @@
+table LoadFactProRev
+	excludeFromModelRefresh
+	lineageTag: 3c6461a5-c591-4fa7-8f28-d8b6569a6f21
+
+	column load_origin_area_code
+		dataType: string
+		lineageTag: 65c86881-48a5-499a-bfb2-c1e70a695913
+		summarizeBy: none
+		sourceColumn: load_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_load_number
+		dataType: string
+		lineageTag: 4cc51515-4337-440c-92cd-5bc460a01385
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch
+		dataType: string
+		lineageTag: eadacc2c-ab5c-4612-87a3-173508cec656
+		summarizeBy: none
+		sourceColumn: load_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_status
+		dataType: string
+		lineageTag: 196cf172-95db-4250-9583-f3e08197552e
+		summarizeBy: none
+		sourceColumn: load_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b036baaa-915b-45d8-8ac9-8004d5006fd5
+		summarizeBy: none
+		sourceColumn: load_dispatch_date
+
+		variation Variation
+			isDefault
+			relationship: aada95a6-1085-4717-bde6-485b3eb846d3
+			defaultHierarchy: LocalDateTable_5091d3e6-707e-4bc2-8fbf-d8a281238b9b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_time
+		dataType: string
+		lineageTag: f999dc8c-569c-46f8-94e0-d36dc11d2fe8
+		summarizeBy: none
+		sourceColumn: load_dispatch_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_number
+		dataType: string
+		lineageTag: 80b2dbe7-8416-43ee-badf-6f0be62962ef
+		summarizeBy: none
+		sourceColumn: load_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trailer_number
+		dataType: string
+		lineageTag: 86deb545-ed4b-4978-934d-b520f325be61
+		summarizeBy: none
+		sourceColumn: load_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_seat_1_driver_code
+		dataType: string
+		lineageTag: c41e5b05-19fa-4ea5-87f4-295210921123
+		summarizeBy: none
+		sourceColumn: load_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_seat_2_driver_code
+		dataType: string
+		lineageTag: 4bbf869a-92d1-478f-8535-8e4621568eb9
+		summarizeBy: none
+		sourceColumn: load_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_codes
+		dataType: string
+		lineageTag: 30b661b3-24ac-4658-ab70-a94d89f5e560
+		summarizeBy: none
+		sourceColumn: load_route_line_codes
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_status
+		dataType: string
+		lineageTag: 1b00ac8d-fb62-4a1a-8338-435e00d88389
+		summarizeBy: none
+		sourceColumn: load_route_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_dead_head
+		dataType: double
+		lineageTag: 1a609947-7d04-4a22-b982-d87c5c7488ce
+		summarizeBy: sum
+		sourceColumn: load_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_total
+		dataType: double
+		lineageTag: 896fcc1a-e929-4e7e-9acb-e1b961d14757
+		summarizeBy: sum
+		sourceColumn: load_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_loaded
+		dataType: double
+		lineageTag: eb2265ba-371a-47c3-a56c-55b6eaa2f812
+		summarizeBy: sum
+		sourceColumn: load_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_mile_flag
+		dataType: string
+		lineageTag: c978490a-783a-4e5b-a3b1-e03fe22bab61
+		summarizeBy: none
+		sourceColumn: load_mile_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_initials
+		dataType: string
+		lineageTag: da6f9243-7168-4ed2-8b50-417a00dba70f
+		summarizeBy: none
+		sourceColumn: load_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_destination_area_code
+		dataType: string
+		lineageTag: b442acd8-522c-482e-afb5-ff61ae400e33
+		summarizeBy: none
+		sourceColumn: load_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_extension
+		dataType: string
+		lineageTag: a62c8e5c-10aa-4e74-af4b-50dc74091dc6
+		summarizeBy: none
+		sourceColumn: load_route_line_extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc9a5b6e-e954-45a1-9ba5-ce6fd23eaa2e
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_date
+
+		variation Variation
+			isDefault
+			relationship: 4cfe705f-5933-47eb-85e5-37681c745b7b
+			defaultHierarchy: LocalDateTable_61e205eb-e99f-486c-a214-818dfcab7e54.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_time
+		dataType: string
+		lineageTag: f4c3540b-b237-4bf3-8f08-17feda90bc03
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_multiple_trailers_on_dispatch
+		dataType: string
+		lineageTag: ac6d33f5-07ac-499f-9996-cf0510673758
+		summarizeBy: none
+		sourceColumn: load_multiple_trailers_on_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_settlement_flag
+		dataType: string
+		lineageTag: 0efaf7e9-cef3-4924-bad2-add368847328
+		summarizeBy: none
+		sourceColumn: load_settlement_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_payroll_approval_flag
+		dataType: string
+		lineageTag: 36140d02-d118-4da7-97b5-ddc33d831d7e
+		summarizeBy: none
+		sourceColumn: load_payroll_approval_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dmol_code
+		dataType: string
+		lineageTag: b05dfbbd-3ca8-4ee6-822d-f68c35e85e1e
+		summarizeBy: none
+		sourceColumn: load_truck_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dm_code
+		dataType: string
+		lineageTag: 826513ca-e46c-4000-909b-74bf64efa128
+		summarizeBy: none
+		sourceColumn: load_truck_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dmol_code
+		dataType: string
+		lineageTag: ce284b6a-8370-4c4d-8d47-d68299ec478d
+		summarizeBy: none
+		sourceColumn: load_driver_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dm_code
+		dataType: string
+		lineageTag: 8204e706-025c-45ba-abcd-1639d0baf6cb
+		summarizeBy: none
+		sourceColumn: load_driver_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_flag
+		dataType: string
+		lineageTag: eb822c7a-31bd-4a97-8457-767a49e96aa5
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 21ee086d-1a23-4781-8de9-d3a33afa9458
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_date
+
+		variation Variation
+			isDefault
+			relationship: 617f4949-ab54-46c6-bc7b-d759b19735c2
+			defaultHierarchy: LocalDateTable_12c4831e-71dd-4f37-b8dd-470d5d8389d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_hub_start
+		dataType: double
+		lineageTag: 141e4934-e773-4a76-9c69-bbed32fef0f6
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_hub_end
+		dataType: double
+		lineageTag: 915eab69-eda4-4c54-8e45-b1031d2ea833
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_end
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_unit_division_code
+		dataType: string
+		lineageTag: 36355e98-5b2d-450f-9ca7-ff9af394fbc1
+		summarizeBy: none
+		sourceColumn: load_unit_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_team_status_code
+		dataType: string
+		lineageTag: 2f0888c5-4c55-43bc-beb6-371decec602c
+		summarizeBy: none
+		sourceColumn: load_team_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trainer_team_code
+		dataType: string
+		lineageTag: d19f7605-d487-4f61-aa3f-835c7e7f1bf8
+		summarizeBy: none
+		sourceColumn: load_trainer_team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 54d67145-36ed-4fae-9529-6da57467b14b
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_business_unit_code
+		dataType: string
+		lineageTag: 6031b0e8-d385-4a45-9aba-0abbb7499ba5
+		summarizeBy: none
+		sourceColumn: load_business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column miles_indicator
+		dataType: int64
+		formatString: 0
+		lineageTag: da6a8cd3-39af-434e-afe2-e9e2d7bba5a7
+		summarizeBy: sum
+		sourceColumn: miles_indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalMilesPerLoad
+		dataType: double
+		lineageTag: df6841b0-fcf4-43b6-b025-5c9793abfc0c
+		summarizeBy: sum
+		sourceColumn: TotalMilesPerLoad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DispatchCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 457e0624-c275-4ba1-8a2c-b8b73e839034
+		summarizeBy: sum
+		sourceColumn: DispatchCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column PercentMiles
+		dataType: double
+		lineageTag: a70f622f-8dec-4351-8007-c490af88847f
+		summarizeBy: sum
+		sourceColumn: PercentMiles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PercentMilesDecimal
+		dataType: double
+		lineageTag: dc00bb25-d8c0-430d-825c-364b7548ecaf
+		summarizeBy: sum
+		sourceColumn: PercentMilesDecimal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BillingAmount
+		dataType: double
+		lineageTag: a2b0c620-bb14-4d44-b7fd-84ba062d04c6
+		summarizeBy: sum
+		sourceColumn: BillingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderRevenueEstimation
+		dataType: double
+		lineageTag: 37176a68-a6a8-496d-82bd-503828026778
+		summarizeBy: sum
+		sourceColumn: OrderRevenueEstimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderLoadedCallDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 07c41576-372d-4f79-ba09-f8dfb3507c9d
+		summarizeBy: none
+		sourceColumn: OrderLoadedCallDate
+
+		variation Variation
+			isDefault
+			relationship: 1d5e5e7b-8382-42de-bdbb-73393875e2b2
+			defaultHierarchy: LocalDateTable_1c9d105c-4b19-4de6-a22e-96ea38e7de1c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProratedRevenue
+		dataType: double
+		lineageTag: 3c5a4732-009b-49c9-863f-88bb0075f7f9
+		summarizeBy: sum
+		sourceColumn: ProratedRevenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LoadedCallContactDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 72541d97-1b64-44a6-af06-dab3fbd76a25
+		summarizeBy: none
+		sourceColumn: LoadedCallContactDate
+
+		variation Variation
+			isDefault
+			relationship: e9a2029d-885b-42ff-b25e-6ca732959bd7
+			defaultHierarchy: LocalDateTable_23d8d856-12e9-4688-8e43-99a4107b3fc8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LoadFactProRev = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_load_prorated_revenue]#(lf)WHERE load_dispatch_date >= '2024-01-01';"]),
+				    #"Merged Queries" = Table.NestedJoin(Source, {"load_load_number"}, #"OrderLoadedCallDateLkp", {"loaded_call_load_number"}, "OrderLoadedCallDateLkp", JoinKind.LeftOuter),
+				    #"Expanded OrderLoadedCallDateLkp" = Table.ExpandTableColumn(#"Merged Queries", "OrderLoadedCallDateLkp", {"loaded_call_contact_date"}, {"OrderLoadedCallDateLkp.loaded_call_contact_date"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded OrderLoadedCallDateLkp",{{"OrderLoadedCallDateLkp.loaded_call_contact_date", "LoadedCallContactDate"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

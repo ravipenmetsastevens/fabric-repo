@@ -1,0 +1,290 @@
+table date_time
+	lineageTag: d2b841af-19b8-4d4a-8a9e-c2e7947d1946
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5cb2f479-71a8-4a5f-9c4b-44fda4110e20
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: fbb58ca5-3c1c-48b7-b517-50bb3e5166f1
+			defaultHierarchy: LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthName
+		dataType: string
+		lineageTag: 6b958079-ae9c-4e8b-bc9f-61b760612aba
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: MonthNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: d2cec1ee-8802-48c3-93cc-bf7c9259222b
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearShort
+		dataType: string
+		lineageTag: 2d0fe2a0-70d3-4eee-9cac-1618b28eb6cd
+		summarizeBy: none
+		sourceColumn: YearShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 061f5898-dd28-43cf-a28d-5cce14cd2c50
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameShort
+		dataType: string
+		lineageTag: 3638b812-90d0-496b-8106-2fde04ed814a
+		summarizeBy: none
+		sourceColumn: MonthNameShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 20feaa4b-06a9-4f4e-9d65-938aae310e76
+		summarizeBy: sum
+		sourceColumn: QuarterNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterName
+		dataType: string
+		lineageTag: 9c2128bf-7056-4b1a-938e-c9ce3fda58d3
+		summarizeBy: none
+		sourceColumn: QuarterName
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 001da030-f668-44b6-8192-1c1685ab6edd
+		summarizeBy: sum
+		sourceColumn: WeekNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISOWeekNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cdc06e1-5b0e-46f2-ad49-58e70c3c9a6e
+		summarizeBy: sum
+		sourceColumn: ISOWeekNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNum
+		dataType: int64
+		formatString: 0
+		lineageTag: d92e0371-353f-48ec-b4c8-8970db3b5c9d
+		summarizeBy: sum
+		sourceColumn: DayOfWeekNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekName
+		dataType: string
+		lineageTag: 11acbc8f-a26e-4376-8f1a-a5b278eeca76
+		summarizeBy: none
+		sourceColumn: DayOfWeekName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a036ceb-70fe-4610-8e18-0497feb575db
+		summarizeBy: sum
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f100b70-309f-486c-9fb3-4a8ec14cb517
+		summarizeBy: sum
+		sourceColumn: DayOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a2692c5-8678-4ea8-b75f-f3a40e85f5d4
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearShort
+		dataType: string
+		lineageTag: b3d7487a-b9e0-421d-bdaa-af7932cb939e
+		summarizeBy: none
+		sourceColumn: FiscalYearShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 73f96d40-bec6-4c42-9ab2-ee86aa46c79a
+		summarizeBy: sum
+		sourceColumn: FiscalQuarterNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterName
+		dataType: string
+		lineageTag: f7d38eb7-507b-4bd4-8595-72a8d81007a7
+		summarizeBy: none
+		sourceColumn: FiscalQuarterName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 961c408e-4f28-4e90-bcdf-b2066286ffce
+		summarizeBy: sum
+		sourceColumn: FiscalMonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthName
+		dataType: string
+		lineageTag: c8e98c4f-c490-4634-af42-9a4fd088040d
+		summarizeBy: none
+		sourceColumn: FiscalMonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsToday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1af3d53b-1044-41bf-9e0c-60fb07fef132
+		summarizeBy: none
+		sourceColumn: IsToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentMonth
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4890b7f7-382a-4fcf-ba58-16386e2e5f6f
+		summarizeBy: none
+		sourceColumn: IsCurrentMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentYear
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 72642dcb-ea1d-45fe-b1ca-4c9b7e758488
+		summarizeBy: none
+		sourceColumn: IsCurrentYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d82aed28-899f-400f-a873-f0a0c9a769a8
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentFiscalYear
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: da43c095-ad7b-49fb-aadf-61466a42f569
+		summarizeBy: none
+		sourceColumn: IsCurrentFiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition date_time = m
+		mode: import
+		source =
+				let
+				    /************  PARAMETERS  (edit these first)  ************/
+				    StartDate        = #date(2020, 1, 1),                 // first date you want
+				    EndDate          = Date.EndOfYear(DateTime.Date(DateTime.LocalNow())),
+				    FiscalStartMonth = 10                                 // e.g. 10 = October-based fiscal year
+				
+				    /************  GENERATE BASE DATE LIST  ************/
+				,   DayCount = Duration.Days(EndDate - StartDate) + 1
+				,   DateList = List.Dates(StartDate, DayCount , #duration(1,0,0,0))
+				,   Calendar = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"})
+				,   #"As Date" = Table.TransformColumnTypes(Calendar, {{"Date", type date}})
+				
+				    /************  STANDARD CALENDAR ATTRIBUTES  ************/
+				,   #"Add Year"           = Table.AddColumn(#"As Date",   "Year",              each Date.Year([Date]),               Int64.Type)
+				,   #"Add YearShort"      = Table.AddColumn(#"Add Year",  "YearShort",         each Text.End(Text.From([Year]),2),   type text)
+				,   #"Add MonthNum"       = Table.AddColumn(#"Add YearShort","MonthNum",       each Date.Month([Date]),              Int64.Type)
+				,   #"Add MonthName"      = Table.AddColumn(#"Add MonthNum","MonthName",       each Date.MonthName([Date]),          type text)
+				,   #"Add MonthNameShort" = Table.AddColumn(#"Add MonthName","MonthNameShort", each Text.Start([MonthName],3),       type text)
+				,   #"Add Quarter"        = Table.AddColumn(#"Add MonthNameShort","QuarterNum",each Date.QuarterOfYear([Date]),      Int64.Type)
+				,   #"Add QuarterName"    = Table.AddColumn(#"Add Quarter","QuarterName",      each "Q" & Text.From([QuarterNum]),   type text)
+				,   #"Add WeekNum"        = Table.AddColumn(#"Add QuarterName","WeekNum",      each Date.WeekOfYear([Date]),         Int64.Type)
+				,   #"Add ISOWeekNum"     = Table.AddColumn(#"Add WeekNum","ISOWeekNum",       each Date.WeekOfYear([Date],Day.Monday),Int64.Type)
+				,   #"Add DayOfWeekNum"   = Table.AddColumn(#"Add ISOWeekNum","DayOfWeekNum",  each Date.DayOfWeek([Date]),          Int64.Type)
+				,   #"Add DayOfWeekName"  = Table.AddColumn(#"Add DayOfWeekNum","DayOfWeekName",each Date.DayOfWeekName([Date]),      type text)
+				,   #"Add DayOfMonth"     = Table.AddColumn(#"Add DayOfWeekName","DayOfMonth", each Date.Day([Date]),                Int64.Type)
+				,   #"Add DayOfYear"      = Table.AddColumn(#"Add DayOfMonth","DayOfYear",     each Date.DayOfYear([Date]),          Int64.Type)
+				
+				    /************  FISCAL ATTRIBUTES  ************/
+				,   ShiftMonths           = FiscalStartMonth - 1          // months to shift to align fiscal periods
+				,   FiscalDate            = Table.AddColumn(#"Add DayOfYear","_Tmp", each Date.AddMonths([Date], -ShiftMonths), type date)
+				,   #"Fiscal Year"        = Table.AddColumn(FiscalDate, "FiscalYear",   each Date.Year([_Tmp]) , Int64.Type)
+				,   #"Fiscal YearShort"   = Table.AddColumn(#"Fiscal Year", "FiscalYearShort", each "FY" & Text.End(Text.From([FiscalYear]),2), type text)
+				,   #"Fiscal QuarterNum"  = Table.AddColumn(#"Fiscal YearShort","FiscalQuarterNum", each Date.QuarterOfYear([_Tmp]), Int64.Type)
+				,   #"Fiscal QuarterName" = Table.AddColumn(#"Fiscal QuarterNum","FiscalQuarterName", each "FQ" & Text.From([FiscalQuarterNum]), type text)
+				,   #"Fiscal MonthNum"    = Table.AddColumn(#"Fiscal QuarterName","FiscalMonthNum", each Date.Month([_Tmp]), Int64.Type)
+				,   #"Fiscal MonthName"   = Table.AddColumn(#"Fiscal MonthNum","FiscalMonthName", each Date.MonthName([_Tmp]), type text)
+				
+				    /************  FLAGS  ************/
+				,   Today            = DateTime.Date(DateTime.LocalNow())
+				,   CurrYear         = Date.Year(Today)
+				,   CurrFiscalYear   = (if Date.Month(Today) >= FiscalStartMonth then CurrYear+1 else CurrYear)
+				,   #"Add IsToday"   = Table.AddColumn(#"Fiscal MonthName","IsToday",    each [Date] = Today,                   type logical)
+				,   #"Add IsCurrentMonth" = Table.AddColumn(#"Add IsToday","IsCurrentMonth", each Date.Month([Date]) = Date.Month(Today) and Date.Year([Date]) = CurrYear, type logical)
+				,   #"Add IsCurrentYear"  = Table.AddColumn(#"Add IsCurrentMonth","IsCurrentYear", each [Year] = CurrYear,       type logical)
+				,   #"Add IsWeekend"      = Table.AddColumn(#"Add IsCurrentYear","IsWeekend", each [DayOfWeekNum] = 5 or [DayOfWeekNum] = 6, type logical)
+				,   #"Add IsCurrentFiscalYear" = Table.AddColumn(#"Add IsWeekend","IsCurrentFiscalYear", each [FiscalYear] = CurrFiscalYear, type logical)
+				
+				    /************  HOUSEKEEPING  ************/
+				,   #"Removed Columns" = Table.RemoveColumns(#"Add IsCurrentFiscalYear",{"_Tmp"})
+				,   #"Reordered"       = Table.ReorderColumns(#"Removed Columns", {"Date"})
+				in
+				    #"Reordered"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

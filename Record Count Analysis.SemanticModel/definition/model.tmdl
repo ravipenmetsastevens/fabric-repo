@@ -1,0 +1,30 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 11/3/2025 3:08:06 PM.
+queryGroup 'Query Errors - 11/3/2025 3:08:06 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["RecordCount_log","DateTime","DimObject"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
+
+ref table RecordCount_log
+ref table DateTableTemplate_7796607f-a786-489b-930a-6f107be68572
+ref table DateTime
+ref table LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2
+ref table LocalDateTable_932d974e-6950-4bb3-ada2-d5e790114ea8
+ref table LocalDateTable_bcd019b9-bfaa-4e1e-af74-317571b70e5d
+ref table DimObject
+ref table LocalDateTable_d1da581e-c509-4c88-8a7d-fe76976e9530
+
+ref cultureInfo en-US
+

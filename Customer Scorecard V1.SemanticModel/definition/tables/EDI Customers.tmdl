@@ -1,0 +1,117 @@
+table 'EDI Customers'
+	lineageTag: da376bfc-37fc-48d4-bbbb-2c9a1eeb2b93
+
+	column 'EDI Customer Code'
+		dataType: string
+		lineageTag: fcb4f5c0-cd99-41ab-83a8-ce9b7c737920
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_edi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EDI Type'
+		dataType: string
+		lineageTag: 85977ddd-4d89-433d-8908-1733c5d85b14
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_edi_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EDI Customer Name'
+		dataType: string
+		lineageTag: 16f100a9-1f54-4a30-9bfe-07215374717b
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_edi_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TDCC Version'
+		dataType: string
+		lineageTag: fbc8c259-abc6-46e1-8904-a6ab11000145
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_tdcc_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sender Code'
+		dataType: string
+		lineageTag: 321f818f-52d4-4037-a914-c7e162df31f2
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_sender_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Receiver Code'
+		dataType: string
+		lineageTag: 3e20273a-b261-4cc3-b00d-cfd91bac1ad4
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_receiver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column '990 Decline Response'
+		dataType: string
+		lineageTag: d2a8c958-c26e-4d12-b605-392764bc9551
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_990_decline_response
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transmit Flag'
+		dataType: string
+		lineageTag: 361046a6-b326-40c9-8fe2-2fc0743296e6
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_transmit_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipper Time Zone'
+		dataType: string
+		lineageTag: 3416d9b3-015a-4808-9b14-99d1dec232e5
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_shipper_time_zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Response Time'
+		dataType: int64
+		formatString: 0
+		lineageTag: 204092d4-1e6a-4df5-a980-5c1ab8f00340
+		summarizeBy: sum
+		sourceColumn: edi_cust_mast_reponse_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transmit To Party'
+		dataType: string
+		lineageTag: de1bed3e-c485-477f-b22a-582d0cc8c090
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_transmit_to_party
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Response Data Element'
+		dataType: string
+		lineageTag: fff82f22-c600-407f-a730-7aacba160ac5
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_data_element_for_reponse
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Auto Accept Flag'
+		dataType: string
+		lineageTag: 8747d49f-0bf6-44cf-9ba8-3b487b8e6fc4
+		summarizeBy: none
+		sourceColumn: edi_cust_mast_auto_accept_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'EDI Customers' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_ibmi_edi_customer_master = Source{[Schema="silver",Item="ibmi_edi_customer_master"]}[Data]
+				in
+				    silver_ibmi_edi_customer_master
+

@@ -1,0 +1,394 @@
+table RepairOrdersFact
+	lineageTag: 1527bb47-1adc-435d-85dd-a58293d5bd1e
+
+	column repair_order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c1d84fde-5004-4f59-ab33-1aef825a03d5
+		summarizeBy: none
+		sourceColumn: repair_order_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_group
+		dataType: string
+		lineageTag: 29403bd9-9b12-4754-bd9c-928282236029
+		summarizeBy: none
+		sourceColumn: ro_group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_vin
+		dataType: string
+		lineageTag: b52c0d61-f32d-487c-885a-1acf5f0dfd6b
+		summarizeBy: none
+		sourceColumn: ro_vin
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_unit_number
+		dataType: string
+		lineageTag: d3755e81-0fe2-408a-b0c9-b050bc25003e
+		summarizeBy: none
+		sourceColumn: ro_unit_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_unit_type
+		dataType: string
+		lineageTag: ad303bd9-2426-4041-865c-5ad4c2fab55f
+		summarizeBy: none
+		sourceColumn: ro_unit_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_vendor_name
+		dataType: string
+		lineageTag: 8d309f37-60be-4155-a5be-42c6c039a233
+		summarizeBy: none
+		sourceColumn: ro_vendor_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_status
+		dataType: string
+		lineageTag: e627ca32-f0f1-4de4-9381-023ef5e81fce
+		summarizeBy: none
+		sourceColumn: ro_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_created_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ed09fe21-767c-4548-9f63-083dc7305576
+		summarizeBy: none
+		sourceColumn: ro_created_datetime
+
+		variation Variation
+			isDefault
+			relationship: 5047b6ec-8259-4d2f-ad58-1c7af427fa2f
+			defaultHierarchy: LocalDateTable_741c2025-e506-49a5-8ebe-0196aaee6175.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_created_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 200dcc8f-42c3-49ee-8037-392a3a2d2ed3
+		summarizeBy: none
+		sourceColumn: ro_created_date
+
+		variation Variation
+			isDefault
+			relationship: 803cc820-4a80-47f3-8061-3d4ab02e2a81
+			defaultHierarchy: LocalDateTable_43a63df1-6ab0-442a-9c95-18c2b205c10f.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_started_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea5979bd-3d35-4238-ba92-54933d39c1f1
+		summarizeBy: none
+		sourceColumn: ro_started_datetime
+
+		variation Variation
+			isDefault
+			relationship: c616255b-927f-4363-ad74-c3e39d6cbeba
+			defaultHierarchy: LocalDateTable_496b5856-9238-4e7b-b65c-9ec150caac95.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_started_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 93db3f67-531b-4679-8506-2eae7cd0c4d9
+		summarizeBy: none
+		sourceColumn: ro_started_date
+
+		variation Variation
+			isDefault
+			relationship: d9ee6470-b301-4fa9-bcd8-274898e471a8
+			defaultHierarchy: LocalDateTable_0ce13594-ac33-47e4-a195-5e047d049a87.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_expected_finish_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 998e3a5c-b808-4831-a32a-0b089e153dcb
+		summarizeBy: none
+		sourceColumn: ro_expected_finish_datetime
+
+		variation Variation
+			isDefault
+			relationship: 63948a4e-c60f-4477-844a-bfffaa44212d
+			defaultHierarchy: LocalDateTable_194fc2fb-c5e6-4266-af49-dcbdce395b4b.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_expected_finish_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 87426cf3-87b3-4d8d-b537-90dd4a7638a0
+		summarizeBy: none
+		sourceColumn: ro_expected_finish_date
+
+		variation Variation
+			isDefault
+			relationship: 4669c525-fcfd-4d1b-8a60-dea0ec82a67d
+			defaultHierarchy: LocalDateTable_69774386-e2a3-400e-9ea5-8782d0e32a5a.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_finished_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a7153c7-a256-4c75-92a1-b08d1d1d395f
+		summarizeBy: none
+		sourceColumn: ro_finished_datetime
+
+		variation Variation
+			isDefault
+			relationship: 358cb9a5-3a74-4566-b3cf-cd71b08988ac
+			defaultHierarchy: LocalDateTable_c8c3151e-98b5-474f-9df0-fe2903f5057a.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_finished_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3ed8c0d-5911-4d7e-855d-88f1f0dc958d
+		summarizeBy: none
+		sourceColumn: ro_finished_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_invoiced_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 37e92ccf-7a1b-4bd3-94f3-a6df8b4c9938
+		summarizeBy: none
+		sourceColumn: ro_invoiced_datetime
+
+		variation Variation
+			isDefault
+			relationship: b5af42ef-1fc3-4f7e-81e8-a9837884d534
+			defaultHierarchy: LocalDateTable_8f184e26-73be-4722-bbe0-a553b417df28.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoiced_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 11bb6fc2-54ee-4fe2-8a48-3a06976ab8c4
+		summarizeBy: none
+		sourceColumn: ro_invoiced_date
+
+		variation Variation
+			isDefault
+			relationship: 96019ec1-7e64-4f2b-8734-843fa2781f81
+			defaultHierarchy: LocalDateTable_099b5260-10e5-4ea4-8130-ba1913ab36f4.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_invoice_paid_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2da5c17e-d3c3-4fa2-b9a2-b212745ed5f3
+		summarizeBy: none
+		sourceColumn: ro_invoice_paid_datetime
+
+		variation Variation
+			isDefault
+			relationship: f2743906-c0d3-4816-960b-15f595a5798f
+			defaultHierarchy: LocalDateTable_cc5fd3a2-3bef-4da4-b92e-e5a31eafa950.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoice_paid_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 12dcc0e3-85b6-4e81-855e-812cf7ddbf29
+		summarizeBy: none
+		sourceColumn: ro_invoice_paid_date
+
+		variation Variation
+			isDefault
+			relationship: baf3be0b-f53a-4ee6-87a2-96c2c66cb702
+			defaultHierarchy: LocalDateTable_f843e273-cdaf-48dd-8dec-d18f8a2f4596.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ro_additional_charges
+		dataType: double
+		lineageTag: b69006bb-e951-417b-8151-77e0f0ab27c5
+		summarizeBy: sum
+		sourceColumn: ro_additional_charges
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_tax_total
+		dataType: double
+		lineageTag: 282dd70f-00cf-484a-acc4-e6021b1bd851
+		summarizeBy: sum
+		sourceColumn: ro_tax_total
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_credit_amount
+		dataType: double
+		lineageTag: 9634173b-f662-4494-8b52-82b776fb616e
+		summarizeBy: sum
+		sourceColumn: ro_credit_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_estimate
+		dataType: double
+		lineageTag: f576b8f1-c5ec-4049-b39c-6f0b2df7b09f
+		summarizeBy: sum
+		sourceColumn: ro_estimate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_grand_total
+		dataType: double
+		lineageTag: bed559ac-315e-4328-bc83-b5e514540c27
+		summarizeBy: sum
+		sourceColumn: ro_grand_total
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_paid_amount
+		dataType: double
+		lineageTag: 8d58eae0-30be-46b3-9bcf-02429c390e52
+		summarizeBy: sum
+		sourceColumn: ro_paid_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_location_type
+		dataType: string
+		lineageTag: d29ab7e1-d0dc-4b8e-a41f-dafbaff9cb02
+		summarizeBy: none
+		sourceColumn: ro_location_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_open_closed
+		dataType: string
+		lineageTag: 5c06d5e7-14bb-4b18-ab51-ea24b09e8f4c
+		summarizeBy: none
+		sourceColumn: ro_open_closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_down_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 932ffba4-225f-43fd-aaaf-dc9a012457d8
+		summarizeBy: sum
+		sourceColumn: ro_down_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Down Days' =
+			IF('RepairOrdersFact'[ro_down_hours]>0
+			    , 'RepairOrdersFact'[ro_down_hours] / 24
+			    , BLANK())
+		lineageTag: 29e4397f-455d-44a2-96a2-7ccc97850b9c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition RepairOrdersFact = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_maint_activity = Source{[Schema="gold",Item="fact_maint_activity"]}[Data]
+				in
+				    gold_fact_maint_activity
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

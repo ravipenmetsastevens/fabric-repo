@@ -1,0 +1,209 @@
+table backup_vehicle_pings
+	lineageTag: 3b50edc2-e447-4dfa-bb97-9415a41cdb70
+
+	column vehicle_id
+		dataType: string
+		lineageTag: 897a6d21-2cc8-4281-9b9e-4d0fdb421198
+		summarizeBy: none
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column gps_epoch_raw
+		dataType: string
+		lineageTag: fc2407d0-ea90-4e4d-bb6e-b6dc52a28078
+		summarizeBy: none
+		sourceColumn: gps_epoch_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gps_timestamp_utc
+		dataType: string
+		lineageTag: 373792c7-ac1e-4d75-b8b5-dd736f3f8a6a
+		summarizeBy: none
+		sourceColumn: gps_timestamp_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrv_epoch_raw
+		dataType: string
+		lineageTag: cc2006b2-3d78-413b-be4a-ed47334ba68c
+		summarizeBy: none
+		sourceColumn: arrv_epoch_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrv_timestamp_utc
+		dataType: string
+		lineageTag: da1b8b9e-d0e6-4be2-aa30-64f9c4c0ce07
+		summarizeBy: none
+		sourceColumn: arrv_timestamp_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column msg_type_code
+		dataType: string
+		lineageTag: c80518f7-e9fb-4d26-a1e7-6ad2329a1d67
+		summarizeBy: none
+		sourceColumn: msg_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude_raw
+		dataType: string
+		lineageTag: d347dda4-d7ad-4007-8d97-2c96ab4407d4
+		summarizeBy: none
+		sourceColumn: latitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude_raw
+		dataType: string
+		lineageTag: 826740b0-7185-4b7a-83c5-6e6d54511960
+		summarizeBy: none
+		sourceColumn: longitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_distance_raw
+		dataType: string
+		lineageTag: 45b12cfc-455f-4718-9cf3-a118eccd2d2e
+		summarizeBy: none
+		sourceColumn: trip_distance_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_deg_raw
+		dataType: string
+		lineageTag: cb8a8252-6400-497a-9c31-0bef0f66470f
+		summarizeBy: none
+		sourceColumn: heading_deg_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_mph_raw
+		dataType: string
+		lineageTag: c8001555-fdeb-4b20-97bf-9d8516f999a5
+		summarizeBy: none
+		sourceColumn: speed_mph_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_miles_raw
+		dataType: string
+		lineageTag: 32a3c3c8-0a23-489d-89f5-2303be318620
+		summarizeBy: none
+		sourceColumn: odometer_miles_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gm_hours_raw
+		dataType: string
+		lineageTag: c0d8f016-7f57-488b-95f8-9060b5e8acaf
+		summarizeBy: none
+		sourceColumn: gm_hours_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column bt_input_raw
+		dataType: string
+		lineageTag: a3d0cdfa-1043-4a78-a87d-79bc3374e614
+		summarizeBy: none
+		sourceColumn: bt_input_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column next_stop_lat_raw
+		dataType: string
+		lineageTag: 32e76891-a42d-41f0-b278-287f1cae62b8
+		summarizeBy: none
+		sourceColumn: next_stop_lat_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column next_stop_lon_raw
+		dataType: string
+		lineageTag: 2be8a6a2-67c2-4b08-a759-c7eb121596b8
+		summarizeBy: none
+		sourceColumn: next_stop_lon_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_stop_lat_raw
+		dataType: string
+		lineageTag: 4adca2c2-51af-4d2e-aad7-61c52f129960
+		summarizeBy: none
+		sourceColumn: last_stop_lat_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_stop_lon_raw
+		dataType: string
+		lineageTag: 1e84ac91-6c5a-494d-8ba6-f74fe3834454
+		summarizeBy: none
+		sourceColumn: last_stop_lon_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_source
+		dataType: string
+		lineageTag: 8909daf6-f603-4176-a63c-df80e71d52ad
+		summarizeBy: none
+		sourceColumn: position_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column sio_type
+		dataType: string
+		lineageTag: 01046f71-9e60-4025-827f-8169b9ed08e3
+		summarizeBy: none
+		sourceColumn: sio_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignition_status_raw
+		dataType: string
+		lineageTag: c45b6cae-d851-4bf9-99f7-8eb16c90eb51
+		summarizeBy: none
+		sourceColumn: ignition_status_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobile_activity_raw
+		dataType: string
+		lineageTag: d9c0bab7-f5bb-4c51-b443-83b23a6e3251
+		summarizeBy: none
+		sourceColumn: mobile_activity_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobile_machine_code_raw
+		dataType: string
+		lineageTag: aa66d576-e9bf-464c-ab9c-4c48b6b8dec6
+		summarizeBy: none
+		sourceColumn: mobile_machine_code_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column protocol_version_raw
+		dataType: string
+		lineageTag: b4cb1b76-5301-42b8-be53-6ff769ae8ecc
+		summarizeBy: none
+		sourceColumn: protocol_version_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition backup_vehicle_pings = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_backup_vehicle_pings = data_central_wh{[Schema="silver",Item="plsc_backup_vehicle_pings"]}[Data]
+				in
+				    silver_plsc_backup_vehicle_pings
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

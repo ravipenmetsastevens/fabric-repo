@@ -1,0 +1,281 @@
+table AccidentDetails
+	lineageTag: 67b39a31-bb87-4eba-99d6-6bc4f55c81c7
+
+	measure TotalAccidents = DISTINCTCOUNT ( AccidentDetails[claim_mast_claim_number] )
+		formatString: 0
+		lineageTag: 75f280f7-f146-4803-ab35-35b551b28766
+
+	measure TotalReserveCostsofAccidents = sum(AccidentDetails[reserve_ttl_reserve_total_amount])
+		lineageTag: bbaf9932-b269-4813-be45-3b10ea917aa6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalMiles = sum(Utlfile[utlfile_miles_adj_hub])
+		lineageTag: c3f767d1-ffe7-44fa-b7f9-f9ea8d1aa348
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'On-Time-Pickup Percentage' = ```
+			
+			1-
+			DIVIDE(
+			    SUM ( StopOff[OnTimePickupLateCount] ),
+			    CALCULATE (
+			        COUNTROWS ( StopOff ),
+			        StopOff[stopoff_stop_type] = "Pickup"
+			    )
+			)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1fe61c90-c86f-49f6-acb8-5323c613a8cb
+
+	measure 'On-Time-Delivery Percentage' = ```
+			
+			1-
+			DIVIDE(
+			    SUM ( StopOff[OnTimeDeliveryLateCount] ),
+			    CALCULATE (
+			        COUNTROWS ( StopOff ),
+			        StopOff[stopoff_stop_type] = "Delivery"
+			    )
+			)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e903f226-f7e5-4dcf-a84a-4580499ada41
+
+	measure TotalPay = sum(EarningsHistory[earnings_history_gross_amount]) + sum(SetRevHistory[set_rev_hist_revenue_amount])
+		lineageTag: 0191199c-8aee-497a-b30e-6c8f23aabada
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Wage Rate per Revenue Mile' = ```
+			
+			DIVIDE ( [TotalPay], [TotalMiles], 0 )
+			
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 18b8f307-1371-4005-9dfe-051be5bac91c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure APM = [TotalAccidents]/[TotalMiles]*1000000
+		formatString: 0
+		lineageTag: 1e359434-6735-4eac-92cd-4cdc0bc722f3
+
+	column claim_mast_record_code
+		dataType: double
+		lineageTag: 728addb6-612e-4798-be28-34885019bbbf
+		summarizeBy: sum
+		sourceColumn: claim_mast_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_claim_number
+		dataType: string
+		lineageTag: c3dc7170-0599-4adf-80ea-d6a5340a97b5
+		summarizeBy: none
+		sourceColumn: claim_mast_claim_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 762ece26-53f8-4e7c-b4fd-3e3273206f96
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column claim_mast_occurance_datetime
+		dataType: dateTime
+		formatString: m/d/yyyy h:nn:ss AM/PM
+		lineageTag: d6e4baa9-3542-4ad0-b38d-c81b5929e19d
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_datetime
+
+		variation Variation
+			isDefault
+			relationship: a4807a32-b767-4d79-a508-f53326b40601
+			defaultHierarchy: LocalDateTable_7330828b-ef05-45a3-bd05-6ca9b3dd3645.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column claim_mast_truck_number
+		dataType: string
+		lineageTag: 646bb74c-57c2-4714-8f13-54775ed83a72
+		summarizeBy: none
+		sourceColumn: claim_mast_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_driver_code
+		dataType: string
+		lineageTag: f7e99ccd-9207-4d5d-95c2-c1f415a3cded
+		summarizeBy: none
+		sourceColumn: involved_drv_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_dm_code
+		dataType: string
+		lineageTag: a76142fb-4396-4ac0-8724-2048ed4e01d9
+		summarizeBy: none
+		sourceColumn: involved_drv_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_load_number
+		dataType: string
+		lineageTag: 316c4776-ca21-4600-9a90-377d1dfd70fa
+		summarizeBy: none
+		sourceColumn: order_policy_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_dispatch
+		dataType: int64
+		formatString: 0
+		lineageTag: b3b0a385-89db-469e-ae51-fb50f46e9a49
+		summarizeBy: sum
+		sourceColumn: order_policy_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_description
+		dataType: string
+		lineageTag: c03bb95b-b2ad-4e7d-9848-82c34a027777
+		summarizeBy: none
+		sourceColumn: accident_desc_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_accident_or_incident
+		dataType: string
+		lineageTag: 5bad610e-d925-4f58-9674-5b068a6d0ddc
+		summarizeBy: none
+		sourceColumn: is_accident_or_incident
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_dot_reportable
+		dataType: string
+		lineageTag: 877f9004-9d3c-4c17-8f19-c965eb002c1f
+		summarizeBy: none
+		sourceColumn: is_dot_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_preventable
+		dataType: string
+		lineageTag: 1a791a93-3959-4f24-96a3-a5a8e3267cc4
+		summarizeBy: none
+		sourceColumn: is_preventable
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dm_code
+		dataType: string
+		lineageTag: 03bb07ce-6915-4f94-b90f-e5471ca2e876
+		summarizeBy: none
+		sourceColumn: trans_mast_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dmol_code
+		dataType: string
+		lineageTag: a66a8900-8551-4e5e-8514-e603e7947fd5
+		summarizeBy: none
+		sourceColumn: trans_mast_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_description
+		dataType: string
+		lineageTag: 84a1890f-1d00-4042-9d5f-832cfa019677
+		summarizeBy: none
+		sourceColumn: accident_type_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_category
+		dataType: string
+		lineageTag: a25bfd3d-c400-48f2-9f3f-7528ba9e9a10
+		summarizeBy: none
+		sourceColumn: accident_type_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_reserve_total_amount
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e0e09118-deb5-40db-86aa-e321e84b0b4b
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_reserve_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column reserve_ttl_paid_loss_total_amount
+		dataType: double
+		lineageTag: 8a4e68f0-1591-4989-8881-baa0e7a40136
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_loss_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_paid_expense_total_amount
+		dataType: double
+		lineageTag: b77b93cb-4c68-4a35-925f-e1523d5e9905
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_expense_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_recovered_total_amount
+		dataType: double
+		lineageTag: f3e08518-13f4-4118-852e-a6307b3f6ca0
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_recovered_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DriverMaster.drv_code'
+		dataType: string
+		lineageTag: 815371c0-6c09-4c79-a324-928179d74136
+		summarizeBy: none
+		sourceColumn: DriverMaster.drv_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AccidentDetails = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="gold",Item="vw_fact_risk_preventable_accident_details"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(silver_plsc_asset_master, {"involved_drv_driver_code"}, DriverMaster, {"drv_code"}, "DriverMaster", JoinKind.Inner),
+				    #"Expanded DriverMaster" = Table.ExpandTableColumn(#"Merged Queries", "DriverMaster", {"drv_code"}, {"DriverMaster.drv_code"})
+				in
+				    #"Expanded DriverMaster"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

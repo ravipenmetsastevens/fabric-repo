@@ -1,0 +1,449 @@
+table Calendar
+	lineageTag: 1ec76b1c-75c6-45fa-a71e-9585bef0d788
+
+	column Date
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: d908cb42-a2d3-4344-a6cd-f0f8354932a4
+		summarizeBy: none
+		sourceColumn: date_key_pk
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Julian Date'
+		dataType: int64
+		formatString: 0
+		lineageTag: 01e33fc2-9442-4b4d-bb08-b5e009a6510b
+		summarizeBy: sum
+		sourceColumn: date_julian
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DB2 Julian Date'
+		dataType: int64
+		formatString: 0
+		lineageTag: 42d1f347-7a02-4a8c-b17c-026e4436ed5e
+		summarizeBy: sum
+		sourceColumn: date_db2_julian
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Ordinal'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05e66acd-3b80-4305-bde6-c53178a9285c
+		summarizeBy: sum
+		sourceColumn: date_ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: ecd127de-cf24-4001-9340-688642703b15
+		summarizeBy: sum
+		sourceColumn: the_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Suffix'
+		dataType: string
+		lineageTag: 6822362a-6cde-4d9b-8413-5e2d6c0e7486
+		summarizeBy: none
+		sourceColumn: the_day_suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: 925526c7-3c81-4a41-95e1-dc430480f898
+		summarizeBy: none
+		sourceColumn: the_day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 41803f48-7eae-443e-84a7-813ad0772528
+		summarizeBy: sum
+		sourceColumn: the_day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week in Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 52e8c393-bd7d-4086-b490-f60bc21bcb25
+		summarizeBy: sum
+		sourceColumn: the_day_of_week_in_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0441aec4-d084-4c38-a282-1602ac73b7a9
+		summarizeBy: sum
+		sourceColumn: the_day_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Weekend'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f7c8a9e1-e8a2-447b-9ccb-e0373c4bc8f2
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f6635a7-7445-4df6-a097-a0fb438cb7fc
+		summarizeBy: sum
+		sourceColumn: the_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e4a7e21-f3a5-4b7b-a980-eb4eacae8786
+		summarizeBy: sum
+		sourceColumn: the_iso_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 99259b00-1368-4b8f-aa1e-f16bb170a5fa
+		summarizeBy: none
+		sourceColumn: the_first_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bc3d01b8-c03a-46c3-ba8a-4fdb70919fde
+		summarizeBy: none
+		sourceColumn: the_last_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05a0afb8-39fb-487b-9c27-dfe9320ca5a8
+		summarizeBy: sum
+		sourceColumn: the_week_of_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a8d3578-3889-4805-9a2a-351a127fff00
+		summarizeBy: sum
+		sourceColumn: the_month_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 6da3c403-2c6e-43b0-8b41-368a3cc08396
+		summarizeBy: none
+		sourceColumn: the_month_name
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9cd55374-ea61-4b75-9c20-c1198a9e9c3a
+		summarizeBy: none
+		sourceColumn: the_first_of_month_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dc22a498-e175-4db7-be2e-1aa655dbe5cb
+		summarizeBy: none
+		sourceColumn: the_last_of_month_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Next Month Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c872e368-9564-4ad6-98c2-f03cbc92278d
+		summarizeBy: none
+		sourceColumn: the_first_of_next_month_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Next Month End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: adc6984f-f536-4a11-86df-93f657d2ef30
+		summarizeBy: none
+		sourceColumn: the_last_of_next_month_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d938121-fd0e-4f45-a31b-f9f8fef24c23
+		summarizeBy: sum
+		sourceColumn: the_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: eb4f1ae8-e4e2-4721-8fbd-b2711ec0db4d
+		summarizeBy: none
+		sourceColumn: the_first_of_quarter_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quarter End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 58aae05c-c75a-47cc-a36d-d74ac4918b4f
+		summarizeBy: none
+		sourceColumn: the_last_of_quarter_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 64e63ea1-e144-4021-8186-8f2c54d0754c
+		summarizeBy: sum
+		sourceColumn: the_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: c9d8af0d-7d19-4beb-9bbd-a801df191ca2
+		summarizeBy: sum
+		sourceColumn: the_iso_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2616953f-0923-49bf-ae1a-7c2ac6cef766
+		summarizeBy: none
+		sourceColumn: the_first_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Year End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 25f689ed-889c-4404-9664-2a3e9cd9840a
+		summarizeBy: none
+		sourceColumn: the_last_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Is Leap Year'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a30e1f40-3a34-45ee-9329-4f750fee2444
+		summarizeBy: none
+		sourceColumn: is_leap_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has 53 Weeks'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a206d3e9-048b-4993-b9c4-d2e995af363e
+		summarizeBy: none
+		sourceColumn: has_53_weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has 53 ISO Weeks'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 09e1de92-a79a-43c0-bd49-f676eb70149d
+		summarizeBy: none
+		sourceColumn: has_53_iso_weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 8b605de3-ac57-48b7-ab67-46eda5714148
+		summarizeBy: none
+		sourceColumn: mmyyyy
+
+		annotation SummarizationSetBy = Automatic
+
+	column MM/DD/YYYY
+		dataType: string
+		lineageTag: 3c81739d-48a2-40d7-a65d-a1fc52d161dd
+		summarizeBy: none
+		sourceColumn: mm_dd_yyyy
+
+		annotation SummarizationSetBy = Automatic
+
+	column DD/MM/YYYY
+		dataType: string
+		lineageTag: 29e84af6-6916-40a9-a46d-d8aeb8374545
+		summarizeBy: none
+		sourceColumn: dd_mm_yyyy
+
+		annotation SummarizationSetBy = Automatic
+
+	column YYYYMMDD
+		dataType: string
+		lineageTag: 0e17a0bd-1812-4a55-82dd-81f510ac42e8
+		summarizeBy: none
+		sourceColumn: yyyymmdd
+
+		annotation SummarizationSetBy = Automatic
+
+	column YYYY-MM-DD
+		dataType: string
+		lineageTag: b71d110c-8c17-4b3e-b06b-a97980789a2e
+		summarizeBy: none
+		sourceColumn: yyyy_mm_dd
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Letter' =
+			
+			SWITCH(
+			    MONTH(Calendar[Date]),
+			    1, "J",
+			    2, "F",
+			    3, "M",
+			    4, "A",
+			    5, "M" & UNICHAR(8201), // Second Occurrence
+			    6, "J" & UNICHAR(8202), // Second Occurrence
+			    7, "J" & UNICHAR(8201), // Third Occurrence
+			    8, "A" & UNICHAR(8201), // Second Occurrence
+			    9, "S",
+			    10, "O",
+			    11, "N",
+			    12, "D"
+			)
+		lineageTag: af841f4f-77cb-4600-9c4d-a87181d6f991
+		summarizeBy: none
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Last 4Weeks Excl Current' =
+			
+			VAR TodayDate         = TODAY()
+			VAR StartOfThisWeek   = TodayDate - WEEKDAY(TodayDate, 1) + 1    -- Sunday
+			VAR WindowStartDate   = StartOfThisWeek - 7 * 4
+			VAR WindowEndDate     = StartOfThisWeek - 1
+			RETURN IF ( Calendar[Date] >= WindowStartDate
+			        &&   Calendar[Date] <= WindowEndDate, "X" )
+		lineageTag: fcc3160c-a0ac-4592-a9bd-b2584c96e958
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Completed Month' =
+			
+			IF(
+			    'Calendar'[Date] <= EOMONTH(TODAY(), -1),
+			    "X",
+			    ""
+			)
+		lineageTag: d2f36b81-5c83-41c5-9b65-51aad22baafa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Week End Date' = ```
+			
+			VAR StartOfWeek = 
+			    VAR DayOfWeekNum = WEEKDAY(Calendar[Date], 2) -- Monday = 1, Sunday = 7
+			    VAR DaysToMonday = DayOfWeekNum - 1
+			    RETURN Calendar[Date] - DaysToMonday
+			VAR EndOfWeek = StartOfWeek + 6
+			RETURN EndOfWeek
+			```
+		formatString: m/d/yy
+		lineageTag: c9d34ed0-6fd7-446e-8f7f-8f3d39764363
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Is Last 2Years To Last Week' =
+			
+			VAR TodayDate         = TODAY()
+			VAR StartOfThisWeek   = TodayDate - WEEKDAY(TodayDate, 1) + 1    -- Sunday
+			VAR WindowStartDate   = DATE(2024,1,1)
+			VAR WindowEndDate     = StartOfThisWeek - 1
+			RETURN IF ( Calendar[Date] >= WindowStartDate
+			        &&   Calendar[Date] <= WindowEndDate, "X" )
+		lineageTag: 1b2207e1-8be0-4e46-9c2a-5e911aad0095
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_date = Source{[Schema="gold",Item="dim_date"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(gold_dim_date, each [date_key_pk] >= StartDate and [date_key_pk] <= EndDate)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

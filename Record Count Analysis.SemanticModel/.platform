@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Record Count Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c16b7c63-767d-816d-42dc-f9ba7d6267c5"
+  }
+}

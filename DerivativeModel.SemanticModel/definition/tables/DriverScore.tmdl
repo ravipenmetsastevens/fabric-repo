@@ -1,0 +1,131 @@
+table DriverScore
+	isHidden
+	lineageTag: bc33837b-6205-48e5-9ecd-670d78c76933
+	sourceLineageTag: 14f4ef3a-15f4-4dce-8fae-b7137e72e9da
+
+	column driver_id
+		dataType: string
+		isHidden
+		lineageTag: f85fe721-4af4-42b2-9b1c-8ff454c7751a
+		sourceLineageTag: d32d7941-92aa-4aa2-b00b-8c05d4defc01
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = User
+
+	column first_name
+		dataType: string
+		isHidden
+		lineageTag: 6c8c7ce9-99bf-4a41-8c61-d334fd1d95e0
+		sourceLineageTag: 600f26a1-26b1-4df7-be70-3767c34f4ada
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = User
+
+	column last_name
+		dataType: string
+		isHidden
+		lineageTag: c96de242-cd34-44f5-a88b-c42d83432414
+		sourceLineageTag: 0abdf68e-d8aa-4823-8cf1-e32cf232cbb8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = User
+
+	column driver_score
+		dataType: double
+		isHidden
+		lineageTag: f16f0766-8372-435f-80e8-cfafc2aa4ebd
+		sourceLineageTag: b3add3ba-ddf3-413b-8918-4c7ad3710935
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: driver_score
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_analyzed
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ca85078a-8725-4058-9633-7c6642e77202
+		sourceLineageTag: 5b46096c-9e00-4c82-b6d6-6fabb21bf83d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: minutes_analyzed
+
+		annotation SummarizationSetBy = User
+
+	column green_minutes_pct
+		dataType: double
+		isHidden
+		lineageTag: ee28ce68-adea-4a4b-b293-e5885a6b1eeb
+		sourceLineageTag: 3159b6d7-ee8a-4003-8b0a-cc6691e0f972
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: green_minutes_pct
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overspeeding_pct
+		dataType: double
+		isHidden
+		lineageTag: 28a5a011-bf56-4b36-8777-9db144c186fa
+		sourceLineageTag: 212fbbac-c28f-4a1e-a3d6-53a2e4554ce7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: overspeeding_pct
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column snapshot_date
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: 654dad09-2168-4161-b439-e09449b82fab
+		sourceLineageTag: 1872180d-94d1-4e6b-9d83-cd5f60133538
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		variation Variation
+			isDefault
+			relationship: 7af008db-b153-4173-ae4d-2f59eab61356
+			defaultHierarchy: LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column loaded_at_utc
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: 31bafc2a-0962-485b-8301-2db3508389df
+		sourceLineageTag: 2f28ccbc-4b33-4f13-931b-89c6ffeff7ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: loaded_at_utc
+
+		variation Variation
+			isDefault
+			relationship: ba616a68-94e6-428f-9783-ca589c5d6181
+			defaultHierarchy: LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	partition DriverScore = entity
+		mode: directQuery
+		source
+			entityName: DriverScore
+			expressionSource: 'DirectQuery to AS - Driver Scorecard'
+
+	annotation PBI_ResultType = Exception
+

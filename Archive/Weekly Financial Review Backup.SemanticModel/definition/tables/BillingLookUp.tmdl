@@ -1,0 +1,48 @@
+table BillingLookUp
+	lineageTag: 0142f327-dba3-40e9-9751-85018213d63c
+
+	column billing_load_number
+		dataType: string
+		lineageTag: 544661f6-d467-478d-9a43-cce92a6ceae3
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingAmount
+		dataType: double
+		lineageTag: 466f27f9-b52e-429f-9ac5-42b4456316b1
+		summarizeBy: sum
+		sourceColumn: BillingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition BillingLookUp = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [
+				                Query = "
+				SELECT *
+				FROM [data_central_wh].[gold].[vw_ibmi_billing_combined]
+				WHERE billing_billed_date >= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)
+				  AND billing_billed_date < DATEFROMPARTS(YEAR(GETDATE()) + 1, 1, 1)
+				"
+				            ]
+				        ),
+				    #"Reordered Columns" =
+				        Table.ReorderColumns(Source,{"billing_load_number", "billing_sequence_number", "billing_record_number", "billing_commodity_code", "is_deleted", "billing_commodity_description", "billing_piece_count", "billing_actual_quantity_count", "billing_billed_rate", "billing_billed_quantity_count", "billing_billed_amount", "billing_method_code", "billing_error_code", "billing_gl_account_number", "billing_billed_date"}),
+				    #"Grouped Rows" = Table.Group(#"Reordered Columns", {"billing_load_number"}, {{"BillingAmount", each List.Sum([billing_billed_amount]), type nullable number}})
+				in
+				    #"Grouped Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

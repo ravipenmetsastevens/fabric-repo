@@ -1,0 +1,40 @@
+table BusinessUnit
+	lineageTag: 8cb156f9-167c-4121-9be6-5aea48388b5c
+	sourceLineageTag: d43e22ad-f9f5-4714-8230-ad704c8e9b19
+
+	column business_unit_description
+		dataType: string
+		lineageTag: 729ba491-1bea-419f-89e1-bfc2610862ff
+		sourceLineageTag: 5c1d2198-2562-4b32-adc4-af1f3689981d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		annotation SummarizationSetBy = User
+
+	column business_unit_class
+		dataType: string
+		lineageTag: bdd5cf46-25b0-4b2a-96c8-dab475f74aea
+		sourceLineageTag: 81945aaf-27a7-45c1-bb5a-c2ee4a216bbe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		annotation SummarizationSetBy = User
+
+	column business_unit_code
+		dataType: string
+		lineageTag: 8ec62186-22c1-431f-a8f1-404749bb608c
+		sourceLineageTag: d0f0e6d1-2d62-4a6d-be58-b4f61db26de2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: business_unit_code
+
+		annotation SummarizationSetBy = User
+
+	partition BusinessUnit = entity
+		mode: directQuery
+		source
+			entityName: BusinessUnit
+			expressionSource: 'DirectQuery to AS - FinanceDashboard'
+

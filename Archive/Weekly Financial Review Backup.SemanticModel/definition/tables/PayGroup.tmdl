@@ -1,0 +1,197 @@
+table PayGroup
+	excludeFromModelRefresh
+	lineageTag: 011e7ed8-2e7d-4bc4-8169-0c371d3e92f1
+
+	column pay_class_code
+		dataType: string
+		lineageTag: 2609fc72-8845-4e3e-ab65-7857735c1b8b
+		summarizeBy: none
+		sourceColumn: pay_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pay_class_description
+		dataType: string
+		lineageTag: 465f3493-fe4b-4ec9-858f-96863f10e788
+		summarizeBy: none
+		sourceColumn: pay_class_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_bucket_code
+		dataType: double
+		lineageTag: 349fa6a1-67e3-40ce-82d9-8b0ad1b0c421
+		summarizeBy: sum
+		sourceColumn: payclass_bucket_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_income_taxable
+		dataType: string
+		lineageTag: 65d9c21a-a308-4e1d-8d03-0846edb8fa2f
+		summarizeBy: none
+		sourceColumn: is_income_taxable
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_expense_account_number
+		dataType: string
+		lineageTag: 9d858c1c-9e23-43d3-96fe-b774a761fad5
+		summarizeBy: none
+		sourceColumn: payclass_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_type_code
+		dataType: string
+		lineageTag: c3e22c68-c2b7-490b-bf94-801cdc52037b
+		summarizeBy: none
+		sourceColumn: paypo_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_category
+		dataType: string
+		lineageTag: 9c3c1a2f-b62d-44ce-8477-7a1644b4d225
+		summarizeBy: none
+		sourceColumn: paypo_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_description
+		dataType: string
+		lineageTag: 7c61e1ec-3e05-4f8c-89f4-284cd2200fed
+		summarizeBy: none
+		sourceColumn: paypo_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_pay_type
+		dataType: string
+		lineageTag: 05e3cf00-4cff-4ab7-a3d7-31ed6f39fe57
+		summarizeBy: none
+		sourceColumn: paypo_pay_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_credit_gl_account
+		dataType: string
+		lineageTag: a93d2cd1-4938-44d5-aa65-665bb9c6369a
+		summarizeBy: none
+		sourceColumn: paypo_credit_gl_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_divisions
+		dataType: string
+		lineageTag: 9323898f-910a-4de5-b90c-d3030213c354
+		summarizeBy: none
+		sourceColumn: paypo_divisions
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_max_limit_l2
+		dataType: double
+		lineageTag: bc901344-b60e-4de8-93ba-32a82eedc8d6
+		summarizeBy: sum
+		sourceColumn: paypo_max_limit_l2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_max_limit_l3
+		dataType: double
+		lineageTag: b0702161-3d8f-4bfb-9b0d-327cf21229e8
+		summarizeBy: sum
+		sourceColumn: paypo_max_limit_l3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_pay_rate
+		dataType: string
+		lineageTag: b3c02a00-b515-4ed5-89bc-dbaa21053429
+		summarizeBy: none
+		sourceColumn: paypo_pay_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_gl_account_number
+		dataType: string
+		lineageTag: 0174623c-c23e-4535-bb8f-fbcdfa80df12
+		summarizeBy: none
+		sourceColumn: paypo_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_normal_rate
+		dataType: double
+		lineageTag: 50a9c5bd-f8f4-4321-b85e-d634ee9d9aef
+		summarizeBy: sum
+		sourceColumn: paypo_normal_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_max_amount
+		dataType: double
+		lineageTag: 12833412-9937-4719-a5bb-e4d53fca89f8
+		summarizeBy: sum
+		sourceColumn: paypo_max_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_min_amount
+		dataType: double
+		lineageTag: 91a293cb-3507-4693-abaa-55666f3a2d81
+		summarizeBy: sum
+		sourceColumn: paypo_min_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column can_override_limit
+		dataType: string
+		lineageTag: 9dd6a0c6-6526-45d2-b567-0fd77ebc5339
+		summarizeBy: none
+		sourceColumn: can_override_limit
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_split_for_teams
+		dataType: string
+		lineageTag: 7bbb0650-8280-4587-ad9f-7163bddaf80c
+		summarizeBy: none
+		sourceColumn: is_split_for_teams
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_taxable
+		dataType: string
+		lineageTag: 74037a81-b277-42d1-94d8-0c52fd704f78
+		summarizeBy: none
+		sourceColumn: is_taxable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PayGroup = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_dim_pay];"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

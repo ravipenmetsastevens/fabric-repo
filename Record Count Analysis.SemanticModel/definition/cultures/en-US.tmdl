@@ -1,0 +1,2313 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "asset_master": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RecordCount_log"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "asset master": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AssetMaster": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "master": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date time": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DateTime": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.date.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date year": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date quarter": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.month_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "MonthName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.year_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "YearShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "YearShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.month_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "MonthNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.month_name_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "MonthNameShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month name short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNameShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "name short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.quarter_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "QuarterNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "QuarterNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.quarter_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "QuarterName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "QuarterName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.week_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "WeekNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "WeekNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.ISO_week_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "ISOWeekNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ISO week num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ISOWeekNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.day_of_week_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "DayOfWeekNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfWeekNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.day_of_week_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "DayOfWeekName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of week name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfWeekName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.day_of_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "DayOfMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfMonth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.day_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "DayOfYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DayOfYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.fiscal_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_time.fiscal_year_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalYearShort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal year short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalYearShort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.fiscal_quarter_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalQuarterNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal quarter num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalQuarterNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.fiscal_quarter_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalQuarterName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal quarter name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalQuarterName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.fiscal_month_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalMonthNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal month num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalMonthNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.fiscal_month_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "FiscalMonthName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal month name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalMonthName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_today": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsToday"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is today": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsToday": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_current_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsCurrentMonth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is current month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsCurrentMonth": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "current month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_current_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsCurrentYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is current year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsCurrentYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "current year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_weekend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsWeekend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is weekend": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsWeekend": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "weekend": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_current_fiscal_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsCurrentFiscalYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is current fiscal year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsCurrentFiscalYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "current fiscal year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_last_13_weeks_excl_curr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsLast13WeeksExclCurr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is last 13 weeks excl curr": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "is last 13 week excl curr": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "IsLast13WeeksExclCurr": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "date_time.is_last_yearto_last_week": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTime",
+			          "ConceptualProperty": "IsLast2YearstoLastWeek"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is last yearto last week": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsLastYeartoLastWeek": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "date_time_date_date_hierarchy_has_date_time_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_time.date.date_hierarchy"
+			          }
+			        },
+			        "date_time.date.day": {
+			          "Target": {
+			            "Entity": "date_time.date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time.date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "date_time.date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_days"
+			        }
+			      ]
+			    },
+			    "date_time_date_date_hierarchy_has_date_time_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_time.date.date_hierarchy"
+			          }
+			        },
+			        "date_time.date.month": {
+			          "Target": {
+			            "Entity": "date_time.date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time.date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "date_time.date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_months"
+			        }
+			      ]
+			    },
+			    "date_time_date_date_hierarchy_has_date_time_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_time.date.date_hierarchy"
+			          }
+			        },
+			        "date_time.date.quarter": {
+			          "Target": {
+			            "Entity": "date_time.date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time.date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "date_time.date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_quarters"
+			        }
+			      ]
+			    },
+			    "date_time_date_date_hierarchy_has_date_time_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_time.date.date_hierarchy"
+			          }
+			        },
+			        "date_time.date.year": {
+			          "Target": {
+			            "Entity": "date_time.date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time.date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "date_time.date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_years"
+			        }
+			      ]
+			    },
+			    "date_time_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time.date": {
+			          "Target": {
+			            "Entity": "date_time.date"
+			          }
+			        },
+			        "date_time.date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "date_time.date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time.date"
+			            },
+			            "Object": {
+			              "Role": "date_time.date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dates_have_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_last_yearto_last_week": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_last_yearto_last_week": {
+			          "Target": {
+			            "Entity": "date_time.is_last_yearto_last_week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_last_yearto_last_week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_last_yearto_last_weeks"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_last_13_weeks_excl_curr": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_last_13_weeks_excl_curr": {
+			          "Target": {
+			            "Entity": "date_time.is_last_13_weeks_excl_curr"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_last_13_weeks_excl_curr"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_last_13_weeks_excl_currs"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_current_fiscal_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_current_fiscal_year": {
+			          "Target": {
+			            "Entity": "date_time.is_current_fiscal_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_current_fiscal_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_current_fiscal_years"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_weekend": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_weekend": {
+			          "Target": {
+			            "Entity": "date_time.is_weekend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_weekend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_weekends"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_current_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_current_year": {
+			          "Target": {
+			            "Entity": "date_time.is_current_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_current_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_current_years"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_current_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_current_month": {
+			          "Target": {
+			            "Entity": "date_time.is_current_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_current_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_current_months"
+			        }
+			      ]
+			    },
+			    "date_time_has_is_today": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_today": {
+			          "Target": {
+			            "Entity": "date_time.is_today"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.is_today"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_is_todays"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_month_name": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_month_names"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_month_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_month_num": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_month_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_month_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_month_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_quarter_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_quarter_name": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_quarter_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_quarter_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_quarter_names"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_quarter_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_quarter_num": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_quarter_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_quarter_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_quarter_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_year_short": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_year_short": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_year_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_year_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_year_shorts"
+			        }
+			      ]
+			    },
+			    "date_time_has_fiscal_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.fiscal_year": {
+			          "Target": {
+			            "Entity": "date_time.fiscal_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.fiscal_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_fiscal_years"
+			        }
+			      ]
+			    },
+			    "date_time_has_day_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.day_of_year": {
+			          "Target": {
+			            "Entity": "date_time.day_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.day_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_day_of_year"
+			        }
+			      ]
+			    },
+			    "date_time_has_day_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.day_of_month": {
+			          "Target": {
+			            "Entity": "date_time.day_of_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.day_of_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_day_of_month"
+			        }
+			      ]
+			    },
+			    "date_time_has_day_of_week_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.day_of_week_name": {
+			          "Target": {
+			            "Entity": "date_time.day_of_week_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.day_of_week_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_day_of_week_name"
+			        }
+			      ]
+			    },
+			    "date_time_has_day_of_week_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.day_of_week_num": {
+			          "Target": {
+			            "Entity": "date_time.day_of_week_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.day_of_week_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_day_of_week_num"
+			        }
+			      ]
+			    },
+			    "date_time_has_ISO_week_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.ISO_week_num": {
+			          "Target": {
+			            "Entity": "date_time.ISO_week_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.ISO_week_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_ISO_week_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_week_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.week_num": {
+			          "Target": {
+			            "Entity": "date_time.week_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.week_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_week_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_quarter_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.quarter_name": {
+			          "Target": {
+			            "Entity": "date_time.quarter_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.quarter_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_quarter_names"
+			        }
+			      ]
+			    },
+			    "date_time_has_quarter_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.quarter_num": {
+			          "Target": {
+			            "Entity": "date_time.quarter_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.quarter_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_quarter_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_month_name_short": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.month_name_short": {
+			          "Target": {
+			            "Entity": "date_time.month_name_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.month_name_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_month_name_shorts"
+			        }
+			      ]
+			    },
+			    "date_time_has_month_num": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.month_num": {
+			          "Target": {
+			            "Entity": "date_time.month_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.month_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_month_nums"
+			        }
+			      ]
+			    },
+			    "date_time_has_year_short": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.year_short": {
+			          "Target": {
+			            "Entity": "date_time.year_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.year_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_year_shorts"
+			        }
+			      ]
+			    },
+			    "date_time_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.year": {
+			          "Target": {
+			            "Entity": "date_time.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_years"
+			        }
+			      ]
+			    },
+			    "date_time_has_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.month_name": {
+			          "Target": {
+			            "Entity": "date_time.month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_month_names"
+			        }
+			      ]
+			    },
+			    "date_time_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.date": {
+			          "Target": {
+			            "Entity": "date_time.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Object": {
+			              "Role": "date_time.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_times_have_dates"
+			        }
+			      ]
+			    },
+			    "asset_master_has_telematics_guid": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.telematics_guid": {
+			          "Target": {
+			            "Entity": "asset_master.telematics_guid"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.telematics_guid"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_telematics_guids"
+			        }
+			      ]
+			    },
+			    "asset_master_has_model": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.model": {
+			          "Target": {
+			            "Entity": "asset_master.model"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.model"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_models"
+			        }
+			      ]
+			    },
+			    "asset_master_has_make": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.make": {
+			          "Target": {
+			            "Entity": "asset_master.make"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.make"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_makes"
+			        }
+			      ]
+			    },
+			    "asset_master_has_terminal": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.terminal": {
+			          "Target": {
+			            "Entity": "asset_master.terminal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.terminal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_terminals"
+			        }
+			      ]
+			    },
+			    "asset_master_has_plate_state": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.plate_state": {
+			          "Target": {
+			            "Entity": "asset_master.plate_state"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.plate_state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_plate_states"
+			        }
+			      ]
+			    },
+			    "asset_master_has_license_plate": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.license_plate": {
+			          "Target": {
+			            "Entity": "asset_master.license_plate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.license_plate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_license_plates"
+			        }
+			      ]
+			    },
+			    "asset_master_has_vin": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.vin": {
+			          "Target": {
+			            "Entity": "asset_master.vin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.vin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_vin"
+			        }
+			      ]
+			    },
+			    "asset_master_has_unit_number": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.unit_number": {
+			          "Target": {
+			            "Entity": "asset_master.unit_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.unit_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_unit_numbers"
+			        }
+			      ]
+			    },
+			    "asset_master_has_asset_id": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.asset_id": {
+			          "Target": {
+			            "Entity": "asset_master.asset_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Object": {
+			              "Role": "asset_master.asset_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_have_asset_ids"
+			        }
+			      ]
+			    },
+			    "asset_master_in_plate_state": {
+			      "Binding": {
+			        "ConceptualEntity": "RecordCount_log"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "asset_master": {
+			          "Target": {
+			            "Entity": "asset_master"
+			          }
+			        },
+			        "asset_master.plate_state": {
+			          "Target": {
+			            "Entity": "asset_master.plate_state"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "asset_master.plate_state"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "asset_master"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "asset_master.plate_state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "asset_masters_are_in_plate_states"
+			        }
+			      ]
+			    },
+			    "date_time_is_weekend": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTime"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_time": {
+			          "Target": {
+			            "Entity": "date_time"
+			          }
+			        },
+			        "date_time.is_weekend": {
+			          "Target": {
+			            "Entity": "date_time.is_weekend"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "date_time.is_weekend"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "date_time"
+			            },
+			            "Adjectives": [
+			              {
+			                "weekend": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_date_times_are_weekend_date_times"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

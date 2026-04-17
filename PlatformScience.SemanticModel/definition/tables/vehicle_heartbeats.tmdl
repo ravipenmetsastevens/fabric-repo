@@ -1,0 +1,249 @@
+table vehicle_heartbeats
+	lineageTag: 6ce69841-143c-43a5-ae8b-30e2b4fa15d8
+
+	column plt_truck_id
+		dataType: string
+		lineageTag: cbcefed3-389f-4c1c-a1bc-734c23dd3e6b
+		summarizeBy: none
+		sourceColumn: plt_truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column heartbeat_id
+		dataType: string
+		lineageTag: c72adad2-db2c-4d2a-bcaf-4ddeb8c12b95
+		summarizeBy: none
+		sourceColumn: heartbeat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column msg_type
+		dataType: string
+		lineageTag: fcdb8e07-ca44-43a7-a71e-e70c5adf08e7
+		summarizeBy: none
+		sourceColumn: msg_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column recv_utc_raw
+		dataType: string
+		lineageTag: 7a0e10d8-9358-4a16-b7ec-354b696ac7e4
+		summarizeBy: none
+		sourceColumn: recv_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_utc_raw
+		dataType: string
+		lineageTag: 8c4bae82-aed9-4c2f-abf5-a84fb4936798
+		summarizeBy: none
+		sourceColumn: log_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_raw
+		dataType: string
+		lineageTag: d3ae2dd4-461f-4d38-985e-9ec21a58a3d6
+		summarizeBy: none
+		sourceColumn: speed_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_unit
+		dataType: string
+		lineageTag: bd4657f0-9013-46d9-a3f0-c675b2143b30
+		summarizeBy: none
+		sourceColumn: distance_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_cardinal
+		dataType: string
+		lineageTag: 38ad64b7-3f7b-4942-aa02-afb3ca3a0118
+		summarizeBy: none
+		sourceColumn: heading_cardinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: ba31e502-de53-4cf7-b519-5fe6663767ed
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 6af5414b-7c18-41fc-8650-10ebbfa49639
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 27e11891-62c5-4c08-b0cd-6f74c1c79c84
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_instant
+		dataType: string
+		lineageTag: 7bd04430-7628-4e9f-8060-73d2d8d92b6f
+		summarizeBy: none
+		sourceColumn: fuel_instant
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_total
+		dataType: string
+		lineageTag: 8ad81b6e-5b2e-4b88-9c45-aee0bf68dabf
+		summarizeBy: none
+		sourceColumn: fuel_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude_raw
+		dataType: string
+		lineageTag: 08ec68b7-7f26-4b6a-9469-c7be02ade069
+		summarizeBy: none
+		sourceColumn: latitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude_raw
+		dataType: string
+		lineageTag: c00c6494-84c9-44cd-a88f-816fca39dc98
+		summarizeBy: none
+		sourceColumn: longitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_desc
+		dataType: string
+		lineageTag: 624cfc9e-7b8c-48e2-b333-c9d7390e6c30
+		summarizeBy: none
+		sourceColumn: location_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_grade_raw
+		dataType: string
+		lineageTag: 279bc1c0-160f-493b-8961-73c0af00719c
+		summarizeBy: none
+		sourceColumn: road_grade_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column eng_hrs_j1939
+		dataType: string
+		lineageTag: 94ddd7b0-c867-4b6f-8628-c1e56809677e
+		summarizeBy: none
+		sourceColumn: eng_hrs_j1939
+
+		annotation SummarizationSetBy = Automatic
+
+	column windows_mask
+		dataType: string
+		lineageTag: ae1f633f-f952-4f62-89a2-29257d52b303
+		summarizeBy: none
+		sourceColumn: windows_mask
+
+		annotation SummarizationSetBy = Automatic
+
+	column acu_raw
+		dataType: string
+		lineageTag: 264f8961-cfe5-418d-8e5f-a8fd3f321db2
+		summarizeBy: none
+		sourceColumn: acu_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_count_raw
+		dataType: string
+		lineageTag: 082509f7-042f-4d18-885b-17de13b571c7
+		summarizeBy: none
+		sourceColumn: sat_count_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gps_fix_raw
+		dataType: string
+		lineageTag: 8b768bb9-6baf-4bc0-bd7d-f4770b6513d7
+		summarizeBy: none
+		sourceColumn: gps_fix_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column hdop_raw
+		dataType: string
+		lineageTag: 5b4c84fc-9c60-4e35-8b20-2191f625fced
+		summarizeBy: none
+		sourceColumn: hdop_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_raw
+		dataType: string
+		lineageTag: 8ab049ba-7b58-4b64-b7d3-ee14ac8808e3
+		summarizeBy: none
+		sourceColumn: odometer_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odo_j1939_raw
+		dataType: string
+		lineageTag: 77a7d36b-8e14-4ed8-98e0-a21495e1b2aa
+		summarizeBy: none
+		sourceColumn: odo_j1939_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_deg_raw
+		dataType: string
+		lineageTag: 8af9b2e9-05fd-4083-a897-425018d8a5bf
+		summarizeBy: none
+		sourceColumn: heading_deg_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignition_raw
+		dataType: string
+		lineageTag: 5d5ff002-97dc-4c09-94ec-a01e3f210c5d
+		summarizeBy: none
+		sourceColumn: ignition_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column rpm_raw
+		dataType: string
+		lineageTag: ca29d4eb-a4c7-4b99-afe4-51ac2b31e42a
+		summarizeBy: none
+		sourceColumn: rpm_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column eng_hrs_total
+		dataType: string
+		lineageTag: 2d86bc92-b545-4c9e-952a-4eed40aece33
+		summarizeBy: none
+		sourceColumn: eng_hrs_total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vehicle_heartbeats = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_vehicle_heartbeats = data_central_wh{[Schema="silver",Item="plsc_vehicle_heartbeats"]}[Data]
+				in
+				    silver_plsc_vehicle_heartbeats
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

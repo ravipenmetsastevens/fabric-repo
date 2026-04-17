@@ -1,0 +1,107 @@
+table 'Service Exceptions'
+	lineageTag: ace267d4-82d8-427f-b857-ac1e065f5c52
+
+	column 'Load Number'
+		dataType: string
+		lineageTag: 8ffda295-09c5-4823-9b9f-9df4e9136f3f
+		summarizeBy: none
+		sourceColumn: Load Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stop Number'
+		dataType: int64
+		lineageTag: 011a0f07-8af4-4b5f-a409-ca7c1ee68628
+		summarizeBy: sum
+		sourceColumn: Stop Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Created Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 064497eb-f24b-42b0-922b-5a5fbd9ca5bd
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Created Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: c344e99b-0239-4c45-b401-3e8f663d57e0
+		summarizeBy: none
+		sourceColumn: Created Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Exception Description'
+		dataType: string
+		lineageTag: 2e34c6ed-8d16-4aab-b853-7c5ec714d751
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Appointment Change Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 399b6d7a-ee21-45df-9356-596227939b38
+		summarizeBy: none
+		sourceColumn: Appt Change Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Appointment Change Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 50fb9d47-d2e7-48ad-9172-8c0c2183ead2
+		summarizeBy: none
+		sourceColumn: Appt Change Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Reason Code'
+		dataType: string
+		lineageTag: 595283cf-e149-4a3a-8ee2-eddc9511dd91
+		summarizeBy: none
+		sourceColumn: Reason Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Stop'
+		dataType: string
+		lineageTag: f94192da-db90-4ec3-9d5b-9c554bd23dbc
+		summarizeBy: none
+		sourceColumn: LoadStop
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Service Exceptions' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_ibmi_service_exceptions_edi = Source{[Schema="silver",Item="ibmi_service_exceptions_edi"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(silver_ibmi_service_exceptions_edi, each [se_changed_date] >= StartDate),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"se_edi_code", "se_record_number", "se_status_type", "se_audit_user_code", "se_stop_time_zone", "is_daylight_savings_time"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"se_load_number", "Load Number"}, {"se_stop_number", "Stop Number"}, {"se_create_date", "Created Date"}, {"se_create_time", "Created Time"}, {"se_remarks", "Description"}, {"se_changed_date", "Appt Change Date"}, {"se_changed_time", "Appt Change Time"}, {"se_reason_code", "Reason Code"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Stop Number", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "LoadStop", each [Load Number]&"-"&Number.ToText([Stop Number]))
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

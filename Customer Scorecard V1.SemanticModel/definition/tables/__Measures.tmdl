@@ -1,0 +1,629 @@
+table __Measures
+	lineageTag: d2f3dfaa-aa43-4306-a5f1-365d5568a8f0
+
+	measure 'Delivery Stop Count' = CALCULATE( COUNTA(Stops[Load Number]),FILTER(Stops,Stops[Stop Type] = "DELIVERY" && NOT(ISBLANK(Stops[Arrival Date])) ))
+		formatString: #,0
+		lineageTag: c133d620-7860-4d16-8590-aff3b55640d0
+
+	measure 'Pickup Stop Count' = CALCULATE( COUNTA(Stops[Load Number]),FILTER(Stops,Stops[Stop Type] = "PICKUP" && NOT(ISBLANK(Stops[Actual Arrival DateTime]))))
+		formatString: #,0
+		lineageTag: c58b53e8-d12c-4de6-afde-bee121489eea
+
+	measure 'On-Time Pickup % (Exception Adjusted)' =
+			
+			VAR Total = [Total Pickup Count Filtered]
+			VAR Late  = CALCULATE(SUM(Stops[Late Pickup Count Original]), Stops[Has Late Service Exception] <> 2)
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bba1708f-fe29-4eb2-9935-882e0ff731d3
+
+	measure 'On-Time Delivery % (Exception Adjusted)' = ```
+			
+			VAR Total = [Total Delivery Count Filtered]
+			VAR Late  = CALCULATE(SUM(Stops[Late Delivery Count Original]), Stops[Has Late Service Exception] <> 2)
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 7944a45c-fb52-4b01-843d-50478672a985
+
+	measure 'On-Time Delivery %' = 1- DIVIDE(SUM(Stops[Late Delivery Count]),[Total Delivery Count Filtered])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1b476832-1d76-471b-8077-f487ae047457
+
+	measure 'On-Time Pickup %' = ```
+			1- DIVIDE(SUM(Stops[Late Pickup Count]),[Total Pickup Count Filtered]) 
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a9e3b24e-d424-4182-b55c-6176144597f0
+
+	measure 'On-Time Pickup % (Exception Adjusted Day-Level)' =
+			
+			VAR Total = [Total Pickup Count Filtered]
+			VAR Late  = SUM(Stops[Late Pickup Count Original])
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 940eb0bd-7406-4102-b095-efcd7b6c9138
+
+	measure 'On-Time Delivery % (Original)' = ```
+			
+			VAR Total = [Delivery Stop Count]
+			VAR Late  = SUM(Stops[Late Delivery Count Original])
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 39d83a22-e95b-4220-a2ff-35325d123af4
+
+	measure 'Accepted Tender Count' = CALCULATE( COUNTA('EDI Processing History'[Customer Ship Number]),FILTER('EDI Processing History','EDI Processing History'[Action] = "ACCEPTED" ))
+		formatString: #,0
+		lineageTag: 4fce5ddc-f261-4a24-8b7b-2579971c285d
+
+	measure 'Rejected Tender Count' = CALCULATE( COUNTA('EDI Processing History'[Customer Ship Number]),FILTER('EDI Processing History','EDI Processing History'[Action] = "REJECTED" ))
+		formatString: #,0
+		lineageTag: 0c33e31a-5f54-425b-803f-56e85c1e656a
+
+	measure 'On-Time Pickup Goal' = ```
+			
+			IF(
+			    NOT(ISBLANK([OG OTP % Unscrubbed Day])),
+			    .9, 
+			    BLANK()
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ccea1c77-036e-4417-9502-0afd31044e24
+
+	measure 'On-Time Delivery Goal Value' = .9
+		lineageTag: 9ec828c3-df41-458a-98dc-78705889913f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OG OTP % Unscrubbed Day' =
+			
+			VAR Total = [Total Pickup Count Filtered]
+			VAR Late  = SUM(Stops[Late Pickup Count Original Day])
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+		formatString: 0%;-0%;0%
+		lineageTag: 27a8c8b1-435b-4ab8-afdf-40c91224908b
+
+	measure 'OTP % Scrubbed Day' =
+			
+			VAR Total = [Total Pickup Count Filtered]
+			VAR Late  = CALCULATE(SUM(Stops[Late Pickup Count Original Day]), Stops[Has Late Service Exception] <> 2)
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+		formatString: 0%;-0%;0%
+		lineageTag: 4c3d0c3f-1923-4347-812d-276117f957aa
+
+	measure 'On-Time Delivery % (Original Day-Level)' = ```
+			
+			VAR Total = [Delivery Stop Count]
+			VAR Late  = SUM(Stops[Late Delivery Count Original Day])
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+			
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 05d7a848-1b11-4235-a094-e8c7c8046f36
+
+	measure 'On-Time Delivery % (Exception Adjusted Day-Level)' = ```
+			
+			VAR Total = [Total Delivery Count Filtered]
+			VAR Late  = CALCULATE(SUM(Stops[Late Delivery Count Original Day]), Stops[Has Late Service Exception] <> 2)
+			RETURN
+			    DIVIDE(Total - Late, Total, 0)
+			
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 4988baac-643c-4bde-8ff9-4e0191de5a18
+
+	measure 'Load Count' = COUNT(Orders[Load Number])
+		formatString: #,0
+		lineageTag: 8619e463-2cce-4da7-8b67-3b442f083468
+
+	measure 'Tender Acceptance %' =
+			
+			VAR Total = [Accepted Tender Count] + [Rejected Tender Count]
+			VAR Reject  = [Rejected Tender Count]
+			RETURN
+			    DIVIDE(Total - Reject, Total, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a376d8b3-6676-4d49-ae7e-b98252717171
+
+	measure 'Measure by Pickup Date' = ```
+			
+			CALCULATE(
+			  SELECTEDMEASURE(), 
+			  USERELATIONSHIP(Calendar[Date], Orders[Late Pickup Date]))
+			```
+		formatString: m/d/yy
+		lineageTag: ece0934c-040b-4c1a-849b-95940be2b42c
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Load Count by Delivery Date' = ```
+			
+			CALCULATE(
+			  COUNT(Orders[Load Number]), 
+			  USERELATIONSHIP(Calendar[Date], Orders[Late Delivery Date])
+			)
+			```
+		formatString: 0
+		lineageTag: f1e68ee9-142a-408e-a172-ca339b1013cf
+
+	measure 'Is Customer Name Filtered' = INT(ISFILTERED('Bill-To Customers'[Customer Name]))
+		formatString: 0
+		lineageTag: db54ec84-8e64-4694-8754-b62cf807a74c
+
+	measure 'Selected Bill-To Customer Filters' = ```
+			
+			VAR MaxFilters = 3
+			RETURN
+			IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[City Code] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[City Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Bill-To Customers'[City Code] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Bill-To Customers'[City Code], ", " )
+			    VAR ___x = "dim_Customer_Billto[Customer City Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			
+			 & IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[Customer Name] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[Customer Name] ) 
+			    VAR ___d = CONCATENATEX ( ___f, 'Bill-To Customers'[Customer Name], ", " )
+			    VAR ___x = "𝐂𝐮𝐬𝐭𝐨𝐦𝐞𝐫 𝐍𝐚𝐦𝐞 (" & ___d & ") " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			) 
+			 & IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[Customer Code] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[Customer Code] ) 
+			    VAR ___d = CONCATENATEX ( ___f, 'Bill-To Customers'[Customer Code], ", " )
+			    VAR ___x = "𝐂𝐮𝐬𝐭𝐨𝐦𝐞𝐫 𝐂𝐨𝐝𝐞 (" & ___d & ") " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[State] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[State] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, 'Bill-To Customers'[State] )
+			    VAR ___d = CONCATENATEX ( ___t, 'Bill-To Customers'[State], ", " )
+			    VAR ___x = "dim_Customer_Billto[Customer State] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			```
+		lineageTag: 51f27735-d7d5-4cf2-a89e-8cbb80c85707
+
+	measure 'Selected Order Filters' = ```
+			
+			VAR MaxFilters = 3
+			RETURN
+			IF ( 
+			    ISFILTERED ( Orders[Billable Miles] ), 
+			    VAR ___f = FILTERS ( Orders[Billable Miles] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Billable Miles] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Billable Miles], ", " )
+			    VAR ___x = "fact_Order[Billable Miles] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Bill-To Customer Code] ), 
+			    VAR ___f = FILTERS ( Orders[Bill-To Customer Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Bill-To Customer Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Bill-To Customer Code], ", " )
+			    VAR ___x = "fact_Order[Billto Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Commodity Code] ), 
+			    VAR ___f = FILTERS ( Orders[Commodity Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Commodity Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Commodity Code], ", " )
+			    VAR ___x = "fact_Order[Commodity Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Commodity Description] ), 
+			    VAR ___f = FILTERS ( Orders[Commodity Description] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Commodity Description] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Commodity Description], ", " )
+			    VAR ___x = "fact_Order[Commodity Description] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Consignee Code] ), 
+			    VAR ___f = FILTERS ( Orders[Consignee Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Consignee Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Consignee Code], ", " )
+			    VAR ___x = "fact_Order[Consignee Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Customer Code] ), 
+			    VAR ___f = FILTERS ( Orders[Customer Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Customer Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Customer Code], ", " )
+			    VAR ___x = "fact_Order[Customer Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Destination City Code] ), 
+			    VAR ___f = FILTERS ( Orders[Destination City Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Destination City Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Destination City Code], ", " )
+			    VAR ___x = "fact_Order[Destination City COde] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Destination City] ), 
+			    VAR ___f = FILTERS ( Orders[Destination City] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Destination City] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Destination City], ", " )
+			    VAR ___x = "fact_Order[Destination City Short Name] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Destination State] ), 
+			    VAR ___f = FILTERS ( Orders[Destination State] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Destination State] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Destination State], ", " )
+			    VAR ___x = "fact_Order[Destination State] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Division Code] ), 
+			    VAR ___f = FILTERS ( Orders[Division Code] ) 
+			    VAR ___d = CONCATENATEX ( ___f, Orders[Division Code], ", " )
+			    VAR ___x = "𝐃𝐢𝐯𝐢𝐬𝐢𝐨𝐧 (" & ___d & ") " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Estimated Revenue] ), 
+			    VAR ___f = FILTERS ( Orders[Estimated Revenue] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Estimated Revenue] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Estimated Revenue], ", " )
+			    VAR ___x = "fact_Order[Estimated Revenue] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Lane] ), 
+			    VAR ___f = FILTERS ( Orders[Lane] ) 
+			    VAR ___d = CONCATENATEX ( ___f, Orders[Lane], ", " )
+			    VAR ___x = "𝐋𝐚𝐧𝐞 (" & ___d & ") " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Lane Code] ), 
+			    VAR ___f = FILTERS ( Orders[Lane Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Lane Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Lane Code], ", " )
+			    VAR ___x = "𝐋𝐚𝐧𝐞 = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Late Delivery Date] ), 
+			    VAR ___f = FILTERS ( Orders[Late Delivery Date] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Late Delivery Date] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Late Delivery Date], ", " )
+			    VAR ___x = "fact_Order[Late Delivery Date] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Late Delivery Time] ), 
+			    VAR ___f = FILTERS ( Orders[Late Delivery Time] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Late Delivery Time] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Late Delivery Time], ", " )
+			    VAR ___x = "fact_Order[Late Delivery Time] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Late Pickup Date] ), 
+			    VAR ___f = FILTERS ( Orders[Late Pickup Date] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Late Pickup Date] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Late Pickup Date], ", " )
+			    VAR ___x = "fact_Order[Late Pickup Date] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Late Pickup Time] ), 
+			    VAR ___f = FILTERS ( Orders[Late Pickup Time] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Late Pickup Time] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Late Pickup Time], ", " )
+			    VAR ___x = "fact_Order[Late Pickup Time] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Load Number] ), 
+			    VAR ___f = FILTERS ( Orders[Load Number] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Load Number] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Load Number], ", " )
+			    VAR ___x = "fact_Order[Load Number] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Load-At Customer Code] ), 
+			    VAR ___f = FILTERS ( Orders[Load-At Customer Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Load-At Customer Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Load-At Customer Code], ", " )
+			    VAR ___x = "fact_Order[Loadat Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Origin City Code] ), 
+			    VAR ___f = FILTERS ( Orders[Origin City Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Origin City Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Origin City Code], ", " )
+			    VAR ___x = "fact_Order[Origin City Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Origin City] ), 
+			    VAR ___f = FILTERS ( Orders[Origin City] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Origin City] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Origin City], ", " )
+			    VAR ___x = "fact_Order[Origin City Short Name] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Origin State] ), 
+			    VAR ___f = FILTERS ( Orders[Origin State] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Origin State] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Origin State], ", " )
+			    VAR ___x = "fact_Order[Origin State] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Ship Date] ), 
+			    VAR ___f = FILTERS ( Orders[Ship Date] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Ship Date] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Ship Date], ", " )
+			    VAR ___x = "fact_Order[Ship Date] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Ship Time] ), 
+			    VAR ___f = FILTERS ( Orders[Ship Time] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Ship Time] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Ship Time], ", " )
+			    VAR ___x = "fact_Order[Ship Time] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( Orders[Status Code] ), 
+			    VAR ___f = FILTERS ( Orders[Status Code] ) 
+			    VAR ___r = COUNTROWS ( ___f ) 
+			    VAR ___t = TOPN ( MaxFilters, ___f, Orders[Status Code] )
+			    VAR ___d = CONCATENATEX ( ___t, Orders[Status Code], ", " )
+			    VAR ___x = "fact_Order[Status Code] = " & ___d & IF(___r > MaxFilters, ", ... [" & ___r & " items selected]") & " " 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			```
+		lineageTag: 1c9e8133-84af-4887-8ec6-0768e1350878
+
+	measure 'On-Time Delivery Goal' = ```
+			
+			IF(
+			    NOT(ISBLANK([On-Time Delivery % (Original Day-Level)])),
+			    .95, 
+			    BLANK()
+			)
+			```
+		lineageTag: e7e2e856-14a6-47c1-afee-a101f8d80089
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Delivery Weight' = ```
+			
+			DIVIDE(
+			    [Total Delivery Count Filtered],
+			    CALCULATE(
+			        [Delivery Stop Count],
+			        ALLSELECTED('Bill-To Customers'[Customer Name])
+			    ),
+			    0
+			)
+			
+			```
+		lineageTag: 86b3b119-49bb-45de-a1a3-0bb495cfb605
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Weighted On-Time Delivery Score' =
+			
+			[On-Time Delivery % (Exception Adjusted)] * [Customer Delivery Weight]
+		lineageTag: 07fea478-2552-478e-b0bb-4094cd841b64
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Weighted On-Time Delivery Rank' =
+			
+			RANKX(
+			    ALLSELECTED('Bill-To Customers'[Customer Name]),
+			    [Customer Weighted On-Time Delivery Score],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: e81131dc-a19a-446e-97a0-9b20d1a2187c
+
+	measure 'Customer Pickup Weight' =
+			
+			DIVIDE(
+			    [Total Pickup Count Filtered],
+			    CALCULATE(
+			        [Pickup Stop Count],
+			        ALLSELECTED('Bill-To Customers'[Customer Name])
+			    ),
+			    0
+			)
+		lineageTag: 05d48bd4-075a-431c-8b83-3885751bc63e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Weighted On-Time Pickup Score' =
+			
+			[On-Time Pickup %] * [Customer Pickup Weight]
+		lineageTag: 45a10f96-dea0-4d9c-82d0-ca01426b4695
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Weighted On-Time Pickup Rank' =
+			
+			RANKX(
+			    ALLSELECTED('Bill-To Customers'[Customer Name]),
+			    [Customer Weighted On-Time Pickup Score],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 24fb0f1e-165e-47e9-8274-ad63c659a120
+
+	measure 'Bottom Customer Weighted On-Time Delivery Rank' =
+			
+			RANKX(
+			    ALLSELECTED('Bill-To Customers'[Customer Name]),
+			    [Customer Weighted On-Time Delivery Score],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 0aa26fcd-2a68-4be8-bb42-a268c0fd0b5f
+
+	measure 'Customer Tender Acceptance Weight' =
+			
+			DIVIDE(
+			    [Load Count],
+			    CALCULATE(
+			        [Load Count],
+			        ALLSELECTED('Bill-To Customers'[Customer Name])
+			    ),
+			    0
+			)
+		lineageTag: 7ed8d395-e6ca-4abf-b206-9a4a132483e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Tender Acceptance Score' =
+			
+			[Tender Acceptance %] * [Customer Tender Acceptance Weight]
+		lineageTag: fbb0da11-9edf-439b-8da5-0890ae542c95
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Tender Acceptance Rank' =
+			
+			RANKX(
+			    ALLSELECTED('Bill-To Customers'[Customer Name]),
+			    [Customer Tender Acceptance Score],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 45885c75-e3de-4f0c-890a-c623a7c1be71
+
+	measure 'Selected Filters Summary' = ```
+			
+			VAR MaxFilters = 2
+			RETURN
+			  IF ( 
+			    ISFILTERED ( Divisions[Division Fleet Name] ), 
+			    VAR ___f = FILTERS ( Divisions[Division Fleet Name] ) 
+			    VAR ___d = CONCATENATEX ( ___f, Divisions[Division Fleet Name], ", " )
+			    VAR ___x = "𝐅𝐥𝐞𝐞𝐭 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10))
+			 & IF ( 
+			    ISFILTERED ( Divisions[Division Code] ), 
+			    VAR ___f = FILTERS ( Divisions[Division Code] ) 
+			    VAR ___d = CONCATENATEX ( ___f, Divisions[Division Code], ", " )
+			    VAR ___x = "𝐃𝐢𝐯𝐢𝐬𝐢𝐨𝐧 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[Customer Name] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[Customer Name] ) 
+			    VAR ___d = CONCATENATEX ( ___f, 'Bill-To Customers'[Customer Name], ", " )
+			    VAR ___x = "𝐂𝐮𝐬𝐭𝐨𝐦𝐞𝐫 𝐍𝐚𝐦𝐞 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			) 
+			 & IF ( 
+			    ISFILTERED ( 'Bill-To Customers'[Customer Code] ), 
+			    VAR ___f = FILTERS ( 'Bill-To Customers'[Customer Code] ) 
+			    VAR ___d = CONCATENATEX ( ___f, 'Bill-To Customers'[Customer Code], ", " )
+			    VAR ___x = "𝐂𝐮𝐬𝐭𝐨𝐦𝐞𝐫 𝐂𝐨𝐝𝐞 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			 & IF ( 
+			    ISFILTERED ( 'Load-At Customers'[Customer Name] ), 
+			    VAR ___f = FILTERS ( 'Load-At Customers'[Customer Name] ) 
+			    VAR ___d = CONCATENATEX ( ___f, 'Load-At Customers'[Customer Name], ", " )
+			    VAR ___x = "𝐅𝐚𝐜𝐢𝐥𝐢𝐭𝐲 𝐍𝐚𝐦𝐞 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			) 
+			 & IF ( 
+			    ISFILTERED ( Orders[Lane] ), 
+			    VAR ___f = FILTERS ( Orders[Lane] ) 
+			    VAR ___d = CONCATENATEX ( ___f, Orders[Lane], ", " )
+			    VAR ___x = "𝐋𝐚𝐧𝐞 - " & ___d 
+			    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+			)
+			
+			```
+		lineageTag: d971eb17-cf93-48da-ab82-c58edffd14a1
+
+	measure 'Total Delivery Count Filtered' = ```
+			CALCULATE( COUNTA(Stops[Load Number]),FILTER(Stops,Stops[Stop Type] = "DELIVERY" && NOT(ISBLANK(Stops[Arrival Date])) ))
+			
+			```
+		lineageTag: 0e621771-8d79-4f69-af12-b125fd4e3ce9
+
+	measure 'Total Pickup Count Filtered' = ```
+			CALCULATE( COUNTA(Stops[Load Number]),FILTER(Stops,Stops[Stop Type] = "PICKUP" && NOT(ISBLANK(Stops[Actual Arrival DateTime]))))
+			
+			```
+		lineageTag: 5b2c69ab-17d3-4cf7-b0b0-40344da5d92c
+
+	partition __Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

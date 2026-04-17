@@ -1,0 +1,44 @@
+relationship dd37d563-1d70-45ff-ac78-0550531fd160
+	fromColumn: BillingFact.billing_commodity_code
+	toColumn: BillingCategories.type_code
+
+relationship 5be02c87-ab4a-4de6-8942-9b2b2d0635e1
+	fromColumn: DriverMaster.drv_birth_date
+	toColumn: LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec.Date
+
+relationship 42084dd5-cbe2-4dd7-9c28-361050814efb
+	fromColumn: DriverMaster.drv_hire_date
+	toColumn: LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471.Date
+
+relationship 8a354866-8310-4bf9-b83d-f52814b91528
+	fromColumn: DriverMaster.drv_grad_date
+	toColumn: LocalDateTable_a41e322f-317b-47e8-800c-42bd52f34842.Date
+
+relationship 62b5a480-3320-485a-8a39-c1404044f8a9
+	fromColumn: DriverMaster.drv_home_hist_last_home_arrival_date
+	toColumn: LocalDateTable_b4718b78-2bb0-4263-b477-373ec24b7030.Date
+
+relationship ea620abc-939d-4d84-a33d-54b7f9144a92
+	fromColumn: DriverMaster.drv_home_last_arrival
+	toColumn: LocalDateTable_5a9f702e-aab3-4ae1-8651-bce1e989dbd3.Date
+
+relationship 6fd5c2b3-ce54-497c-b49d-bbd3c449ff52
+	fromColumn: DriverMaster.drv_home_last_departure
+	toColumn: LocalDateTable_f003ec72-f6f3-420a-b5ba-3eeb9c1477dc.Date
+
+relationship c51971f2-df99-4157-a78c-358ff9c076be
+	fromColumn: DriverAlerts.alert_gps_date
+	toColumn: LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7.Date
+
+relationship a4983cfd-bb53-48d6-ac70-661096b59de8
+	fromColumn: DriverAlerts.alert_driver_id
+	toColumn: DriverMaster.drv_code
+
+relationship ba616a68-94e6-428f-9783-ca589c5d6181
+	fromColumn: DriverScore.loaded_at_utc
+	toColumn: LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047.Date
+
+relationship 7af008db-b153-4173-ae4d-2f59eab61356
+	fromColumn: DriverScore.snapshot_date
+	toColumn: LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e.Date
+

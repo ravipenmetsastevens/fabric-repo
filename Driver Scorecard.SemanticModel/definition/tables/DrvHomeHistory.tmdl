@@ -1,0 +1,115 @@
+table DrvHomeHistory
+	lineageTag: 190b3c4b-8652-4b6f-bad2-f36375dad244
+
+	column drv_home_hist_driver_code
+		dataType: string
+		lineageTag: fca5887d-0272-41d0-875e-c58c40222066
+		summarizeBy: none
+		sourceColumn: drv_home_hist_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastArrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5a6dca58-0f2d-461c-ab47-a8200014019d
+		summarizeBy: none
+		sourceColumn: LastArrival
+
+		variation Variation
+			isDefault
+			relationship: 517c2e2f-d0bd-4169-9b7f-d592afbac74c
+			defaultHierarchy: LocalDateTable_d8355c7b-9f7a-426d-855a-3aa6706a676c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastDeparture
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 802b4536-59e2-4234-a594-2292ffdfd22f
+		summarizeBy: none
+		sourceColumn: LastDeparture
+
+		variation Variation
+			isDefault
+			relationship: fc051687-20da-4fa1-86ff-f9a26f476b41
+			defaultHierarchy: LocalDateTable_ce3c06c1-4ab7-4c7c-ab5b-52bf55ffb4b5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastHomeTimeDuration
+		dataType: double
+		lineageTag: 69a70b62-02a9-4e4b-a6d0-f0efccfd8003
+		summarizeBy: sum
+		sourceColumn: LastHomeTimeDuration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LastHomeTimeDays
+		dataType: int64
+		formatString: 0
+		lineageTag: dd66d485-2b8a-4357-8da2-ef428d65369b
+		summarizeBy: sum
+		sourceColumn: LastHomeTimeDays
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DrvHomeHistory = m
+		mode: import
+		source =
+				let
+				    // 1. Your existing query
+				    Source = Sql.Database(
+				        "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				        "data_central_wh",
+				        [Query="SELECT * FROM [data_central_wh].[silver].[ibmi_driver_home_history]"]
+				    ),
+				
+				    // 2. Ensure correct types
+				    Typed = Table.TransformColumnTypes(
+				        Source,
+				        {
+				            {"drv_home_hist_driver_code", type text},
+				            {"drv_home_hist_previous_arrival_date", type datetime},
+				            {"drv_home_hist_departure_date", type datetime}
+				        }
+				    ),
+				
+				    // 3. Group by driver and calculate MAX arrival and MAX departure
+				    Grouped = Table.Group(
+				        Typed,
+				        {"drv_home_hist_driver_code"},
+				        {
+				            {"LastArrival",
+				                each List.Max( List.RemoveNulls([drv_home_hist_previous_arrival_date]) ),
+				                type datetime},
+				            {"LastDeparture",
+				                each List.Max( List.RemoveNulls([drv_home_hist_departure_date]) ),
+				                type datetime}
+				        }
+				    ),
+				
+				    // 4. Add duration column (departure – arrival)
+				    WithDuration = Table.AddColumn(
+				        Grouped,
+				        "LastHomeTimeDuration",
+				        each [LastDeparture] - [LastArrival],
+				        type duration
+				    ),
+				
+				    // 5. Optional: add days for easier reporting
+				    WithDays = Table.AddColumn(
+				        WithDuration,
+				        "LastHomeTimeDays",
+				        each Duration.Days([LastHomeTimeDuration]),
+				        Int64.Type
+				    )
+				in
+				    WithDays
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,19 @@
+expression StartDate = #date(2024, 1, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 9ded4406-0f0d-4a89-827e-5e01e6981d90
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression OrderStartDate = #date(2023, 6, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 4ea31a13-6eeb-4d1a-90a4-6d5062efeb51
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression EndDate = #date(2026, 12, 31) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 2f0dd487-409c-4a2a-921f-2bbd5c0fbe9a
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,31 @@
+table BillingCategories
+	lineageTag: 48a9d944-04ad-42d2-91aa-619741209d1a
+	sourceLineageTag: 6f795390-d90e-442a-8924-ec7f1926fc27
+
+	column billing_category
+		dataType: string
+		lineageTag: e7906c8d-464f-4123-bf11-56f779c02a28
+		sourceLineageTag: 34d99e4e-ea5f-460c-b3dd-c54077582626
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_category
+
+		annotation SummarizationSetBy = User
+
+	column type_code
+		dataType: string
+		isNullable: false
+		lineageTag: 1658ee28-cecb-446c-83aa-3a87bf850f6b
+		sourceLineageTag: 8db18a6e-e16a-4dab-8fcf-031f4007aeeb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: type_code
+
+		annotation SummarizationSetBy = User
+
+	partition BillingCategories = entity
+		mode: directQuery
+		source
+			entityName: BillingCategories
+			expressionSource: 'DirectQuery to AS - FinanceDashboard'
+

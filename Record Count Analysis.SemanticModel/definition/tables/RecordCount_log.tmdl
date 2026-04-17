@@ -1,0 +1,202 @@
+table RecordCount_log
+	lineageTag: 1311bb86-6301-448b-a93a-a862a3647475
+
+	measure 'Latest Run Datetime' = ```
+			
+			CALCULATE (
+			    MAX ( RecordCount_log[run_datetime_utc] ),
+			    ALL ( RecordCount_log[run_datetime_utc] )
+			)
+			
+			```
+		formatString: General Date
+		lineageTag: 63e13e19-452d-42e8-80ca-4552565696cc
+
+	measure 'Last Run Date' =
+			
+			MAX ( RecordCount_log[RunDate] )
+		formatString: General Date
+		lineageTag: 797e2842-9b7a-4f8e-967d-9c882a5d0f3e
+
+	measure 'Latest Record Count' = ```
+			
+			VAR LatestDate =
+			    CALCULATE ( MAX ( RecordCount_log[log_date] ), ALL ( RecordCount_log ) )
+			RETURN
+			    CALCULATE ( SUM ( RecordCount_log[record_count] ), RecordCount_log[log_date] = LatestDate )
+			
+			```
+		lineageTag: a181c7c3-a1b1-4568-b3d7-5116a84d1f9e
+
+	measure 'Daily Change' = ```
+			
+			VAR LatestDate =
+			    CALCULATE ( MAX ( RecordCount_log[log_date] ), ALL ( RecordCount_log ) )
+			VAR PrevDate =
+			    LatestDate - 1
+			VAR Latest =
+			    CALCULATE ( SUM ( RecordCount_log[record_count] ), RecordCount_log[log_date] = LatestDate )
+			VAR Prev =
+			    CALCULATE ( SUM ( RecordCount_log[record_count] ), RecordCount_log[log_date] = PrevDate )
+			RETURN
+			    Latest - Prev
+			
+			```
+		formatString: 0
+		lineageTag: 1f3020c1-3e0a-456e-b28a-5ab88a25d274
+
+	measure 'Zero Count' = ```
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( RecordCount_log[ObjectKey] ),
+			    RecordCount_log[record_count] = 0
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 4a6e5c76-4f09-461f-b410-9a749033ef58
+
+	column run_id
+		dataType: string
+		lineageTag: f7ab3641-604f-4286-840d-3a892e917909
+		summarizeBy: none
+		sourceColumn: run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_schema
+		dataType: string
+		lineageTag: 32b2f523-27f8-4c5c-a586-6fff63843374
+		summarizeBy: none
+		sourceColumn: object_schema
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_name
+		dataType: string
+		lineageTag: ebe92289-60ae-4ddc-8de4-4f9d9271e4ce
+		summarizeBy: none
+		sourceColumn: object_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_datetime_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0e512a54-f063-47e2-a69b-aca1318823d1
+		summarizeBy: none
+		sourceColumn: run_datetime_utc
+
+		variation Variation
+			isDefault
+			relationship: cf0ed56e-3374-4c1a-ad1b-9ce55211f783
+			defaultHierarchy: LocalDateTable_bcd019b9-bfaa-4e1e-af74-317571b70e5d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b8a1271-8240-4102-b39c-f194829d7560
+		summarizeBy: sum
+		sourceColumn: record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_zero_count
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3ff28433-5b30-4a6d-8217-c96c0cac6ba3
+		summarizeBy: none
+		sourceColumn: is_zero_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_ms
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ca4dab3-5d14-4b27-a545-0615ee324ddb
+		summarizeBy: sum
+		sourceColumn: duration_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: de420ba2-0331-443d-8dbc-1633cbd320ef
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_message
+		dataType: string
+		lineageTag: 82940aaa-5a3d-46db-bf37-13e6185e124a
+		summarizeBy: none
+		sourceColumn: error_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column RunDate = ```
+			
+			DATE (
+			    YEAR ( RecordCount_log[run_datetime_utc] ),
+			    MONTH ( RecordCount_log[run_datetime_utc] ),
+			    DAY ( RecordCount_log[run_datetime_utc] )
+			)
+			
+			```
+		formatString: m/d/yyyy
+		lineageTag: c3ea1c29-d863-4a47-a6f7-079de88d616c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ObjectKey = ```
+			RecordCount_log[object_schema] & "|" & RecordCount_log[object_name]
+			
+			```
+		lineageTag: cb1a7106-fc01-45ae-b0c1-f2482ab117f7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_date
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 185bf5d4-7a7d-45f8-928a-956483e6afb9
+		summarizeBy: none
+		sourceColumn: log_date
+
+		variation Variation
+			isDefault
+			relationship: 877d5869-c06c-4438-874c-fef64d11abd2
+			defaultHierarchy: LocalDateTable_d1da581e-c509-4c88-8a7d-fe76976e9530.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition RecordCount_log = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="silver",Item="RecordCount_log"]}[Data],
+				    #"Duplicated Column" = Table.DuplicateColumn(silver_plsc_asset_master, "run_datetime_utc", "run_datetime_utc - Copy"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Duplicated Column",{{"run_datetime_utc - Copy", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"run_datetime_utc - Copy", "log_date"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,144 @@
+table wd_worker_bronze
+	lineageTag: 43a265f4-14ed-4423-9309-93bd195eaa25
+	sourceLineageTag: [dbo].[wd_worker_bronze]
+
+	column run_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f58cc4a4-1c8b-4841-b407-4c9c18b42a34
+		sourceLineageTag: run_id
+		summarizeBy: none
+		sourceColumn: run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column extract_ts_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 42ea3548-4068-43bc-bc00-905607430453
+		sourceLineageTag: extract_ts_utc
+		summarizeBy: none
+		sourceColumn: extract_ts_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_wid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 16c40ddd-4c26-4200-9d87-d3b334774967
+		sourceLineageTag: worker_wid
+		summarizeBy: none
+		sourceColumn: worker_wid
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 222ae519-581f-4e5a-90be-e486af5e0975
+		sourceLineageTag: employee_id
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7234d98f-ec22-460a-acf9-fb77dd576bf0
+		sourceLineageTag: worker_id
+		summarizeBy: none
+		sourceColumn: worker_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1570f2c4-2012-49fb-9a8d-adf1c057cfba
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 35d34d93-d543-4db3-85cf-b2d780dbe318
+		sourceLineageTag: email
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_descriptor
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3f5cfe52-0b2d-4f6b-85b1-0473678325b8
+		sourceLineageTag: worker_descriptor
+		summarizeBy: none
+		sourceColumn: worker_descriptor
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 26c3a58d-cf6e-4ab8-9593-0207bc61285a
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column middle_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 182569a6-d48e-450b-939d-8d2d9aae2465
+		sourceLineageTag: middle_name
+		summarizeBy: none
+		sourceColumn: middle_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 91cbce11-6c86-4581-845a-40356754a743
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 53f540d4-f038-47b3-92af-21e0580f25fd
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_status_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b99af2f3-07b9-432e-b81f-3afe469bce56
+		sourceLineageTag: worker_status_id
+		summarizeBy: none
+		sourceColumn: worker_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition wd_worker_bronze = entity
+		mode: directLake
+		source
+			entityName: wd_worker_bronze
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

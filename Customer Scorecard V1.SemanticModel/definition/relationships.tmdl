@@ -1,0 +1,99 @@
+relationship a1b1223b-86b6-e437-df06-3f9eb16b5879
+	fromColumn: Orders.'Bill-To Customer Code'
+	toColumn: 'Bill-To Customers'.'Customer Code'
+
+relationship 8417bcd9-9d77-cd6a-b033-7936fe1119b2
+	fromColumn: 'Service Exceptions'.'Reason Code'
+	toColumn: 'Service Exception Types'.'Exception Code'
+
+relationship c1567663-937b-6650-b81e-2271f6ae74be
+	crossFilteringBehavior: bothDirections
+	fromColumn: Stops.'Load Number'
+	toColumn: Orders.'Load Number'
+
+relationship e606dc7f-f77a-935e-23a6-65a5b7eda870
+	fromColumn: Stops.'Late Appointment Date'
+	toColumn: Calendar.Date
+
+relationship 7f5a99ab-846f-3ab8-b0fd-5db9f260f557
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'EDI Orders'.'Customer Order Number'
+	toColumn: 'EDI Processing History'.'Customer Ship Number'
+
+relationship 488f2009-8f6e-7e1f-fc13-c7e26fb4b88d
+	fromColumn: Orders.'Load-At Customer Code'
+	toColumn: 'Load-At Customers'.'Customer Code'
+
+relationship 165a9108-a491-af3b-c697-f97ac34da6f8
+	fromColumn: 'Accounts Receivable'.'Invoice Date'
+	toColumn: Calendar.Date
+
+relationship ba8e7f58-d0ad-0db4-af48-581add01fe6c
+	fromColumn: 'Service Exceptions'.'Load Stop'
+	toColumn: Stops.'Load Stop'
+
+relationship f1790246-8c24-d656-4d80-501bb6c57fb6
+	fromColumn: 'EDI Orders'.'Bill-To Customer Code'
+	toColumn: 'Bill-To Customers'.'Customer Code'
+
+relationship 912b7c05-4a17-e2f8-8db3-f742b304fcf6
+	fromColumn: 'EDI Orders'.'Tender Date'
+	toColumn: Calendar.Date
+
+relationship 4454e3b2-cfc4-3c53-c22f-612861a3634b
+	fromColumn: 'EDI Orders'.'EDI Customer Code'
+	toColumn: 'EDI Customers'.'EDI Customer Code'
+
+relationship a761c370-b467-42f9-c3ad-18e31dc1c7a1
+	fromColumn: 'EDI Processing History'.'Customer Code'
+	toColumn: 'EDI Customers'.'EDI Customer Code'
+
+relationship e32790de-5731-b78e-b1d0-c4b5310c292a
+	fromColumn: 'Accounts Receivable'.'Load Number'
+	toColumn: Orders.'Load Number'
+
+relationship fef47875-4771-bfd5-f39e-4edb768a003a
+	crossFilteringBehavior: bothDirections
+	fromColumn: Stops.LoadDispatch
+	toColumn: Loads.LoadDispatch
+
+relationship AutoDetected_ce36e239-be20-4e03-ae8c-0e8cc60a93af
+	fromColumn: Orders.'Division Code'
+	toColumn: Divisions.'Division Code'
+
+relationship a917d92b-20bb-7bb1-b0b8-be898794133b
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Selection Options'.Date
+	toColumn: Calendar.Date
+
+relationship 40c78b41-588b-c80e-2b93-b4b60f34d140
+	isActive: false
+	fromColumn: Stops.'Late Service Exception Reason Code'
+	toColumn: 'Service Exception Types'.'Exception Code'
+
+relationship 874b1f18-2ea3-2668-c521-eb87ff4fade4
+	isActive: false
+	fromColumn: 'Service Exceptions'.'Load Number'
+	toColumn: Orders.'Load Number'
+
+relationship d1d93432-f852-848a-4938-3572ebfdb230
+	isActive: false
+	fromColumn: Orders.'Late Pickup Date'
+	toColumn: Calendar.Date
+
+relationship 3aa8c788-d2c4-8f8f-df72-77d27c813191
+	isActive: false
+	fromColumn: 'Accounts Receivable'.'Customer Code'
+	toColumn: 'Bill-To Customers'.'Customer Code'
+
+relationship 14b62f87-2c3c-615c-297a-89a6f6ac376d
+	isActive: false
+	fromColumn: Orders.'Late Delivery Date'
+	toColumn: Calendar.Date
+
+relationship ee8b708d-ebb3-6843-f842-8b9394c9c64a
+	isActive: false
+	fromColumn: Stops.'Division Code'
+	toColumn: Divisions.'Division Code'
+

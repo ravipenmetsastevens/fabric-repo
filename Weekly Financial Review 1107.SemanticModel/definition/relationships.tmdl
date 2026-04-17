@@ -1,0 +1,405 @@
+relationship fbb58ca5-3c1c-48b7-b517-50bb3e5166f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTime.Date
+	toColumn: LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2.Date
+
+relationship 48cb6cda-6bb9-4848-9eca-a9a4cb716deb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_birth_date
+	toColumn: LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec.Date
+
+relationship 5f2935e7-ce8d-40cf-8666-82fb8133295c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_hire_date
+	toColumn: LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471.Date
+
+relationship 630bf87f-e9c4-48c2-b783-5147657a3f29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverScore.loaded_at_utc
+	toColumn: LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047.Date
+
+relationship b15cb4f6-539f-4c6f-8011-a1ae96972dcc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DriverScore.snapshot_date
+	toColumn: LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e.Date
+
+relationship 8268fdfd-9c51-49b2-ba71-04dd80ec4a7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Suppliers.supplier_added_datetime
+	toColumn: LocalDateTable_9d37b46a-c414-4c4a-814e-846c0967dda5.Date
+
+relationship 1d2524ad-72a4-4029-99e4-f5b527b8f352
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Suppliers.supplier_added_date
+	toColumn: LocalDateTable_d1a821a0-2213-436d-a446-3938637535a1.Date
+
+relationship 93a296ff-8b42-4048-89c5-c31f8aff8540
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Units.unit_in_service_date
+	toColumn: LocalDateTable_2d8a8ace-5eb0-48b8-82ba-d242f68d6274.Date
+
+relationship c616255b-927f-4363-ad74-c3e39d6cbeba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_started_datetime
+	toColumn: LocalDateTable_496b5856-9238-4e7b-b65c-9ec150caac95.Date
+
+relationship d9ee6470-b301-4fa9-bcd8-274898e471a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_started_date
+	toColumn: LocalDateTable_0ce13594-ac33-47e4-a195-5e047d049a87.Date
+
+relationship 63948a4e-c60f-4477-844a-bfffaa44212d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_expected_finish_datetime
+	toColumn: LocalDateTable_194fc2fb-c5e6-4266-af49-dcbdce395b4b.Date
+
+relationship 4669c525-fcfd-4d1b-8a60-dea0ec82a67d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_expected_finish_date
+	toColumn: LocalDateTable_69774386-e2a3-400e-9ea5-8782d0e32a5a.Date
+
+relationship 358cb9a5-3a74-4566-b3cf-cd71b08988ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_finished_datetime
+	toColumn: LocalDateTable_c8c3151e-98b5-474f-9df0-fe2903f5057a.Date
+
+relationship b5af42ef-1fc3-4f7e-81e8-a9837884d534
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_invoiced_datetime
+	toColumn: LocalDateTable_8f184e26-73be-4722-bbe0-a553b417df28.Date
+
+relationship 96019ec1-7e64-4f2b-8734-843fa2781f81
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_invoiced_date
+	toColumn: LocalDateTable_099b5260-10e5-4ea4-8130-ba1913ab36f4.Date
+
+relationship f2743906-c0d3-4816-960b-15f595a5798f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_invoice_paid_datetime
+	toColumn: LocalDateTable_cc5fd3a2-3bef-4da4-b92e-e5a31eafa950.Date
+
+relationship baf3be0b-f53a-4ee6-87a2-96c2c66cb702
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_invoice_paid_date
+	toColumn: LocalDateTable_f843e273-cdaf-48dd-8dec-d18f8a2f4596.Date
+
+relationship a45630d5-2c3f-4635-a2bb-a86f7ef8ac8d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: MaintSchedFact.sm_start_date
+	toColumn: LocalDateTable_b2d6c4ca-c8e1-4ee5-a95d-11c6a1104544.Date
+
+relationship 492d2cd2-fc18-4170-93ad-8324c4d48d0e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: MaintSchedFact.sm_became_due_datetime
+	toColumn: LocalDateTable_4b5c102d-3efd-4119-b795-de0607d6ee8c.Date
+
+relationship ab8f7664-8554-3d88-fda1-5f514f244fd5
+	fromColumn: RepairOrdersFact.ro_vin
+	toColumn: Units.unit_vin
+
+relationship cb1fcc62-6954-462e-8ac2-b9b505685ef0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Tasks.task_added_datetime
+	toColumn: LocalDateTable_cb11d9e4-c6ae-4939-bfa8-c0b63fe558da.Date
+
+relationship 5578d74c-a043-4560-a9a2-fe7a6fb07b22
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Parts.part_added_datetime
+	toColumn: LocalDateTable_85ca62aa-0c4e-4241-bfe9-cf04fd2e2719.Date
+
+relationship AutoDetected_a0c2a76f-3c1a-4918-a97d-615cacb2faa4
+	fromColumn: Tasks.repair_order_id
+	toColumn: RepairOrdersFact.repair_order_id
+
+relationship AutoDetected_f87742f1-1915-4359-a7b3-5bc49c53ac40
+	fromColumn: Parts.ro_task_id
+	toColumn: Tasks.ro_task_id
+
+relationship 6ac9fa50-9d0e-d831-9d20-109f4cc5817e
+	fromColumn: MaintSchedFact.sm_became_due_date
+	toColumn: DateTime.Date
+
+relationship 2310cadb-7397-430e-161a-4343363cf8c7
+	fromColumn: MaintSchedFact.sm_vin
+	toColumn: Units.unit_vin
+
+relationship 0af80c36-f03a-13a2-d7b9-e971f5cc3775
+	fromColumn: BillingFact.billing_commodity_code
+	toColumn: BillingCategories.type_code
+
+relationship 95725fc7-18f8-961d-e90e-1020839fe886
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Units.unit_type
+	toColumn: BusinessUnit.business_unit_class
+
+relationship 5ff7e2a5-4f7b-4122-b966-aedc97d00eef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ARWeeklySnapShot.dispatch_date
+	toColumn: LocalDateTable_6f2ada38-583d-4285-821c-dd7dec5f422c.Date
+
+relationship a6b4f454-4089-4937-a13b-9a1bbb0bd7ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ARWeeklySnapShot.invoice_date
+	toColumn: LocalDateTable_b29e7d86-2de0-4e30-b44c-1311626cc490.Date
+
+relationship 31dfedbb-3d7c-4ed2-9a53-96fff7ff53ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ARWeeklySnapShot.deposit_date
+	toColumn: LocalDateTable_64b7dbf8-69e7-4b3a-ab7f-094e60326df8.Date
+
+relationship 3cb5941f-45bd-3ce2-d93a-af626a8208f2
+	fromColumn: ARWeeklySnapShot.SnapshotDate
+	toColumn: DateTime.Date
+
+relationship 2a2f91c5-ff9a-495e-bd17-05f6c64770a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AccidentDetails.claim_mast_occurance_datetime
+	toColumn: LocalDateTable_3ac998d3-5dd5-434f-b3d3-caff692957e6.Date
+
+relationship AutoDetected_7f71c090-798b-4fe0-9fa6-270f127c10e7
+	fromColumn: AccidentDetails.accident_type_description
+	toColumn: AccidentCategories.accident_type_description
+
+relationship 24d76a25-6d63-40e5-91d7-f05af9d9b1d5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_date
+	toColumn: LocalDateTable_8420b348-0f64-44c0-a059-3b949135694c.Date
+
+relationship ea438a1d-adea-4017-b9bd-d9b0d97c6320
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_early_delivery_date
+	toColumn: LocalDateTable_048442e7-f200-45bb-ad2b-8789ca4617d2.Date
+
+relationship d1c46c6f-8bf9-4bda-9a77-5e68c9f988b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_late_delivery_date
+	toColumn: LocalDateTable_70ca3bd9-a1d3-40ad-b81d-ff667a27f5fa.Date
+
+relationship 1cecd32b-2711-4a66-a374-bea1b808c381
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_ship_date
+	toColumn: LocalDateTable_0e12badb-858f-4d5f-9d28-3a071540556c.Date
+
+relationship 1205826d-481f-4c16-aca8-d91863cfeccb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_last_update_date
+	toColumn: LocalDateTable_fd6dee62-239d-4f5d-9e54-ba2f6cba5942.Date
+
+relationship 14d404d7-7eeb-4f25-80b5-a3ec1feb073d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_loaded_call_date
+	toColumn: LocalDateTable_6f097184-cc2a-4074-885f-55485edd2d4a.Date
+
+relationship 25f5a7e0-ef06-4eb2-8d2c-9c362284ced4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_empty_call_date
+	toColumn: LocalDateTable_1a12ae25-14f1-43e6-a0e1-067c60fa8aac.Date
+
+relationship ac163c80-71ab-4804-8fbb-63fc7a9e5a29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_pay_period_end_date
+	toColumn: LocalDateTable_85a738cf-23d6-44ec-a1e0-277b01c7b4c1.Date
+
+relationship 1aedace4-d6e8-49a9-9e8b-8ab3b1b9892b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_check_date
+	toColumn: LocalDateTable_02113bd8-3199-4444-9a16-2089bb398684.Date
+
+relationship c7bdfd41-fe97-49a5-aaca-a620df4ba635
+	joinOnDateBehavior: datePartOnly
+	fromColumn: EarningsHistory.earnings_history_audit_date
+	toColumn: LocalDateTable_9f4590e8-c85f-4fb4-996e-de95935442cf.Date
+
+relationship 7803f5a8-b9ec-41bd-a1d2-a64572de165f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SettlRevenueHistory.set_rev_hist_load_date_revised
+	toColumn: LocalDateTable_b37d1091-7e7a-422b-a018-4487423471dd.Date
+
+relationship f9dfadad-90b5-4834-acb1-dde9bddc4a27
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SettlRevenueHistory.set_rev_hist_domestic_expensed_date
+	toColumn: LocalDateTable_18924237-29f5-4b8d-b8f9-ffc4b0298682.Date
+
+relationship 9eea0b0f-2018-4775-92c2-6f03264aa026
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SettlRevenueHistory.set_rev_hist_last_update_date
+	toColumn: LocalDateTable_d9aa0f30-c782-4d6f-8ba2-6d8ad2e06342.Date
+
+relationship b8ec202b-d28c-5b59-8e7d-24e4f4ca8463
+	fromColumn: EarningsHistory.earnings_history_pay_date
+	toColumn: DateTime.Date
+
+relationship 8b7bc32b-2391-5a18-79be-c1ada450a1fc
+	fromColumn: SettlRevenueHistory.set_rev_hist_record_date
+	toColumn: DateTime.Date
+
+relationship fc1388fb-f46f-af84-fcad-6af8067102a7
+	fromColumn: SettlRevenueHistory.set_rev_hist_origin_city
+	toColumn: SettlementCodes.stcodes_description_trimmed
+
+relationship a8ca83d2-7b1b-acab-3d8d-e887678e218d
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: PayGroup.paypo_description
+	toColumn: EarningsHistory.earnings_history_description
+
+relationship 490a0961-fb01-aa86-0451-d93d83dee3fe
+	fromColumn: OrdTlbFact.tlb_ordtlb_check_date
+	toColumn: DateTime.Date
+
+relationship AutoDetected_9ab52ae7-c510-4b4e-9efd-fa0302e9e878
+	fromColumn: OrdTlbFact.division_code
+	toColumn: DivisionGroup.division_code
+
+relationship 9b92d6d9-8c62-48a5-9c58-ef6ca6e955da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UtlFile.utlfile_projected_date_available
+	toColumn: LocalDateTable_2cd3e496-be1b-4f1f-be2a-ac1e76abb67f.Date
+
+relationship 9adc459a-afd4-caa5-733e-747662821057
+	fromColumn: Driver.drv_grad_date
+	toColumn: DateTime.Date
+
+relationship 0cfb444b-691e-4f3a-9183-698de3c38371
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingTlbFact.billing_billed_date
+	toColumn: LocalDateTable_ceae4df7-f3e1-412b-a8b0-9545c95c663b.Date
+
+relationship c809d634-399c-46e9-8bc9-92beb2109d6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_early_pickup_date
+	toColumn: LocalDateTable_4be7a1e9-53bc-438b-8f18-257c632ab20a.Date
+
+relationship 60b32ea3-a2b0-c934-faa3-a5d7775360cf
+	fromColumn: UtlFile.utlfile_record_date
+	toColumn: DateTime.Date
+
+relationship 9999ffb5-1e6e-3e59-1e76-74ceecb5f84d
+	fromColumn: UtlFile.utlfile_business_unit_code
+	toColumn: BusinessUnit.business_unit_code
+
+relationship 48e4af76-3ff0-30e5-1d8e-b21207dcf4f2
+	isActive: false
+	fromColumn: OrderFact.order_division_code
+	toColumn: DivisionGroup.division_code
+
+relationship 5047b6ec-8259-4d2f-ad58-1c7af427fa2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_created_datetime
+	toColumn: LocalDateTable_741c2025-e506-49a5-8ebe-0196aaee6175.Date
+
+relationship 803cc820-4a80-47f3-8061-3d4ab02e2a81
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RepairOrdersFact.ro_created_date
+	toColumn: LocalDateTable_43a63df1-6ab0-442a-9c95-18c2b205c10f.Date
+
+relationship 6570579b-573f-226e-aaa2-b45d8e8790f8
+	fromColumn: RepairOrdersFact.ro_finished_date
+	toColumn: DateTime.Date
+
+relationship 46605327-a684-3dd8-ae58-e6ea50e125f0
+	fromColumn: AccidentDetails.claim_mast_occurance_date
+	toColumn: DateTime.Date
+
+relationship af3f8c02-e472-4fac-b9be-fdee67dfe820
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_hazmat_exp_date
+	toColumn: LocalDateTable_8d277cf8-180b-4134-849f-8b99c45f75cc.Date
+
+relationship bf052a8a-712f-496d-8d70-22cb9d15ead5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_sr_cert_date
+	toColumn: LocalDateTable_8e005f7a-fbd3-409b-9bab-48c16a106639.Date
+
+relationship 2a848a09-fcf4-4e6e-8001-e902796261ce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_last_safety_talk_date
+	toColumn: LocalDateTable_2ec15a12-3c24-49ba-91f9-c65166b0cdd9.Date
+
+relationship 51557d13-c2da-4639-aa5b-f44eeda933a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_review_date
+	toColumn: LocalDateTable_d11cd432-f352-457a-8c52-3f08df4552df.Date
+
+relationship a2ccc84e-9aa6-4145-988a-92da7bf22168
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_termination_date
+	toColumn: LocalDateTable_260b9f5c-059a-497e-8736-9fdfa0f93c08.Date
+
+relationship fcb12812-0cb6-4e05-a961-5a7cab87e5af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_license_expiry_date
+	toColumn: LocalDateTable_b27d5bdb-e93c-4362-a86f-ca594eabbff7.Date
+
+relationship b8a27193-393d-4302-bb62-c1d3c704d360
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_physical_expiry_date
+	toColumn: LocalDateTable_b660990f-f070-452e-a18c-24e65b595cc9.Date
+
+relationship 11adb9da-76d7-4e20-9a50-87e6e46dc3ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_update_date
+	toColumn: LocalDateTable_013a1e63-07f6-49e6-a112-50365486d0f7.Date
+
+relationship 72a87942-547a-45d2-b8e1-a9b6001c964e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.drv_create_date
+	toColumn: LocalDateTable_ba1f78e6-f3f0-4ef6-abe4-7b24892da050.Date
+
+relationship AutoDetected_4d80b393-bc7a-44be-b123-ebc2b9918b68
+	fromColumn: BillingFact.billing_load_number
+	toColumn: BillingRecords.billing_load_number
+
+relationship 0a264a46-fbd1-4b14-a9c0-2feb4a63fd45
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingFact.billing_billed_date
+	toColumn: LocalDateTable_88e4e393-f84b-45da-9816-d50e245b9e86.Date
+
+relationship 74ac6a27-2541-4c33-9412-3a5da7c71bfd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OrderFact.order_late_pickup_date
+	toColumn: LocalDateTable_d134039b-3d37-4b00-be91-16e15c7d0d78.Date
+
+relationship 0adfca69-f6be-9971-e2e0-f6d5fc4194f5
+	isActive: false
+	fromColumn: Driver.solo_date
+	toColumn: DateTime.Date
+
+relationship aada95a6-1085-4717-bde6-485b3eb846d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadFact.load_dispatch_date
+	toColumn: LocalDateTable_5091d3e6-707e-4bc2-8fbf-d8a281238b9b.Date
+
+relationship 4cfe705f-5933-47eb-85e5-37681c745b7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadFact.load_dispatch_end_date
+	toColumn: LocalDateTable_61e205eb-e99f-486c-a214-818dfcab7e54.Date
+
+relationship 617f4949-ab54-46c6-bc7b-d759b19735c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadFact.load_trip_jacket_received_date
+	toColumn: LocalDateTable_12c4831e-71dd-4f37-b8dd-470d5d8389d5.Date
+
+relationship 1d5e5e7b-8382-42de-bdbb-73393875e2b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadFact.OrderLoadedCallDate
+	toColumn: LocalDateTable_1c9d105c-4b19-4de6-a22e-96ea38e7de1c.Date
+
+relationship 8035e44e-951c-a7c7-61b4-045b7ebcb954
+	fromColumn: LoadFact.load_business_unit_code
+	toColumn: BusinessUnit.business_unit_code
+
+relationship ee62e7db-b937-1072-998c-9c7fbc123f28
+	fromColumn: LoadFact.load_unit_division_code
+	toColumn: DivisionGroup.division_code
+
+relationship d8ffc50b-2c9e-8153-9ec4-dee81dd1551f
+	fromColumn: LoadFact.load_load_number
+	toColumn: BillingRecords.billing_load_number
+
+relationship acaf61ab-d7e0-490a-b59c-687414e49108
+	joinOnDateBehavior: datePartOnly
+	fromColumn: LoadedCallDateFact.loaded_call_contact_date
+	toColumn: LocalDateTable_cabb975a-75dc-45fc-b26a-844a2fa065a3.Date
+

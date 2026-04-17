@@ -1,0 +1,28 @@
+relationship fbb58ca5-3c1c-48b7-b517-50bb3e5166f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTime.Date
+	toColumn: LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2.Date
+
+relationship 9ead7837-f5da-40a2-ba1f-d47beed3b37a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTime.WeekEndDate
+	toColumn: LocalDateTable_932d974e-6950-4bb3-ada2-d5e790114ea8.Date
+
+relationship cf0ed56e-3374-4c1a-ad1b-9ce55211f783
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RecordCount_log.run_datetime_utc
+	toColumn: LocalDateTable_bcd019b9-bfaa-4e1e-af74-317571b70e5d.Date
+
+relationship 441be210-837d-cd22-90f7-9d6796685af1
+	fromColumn: RecordCount_log.RunDate
+	toColumn: DateTime.Date
+
+relationship 7e84dcdb-2487-6fb2-ca3c-1445e159f00d
+	fromColumn: RecordCount_log.ObjectKey
+	toColumn: DimObject.DisplayName
+
+relationship 877d5869-c06c-4438-874c-fef64d11abd2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RecordCount_log.log_date
+	toColumn: LocalDateTable_d1da581e-c509-4c88-8a7d-fe76976e9530.Date
+

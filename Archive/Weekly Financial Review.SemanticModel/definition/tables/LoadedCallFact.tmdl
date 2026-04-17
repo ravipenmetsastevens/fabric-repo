@@ -1,0 +1,57 @@
+table LoadedCallFact
+	excludeFromModelRefresh
+	lineageTag: 36827a75-0df4-4499-8204-30591c6d1e44
+
+	column loaded_call_load_number
+		dataType: string
+		lineageTag: a3ee6153-2dd8-4fff-8758-b2eac989cab2
+		summarizeBy: none
+		sourceColumn: loaded_call_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 200d4aab-b224-417a-85ba-237ac04d8724
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_date
+
+		variation Variation
+			isDefault
+			relationship: 5fc7ff46-d3b8-4ee9-a39e-40cda1928f88
+			defaultHierarchy: LocalDateTable_a66c784b-faf7-4d21-8e8b-68fc2a02eb94.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LoadedCallFact = m
+		mode: import
+		source =
+				let
+				    LoadedCallSource =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_loaded_call];"]
+				        ),
+				    LoadedCallAdded = Table.AddColumn(LoadedCallSource, "LoadDespatchKey", each [loaded_call_load_number] & "" & [loaded_call_dispatch]),
+				    LoadedCallGrouped = Table.Group(LoadedCallAdded, {"loaded_call_load_number"}, {{"loaded_call_contact_date", each List.Min([loaded_call_contact_date]), type nullable datetime}}),
+				
+				    OrderSource =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_order_combined]#(lf)WHERE [order_early_pickup_date] >= DATEFROMPARTS(2024, 1, 1);"]
+				        ),
+				    OrderGrouped = Table.Group(OrderSource, {"order_load_number"}, {{"order_loaded_call_date", each List.Min([order_loaded_call_date]), type nullable datetime}}),
+				    OrderRenamed = Table.RenameColumns(OrderGrouped, {{"order_load_number","loaded_call_load_number"},{"order_loaded_call_date","loaded_call_contact_date"}}),
+				
+				    Combined = Table.Combine({LoadedCallGrouped, OrderRenamed}),
+				    Dedup = Table.Distinct(Combined, {"loaded_call_load_number"})
+				in
+				    Dedup
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

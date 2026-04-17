@@ -1,0 +1,189 @@
+table Parts
+	lineageTag: 2132000f-a4f3-4ee8-a3ea-5067e2fed04c
+
+	column ro_task_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 57f22228-7522-41c1-a74f-b775cda8b447
+		summarizeBy: none
+		sourceColumn: ro_task_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_task_part_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 874436c4-a5f9-4277-9356-2c049d4a46e0
+		summarizeBy: sum
+		sourceColumn: ro_task_part_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_id
+		dataType: string
+		lineageTag: 69e11f13-86dd-4237-8a92-fc127bf8e9e6
+		summarizeBy: none
+		sourceColumn: part_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_number
+		dataType: string
+		lineageTag: 9cf83bec-e35a-4db3-bb95-55b681ac5ad6
+		summarizeBy: none
+		sourceColumn: part_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_description
+		dataType: string
+		lineageTag: 466a7996-5844-4e16-8b65-d2673cd7bfcd
+		summarizeBy: none
+		sourceColumn: part_description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_system_code
+		dataType: string
+		lineageTag: 76bc913f-72da-4c4c-a565-62b5f8203f8a
+		summarizeBy: none
+		sourceColumn: part_system_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_type
+		dataType: string
+		lineageTag: e77e78d6-3542-4cd5-92e0-624b3c9525c7
+		summarizeBy: none
+		sourceColumn: part_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_price
+		dataType: double
+		lineageTag: 70645a2d-ee90-4ddc-bb03-4b461e00a6be
+		summarizeBy: sum
+		sourceColumn: part_price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 407eb80c-e556-47ee-97ff-ce100d2043f2
+		summarizeBy: sum
+		sourceColumn: part_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_tax_rate
+		dataType: double
+		lineageTag: 751af340-62b0-4218-a7c6-7c44bc741603
+		summarizeBy: sum
+		sourceColumn: part_tax_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_location
+		dataType: string
+		lineageTag: 0db358e6-4906-4444-a271-6a8eb4c962dd
+		summarizeBy: none
+		sourceColumn: part_location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_tire_brand
+		dataType: string
+		lineageTag: 4fb2273a-cea7-41fd-8466-c654a0f850e2
+		summarizeBy: none
+		sourceColumn: part_tire_brand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_tire_product_line
+		dataType: string
+		lineageTag: b062a7e3-63fe-4555-8b31-bf69bc129f82
+		summarizeBy: none
+		sourceColumn: part_tire_product_line
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_tire_size
+		dataType: string
+		lineageTag: b7f25ead-c443-4014-a0fd-71afb49bf277
+		summarizeBy: none
+		sourceColumn: part_tire_size
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_tire_type
+		dataType: string
+		lineageTag: 56c4470d-1f1a-47f2-86d6-21db248ac70f
+		summarizeBy: none
+		sourceColumn: part_tire_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_added_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2bf3accc-cede-4a11-95f8-faf81e3e5710
+		summarizeBy: none
+		sourceColumn: part_added_datetime
+
+		variation Variation
+			isDefault
+			relationship: 5578d74c-a043-4560-a9a2-fe7a6fb07b22
+			defaultHierarchy: LocalDateTable_85ca62aa-0c4e-4241-bfe9-cf04fd2e2719.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parts = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_flrk_repair_order_task_part = Source{[Schema="silver",Item="flrk_repair_order_task_part"]}[Data]
+				in
+				    silver_flrk_repair_order_task_part
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

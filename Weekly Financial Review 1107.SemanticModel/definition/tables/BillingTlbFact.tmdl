@@ -1,0 +1,164 @@
+table BillingTlbFact
+	excludeFromModelRefresh
+	lineageTag: 74338444-f9ce-41e4-9d7f-5ab94976aa14
+
+	column tlb_billing_load_number
+		dataType: string
+		lineageTag: 056b1972-e02c-4063-b9ae-cfb2c9660e69
+		summarizeBy: none
+		sourceColumn: tlb_billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_sequence_number
+		dataType: string
+		lineageTag: 56439f5d-bb7e-4837-b117-978e8475371c
+		summarizeBy: none
+		sourceColumn: tlb_billing_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_record_number
+		dataType: double
+		lineageTag: f12d00e8-7022-41f6-aec0-722e37cac630
+		summarizeBy: sum
+		sourceColumn: tlb_billing_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_commodity_code
+		dataType: string
+		lineageTag: c3275f9f-117a-42fc-96d4-75c583f3db2f
+		summarizeBy: none
+		sourceColumn: tlb_billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_commodity_description
+		dataType: string
+		lineageTag: f10a67f3-2daf-4f38-b14d-7c6590188bf0
+		summarizeBy: none
+		sourceColumn: tlb_billing_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_piece_count
+		dataType: double
+		lineageTag: 7a422752-3e80-4570-83bb-7c4f82290747
+		summarizeBy: sum
+		sourceColumn: tlb_billing_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_actual_quantity_count
+		dataType: double
+		lineageTag: 9a779ab6-2258-4922-9742-147e4f118b10
+		summarizeBy: sum
+		sourceColumn: tlb_billing_actual_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_billed_quantity_count
+		dataType: double
+		lineageTag: 6b2793d3-9b65-43ec-a405-bd67356eacb4
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_billed_rate
+		dataType: double
+		lineageTag: dcc7b6d1-b54b-478b-b411-14db52fa58e9
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_billed_amount
+		dataType: double
+		lineageTag: ecacb3ca-b23d-4568-9902-2b2b09d30828
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_method_code
+		dataType: string
+		lineageTag: 5c6083cd-d03d-4d73-9456-ed41d96bbd48
+		summarizeBy: none
+		sourceColumn: tlb_billing_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_error_code
+		dataType: string
+		lineageTag: 29432248-a099-450e-876c-423ad8340741
+		summarizeBy: none
+		sourceColumn: tlb_billing_error_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_gl_account_number
+		dataType: string
+		lineageTag: 9537094c-775c-4be1-9403-c1b4cf63a135
+		summarizeBy: none
+		sourceColumn: tlb_billing_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_gl_cost_center_code
+		dataType: string
+		lineageTag: 13cb4ae1-cc07-4398-8705-fe043451006c
+		summarizeBy: none
+		sourceColumn: tlb_billing_gl_cost_center_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		lineageTag: c983a9d4-ac8f-4725-b38f-95ee0e5f961c
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 661979b8-6c7e-4d45-bd51-6173f0c6d073
+		summarizeBy: none
+		sourceColumn: billing_billed_date
+
+		variation Variation
+			isDefault
+			relationship: 0cfb444b-691e-4f3a-9183-698de3c38371
+			defaultHierarchy: LocalDateTable_ceae4df7-f3e1-412b-a8b0-9545c95c663b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BillingTlbFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_tlb_billing_combined]"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

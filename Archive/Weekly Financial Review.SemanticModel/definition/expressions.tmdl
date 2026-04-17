@@ -1,0 +1,24 @@
+expression 'Errors in LoadFact' =
+		let
+		Source = LoadFact,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"load_origin_area_code", "load_load_number", "load_dispatch", "load_status", "load_dispatch_date", "load_dispatch_time", "load_truck_number", "load_trailer_number", "load_seat_1_driver_code", "load_seat_2_driver_code", "load_route_line_codes", "load_route_status", "load_miles_dead_head", "load_miles_total", "load_miles_loaded", "load_mile_flag", "load_initials", "load_destination_area_code", "load_route_line_extension", "load_dispatch_end_date", "load_dispatch_end_time", "load_multiple_trailers_on_dispatch", "load_settlement_flag", "load_payroll_approval_flag", "load_truck_dmol_code", "load_truck_dm_code", "load_driver_dmol_code", "load_driver_dm_code", "load_trip_jacket_received_flag", "load_trip_jacket_received_date", "load_miles_hub_start", "load_miles_hub_end", "load_unit_division_code", "load_team_status_code", "load_trainer_team_code", "is_deleted", "load_business_unit_code", "miles_indicator", "TotalMilesPerLoad", "DispatchCount", "PercentMiles", "BillingAmount", "OrderRevenueEstimation", "OrderLoadedCallDate", "ProratedRevenue"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "load_origin_area_code", "load_load_number", "load_dispatch", "load_status", "load_dispatch_date", "load_dispatch_time", "load_truck_number", "load_trailer_number", "load_seat_1_driver_code", "load_seat_2_driver_code", "load_route_line_codes", "load_route_status", "load_miles_dead_head", "load_miles_total", "load_miles_loaded", "load_mile_flag", "load_initials", "load_destination_area_code", "load_route_line_extension", "load_dispatch_end_date", "load_dispatch_end_time", "load_multiple_trailers_on_dispatch", "load_settlement_flag", "load_payroll_approval_flag", "load_truck_dmol_code", "load_truck_dm_code", "load_driver_dmol_code", "load_driver_dm_code", "load_trip_jacket_received_flag", "load_trip_jacket_received_date", "load_miles_hub_start", "load_miles_hub_end", "load_unit_division_code", "load_team_status_code", "load_trainer_team_code", "is_deleted", "load_business_unit_code", "miles_indicator", "TotalMilesPerLoad", "DispatchCount", "PercentMiles", "BillingAmount", "OrderRevenueEstimation", "OrderLoadedCallDate", "ProratedRevenue"}),
+		    ProratedRevenue = #"Reordered Columns"{17}[ProratedRevenue]
+		in
+		  ProratedRevenue
+	lineageTag: 4c2153a3-5899-44c0-8533-04241455c2a9
+	queryGroup: 'Query Errors - 11/3/2025 3:08:06 PM'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

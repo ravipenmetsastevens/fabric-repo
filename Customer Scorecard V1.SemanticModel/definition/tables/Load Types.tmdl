@@ -1,0 +1,48 @@
+table 'Load Types'
+	lineageTag: be614a83-7d0d-4218-9f7d-f1bdc03c0c54
+
+	column 'Load Type'
+		lineageTag: 778add25-ee20-4059-9ad2-785ce0b36f47
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Load_Type Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Load_Type Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load_Type Fields'
+		isHidden
+		lineageTag: d215d3f2-6d68-40e7-aa59-78ced39ed9c2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Load_Type Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load_Type Order'
+		isHidden
+		formatString: 0
+		lineageTag: 10db82ec-2df1-4140-8710-7332a60c153e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Load Types' = calculated
+		mode: import
+		source =
+				{
+				    ("Lds by PU", NAMEOF('__Measures'[Load Count]), 0),
+				    ("Lds by Delv", NAMEOF('__Measures'[Load Count by Delivery Date]), 1)
+				}
+
+	annotation PBI_Id = 068bfa0086ae494389feef592fca3d08
+

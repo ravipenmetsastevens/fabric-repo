@@ -1,0 +1,857 @@
+table Driver
+	lineageTag: 76089c5c-5a17-4b03-836c-ae318389957d
+
+	measure IsDriverFiltered =
+			
+			INT(ISFILTERED('Driver'[drv_code]))
+		formatString: 0
+		lineageTag: fe009b78-2c61-41bc-a049-c3fb6ba7d93b
+
+		changedProperty = IsHidden
+
+	measure ShowCardMeasure =
+			
+			If(ISFILTERED(Driver[drv_code]),1,BLANK())
+		formatString: 0
+		lineageTag: cb3855b1-e543-4459-bf90-db597362a443
+
+		changedProperty = IsHidden
+
+	column drv_code
+		dataType: string
+		lineageTag: f17fa8a9-1f47-4309-b3ea-4c15994cf1b1
+		summarizeBy: none
+		sourceColumn: drv_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_birth_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 6139a50b-e010-4743-8a95-5f53b774d38b
+		summarizeBy: none
+		sourceColumn: drv_birth_date
+
+		variation Variation
+			isDefault
+			relationship: 48cb6cda-6bb9-4848-9eca-a9a4cb716deb
+			defaultHierarchy: LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_hire_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 48e89712-8158-4102-baf7-937ce7def4e8
+		summarizeBy: none
+		sourceColumn: drv_hire_date
+
+		variation Variation
+			isDefault
+			relationship: 5f2935e7-ce8d-40cf-8666-82fb8133295c
+			defaultHierarchy: LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_grad_date
+		dataType: dateTime
+		formatString: m/d/yy
+		lineageTag: 9b1c77b5-e49b-42d3-82e9-77d5c3f69448
+		summarizeBy: none
+		sourceColumn: drv_grad_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column drv_full_name
+		dataType: string
+		lineageTag: 8a4d0b6d-b49a-47fb-8185-8d54e4e84452
+		summarizeBy: none
+		sourceColumn: drv_full_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_line_1
+		dataType: string
+		lineageTag: 676f1f21-d577-4bf7-bbd0-0718ff1d9b11
+		summarizeBy: none
+		sourceColumn: drv_address_line_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_city
+		dataType: string
+		lineageTag: 7d3506ac-57ec-4601-b203-548937183df1
+		summarizeBy: none
+		sourceColumn: drv_address_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_state
+		dataType: string
+		lineageTag: bd3d4e7e-1362-4406-9ce6-3a3acf90b2e5
+		summarizeBy: none
+		sourceColumn: drv_address_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_address_zip
+		dataType: string
+		lineageTag: 81afa802-3082-4f90-b999-f8888a6152b2
+		summarizeBy: none
+		sourceColumn: drv_address_zip
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_area_code
+		dataType: string
+		lineageTag: 0f0fb322-9c5f-46f6-80ce-d36dee55c455
+		summarizeBy: none
+		sourceColumn: drv_cell_area_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_cell_number
+		dataType: string
+		lineageTag: a2be7a93-0ad9-40d0-a3f1-014980669b58
+		summarizeBy: none
+		sourceColumn: drv_cell_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_assigned_truck
+		dataType: string
+		lineageTag: 2380f2ce-71f4-42de-b7a4-c9973e37c161
+		summarizeBy: none
+		sourceColumn: drv_assigned_truck
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dm_code
+		dataType: string
+		lineageTag: 076615bf-7c3a-40a1-a372-3a0887386700
+		summarizeBy: none
+		sourceColumn: drv_dm_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dmol_code
+		dataType: string
+		lineageTag: 81b1d575-b851-4ba1-a2fc-35d507fdfd56
+		summarizeBy: none
+		sourceColumn: drv_dmol_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_score
+		dataType: double
+		formatString: 0
+		lineageTag: 714bf254-6a94-4c83-98b5-6bffd7747d1f
+		summarizeBy: sum
+		sourceColumn: driver_score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_analyzed
+		dataType: int64
+		formatString: 0
+		lineageTag: 42c6bb49-6d63-44fe-b2d2-98dffb530603
+		summarizeBy: sum
+		sourceColumn: minutes_analyzed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column green_minutes_pct
+		dataType: double
+		lineageTag: d507d99d-c643-4b56-856c-a1df5e29dfa1
+		summarizeBy: sum
+		sourceColumn: green_minutes_pct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overspeeding_pct
+		dataType: double
+		lineageTag: c267011e-84b0-4626-9478-a49ab6d06b54
+		summarizeBy: sum
+		sourceColumn: overspeeding_pct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_full_address = ```
+			
+			'Driver'[drv_address_line_1] & ", "
+			    & 'Driver'[drv_address_city] & ", "
+			    & 'Driver'[drv_address_state] & " "
+			    & 'Driver'[drv_address_zip]
+			
+			```
+		lineageTag: fb409fd3-c9da-4232-987f-37ccf40d2c47
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_phone_number = ```
+			
+			'Driver'[drv_cell_area_code] & ""
+			    & 'Driver'[drv_cell_number] 
+			```
+		lineageTag: 1bd27005-b13a-4d82-a83d-98c1cbe4671c
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_tenure_months = ```
+			
+			DATEDIFF ( 'Driver'[drv_hire_date], TODAY(), MONTH )
+			
+			```
+		formatString: 0
+		lineageTag: 58c4e449-bf5f-46f5-9db8-650ccfbac2e1
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_canada_cert
+		dataType: string
+		lineageTag: 3a727d3f-ead2-4d39-bd3f-3f8cd6caab19
+		summarizeBy: none
+		sourceColumn: is_canada_cert
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_nyc_cert
+		dataType: string
+		lineageTag: 1d7ac10d-bd83-4e76-bfb1-b2a9ee91a94d
+		summarizeBy: none
+		sourceColumn: is_nyc_cert
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysBetween_grad_to_hire = ```
+			
+			VAR bothPresent =
+			    NOT ISBLANK ( [drv_grad_date] ) &&
+			    NOT ISBLANK ( [drv_hire_date] )
+			RETURN
+			IF (
+			    bothPresent,
+			    ABS ( DATEDIFF ( [drv_grad_date], [drv_hire_date], DAY ) )
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 614c8f5f-3167-40df-a8b7-a67bf1f6dd03
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysBetween_grad_to_complete =
+			
+			VAR bothPresent =
+			    NOT ISBLANK ( [drv_grad_date] ) &&
+			    NOT ISBLANK ( [solo_date] )
+			RETURN
+			IF (
+			    bothPresent,
+			    ABS ( DATEDIFF ( [drv_grad_date], [solo_date], DAY ) )
+			)
+		formatString: 0
+		lineageTag: a7b45c73-e9b8-4863-b550-661cc4534d94
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_status_code
+		dataType: string
+		lineageTag: 2bc83e19-e061-4896-9cd4-89da897e94b1
+		summarizeBy: none
+		sourceColumn: drv_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_counselor_status_code
+		dataType: string
+		lineageTag: 40a8bd68-1101-45a2-b00e-b1f620e166e9
+		summarizeBy: none
+		sourceColumn: drv_counselor_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_hazmat_cert
+		dataType: string
+		lineageTag: ae05081d-ad7b-42ba-9a8e-2ad9219e8436
+		summarizeBy: none
+		sourceColumn: has_hazmat_cert
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_hazmat_exp_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0571f658-5e4c-4d13-a6ee-80ed4c0b2565
+		summarizeBy: none
+		sourceColumn: drv_hazmat_exp_date
+
+		variation Variation
+			isDefault
+			relationship: af3f8c02-e472-4fac-b9be-fdee67dfe820
+			defaultHierarchy: LocalDateTable_8d277cf8-180b-4134-849f-8b99c45f75cc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_grad_level_code
+		dataType: string
+		lineageTag: f9286aea-3113-4b1f-9561-aef647dcdb07
+		summarizeBy: none
+		sourceColumn: drv_grad_level_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_sr_cert_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ca7fa099-0706-405f-b856-1c9bb9bd34d3
+		summarizeBy: none
+		sourceColumn: drv_sr_cert_date
+
+		variation Variation
+			isDefault
+			relationship: bf052a8a-712f-496d-8d70-22cb9d15ead5
+			defaultHierarchy: LocalDateTable_8e005f7a-fbd3-409b-9bab-48c16a106639.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_mailbox_pwd
+		dataType: double
+		lineageTag: b841b70e-0522-4132-a429-1fd7aa2b9f90
+		summarizeBy: sum
+		sourceColumn: drv_mailbox_pwd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column drv_fuel_card
+		dataType: string
+		lineageTag: 3e6bc2d2-bb17-4483-9c02-a553d3787483
+		summarizeBy: none
+		sourceColumn: drv_fuel_card
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_drv_smoker
+		dataType: string
+		lineageTag: 814f9674-4484-4ba0-b7e8-cc9a42d18a0e
+		summarizeBy: none
+		sourceColumn: is_drv_smoker
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_race
+		dataType: string
+		lineageTag: a5122a49-80f5-44d7-a83f-dfc2fa802f36
+		summarizeBy: none
+		sourceColumn: drv_race
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_gender
+		dataType: string
+		lineageTag: 9896ed07-33a2-4d2e-8f59-2d3f9013099e
+		summarizeBy: none
+		sourceColumn: drv_gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_safety_talk_code
+		dataType: string
+		lineageTag: 2f36518c-69f1-48bf-91ea-2a25717b754b
+		summarizeBy: none
+		sourceColumn: drv_safety_talk_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_city_code
+		dataType: string
+		lineageTag: 2218270d-7f46-47bc-b66f-12e755d6630f
+		summarizeBy: none
+		sourceColumn: drv_home_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_voice_box
+		dataType: string
+		lineageTag: 6524b360-ef51-4eef-a52b-1b6c3a16285a
+		summarizeBy: none
+		sourceColumn: drv_voice_box
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_jit_drv
+		dataType: string
+		lineageTag: b836920e-fe98-445e-a3a1-4cb3fd078242
+		summarizeBy: none
+		sourceColumn: is_jit_drv
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_trainee_drv
+		dataType: string
+		lineageTag: 03b7f3be-2c85-4f33-b555-356e197a8dbe
+		summarizeBy: none
+		sourceColumn: is_trainee_drv
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_adv_balance
+		dataType: double
+		lineageTag: e398c44b-e437-43ec-ba82-fc96e9785bbd
+		summarizeBy: sum
+		sourceColumn: drv_adv_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_drv_deleted
+		dataType: string
+		lineageTag: ede3177c-0d46-4106-a697-b1d85315bfcf
+		summarizeBy: none
+		sourceColumn: is_drv_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_emerg_contact_name
+		dataType: string
+		lineageTag: 956987ae-5cce-46d3-b3c0-8a38da791dd1
+		summarizeBy: none
+		sourceColumn: drv_emerg_contact_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_emerg_contact_phone
+		dataType: string
+		lineageTag: 1a220f97-cf14-4eeb-b93d-28b915a1d832
+		summarizeBy: none
+		sourceColumn: drv_emerg_contact_phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_trainee_level_code
+		dataType: string
+		lineageTag: d720e82a-f07d-4013-9ab0-1ca0a0c57968
+		summarizeBy: none
+		sourceColumn: drv_trainee_level_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_trainee_counselor_code
+		dataType: string
+		lineageTag: 14c919ca-6efe-40d7-a37a-475acdc1f5ac
+		summarizeBy: none
+		sourceColumn: drv_trainee_counselor_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_last_safety_talk_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aaf6f18f-cd37-4ada-9786-63abead5ef85
+		summarizeBy: none
+		sourceColumn: drv_last_safety_talk_date
+
+		variation Variation
+			isDefault
+			relationship: 2a848a09-fcf4-4e6e-8001-e902796261ce
+			defaultHierarchy: LocalDateTable_2ec15a12-3c24-49ba-91f9-c65166b0cdd9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_current_dispatch
+		dataType: string
+		lineageTag: 5c9c63d2-a94f-4493-a60a-a177827118cf
+		summarizeBy: none
+		sourceColumn: drv_current_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_city_code
+		dataType: string
+		lineageTag: 36871b5e-61b5-41da-b937-ec52193a46e1
+		summarizeBy: none
+		sourceColumn: drv_dispatch_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_state
+		dataType: string
+		lineageTag: 9cac1313-b793-48ef-a3f5-a9f7e055d477
+		summarizeBy: none
+		sourceColumn: drv_dispatch_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_dispatch_st_city
+		dataType: string
+		lineageTag: 69a1df7f-84ba-4c4a-b613-3f2b90ccbd2f
+		summarizeBy: none
+		sourceColumn: drv_dispatch_st_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_drv_messages
+		dataType: string
+		lineageTag: 70ab275f-b87f-4e65-a27b-94e1e03545fa
+		summarizeBy: none
+		sourceColumn: has_drv_messages
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_license_state
+		dataType: string
+		lineageTag: 09649ee3-9cee-4c31-918b-926d8627eda7
+		summarizeBy: none
+		sourceColumn: drv_license_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_type
+		dataType: string
+		lineageTag: 3ca955e4-2931-4872-9df8-da7322fa9fb3
+		summarizeBy: none
+		sourceColumn: drv_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_availability_code
+		dataType: string
+		lineageTag: cbb010c8-8898-4d1c-aa23-a82ca02f5486
+		summarizeBy: none
+		sourceColumn: drv_availability_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_previous_load_number
+		dataType: string
+		lineageTag: 2219a478-88e1-4885-bd0d-d46c0f94f21e
+		summarizeBy: none
+		sourceColumn: drv_previous_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_previous_dispatch
+		dataType: string
+		lineageTag: bbc6aba8-9974-46c3-870b-ae0174e90af5
+		summarizeBy: none
+		sourceColumn: drv_previous_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_current_load_number
+		dataType: string
+		lineageTag: dd57e14c-5db5-42a6-9a33-38d53f2cb773
+		summarizeBy: none
+		sourceColumn: drv_current_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_review_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ca482b9-2d27-4433-b6d4-57614f735217
+		summarizeBy: none
+		sourceColumn: drv_review_date
+
+		variation Variation
+			isDefault
+			relationship: 51557d13-c2da-4639-aa5b-f44eeda933a7
+			defaultHierarchy: LocalDateTable_d11cd432-f352-457a-8c52-3f08df4552df.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_termination_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 80c2ebb8-02e2-4772-aa6b-4d3b020ba978
+		summarizeBy: none
+		sourceColumn: drv_termination_date
+
+		variation Variation
+			isDefault
+			relationship: a2ccc84e-9aa6-4145-988a-92da7bf22168
+			defaultHierarchy: LocalDateTable_260b9f5c-059a-497e-8736-9fdfa0f93c08.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_license_expiry_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a8a15056-9e0e-46b8-8637-a630aae60a0d
+		summarizeBy: none
+		sourceColumn: drv_license_expiry_date
+
+		variation Variation
+			isDefault
+			relationship: fcb12812-0cb6-4e05-a961-5a7cab87e5af
+			defaultHierarchy: LocalDateTable_b27d5bdb-e93c-4362-a86f-ca594eabbff7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_physical_expiry_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8838c9ca-1950-4d6b-ba34-c2eb995bc3a5
+		summarizeBy: none
+		sourceColumn: drv_physical_expiry_date
+
+		variation Variation
+			isDefault
+			relationship: b8a27193-393d-4302-bb62-c1d3c704d360
+			defaultHierarchy: LocalDateTable_b660990f-f070-452e-a18c-24e65b595cc9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_license_number
+		dataType: string
+		lineageTag: 8e9ea0a1-458b-4f89-8830-118a6ce32867
+		summarizeBy: none
+		sourceColumn: drv_license_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_create_initial
+		dataType: string
+		lineageTag: d0cc60a4-1bb9-4575-ac27-eb753eceda38
+		summarizeBy: none
+		sourceColumn: drv_create_initial
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_update_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7411e1a0-0dc9-404f-ab42-951d40cd63bd
+		summarizeBy: none
+		sourceColumn: drv_update_date
+
+		variation Variation
+			isDefault
+			relationship: 11adb9da-76d7-4e20-9a50-87e6e46dc3ac
+			defaultHierarchy: LocalDateTable_013a1e63-07f6-49e6-a112-50365486d0f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 2beddf32-74bb-42a3-aed9-55b229251f0d
+		summarizeBy: none
+		sourceColumn: drv_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column drv_update_initial
+		dataType: string
+		lineageTag: 112c9ab3-e720-48ea-b9cc-d059313560a3
+		summarizeBy: none
+		sourceColumn: drv_update_initial
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_school_code
+		dataType: string
+		lineageTag: a7ed85ba-5e6c-48f5-b887-ec0308b91c13
+		summarizeBy: none
+		sourceColumn: drv_school_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_social_security
+		dataType: string
+		lineageTag: d894fc55-738f-43a9-a3e3-2fc73e439992
+		summarizeBy: none
+		sourceColumn: drv_social_security
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_create_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ec7a5140-aa55-4459-b015-7adc28dc1a18
+		summarizeBy: none
+		sourceColumn: drv_create_date
+
+		variation Variation
+			isDefault
+			relationship: 72a87942-547a-45d2-b8e1-a9b6001c964e
+			defaultHierarchy: LocalDateTable_ba1f78e6-f3f0-4ef6-abe4-7b24892da050.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column drv_create_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 26b86333-fcfc-4020-9b6e-34eea42615c1
+		summarizeBy: none
+		sourceColumn: drv_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column drv_address_zip_extn
+		dataType: string
+		lineageTag: f70a632d-45ee-4260-9acc-53090a64ab84
+		summarizeBy: none
+		sourceColumn: drv_address_zip_extn
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_area_code
+		dataType: string
+		lineageTag: 123cc090-9936-402d-beaf-44b8ea22e3f2
+		summarizeBy: none
+		sourceColumn: drv_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_last_name
+		dataType: string
+		lineageTag: 8dc56549-9738-446a-9ed2-ae339873db1d
+		summarizeBy: none
+		sourceColumn: drv_last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_first_name
+		dataType: string
+		lineageTag: 3ae02962-3581-4549-8644-1db7f3c23a0c
+		summarizeBy: none
+		sourceColumn: drv_first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_short_name
+		dataType: string
+		lineageTag: a0e0aa70-545d-4119-b45b-d258c184dd2e
+		summarizeBy: none
+		sourceColumn: drv_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column solo_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 245215b3-b48d-431f-8df0-1025d89b9a57
+		summarizeBy: none
+		sourceColumn: solo_date
+
+		variation Variation
+			isDefault
+			relationship: 000f061e-8ff6-4b33-9265-38c9388e4d8f
+			defaultHierarchy: LocalDateTable_443ee0a2-a03c-48f9-8d85-874ced11d953.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Driver = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="gold",Item="vv_dim_active_driver_details"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(silver_plsc_asset_master, {"drv_code"}, DriverScore, {"driver_id"}, "DriverScore", JoinKind.LeftOuter),
+				    #"Expanded DriverScore" = Table.ExpandTableColumn(#"Merged Queries", "DriverScore", {"driver_score", "minutes_analyzed", "green_minutes_pct", "overspeeding_pct"}, {"DriverScore.driver_score", "DriverScore.minutes_analyzed", "DriverScore.green_minutes_pct", "DriverScore.overspeeding_pct"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded DriverScore",{{"DriverScore.driver_score", "driver_score"}, {"DriverScore.minutes_analyzed", "minutes_analyzed"}, {"DriverScore.green_minutes_pct", "green_minutes_pct"}, {"DriverScore.overspeeding_pct", "overspeeding_pct"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"drv_phone_number"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

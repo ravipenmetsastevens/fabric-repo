@@ -1,0 +1,42 @@
+table LoadedCallDateFact
+	excludeFromModelRefresh
+	lineageTag: 41c059ef-a8ff-48ba-85bf-b9616f0b437c
+
+	column loaded_call_load_number
+		dataType: string
+		lineageTag: b95ad33b-33d3-4034-96e4-41146c8bda7f
+		summarizeBy: none
+		sourceColumn: loaded_call_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cdeb9323-5a1b-4fd7-841b-9b20708cb3f4
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_date
+
+		variation Variation
+			isDefault
+			relationship: acaf61ab-d7e0-490a-b59c-687414e49108
+			defaultHierarchy: LocalDateTable_cabb975a-75dc-45fc-b26a-844a2fa065a3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition LoadedCallDateFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT *#(lf)FROM [data_central_wh].[gold].[vw_loaded_call_contact_by_load];"]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"loaded_call_contact_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,121 @@
+table Customer
+	lineageTag: 6f7532a9-7ffd-445b-a36c-2bda01043ded
+
+	column customer_code
+		dataType: string
+		lineageTag: 498e6f45-8f27-4ddd-bd4d-df33f0294703
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_city_code
+		dataType: string
+		lineageTag: 1bc99c3e-0214-453f-9ac2-cb3e9fab0ab9
+		summarizeBy: none
+		sourceColumn: cust_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		lineageTag: 2d0a49d3-beca-4402-9993-19fd3e2ab642
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_to_code
+		dataType: string
+		lineageTag: 63d433f0-8dda-48f5-a97d-f6cc5e588725
+		summarizeBy: none
+		sourceColumn: bill_to_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_salesperson
+		dataType: string
+		lineageTag: c43745c9-53ac-4f45-bbea-09e6ce0a8059
+		summarizeBy: none
+		sourceColumn: cust_salesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_shipper_code
+		dataType: string
+		lineageTag: 89dc65dc-e455-4810-bb3d-2c8e3a4fef38
+		summarizeBy: none
+		sourceColumn: cust_shipper_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_country
+		dataType: string
+		lineageTag: d6671004-ee6a-4a1f-b7bd-bbaa9319f972
+		summarizeBy: none
+		sourceColumn: cust_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_activity_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 49eec46d-ad65-446a-a2e4-2fe708381ae6
+		summarizeBy: none
+		sourceColumn: last_activity_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_rank
+		dataType: string
+		lineageTag: 8cb75262-6506-465e-9a30-b94bbf433b26
+		summarizeBy: none
+		sourceColumn: customer_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_create_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 189c3b5b-5887-4001-aa47-49b60c65919d
+		summarizeBy: none
+		sourceColumn: cust_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_service_rep
+		dataType: string
+		lineageTag: 13a32e24-892d-4b1f-b60c-4113d54ef90d
+		summarizeBy: none
+		sourceColumn: cust_service_rep
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_code
+		dataType: string
+		lineageTag: f9c743e5-5798-4e85-9d53-506f75df1c92
+		summarizeBy: none
+		sourceColumn: company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		lineageTag: 288cb9d5-84b5-4209-8c77-008f684ede67
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT * FROM [gold].[Customer]"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

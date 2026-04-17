@@ -1,0 +1,80 @@
+table TruckBusinessUnit
+	lineageTag: d43e22ad-f9f5-4714-8230-ad704c8e9b19
+
+	column unit_truck_number
+		dataType: string
+		lineageTag: ec205c28-104c-4aac-930c-2b604397c9ee
+		summarizeBy: none
+		sourceColumn: unit_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_description
+		dataType: string
+		lineageTag: 5c1d2198-2562-4b32-adc4-af1f3689981d
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_class
+		dataType: string
+		lineageTag: 81945aaf-27a7-45c1-bb5a-c2ee4a216bbe
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column seat
+		dataType: string
+		lineageTag: c824da8a-125e-43c2-9cb1-ea6f9752c855
+		summarizeBy: none
+		sourceColumn: seat
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_code
+		dataType: string
+		lineageTag: 3e5d2bbb-df7e-433e-b309-c3e5704d8750
+		summarizeBy: none
+		sourceColumn: driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TruckBusinessUnit = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="silver", Item="vw_ibmi_active_trucks_business_unit"]}[Data],
+				
+				    // optional: keep order if you want
+				    #"Reordered Columns" = Table.ReorderColumns(
+				        silver_plsc_asset_master,
+				        {"unit_truck_number", "unit_seat_1_driver_code", "unit_seat_2_driver_code", "business_unit_description", "business_unit_class"}
+				    ),
+				
+				    // unpivot the two seat columns to rows
+				    #"Unpivoted Seats" = Table.Unpivot(
+				        #"Reordered Columns",
+				        {"unit_seat_1_driver_code", "unit_seat_2_driver_code"},
+				        "seat",
+				        "driver_code"
+				    ),
+				
+				    // make driver_code text (in case source mixes types)
+				    #"As Text" = Table.TransformColumnTypes(#"Unpivoted Seats", {{"driver_code", type text}}),
+				
+				    // clean out null/blank driver codes
+				    #"Filtered" = Table.SelectRows(#"As Text", each [driver_code] <> null and Text.Trim([driver_code]) <> "")
+				
+				    // If you DON'T need to keep which seat it came from, drop the "seat" column:
+				    // ,#"Removed Seat Column" = Table.RemoveColumns(#"Filtered", {"seat"})
+				in
+				    #"Filtered"    // or use #"Removed Seat Column" if you dropped "seat"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

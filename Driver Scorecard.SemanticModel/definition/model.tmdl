@@ -1,0 +1,62 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["AssetMaster","DateTime","DriverMaster","AccidentDetails","StopOff","LoadDetails","EarningsHistory","DriverAlerts","DriverScore","AlertsTable","DrvHomeHistory","Utlfile","TruckBusinessUnit","SetRevHistory"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1454.0 (25.08)+901d6c338d1dea81ac3e53073ffb10469f0f37b8
+
+ref table AssetMaster
+ref table DateTableTemplate_7796607f-a786-489b-930a-6f107be68572
+ref table DateTime
+ref table LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2
+ref table DriverMaster
+ref table LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec
+ref table LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471
+ref table LocalDateTable_a41e322f-317b-47e8-800c-42bd52f34842
+ref table LocalDateTable_b4718b78-2bb0-4263-b477-373ec24b7030
+ref table AccidentDetails
+ref table LocalDateTable_7330828b-ef05-45a3-bd05-6ca9b3dd3645
+ref table StopOff
+ref table LocalDateTable_c2af5ad0-d368-4a48-ad96-2a4f2b124f65
+ref table LocalDateTable_f364c046-80dc-4e32-b75f-768192dfe749
+ref table LocalDateTable_11a8c700-762d-4fa0-a21e-83857a69f5c2
+ref table LocalDateTable_b91ddfc1-850f-4c6b-9255-2dbaf6f9071d
+ref table LocalDateTable_3cfed3d5-7eb4-403c-8112-f43ed26d88e8
+ref table LocalDateTable_c1650c70-17ca-4902-b863-45bb476b53d9
+ref table LocalDateTable_dc560521-cfd7-43f0-97a9-36cb9b703924
+ref table LocalDateTable_b7cc1013-d182-46d7-a99f-e69bbc630513
+ref table LoadDetails
+ref table LocalDateTable_2da06a7a-c960-47f9-af38-7fd045b198c9
+ref table LocalDateTable_f7a04461-84ad-4fd5-86d2-fe58b5969839
+ref table EarningsHistory
+ref table LocalDateTable_8a1988fa-6fc6-4aee-bdf7-eec88e41d0f5
+ref table LocalDateTable_ae7eb3c8-48a7-442a-b71c-f4832ddd53aa
+ref table LocalDateTable_6c439c4c-e9da-410d-b825-aecfef0452e6
+ref table DriverAlerts
+ref table LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7
+ref table DriverScore
+ref table LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047
+ref table LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e
+ref table AlertsTable
+ref table DrvHomeHistory
+ref table LocalDateTable_d8355c7b-9f7a-426d-855a-3aa6706a676c
+ref table LocalDateTable_ce3c06c1-4ab7-4c7c-ab5b-52bf55ffb4b5
+ref table LocalDateTable_5a9f702e-aab3-4ae1-8651-bce1e989dbd3
+ref table LocalDateTable_f003ec72-f6f3-420a-b5ba-3eeb9c1477dc
+ref table Utlfile
+ref table LocalDateTable_94177a3f-3552-447f-84e6-08c500e68420
+ref table TruckBusinessUnit
+ref table SetRevHistory
+ref table LocalDateTable_96e9f8c5-c631-4be2-bfcd-a892b71c04ef
+ref table LocalDateTable_e3356809-c2e6-49a9-b23b-c15d9c11df0a
+ref table LocalDateTable_c9f39903-1875-4f25-b984-9b14b3c9d52b
+
+ref cultureInfo en-US
+

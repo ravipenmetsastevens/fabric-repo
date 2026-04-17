@@ -1,0 +1,208 @@
+table 'Accounts Receivable'
+	lineageTag: dbfef9eb-4dae-4ac8-9fe6-fd91eee46b7c
+
+	column 'Record Code'
+		dataType: string
+		lineageTag: a6b4bf77-213d-4319-8dfd-aa92aa534094
+		summarizeBy: none
+		sourceColumn: record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: 080f6b0b-6067-4f71-b595-652608d3a235
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Number'
+		dataType: string
+		lineageTag: df5adaec-88c6-4c02-9a4c-307146c1b32f
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adjustment Batch Code'
+		dataType: string
+		lineageTag: e62367f0-a366-44b3-b80c-92d554d408f2
+		summarizeBy: none
+		sourceColumn: adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record Type'
+		dataType: string
+		lineageTag: e8f7cb46-e603-416a-96c2-7f282ed07f0d
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record Number'
+		dataType: double
+		lineageTag: 90a57bf6-fd3b-4a4d-aa4f-98486463d637
+		summarizeBy: sum
+		sourceColumn: record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 061b3eb5-a2c2-4c1e-9194-f14c4dde4869
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sequence Code'
+		dataType: string
+		lineageTag: ad6030e9-3843-4516-bef5-409de62d7953
+		summarizeBy: none
+		sourceColumn: sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Statement Number'
+		dataType: string
+		lineageTag: 5020fe40-1483-46f1-89de-e3fd7052bb6c
+		summarizeBy: none
+		sourceColumn: statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dispatch Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c27bee68-0d55-4257-b911-9db2d022cdc0
+		summarizeBy: none
+		sourceColumn: dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		lineageTag: 799ca6bf-527f-48e8-939b-1cf1c1fd4af4
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Balance Forward'
+		dataType: double
+		lineageTag: 51f141c4-c8f0-4acd-83ec-7ed9ff3ac6cd
+		summarizeBy: sum
+		sourceColumn: balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Daily PRO Register'
+		dataType: string
+		lineageTag: 12fc2e67-f148-44f0-aae8-d0b63225e032
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Weekly PRO Register'
+		dataType: string
+		lineageTag: a072ec04-72c6-4fff-b6ee-d917b3aa3e1e
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Monthly PRO Register'
+		dataType: string
+		lineageTag: 8221e830-02d4-4268-a213-c6d4ef3b5aad
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Non-Current'
+		dataType: string
+		lineageTag: 22ac8786-9011-4c3c-8ad9-fca846d4ba5e
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 71ce83eb-e364-42c3-96ca-157ddb0a524d
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Load Number'
+		dataType: string
+		lineageTag: 610207f8-94da-40a9-b966-363a686dbea8
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deposit Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8f567cbe-0503-4ed8-b8f0-447ea6ea3ca7
+		summarizeBy: none
+		sourceColumn: deposit_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Customer Order Number'
+		dataType: string
+		lineageTag: 0996b9cc-489c-4e06-8a8c-ce46ea238c38
+		summarizeBy: none
+		sourceColumn: cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Book Month'
+		dataType: string
+		lineageTag: 1597c805-9fa0-48bc-825d-1ccbda9b3b61
+		summarizeBy: none
+		sourceColumn: book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Book Year'
+		dataType: string
+		lineageTag: da4ff9c6-3302-48bb-a018-a5c59476ee98
+		summarizeBy: none
+		sourceColumn: book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Accounts Receivable' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_vw_ibmi_arfile_combined = Source{[Schema="gold",Item="vw_ibmi_arfile_combined"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(gold_vw_ibmi_arfile_combined, each [invoice_date] >= StartDate)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,33 @@
+table 'Measure Sel'
+	lineageTag: 984eec65-f2d0-447b-8df6-260fb1a713e7
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 90aa76ad-2dfa-4702-accf-4465d1cb4fa3
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Measure Name'
+		dataType: string
+		lineageTag: 02b8f042-7a6e-440f-b4e6-33c1497b253f
+		summarizeBy: none
+		sourceColumn: Measure Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measure Sel' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("VdHLDoIwEAXQXyFdY2J5CGx9xQXGBNkRFw1MSANSgmDi39tWwJntGcq90xYF48xluRpF61xlCy/2cAvmaUtlB85FTNh97adnP36QBdpueYYk1HKESpZihAr5TnsGtVQdCYtMmCqJxeZTITEla88M3tBNYJVv53iCnPQnI7Pa+X6g6NtmFpweBicfprL5jcx6+0E1MIga6KlwKUl0Nxey//hV5xG5ETyJ8Z3gQbLeClJvu0Ri/L8gVo9k4oqej0PJJFhTCdsX5RuzVqpENSeQ90QeLSWRxaTNPHh8AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID = _t, #"Measure Name" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ID", Int64.Type}, {"Measure Name", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,94 @@
+relationship 81314f9f-071a-4331-99cd-6f1e80b77953
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_perf_slices.slice_start_utc
+	toColumn: LocalDateTable_5a73161d-8944-4758-9668-687f0b4c6198.Date
+
+relationship 86815bf8-5574-4699-85a8-24fe73c9984e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_perf_slices.slice_end_utc
+	toColumn: LocalDateTable_4d5e8f8d-65c0-4e7c-b314-0fe9e61d7fab.Date
+
+relationship 6062b17d-4915-4e7c-920d-204abf9e8773
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_perf_slices.load_date
+	toColumn: LocalDateTable_76106b08-6fba-4be5-9196-62ae280817a6.Date
+
+relationship 46c1d5b7-f80a-49a0-b284-ca2db21f1c3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_create_date
+	toColumn: LocalDateTable_abfde871-cbab-47fe-a276-3066c21406d8.Date
+
+relationship 2ec416c3-0e6f-4cc8-9527-0f423fb21e50
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_update_date
+	toColumn: LocalDateTable_90262da8-9342-429b-852f-e83c0f6cefb6.Date
+
+relationship e8ed517e-cb22-4af8-8acb-a1bd3938f820
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_birth_date
+	toColumn: LocalDateTable_1d10773c-db4f-4b2e-b169-f9d787938d15.Date
+
+relationship 16c81c62-ba9c-405b-b925-d6191870b85b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_hire_date
+	toColumn: LocalDateTable_8400b669-e9a4-4b37-bddf-2440b595f71d.Date
+
+relationship 48e4c2f5-bc47-4a87-ac07-3f639bf36445
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_review_date
+	toColumn: LocalDateTable_29848cce-453d-467b-b74f-231bfdf29b1f.Date
+
+relationship ef8f51cb-b50b-4af7-b015-b42e01be8b70
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_termination_date
+	toColumn: LocalDateTable_a7fc83c0-1f2a-4b10-b0cf-f6afdcfa98df.Date
+
+relationship babc0f49-e82c-41b2-afc1-67482ef95e17
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_license_expiry_date
+	toColumn: LocalDateTable_105acee6-e073-4d35-8495-d2728fefe6d8.Date
+
+relationship adf18c8c-7839-45b7-b409-128bb5fc3489
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_physical_expiry_date
+	toColumn: LocalDateTable_0396d746-8dfe-430e-b67a-6b24ec58b3df.Date
+
+relationship 879b9188-b49f-4981-b26d-04411d04a07d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_solo_date
+	toColumn: LocalDateTable_ca533fb1-36d8-4fc8-9845-b8924bdd8d5f.Date
+
+relationship cdc4c475-d894-4c9b-a2ee-6ed55ea8d2b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_master.drv_longevity_date
+	toColumn: LocalDateTable_4f1b274d-a909-4a75-be07-efb21907f719.Date
+
+relationship 6b2626fc-4f08-4519-98c2-7aefadf1ccfa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_perf_slices.server_received_at
+	toColumn: LocalDateTable_a5ab73b7-2656-4231-bf43-1797ed66413e.Date
+
+relationship aeb85126-9633-4fe4-9c5d-879b5309836f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: driver_perf_slices.server_received_datre
+	toColumn: LocalDateTable_0633d224-b43c-4809-a5ec-597b274b62ae.Date
+
+relationship fbb58ca5-3c1c-48b7-b517-50bb3e5166f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: date_time.Date
+	toColumn: LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2.Date
+
+relationship 1947368a-3fc4-880a-daa0-32fa93df25a9
+	fromColumn: vw_driver_perf_daily.perf_date_utc
+	toColumn: date_time.Date
+
+relationship 757618c3-d982-2fe3-dd34-b80a6f779509
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: driver_master.drv_code
+	toColumn: vw_driver_perf_daily.driver_id
+
+relationship ea5a6cd3-072e-763a-106f-32f0c9bed1fd
+	fromColumn: vw_driver_perf_daily.truck_id
+	toColumn: asset_master.unit_number
+

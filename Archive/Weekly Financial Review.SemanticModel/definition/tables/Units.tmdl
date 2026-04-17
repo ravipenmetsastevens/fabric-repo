@@ -1,0 +1,167 @@
+table Units
+	lineageTag: 5922d61d-2229-46f0-a486-3932c1220f42
+
+	column unit_vin
+		dataType: string
+		lineageTag: ff8d6ed5-cd53-4ec8-af60-0170e6ab69cb
+		summarizeBy: none
+		sourceColumn: unit_vin
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_group
+		dataType: string
+		lineageTag: de36df1d-9958-4025-a144-5f58cb709003
+		summarizeBy: none
+		sourceColumn: unit_group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_number
+		dataType: string
+		lineageTag: 585e9988-b328-43be-b746-4957b10735cd
+		summarizeBy: none
+		sourceColumn: unit_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_custom_id
+		dataType: string
+		lineageTag: 73a4dd39-63e4-4374-8f8c-03a1ee99c2d9
+		summarizeBy: none
+		sourceColumn: unit_custom_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_type
+		dataType: string
+		lineageTag: ce30d19d-8357-4a46-a8f1-c8ad2fe3a79c
+		summarizeBy: none
+		sourceColumn: unit_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_year
+		dataType: int64
+		formatString: 0
+		lineageTag: dd07acc6-cb93-4c65-9b96-b800d9af6092
+		summarizeBy: sum
+		sourceColumn: unit_year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_make
+		dataType: string
+		lineageTag: b95ef1e7-ca9d-4f6b-b564-31c9b616d25a
+		summarizeBy: none
+		sourceColumn: unit_make
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_model
+		dataType: string
+		lineageTag: cc3e918b-aec8-4acf-8334-84d8905294e9
+		summarizeBy: none
+		sourceColumn: unit_model
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_manufacturer
+		dataType: string
+		lineageTag: 7ad08242-ad76-4454-af05-8d04c4f56acf
+		summarizeBy: none
+		sourceColumn: unit_manufacturer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_odometer_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: 3863e9a5-3c60-429b-99c1-b8e03837b6f8
+		summarizeBy: sum
+		sourceColumn: unit_odometer_miles
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_engine_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a2126c2-6de4-4225-852f-5e9a1dc9ea16
+		summarizeBy: sum
+		sourceColumn: unit_engine_hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_in_service_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8162ab76-d4e2-4892-bbe8-67c1586ecd2d
+		summarizeBy: none
+		sourceColumn: unit_in_service_date
+
+		variation Variation
+			isDefault
+			relationship: 93a296ff-8b42-4048-89c5-c31f8aff8540
+			defaultHierarchy: LocalDateTable_2d8a8ace-5eb0-48b8-82ba-d242f68d6274.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column unit_tag
+		dataType: string
+		lineageTag: 8b3a35b0-a3cf-46fe-af6b-270827fc493f
+		summarizeBy: none
+		sourceColumn: unit_tag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_status
+		dataType: string
+		lineageTag: 8522b5ed-864e-4d54-b168-4c0c01edd052
+		summarizeBy: none
+		sourceColumn: unit_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Units = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_maint_unit = Source{[Schema="gold",Item="dim_maint_unit"]}[Data]
+				in
+				    gold_dim_maint_unit
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

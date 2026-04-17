@@ -1,0 +1,110 @@
+table 'Date Selection Options'
+	lineageTag: b530a4ca-b2c7-4067-b8fc-46f01e6f5493
+
+	column Date
+		formatString: General Date
+		lineageTag: 21771a4b-ccae-4b0f-abde-a6768d3ece47
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visual Date'
+		formatString: General Date
+		lineageTag: 03dd9fe3-c786-46af-9ea0-086fffe48215
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Visual Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		lineageTag: a0f4c93d-cd14-4bd9-93dd-efebb4ca696c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: 042846e9-3230-40ed-94ae-bf933b56fa78
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display Date Label' =
+			
+			SWITCH(TRUE(),
+			    'Date Selection Options'[Type] = "Daily", FORMAT([Visual Date], "m/d/yy"),
+			    'Date Selection Options'[Type] = "Monthly", FORMAT([Visual Date], "YY-MMM"),
+			    'Date Selection Options'[Type] = "Weekly", FORMAT([Visual Date] + (7 - WEEKDAY([Visual Date], 2)),"M/D/YY"),
+			    'Date Selection Options'[Type] = "Quarterly", FORMAT([Visual Date], "YY") & "-Q" & FORMAT([Visual Date], "q"),
+			    'Date Selection Options'[Type] = "Yearly", FORMAT([Visual Date], "YY")
+			)
+		lineageTag: 91c82d29-9a38-49cf-96e3-d3645a463c87
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Index' = RANKX(ALL('Date Selection Options'),'Date Selection Options'[Date],,ASC,Dense)
+		formatString: 0
+		lineageTag: c55c3943-4b11-4db5-96da-2d4b3e2d7b25
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matrix Sort Date' =
+			
+			SWITCH([Order],
+			1, [Date],
+			2, [Date] + (7 - WEEKDAY([Date], 2)),
+			3, DATE(YEAR([Date]),MONTH([Date]),1),
+			4, DATE(YEAR([Date]),ROUNDUP( MONTH([Date] ) / 3, 0 ) * 3 - 2,1),
+			5, DATE(YEAR([Date]),1,1)
+			)
+		formatString: m/d/yy
+		lineageTag: 9e1ab21d-4bff-4fa5-bbd0-41c6a8740d6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Date Selection Options' = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Calendar'[Date]), MAX('Calendar'[Date])),
+				        "Visual Date", [Date],
+				        "Type", "Daily", "Order", 1
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Calendar'[Date]), MAX('Calendar'[Date])),
+				        "Visual Date", [Date],
+				        "Type", "Weekly", "Order", 2
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Calendar'[Date]), MAX('Calendar'[Date])),
+				        "Visual Date", DATE(YEAR([Date]), MONTH([Date]), 1),
+				        "Type", "Monthly", "Order", 3
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Calendar'[Date]), MAX('Calendar'[Date])),
+				        "Visual Date", [Date],
+				        "Type", "Quarterly", "Order", 4
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(MIN('Calendar'[Date]), MAX('Calendar'[Date])),
+				        "Visual Date", [Date],
+				        "Type", "Yearly", "Order", 5
+				    )
+				)
+
+	annotation PBI_Id = c499eb8389aa4527b20db5426a7524fb
+

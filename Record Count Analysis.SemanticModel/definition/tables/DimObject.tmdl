@@ -1,0 +1,49 @@
+table DimObject
+	lineageTag: 9bbc353a-1e7d-4424-a032-9f9eb066c6c4
+
+	column ObjectKey
+		dataType: string
+		lineageTag: 5b1668d5-8c7d-4fbe-9653-1e99a88fa8d7
+		summarizeBy: none
+		sourceColumn: ObjectKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_name
+		dataType: string
+		lineageTag: 8b804fcc-3694-4ab3-b220-d90c0ae5b18d
+		summarizeBy: none
+		sourceColumn: object_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_schema
+		dataType: string
+		lineageTag: d11b17e9-3bef-49cd-b335-47d39575508e
+		summarizeBy: none
+		sourceColumn: object_schema
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisplayName = DimObject[object_schema] & "|" & DimObject[object_name]
+		lineageTag: d7b538c1-31f1-4cb9-bfcc-b049fa500869
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimObject = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WSs/PSVHSUSorj89Mys2Mz8lPTIlPzs9NysxLBYnjlY7ViVYqzswpSy0CKoHLA9lYBEFqU5LykcXik4ry86pSgUI4JGJjAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ObjectKey = _t, object_schema = _t, object_name = _t, DisplayName = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ObjectKey", type text}, {"object_schema", type text}, {"object_name", type text}, {"DisplayName", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"DisplayName"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns",{"ObjectKey", "object_name", "object_schema"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"object_schema", "object_name"}, {"object_name", "object_schema"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

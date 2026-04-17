@@ -1,0 +1,204 @@
+table Suppliers
+	lineageTag: 81b245fd-65ef-4609-b83c-24f66c1d2658
+
+	column supplier_name
+		dataType: string
+		lineageTag: 1224e9e3-7402-40da-81d0-85c037781e56
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_custom_id
+		dataType: string
+		lineageTag: 19db6f8f-185a-447e-bfca-23416d873a5a
+		summarizeBy: none
+		sourceColumn: supplier_custom_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_street_address_1
+		dataType: string
+		lineageTag: 3cb2d1e8-bf5b-4e58-ab42-52f76131e045
+		summarizeBy: none
+		sourceColumn: supplier_street_address_1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_street_address_2
+		dataType: string
+		lineageTag: fe77e3bb-f35d-4154-b931-fa81eb6db53b
+		summarizeBy: none
+		sourceColumn: supplier_street_address_2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_city
+		dataType: string
+		lineageTag: de3ce300-bd84-42f0-a75f-ef9b088b63b9
+		summarizeBy: none
+		sourceColumn: supplier_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_state
+		dataType: string
+		lineageTag: 06ba894e-5e97-4e92-b7ed-ea17d063a16d
+		summarizeBy: none
+		sourceColumn: supplier_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_zip_code
+		dataType: string
+		lineageTag: 7d98297b-c2fd-46f0-b314-d22eee2e3c28
+		summarizeBy: none
+		sourceColumn: supplier_zip_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_country
+		dataType: string
+		lineageTag: 1b411bab-3667-4232-b70c-d503105c002f
+		summarizeBy: none
+		sourceColumn: supplier_country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_phone
+		dataType: string
+		lineageTag: 0b7b44d5-8bac-4d50-9536-5bfd0aea82dc
+		summarizeBy: none
+		sourceColumn: supplier_phone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_email
+		dataType: string
+		lineageTag: dd9e12cd-573c-44f4-9bde-592f7e7f615f
+		summarizeBy: none
+		sourceColumn: supplier_email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_term_days
+		dataType: string
+		lineageTag: c7ad2687-0a82-4bf1-a7d2-251cf0813571
+		summarizeBy: none
+		sourceColumn: payment_term_days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_notes
+		dataType: string
+		lineageTag: 3faeed38-e7cb-4ce7-8ea4-50fa7329995b
+		summarizeBy: none
+		sourceColumn: supplier_notes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_latitude
+		dataType: double
+		lineageTag: bc487d45-2ece-4a32-90d4-40f7044f3297
+		summarizeBy: sum
+		sourceColumn: supplier_latitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column supplier_longitude
+		dataType: double
+		lineageTag: 8da02806-d6d4-48b4-a08e-ab27690eca17
+		summarizeBy: sum
+		sourceColumn: supplier_longitude
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column supplier_added_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1ec611d5-94f6-4016-bc9a-987d814c2cfc
+		summarizeBy: none
+		sourceColumn: supplier_added_datetime
+
+		variation Variation
+			isDefault
+			relationship: 8268fdfd-9c51-49b2-ba71-04dd80ec4a7c
+			defaultHierarchy: LocalDateTable_9d37b46a-c414-4c4a-814e-846c0967dda5.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_added_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4a3ba8de-6cd3-4e2b-8354-e479e390ceb6
+		summarizeBy: none
+		sourceColumn: supplier_added_date
+
+		variation Variation
+			isDefault
+			relationship: 1d2524ad-72a4-4029-99e4-f5b527b8f352
+			defaultHierarchy: LocalDateTable_d1a821a0-2213-436d-a446-3938637535a1.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column supplier_type
+		dataType: string
+		lineageTag: 79692920-0872-40f4-98f2-cd383cba7361
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Suppliers = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_maint_supplier = Source{[Schema="gold",Item="dim_maint_supplier"]}[Data]
+				in
+				    gold_dim_maint_supplier
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

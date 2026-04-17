@@ -1,0 +1,317 @@
+table Stops
+	lineageTag: 3ba8d66c-c446-4922-86e8-7a80fc20ffbc
+
+	column 'Load Number'
+		dataType: string
+		lineageTag: 794483c0-92cb-47c6-bd2c-02b880530c66
+		summarizeBy: none
+		sourceColumn: Load_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stop Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac9637b6-95b9-45ad-a415-b59a3dd226ce
+		summarizeBy: distinctCount
+		sourceColumn: Stop Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Stop Type'
+		dataType: string
+		lineageTag: 8cc552ac-fdcf-441a-ae1f-4eb6adbb635a
+		summarizeBy: none
+		sourceColumn: Stop Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: b5372ce0-6363-4a50-b601-ad9d2e345474
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer City Code'
+		dataType: string
+		lineageTag: aadbd5f9-ab6d-4bb3-9ec3-37afed3d2ece
+		summarizeBy: none
+		sourceColumn: Customer City Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer State'
+		dataType: string
+		lineageTag: a513fcd6-5f93-42fd-a429-548ebbace6e1
+		summarizeBy: none
+		sourceColumn: Customer State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Contact Info'
+		dataType: string
+		lineageTag: 9f2ee1ff-18a0-42c2-bd39-ba180ea2106d
+		summarizeBy: none
+		sourceColumn: Customer Contact Info
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Appointment Date'
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: f273d390-fda6-4e8e-a881-b71eb320a2eb
+		summarizeBy: none
+		sourceColumn: Late Appt Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Late Appointment Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: b1173506-05b5-4242-b2c5-38b39d027dce
+		summarizeBy: none
+		sourceColumn: Late Appt Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Arrival Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 19818e11-1b55-45f0-9636-1201509e0275
+		summarizeBy: none
+		sourceColumn: Arrival Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Arrival Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 1b24c937-c72f-447e-9cfc-24c4535ba8c5
+		summarizeBy: none
+		sourceColumn: Arrival Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Load/Unload Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4e345623-9ae6-4682-9d9a-18c1a216bfeb
+		summarizeBy: none
+		sourceColumn: L-UL Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Load/Unload Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: fe2b66f2-e23f-489e-a438-fa9847d2dadc
+		summarizeBy: none
+		sourceColumn: L-UL Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Appointment Required'
+		dataType: string
+		lineageTag: 50213b92-2e29-4303-8d70-1e7ddc7b688e
+		summarizeBy: none
+		sourceColumn: Is Appt Req
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load/Unload Type'
+		dataType: string
+		lineageTag: 2151a9b3-094e-4bf4-ac28-e3176788f951
+		summarizeBy: none
+		sourceColumn: L-UL Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Truck Number'
+		dataType: string
+		lineageTag: 7d8e7e00-f14f-4a34-9cf7-4a7bd93fb527
+		summarizeBy: none
+		sourceColumn: Truck Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trailer Number'
+		dataType: string
+		lineageTag: 7d5011e6-7bad-4c30-b0fc-f454b91e2097
+		summarizeBy: none
+		sourceColumn: Trailer Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Arrival DateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9e9846f3-3bd0-4bc6-957c-fde2ed477de4
+		summarizeBy: none
+		sourceColumn: actual_arrival_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Appointment Late Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: db98634c-a38a-4426-92de-9fefea1a724d
+		summarizeBy: none
+		sourceColumn: appt_late_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: string
+		lineageTag: 2ccf2bf7-b27b-4a7a-9de5-c216a323f542
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has Late Service Exception'
+		dataType: int64
+		formatString: 0
+		lineageTag: d39db66b-d7c1-484e-8bfb-6d41525877f1
+		summarizeBy: sum
+		sourceColumn: HasLateServiceException
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Service Exception Reason Code'
+		dataType: string
+		lineageTag: a749b9c8-de1a-4d78-bb27-773ef0550d18
+		summarizeBy: none
+		sourceColumn: LateServiceExceptionReasonCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Pickup Count'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 917bb129-e562-4320-aaad-5392a2c7ce16
+		summarizeBy: sum
+		sourceColumn: OnTimePickupLateCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Delivery Count'
+		dataType: int64
+		formatString: #,0
+		lineageTag: c316194b-51ba-4613-878f-70b3ff71410c
+		summarizeBy: sum
+		sourceColumn: OnTimeDeliveryLateCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_dispatch_new
+		dataType: string
+		lineageTag: 930f7063-5c63-47dd-9219-ca03eba1ac7f
+		summarizeBy: none
+		sourceColumn: stopoff_dispatch_new
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Appointment Late DateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: da8a6e7e-8b49-44ba-824d-0f9d73b5b01d
+		summarizeBy: none
+		sourceColumn: og_appt_late_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Pickup Count Original'
+		dataType: int64
+		formatString: #,0
+		lineageTag: a2974b6f-9a1b-4b21-ad8c-937ce49dfe00
+		summarizeBy: sum
+		sourceColumn: OnTimePickupLateCount_OG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Delivery Count Original'
+		dataType: int64
+		formatString: #,0
+		lineageTag: b3c486ee-b221-46cd-ab41-c1a85c599691
+		summarizeBy: sum
+		sourceColumn: OnTimeDeliveryLateCount_OG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Stop'
+		dataType: string
+		lineageTag: d89e8862-fdca-4ded-9014-137c60b70d12
+		summarizeBy: none
+		sourceColumn: LoadStop
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Pickup Count Original Day'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81c51ffb-22b2-4020-9f57-28cf792bbc82
+		summarizeBy: sum
+		sourceColumn: OnTimePickupLateCount_OG_Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Delivery Count Original Day'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bef49ac-2512-4167-9c6d-bf6058b5c5ff
+		summarizeBy: sum
+		sourceColumn: OnTimeDeliveryLateCount_OG_Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDispatch
+		dataType: string
+		lineageTag: 21a1bfbe-3388-40c6-84f8-af75dc0e52af
+		summarizeBy: none
+		sourceColumn: LoadDispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Stops = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_vw_ibmi_stopoff = Source{[Schema="gold",Item="vw_ibmi_stopoff"]}[Data],
+				    #"Filter by Late Appt Date" = Table.SelectRows(gold_vw_ibmi_stopoff, each [stopoff_appt_late_date] >= StartDate),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filter by Late Appt Date",{"stopoff_stop_code", "stopoff_customer_area_code", "stopoff_customer_phone_number", "stopoff_shipper_edi_code", "stopoff_consignee_edi_code", "stopoff_last_status", "stopoff_appt_early_date", "stopoff_appt_early_time", "stopoff_shipper_specific_code", "stopoff_seal_1_code", "stopoff_seal_2_code", "stopoff_weight", "stopoff_pieces", "stopoff_unit_of_measure", "stopoff_pallets_on", "stopoff_pallets_off", "stopoff_dispatch", "stopoff_appt_created_date", "stopoff_appt_created_time", "stopoff_message"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"stopoff_load_number", "Load_Number"}, {"stopoff_stop_number", "Stop Number"}, {"stopoff_stop_type", "Stop Type"}, {"stopoff_customer_code", "Customer Code"}, {"stopoff_city_code", "Customer City Code"}, {"stopoff_state", "Customer State"}, {"stopoff_contact_info", "Customer Contact Info"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns",{"stopoff_est_arrival_date", "stopoff_est_arrival_time"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns1",{{"stopoff_appt_late_date", "Late Appt Date"}, {"stopoff_appt_late_time", "Late Appt Time"}, {"stopoff_arrival_date", "Arrival Date"}, {"stopoff_arrival_time", "Arrival Time"}, {"stopoff_load_unload_date", "L-UL Date"}, {"stopoff_load_unload_time", "L-UL Time"}, {"is_appt_required", "Is Appt Req"}, {"stopoff_load_unload_type", "L-UL Type"}, {"stopoff_truck_number", "Truck Number"}, {"stopoff_trailer_number", "Trailer Number"}}),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Renamed Columns1",{"stopoff_appt_created_initials", "is_appt_created", "stopoff_appt_date_at_dispatch", "stopoff_appt_time_at_dispatch"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns2",{{"division_code", "Division Code"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns2", each [Arrival Date] <> null and [Arrival Date] <> ""),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Stop Number", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "LoadStop", each [Load_Number]&"-"&Number.ToText([Stop Number])),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "OnTimePickupLateCount_OG_Day", each if [og_appt_late_dt] <> null and  Duration.Days(Date.From([actual_arrival_dt]) - Date.From([og_appt_late_dt])) > 0 and [Stop Type] = "PICKUP" then 1 else 0),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "OnTimeDeliveryLateCount_OG_Day", each if [og_appt_late_dt] <> null and  Duration.Days(Date.From([actual_arrival_dt]) - Date.From([og_appt_late_dt])) > 0 and [Stop Type] = "DELIVERY" then 1 else 0),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom2",{{"OnTimePickupLateCount_OG_Day", Int64.Type}, {"OnTimeDeliveryLateCount_OG_Day", Int64.Type}}),
+				    #"Added Custom3" = Table.AddColumn(#"Changed Type1", "LoadDispatch", each [Load_Number] & "-" & [stopoff_dispatch_new])
+				in
+				    #"Added Custom3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

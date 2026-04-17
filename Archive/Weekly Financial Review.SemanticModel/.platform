@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Weekly Financial Review"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "43e9a28d-4710-bb80-4afb-55f1c5d0c39d"
+  }
+}

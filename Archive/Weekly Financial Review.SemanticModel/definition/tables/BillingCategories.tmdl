@@ -1,0 +1,33 @@
+table BillingCategories
+	lineageTag: 6f795390-d90e-442a-8924-ec7f1926fc27
+
+	column billing_category
+		dataType: string
+		lineageTag: 34d99e4e-ea5f-460c-b3dd-c54077582626
+		summarizeBy: none
+		sourceColumn: billing_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_code
+		dataType: string
+		lineageTag: 8db18a6e-e16a-4dab-8fcf-031f4007aeeb
+		summarizeBy: none
+		sourceColumn: type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BillingCategories = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="gold",Item="dim_billing_categories"]}[Data]
+				in
+				    silver_plsc_asset_master
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

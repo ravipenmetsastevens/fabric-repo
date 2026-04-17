@@ -1,0 +1,248 @@
+table vw_driver_perf_daily
+	lineageTag: d7d24f28-6a87-479b-a9b4-1456a269bebb
+
+	measure EngineHours =
+			
+			SUM ( vw_driver_perf_daily[engine_hours] )
+		lineageTag: c24ff27b-9c04-4931-9901-b6d5de7ad4b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FuelUsed (gal)' =
+			
+			SUM ( vw_driver_perf_daily[fuel_used_gal] )
+		lineageTag: 9a1291c4-d83a-41d6-9dce-f44a5476eda6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Harsh RPM %' =
+			
+			DIVIDE ( SUM ( vw_driver_perf_daily[minutes_high_rpm] ),
+			         SUM ( vw_driver_perf_daily[minutes_moving] ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1cc8f28e-d0e8-4de0-a5ea-be4633fb1ba3
+
+	measure 'Idle % of Engine-On Time' =
+			
+			DIVIDE ( SUM ( vw_driver_perf_daily[minutes_idle] ),
+			         SUM ( vw_driver_perf_daily[minutes_idle] ) + SUM ( vw_driver_perf_daily[minutes_driving] ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ffba50e3-b1cd-4b7a-bbc8-2cb2f26edf33
+
+	measure 'IdleFuel (gal)' =
+			
+			SUM ( vw_driver_perf_daily[fuel_idle_gal] )
+		lineageTag: a4dd5eab-37d6-492d-83af-9eb78dc0ba5e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MilesDriven =
+			
+			SUM ( vw_driver_perf_daily[miles_driven] )
+		lineageTag: fa958470-28b4-4f7c-8d3b-d8a8a4ab5c7d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overspeed Events' =
+			
+			SUM ( vw_driver_perf_daily[overspeed_events] )
+		formatString: 0
+		lineageTag: f851b79f-886e-4b7b-9848-5b3b89f70118
+
+	measure 'Overspeed per 1000 mi' =
+			
+			DIVIDE ( [Overspeed Events], [MilesDriven] / 1000 )
+		lineageTag: 212038d7-9f0e-4b24-8465-2b88619327b2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MPG =
+			
+			DIVIDE ( [MilesDriven], [FuelUsed (gal)] )
+		lineageTag: 1ff4eb50-9c1e-46a0-b4b5-cd2af78e4113
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Utilisation %' =
+			
+			DIVIDE ( [EngineHours], 24 * DISTINCTCOUNT ( date_time[Date] ) )
+		lineageTag: 9cd1d958-43de-4907-ac5d-cfaf5a826e4b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Non-Idle Fuel (gal)' = ```
+			[FuelUsed (gal)] - [IdleFuel (gal)]
+			
+			```
+		lineageTag: 2ef5e320-e940-4cc9-b8d6-e3b776a39d7b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column driver_id
+		dataType: string
+		lineageTag: 2e837a56-30f5-4510-9d59-b3f30861bbee
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		lineageTag: 494e4562-2795-4c80-ac7e-cb4b33f89726
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column perf_date_utc
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6b52ac84-9bd7-4b7d-b7c5-d8fe74a8a25d
+		summarizeBy: none
+		sourceColumn: perf_date_utc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column miles_driven
+		dataType: double
+		lineageTag: 958945c2-62dd-4b79-bde5-c3eb30ab2a4f
+		summarizeBy: sum
+		sourceColumn: miles_driven
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_driving
+		dataType: double
+		lineageTag: 6e0a6a63-84a8-4442-9443-77ee9b9b2fba
+		summarizeBy: sum
+		sourceColumn: minutes_driving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_moving
+		dataType: double
+		lineageTag: 85ba1fd0-9360-4402-8b39-86ae2afdea58
+		summarizeBy: sum
+		sourceColumn: minutes_moving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_idle
+		dataType: double
+		lineageTag: 44ede7bf-e56c-4625-a279-9f3309683cb3
+		summarizeBy: sum
+		sourceColumn: minutes_idle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_used_gal
+		dataType: double
+		lineageTag: d6e45192-ff0c-4340-97fe-f85ab8e9ae1e
+		summarizeBy: sum
+		sourceColumn: fuel_used_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_idle_gal
+		dataType: double
+		lineageTag: 625567db-be54-4f58-833f-25ccbc6fb91a
+		summarizeBy: sum
+		sourceColumn: fuel_idle_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overspeed_events
+		dataType: int64
+		formatString: 0
+		lineageTag: 10d65394-a030-461e-b372-a4ec0ffe93c3
+		summarizeBy: sum
+		sourceColumn: overspeed_events
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_overspeed
+		dataType: double
+		lineageTag: 981f0ad3-85d0-4aca-bd60-46009b6ff706
+		summarizeBy: sum
+		sourceColumn: minutes_overspeed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_speed_mph
+		dataType: int64
+		formatString: 0
+		lineageTag: e867a090-cc89-4016-a3ae-dd7950147e1a
+		summarizeBy: sum
+		sourceColumn: max_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_rpm
+		dataType: int64
+		formatString: 0
+		lineageTag: e1573034-41d8-4ac6-8725-6d478ed5301c
+		summarizeBy: sum
+		sourceColumn: max_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_high_rpm
+		dataType: double
+		lineageTag: 00a7b7cd-d7ce-439f-b577-a1479a38ab47
+		summarizeBy: sum
+		sourceColumn: minutes_high_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engine_hours
+		dataType: double
+		lineageTag: f9484542-0f88-4f47-b008-7a94b6520a25
+		summarizeBy: sum
+		sourceColumn: engine_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column odo_delta_mi
+		dataType: double
+		lineageTag: 4ee73511-e38c-4ba4-a358-9fe9bd185248
+		summarizeBy: sum
+		sourceColumn: odo_delta_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_driver_perf_daily = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_vw_driver_perf_daily = data_central_wh{[Schema="silver",Item="vw_driver_perf_daily"]}[Data]
+				in
+				    silver_vw_driver_perf_daily
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

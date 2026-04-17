@@ -1,0 +1,56 @@
+table Parameter
+	lineageTag: a1876225-4f92-443d-a3be-a8b329a4bfae
+
+	column Parameter
+		lineageTag: 9d47013b-b49c-4b90-901c-1d754f700277
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: d8e1d595-6c2b-44ac-ba2e-7cb6badf7191
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 9df52955-2e8b-49eb-9718-2187db9d6d7a
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("EngineHours", NAMEOF('vw_driver_perf_daily'[EngineHours]), 0),
+				    ("FuelUsed (gal)", NAMEOF('vw_driver_perf_daily'[FuelUsed (gal)]), 1),
+				    ("Harsh RPM %", NAMEOF('vw_driver_perf_daily'[Harsh RPM %]), 2),
+				    ("Idle % of Engine-On Time", NAMEOF('vw_driver_perf_daily'[Idle % of Engine-On Time]), 3),
+				    ("IdleFuel (gal)", NAMEOF('vw_driver_perf_daily'[IdleFuel (gal)]), 4),
+				    ("MilesDriven", NAMEOF('vw_driver_perf_daily'[MilesDriven]), 5),
+				    ("MPG", NAMEOF('vw_driver_perf_daily'[MPG]), 6),
+				    ("Overspeed Events", NAMEOF('vw_driver_perf_daily'[Overspeed Events]), 7),
+				    ("Overspeed per 1000 mi", NAMEOF('vw_driver_perf_daily'[Overspeed per 1000 mi]), 8),
+				    ("Utilisation %", NAMEOF('vw_driver_perf_daily'[Utilisation %]), 9)
+				}
+
+	annotation PBI_Id = 5490752972ea48138da087ee97abb45a
+

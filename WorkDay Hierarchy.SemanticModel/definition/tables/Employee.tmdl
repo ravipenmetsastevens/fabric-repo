@@ -1,0 +1,133 @@
+table Employee
+	lineageTag: 974bbed6-0e4b-4fbd-9de9-7e92d0357fd2
+
+	column employee_id
+		dataType: string
+		lineageTag: 2a717047-f1f1-4a8c-807d-b076a65a0acb
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_id
+		dataType: string
+		lineageTag: 8f6224fd-999d-44d2-b95e-2bc22b7e59c7
+		summarizeBy: none
+		sourceColumn: worker_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: e10fe41c-e8dc-4a2c-afb7-68b975887d72
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: b3d5aa50-760d-4478-b016-f6e92bea84ee
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column worker_descriptor
+		dataType: string
+		lineageTag: 4651dec9-eea4-4e59-a938-f7023de4fb76
+		summarizeBy: none
+		sourceColumn: worker_descriptor
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 76567ea4-947d-41ff-b411-f15f610a8613
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column middle_name
+		dataType: string
+		lineageTag: b4d4da43-7bbb-48be-b5f9-80e5b52d8f1d
+		summarizeBy: none
+		sourceColumn: middle_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 51258383-fbac-40b1-9c05-dea04c181f4d
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sup_org_ref_id
+		dataType: string
+		lineageTag: b06911b4-12e9-45c4-b0f2-fafde4d5e9b7
+		summarizeBy: none
+		sourceColumn: sup_org_ref_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sup_org_code
+		dataType: string
+		lineageTag: ecd6c78b-cc3c-46b3-92db-a55d008650be
+		summarizeBy: none
+		sourceColumn: sup_org_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sup_org_name
+		dataType: string
+		lineageTag: 84749051-3c64-4b7b-be21-57a5376971ab
+		summarizeBy: none
+		sourceColumn: sup_org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sup_org_inactive
+		dataType: string
+		lineageTag: 656d619f-e39e-4843-91da-2a153cc025b1
+		summarizeBy: none
+		sourceColumn: sup_org_inactive
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: int64
+		formatString: 0
+		lineageTag: 6466a4a4-363b-44b1-b3d2-f47e16c80eff
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column photo_url
+		dataType: string
+		lineageTag: e1ab2097-f590-43e5-bf28-ec58a778c471
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: photo_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Employee = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Schema] = "silver") and ([Name] = "silver.vw_wd_employee")),
+				    silver_vw_wd_employee = #"Filtered Rows"{[Schema="silver",Item="vw_wd_employee"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(silver_vw_wd_employee,{"run_id", "extract_ts_utc", "worker_wid"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns", {"employee_id"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

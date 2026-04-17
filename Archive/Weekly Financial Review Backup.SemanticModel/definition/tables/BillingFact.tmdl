@@ -1,0 +1,219 @@
+table BillingFact
+	lineageTag: d01df2d2-4ad5-42aa-a67d-3d46bc53f6e3
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c25f56b-8c4e-4aba-af14-d51b287e16df
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_load_number
+		dataType: string
+		lineageTag: 58913de9-8424-4a85-9665-54b23047b173
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_sequence_number
+		dataType: string
+		lineageTag: 9b2b1104-8b46-4358-a7f6-77b0aace0c3e
+		summarizeBy: none
+		sourceColumn: billing_sequence_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_record_number
+		dataType: double
+		lineageTag: cac02e0b-cc89-478a-8e6c-29b5b5bd2845
+		summarizeBy: sum
+		sourceColumn: billing_record_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_commodity_code
+		dataType: string
+		lineageTag: 6ac3cdd9-2561-4031-9cc4-8844ae2e0ae2
+		summarizeBy: none
+		sourceColumn: billing_commodity_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_description
+		dataType: string
+		lineageTag: a79b6917-d662-4697-aa34-cda712fdd201
+		summarizeBy: none
+		sourceColumn: billing_commodity_description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_piece_count
+		dataType: double
+		lineageTag: 455cdbcf-5e31-4a55-b9d2-37d2c61458a6
+		summarizeBy: sum
+		sourceColumn: billing_piece_count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_actual_quantity_count
+		dataType: double
+		lineageTag: b04b17f3-5d05-428f-9a46-b57da69d4d28
+		summarizeBy: sum
+		sourceColumn: billing_actual_quantity_count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_quantity_count
+		dataType: double
+		lineageTag: 76534ebc-9004-4aea-8a52-b33d974802cc
+		summarizeBy: sum
+		sourceColumn: billing_billed_quantity_count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_rate
+		dataType: double
+		lineageTag: 9f0e4b42-1c4f-45ae-af53-1afa7360f68d
+		summarizeBy: sum
+		sourceColumn: billing_billed_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_amount
+		dataType: double
+		lineageTag: 55ccbe54-612e-4d8d-acff-39e604cad6a6
+		summarizeBy: sum
+		sourceColumn: billing_billed_amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_method_code
+		dataType: string
+		lineageTag: d0872d55-3b1e-43f9-8315-dca241dc7911
+		summarizeBy: none
+		sourceColumn: billing_method_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_error_code
+		dataType: string
+		lineageTag: d6e71c23-1984-48fc-9f9c-d22f47042f22
+		summarizeBy: none
+		sourceColumn: billing_error_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_gl_account_number
+		dataType: string
+		lineageTag: 7d7ad593-49e4-4cba-8b51-bf3f9a624df5
+		summarizeBy: none
+		sourceColumn: billing_gl_account_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 56381ef4-5277-4986-865b-509017684a46
+		summarizeBy: none
+		sourceColumn: billing_billed_date
+
+		variation Variation
+			isDefault
+			relationship: 0a264a46-fbd1-4b14-a9c0-2feb4a63fd45
+			defaultHierarchy: LocalDateTable_88e4e393-f84b-45da-9816-d50e245b9e86.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		lineageTag: 67d7b7e7-5e2e-420c-afd5-7bfdf7cb592f
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division =
+			
+			IF (
+			    LEFT ( FORMAT ( 'BillingFact'[division_code], "" ), 1 ) = "0",
+			    "broker",
+			    "other"
+			)
+		lineageTag: 0849b1d5-c113-4467-9bff-bcc0e3b5008b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BillingFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database(
+				            "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+				            "data_central_wh",
+				            [
+				                Query = "
+				SELECT *
+				FROM [data_central_wh].[gold].[vw_ibmi_billing_combined]
+				WHERE billing_billed_date >= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)
+				  AND billing_billed_date < DATEFROMPARTS(YEAR(GETDATE()) + 1, 1, 1)
+				"
+				            ]
+				        ),
+				    #"Reordered Columns" =
+				        Table.ReorderColumns(Source,{"billing_load_number", "billing_sequence_number", "billing_record_number", "billing_commodity_code", "is_deleted", "billing_commodity_description", "billing_piece_count", "billing_actual_quantity_count", "billing_billed_rate", "billing_billed_quantity_count", "billing_billed_amount", "billing_method_code", "billing_error_code", "billing_gl_account_number", "billing_billed_date"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Reordered Columns", {"billing_load_number"}, OrderFact, {"order_load_number"}, "OrderFact", JoinKind.LeftOuter),
+				    #"Expanded OrderFact" = Table.ExpandTableColumn(#"Merged Queries", "OrderFact", {"order_division_code"}, {"OrderFact.order_division_code"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded OrderFact",{{"OrderFact.order_division_code", "division_code"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

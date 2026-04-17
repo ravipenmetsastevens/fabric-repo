@@ -1,0 +1,50 @@
+table 'Load-At Customers'
+	lineageTag: 7b90de68-9479-478e-81e9-d9215c24869b
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: 12a096f6-7aa5-4c51-ab7d-b1aadaa49802
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City Code'
+		dataType: string
+		lineageTag: bb693141-749d-414e-b006-172500f8c950
+		summarizeBy: none
+		sourceColumn: Customer City Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: becb415a-e0dc-4906-83df-68fd939da303
+		summarizeBy: none
+		sourceColumn: Customer State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 558ec3d6-28f5-4283-a4e6-e206e8e1e283
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Load-At Customers' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_customer = Source{[Schema="gold",Item="dim_customer"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(gold_dim_customer,{{"customer_code", "Customer Code"}, {"cust_city_code", "Customer City Code"}, {"cust_area_code", "Customer State"}, {"cust_name", "Customer Name"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"cust_division_code", "is_deleted", "cust_address_line_1", "cust_address_line_2", "cust_address_city", "cust_address_state", "cust_address_zip", "cust_address_zip_extn", "bill_to_code", "bill_to_name", "cust_salesperson", "cust_shipper_code", "cust_shipper_area_code", "cust_shipper_phone", "cust_country", "controlling_shipper", "controlling_shipper_name", "is_allow_as_shipper", "is_allow_as_bill_to", "is_allow_as_load_at", "is_allow_as_consignee", "edi_profile_code", "cust_division_name", "commodity_code", "commodity_description", "pu_area_code", "pu_area_name", "last_activity_date"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

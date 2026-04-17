@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Customer Scorecard V1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ce416b67-74b8-b0b0-4eef-17b0a55c22a2"
+  }
+}

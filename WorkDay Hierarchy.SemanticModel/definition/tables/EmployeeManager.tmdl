@@ -1,0 +1,192 @@
+table EmployeeManager
+	lineageTag: ed040e4f-4489-4f79-b85f-cfb74c24f039
+
+	column employee_id
+		dataType: string
+		lineageTag: fe80e1f6-e836-4162-9fcf-5c32bf701c9b
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3369d49d-46fa-4966-8189-12538eb1f4bc
+		summarizeBy: count
+		sourceColumn: Id
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pid
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d331bbc-d482-448e-b589-8a4c9d38a69b
+		summarizeBy: sum
+		sourceColumn: Pid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 09795f29-fcfc-4a87-8884-c062920d87a7
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerName
+		dataType: string
+		lineageTag: 6aba1b81-52c7-4316-8b3e-62bc5b61fae7
+		summarizeBy: none
+		sourceColumn: ManagerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level1
+		dataType: string
+		lineageTag: e9395fb1-1154-4bba-b7f9-a92be3f80ce0
+		summarizeBy: none
+		sourceColumn: Level1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level2
+		dataType: string
+		lineageTag: 201c68fa-3b2d-455f-be20-8179d5cddb25
+		summarizeBy: none
+		sourceColumn: Level2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level3
+		dataType: string
+		lineageTag: c8d203a0-121f-44ab-900a-684d5cd6b3da
+		summarizeBy: none
+		sourceColumn: Level3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level4
+		dataType: string
+		lineageTag: b3773b3b-184c-4341-85e4-12ec7b7204a9
+		summarizeBy: none
+		sourceColumn: Level4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level5
+		dataType: string
+		lineageTag: 71eb067b-e275-4485-9c8c-da7cd3023ecb
+		summarizeBy: none
+		sourceColumn: Level5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		lineageTag: e3811172-ec99-43df-acb4-4ae827604852
+		summarizeBy: none
+		sourceColumn: Level6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level7
+		dataType: string
+		lineageTag: cdae78e4-dc65-4b81-9d9b-39034780904b
+		summarizeBy: none
+		sourceColumn: Level7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level8
+		dataType: string
+		lineageTag: 9dd21886-112c-4b71-b92c-5f4de1c978e0
+		summarizeBy: none
+		sourceColumn: Level8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level9
+		dataType: string
+		lineageTag: f2da4a40-d97e-4cf6-8c0b-2a7da0a5cf8c
+		summarizeBy: none
+		sourceColumn: Level9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level10
+		dataType: string
+		lineageTag: 52587806-decb-4e20-a964-331e33063a40
+		summarizeBy: none
+		sourceColumn: Level10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sup_org_name
+		dataType: string
+		lineageTag: 0e2d6061-0bad-487e-a91e-8fb208a1e16c
+		summarizeBy: none
+		sourceColumn: Sup_org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Photo_url
+		dataType: string
+		lineageTag: 625ea363-a093-484d-9a7d-b73fc4f6c348
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Photo_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 54ca5251-cd86-4b0f-acde-e13456124772
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Photo_Base64
+		dataType: string
+		lineageTag: 427ce970-ab75-42e0-96c7-0423a15a0668
+		summarizeBy: none
+		sourceColumn: Photo_Base64
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EmployeeManager = m
+		mode: import
+		source = ```
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Schema] = "silver") and ([Name] = "silver.vw_employee_hierarchy_edge_numeric")),
+				    silver_vw_employee_hierarchy_edge_numeric = #"Filtered Rows"{[Schema="silver",Item="vw_employee_hierarchy_edge_numeric"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(silver_vw_employee_hierarchy_edge_numeric, {"employee_id"}, Employee, {"employee_id"}, "Employee", JoinKind.LeftOuter),
+				    #"Expanded Employee" = Table.ExpandTableColumn(#"Merged Queries", "Employee", {"user_id", "email", "sup_org_name", "photo_url"}, {"Employee.user_id", "Employee.email", "Employee.sup_org_name", "Employee.photo_url"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Employee",{"Employee.user_id"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Employee.email", "Email"}, {"Employee.sup_org_name", "Sup_org_name"}, {"Employee.photo_url", "Photo_url"}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Renamed Columns", each ([Sup_org_name] <> "Drivers" and [Sup_org_name] <> "TL Canada")),
+				    
+				    // --- NEW STEPS START HERE ---
+				    // 1. Fetch the image binary data from the URL
+				    #"Added Image Binary" = Table.AddColumn(#"Filtered Rows1", "ImageBinary", each if [Photo_url] <> null then Web.Contents([Photo_url]) else null),
+				    
+				    // 2. Convert Binary to Base64 Text String
+				    #"Added Base64" = Table.AddColumn(#"Added Image Binary", "Photo_Base64", each if [ImageBinary] <> null 
+				        then "data:image/jpeg;base64, " & Binary.ToText([ImageBinary], BinaryEncoding.Base64) 
+				        else null),
+				    
+				    // 3. Clean up the temporary Binary column
+				    #"Removed Binary" = Table.RemoveColumns(#"Added Base64",{"ImageBinary"})
+				in
+				    #"Removed Binary"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,241 @@
+table DriverAlerts
+	lineageTag: 21b2e3a7-ded8-4a75-8a21-f71a58b14770
+	sourceLineageTag: d4733c52-c1b3-4dce-b835-13779c9f20a8
+
+	column alert_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bf3d789-aa8b-4729-9ae2-219a1d7d2477
+		sourceLineageTag: 64da76e2-e43b-4ea9-b041-c8b6abd24688
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_id
+
+		annotation SummarizationSetBy = User
+
+	column alert_driver_id
+		dataType: string
+		lineageTag: ba7b682b-1f0d-4f6e-805f-164dbf3c755b
+		sourceLineageTag: 2273d1a1-011a-409b-ba9f-c2ab95ffd2f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_driver_id
+
+		annotation SummarizationSetBy = User
+
+	column alert_vehicle_vin
+		dataType: string
+		lineageTag: c55303c5-22ae-4e1c-8337-0e354447aa4c
+		sourceLineageTag: 3a5b6f99-6653-46b9-9f27-173db0973041
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_vehicle_vin
+
+		annotation SummarizationSetBy = User
+
+	column alert_device_id
+		dataType: string
+		lineageTag: 2cd464ac-16f2-4d6f-b7eb-d2dea865a080
+		sourceLineageTag: 26acf084-b69c-40ac-81da-59f5f91ab315
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_device_id
+
+		annotation SummarizationSetBy = User
+
+	column alert_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 04653a05-bcb6-459d-9b4e-172c4fabd823
+		sourceLineageTag: d16be733-d7b7-43e4-8aca-55fa730ef224
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_date
+
+		annotation SummarizationSetBy = User
+
+	column alert_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 882fdc2e-c7ee-46f4-ae21-f81da0f4b2b6
+		sourceLineageTag: 5a2f0cb2-d8d9-40b6-b979-6179a274d915
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_time
+
+		annotation SummarizationSetBy = User
+
+	column alert_duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b58d70b-d5b6-48da-9244-a70a92b3c388
+		sourceLineageTag: e877550b-b834-483d-a106-437ffd68b751
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_duration
+
+		annotation SummarizationSetBy = User
+
+	column alert_type
+		dataType: string
+		lineageTag: 457a49ff-670d-42f9-b1f5-ae8008d3901d
+		sourceLineageTag: 2a130884-801a-43c2-a372-0679d915f2b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_type
+
+		annotation SummarizationSetBy = User
+
+	column alert_sub_type
+		dataType: string
+		lineageTag: 4433409c-69f3-42bd-9696-a9b4dd336436
+		sourceLineageTag: cb72f1a1-ea2b-4870-9353-f4a92a725726
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_sub_type
+
+		annotation SummarizationSetBy = User
+
+	column alert_severity
+		dataType: string
+		lineageTag: babc3b10-2e03-4615-82c0-bcc6924a3f99
+		sourceLineageTag: 845fbbb7-b8d0-42a1-87fb-2df4b9404c78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_severity
+
+		annotation SummarizationSetBy = User
+
+	column alert_category
+		dataType: string
+		lineageTag: 42adadba-8085-4e22-99e6-93509c65b062
+		sourceLineageTag: a4c7979d-f630-4f1c-a1fe-fb3cc9335c56
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_category
+
+		annotation SummarizationSetBy = User
+
+	column alert_cause
+		dataType: string
+		lineageTag: 9c2ff6a6-0c07-467e-8eb1-c854765bda98
+		sourceLineageTag: 63f969aa-815e-4518-b6bb-585a06abcae6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_cause
+
+		annotation SummarizationSetBy = User
+
+	column alert_weather
+		dataType: string
+		lineageTag: 1e52e89e-4a78-451d-ac51-1b110cacf65c
+		sourceLineageTag: a3132a63-dbb9-4894-80f8-39a491c953ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_weather
+
+		annotation SummarizationSetBy = User
+
+	column alert_vehicle_status
+		dataType: string
+		lineageTag: c7c55f82-fa22-4b16-9967-972ab402459e
+		sourceLineageTag: af43667c-025f-423c-9b5c-1288884b779f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_vehicle_status
+
+		annotation SummarizationSetBy = User
+
+	column alert_gps_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 80246c21-e396-4825-8cbf-88f89d722e70
+		sourceLineageTag: b091d390-4799-4f85-adb4-6de04b0172d2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_gps_date
+
+		variation Variation
+			isDefault
+			relationship: c51971f2-df99-4157-a78c-358ff9c076be
+			defaultHierarchy: LocalDateTable_e7a1f2f8-a941-428b-ae27-325c2c83c7b7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column alert_gps_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 8a0c5f98-68fb-40d2-8cd1-afd6552cebb9
+		sourceLineageTag: 619445b9-881b-4daa-8fe7-c04eb764e378
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_gps_time
+
+		annotation SummarizationSetBy = User
+
+	column alert_gps_latitude
+		dataType: double
+		lineageTag: 182cce60-c8bd-4a1f-9476-9db9b8837dac
+		sourceLineageTag: ce48f869-5497-4dc0-834c-3662c7eef3fe
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_gps_latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_gps_longitude
+		dataType: double
+		lineageTag: b967ab5e-8f5f-4b68-ae74-efda52d4a7a5
+		sourceLineageTag: 453f1d6d-347e-4b42-9a7b-f14d5fae149d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_gps_longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed
+		dataType: double
+		lineageTag: 41310738-502f-4faa-9627-62edb2a0103c
+		sourceLineageTag: f5989356-7c7e-4ff3-bede-5e18db29ab5c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_speed
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed_limit
+		dataType: double
+		lineageTag: e6fc9868-d8c6-4008-b4b7-3ea710d1efbf
+		sourceLineageTag: 0373fca1-b6f4-4628-bbd1-0a4fa36006a0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: alert_speed_limit
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_status
+		dataType: string
+		lineageTag: e79b8786-092f-46ff-a106-e11573d9f972
+		sourceLineageTag: a0aee832-5dd7-4c7a-9534-a9550961a31c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alert_status
+
+		annotation SummarizationSetBy = User
+
+	partition DriverAlerts = entity
+		mode: directQuery
+		source
+			entityName: DriverAlerts
+			expressionSource: 'DirectQuery to AS - Driver Scorecard'
+
+	annotation PBI_ResultType = Exception
+

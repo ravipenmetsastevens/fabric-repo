@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Weekly Business Review"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7e97bcec-f2dd-9706-4d40-4723e374d5ba"
+  }
+}

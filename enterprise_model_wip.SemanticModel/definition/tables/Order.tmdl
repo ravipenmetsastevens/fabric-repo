@@ -1,0 +1,136 @@
+table Order
+	lineageTag: 1f177f46-5ea3-4285-b164-b9d69ee90cec
+
+	column order_load_number
+		dataType: string
+		lineageTag: fa25e404-b9bd-46fc-8819-a866ebe804ee
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderStatus
+		dataType: string
+		lineageTag: 1a329911-f8a8-40c5-85db-fb817c0ac9b6
+		summarizeBy: none
+		sourceColumn: OrderStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d3813844-8275-4da0-9263-e444b538ed08
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_customer_code
+		dataType: string
+		lineageTag: 13443802-b783-43a5-83a7-420f76a503da
+		summarizeBy: none
+		sourceColumn: order_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_creation_initials
+		dataType: string
+		lineageTag: 4fb6c653-b1a4-400f-8a70-39061cd2a9e5
+		summarizeBy: none
+		sourceColumn: order_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_city_code
+		dataType: string
+		lineageTag: c43aa7a9-afe0-46e0-8fdd-0c1b90fa0e50
+		summarizeBy: none
+		sourceColumn: order_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_city_code
+		dataType: string
+		lineageTag: 18858d29-d557-47b0-91c7-1a8b60fd64aa
+		summarizeBy: none
+		sourceColumn: order_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles_billable
+		dataType: double
+		lineageTag: 5d103b34-0fce-4655-b9f9-1ce399c36d13
+		summarizeBy: sum
+		sourceColumn: order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_load_type
+		dataType: string
+		lineageTag: 4d4d31d5-0c18-4643-98ea-0fbadc90f6f6
+		summarizeBy: none
+		sourceColumn: order_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_revenue_estimation
+		dataType: double
+		lineageTag: 8ba08858-2434-4309-a985-4e0df8c9b472
+		summarizeBy: sum
+		sourceColumn: order_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_load_volume
+		dataType: string
+		lineageTag: 944363cc-12f0-4369-a2ea-1be22410f87b
+		summarizeBy: none
+		sourceColumn: order_load_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c62ee4b7-0d6b-47a9-b5fb-f280473c8fa6
+		summarizeBy: none
+		sourceColumn: order_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_receipt_signed
+		dataType: string
+		lineageTag: 985f9cb7-b3b7-4366-87ec-06edbaec5104
+		summarizeBy: none
+		sourceColumn: is_delivery_receipt_signed
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivery_receipt_req
+		dataType: string
+		lineageTag: 17f4307b-1173-4439-80d6-5d77fcc3c7ed
+		summarizeBy: none
+		sourceColumn: order_delivery_receipt_req
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Order = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT * FROM [gold].[Order]"]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"order_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

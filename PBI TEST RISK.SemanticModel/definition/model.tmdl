@@ -1,0 +1,30 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["CLAIMMASTER","ACCIDENTTYPETABLE"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
+
+ref table ACCIDENTTYPETABLE
+ref table DateTableTemplate_1ff5c704-1afb-4619-a490-c137875f7a7e
+ref table LocalDateTable_14c8f226-b638-4af4-ad48-d81ccb901cf7
+ref table LocalDateTable_7c4e38e3-32a9-4534-b774-c50b00931e10
+ref table CLAIMMASTER
+ref table LocalDateTable_0a6def7f-f575-4ba6-a46b-02b10205b9d2
+ref table LocalDateTable_3ba916c3-4ce0-4aab-9cd8-d45a54ef4e6f
+ref table LocalDateTable_f9f807f4-92aa-4313-9c1d-19d6179bf777
+ref table LocalDateTable_7e224adc-a69d-4bdf-9755-ab63ef9a0a5d
+ref table LocalDateTable_5736297f-8edf-4350-93c6-20523003b97e
+ref table LocalDateTable_b12d101b-c02e-4dbc-ade4-5b09679c6cd3
+ref table LocalDateTable_046bcef4-c12e-4a30-9911-562b7018e351
+ref table LocalDateTable_1bff3faa-5155-4483-920a-7419680d25b3
+
+ref cultureInfo en-US
+

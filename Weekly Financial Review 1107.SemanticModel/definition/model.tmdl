@@ -1,0 +1,114 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 11/3/2025 3:08:06 PM.
+queryGroup 'Query Errors - 11/3/2025 3:08:06 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["AssetMaster","DateTime","Driver","DriverScore","BusinessUnit","BillingFact","Suppliers","Units","RepairOrdersFact","MaintSchedFact","Tasks","Parts","MeasuresTable","BillingCategories","ARWeeklySnapShot","AccidentDetails","AccidentCategories","OrdTlbFact","OrderFact","PayGroup","SettlementCodes","DivisionGroup","EarningsHistory","SettlRevenueHistory","UtlFile","BillingTlbFact","BillingRecords","Date Selection","Moving Average","Measure Sel","LoadFact","LoadedCallDateFact"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
+
+ref table AssetMaster
+ref table DateTableTemplate_7796607f-a786-489b-930a-6f107be68572
+ref table DateTime
+ref table LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2
+ref table Driver
+ref table LocalDateTable_7764c1d3-9d4e-4e03-9e26-bcc29fa49fec
+ref table LocalDateTable_ee521805-6010-4c67-9575-2a534b0bf471
+ref table DriverScore
+ref table LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047
+ref table LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e
+ref table BusinessUnit
+ref table BillingFact
+ref table Suppliers
+ref table LocalDateTable_9d37b46a-c414-4c4a-814e-846c0967dda5
+ref table LocalDateTable_d1a821a0-2213-436d-a446-3938637535a1
+ref table Units
+ref table LocalDateTable_2d8a8ace-5eb0-48b8-82ba-d242f68d6274
+ref table RepairOrdersFact
+ref table LocalDateTable_496b5856-9238-4e7b-b65c-9ec150caac95
+ref table LocalDateTable_0ce13594-ac33-47e4-a195-5e047d049a87
+ref table LocalDateTable_194fc2fb-c5e6-4266-af49-dcbdce395b4b
+ref table LocalDateTable_69774386-e2a3-400e-9ea5-8782d0e32a5a
+ref table LocalDateTable_c8c3151e-98b5-474f-9df0-fe2903f5057a
+ref table LocalDateTable_8f184e26-73be-4722-bbe0-a553b417df28
+ref table LocalDateTable_099b5260-10e5-4ea4-8130-ba1913ab36f4
+ref table LocalDateTable_cc5fd3a2-3bef-4da4-b92e-e5a31eafa950
+ref table LocalDateTable_f843e273-cdaf-48dd-8dec-d18f8a2f4596
+ref table MaintSchedFact
+ref table LocalDateTable_b2d6c4ca-c8e1-4ee5-a95d-11c6a1104544
+ref table LocalDateTable_4b5c102d-3efd-4119-b795-de0607d6ee8c
+ref table Tasks
+ref table LocalDateTable_cb11d9e4-c6ae-4939-bfa8-c0b63fe558da
+ref table Parts
+ref table LocalDateTable_85ca62aa-0c4e-4241-bfe9-cf04fd2e2719
+ref table MeasuresTable
+ref table BillingCategories
+ref table ARWeeklySnapShot
+ref table LocalDateTable_6f2ada38-583d-4285-821c-dd7dec5f422c
+ref table LocalDateTable_b29e7d86-2de0-4e30-b44c-1311626cc490
+ref table LocalDateTable_64b7dbf8-69e7-4b3a-ab7f-094e60326df8
+ref table AccidentDetails
+ref table LocalDateTable_3ac998d3-5dd5-434f-b3d3-caff692957e6
+ref table AccidentCategories
+ref table OrdTlbFact
+ref table OrderFact
+ref table LocalDateTable_8420b348-0f64-44c0-a059-3b949135694c
+ref table LocalDateTable_048442e7-f200-45bb-ad2b-8789ca4617d2
+ref table LocalDateTable_70ca3bd9-a1d3-40ad-b81d-ff667a27f5fa
+ref table LocalDateTable_0e12badb-858f-4d5f-9d28-3a071540556c
+ref table LocalDateTable_fd6dee62-239d-4f5d-9e54-ba2f6cba5942
+ref table LocalDateTable_6f097184-cc2a-4074-885f-55485edd2d4a
+ref table LocalDateTable_1a12ae25-14f1-43e6-a0e1-067c60fa8aac
+ref table PayGroup
+ref table SettlementCodes
+ref table DivisionGroup
+ref table EarningsHistory
+ref table LocalDateTable_85a738cf-23d6-44ec-a1e0-277b01c7b4c1
+ref table LocalDateTable_02113bd8-3199-4444-9a16-2089bb398684
+ref table LocalDateTable_9f4590e8-c85f-4fb4-996e-de95935442cf
+ref table SettlRevenueHistory
+ref table LocalDateTable_b37d1091-7e7a-422b-a018-4487423471dd
+ref table LocalDateTable_18924237-29f5-4b8d-b8f9-ffc4b0298682
+ref table LocalDateTable_d9aa0f30-c782-4d6f-8ba2-6d8ad2e06342
+ref table UtlFile
+ref table LocalDateTable_2cd3e496-be1b-4f1f-be2a-ac1e76abb67f
+ref table BillingTlbFact
+ref table LocalDateTable_ceae4df7-f3e1-412b-a8b0-9545c95c663b
+ref table LocalDateTable_4be7a1e9-53bc-438b-8f18-257c632ab20a
+ref table LocalDateTable_741c2025-e506-49a5-8ebe-0196aaee6175
+ref table LocalDateTable_43a63df1-6ab0-442a-9c95-18c2b205c10f
+ref table LocalDateTable_8d277cf8-180b-4134-849f-8b99c45f75cc
+ref table LocalDateTable_8e005f7a-fbd3-409b-9bab-48c16a106639
+ref table LocalDateTable_2ec15a12-3c24-49ba-91f9-c65166b0cdd9
+ref table LocalDateTable_d11cd432-f352-457a-8c52-3f08df4552df
+ref table LocalDateTable_260b9f5c-059a-497e-8736-9fdfa0f93c08
+ref table LocalDateTable_b27d5bdb-e93c-4362-a86f-ca594eabbff7
+ref table LocalDateTable_b660990f-f070-452e-a18c-24e65b595cc9
+ref table LocalDateTable_013a1e63-07f6-49e6-a112-50365486d0f7
+ref table LocalDateTable_ba1f78e6-f3f0-4ef6-abe4-7b24892da050
+ref table BillingRecords
+ref table 'Date Selection'
+ref table 'Moving Average'
+ref table 'Measure Sel'
+ref table LocalDateTable_88e4e393-f84b-45da-9816-d50e245b9e86
+ref table LocalDateTable_d134039b-3d37-4b00-be91-16e15c7d0d78
+ref table LoadFact
+ref table LocalDateTable_5091d3e6-707e-4bc2-8fbf-d8a281238b9b
+ref table LocalDateTable_61e205eb-e99f-486c-a214-818dfcab7e54
+ref table LocalDateTable_12c4831e-71dd-4f37-b8dd-470d5d8389d5
+ref table LocalDateTable_1c9d105c-4b19-4de6-a22e-96ea38e7de1c
+ref table LoadedCallDateFact
+ref table LocalDateTable_cabb975a-75dc-45fc-b26a-844a2fa065a3
+
+ref cultureInfo en-US
+

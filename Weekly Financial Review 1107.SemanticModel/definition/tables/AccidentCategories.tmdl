@@ -1,0 +1,33 @@
+table AccidentCategories
+	lineageTag: e3a0965e-2bca-47a7-baea-3572e6e31477
+
+	column accident_type_description
+		dataType: string
+		lineageTag: 3c1876db-3f4a-4545-bcdc-fdba57db7abb
+		summarizeBy: none
+		sourceColumn: accident_type_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_category
+		dataType: string
+		lineageTag: a1309fa1-149b-41d5-833c-9ccfd5389cd8
+		summarizeBy: none
+		sourceColumn: accident_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AccidentCategories = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    final = data_central_wh{[Schema="silver",Item="risk_accident_categories"]}[Data]
+				in
+				    final
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

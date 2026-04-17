@@ -1,0 +1,234 @@
+table Orders
+	lineageTag: 9f7fe624-5aae-458d-a686-e86298c7d2d9
+
+	column 'Load Number'
+		dataType: string
+		lineageTag: 24bd4456-6a0e-4ef2-8b2c-506f7ba051a3
+		summarizeBy: none
+		sourceColumn: Load Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Code'
+		dataType: string
+		lineageTag: 3c302769-7d38-46a7-9616-95ca3bc3b38c
+		summarizeBy: none
+		sourceColumn: Status Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: 136c496d-63b6-4829-9d1b-7a2283657bee
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consignee Code'
+		dataType: string
+		lineageTag: 0730123e-c519-47ee-960e-dc090afe8cc5
+		summarizeBy: none
+		sourceColumn: Consignee Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill-To Customer Code'
+		dataType: string
+		lineageTag: cfc6a859-2125-4f2b-8ec1-b8d7d02927dd
+		summarizeBy: none
+		sourceColumn: Billto Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load-At Customer Code'
+		dataType: string
+		lineageTag: 6f5c5d5a-e09b-437b-ad37-ccf6330ceab4
+		summarizeBy: none
+		sourceColumn: Loadat Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commodity Code'
+		dataType: string
+		lineageTag: 252abb3e-e630-41b3-96e2-11d0712d365c
+		summarizeBy: none
+		sourceColumn: Commodity Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commodity Description'
+		dataType: string
+		lineageTag: 0c0f45eb-5167-458f-b368-9802779ec03d
+		summarizeBy: none
+		sourceColumn: Commodity Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin City Code'
+		dataType: string
+		lineageTag: 0f517413-5e46-49e3-a52a-24e867566612
+		summarizeBy: none
+		sourceColumn: Origin City Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin State'
+		dataType: string
+		lineageTag: f65c1631-6ae9-457b-ad67-5774f1ed7931
+		summarizeBy: none
+		sourceColumn: Origin State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin City'
+		dataType: string
+		lineageTag: 83f3e884-e09b-4cd1-b0f5-e52a94aa9135
+		summarizeBy: none
+		sourceColumn: Origin City Short Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination City Code'
+		dataType: string
+		lineageTag: 67776b38-8f56-411b-904f-1ec40e29d6ca
+		summarizeBy: none
+		sourceColumn: Destination City COde
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination State'
+		dataType: string
+		lineageTag: fc178eae-380f-4219-98e9-a9c274aff8bc
+		summarizeBy: none
+		sourceColumn: Destination State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination City'
+		dataType: string
+		lineageTag: 6ee0ce19-eac0-411e-88df-10e62cf32766
+		summarizeBy: none
+		sourceColumn: Destination City Short Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billable Miles'
+		dataType: double
+		lineageTag: c37e7526-c6c4-4823-a07d-64f1cfe2ca3b
+		summarizeBy: sum
+		sourceColumn: Billable Miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Estimated Revenue'
+		dataType: double
+		lineageTag: 64648c79-a73d-425d-9b7f-53949ebcc716
+		summarizeBy: sum
+		sourceColumn: Estimated Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Late Pickup Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 32e780bc-8f84-4aef-a3ca-2ae00e5b9b1e
+		summarizeBy: none
+		sourceColumn: Late Pickup Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Late Pickup Time'
+		dataType: string
+		lineageTag: efa03e52-d091-475f-bb22-87f3ab1faa4e
+		summarizeBy: none
+		sourceColumn: Late Pickup Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Late Delivery Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7b479f52-7329-48a7-8a45-e45842a56db1
+		summarizeBy: none
+		sourceColumn: Late Delivery Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Late Delivery Time'
+		dataType: string
+		lineageTag: bc2c0c85-359c-483f-8a93-ad5e0f5307f9
+		summarizeBy: none
+		sourceColumn: Late Delivery Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 677b9928-35e9-44a3-8b83-0d08f299db51
+		summarizeBy: none
+		sourceColumn: Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ship Time'
+		dataType: string
+		lineageTag: 3facd336-360a-43b7-b8b4-cb2dd49a9e91
+		summarizeBy: none
+		sourceColumn: Ship Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: string
+		lineageTag: 34579617-2f1b-497f-81dd-de1b99f4327a
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lane Code'
+		dataType: string
+		lineageTag: 5f1493bb-2571-4363-b4a9-2d46fcab9d50
+		summarizeBy: none
+		sourceColumn: Lane Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lane
+		dataType: string
+		lineageTag: e30c3998-915f-41a7-ae71-bc9e78a2e868
+		summarizeBy: none
+		sourceColumn: Lane
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_vw_ibmi_order_combined = Source{[Schema="gold",Item="vw_ibmi_order_combined"]}[Data],
+				    #"Filter by Late Appt Date" = Table.SelectRows(gold_vw_ibmi_order_combined, each [order_late_pickup_date] >= OrderStartDate),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filter by Late Appt Date",{"order_origin_area_code", "order_date", "order_time", "order_early_pickup_date", "order_early_pickup_time", "is_pickup_required", "order_early_delivery_date", "order_early_delivery_time", "is_delivery_required", "order_creation_initials", "order_customer_phone_area_code", "order_customer_phone_number", "order_consignee_phone_area_code", "order_consignee_phone_number", "order_load_weight", "order_pallet_count", "order_origin_bea_code", "order_origin_gu_code", "order_destination_bea_code", "order_destination_gu_code", "order_load_type", "order_stop_count", "order_dispatch_count", "order_preload_trailer", "order_new_origin_area_code", "order_destination_area_code", "order_bill_of_lading", "order_purchase_order", "order_pick_up_code", "order_piece_count", "order_collection_method_code", "order_load_volume", "order_message", "order_required_pallet_count", "order_temp_high", "order_temp_low", "order_last_update_date", "order_last_update_time", "order_last_update_initials", "order_company_code", "order_seal_code", "order_service_failure_code", "order_driver_commit_flag", "is_edi_load", "is_edi_stats_complete", "is_driver_loaded", "is_driver_unloaded", "is_delivery_receipt_signed", "order_delivery_receipt_req", "order_edi_message_billing_flag", "is_load_just_in_time", "order_edi_billing_code", "is_edi_inbound_or_outbound", "order_current_city_code", "order_current_state", "order_loaded_call_date", "order_empty_call_date", "order_trailer_length", "order_trailer_height", "has_permit", "has_permit_complete", "order_latitude", "order_longitude", "is_tentitive_load", "order_hours_under_dispatch", "order_origin_zone_code", "order_origin_region_code", "order_destination_zone_code", "order_destination_region_code", "is_to_be_rated", "has_new_gu_code", "is_exclude_from_model", "is_deleted", "order_carry_over_flag", "order_truck_type_requirement_code", "order_delivery_code"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"order_load_number", "Load Number"}, {"order_status_code", "Status Code"}, {"order_customer_code", "Customer Code"}, {"order_consignee_code", "Consignee Code"}, {"order_billto_code", "Billto Code"}, {"order_loadat_code", "Loadat Code"}, {"order_commodity_code", "Commodity Code"}, {"order_commodity_description", "Commodity Description"}, {"order_origin_city_code", "Origin City Code"}, {"order_origin_state", "Origin State"}, {"order_origin_city_short_name", "Origin City Short Name"}, {"order_destination_city_code", "Destination City COde"}, {"order_destination_state", "Destination State"}, {"order_destination_city_short_name", "Destination City Short Name"}, {"order_miles_billable", "Billable Miles"}, {"order_revenue_estimation", "Estimated Revenue"}, {"order_late_pickup_date", "Late Pickup Date"}, {"order_late_pickup_time", "Late Pickup Time"}, {"order_late_delivery_date", "Late Delivery Date"}, {"order_late_delivery_time", "Late Delivery Time"}, {"order_ship_date", "Ship Date"}, {"order_ship_time", "Ship Time"}, {"order_division_code", "Division Code"}, {"order_lane_code", "Lane Code"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Lane", each [Origin City Short Name]&", "&[Origin State] &" > "&[Destination City Short Name]&", "&[Destination State]),
+				    #"Filtered Rows" = Table.SelectRows(#"Added Custom", each [Status Code] <> "C")
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

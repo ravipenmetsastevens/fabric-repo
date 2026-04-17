@@ -1,0 +1,90 @@
+table asset_master
+	lineageTag: 1311bb86-6301-448b-a93a-a862a3647475
+
+	column asset_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a296d9c-a6dd-41f6-bcab-53f9162ebca5
+		summarizeBy: none
+		sourceColumn: asset_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_number
+		dataType: string
+		lineageTag: 1dbdd376-14ae-4b71-a8e7-8a3fcc1c4a14
+		summarizeBy: none
+		sourceColumn: unit_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vin
+		dataType: string
+		lineageTag: 0afbd96d-df03-40ac-89e8-2bbc519a827a
+		summarizeBy: none
+		sourceColumn: vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_plate
+		dataType: string
+		lineageTag: b6cc7635-6b38-468a-9f53-60567a7f8305
+		summarizeBy: none
+		sourceColumn: license_plate
+
+		annotation SummarizationSetBy = Automatic
+
+	column plate_state
+		dataType: string
+		lineageTag: 8bc481c2-a0ca-4904-8af6-e17eb11f1769
+		summarizeBy: none
+		sourceColumn: plate_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column terminal
+		dataType: string
+		lineageTag: 57b6ee7a-7a07-4e41-9132-b22b531c9064
+		summarizeBy: none
+		sourceColumn: terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column make
+		dataType: string
+		lineageTag: 02da5228-17ca-4a4a-9c6d-ade24d1dd340
+		summarizeBy: none
+		sourceColumn: make
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		lineageTag: de49124a-e4b4-468b-85cc-4052edab1d1d
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column telematics_guid
+		dataType: string
+		lineageTag: 66c61346-a1ed-4409-b59e-4cbefef42a32
+		summarizeBy: none
+		sourceColumn: telematics_guid
+
+		annotation SummarizationSetBy = Automatic
+
+	partition asset_master = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="silver",Item="plsc_asset_master"]}[Data]
+				in
+				    silver_plsc_asset_master
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

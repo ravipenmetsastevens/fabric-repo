@@ -1,0 +1,740 @@
+table 'silver ibmi_trailer'
+	isHidden
+	lineageTag: 25d0c80b-620e-4f4e-8a73-e25340a42f22
+
+	column TRTRLR
+		dataType: string
+		isHidden
+		lineageTag: 42e5d8df-c494-4361-ae9c-3853d795c994
+		summarizeBy: none
+		sourceColumn: TRTRLR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TROWNR
+		dataType: string
+		isHidden
+		lineageTag: 90a34a15-afb3-430d-8475-32ae931c0a68
+		summarizeBy: none
+		sourceColumn: TROWNR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_create_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d88f5afb-d760-40cd-8ea8-a2d28360efc1
+		summarizeBy: none
+		sourceColumn: trailer_record_create_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column trailer_record_create_time
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		lineageTag: 77361ca8-69da-4234-bce3-fdee37a120de
+		summarizeBy: none
+		sourceColumn: trailer_record_create_time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column TRCREI
+		dataType: string
+		isHidden
+		lineageTag: 49827aaa-3350-40fd-93d7-5c44686ce538
+		summarizeBy: none
+		sourceColumn: TRCREI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_update_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: f9439d3b-f12d-45e5-8d82-98563d95189f
+		summarizeBy: none
+		sourceColumn: trailer_record_update_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column trailer_record_update_time
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		lineageTag: 43be7d86-7ea5-46ac-be74-29231d5c20e2
+		summarizeBy: none
+		sourceColumn: trailer_record_update_time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column TRUPDI
+		dataType: string
+		isHidden
+		lineageTag: c8ac2306-62f7-46c4-bc3f-78e3dcaf2386
+		summarizeBy: none
+		sourceColumn: TRUPDI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCO
+		dataType: string
+		isHidden
+		lineageTag: 9931974b-0418-44a3-a585-ca0de33cff43
+		summarizeBy: none
+		sourceColumn: TRCO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDV
+		dataType: string
+		isHidden
+		lineageTag: 3462f384-cdaa-4cd8-a912-a8d72e2917f6
+		summarizeBy: none
+		sourceColumn: TRDV
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTM
+		dataType: string
+		isHidden
+		lineageTag: 11bf4318-d804-45db-b47e-17b62f963a57
+		summarizeBy: none
+		sourceColumn: TRTM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRYEAR
+		dataType: string
+		isHidden
+		lineageTag: 70c5720a-ad64-401c-b52f-b6bb0d992247
+		summarizeBy: none
+		sourceColumn: TRYEAR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMAKE
+		dataType: string
+		isHidden
+		lineageTag: da5a8cff-8bd4-425c-9aec-33293b489504
+		summarizeBy: none
+		sourceColumn: TRMAKE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRSER
+		dataType: string
+		isHidden
+		lineageTag: b815a85e-63f0-4d39-91a2-c51db93757cc
+		summarizeBy: none
+		sourceColumn: TRSER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMNPR
+		dataType: string
+		isHidden
+		lineageTag: 4cf57b7b-f3f4-4c6a-a469-5c3b3b8d5073
+		summarizeBy: none
+		sourceColumn: TRMNPR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRBAST
+		dataType: string
+		isHidden
+		lineageTag: da806511-a4ee-41f2-b283-ff7142c67f5a
+		summarizeBy: none
+		sourceColumn: TRBAST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRNY
+		dataType: string
+		isHidden
+		lineageTag: 15fd4eec-7057-438b-af8b-a09efdf6251c
+		summarizeBy: none
+		sourceColumn: TRNY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTYPE
+		dataType: string
+		isHidden
+		lineageTag: 8f616877-a836-417b-af4d-a79e146ae933
+		summarizeBy: none
+		sourceColumn: TRTYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTRST
+		dataType: string
+		isHidden
+		lineageTag: 04c54f2e-bfe4-499d-a36b-db5930762052
+		summarizeBy: none
+		sourceColumn: TRTRST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_purchase_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 2ad01df9-ade6-4e1b-8877-9bd9277372ba
+		summarizeBy: none
+		sourceColumn: trailer_purchase_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TRARA
+		dataType: string
+		isHidden
+		lineageTag: eb06fa7a-26c5-43e0-bac6-8ce29eb33ec3
+		summarizeBy: none
+		sourceColumn: TRARA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRORD
+		dataType: string
+		isHidden
+		lineageTag: f24a1b65-ba6a-4e34-a098-2336bcf84516
+		summarizeBy: none
+		sourceColumn: TRORD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDISP
+		dataType: string
+		isHidden
+		lineageTag: c606be10-369d-49c9-99dc-a72e994391aa
+		summarizeBy: none
+		sourceColumn: TRDISP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRUNIT
+		dataType: string
+		isHidden
+		lineageTag: 83223529-c471-480a-8df2-7846c86bdb02
+		summarizeBy: none
+		sourceColumn: TRUNIT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDCTY
+		dataType: string
+		isHidden
+		lineageTag: f71ee69c-d687-40a8-bf47-9bb71cd5fb8e
+		summarizeBy: none
+		sourceColumn: TRDCTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDST
+		dataType: string
+		isHidden
+		lineageTag: c7643b03-862b-4f5b-9085-3d6491a09032
+		summarizeBy: none
+		sourceColumn: TRDST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_eta_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: ba4975eb-34c4-40d6-852b-b647604552b5
+		summarizeBy: none
+		sourceColumn: trailer_eta_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TRCCTY
+		dataType: string
+		isHidden
+		lineageTag: 9b7d67be-3d6b-4427-a648-b848daaa9f61
+		summarizeBy: none
+		sourceColumn: TRCCTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCST
+		dataType: string
+		isHidden
+		lineageTag: 2c208adb-6903-4b73-a82f-5d0f1903f13b
+		summarizeBy: none
+		sourceColumn: TRCST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_last_contact_date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: daa50ac3-b2da-4cd2-810b-9aca4eaeba7d
+		summarizeBy: none
+		sourceColumn: trailer_last_contact_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TRMSG
+		dataType: string
+		isHidden
+		lineageTag: 976bb9c9-8ffe-404b-8b5e-ad038d5b1433
+		summarizeBy: none
+		sourceColumn: TRMSG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDLT
+		dataType: string
+		isHidden
+		lineageTag: 9cdc22de-6feb-4331-b62f-7821b79a8606
+		summarizeBy: none
+		sourceColumn: TRDLT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRFLET
+		dataType: string
+		isHidden
+		lineageTag: f20e6f8c-4b3a-44be-8c6c-30fda13421b5
+		summarizeBy: none
+		sourceColumn: TRFLET
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAXLE
+		dataType: string
+		isHidden
+		lineageTag: ff03420d-1df8-46a3-bf5f-36a7fe9ce2d7
+		summarizeBy: none
+		sourceColumn: TRAXLE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TREMWT
+		dataType: double
+		isHidden
+		lineageTag: bd256a98-3aa0-46b0-ad13-dde981be59d0
+		summarizeBy: sum
+		sourceColumn: TREMWT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRGRWT
+		dataType: double
+		isHidden
+		lineageTag: 87421924-96c7-445f-8498-9024acda5343
+		summarizeBy: sum
+		sourceColumn: TRGRWT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRHEIG
+		dataType: double
+		isHidden
+		lineageTag: 781cf844-7b44-48a2-a040-bcd82b0de43e
+		summarizeBy: sum
+		sourceColumn: TRHEIG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRLENG
+		dataType: double
+		isHidden
+		lineageTag: 5e70d135-d715-4c83-aea9-8c867b1e9310
+		summarizeBy: sum
+		sourceColumn: TRLENG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRCOST
+		dataType: double
+		isHidden
+		lineageTag: 18409966-687c-4568-b62e-08ddfb36afa0
+		summarizeBy: sum
+		sourceColumn: TRCOST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRPRLD
+		dataType: string
+		isHidden
+		lineageTag: 21951166-068b-4f4d-ac3a-79ba5a70061f
+		summarizeBy: none
+		sourceColumn: TRPRLD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCONT
+		dataType: string
+		isHidden
+		lineageTag: 9875a73a-bf93-4a81-b064-c042c48b5cdc
+		summarizeBy: none
+		sourceColumn: TRCONT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRHOUR
+		dataType: double
+		isHidden
+		lineageTag: 2904d15e-1691-450b-8b39-28c554a621e1
+		summarizeBy: sum
+		sourceColumn: TRHOUR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRHUB
+		dataType: double
+		isHidden
+		lineageTag: dfb50d8e-6dea-4734-9344-de3785cb19d6
+		summarizeBy: sum
+		sourceColumn: TRHUB
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRMULT
+		dataType: string
+		isHidden
+		lineageTag: 865b9639-2f70-42e2-aeaf-5e6352a16690
+		summarizeBy: none
+		sourceColumn: TRMULT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRWIDE
+		dataType: double
+		isHidden
+		lineageTag: fbd410fa-4648-44f5-b8ca-a76c5c4f2689
+		summarizeBy: sum
+		sourceColumn: TRWIDE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRCUBE
+		dataType: double
+		isHidden
+		lineageTag: d31ca149-442d-42ee-8cef-8deb32bc7ea3
+		summarizeBy: sum
+		sourceColumn: TRCUBE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRIDIM
+		dataType: double
+		isHidden
+		lineageTag: 9baf0ccb-b75b-42a3-82ce-a901723d276a
+		summarizeBy: sum
+		sourceColumn: TRIDIM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRDDIM
+		dataType: double
+		isHidden
+		lineageTag: df55429b-be66-415e-8ffe-c45b6d1209d6
+		summarizeBy: sum
+		sourceColumn: TRDDIM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRTSIZ
+		dataType: string
+		isHidden
+		lineageTag: 921c061e-383a-4cb7-ad19-d258368113a8
+		summarizeBy: none
+		sourceColumn: TRTSIZ
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTTYP
+		dataType: string
+		isHidden
+		lineageTag: 068546c8-e3bb-451e-93a8-f9ff1a059a67
+		summarizeBy: none
+		sourceColumn: TRTTYP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMISC
+		dataType: string
+		isHidden
+		lineageTag: 9087a338-90a0-40c1-adaa-6d120f5c2dbf
+		summarizeBy: none
+		sourceColumn: TRMISC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRPERC
+		dataType: double
+		isHidden
+		lineageTag: d9d81f5a-9413-4f7b-bc01-953e5566206f
+		summarizeBy: sum
+		sourceColumn: TRPERC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRLRAT
+		dataType: double
+		isHidden
+		lineageTag: 4e363a24-7a6c-42a5-b7f4-2f434ac9eb4b
+		summarizeBy: sum
+		sourceColumn: TRLRAT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRERAT
+		dataType: double
+		isHidden
+		lineageTag: 903760ac-ad2d-4215-affb-41ca76a16162
+		summarizeBy: sum
+		sourceColumn: TRERAT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRLFLG
+		dataType: string
+		isHidden
+		lineageTag: 9a420d37-46c9-4b97-9ad0-b66a1a627488
+		summarizeBy: none
+		sourceColumn: TRLFLG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRL#PL
+		dataType: double
+		isHidden
+		lineageTag: 93f6d8a0-d71e-40cd-a9b0-b129435ebeb8
+		summarizeBy: sum
+		sourceColumn: TRL#PL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRLTMP
+		dataType: string
+		isHidden
+		lineageTag: c4bde362-5e6a-4d38-8816-0f4c2a1c0983
+		summarizeBy: none
+		sourceColumn: TRLTMP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLCOD
+		dataType: string
+		isHidden
+		lineageTag: 812eb703-240e-4e80-b7d1-7a85fddb62f6
+		summarizeBy: none
+		sourceColumn: TRLCOD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCUST
+		dataType: string
+		isHidden
+		lineageTag: ff2938c9-8d29-4678-aa5d-0818913d4572
+		summarizeBy: none
+		sourceColumn: TRCUST
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRGATE
+		dataType: string
+		isHidden
+		lineageTag: 8ba34b00-3af6-4ceb-8e09-e28cec9e2c69
+		summarizeBy: none
+		sourceColumn: TRGATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTYP2
+		dataType: string
+		isHidden
+		lineageTag: 8dfa06c6-db97-47be-8a4d-b8dc992ab020
+		summarizeBy: none
+		sourceColumn: TRTYP2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'silver ibmi_trailer' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_ibmi_trailer = data_central_wh{[Schema="silver",Item="ibmi_trailer"]}[Data]
+				in
+				    silver_ibmi_trailer
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,41 @@
+table OrderLoadedCallDateLkp
+	excludeFromModelRefresh
+	lineageTag: fcff436c-6d75-4ce7-8e65-f2faad273a5d
+
+	column loaded_call_load_number
+		dataType: string
+		lineageTag: a5129288-3bbe-4b6e-9bd5-ad00c1cc378a
+		summarizeBy: none
+		sourceColumn: loaded_call_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3f1e70af-a864-4039-9547-1aa84ff749d3
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_date
+
+		variation Variation
+			isDefault
+			relationship: afdaab3f-781f-4c6b-b572-04bd29bcea5a
+			defaultHierarchy: LocalDateTable_d651b436-324f-4cba-9e1f-7fcda8a6511f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OrderLoadedCallDateLkp = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_order_combined]#(lf)WHERE [order_early_pickup_date] >= DATEFROMPARTS(2024, 1, 1);"]),
+				    #"Grouped Rows" = Table.Group(Source, {"order_load_number"}, {{"order_loaded_call_date", each List.Min([order_loaded_call_date]), type nullable datetime}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Grouped Rows",{{"order_load_number", "loaded_call_load_number"}, {"order_loaded_call_date", "loaded_call_contact_date"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

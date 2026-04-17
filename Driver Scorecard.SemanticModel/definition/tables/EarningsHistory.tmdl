@@ -1,0 +1,461 @@
+table EarningsHistory
+	lineageTag: 480bb840-47af-4fe9-9643-0b0ebad87f33
+
+	measure WageRatePerMile = [GrossWageAmount]/[TotalMiles]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: efd49ce2-d693-4f4d-95c9-d0c3bbc03e96
+
+	column earnings_history_employee_code
+		dataType: string
+		lineageTag: 3d5b09c3-0a63-4714-a1d2-76ce1305703a
+		summarizeBy: none
+		sourceColumn: earnings_history_employee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_company_code
+		dataType: string
+		lineageTag: f6291b2a-220d-4059-9e18-fbac66e88510
+		summarizeBy: none
+		sourceColumn: earnings_history_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_run_code
+		dataType: string
+		lineageTag: c2eec96a-e304-4501-8e90-3b03232de536
+		summarizeBy: none
+		sourceColumn: earnings_history_run_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_benefit_package_code
+		dataType: string
+		lineageTag: 5c1da25a-bbb1-4b4c-971f-6d2d84ed4f9d
+		summarizeBy: none
+		sourceColumn: earnings_history_benefit_package_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_department_code
+		dataType: string
+		lineageTag: aac4abd7-c577-486c-a0c8-40a2e9f1b0d6
+		summarizeBy: none
+		sourceColumn: earnings_history_department_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_division_code
+		dataType: string
+		lineageTag: 955a4bf6-7a3d-4058-af41-e9caad297ea5
+		summarizeBy: none
+		sourceColumn: earnings_history_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_job_description
+		dataType: string
+		lineageTag: 4e6a9fe1-6968-4d58-aa24-f4c078e2fe37
+		summarizeBy: none
+		sourceColumn: earnings_history_job_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_pay_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 069d8053-0c9f-4c34-9360-ad34d5513f58
+		summarizeBy: none
+		sourceColumn: earnings_history_pay_date
+
+		variation Variation
+			isDefault
+			relationship: 6723df81-c1ad-47dd-98c1-ed110a22f964
+			defaultHierarchy: LocalDateTable_8a1988fa-6fc6-4aee-bdf7-eec88e41d0f5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column earnings_history_pay_week_number
+		dataType: double
+		lineageTag: 43d87b46-ab85-4f7c-8c12-2ce68b46c82c
+		summarizeBy: sum
+		sourceColumn: earnings_history_pay_week_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_sequence_number
+		dataType: double
+		lineageTag: 74d6d6d4-8c1c-4d24-b701-9fc98aed5a7b
+		summarizeBy: sum
+		sourceColumn: earnings_history_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_quantity
+		dataType: double
+		lineageTag: 7d3d4b6e-b16f-41a0-bbed-6f2b914c9024
+		summarizeBy: sum
+		sourceColumn: earnings_history_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_unit_type_code
+		dataType: string
+		lineageTag: f67a927b-a514-4b0e-b3a7-723ac969cd54
+		summarizeBy: none
+		sourceColumn: earnings_history_unit_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_paid_hours
+		dataType: string
+		lineageTag: 337d7a9b-f3c0-4060-8bc5-67b5c1f33c48
+		summarizeBy: none
+		sourceColumn: is_paid_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_pay_class_code
+		dataType: string
+		lineageTag: cf17e6c7-0951-46a5-8bf5-9633908e1dca
+		summarizeBy: none
+		sourceColumn: earnings_history_pay_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_pay_rate
+		dataType: string
+		lineageTag: 86190b50-3e31-4167-8940-bd2546932aba
+		summarizeBy: none
+		sourceColumn: earnings_history_pay_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_per_unit_rate
+		dataType: double
+		lineageTag: a59add98-39f0-4008-b97f-b694c79c8a8a
+		summarizeBy: sum
+		sourceColumn: earnings_history_per_unit_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_gross_amount
+		dataType: double
+		lineageTag: 91fe8753-69fd-4ecb-af77-81ba4ace17f0
+		summarizeBy: sum
+		sourceColumn: earnings_history_gross_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_pay_quantity_worked
+		dataType: double
+		lineageTag: c0da5beb-d0bc-47db-9177-48e92be16cf0
+		summarizeBy: sum
+		sourceColumn: earnings_history_pay_quantity_worked
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_load_number
+		dataType: string
+		lineageTag: 7e6f8ca2-176f-4ed8-bb4a-b660d0ddcdb0
+		summarizeBy: none
+		sourceColumn: earnings_history_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_dispatch_number
+		dataType: string
+		lineageTag: f222f512-7c88-4d55-81d6-8b3d822e558f
+		summarizeBy: none
+		sourceColumn: earnings_history_dispatch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_miles_loaded
+		dataType: double
+		lineageTag: 48f68f1b-2492-4300-bdfe-8241d65cbe17
+		summarizeBy: sum
+		sourceColumn: earnings_history_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_miles_dead_head
+		dataType: double
+		lineageTag: f0352614-2040-4237-8794-d00085be2ec3
+		summarizeBy: sum
+		sourceColumn: earnings_history_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_truck_number
+		dataType: string
+		lineageTag: d5c2c294-a6e2-42a2-ad49-bcc38883c0f5
+		summarizeBy: none
+		sourceColumn: earnings_history_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_owner_code
+		dataType: string
+		lineageTag: f456c368-fbda-4d4e-8bfd-2c9e11606c28
+		summarizeBy: none
+		sourceColumn: earnings_history_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_origin_city
+		dataType: string
+		lineageTag: 071b111f-2aee-4ff1-8074-abbb5f2e1c09
+		summarizeBy: none
+		sourceColumn: earnings_history_origin_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_origin_state
+		dataType: string
+		lineageTag: 8b823a96-c9c7-4aac-b9c7-2f1bd663d1ab
+		summarizeBy: none
+		sourceColumn: earnings_history_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_destination_city
+		dataType: string
+		lineageTag: 71a1b6a2-e7d0-4a21-a91b-32dc05a42540
+		summarizeBy: none
+		sourceColumn: earnings_history_destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_destination_state
+		dataType: string
+		lineageTag: adba0145-bd75-4f0e-865d-0603744df27a
+		summarizeBy: none
+		sourceColumn: earnings_history_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_description
+		dataType: string
+		lineageTag: 73642311-79c8-4a15-9b55-9325db70beb4
+		summarizeBy: none
+		sourceColumn: earnings_history_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_solo_or_team
+		dataType: string
+		lineageTag: 5db9189e-14ff-4e45-998e-01e9fb6a1bfb
+		summarizeBy: none
+		sourceColumn: is_solo_or_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_additional_pay
+		dataType: string
+		lineageTag: 46a82b83-71ba-4826-a7c1-3b4d4c4248c7
+		summarizeBy: none
+		sourceColumn: has_additional_pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_wage_dump
+		dataType: string
+		lineageTag: c8b4e6b9-5931-43f0-86c3-1dd945cb1eaa
+		summarizeBy: none
+		sourceColumn: is_wage_dump
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_truck_expense_account_number
+		dataType: string
+		lineageTag: be9aa2a9-2461-4c87-a8cc-e4b4b254696e
+		summarizeBy: none
+		sourceColumn: earnings_history_truck_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_pay_period_end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b0fa68e1-1f4e-4e0d-be39-b68643b7e5c5
+		summarizeBy: none
+		sourceColumn: earnings_history_pay_period_end_date
+
+		variation Variation
+			isDefault
+			relationship: f6092ae4-f69a-4221-a7e0-393819b82a62
+			defaultHierarchy: LocalDateTable_ae7eb3c8-48a7-442a-b71c-f4832ddd53aa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column earnings_history_expense_account_number
+		dataType: string
+		lineageTag: 271d9708-4af9-474c-9358-237a4adaadf1
+		summarizeBy: none
+		sourceColumn: earnings_history_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_expensed
+		dataType: string
+		lineageTag: 4f829682-253e-460d-b959-99ddb5bc5c3e
+		summarizeBy: none
+		sourceColumn: is_expensed
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_expensed_book_month
+		dataType: double
+		lineageTag: 494c7a71-fb26-4695-976f-9af3812109eb
+		summarizeBy: sum
+		sourceColumn: earnings_history_expensed_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_expensed_book_year
+		dataType: double
+		lineageTag: a4c42bfb-a81b-46a8-ad07-7a1cb7c9e322
+		summarizeBy: sum
+		sourceColumn: earnings_history_expensed_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_check_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5b9d46c3-35d7-48e8-8da1-ba982f804d21
+		summarizeBy: none
+		sourceColumn: earnings_history_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column earnings_history_check_number
+		dataType: string
+		lineageTag: eda3970f-bae1-4c8e-8574-59bb23c2701d
+		summarizeBy: none
+		sourceColumn: earnings_history_check_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_paid_book_month
+		dataType: double
+		lineageTag: f5aef3e0-1ef2-4f46-9c31-ff3f5cebc589
+		summarizeBy: sum
+		sourceColumn: earnings_history_paid_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_history_paid_book_year
+		dataType: double
+		lineageTag: 31a84cd8-8dc0-4bbd-9357-2575bbaad3d3
+		summarizeBy: sum
+		sourceColumn: earnings_history_paid_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_voided
+		dataType: string
+		lineageTag: f202fda9-0aa7-4beb-9409-ec2bd4043e90
+		summarizeBy: none
+		sourceColumn: is_voided
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_taxable_days_for_retroactivity
+		dataType: double
+		lineageTag: b0f64d55-7dcd-49d6-9819-f7657cfc19ef
+		summarizeBy: sum
+		sourceColumn: earnings_history_taxable_days_for_retroactivity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_on_hold
+		dataType: string
+		lineageTag: ad331ef3-1d03-45ef-af78-381c6b7dece6
+		summarizeBy: none
+		sourceColumn: is_on_hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_audit_user_code
+		dataType: string
+		lineageTag: 0c3956e8-8627-4e8e-881a-7112d9f2b003
+		summarizeBy: none
+		sourceColumn: earnings_history_audit_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column earnings_history_audit_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ace08e7-c137-46ae-844c-9d3111c5b1ea
+		summarizeBy: none
+		sourceColumn: earnings_history_audit_date
+
+		variation Variation
+			isDefault
+			relationship: 1456a92e-70fb-4656-9120-73320b2e767d
+			defaultHierarchy: LocalDateTable_6c439c4c-e9da-410d-b825-aecfef0452e6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column earnings_history_audit_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: b083ff49-a3ea-48c5-8095-bb0db9f8ec93
+		summarizeBy: none
+		sourceColumn: earnings_history_audit_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition EarningsHistory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="gold",Item="vw_ibmi_earnings_history"]}[Data]
+				in
+				    silver_plsc_asset_master
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

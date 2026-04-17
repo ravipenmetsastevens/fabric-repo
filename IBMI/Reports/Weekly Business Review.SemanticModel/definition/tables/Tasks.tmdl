@@ -1,0 +1,184 @@
+table Tasks
+	lineageTag: 52911cce-eb57-4538-b4f5-1aee13b0e3e8
+
+	column repair_order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d5d41a5-4e73-4dbb-92fb-0d7b8c6aa905
+		summarizeBy: none
+		sourceColumn: repair_order_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_task_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 19187857-dd3e-457f-b81d-7a610a67057c
+		summarizeBy: none
+		sourceColumn: ro_task_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_labor_hourly_rate
+		dataType: double
+		lineageTag: 14ad4666-9ad9-4707-b1da-211cb3e7f133
+		summarizeBy: sum
+		sourceColumn: task_labor_hourly_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column task_labor_hours
+		dataType: double
+		lineageTag: 0121695f-e516-474c-9081-6899d5f8277e
+		summarizeBy: sum
+		sourceColumn: task_labor_hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column task_labor_subtotal
+		dataType: double
+		lineageTag: 6a7c087c-f2de-45f5-89d9-4cc55a8b9f35
+		summarizeBy: sum
+		sourceColumn: task_labor_subtotal
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column task_labor_tax_rate
+		dataType: double
+		lineageTag: 3465d441-48fa-4dad-97b0-6780bb916064
+		summarizeBy: sum
+		sourceColumn: task_labor_tax_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column task_labor_complaint
+		dataType: string
+		lineageTag: b21717c8-bc51-4ab8-a1f3-fd68af5c19a2
+		summarizeBy: none
+		sourceColumn: task_labor_complaint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_labor_cause_code
+		dataType: string
+		lineageTag: 01b9760c-e3e9-4b6e-a77e-1e424242c6f3
+		summarizeBy: none
+		sourceColumn: task_labor_cause_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_labor_correction_code
+		dataType: string
+		lineageTag: 7147578f-d3ad-460b-a148-28118b4e20b5
+		summarizeBy: none
+		sourceColumn: task_labor_correction_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_labor_system_code
+		dataType: string
+		lineageTag: 72c4ea33-64c9-42a7-aa27-b1171fb70375
+		summarizeBy: none
+		sourceColumn: task_labor_system_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_labor_system_component_code
+		dataType: string
+		lineageTag: 115883e0-1e80-4ab9-84dc-4e6d5b01d5d4
+		summarizeBy: none
+		sourceColumn: task_labor_system_component_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_scheduled_maintenance_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bdf1733-236c-4802-91de-44401688158f
+		summarizeBy: sum
+		sourceColumn: task_scheduled_maintenance_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_issue_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 60ecf4d7-2a25-4bf2-9cdb-9efa9841c25b
+		summarizeBy: sum
+		sourceColumn: task_issue_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_assigned_to
+		dataType: string
+		lineageTag: 86249a4c-ff1a-41fa-9018-c20117d12da7
+		summarizeBy: none
+		sourceColumn: task_assigned_to
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_added_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 57a88a96-0535-4c4b-bf8f-f235b3638586
+		summarizeBy: none
+		sourceColumn: task_added_datetime
+
+		variation Variation
+			isDefault
+			relationship: cb1fcc62-6954-462e-8ac2-b9b505685ef0
+			defaultHierarchy: LocalDateTable_cb11d9e4-c6ae-4939-bfa8-c0b63fe558da.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tasks = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_flrk_repair_order_task = Source{[Schema="silver",Item="flrk_repair_order_task"]}[Data]
+				in
+				    silver_flrk_repair_order_task
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

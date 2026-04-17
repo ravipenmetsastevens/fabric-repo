@@ -1,0 +1,329 @@
+table MeasuresTable
+	lineageTag: 14c15e2e-6a13-4989-bba8-7a6d137614e6
+
+	measure 'Total Warranty Amount' = SUM('RepairOrdersFact'[ro_credit_amount])
+		lineageTag: 4fe35d5d-45eb-4eaf-991e-1a46c0d8daa6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Number of RO' = DISTINCTCOUNT('RepairOrdersFact'[repair_order_id])
+		formatString: 0
+		lineageTag: 0c1fb327-f56a-44b0-b320-99426107ec93
+
+	measure 'Total Miles (RepairOrder)' = CALCULATE(SUM(Units[unit_odometer_miles]),USERELATIONSHIP(Units[unit_vin],'RepairOrdersFact'[ro_vin]))
+		formatString: 0
+		lineageTag: a55c3325-9760-4c58-8cb0-48715205ad67
+
+	measure 'Total Labor Hours' = SUM(Tasks[task_labor_hours])
+		lineageTag: 1d13d04a-0501-4fae-9180-25e7ed21d575
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Jobs' = DISTINCTCOUNT(Tasks[ro_task_id])
+		formatString: 0
+		lineageTag: 8632e530-641f-4d84-989f-ebbda703fb2e
+
+	measure 'Total Down Days' = SUM('RepairOrdersFact'[Down Days])
+		lineageTag: 64788265-794a-4d95-bfaa-4129e0382528
+
+	measure 'Total Cost' = SUM('RepairOrdersFact'[ro_grand_total])
+		lineageTag: ca90e1f0-b4a1-4a4e-b959-260342e98587
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total CPM' = DIVIDE([Total Cost], [Total Miles (RepairOrder)])
+		lineageTag: abbfb171-b883-44cb-8d29-2d4a86d1e674
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost per RO' = DIVIDE([Total Cost], [Total Number of RO])
+		lineageTag: 5891c228-1434-4af1-af07-f666698f2f87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Jobs per RO' = DIVIDE([Total Jobs], [Total Number of RO])
+		lineageTag: e7a9ddac-6417-438f-a51b-e5bc4faf9bc2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Down Days' = DIVIDE([Total Down Days], [Total Number of RO])
+		lineageTag: c72036ca-ab9e-4f57-bddf-e7b81e1be79a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Number of RO with Task' = DISTINCTCOUNT(Tasks[repair_order_id])
+		formatString: 0
+		lineageTag: d552f39d-adcb-4bc0-a8f7-8324c2307232
+
+	measure 'Total RO Closed' = CALCULATE([Total Number of RO], 'RepairOrdersFact'[ro_open_closed] = "Closed")
+		formatString: 0
+		lineageTag: a815673f-3645-4ef4-b0eb-3ded11fafedb
+
+	measure 'Total RO Open' = CALCULATE([Total Number of RO], 'RepairOrdersFact'[ro_open_closed] = "Open")
+		formatString: 0
+		lineageTag: f3637f8a-a584-474a-b3ce-bebba9603c78
+
+	measure 'Total Revenue' = ```
+			sum(BillingFact[billing_billed_amount]) 
+			```
+		lineageTag: 508667c9-d557-46a6-b496-3d4b85439540
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Accidents Count' = DISTINCTCOUNT(AccidentDetails[claim_mast_record_code])
+		formatString: 0
+		lineageTag: f372e423-8cec-417d-b9a2-bb2943a19bc4
+
+	measure 'Accident Cost' = sum(AccidentDetails[reserve_ttl_reserve_total_amount])
+		lineageTag: c657dea6-b980-438f-bb62-9506c58be7d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost Per Accident' = [Accidents Count]/ [Accident Cost]
+		lineageTag: 73f17b5c-69c3-463c-a49a-134829fcb062
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Low Skill Accidents' = CALCULATE([Accidents Count], FILTER(AccidentCategories, AccidentCategories[accident_category] = "Low Skill"))
+		formatString: 0
+		lineageTag: cc126933-ab13-4fef-8498-cadbd51e644d
+
+	measure 'On Road Accidents' = CALCULATE([Accidents Count], FILTER(AccidentCategories, AccidentCategories[accident_category] = "On Road"))
+		formatString: 0
+		lineageTag: cedf4b01-a5a1-413a-a01d-5ddec3521fe0
+
+	measure 'Open Invoice Count' = DISTINCTCOUNT(ARWeeklySnapShot[invoice_number])
+		formatString: 0
+		lineageTag: 49f424bf-f887-45e6-85a8-d143e530778c
+
+	measure 'Open Invoice Amount' = ```
+			sum(ARWeeklySnapShot[amount]) 
+			```
+		lineageTag: 4f274282-87a4-4286-bd28-6704b884ff0f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Open Over 45 Days Amt' = CALCULATE([Open Invoice Amount], FILTER(ARWeeklySnapShot, ARWeeklySnapShot[Open_45] = "1"))
+		lineageTag: ebdc5c6a-088b-4d07-9777-2b549ea7a358
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Open Over 60 Days Amt' = CALCULATE([Open Invoice Amount], FILTER(ARWeeklySnapShot, ARWeeklySnapShot[Open_60] = "1"))
+		lineageTag: c39c6c7f-869d-4e18-b532-87e5524b87c9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Over 45 Days' = [Open Over 45 Days Amt]/ [Open Invoice Amount]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 84d5d0c0-4165-4169-87fb-e7ff5d6572f7
+
+	measure '% Over 60 Days' = [Open Over 60 Days Amt]/ [Open Invoice Amount]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4e266b8f-ce6c-441b-88db-578d3f6a9724
+
+	measure 'Load Count' =
+			
+			DISTINCTCOUNT ( 'LoadFact'[load_load_number] )
+		formatString: 0
+		lineageTag: 44761c45-d69b-4395-a186-bb16ae8a3482
+
+		changedProperty = IsHidden
+
+	measure 'Total Brokerage Revenue' = CALCULATE([Total Revenue], FILTER(DivisionGroup, DivisionGroup[division_fleet_name] = "Brokerage"))
+		lineageTag: 63165760-cbc8-4bf0-b226-28ee3765b80b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Broker Order Count' = CALCULATE(DISTINCTCOUNT(OrderFact[order_load_number]), FILTER(OrderFact, OrderFact[division] = "broker"))
+		formatString: 0
+		lineageTag: 27013667-026c-4958-a4b0-789764ec3847
+
+	measure 'Earnings Amount' = ```
+			sum(EarningsHistory[earnings_history_gross_amount]) 
+			```
+		lineageTag: f75084f3-7a01-4724-84f5-69bba293ad53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Settlement Amount' = ```
+			sum(SettlRevenueHistory[set_rev_hist_revenue_amount]) 
+			```
+		lineageTag: 91b470cb-ec07-4ad3-97c8-256f7ef4a6a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Earnings Layover' = CALCULATE([Earnings Amount], FILTER(PayGroup, PayGroup[paypo_type_code] = "LO"))
+		lineageTag: eaf7b0f9-4e82-42f5-9a1e-f3cd1fd87f81
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Settlement Layover' = CALCULATE([Settlement Amount], FILTER(SettlementCodes, SettlementCodes[stcodes_settlement_code] = "LO"))
+		lineageTag: 06a85333-e5cf-42c7-9e55-198a1c47b95b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Layover' = [Add Pay Earnings Layover] + [Add Pay Settlement Layover]
+		lineageTag: 4c540db0-6981-4c2d-8412-d461fdc14f17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay DF + LR' = ```
+			
+			CALCULATE(
+			    [Settlement Amount],
+			    FILTER(
+			        SettlementCodes,
+			        SettlementCodes[stcodes_settlement_code] IN {"DF", "LR"}
+			    )
+			)
+			
+			```
+		lineageTag: a5b6a7f6-b5e9-47a6-bb4b-1a65658d037b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Earnings Repower' = CALCULATE([Earnings Amount], FILTER(PayGroup, PayGroup[paypo_type_code] IN {"RC","RP"} ))
+		lineageTag: 95e90145-4195-4f2b-9af6-13327d038a0b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Settlement Repower' = CALCULATE([Settlement Amount], FILTER(SettlementCodes, SettlementCodes[stcodes_settlement_code] = "RC"))
+		lineageTag: f0770cfe-eb2b-4c05-bcfa-33bbb14f24e8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay Repower' = ```
+			[Add Pay Earnings Repower] + [Add Pay Settlement Repower] 
+			```
+		lineageTag: a346ea80-06cb-4010-97b6-4400218c8d52
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SrvExpStopCount = sum(ServiceExceptions[Count])
+		formatString: 0
+		lineageTag: 483a6a7f-aadd-4966-a6de-02d1d0ebe572
+
+	measure StopOffStopCount = count(StopOff[Count])
+		formatString: 0
+		lineageTag: c4e28396-673a-4c22-a8e0-f575febe4f52
+
+	measure SrvExpStopsDelivery = CALCULATE([SrvExpStopCount], FILTER(ServiceExceptions, ServiceExceptions[stop_type] = "DELIVERY"))
+		formatString: 0
+		lineageTag: b937f862-7802-4923-a53e-3629e789aa98
+
+	measure SrvExpStopsPickUp = CALCULATE([SrvExpStopCount], FILTER(ServiceExceptions, ServiceExceptions[stop_type] = "PICKUP"))
+		formatString: 0
+		lineageTag: cb511103-31df-4067-a0be-0d9a6625a938
+
+	measure StopOffStopsDelivery = CALCULATE([StopOffStopCount], FILTER(StopOff, StopOff[stopoff_stop_type] = "DELIVERY"))
+		formatString: 0
+		lineageTag: 98b8b9b4-0924-44a5-87a1-514309bb5e72
+
+	measure StopOffStopsPickup = CALCULATE([StopOffStopCount], FILTER(StopOff, StopOff[stopoff_stop_type] = "PICKUP"))
+		formatString: 0
+		lineageTag: c6625896-0bc2-48e2-a762-45cf241445b0
+
+	measure 'On Time Delivery %' = 1 - ([SrvExpStopsDelivery]/ [StopOffStopsDelivery])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5abf3c65-37d1-47a4-b765-cc031596b26d
+
+	measure 'On Time Pickup %' = 1 - ([SrvExpStopsPickUp]/ [StopOffStopsPickup])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 65f5c597-bf64-4d7d-a8c7-78f212d3de69
+
+	measure 'Total Grads' = DISTINCTCOUNT(Driver[drv_code])
+		formatString: 0
+		lineageTag: 60b5b60f-7934-4d73-8469-b09abb64cc33
+
+	measure 'Avg. Days to Complete Trn' = AVERAGE(Driver[daysBetween_grad_to_hire])
+		lineageTag: 120fdeba-230a-443c-b3aa-4b0b34e6b2cc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg. Days to Complete Grad' = AVERAGE(Driver[daysBetween_grad_to_complete])
+		lineageTag: cc264acc-ff6b-472c-8621-00acb89414f3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue per load' = [Total Revenue]/ [Load Count]
+		lineageTag: 6e0f9e00-691d-476a-8cff-ecd79b5d54de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Broker Load Count' = DISTINCTCOUNT(OrdTabFact[tlb_ordtlb_load_number])
+		formatString: 0
+		lineageTag: e22e7a86-098b-4f8a-befd-191e1d88f338
+
+	measure 'Number of Brokers' = DISTINCTCOUNT(OrdTabFact[tlb_ordtlb_broker_code])
+		formatString: 0
+		lineageTag: 5f12d152-a422-41dc-a1a7-dd0ecf9bae13
+
+	measure 'Miles Loaded' = sum(LoadFact[load_miles_loaded])
+		lineageTag: 1afda857-bd5e-4edb-a8e2-6f2e0d00e0d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Brokerage Profit Per Load' = ( [Total Brokerage Revenue] - [Brokerage Cost] )/ [Broker Load Count]
+		lineageTag: 8db3c69a-9617-456c-a5f6-dc7d5df586bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Brokerage Revenue per load' = [Total Brokerage Revenue]/ [Broker Load Count]
+		lineageTag: 4e259f46-83e9-4054-bc96-218a772b7b77
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Loads per Broker' = [Broker Load Count]/ [Number of Brokers]
+		lineageTag: 2fb425d7-301a-4a86-8376-5716a008bcf3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainer Company Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] = "TRAINER PAY"))
+		lineageTag: e24d55b0-aa7f-4387-8837-f7de94654b5a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainer Contractor Pay' = CALCULATE(SUM(SettlRevenueHistory[set_rev_hist_additional_pay_amount]), FILTER(SettlRevenueHistory, SettlRevenueHistory[set_rev_hist_origin_city] = "TRAINER PAY"))
+		lineageTag: 6ad8d267-867d-45e4-9bf8-ab7eaaf3b32c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainee Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] = "TRAINEE PAY"))
+		lineageTag: d84ccf45-40df-4294-a012-5dabf3492ea2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trainer Pay' = [Trainer Company Pay] + [Trainer Contractor Pay]
+		lineageTag: 16006156-e6df-43cf-a857-5093b502e5a9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Company Pay' = CALCULATE(SUM(EarningsHistory[earnings_history_gross_amount]), FILTER(EarningsHistory, EarningsHistory[earnings_history_description] IN {"CRS GENDER TRAN","TRAINER BONUS", "OUTSIDE HELP"}))
+		lineageTag: eefca578-b856-41bd-9713-711dbde3c336
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Contractor Pay' = CALCULATE(SUM(SettlRevenueHistory[set_rev_hist_additional_pay_amount]), FILTER(SettlRevenueHistory, SettlRevenueHistory[set_rev_hist_origin_city] IN {"X-GENDER TRAINI", "TRAINER ASSIST"}))
+		lineageTag: a43a4dd4-8a81-46ec-9338-64e6f607aad1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Add Pay' = [Add Company Pay] + [Add Contractor Pay]
+		lineageTag: 2bfc2daf-1c46-4859-86cf-17ad0d532248
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition MeasuresTable = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Dummy = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Dummy", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Dummy"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table 'Service Exception Types'
+	lineageTag: 59bdc98f-edca-4edb-b489-75082b35808b
+
+	column 'Exception Code'
+		dataType: string
+		lineageTag: 8b7618bd-b277-4a45-8753-b92e1f1da3f7
+		summarizeBy: none
+		sourceColumn: SE Codes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exception Description'
+		dataType: string
+		lineageTag: f3689702-ce76-493f-b2ed-2985c032527d
+		summarizeBy: none
+		sourceColumn: SE Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exception Code and Description'
+		dataType: string
+		lineageTag: 2412f745-2e34-41c2-b4ca-fcafc94f2ef5
+		summarizeBy: none
+		sourceColumn: SE Combined
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Service Exception Types' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_ibmi_service_exception_codes_edi = Source{[Schema="silver",Item="ibmi_service_exception_codes_edi"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(silver_ibmi_service_exception_codes_edi,{{"se_codes_exception_code", "SE Codes"}, {"se_codes_exception_description", "SE Description"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Custom", each Text.Combine({[SE Codes],[SE Description]}," - ")),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"Custom", "SE Combined"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns1",{{"SE Combined", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

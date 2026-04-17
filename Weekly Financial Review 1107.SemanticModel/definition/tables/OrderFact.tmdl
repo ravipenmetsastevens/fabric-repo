@@ -1,0 +1,912 @@
+table OrderFact
+	excludeFromModelRefresh
+	lineageTag: 9a3dc4e9-831d-4723-b708-1336cc25d414
+
+	column order_origin_area_code
+		dataType: string
+		lineageTag: 36def579-1088-4f1a-be5f-ca352c3b11c2
+		summarizeBy: none
+		sourceColumn: order_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_load_number
+		dataType: string
+		lineageTag: dbb63aca-510f-4548-a75f-ca8338ba712e
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status_code
+		dataType: string
+		lineageTag: 98447413-31c5-4808-a12a-5155d3fa5b95
+		summarizeBy: none
+		sourceColumn: order_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 33752eb6-499b-4bfa-82c4-70d3303f81cb
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: 24d76a25-6d63-40e5-91d7-f05af9d9b1d5
+			defaultHierarchy: LocalDateTable_8420b348-0f64-44c0-a059-3b949135694c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_time
+		dataType: string
+		lineageTag: feaa0765-c714-4bc1-a484-21fd85d9734d
+		summarizeBy: none
+		sourceColumn: order_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_customer_code
+		dataType: string
+		lineageTag: 345cd4f7-6644-4a88-8503-cae5174c5ef7
+		summarizeBy: none
+		sourceColumn: order_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_consignee_code
+		dataType: string
+		lineageTag: 455ff85d-0e78-449d-9b61-ff2c26c40ea4
+		summarizeBy: none
+		sourceColumn: order_consignee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_billto_code
+		dataType: string
+		lineageTag: 6e278134-646f-42c0-a700-32499bf391ac
+		summarizeBy: none
+		sourceColumn: order_billto_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_loadat_code
+		dataType: string
+		lineageTag: cda479ad-52fa-42e8-b358-24d54a9804c0
+		summarizeBy: none
+		sourceColumn: order_loadat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5a8ce19c-fc5b-4c19-b12d-57e065e85230
+		summarizeBy: none
+		sourceColumn: order_early_pickup_date
+
+		variation Variation
+			isDefault
+			relationship: c809d634-399c-46e9-8bc9-92beb2109d6d
+			defaultHierarchy: LocalDateTable_4be7a1e9-53bc-438b-8f18-257c632ab20a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_pickup_time
+		dataType: string
+		lineageTag: 0e65a072-a398-44bc-bffb-56846e8607f9
+		summarizeBy: none
+		sourceColumn: order_early_pickup_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_pickup_required
+		dataType: string
+		lineageTag: 7cdf6c68-3e8e-404e-b9ac-716693187bbf
+		summarizeBy: none
+		sourceColumn: is_pickup_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f07d8ec4-9209-464a-a877-af6136cdf1dd
+		summarizeBy: none
+		sourceColumn: order_early_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: ea438a1d-adea-4017-b9bd-d9b0d97c6320
+			defaultHierarchy: LocalDateTable_048442e7-f200-45bb-ad2b-8789ca4617d2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_delivery_time
+		dataType: string
+		lineageTag: d882ec86-cb58-4c75-9b30-abee5f68dea6
+		summarizeBy: none
+		sourceColumn: order_early_delivery_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_required
+		dataType: string
+		lineageTag: 9faab28b-8e61-4d15-8199-04c0b44c1eac
+		summarizeBy: none
+		sourceColumn: is_delivery_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_commodity_code
+		dataType: string
+		lineageTag: 50e67908-3ff1-4bc3-bbe8-72d0efa1bdda
+		summarizeBy: none
+		sourceColumn: order_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_commodity_description
+		dataType: string
+		lineageTag: 4f704921-b655-4198-b4b9-9d6a94a3fc68
+		summarizeBy: none
+		sourceColumn: order_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_creation_initials
+		dataType: string
+		lineageTag: 6066dbcd-fe43-44b7-afd3-04a69587c45a
+		summarizeBy: none
+		sourceColumn: order_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_customer_phone_area_code
+		dataType: string
+		lineageTag: 9f82c747-1e2a-40d5-99f2-ab1d4d02f74a
+		summarizeBy: none
+		sourceColumn: order_customer_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_customer_phone_number
+		dataType: string
+		lineageTag: ce712857-6a4e-4ae8-b376-4c5ad283a551
+		summarizeBy: none
+		sourceColumn: order_customer_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_consignee_phone_area_code
+		dataType: string
+		lineageTag: 210bcdf1-6df3-443f-8dc0-e27f707a84c4
+		summarizeBy: none
+		sourceColumn: order_consignee_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_consignee_phone_number
+		dataType: string
+		lineageTag: 6bc7d5a2-7f87-4ced-965b-da1d5138e6c8
+		summarizeBy: none
+		sourceColumn: order_consignee_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_load_weight
+		dataType: double
+		lineageTag: bdab629a-dece-471a-a52c-ed7771edd7e3
+		summarizeBy: sum
+		sourceColumn: order_load_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_pallet_count
+		dataType: string
+		lineageTag: 12a7861b-d275-4766-89c2-1e4ff57e1a6c
+		summarizeBy: none
+		sourceColumn: order_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_city_code
+		dataType: string
+		lineageTag: 57bc362c-1ebe-4fe6-b97e-7ca6ceeebf9e
+		summarizeBy: none
+		sourceColumn: order_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_state
+		dataType: string
+		lineageTag: 8779c918-7034-4cb8-99df-26665cc6e0fb
+		summarizeBy: none
+		sourceColumn: order_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_bea_code
+		dataType: double
+		lineageTag: ce41f6c4-fa5f-4248-af2b-71598b5a222e
+		summarizeBy: sum
+		sourceColumn: order_origin_bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_origin_gu_code
+		dataType: string
+		lineageTag: 141a64b9-76f4-4bea-93e3-9346fdb25dba
+		summarizeBy: none
+		sourceColumn: order_origin_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_city_short_name
+		dataType: string
+		lineageTag: a2420cd1-b71d-478b-9e99-21caf5ded15e
+		summarizeBy: none
+		sourceColumn: order_origin_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_city_code
+		dataType: string
+		lineageTag: 124135ac-54e7-4fe5-9872-dd38cb3be34e
+		summarizeBy: none
+		sourceColumn: order_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_state
+		dataType: string
+		lineageTag: 31a77645-e743-4d53-b4a7-603ba9cb68a1
+		summarizeBy: none
+		sourceColumn: order_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_bea_code
+		dataType: double
+		lineageTag: 1315a1e7-b105-4273-9b88-df94c334b08b
+		summarizeBy: sum
+		sourceColumn: order_destination_bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_destination_gu_code
+		dataType: string
+		lineageTag: 87ad66f3-cd8a-4ca2-8bc2-574578696d21
+		summarizeBy: none
+		sourceColumn: order_destination_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_city_short_name
+		dataType: string
+		lineageTag: 8a99b289-fcab-459e-9310-4f7f4dd9cd80
+		summarizeBy: none
+		sourceColumn: order_destination_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles_billable
+		dataType: double
+		lineageTag: dd156fcb-9328-4075-8581-9a9ce732f69c
+		summarizeBy: sum
+		sourceColumn: order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_load_type
+		dataType: string
+		lineageTag: 79716e76-bac2-4df6-b711-e2f587eb2b5c
+		summarizeBy: none
+		sourceColumn: order_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_stop_count
+		dataType: string
+		lineageTag: f2536f7a-1db7-4cd8-a474-57800cf960aa
+		summarizeBy: none
+		sourceColumn: order_stop_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_dispatch_count
+		dataType: string
+		lineageTag: 6e351fbd-d18c-4388-a231-90b51610f147
+		summarizeBy: none
+		sourceColumn: order_dispatch_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_preload_trailer
+		dataType: string
+		lineageTag: de00b1c4-e435-428f-bbcb-886f4e975bc8
+		summarizeBy: none
+		sourceColumn: order_preload_trailer
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_revenue_estimation
+		dataType: double
+		lineageTag: 36d5a335-52e1-426d-bebc-8e5eb9399347
+		summarizeBy: sum
+		sourceColumn: order_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_new_origin_area_code
+		dataType: string
+		lineageTag: 6e9c6489-2122-43c6-b335-6785be492fc6
+		summarizeBy: none
+		sourceColumn: order_new_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_area_code
+		dataType: string
+		lineageTag: d4ea5435-ec6b-4630-97e6-53d48c9a6d79
+		summarizeBy: none
+		sourceColumn: order_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_bill_of_lading
+		dataType: string
+		lineageTag: 8437e50a-fb23-481d-bd8d-a942bd61b88b
+		summarizeBy: none
+		sourceColumn: order_bill_of_lading
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_order
+		dataType: string
+		lineageTag: 3acc78cb-b9fe-4079-a89d-f71d14a560c5
+		summarizeBy: none
+		sourceColumn: order_purchase_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_pick_up_code
+		dataType: string
+		lineageTag: 0f4b3439-44b0-4595-8090-6f3fe1fed89b
+		summarizeBy: none
+		sourceColumn: order_pick_up_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_piece_count
+		dataType: string
+		lineageTag: 9e3cb1f0-6625-4af3-83f0-b0ee3a0ddcb6
+		summarizeBy: none
+		sourceColumn: order_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_collection_method_code
+		dataType: string
+		lineageTag: ece98fff-3202-4e5d-9304-8f45dfd83878
+		summarizeBy: none
+		sourceColumn: order_collection_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_load_volume
+		dataType: string
+		lineageTag: 7256fe13-7297-45b0-97b2-e8f166a14957
+		summarizeBy: none
+		sourceColumn: order_load_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_message
+		dataType: string
+		lineageTag: 9dfa2c70-a002-4812-9160-528250321066
+		summarizeBy: none
+		sourceColumn: order_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_late_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7e93abb6-4b7c-4429-8945-917b120607f0
+		summarizeBy: none
+		sourceColumn: order_late_pickup_date
+
+		variation Variation
+			isDefault
+			relationship: 74ac6a27-2541-4c33-9412-3a5da7c71bfd
+			defaultHierarchy: LocalDateTable_d134039b-3d37-4b00-be91-16e15c7d0d78.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_late_pickup_time
+		dataType: string
+		lineageTag: 1d1f00d6-b8c4-410e-b2ad-ffa4cb25d71b
+		summarizeBy: none
+		sourceColumn: order_late_pickup_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_late_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 119aa6a3-b5f4-4504-9483-fb0fd89242bc
+		summarizeBy: none
+		sourceColumn: order_late_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: d1c46c6f-8bf9-4bda-9a77-5e68c9f988b7
+			defaultHierarchy: LocalDateTable_70ca3bd9-a1d3-40ad-b81d-ff667a27f5fa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_late_delivery_time
+		dataType: string
+		lineageTag: 63eaf30f-dcbb-46dd-b5a2-47e82327a52e
+		summarizeBy: none
+		sourceColumn: order_late_delivery_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_required_pallet_count
+		dataType: double
+		lineageTag: 6a3c4fe7-27b4-4d00-9c01-8290cbf61299
+		summarizeBy: sum
+		sourceColumn: order_required_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08bc3575-0e14-4088-be36-c611076b5deb
+		summarizeBy: none
+		sourceColumn: order_ship_date
+
+		variation Variation
+			isDefault
+			relationship: 1cecd32b-2711-4a66-a374-bea1b808c381
+			defaultHierarchy: LocalDateTable_0e12badb-858f-4d5f-9d28-3a071540556c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_ship_time
+		dataType: string
+		lineageTag: 812767de-06e4-4021-9dd7-1db325bc94a3
+		summarizeBy: none
+		sourceColumn: order_ship_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_temp_high
+		dataType: double
+		lineageTag: 330e0ad2-1c2e-4e76-ba80-b25ca43306f9
+		summarizeBy: sum
+		sourceColumn: order_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_temp_low
+		dataType: double
+		lineageTag: 383cf530-50da-47a6-aa6d-deba82292b0e
+		summarizeBy: sum
+		sourceColumn: order_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b6f9aa19-70b2-4053-b079-bc5cefecfab5
+		summarizeBy: none
+		sourceColumn: order_last_update_date
+
+		variation Variation
+			isDefault
+			relationship: 1205826d-481f-4c16-aca8-d91863cfeccb
+			defaultHierarchy: LocalDateTable_fd6dee62-239d-4f5d-9e54-ba2f6cba5942.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_last_update_time
+		dataType: string
+		lineageTag: c7b4e2b9-22e5-476c-9067-43bb7fccd91d
+		summarizeBy: none
+		sourceColumn: order_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_last_update_initials
+		dataType: string
+		lineageTag: a01cddbc-e7fb-4739-b697-05bcf0d56a55
+		summarizeBy: none
+		sourceColumn: order_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_company_code
+		dataType: string
+		lineageTag: 25bae84a-f1df-429a-a0ff-ba9ba9bffa84
+		summarizeBy: none
+		sourceColumn: order_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_division_code
+		dataType: string
+		lineageTag: 47e92801-cf1a-4d95-a367-8268527e9b51
+		summarizeBy: none
+		sourceColumn: order_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_lane_code
+		dataType: string
+		lineageTag: 3fdf83da-fff0-46ff-b903-03fe91a17894
+		summarizeBy: none
+		sourceColumn: order_lane_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_seal_code
+		dataType: string
+		lineageTag: 695a821a-ef37-4578-9cde-afd5c7baab96
+		summarizeBy: none
+		sourceColumn: order_seal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_service_failure_code
+		dataType: string
+		lineageTag: dea9ebf0-1d8e-4bb5-a8f4-ce1c93c2cff4
+		summarizeBy: none
+		sourceColumn: order_service_failure_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_driver_commit_flag
+		dataType: string
+		lineageTag: eb8db851-b831-4c14-be37-41557924dcc3
+		summarizeBy: none
+		sourceColumn: order_driver_commit_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_load
+		dataType: string
+		lineageTag: c77155d5-525c-469d-a31b-bf7af655411c
+		summarizeBy: none
+		sourceColumn: is_edi_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_stats_complete
+		dataType: string
+		lineageTag: 54fa4eec-f5ff-45dc-a86a-41bdf8145ade
+		summarizeBy: none
+		sourceColumn: is_edi_stats_complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_loaded
+		dataType: string
+		lineageTag: af691868-64ef-4ce6-8db8-6cb6b22e1b9a
+		summarizeBy: none
+		sourceColumn: is_driver_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_unloaded
+		dataType: string
+		lineageTag: d9a48028-c75d-47c2-82e0-23148245bb63
+		summarizeBy: none
+		sourceColumn: is_driver_unloaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_receipt_signed
+		dataType: string
+		lineageTag: 39817341-1e5e-4623-8ad2-8e3ffb893762
+		summarizeBy: none
+		sourceColumn: is_delivery_receipt_signed
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivery_receipt_req
+		dataType: string
+		lineageTag: 7d55fbd4-d9fb-4e7a-b097-d139aba6dbd6
+		summarizeBy: none
+		sourceColumn: order_delivery_receipt_req
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_edi_message_billing_flag
+		dataType: string
+		lineageTag: 35f0ef5c-6c41-43c9-98fc-715977568deb
+		summarizeBy: none
+		sourceColumn: order_edi_message_billing_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_load_just_in_time
+		dataType: string
+		lineageTag: 303e2c53-9b86-4011-8343-719c0761c4f4
+		summarizeBy: none
+		sourceColumn: is_load_just_in_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_edi_billing_code
+		dataType: string
+		lineageTag: 5cba8e61-2837-4dce-aa68-7119879a0d31
+		summarizeBy: none
+		sourceColumn: order_edi_billing_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_inbound_or_outbound
+		dataType: string
+		lineageTag: b9b92dbf-3ec4-4ace-96d6-8b4385bea36b
+		summarizeBy: none
+		sourceColumn: is_edi_inbound_or_outbound
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_current_city_code
+		dataType: string
+		lineageTag: abd06565-4da1-485d-81c7-036de272f8f0
+		summarizeBy: none
+		sourceColumn: order_current_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_current_state
+		dataType: string
+		lineageTag: bf213816-731a-4fb4-9c36-c502be605e11
+		summarizeBy: none
+		sourceColumn: order_current_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_loaded_call_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd81d1d8-33b8-474b-a91d-b17c9632e30b
+		summarizeBy: none
+		sourceColumn: order_loaded_call_date
+
+		variation Variation
+			isDefault
+			relationship: 14d404d7-7eeb-4f25-80b5-a3ec1feb073d
+			defaultHierarchy: LocalDateTable_6f097184-cc2a-4074-885f-55485edd2d4a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_empty_call_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 63d1e961-0cdc-4491-be2c-fe927c2f39c9
+		summarizeBy: none
+		sourceColumn: order_empty_call_date
+
+		variation Variation
+			isDefault
+			relationship: 25f5a7e0-ef06-4eb2-8d2c-9c362284ced4
+			defaultHierarchy: LocalDateTable_1a12ae25-14f1-43e6-a0e1-067c60fa8aac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_trailer_length
+		dataType: double
+		lineageTag: dc18677e-a9e2-4dfa-8294-b39549042a12
+		summarizeBy: sum
+		sourceColumn: order_trailer_length
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_trailer_height
+		dataType: double
+		lineageTag: b422fe76-797b-4730-b5e4-2ff18911ecb6
+		summarizeBy: sum
+		sourceColumn: order_trailer_height
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column has_permit
+		dataType: string
+		lineageTag: e1031782-6b7f-4769-bfe2-be672bff1c4b
+		summarizeBy: none
+		sourceColumn: has_permit
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_permit_complete
+		dataType: string
+		lineageTag: e969ff01-1238-4879-be09-ac8f5fdc78b1
+		summarizeBy: none
+		sourceColumn: has_permit_complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_latitude
+		dataType: double
+		lineageTag: 482398ac-f516-4653-bc62-5340f3a3d40a
+		summarizeBy: sum
+		sourceColumn: order_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_longitude
+		dataType: double
+		lineageTag: 17aa39ac-355f-4c3d-8f88-d1b57f630329
+		summarizeBy: sum
+		sourceColumn: order_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_tentitive_load
+		dataType: string
+		lineageTag: 87e242cf-a366-4b93-b482-adba5040e3c4
+		summarizeBy: none
+		sourceColumn: is_tentitive_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_hours_under_dispatch
+		dataType: double
+		lineageTag: 837c501b-485d-4656-867f-36e05185c0b7
+		summarizeBy: sum
+		sourceColumn: order_hours_under_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_origin_zone_code
+		dataType: string
+		lineageTag: c6a899a2-8284-41fb-adf1-1fdfdf5c58e4
+		summarizeBy: none
+		sourceColumn: order_origin_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_region_code
+		dataType: string
+		lineageTag: 6fb42ee3-4151-4767-a157-df92ba3a5e15
+		summarizeBy: none
+		sourceColumn: order_origin_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_zone_code
+		dataType: string
+		lineageTag: 471bb1b5-a8e3-4203-8a84-788e961fffc7
+		summarizeBy: none
+		sourceColumn: order_destination_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_region_code
+		dataType: string
+		lineageTag: 4652a43b-4805-43e5-bd31-f6fe5c471176
+		summarizeBy: none
+		sourceColumn: order_destination_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_to_be_rated
+		dataType: string
+		lineageTag: 3af59ffb-25a2-4fb7-a48e-e76ebc4a003a
+		summarizeBy: none
+		sourceColumn: is_to_be_rated
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_new_gu_code
+		dataType: string
+		lineageTag: 7dc46b23-3a74-44a0-a0fa-666dd9e2b9a8
+		summarizeBy: none
+		sourceColumn: has_new_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_exclude_from_model
+		dataType: string
+		lineageTag: 5a344232-d7dc-4e02-899e-c0cd6baa0697
+		summarizeBy: none
+		sourceColumn: is_exclude_from_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c4d4def2-7b83-415b-a420-a2899cd07b5f
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_carry_over_flag
+		dataType: string
+		lineageTag: 6f395d4c-2cc1-406c-8f44-a93ea5560832
+		summarizeBy: none
+		sourceColumn: order_carry_over_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_truck_type_requirement_code
+		dataType: string
+		lineageTag: 5c98bf84-0e3d-4086-b094-e3ffdd2b7aba
+		summarizeBy: none
+		sourceColumn: order_truck_type_requirement_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivery_code
+		dataType: string
+		lineageTag: 91d3470b-89a1-4ea3-8cba-95669a3cb9d2
+		summarizeBy: none
+		sourceColumn: order_delivery_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division = ```
+			
+			IF (
+			    LEFT ( FORMAT ( 'OrderFact'[order_division_code], "" ), 1 ) = "0",
+			    "broker",
+			    "other"
+			)
+			
+			```
+		lineageTag: f8c71e12-9834-47fb-a541-4ecda59bbbfe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OrderFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_order_combined]#(lf)WHERE [order_late_pickup_date] >= DATEFROMPARTS(2024, 1, 1);"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

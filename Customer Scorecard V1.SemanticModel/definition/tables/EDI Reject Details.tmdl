@@ -1,0 +1,158 @@
+table 'EDI Reject Details'
+	lineageTag: a6f300fa-28ca-4ad2-a369-32e9b458e36f
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 628a2bcd-c2ab-4286-b789-11cc91d1d04d
+		summarizeBy: none
+		sourceColumn: edi_rejects_customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: string
+		lineageTag: 37ece833-08ed-4f1d-aaab-e9895ed25cd8
+		summarizeBy: none
+		sourceColumn: edi_rejects_origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: d287094b-d135-4dff-8cab-e6aec122be00
+		summarizeBy: none
+		sourceColumn: edi_rejects_destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill of Lading'
+		dataType: string
+		lineageTag: 28507d33-5da4-4f57-9435-b4546586c8a1
+		summarizeBy: none
+		sourceColumn: edi_rejects_bol
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reject Comment'
+		dataType: string
+		lineageTag: ac483783-29fd-4ce9-b343-57f624cfffb5
+		summarizeBy: none
+		sourceColumn: edi_rejects_comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4478a8bd-8c3e-4629-b4ae-2721b88b8bbd
+		summarizeBy: none
+		sourceColumn: edi_rejects_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Delivery Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8aacaf51-ff32-467f-8183-b14616976a85
+		summarizeBy: none
+		sourceColumn: edi_rejects_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Reject Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 72aab2b5-9224-4d60-bb3c-d109dee8191f
+		summarizeBy: none
+		sourceColumn: edi_rejects_reject_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Tender Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1de07908-bd95-4a7e-881a-7a9124d6dbc3
+		summarizeBy: none
+		sourceColumn: edi_rejects_tender_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Tender Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 39af95c6-3424-4e48-9627-8af00d4205b1
+		summarizeBy: none
+		sourceColumn: edi_rejects_tender_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Load Type'
+		dataType: string
+		lineageTag: b59407fd-e1ba-4f29-b2fa-a37568f0f7aa
+		summarizeBy: none
+		sourceColumn: edi_rejects_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Temperature Low'
+		dataType: double
+		lineageTag: 80e9fefb-70de-46da-af90-04ab96b4ab10
+		summarizeBy: sum
+		sourceColumn: edi_rejects_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Temperature High'
+		dataType: double
+		lineageTag: 9e9e48a6-cf48-4c62-b863-4cf4e764f07a
+		summarizeBy: sum
+		sourceColumn: edi_rejects_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'User Code'
+		dataType: string
+		lineageTag: 835a651f-16cb-4f42-9d31-ad2b43589067
+		summarizeBy: none
+		sourceColumn: edi_rejects_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billable Miles'
+		dataType: double
+		lineageTag: 56e2a3dd-7f10-4cb0-8cc3-8817d79dd8ba
+		summarizeBy: sum
+		sourceColumn: edi_rejects_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'EDI Reject Details' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_ibmi_edi_reject_details = Source{[Schema="silver",Item="ibmi_edi_reject_details"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(silver_ibmi_edi_reject_details, each [edi_rejects_tender_date] >= StartDate)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,80 @@
+table SettlementCodes
+	lineageTag: 7b1bb7b8-5116-49d2-ad7d-c4d2e0b42721
+
+	column stcodes_settlement_code
+		dataType: string
+		lineageTag: efe8221b-f571-4845-8200-361eeeeb307b
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_description_trimmed
+		dataType: string
+		lineageTag: 88b44a1e-954a-4545-bef6-4de6ca4ccf93
+		summarizeBy: none
+		sourceColumn: stcodes_description_trimmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_description
+		dataType: string
+		lineageTag: 23d63a2c-0608-4b85-a271-547c7f6748ef
+		summarizeBy: none
+		sourceColumn: stcodes_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_credit_account_number
+		dataType: string
+		lineageTag: ec17bbba-d2a7-439a-a8b0-161c0d33164b
+		summarizeBy: none
+		sourceColumn: stcodes_credit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_debit_account_number
+		dataType: string
+		lineageTag: 701aafa9-18e7-4175-8c6d-d706ad8eab7b
+		summarizeBy: none
+		sourceColumn: stcodes_debit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_settlement_type
+		dataType: string
+		lineageTag: 997f780e-4144-4ce9-b8c6-85ae5aa0862f
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_deduction_code
+		dataType: string
+		lineageTag: 5d76eb34-87ff-4483-8bf5-7e72f3b3b4a6
+		summarizeBy: none
+		sourceColumn: stcodes_deduction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: string
+		lineageTag: 3a743e47-3c9d-458b-8d00-7c080931b75d
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SettlementCodes = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_dim_stcodes];"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

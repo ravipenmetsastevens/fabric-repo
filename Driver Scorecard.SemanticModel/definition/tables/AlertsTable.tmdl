@@ -1,0 +1,30 @@
+table AlertsTable
+	isHidden
+	lineageTag: 92089701-39db-4fd9-aac1-2c59dbe59e6b
+
+	column Alerts
+		dataType: string
+		isHidden
+		lineageTag: 40fd2789-7709-404f-97f7-e02851a27ebf
+		summarizeBy: none
+		sourceColumn: Alerts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AlertsTable = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("VZFBkoQwCEXv4no4BCao1MQkDagLq+9/jWFiGbt3qR/4/wHnOSwoEWyTPLx/zuEg3DnP7R1KSqxcMhwo+Vaj8E4CUcqhnEm1qZPXlsNrILIa5kBNbuaj4O/dbYLTxAESz4vBziWheUL7q8UoG2OCntx0NwZeKwb7BPAUeTIwBEokj9niAfBFzJnd3Cg2ccTQobQSxX/2znMNpYQ2UjLnWWviPtW9Ap9UnOqOlIJRORJUlO4t9NpIPdXNI5Vrsbg6KpTR+7enf3vOoDznL5r3Hw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Alerts = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Alerts", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,194 @@
+table BillingFact
+	lineageTag: 834e1489-fe99-408d-9deb-a1be63910af4
+	sourceLineageTag: d01df2d2-4ad5-42aa-a67d-3d46bc53f6e3
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		lineageTag: b36263a3-1a36-4390-9326-c72996dd7278
+		sourceLineageTag: 9c25f56b-8c4e-4aba-af14-d51b287e16df
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = User
+
+	column billing_load_number
+		dataType: string
+		lineageTag: 0b28cbdf-34dc-4ef7-a468-f87ee992f802
+		sourceLineageTag: 58913de9-8424-4a85-9665-54b23047b173
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = User
+
+	column billing_sequence_number
+		dataType: string
+		lineageTag: 2c830917-56f5-4d08-852e-a9c0f0e08891
+		sourceLineageTag: 9b2b1104-8b46-4358-a7f6-77b0aace0c3e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_sequence_number
+
+		annotation SummarizationSetBy = User
+
+	column billing_record_number
+		dataType: double
+		lineageTag: 9491a6fd-fbce-4053-8bf0-8723408a971a
+		sourceLineageTag: cac02e0b-cc89-478a-8e6c-29b5b5bd2845
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_record_number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_commodity_code
+		dataType: string
+		lineageTag: 36237865-b6d0-429d-aa79-376c7bcbd55e
+		sourceLineageTag: 6ac3cdd9-2561-4031-9cc4-8844ae2e0ae2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_commodity_code
+
+		annotation SummarizationSetBy = User
+
+	column billing_commodity_description
+		dataType: string
+		lineageTag: 7113034c-6ffb-496f-8c9e-e723cf307bec
+		sourceLineageTag: a79b6917-d662-4697-aa34-cda712fdd201
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_commodity_description
+
+		annotation SummarizationSetBy = User
+
+	column billing_piece_count
+		dataType: double
+		lineageTag: fb289d53-bbb2-4ec4-93b7-855f899ee9ff
+		sourceLineageTag: 455cdbcf-5e31-4a55-b9d2-37d2c61458a6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_piece_count
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_actual_quantity_count
+		dataType: double
+		lineageTag: dca4ec77-b663-4840-b432-f4fc5d5345d3
+		sourceLineageTag: b04b17f3-5d05-428f-9a46-b57da69d4d28
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_actual_quantity_count
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_quantity_count
+		dataType: double
+		lineageTag: ea5f5b94-ab12-4279-9294-84b944f09af3
+		sourceLineageTag: 76534ebc-9004-4aea-8a52-b33d974802cc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_billed_quantity_count
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_rate
+		dataType: double
+		lineageTag: 56c8f8e0-2d7c-486b-913d-0921e9edced9
+		sourceLineageTag: 9f0e4b42-1c4f-45ae-af53-1afa7360f68d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_billed_rate
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_amount
+		dataType: double
+		lineageTag: a40289e8-1e7c-44fc-9d38-09812ad03558
+		sourceLineageTag: 55ccbe54-612e-4d8d-acff-39e604cad6a6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: billing_billed_amount
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_method_code
+		dataType: string
+		lineageTag: faef03ef-1714-4175-b999-2b9bc70b8ef3
+		sourceLineageTag: d0872d55-3b1e-43f9-8315-dca241dc7911
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_method_code
+
+		annotation SummarizationSetBy = User
+
+	column billing_error_code
+		dataType: string
+		lineageTag: 840fa5e6-6ebb-4885-939f-f88f36cb81ef
+		sourceLineageTag: d6e71c23-1984-48fc-9f9c-d22f47042f22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_error_code
+
+		annotation SummarizationSetBy = User
+
+	column billing_gl_account_number
+		dataType: string
+		lineageTag: 9cfeb1a6-257b-4e6d-b5c0-f1251cf2a93a
+		sourceLineageTag: 7d7ad593-49e4-4cba-8b51-bf3f9a624df5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_gl_account_number
+
+		annotation SummarizationSetBy = User
+
+	column billing_billed_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 60e50c27-89b7-429b-85e8-708316bbc5ee
+		sourceLineageTag: 56381ef4-5277-4986-865b-509017684a46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: billing_billed_date
+
+		annotation SummarizationSetBy = User
+
+	column division_code
+		dataType: string
+		lineageTag: 130ed32f-cf59-4c30-b7d3-c6f02cc7144c
+		sourceLineageTag: 67d7b7e7-5e2e-420c-afd5-7bfdf7cb592f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = User
+
+	column division
+		dataType: string
+		lineageTag: 2a194f68-78d6-45ad-8ea9-6eab6d300fa2
+		sourceLineageTag: 0849b1d5-c113-4467-9bff-bcc0e3b5008b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: division
+
+		annotation SummarizationSetBy = User
+
+	partition BillingFact = entity
+		mode: directQuery
+		source
+			entityName: BillingFact
+			expressionSource: 'DirectQuery to AS - FinanceDashboard'
+

@@ -1,0 +1,311 @@
+table driver_perf_slices
+	lineageTag: 098986d7-e8be-4a6a-8999-68456ec91b84
+
+	column truck_id
+		dataType: string
+		lineageTag: b4c32816-c4e5-4dfa-b946-f4209b33229b
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_id
+		dataType: string
+		lineageTag: a4b6ae88-e549-4cff-b3ce-5450f96deedf
+		summarizeBy: none
+		sourceColumn: load_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_driver_id
+		dataType: string
+		lineageTag: 56e49de4-e970-4870-99db-ccc777631209
+		summarizeBy: none
+		sourceColumn: primary_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column co_driver_id
+		dataType: string
+		lineageTag: 6eb8842c-91ee-4d83-98c9-0692008fa02c
+		summarizeBy: none
+		sourceColumn: co_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_type
+		dataType: string
+		lineageTag: 5ed7f733-dd28-451b-baa4-c09362403a26
+		summarizeBy: none
+		sourceColumn: snapshot_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column server_received_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 643c0f4c-17e3-4156-87e6-d6d82a4f4ce7
+		summarizeBy: none
+		sourceColumn: server_received_at
+
+		variation Variation
+			isDefault
+			relationship: 6b2626fc-4f08-4519-98c2-7aefadf1ccfa
+			defaultHierarchy: LocalDateTable_a5ab73b7-2656-4231-bf43-1797ed66413e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column slice_start_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d1ef5b47-7372-436c-9e55-28f8168b6fc0
+		summarizeBy: none
+		sourceColumn: slice_start_utc
+
+		variation Variation
+			isDefault
+			relationship: 81314f9f-071a-4331-99cd-6f1e80b77953
+			defaultHierarchy: LocalDateTable_5a73161d-8944-4758-9668-687f0b4c6198.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column slice_end_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7b27e24-498e-4e15-80b3-55b002e1214a
+		summarizeBy: none
+		sourceColumn: slice_end_utc
+
+		variation Variation
+			isDefault
+			relationship: 86815bf8-5574-4699-85a8-24fe73c9984e
+			defaultHierarchy: LocalDateTable_4d5e8f8d-65c0-4e7c-b314-0fe9e61d7fab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column miles_driven
+		dataType: double
+		lineageTag: 3d910ae3-2d97-4265-b0f0-2724409247fc
+		summarizeBy: sum
+		sourceColumn: miles_driven
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_driving
+		dataType: double
+		lineageTag: 4a55b2d9-7da9-4779-b5b9-14b6be9c7d8e
+		summarizeBy: sum
+		sourceColumn: minutes_driving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_idle_internal
+		dataType: double
+		lineageTag: 189e0414-3369-4cef-b9f3-026854fe3b34
+		summarizeBy: sum
+		sourceColumn: minutes_idle_internal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_idle_shutdown
+		dataType: double
+		lineageTag: ea95bf39-7d0b-40c1-9eb2-cd8e1697ff49
+		summarizeBy: sum
+		sourceColumn: minutes_idle_shutdown
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_idle_stopped
+		dataType: double
+		lineageTag: 2a89f4e4-e661-415d-9521-dea18a5ea173
+		summarizeBy: sum
+		sourceColumn: minutes_idle_stopped
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_moving
+		dataType: double
+		lineageTag: cf13d05d-61db-4fe0-9152-49a822cdc3a7
+		summarizeBy: sum
+		sourceColumn: minutes_moving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_move_gal
+		dataType: double
+		lineageTag: 7469feb1-0294-4f3e-881d-bcab31b6ba6a
+		summarizeBy: sum
+		sourceColumn: fuel_move_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_idle_gal
+		dataType: double
+		lineageTag: 02ac120a-4ce7-4e2e-9fd8-5e578abef68d
+		summarizeBy: sum
+		sourceColumn: fuel_idle_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_pto_gal
+		dataType: double
+		lineageTag: 9e2cea95-ecde-462d-8b65-1f3968b4e785
+		summarizeBy: sum
+		sourceColumn: fuel_pto_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overspeed_events
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d83162e-2ad8-4a99-82ca-c46798c53845
+		summarizeBy: sum
+		sourceColumn: overspeed_events
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_overspeed
+		dataType: double
+		lineageTag: 0ae902b1-5865-4644-b844-95a4ac8382d1
+		summarizeBy: sum
+		sourceColumn: minutes_overspeed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_high_rpm
+		dataType: double
+		lineageTag: 0b382f38-c0a8-460c-8105-ddcc77675d49
+		summarizeBy: sum
+		sourceColumn: minutes_high_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_engine_load_pct
+		dataType: double
+		lineageTag: 0ad5a11c-ce69-4c76-ab8b-60fec59fa625
+		summarizeBy: sum
+		sourceColumn: avg_engine_load_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_rpm
+		dataType: int64
+		formatString: 0
+		lineageTag: 3fe19cfa-6c5b-4c46-9c8b-86b332c862cf
+		summarizeBy: sum
+		sourceColumn: max_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_speed_mph
+		dataType: int64
+		formatString: 0
+		lineageTag: 643d5ca4-0c18-4fe5-9797-4baf32d21056
+		summarizeBy: sum
+		sourceColumn: max_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_end_mi
+		dataType: double
+		lineageTag: 69bb1720-2911-4fd5-9b4f-33b0bf318e0a
+		summarizeBy: sum
+		sourceColumn: odometer_end_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trip_distance_mi
+		dataType: double
+		lineageTag: adf123e0-4495-4510-a3c7-cef9b21d6d52
+		summarizeBy: sum
+		sourceColumn: trip_distance_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engine_hours_end
+		dataType: double
+		lineageTag: 8a0aa047-d181-493b-8d1e-f48719f2cb19
+		summarizeBy: sum
+		sourceColumn: engine_hours_end
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 00aed2e5-209a-4300-8dbf-6e3536fa5680
+		summarizeBy: none
+		sourceColumn: load_date
+
+		variation Variation
+			isDefault
+			relationship: 6062b17d-4915-4e7c-920d-204abf9e8773
+			defaultHierarchy: LocalDateTable_76106b08-6fba-4be5-9196-62ae280817a6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column server_received_datre
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d1552c7-907a-4c70-882c-b9888c94f52f
+		summarizeBy: none
+		sourceColumn: server_received_datre
+
+		variation Variation
+			isDefault
+			relationship: aeb85126-9633-4fe4-9c5d-879b5309836f
+			defaultHierarchy: LocalDateTable_0633d224-b43c-4809-a5ec-597b274b62ae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition driver_perf_slices = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_driver_perf_slices = data_central_wh{[Schema="silver",Item="plsc_driver_perf_slices"]}[Data],
+				    #"Duplicated Column" = Table.DuplicateColumn(silver_plsc_driver_perf_slices, "server_received_at", "server_received_at - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"server_received_at - Copy", "server_received_datre"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"server_received_datre", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,225 @@
+table MaintSchedFact
+	lineageTag: b21d1352-65f6-4ebb-a5bd-abeee160154a
+
+	column sched_maint_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b828b219-229d-4e16-a362-e69d7cca6e43
+		summarizeBy: sum
+		sourceColumn: sched_maint_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_repair_order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 40abf501-2cb0-4122-bc96-f8211ba69436
+		summarizeBy: sum
+		sourceColumn: sm_repair_order_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_repair_order
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b1571496-c522-43b8-bfab-2812d5b5a6fe
+		summarizeBy: none
+		sourceColumn: has_repair_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_group
+		dataType: string
+		lineageTag: db0bc55e-7af1-472b-bc7e-efe5b99490dc
+		summarizeBy: none
+		sourceColumn: sm_group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_vin
+		dataType: string
+		lineageTag: 45a7372c-c57d-4ef1-ab8f-e37978063f79
+		summarizeBy: none
+		sourceColumn: sm_vin
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_unit_number
+		dataType: string
+		lineageTag: 24eae4ce-7db8-41b0-b178-ca8d40fa13ab
+		summarizeBy: none
+		sourceColumn: sm_unit_number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: eb42cba7-61de-4686-baa4-4c4dda9a0895
+		summarizeBy: none
+		sourceColumn: sm_start_date
+
+		variation Variation
+			isDefault
+			relationship: a45630d5-2c3f-4635-a2bb-a86f7ef8ac8d
+			defaultHierarchy: LocalDateTable_b2d6c4ca-c8e1-4ee5-a95d-11c6a1104544.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column sm_start_miles
+		dataType: double
+		lineageTag: 52d7e65b-2f30-42d2-b54b-e533f50c1b5d
+		summarizeBy: sum
+		sourceColumn: sm_start_miles
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sm_start_engine_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: db61ef98-88c4-4ab9-beb9-1bcbf3b395e8
+		summarizeBy: sum
+		sourceColumn: sm_start_engine_hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_is_recurring
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cf66eff3-4b69-4103-9708-a0fd5be23d57
+		summarizeBy: none
+		sourceColumn: sm_is_recurring
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 14415c7c-40fd-40e0-9258-2b9bd7c12d47
+		summarizeBy: sum
+		sourceColumn: scheduled_days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_miles
+		dataType: double
+		lineageTag: f5e7ab7c-2954-481c-be6d-5a46f6ac0d9d
+		summarizeBy: sum
+		sourceColumn: scheduled_miles
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column scheduled_engine_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: c931508b-eddc-4522-9131-cce2a4e0a29b
+		summarizeBy: sum
+		sourceColumn: scheduled_engine_hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_system_component_code
+		dataType: string
+		lineageTag: ef9525bf-6490-44d3-a9ff-9f15995d2fcf
+		summarizeBy: none
+		sourceColumn: sm_system_component_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_tag
+		dataType: string
+		lineageTag: d3fb0b6a-f701-48b2-abea-00292c8572db
+		summarizeBy: none
+		sourceColumn: sm_tag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_notes
+		dataType: string
+		lineageTag: 169e40ef-311c-4ecc-a0ba-93a55d709db4
+		summarizeBy: none
+		sourceColumn: sm_notes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_became_due_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 82d8813b-747c-4ef2-bfaf-b247a388336a
+		summarizeBy: none
+		sourceColumn: sm_became_due_datetime
+
+		variation Variation
+			isDefault
+			relationship: 492d2cd2-fc18-4170-93ad-8324c4d48d0e
+			defaultHierarchy: LocalDateTable_4b5c102d-3efd-4119-b795-de0607d6ee8c.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sm_became_due_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f0dceb05-ed63-4c85-8291-84e5eab22106
+		summarizeBy: none
+		sourceColumn: sm_became_due_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition MaintSchedFact = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    gold_fact_maint_scheduled = data_central_wh{[Schema="gold",Item="fact_maint_scheduled"]}[Data]
+				in
+				    gold_fact_maint_scheduled
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

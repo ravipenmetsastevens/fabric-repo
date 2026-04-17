@@ -1,0 +1,45 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["asset_master","backup_vehicle_pings","backup_vehicle_pings_legacy","dispatch_planned_orders","driver_perf_slices","vehicle_heartbeats","date_time","order_activity","driver_master","vw_driver_perf_daily"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
+
+ref table asset_master
+ref table backup_vehicle_pings
+ref table backup_vehicle_pings_legacy
+ref table dispatch_planned_orders
+ref table driver_perf_slices
+ref table DateTableTemplate_7796607f-a786-489b-930a-6f107be68572
+ref table LocalDateTable_5a73161d-8944-4758-9668-687f0b4c6198
+ref table LocalDateTable_4d5e8f8d-65c0-4e7c-b314-0fe9e61d7fab
+ref table LocalDateTable_76106b08-6fba-4be5-9196-62ae280817a6
+ref table vehicle_heartbeats
+ref table date_time
+ref table order_activity
+ref table driver_master
+ref table LocalDateTable_abfde871-cbab-47fe-a276-3066c21406d8
+ref table LocalDateTable_90262da8-9342-429b-852f-e83c0f6cefb6
+ref table LocalDateTable_1d10773c-db4f-4b2e-b169-f9d787938d15
+ref table LocalDateTable_8400b669-e9a4-4b37-bddf-2440b595f71d
+ref table LocalDateTable_29848cce-453d-467b-b74f-231bfdf29b1f
+ref table LocalDateTable_a7fc83c0-1f2a-4b10-b0cf-f6afdcfa98df
+ref table LocalDateTable_105acee6-e073-4d35-8495-d2728fefe6d8
+ref table LocalDateTable_0396d746-8dfe-430e-b67a-6b24ec58b3df
+ref table LocalDateTable_ca533fb1-36d8-4fc8-9845-b8924bdd8d5f
+ref table LocalDateTable_4f1b274d-a909-4a75-be07-efb21907f719
+ref table LocalDateTable_a5ab73b7-2656-4231-bf43-1797ed66413e
+ref table LocalDateTable_0633d224-b43c-4809-a5ec-597b274b62ae
+ref table LocalDateTable_48235826-5ae8-4b16-a86d-2d976f3dfea2
+ref table vw_driver_perf_daily
+ref table Parameter
+
+ref cultureInfo en-US
+

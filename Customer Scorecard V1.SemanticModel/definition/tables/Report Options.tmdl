@@ -1,0 +1,26 @@
+table 'Report Options'
+	lineageTag: a848553d-f644-4f88-9236-5620de162ca1
+
+	measure 'Selected Option Toggle' = SELECTEDVALUE('Report Options'[Option Toggle], 0)
+		formatString: 0
+		lineageTag: b8b8622e-46e2-4aa5-988b-b67653a80726
+
+	column 'Option Toggle'
+		formatString: 0
+		lineageTag: eed1772c-a3b4-465e-82d5-98708f9257ef
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Report Options' = calculated
+		mode: import
+		source = GENERATESERIES(0, 1, 1)
+
+	annotation PBI_Id = eb3c8ce300534d28987c9e51dd1b2927
+

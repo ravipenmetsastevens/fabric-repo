@@ -1,0 +1,63 @@
+table dispatch_planned_orders
+	lineageTag: 95ba0721-a9f7-4ba1-8754-48aa5ef5ebfd
+
+	column planned_order_id_raw
+		dataType: string
+		lineageTag: 959f3d10-2177-4732-9997-8f2828d1cf00
+		summarizeBy: none
+		sourceColumn: planned_order_id_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_status_raw
+		dataType: string
+		lineageTag: 02bee5d4-a8ba-40f4-9705-7e1106c85653
+		summarizeBy: none
+		sourceColumn: dispatch_status_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_code_raw
+		dataType: string
+		lineageTag: 8816fbdc-9c88-4010-8be7-096eda6111fa
+		summarizeBy: none
+		sourceColumn: driver_code_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_date_raw
+		dataType: string
+		lineageTag: 4317f7f7-4127-4f27-9fb9-29e68931cf27
+		summarizeBy: none
+		sourceColumn: mh_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_date_iso_raw
+		dataType: string
+		lineageTag: ee5db9e7-e351-4838-a23b-a05a17852989
+		summarizeBy: none
+		sourceColumn: mh_date_iso_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_time_raw
+		dataType: string
+		lineageTag: 6020b726-7d04-4134-8897-de0fe555b06e
+		summarizeBy: none
+		sourceColumn: mh_time_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dispatch_planned_orders = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_dispatch_planned_orders = data_central_wh{[Schema="silver",Item="plsc_dispatch_planned_orders"]}[Data]
+				in
+				    silver_plsc_dispatch_planned_orders
+
+	annotation PBI_ResultType = Table
+

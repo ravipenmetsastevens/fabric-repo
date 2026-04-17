@@ -1,0 +1,331 @@
+table UtlFile
+	excludeFromModelRefresh
+	lineageTag: 8c2f3710-c7df-4d76-b2b1-c5fc2a685c8f
+
+	column utlfile_truck_number
+		dataType: string
+		lineageTag: 44dbbca4-14e3-4975-8b91-54217e181bb7
+		summarizeBy: none
+		sourceColumn: utlfile_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_driver_code
+		dataType: string
+		lineageTag: 718c08a6-d794-45d9-8152-1ff786bd123a
+		summarizeBy: none
+		sourceColumn: utlfile_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_driver_type
+		dataType: string
+		lineageTag: a8e2704b-da61-4e84-b643-2fe6c53eb1b4
+		summarizeBy: none
+		sourceColumn: utlfile_driver_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_truck_dm_code
+		dataType: string
+		lineageTag: e7f56e79-23df-4600-a467-8b5df79024ee
+		summarizeBy: none
+		sourceColumn: utlfile_truck_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_driver_dm_code
+		dataType: string
+		lineageTag: 29f78a12-811a-4e60-b9e4-119857e72bec
+		summarizeBy: none
+		sourceColumn: utlfile_driver_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_dmol_code
+		dataType: string
+		lineageTag: 7be2124b-c965-4d0b-ba97-accc952c6f61
+		summarizeBy: none
+		sourceColumn: utlfile_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_safety_manager_code
+		dataType: string
+		lineageTag: 31edc03c-4045-4046-8e9f-775f01cbc838
+		summarizeBy: none
+		sourceColumn: utlfile_safety_manager_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_counselor_code
+		dataType: string
+		lineageTag: 3c4df9fc-2bcf-48f4-89c0-0d0f9fdbb086
+		summarizeBy: none
+		sourceColumn: utlfile_counselor_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_seat
+		dataType: string
+		lineageTag: fd97ec61-d516-465a-8850-7e11602b9f78
+		summarizeBy: none
+		sourceColumn: utlfile_seat
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_first_seat_code
+		dataType: string
+		lineageTag: 81c0ef1e-581d-4a22-8723-a3ae11baec88
+		summarizeBy: none
+		sourceColumn: utlfile_first_seat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_second_seat_code
+		dataType: string
+		lineageTag: bf7164db-2517-4d09-bb0b-61edd6e66d9f
+		summarizeBy: none
+		sourceColumn: utlfile_second_seat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_training_level_code
+		dataType: string
+		lineageTag: ebabebf4-eb3e-4f25-8b24-77a6c03bc18b
+		summarizeBy: none
+		sourceColumn: utlfile_training_level_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_team_truck
+		dataType: string
+		lineageTag: b499010a-5911-4fd7-b2f0-addc6e8390a1
+		summarizeBy: none
+		sourceColumn: is_team_truck
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_training_team
+		dataType: string
+		lineageTag: 9732e84b-baeb-4cc5-be88-2f10c0770be0
+		summarizeBy: none
+		sourceColumn: is_training_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_miles_hub
+		dataType: double
+		lineageTag: 275c1e53-df23-4d07-a5ad-a53bfad15f72
+		summarizeBy: sum
+		sourceColumn: utlfile_miles_hub
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column utlfile_miles_adj_hub
+		dataType: double
+		lineageTag: f490ca7e-8ccb-4c0d-b199-34956888475c
+		summarizeBy: sum
+		sourceColumn: utlfile_miles_adj_hub
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column utlfile_miles_goal
+		dataType: double
+		lineageTag: 90be5c2e-e460-4221-b4dd-6b4fa2a472cb
+		summarizeBy: sum
+		sourceColumn: utlfile_miles_goal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column utlfile_utilization_ratio
+		dataType: double
+		lineageTag: 4e9ce089-c066-4f46-ac75-0b38822fab21
+		summarizeBy: sum
+		sourceColumn: utlfile_utilization_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column utlfile_projected_date_available
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dcea5cd0-0281-443b-b004-078a127d5618
+		summarizeBy: none
+		sourceColumn: utlfile_projected_date_available
+
+		variation Variation
+			isDefault
+			relationship: 9b92d6d9-8c62-48a5-9c58-ef6ca6e955da
+			defaultHierarchy: LocalDateTable_2cd3e496-be1b-4f1f-be2a-ac1e76abb67f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_projected_time_available
+		dataType: string
+		lineageTag: 34676f22-4780-422f-8a8d-f854c712540f
+		summarizeBy: none
+		sourceColumn: utlfile_projected_time_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_home_time
+		dataType: string
+		lineageTag: eb26b275-af0b-4612-a7ad-447c1dfc6df5
+		summarizeBy: none
+		sourceColumn: is_home_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_hold_codes
+		dataType: string
+		lineageTag: 7b65f1dd-4013-4548-9200-713c7113e4b4
+		summarizeBy: none
+		sourceColumn: utlfile_hold_codes
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_equipment_breakdown
+		dataType: string
+		lineageTag: b6d3696f-8599-4b3a-bd9f-78ef75f2dee7
+		summarizeBy: none
+		sourceColumn: utlfile_equipment_breakdown
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_resweep
+		dataType: string
+		lineageTag: ad76fe06-c20f-4bce-ba8d-0e5786ed6c45
+		summarizeBy: none
+		sourceColumn: is_resweep
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_load_number
+		dataType: string
+		lineageTag: a0dc9394-74c8-419c-b6c5-1c26ed7c401d
+		summarizeBy: none
+		sourceColumn: utlfile_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_grad_hold
+		dataType: string
+		lineageTag: a810ddbb-9246-446d-a262-68897f453126
+		summarizeBy: none
+		sourceColumn: is_grad_hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_omitted
+		dataType: string
+		lineageTag: e736cd73-bc77-4311-bec4-a36917a55d16
+		summarizeBy: none
+		sourceColumn: is_omitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_division
+		dataType: string
+		lineageTag: 9930e0fc-3075-4a92-b6ae-d20c345924cd
+		summarizeBy: none
+		sourceColumn: utlfile_division
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_requested_days_out
+		dataType: double
+		lineageTag: 1b44c33f-2a86-490b-8138-0f5aceeca236
+		summarizeBy: sum
+		sourceColumn: utlfile_requested_days_out
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_trainer
+		dataType: string
+		lineageTag: 5767df5c-4c99-40d8-8a43-6391300ad00c
+		summarizeBy: none
+		sourceColumn: is_trainer
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_trainer_availability_code
+		dataType: string
+		lineageTag: 16eb8361-d3f2-4e04-876d-dce515bf2331
+		summarizeBy: none
+		sourceColumn: utlfile_trainer_availability_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_trainer_status_code
+		dataType: string
+		lineageTag: 2e4c1129-4c92-4268-b53b-3cbc5c466b01
+		summarizeBy: none
+		sourceColumn: utlfile_trainer_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_allowed_to_drive
+		dataType: string
+		lineageTag: 26125c2c-4002-4d3b-be58-e9d8833cf293
+		summarizeBy: none
+		sourceColumn: is_allowed_to_drive
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_record_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e258784-84b8-4866-8875-af99a71b6dd7
+		summarizeBy: none
+		sourceColumn: utlfile_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_comfort_zone_code
+		dataType: string
+		lineageTag: 84d1834c-4bee-4728-a109-88e8e6bc0258
+		summarizeBy: none
+		sourceColumn: utlfile_comfort_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_on_yard
+		dataType: string
+		lineageTag: 2dc921f8-416c-4d58-bac6-d3efd68c09d1
+		summarizeBy: none
+		sourceColumn: is_on_yard
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_business_unit_code
+		dataType: string
+		lineageTag: 6a6bccbc-a14c-412e-a949-4ce8f591a64d
+		summarizeBy: none
+		sourceColumn: utlfile_business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UtlFile = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_utlfile]#(lf)WHERE utlfile_record_date >= '2024-01-01 00:00:00'#(lf)  AND utlfile_record_date <  '2026-12-01 00:00:00';#(lf)"]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([is_omitted] = "FALSE"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

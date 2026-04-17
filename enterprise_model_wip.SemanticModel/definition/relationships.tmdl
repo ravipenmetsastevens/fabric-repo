@@ -1,0 +1,16 @@
+relationship 878c88dd-5863-b0df-c6a1-32e341cc488b
+	fromColumn: Order.order_customer_code
+	toColumn: Customer.customer_code
+
+relationship 2c514872-9077-e07b-f98c-cd876243ad35
+	fromColumn: Order.order_date
+	toColumn: 'gold dim_date'.date_key_pk
+
+relationship 6f15c2b0-bcff-b115-6232-87cfe67549be
+	fromColumn: OrdBill.order_customer_code
+	toColumn: Customer.customer_code
+
+relationship 5743df33-3c52-178b-aa10-49d2a0bc35bb
+	fromColumn: OrdBill.ordbill_billed_date
+	toColumn: 'gold dim_date'.date_key_pk
+

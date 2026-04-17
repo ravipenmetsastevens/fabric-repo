@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "WorkDay_Employee_Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "478541a0-f9ef-bd22-4025-89d8bafbf930"
+  }
+}

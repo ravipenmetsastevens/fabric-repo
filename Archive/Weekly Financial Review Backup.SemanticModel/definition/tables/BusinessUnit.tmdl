@@ -1,0 +1,45 @@
+table BusinessUnit
+	lineageTag: d43e22ad-f9f5-4714-8230-ad704c8e9b19
+
+	column business_unit_description
+		dataType: string
+		lineageTag: 5c1d2198-2562-4b32-adc4-af1f3689981d
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_class
+		dataType: string
+		lineageTag: 81945aaf-27a7-45c1-bb5a-c2ee4a216bbe
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_code
+		dataType: string
+		lineageTag: d0f0e6d1-2d62-4a6d-be58-b4f61db26de2
+		summarizeBy: none
+		sourceColumn: business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BusinessUnit = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_asset_master = data_central_wh{[Schema="silver", Item="ibmi_business_unit_master"]}[Data]
+				in
+				    silver_plsc_asset_master    // or use #"Removed Seat Column" if you dropped "seat"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,242 @@
+table ARTxnFact
+	excludeFromModelRefresh
+	lineageTag: a3436ee5-1db1-4e98-abd4-53d77f3cb781
+
+	measure 'Miles Dead Head' = sum(LoadFact[load_miles_dead_head])
+		lineageTag: 59910e4c-496b-4381-9191-22e6e6718d4f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dead Head %' = [Miles Dead Head]/ [Miles Loaded]
+		lineageTag: 6f2adcbc-75b4-4975-96e2-acbb7f7743ca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Miles' = sum(LoadFact[load_miles_total])
+		lineageTag: cab3891f-83cb-4858-88cd-3c83ce56b222
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue Per Mile' = [Total Revenue]/ [Total Miles]
+		lineageTag: 852b102f-5541-4b6f-9f69-3e607e6acc56
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure InvoiceCount = ```
+			DISTINCT(ARTxnFact[invoice_number]) 
+			```
+		lineageTag: 08e4efc5-daa1-4a7c-a1c3-1998715b33e4
+
+	measure InvoiceAmount = sum(ARTxnFact[amount])
+		lineageTag: 4a80137f-d4f8-4dfd-bc10-d138995ebf26
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column record_code
+		dataType: string
+		lineageTag: 08dbdf4e-2d9e-4c5c-b9ad-eb15ebc74a75
+		summarizeBy: none
+		sourceColumn: record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_code
+		dataType: string
+		lineageTag: f990d72c-bb17-49dc-bdbb-636967edd0d3
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		lineageTag: 409b04a6-65d2-419d-b4c4-1bab8639babe
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column adj_batch_code
+		dataType: string
+		lineageTag: a2d79b9b-5afc-4ac4-a9fc-4227710546f5
+		summarizeBy: none
+		sourceColumn: adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_type
+		dataType: string
+		lineageTag: d18a66d4-9928-4e71-aeb5-c3fcec871eff
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_number
+		dataType: double
+		lineageTag: 15c5ca27-32bb-448f-ab87-6b89f7acb2f7
+		summarizeBy: sum
+		sourceColumn: record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_name
+		dataType: string
+		lineageTag: 16f09d48-7d9e-430b-9402-f2c54e424df0
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sequence_code
+		dataType: string
+		lineageTag: 76ab09ca-f9bb-40cd-90d6-42e2bf0bccb5
+		summarizeBy: none
+		sourceColumn: sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement_number
+		dataType: string
+		lineageTag: 4991f269-931b-4d89-8f68-ae19a09b2a4c
+		summarizeBy: none
+		sourceColumn: statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 828a8622-c52e-4d2b-96ee-8c4bcb58f120
+		summarizeBy: none
+		sourceColumn: dispatch_date
+
+		variation Variation
+			isDefault
+			relationship: e4ef2351-bb24-4f47-b856-f7977c670b48
+			defaultHierarchy: LocalDateTable_a00c47fc-7201-4b0e-bab8-e4549ed66215.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: 4c87aeba-a6cc-4ec2-8739-9abd4e3a043e
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column balance_forward
+		dataType: double
+		lineageTag: c9c49cb1-54e1-4ad4-ad25-b87841abe11a
+		summarizeBy: sum
+		sourceColumn: balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_daily_pro_register
+		dataType: string
+		lineageTag: 473b20f7-232e-4592-b5a4-97344f127ffd
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekly_pro_register
+		dataType: string
+		lineageTag: bca64010-3585-481c-9dde-52fbae790eb9
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_monthly_pro_register
+		dataType: string
+		lineageTag: e85d7a1a-4544-42e7-90ae-3c4705b035ee
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_non_current
+		dataType: string
+		lineageTag: d984f0b7-539d-413c-a91c-d3688597643d
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2e593b5-4657-4281-9bd7-eed4aadd37c4
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_number
+		dataType: string
+		lineageTag: 95ad47fa-98a1-4f84-8aa0-0b29aa1da162
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposit_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 27d0ce11-8bdb-475f-9444-9fdc9e54964d
+		summarizeBy: none
+		sourceColumn: deposit_date
+
+		variation Variation
+			isDefault
+			relationship: 38468a7b-a146-4df2-9ae0-a61a39a99070
+			defaultHierarchy: LocalDateTable_68a3fdfe-feba-47b6-b936-e50f9c22d69e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_order_number
+		dataType: string
+		lineageTag: b3b37b74-f6d6-49d7-acc3-0ad4eb7908b3
+		summarizeBy: none
+		sourceColumn: cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_month
+		dataType: string
+		lineageTag: 840ccb93-3f8e-4635-a0d1-7cde8272c45a
+		summarizeBy: none
+		sourceColumn: book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_year
+		dataType: string
+		lineageTag: 6ef78665-3a16-4687-a4db-8a51be252064
+		summarizeBy: none
+		sourceColumn: book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ARTxnFact = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="#(lf)SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_arfile_combined]#(lf)WHERE [invoice_date] >= DATEFROMPARTS(2024, 1, 1);"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

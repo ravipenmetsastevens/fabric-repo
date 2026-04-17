@@ -1,0 +1,81 @@
+table order_activity
+	lineageTag: 402d425b-b55b-4e1a-831a-290503bee89d
+
+	column ao_date_raw
+		dataType: string
+		lineageTag: 4bc00fdc-1648-49a2-87d9-b40d9bade61e
+		summarizeBy: none
+		sourceColumn: ao_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_time_raw
+		dataType: string
+		lineageTag: 82e1ccd4-adc3-4e22-ae3f-55e0738bae1d
+		summarizeBy: none
+		sourceColumn: ao_time_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_pr_date_raw
+		dataType: string
+		lineageTag: 6b934dcc-c683-46ec-b51a-4193cb45d456
+		summarizeBy: none
+		sourceColumn: ao_pr_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_proc_code_raw
+		dataType: string
+		lineageTag: 874bc8a7-5fb6-4485-953e-c00f5f88ebb0
+		summarizeBy: none
+		sourceColumn: ao_proc_code_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_return_type_raw
+		dataType: string
+		lineageTag: 8afac57c-c7bf-4713-ae5f-17efee24cf39
+		summarizeBy: none
+		sourceColumn: ao_return_type_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_order_id_raw
+		dataType: string
+		lineageTag: f9788dbf-9844-41f8-ad4a-114c88e56410
+		summarizeBy: none
+		sourceColumn: ao_order_id_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_movement_type_raw
+		dataType: string
+		lineageTag: cc72680c-d6d0-4891-94bc-3ed8dfdf26b8
+		summarizeBy: none
+		sourceColumn: ao_movement_type_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_unit_raw
+		dataType: string
+		lineageTag: 193707d9-518a-4b0d-8b64-2cc390ef8287
+		summarizeBy: none
+		sourceColumn: ao_unit_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition order_activity = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"),
+				    data_central_wh = Source{[Name="data_central_wh"]}[Data],
+				    silver_plsc_order_activity = data_central_wh{[Schema="silver",Item="plsc_order_activity"]}[Data]
+				in
+				    silver_plsc_order_activity
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

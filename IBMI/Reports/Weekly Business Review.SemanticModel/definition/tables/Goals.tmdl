@@ -1,0 +1,57 @@
+table Goals
+	lineageTag: 3673b733-995c-43fd-9259-621ad5afd58e
+
+	column business_class
+		dataType: string
+		lineageTag: 48bd6841-1158-4d10-802a-49ab1598f734
+		summarizeBy: none
+		sourceColumn: business_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_desc
+		dataType: string
+		lineageTag: 624927c2-2419-4940-adb6-f1f129eb7fe3
+		summarizeBy: none
+		sourceColumn: business_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_type
+		dataType: string
+		lineageTag: 6a72c1f3-e500-412f-a54a-efd1d2e90f96
+		summarizeBy: none
+		sourceColumn: metric_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_interval
+		dataType: string
+		lineageTag: 3791334c-711b-4654-b44e-31688dc5014a
+		summarizeBy: none
+		sourceColumn: time_interval
+
+		annotation SummarizationSetBy = Automatic
+
+	column goal
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a54aa05-0a24-4d7d-8a0c-b591f020a7aa
+		summarizeBy: sum
+		sourceColumn: goal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Goals = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("hZHLCoMwFER/RbLuIlGjdq3QTYsgQqHiIuhtER8BX9C/r7VKQ72xEDCLM8PEkyQkboesrKTIyYFM51JU0E3fK0BZPaeLybhN0kNCAsiLTPSgA5nn0Rn0ZX2XbW/cZAO6Uod/2AgehWxEpePowp1lpoWYuUDqU/zACIrRYGgrN5FAuBNgdBs4tSLv0D0OsudNGzGIGktYltL/dRHBCM0AKmm7S/ePDQTla+nWB0I71OWIkb1exQmCWRz5Z4oVdAMWCfciHIusZrBVxz9ukIw7+0xf", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [business_class = _t, business_desc = _t, metric_type = _t, time_interval = _t, goal = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"business_class", type text}, {"business_desc", type text}, {"metric_type", type text}, {"time_interval", type text}, {"goal", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

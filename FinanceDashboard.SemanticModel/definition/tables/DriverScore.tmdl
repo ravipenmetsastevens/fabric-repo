@@ -1,0 +1,127 @@
+table DriverScore
+	lineageTag: 14f4ef3a-15f4-4dce-8fae-b7137e72e9da
+
+	column driver_id
+		dataType: string
+		lineageTag: d32d7941-92aa-4aa2-b00b-8c05d4defc01
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 600f26a1-26b1-4df7-be70-3767c34f4ada
+		summarizeBy: none
+		sourceColumn: first_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 0abdf68e-d8aa-4823-8cf1-e32cf232cbb8
+		summarizeBy: none
+		sourceColumn: last_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_score
+		dataType: double
+		lineageTag: b3add3ba-ddf3-413b-8918-4c7ad3710935
+		summarizeBy: sum
+		sourceColumn: driver_score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_analyzed
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b46096c-9e00-4c82-b6d6-6fabb21bf83d
+		summarizeBy: sum
+		sourceColumn: minutes_analyzed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column green_minutes_pct
+		dataType: double
+		lineageTag: 3159b6d7-ee8a-4003-8b0a-cc6691e0f972
+		summarizeBy: sum
+		sourceColumn: green_minutes_pct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overspeeding_pct
+		dataType: double
+		lineageTag: 212fbbac-c28f-4a1e-a3d6-53a2e4554ce7
+		summarizeBy: sum
+		sourceColumn: overspeeding_pct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1872180d-94d1-4e6b-9d83-cd5f60133538
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		variation Variation
+			isDefault
+			relationship: b15cb4f6-539f-4c6f-8011-a1ae96972dcc
+			defaultHierarchy: LocalDateTable_ef943e95-bedd-486a-b05d-0f0b4cf2576e.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_at_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2f28ccbc-4b33-4f13-931b-89c6ffeff7ef
+		summarizeBy: none
+		sourceColumn: loaded_at_utc
+
+		variation Variation
+			isDefault
+			relationship: 630bf87f-e9c4-48c2-b783-5147657a3f29
+			defaultHierarchy: LocalDateTable_e961ebec-5ac7-4668-82cc-8c2dcde59047.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DriverScore = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT * FROM [data_central_wh].[silver].[netr_driver_report_daily]#(lf)"]),
+				    #"Filtered Rows" = Table.SelectRows(Source, let latest = List.Max(Source[snapshot_date]) in each [snapshot_date] = latest)
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

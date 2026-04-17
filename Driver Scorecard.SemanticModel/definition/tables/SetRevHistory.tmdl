@@ -1,0 +1,361 @@
+table SetRevHistory
+	lineageTag: 895f7b58-ff7e-4639-986a-79614d769ccb
+
+	column set_rev_hist_owner_code
+		dataType: string
+		lineageTag: 020308f9-412e-406e-a09f-043aa281bfab
+		summarizeBy: none
+		sourceColumn: set_rev_hist_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_truck_number
+		dataType: string
+		lineageTag: 95475b14-0d41-4621-9c84-c592fc616ee9
+		summarizeBy: none
+		sourceColumn: set_rev_hist_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_number
+		dataType: string
+		lineageTag: 7846470c-ec89-46e9-8923-8a7fb18d6485
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_dispatch_number
+		dataType: string
+		lineageTag: b1038023-ca77-4910-8195-43f9889a7641
+		summarizeBy: none
+		sourceColumn: set_rev_hist_dispatch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_sequence_number
+		dataType: double
+		lineageTag: 2082ceed-7116-470d-bc25-6b410b5859ec
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_load_date
+		dataType: double
+		lineageTag: 8a57193d-92f1-4170-9a97-35db29cd0564
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_load_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_load_year
+		dataType: string
+		lineageTag: a083f211-d24f-405f-9e40-05172a4b6fc8
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_date_revised
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f7db1ede-cfb3-4fd2-852b-6501c10b97ee
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_date_revised
+
+		variation Variation
+			isDefault
+			relationship: 527415e9-3aad-4e4e-83af-05a43501c5bd
+			defaultHierarchy: LocalDateTable_96e9f8c5-c631-4be2-bfcd-a892b71c04ef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_record_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 79a6d7e4-8fc6-49c7-a122-e218b996230e
+		summarizeBy: none
+		sourceColumn: set_rev_hist_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_origin_city
+		dataType: string
+		lineageTag: 65aaf968-9f30-442e-8623-87ec25ece6f4
+		summarizeBy: none
+		sourceColumn: set_rev_hist_origin_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_destination_city
+		dataType: string
+		lineageTag: d01e128a-aa01-4286-8f98-6da9e30ed0dc
+		summarizeBy: none
+		sourceColumn: set_rev_hist_destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_revenue_amount
+		dataType: double
+		lineageTag: 4fbbd3bd-1022-49a6-835d-c26bc46c1f3e
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_revenue_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_fund_code
+		dataType: string
+		lineageTag: 0b30473d-07eb-42da-af50-e7055e53f527
+		summarizeBy: none
+		sourceColumn: set_rev_hist_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_segment_status_code
+		dataType: string
+		lineageTag: cdbbee3a-2fd1-4d8f-a6ec-eaaa2847847d
+		summarizeBy: none
+		sourceColumn: set_rev_hist_segment_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_miles_total
+		dataType: double
+		lineageTag: ca6b7e5b-2508-4f0c-b8a5-14c68879bbe7
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_origin_code
+		dataType: string
+		lineageTag: 891e604a-3b92-4e3a-9b1d-e7419edfb066
+		summarizeBy: none
+		sourceColumn: set_rev_hist_origin_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_destination_code
+		dataType: string
+		lineageTag: 267211b7-4362-4f3f-b09c-6164e77332c0
+		summarizeBy: none
+		sourceColumn: set_rev_hist_destination_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_additional_pay_amount
+		dataType: double
+		lineageTag: 048a382f-3373-4c86-aa1f-b4357c6b53eb
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_additional_pay_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_additional_pay_fund_code
+		dataType: string
+		lineageTag: 4d585a99-0464-4990-a36b-f804976e4b05
+		summarizeBy: none
+		sourceColumn: set_rev_hist_additional_pay_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_miles_loaded
+		dataType: double
+		lineageTag: 7205ef2e-4b38-40b4-90f5-525261577ceb
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_loaded_mileage_rate
+		dataType: double
+		lineageTag: d1120a32-a5df-47e4-9d11-303969b26c1c
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_loaded_mileage_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_miles_dead_head
+		dataType: double
+		lineageTag: ccbeaf6c-2b40-4f87-a782-1c90a8c138cf
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_dead_head_mileage_rate
+		dataType: double
+		lineageTag: bf248b57-4e47-4f16-833a-d80f673532d7
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_dead_head_mileage_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_mileage_rate_fund_code
+		dataType: string
+		lineageTag: 03e38ca2-d5e3-40f3-b294-726d8f404eb5
+		summarizeBy: none
+		sourceColumn: set_rev_hist_mileage_rate_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_debit_account_number
+		dataType: string
+		lineageTag: f57af5a2-b9e9-4b40-b9b4-e7367e287130
+		summarizeBy: none
+		sourceColumn: set_rev_hist_debit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_credit_account_number
+		dataType: string
+		lineageTag: fb7796ec-8c03-481b-af34-101b8b43a25c
+		summarizeBy: none
+		sourceColumn: set_rev_hist_credit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_expense_month
+		dataType: string
+		lineageTag: 5050d26b-b269-4900-9467-85d481f188b2
+		summarizeBy: none
+		sourceColumn: set_rev_hist_expense_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_expense_year
+		dataType: string
+		lineageTag: 10f5d3d9-8bb1-460b-8055-b5a469918f55
+		summarizeBy: none
+		sourceColumn: set_rev_hist_expense_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_paid_month
+		dataType: string
+		lineageTag: 4dfc8ce0-f3ab-4f48-bebf-020213840e17
+		summarizeBy: none
+		sourceColumn: set_rev_hist_paid_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_paid_year
+		dataType: string
+		lineageTag: 060d6e40-9908-4f20-bdd9-ef8af0c5157e
+		summarizeBy: none
+		sourceColumn: set_rev_hist_paid_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_expensed
+		dataType: string
+		lineageTag: 60183683-0972-4a44-be76-d2a195588c7f
+		summarizeBy: none
+		sourceColumn: is_expensed
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_domestic_amount
+		dataType: double
+		lineageTag: 92a405eb-2d4f-4eea-a778-6844ec1bab25
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_domestic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column set_rev_hist_domestic_expensed_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 84aa127c-6caf-4452-ae6f-9dcd5bec8159
+		summarizeBy: none
+		sourceColumn: set_rev_hist_domestic_expensed_date
+
+		variation Variation
+			isDefault
+			relationship: 948c6f8f-e839-4e2a-998c-8cb6d5afdc62
+			defaultHierarchy: LocalDateTable_e3356809-c2e6-49a9-b23b-c15d9c11df0a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_revenue_type_code
+		dataType: string
+		lineageTag: ccb13896-eda7-45e0-ad30-9c5e4570f2ce
+		summarizeBy: none
+		sourceColumn: set_rev_hist_revenue_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_voucher_number
+		dataType: string
+		lineageTag: 3bb35c2e-f94d-4773-bb34-960b2e8512a7
+		summarizeBy: none
+		sourceColumn: set_rev_hist_voucher_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ffaadcc8-6713-45c0-a460-092936800c37
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_date
+
+		variation Variation
+			isDefault
+			relationship: 9930cc8a-5f17-4ce4-a793-8b427ef9343e
+			defaultHierarchy: LocalDateTable_c9f39903-1875-4f25-b984-9b14b3c9d52b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_last_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: fed43fb9-965b-4d38-aa02-23500dd4e995
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column set_rev_hist_last_update_initials
+		dataType: string
+		lineageTag: 91746fc8-750e-4d8a-96d9-eb5c99fa5265
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SetRevHistory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT * FROM data_central_wh.gold.vw_ibmi_settlement_revenue_history WHERE set_rev_hist_record_date BETWEEN DATEADD(week, -13, GETDATE()) AND GETDATE()"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,639 @@
+table 'EDI Orders'
+	lineageTag: 26ed46fe-2ee1-4584-a395-1cfd4c7b5afe
+
+	column 'Tender DateTime'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fe4aaf6f-f5ed-459f-8d75-464d050faccd
+		summarizeBy: none
+		sourceColumn: tender_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin Area Code'
+		dataType: string
+		lineageTag: e0763c2c-6586-4ea7-b235-1535c5666217
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Order Number'
+		dataType: string
+		lineageTag: 600ed7cd-8807-416a-88ba-37468b666a65
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_customer_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Code'
+		dataType: string
+		lineageTag: 2258ed1e-8774-4473-9111-675b2b0d4c9c
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5a744c09-e305-4706-9945-b8000343d26b
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Order Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: eb1d1bda-a5eb-45aa-b8ea-8355ed379eda
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_order_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: fec3b90b-385e-4203-9436-898ff1d93daa
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consignee Code'
+		dataType: string
+		lineageTag: 6da58ed4-39b9-447b-b656-09c2b9a5c250
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_consignee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill-To Customer Code'
+		dataType: string
+		lineageTag: d023f1e8-73be-4047-a917-2732e8b3cae9
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_billto_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load-At Customer Code'
+		dataType: string
+		lineageTag: c813e0ce-34be-4eff-8eed-418c37c604e1
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_loadat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9b4aca3c-8b66-4c1a-8bdc-82b4235d1f9a
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Pickup Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 41c462db-8d1a-4ef3-8673-68613b45eaa9
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Pickup Required'
+		dataType: string
+		lineageTag: fd035582-a779-43e6-90b9-97dc9618ef50
+		summarizeBy: none
+		sourceColumn: is_pickup_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3afa6ca6-f788-44dc-b82c-560f6bb95057
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Delivery Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 35e1d1f8-6277-44d0-8cf8-a37bbbbdbfc6
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_delivery_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Delivery Required'
+		dataType: string
+		lineageTag: dbfe69ff-0472-4583-bc24-ea6bf8cde326
+		summarizeBy: none
+		sourceColumn: is_delivery_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commodity Code'
+		dataType: string
+		lineageTag: 269379a8-a5b5-4cb8-9c08-6accc1cac96f
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commodity Description'
+		dataType: string
+		lineageTag: 643c88e1-ecba-40e4-9a8e-b35d8656ce32
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Creation Initials'
+		dataType: string
+		lineageTag: dc256941-1a74-461e-8f8c-7f18b3bc8091
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Phone Area Code'
+		dataType: string
+		lineageTag: 5e4a04d4-43b0-474c-9c72-2a8de9cbc5c1
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_customer_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Phone Number'
+		dataType: string
+		lineageTag: 6ee13812-438e-46dd-a006-b55a488022ad
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_customer_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consignee Phone Area Code'
+		dataType: string
+		lineageTag: e7ddedb7-753d-440b-8e8c-8f137bb6bac4
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_consignee_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consignee Phone Number'
+		dataType: string
+		lineageTag: fa58916f-2409-4119-8a03-612c0a769b4e
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_consignee_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Weight'
+		dataType: double
+		lineageTag: bc388d39-ddb8-427f-83e7-771969ac46f9
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_load_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pallet Count'
+		dataType: string
+		lineageTag: f3689750-965d-4000-b271-d4c5e19dd8e2
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill Amount'
+		dataType: double
+		lineageTag: 898b2eec-37a8-4a94-94f7-45442e463072
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_bill_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Amount'
+		dataType: double
+		lineageTag: 276a4ac1-be46-4f8c-a50c-4cec9bb4fb82
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Origin City Code'
+		dataType: string
+		lineageTag: 3f4d598b-1555-4741-9c51-9a383d82bd55
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin State'
+		dataType: string
+		lineageTag: 71fa56ae-c571-4f37-885e-f9959fba9d0b
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Origin City'
+		dataType: string
+		lineageTag: 7c48f2c3-54d3-44b7-80ab-5633e813c56c
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_origin_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination City Code'
+		dataType: string
+		lineageTag: 9399e194-e954-4803-ab87-838e54ae98af
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination State'
+		dataType: string
+		lineageTag: b733a7ec-c8d6-4ac1-b5ed-9983a42c2849
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination City'
+		dataType: string
+		lineageTag: 0d40c889-8856-4a6d-a1c3-c47386a3da13
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_destination_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billable Miles'
+		dataType: double
+		lineageTag: ef0f6fab-acc2-4953-9e37-4152aa4be907
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stop Count'
+		dataType: string
+		lineageTag: 4f868cb5-2e6a-4cbc-a1e9-57d37edc5a47
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_stop_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trailer Number'
+		dataType: string
+		lineageTag: 2f44180c-1e8c-4df3-9805-52577ab35c7e
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Revenue'
+		dataType: double
+		lineageTag: 745a26a4-ae79-4411-8c61-ab51debe0089
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Destination Area Code'
+		dataType: string
+		lineageTag: 1d65c1a5-0d9e-4acc-8b9d-041fb1c4b3f6
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill of Lading'
+		dataType: string
+		lineageTag: 767275f3-707b-4f48-9135-657d8e96fc62
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_bill_of_lading
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Order'
+		dataType: string
+		lineageTag: 949c607c-e8db-4630-86cd-abd10aa18b32
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_purchase_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup Code'
+		dataType: string
+		lineageTag: a19505d1-e343-44ff-ae10-f96e63840efd
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Piece Count'
+		dataType: string
+		lineageTag: 2ecf416d-81a5-4bb3-8246-9b0c03537138
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Collection Method Code'
+		dataType: string
+		lineageTag: 93dff44a-cacd-4880-81a8-8c39ad80040c
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_collection_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Manifest Number'
+		dataType: string
+		lineageTag: 483bddb7-fa3c-4e4b-b32b-20dc01e7222c
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_manifest_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Volume'
+		dataType: string
+		lineageTag: 5a48de4d-4e0c-4e8b-87f5-1fdad280211d
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_load_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup Appointment Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 823ad826-d3eb-4317-9aed-c4af54102712
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_appt_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Pickup Appointment Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: a14eac8a-024f-45ee-b9f6-61deddbe4ccf
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_appt_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Delivery Appointment Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 98bd7859-67df-4a5d-81d2-223a287e8b57
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_delivery_appt_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Delivery Appointment Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3c116e20-d5f0-4d30-a744-130bb503fa8b
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_delivery_appt_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Required Pallet Count'
+		dataType: double
+		lineageTag: b26b71e5-61d0-49ff-bf90-82e2d691ca8e
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_required_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Consignee Ship Number'
+		dataType: string
+		lineageTag: b7e8d361-e138-421c-8c2d-945ab9b211bf
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_consignee_ship_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup Ship Number'
+		dataType: string
+		lineageTag: 031eaf5d-8634-4b72-802a-83fbbe1cdfab
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_pickup_ship_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 34730eb1-0e9f-4594-ad85-d1253e7d28fd
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ship Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d69b3cc2-549a-4896-80ad-5c8d2f749dfe
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_ship_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Order Temperature High'
+		dataType: double
+		lineageTag: 1ad36a47-6cba-4ca2-b6ee-461652a4d45f
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_order_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Temperature Low'
+		dataType: double
+		lineageTag: 3d6222ee-0645-4284-8f51-57ed1789c23c
+		summarizeBy: sum
+		sourceColumn: edi_ord_hist_order_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Code'
+		dataType: string
+		lineageTag: aa16e2dd-8c1f-43e6-a822-83df9b43884c
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: string
+		lineageTag: 10ab7cdd-b1fb-4919-9e53-6ea5a61d257a
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Seal Code'
+		dataType: string
+		lineageTag: 6e899b88-ffe1-48f5-a416-d71e9c40129a
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_seal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_hazardous_material
+		dataType: string
+		lineageTag: 0ad9e7ce-0e0f-4fba-8420-9c5417f6f262
+		summarizeBy: none
+		sourceColumn: has_hazardous_material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Load Code'
+		dataType: string
+		lineageTag: 67476ec9-c6e2-4e10-a288-6452c8bb2536
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_driver_load_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Unload Code'
+		dataType: string
+		lineageTag: fdaaa163-9dbc-46b8-9aa1-7d00440b3988
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_driver_unload_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Load Type'
+		dataType: string
+		lineageTag: 8c42e2ba-0a88-436c-b20c-6b3816c10883
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Just-in-Time Code'
+		dataType: string
+		lineageTag: 1d5a9f7b-c056-4d1e-b286-8040a0a1bde1
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_just_in_time_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agent Code'
+		dataType: string
+		lineageTag: 40655399-0151-46fc-a54b-8f36be794013
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_agent_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tender Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: daf63d87-6229-455b-9c59-bf3f1ea36249
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_tender_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Tender Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3c2626fe-c90e-43ed-9dd0-e6474eaba019
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_tender_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Response Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d136ad6b-4728-41b4-8b50-845f7baf4ba0
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_response_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'EDI Customer Code'
+		dataType: string
+		lineageTag: 91a78f97-5fa2-47ce-976e-8bc19ab8c641
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_edi_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Code'
+		dataType: string
+		lineageTag: 464e1023-06f8-4a9c-bdd5-b3033343e7a5
+		summarizeBy: none
+		sourceColumn: edi_ord_hist_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'EDI Orders' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-eh6hum4723febkx4myauspbbvq.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_vw_ibmi_edi_order_history = Source{[Schema="gold",Item="vw_ibmi_edi_order_history"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(gold_vw_ibmi_edi_order_history, each [edi_ord_hist_tender_date] >= StartDate)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

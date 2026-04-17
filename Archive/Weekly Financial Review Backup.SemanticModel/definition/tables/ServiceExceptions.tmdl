@@ -1,0 +1,442 @@
+table ServiceExceptions
+	excludeFromModelRefresh
+	lineageTag: 7a1a277b-beb9-4bad-a97d-9a2ec3ae38e5
+
+	column serv_exc_load_number
+		dataType: string
+		lineageTag: 0a74aa5e-e6d1-4a7f-8844-1d1492bc3d28
+		summarizeBy: none
+		sourceColumn: serv_exc_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_sequence_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 63c4ddda-172f-44b3-8c05-553169ff37ad
+		summarizeBy: sum
+		sourceColumn: serv_exc_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_type
+		dataType: string
+		lineageTag: 61fe98b2-1b5e-4b3f-ae1f-c237ab1393c6
+		summarizeBy: none
+		sourceColumn: serv_exc_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dispatch
+		dataType: string
+		lineageTag: 33f835f6-9d60-43f4-8f45-c2a9968f4add
+		summarizeBy: none
+		sourceColumn: serv_exc_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_order_status_code
+		dataType: string
+		lineageTag: 5236aaa6-2911-4329-a210-1e6ee47fccc7
+		summarizeBy: none
+		sourceColumn: serv_exc_order_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_trailer_number
+		dataType: string
+		lineageTag: df7c89c3-a4d0-4265-b0f7-4f1aa0a06a5a
+		summarizeBy: none
+		sourceColumn: serv_exc_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_truck_number
+		dataType: string
+		lineageTag: 72158968-93e1-4027-8e43-c3a11c8ab6aa
+		summarizeBy: none
+		sourceColumn: serv_exc_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_seat_1_driver_code
+		dataType: string
+		lineageTag: 27d05778-5831-490c-8ac2-30b9d69bdb59
+		summarizeBy: none
+		sourceColumn: serv_exc_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dm_code
+		dataType: string
+		lineageTag: be4d1da8-19ff-44a5-81ee-1a833a37f096
+		summarizeBy: none
+		sourceColumn: serv_exc_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dmol_code
+		dataType: string
+		lineageTag: 81bb4274-240a-4d5e-aafa-4cce3a190822
+		summarizeBy: none
+		sourceColumn: serv_exc_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_csr_code
+		dataType: string
+		lineageTag: 2e0a5ded-953a-4bf4-8f12-b49df11610d5
+		summarizeBy: none
+		sourceColumn: serv_exc_csr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_stop_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 52f7e170-9c64-48fa-b940-e4e7e32717f9
+		summarizeBy: sum
+		sourceColumn: serv_exc_stop_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_customer_reportable
+		dataType: string
+		lineageTag: 5bc21bc7-3e0d-48c9-8431-3bf85522c793
+		summarizeBy: none
+		sourceColumn: is_customer_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_csr_signoff
+		dataType: string
+		lineageTag: 805d0d02-2667-4966-ad2e-7b7ac279976d
+		summarizeBy: none
+		sourceColumn: has_csr_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_dm_signoff
+		dataType: string
+		lineageTag: 02353063-f29c-4633-a221-dbfa643fe3d2
+		summarizeBy: none
+		sourceColumn: has_dm_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_customer_responsible
+		dataType: string
+		lineageTag: 33510c41-230f-4a49-a07c-2d25cdcba4f1
+		summarizeBy: none
+		sourceColumn: is_customer_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_shipper_responsible
+		dataType: string
+		lineageTag: dd5057b4-44a6-44bb-9f84-9c8c0f7bf69d
+		summarizeBy: none
+		sourceColumn: is_shipper_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_loadat_responsible
+		dataType: string
+		lineageTag: b52899a5-93de-41e4-b6e7-a91541070378
+		summarizeBy: none
+		sourceColumn: is_loadat_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_consignee_responsible
+		dataType: string
+		lineageTag: 79f6a3a3-974d-435b-be9d-be87983878e6
+		summarizeBy: none
+		sourceColumn: is_consignee_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_responsible
+		dataType: string
+		lineageTag: d56a1a26-f18b-4e62-8eb9-de82b35ac64d
+		summarizeBy: none
+		sourceColumn: is_driver_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_equipment_responsible
+		dataType: string
+		lineageTag: 0006863b-203e-4496-9ae6-30013b44dbcd
+		summarizeBy: none
+		sourceColumn: is_equipment_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weather_responsible
+		dataType: string
+		lineageTag: 20ab48ba-588e-4ca5-b131-9a6ff5907832
+		summarizeBy: none
+		sourceColumn: is_weather_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_sales_responsible
+		dataType: string
+		lineageTag: 5c4fa70a-a21d-4553-8cc1-23c2f2ed02d3
+		summarizeBy: none
+		sourceColumn: is_sales_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_csr_responsible
+		dataType: string
+		lineageTag: a8288712-8f0e-41d8-b884-3b586d10a3cf
+		summarizeBy: none
+		sourceColumn: is_csr_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_planner_responsible
+		dataType: string
+		lineageTag: 36d507e4-4299-467d-9ecb-ee7e7116c44d
+		summarizeBy: none
+		sourceColumn: is_planner_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_dm_responsible
+		dataType: string
+		lineageTag: 17837f1f-23e5-4015-9c0d-aca04a796a6f
+		summarizeBy: none
+		sourceColumn: is_dm_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_brokerage_responsible
+		dataType: string
+		lineageTag: 6928ca7a-19bd-4605-b050-ceb259c9130c
+		summarizeBy: none
+		sourceColumn: is_brokerage_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_occurance_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f3f79070-0168-425a-b252-1b42778fc18a
+		summarizeBy: none
+		sourceColumn: serv_exc_occurance_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_occurance_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: cf19f5b3-0063-44b5-922c-52e1dea7a8fe
+		summarizeBy: none
+		sourceColumn: serv_exc_occurance_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column serv_exc_create_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 47400b8f-5f1c-427f-bc37-5ec483909db9
+		summarizeBy: none
+		sourceColumn: serv_exc_create_date
+
+		variation Variation
+			isDefault
+			relationship: aba078a3-eead-4a75-a401-ab92a049e5fb
+			defaultHierarchy: LocalDateTable_77842712-297c-4ac7-9fd5-aabbd7663117.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 53b4d74b-6b9a-449a-9b4e-c3b92c666883
+		summarizeBy: none
+		sourceColumn: serv_exc_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column serv_exc_create_user_code
+		dataType: string
+		lineageTag: 77ea9608-58c4-40f5-8ca2-4edfa439a908
+		summarizeBy: none
+		sourceColumn: serv_exc_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_program_code
+		dataType: string
+		lineageTag: 68b9213d-4b95-46dc-b945-80dd73f5e592
+		summarizeBy: none
+		sourceColumn: serv_exc_create_program_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1f35a4b2-4b83-4667-b887-bc485ab64e5f
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_date
+
+		variation Variation
+			isDefault
+			relationship: 1ce33721-a250-4a8b-9971-f7f29dab3c14
+			defaultHierarchy: LocalDateTable_36a1bf12-020a-4970-b286-c7ad7774e589.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_last_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 1b0d7481-4fcd-4d20-959f-833822fcb332
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column serv_exc_last_update_user_code
+		dataType: string
+		lineageTag: 2828ae24-1f02-4a08-935e-cc3240247fab
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_no_charge
+		dataType: string
+		lineageTag: 509390c7-79d5-4da5-9a72-283ca706c75d
+		summarizeBy: none
+		sourceColumn: is_no_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_rail_responsible
+		dataType: string
+		lineageTag: 4c08b626-7f66-49dd-8da0-f2fb74725c7d
+		summarizeBy: none
+		sourceColumn: is_rail_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_planner_signoff
+		dataType: string
+		lineageTag: 6b358853-0a8f-43e9-886a-8252956f13e5
+		summarizeBy: none
+		sourceColumn: has_planner_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_planner_code
+		dataType: string
+		lineageTag: 1cc81583-f8ff-4141-841a-5db20489496b
+		summarizeBy: none
+		sourceColumn: serv_exc_planner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_severity
+		dataType: string
+		lineageTag: 6a33fbf4-e751-47e9-9da8-b5e3ead621ef
+		summarizeBy: none
+		sourceColumn: serv_exc_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_appt_change_reason_code
+		dataType: string
+		lineageTag: 541baadf-49fc-4819-99a2-9005696a6558
+		summarizeBy: none
+		sourceColumn: serv_exc_appt_change_reason_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_reportable
+		dataType: string
+		lineageTag: 677b28d2-d156-4903-8dd4-b0e5d27d3a9d
+		summarizeBy: none
+		sourceColumn: is_driver_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_exception_status_code
+		dataType: string
+		lineageTag: 87cb6c1d-6790-4f49-9bf7-0c8b6bae0e3b
+		summarizeBy: none
+		sourceColumn: serv_exc_exception_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_regional_manager_code
+		dataType: string
+		lineageTag: 6f208f16-e986-41e1-a1ba-6a527ed14ee9
+		summarizeBy: none
+		sourceColumn: serv_exc_regional_manager_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_road_condition_responsible
+		dataType: string
+		lineageTag: 8d60e03c-6e61-4d5e-899b-fbfe2e90293d
+		summarizeBy: none
+		sourceColumn: is_road_condition_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_region_code
+		dataType: string
+		lineageTag: 0b492e39-0b23-4a98-a5a9-98b4e713f8de
+		summarizeBy: none
+		sourceColumn: serv_exc_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stop_type
+		dataType: string
+		lineageTag: 78edf97e-db20-456a-aacc-c65329e4d924
+		summarizeBy: none
+		sourceColumn: stop_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		lineageTag: 6c6c176a-0939-4e24-9d6d-474a4aa04acc
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Count = ```
+			1 
+			```
+		formatString: 0
+		lineageTag: 13f61da4-633f-424b-b159-3b250071153d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ServiceExceptions = m
+		mode: import
+		source =
+				let
+				    Source =
+				        Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh", [Query="SELECT *#(lf)FROM [data_central_wh].[gold].[vw_ibmi_service_exceptions]"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

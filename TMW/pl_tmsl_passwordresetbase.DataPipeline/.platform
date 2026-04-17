@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_passwordresetbase"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d95e698d-0794-9d46-443d-580831d5fec1"
+  }
+}

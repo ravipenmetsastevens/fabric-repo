@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_order_accounting_info_report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c65fb420-ad49-968c-47ae-d03c30bcf525"
+  }
+}

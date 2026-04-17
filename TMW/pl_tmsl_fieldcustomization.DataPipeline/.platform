@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_fieldcustomization"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "aca78c6f-9ac3-b31a-421f-73b343224608"
+  }
+}

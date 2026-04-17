@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_browserlookupbase"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3e37a585-9d87-9291-49ff-3c80f2b479c9"
+  }
+}

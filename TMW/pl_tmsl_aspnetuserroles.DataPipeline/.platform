@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_aspnetuserroles"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "53ddfae8-887b-8b8e-4a7f-4dd822a63e4a"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_reportparameterdefaultvalue"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bee24b22-d2f7-a8cb-4340-6c47b2d92adf"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_metricgradingscaleheader"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3e7ebbb8-043f-86f9-457a-c1408274ffe5"
+  }
+}

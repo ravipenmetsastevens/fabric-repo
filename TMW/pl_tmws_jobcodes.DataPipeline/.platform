@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_jobcodes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a382c6de-eb89-bd61-413d-0a54d48fd999"
+  }
+}

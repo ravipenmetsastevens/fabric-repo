@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_newstyperoleassignment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "77aa0ded-0ca4-9f6c-4c7d-3caa15a9a185"
+  }
+}

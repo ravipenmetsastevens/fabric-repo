@@ -1,0 +1,130 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "OdbcSource",
+            "query": "select 'select '''||trim(r.RDB$RELATION_NAME)||''', count(*) from \"'||trim(r.RDB$RELATION_NAME)||'\" union '\r\nfrom RDB$RELATIONS r\r\nwhere (r.RDB$SYSTEM_FLAG is null or r.RDB$SYSTEM_FLAG = 0)\r\nand r.RDB$VIEW_BLR is null\r\norder by 1",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "OdbcTable",
+              "schema": [],
+              "externalReferences": {
+                "connection": "e1a4b3bc-db91-4f2b-a860-a324f0004c5f"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "risk_sys_tablemetadata_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+                    "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "OdbcSource",
+            "query": "select 'SURFCOND' AS TABLENAME, count(*) AS myROWCOUNT from \"SURFCOND\" union \nselect 'SURFLOC', count(*) from \"SURFLOC\" union \nselect 'TEMP', count(*) from \"TEMP\" union \nselect 'TEMPCSA2010DRTOTALS', count(*) from \"TEMPCSA2010DRTOTALS\" union \nselect 'TEMPERATURETYPETABLE', count(*) from \"TEMPERATURETYPETABLE\" union \nselect 'TEMPORARYSEALS', count(*) from \"TEMPORARYSEALS\" union \nselect 'TEMPORARYTEMPERATURES', count(*) from \"TEMPORARYTEMPERATURES\" union \nselect 'TEMPSTV', count(*) from \"TEMPSTV\" union \nselect 'TERMINALS', count(*) from \"TERMINALS\" union \nselect 'TICKETDETERMINATIONS', count(*) from \"TICKETDETERMINATIONS\" union \nselect 'TPACOMPCSN', count(*) from \"TPACOMPCSN\" union \nselect 'TPACOMPLOG', count(*) from \"TPACOMPLOG\" union \nselect 'TPALOSSD', count(*) from \"TPALOSSD\" union \nselect 'TPALOSSR', count(*) from \"TPALOSSR\" union \nselect 'TPAPAIDBENEFITS', count(*) from \"TPAPAIDBENEFITS\" union \nselect 'TPAPAYLOG', count(*) from \"TPAPAYLOG\" union \nselect 'TRAINER', count(*) from \"TRAINER\" union \nselect 'TRANFRQSEVHRS', count(*) from \"TRANFRQSEVHRS\" union \nselect 'TRANFRQSEVHRSD', count(*) from \"TRANFRQSEVHRSD\" union \nselect 'TRANFRQSEVSRV', count(*) from \"TRANFRQSEVSRV\" union \nselect 'TRANFRQSEVSRVD', count(*) from \"TRANFRQSEVSRVD\" union \nselect 'TRANSDTLLOSSR', count(*) from \"TRANSDTLLOSSR\" union \nselect 'TRANSDTLLOSSRD', count(*) from \"TRANSDTLLOSSRD\" union \nselect 'TRANSFERCLAIMSBETWEENCOLOG', count(*) from \"TRANSFERCLAIMSBETWEENCOLOG\" union \nselect 'TRANSFRQSEV', count(*) from \"TRANSFRQSEV\" union \nselect 'TRANSFRQSEVD', count(*) from \"TRANSFRQSEVD\" union \nselect 'TRANSLOSSR', count(*) from \"TRANSLOSSR\" union \nselect 'TRANSLOSSRD', count(*) from \"TRANSLOSSRD\" union \nselect 'TRANSPORTATIONSPECIFICMASTER', count(*) from \"TRANSPORTATIONSPECIFICMASTER\" union \nselect 'TRANSPORTATIONSPECREPT', count(*) from \"TRANSPORTATIONSPECREPT\" union \nselect 'TRANSVIOL', count(*) from \"TRANSVIOL\" union \nselect 'TREATMENTFACILITYTABLE', count(*) from \"TREATMENTFACILITYTABLE\" union \nselect 'TYPEOFCOVERAGE', count(*) from \"TYPEOFCOVERAGE\" union \nselect 'UDFS', count(*) from \"UDFS\" union \nselect 'UNITOFMEASURECODETABLE', count(*) from \"UNITOFMEASURECODETABLE\" union \nselect 'UPLOADFILESHIST', count(*) from \"UPLOADFILESHIST\" union \nselect 'USERACTIVITY', count(*) from \"USERACTIVITY\" union \nselect 'USERAUTHORIZEDPROGRAMS', count(*) from \"USERAUTHORIZEDPROGRAMS\" union \nselect 'USERCAP', count(*) from \"USERCAP\" union \nselect 'USERCLASSES', count(*) from \"USERCLASSES\" union \nselect 'USERLINK', count(*) from \"USERLINK\" union \nselect 'VERBALRECORDS', count(*) from \"VERBALRECORDS\" union \nselect 'VIOLATION', count(*) from \"VIOLATION\" union \nselect 'VIOLATIONMETHODOFRECEIPT', count(*) from \"VIOLATIONMETHODOFRECEIPT\" union \nselect 'VIOLATIONPAIDBY', count(*) from \"VIOLATIONPAIDBY\" union \nselect 'VIOLATIONPAYMENTMETHODS', count(*) from \"VIOLATIONPAYMENTMETHODS\" union \nselect 'VIOLATIONTYPETABLE', count(*) from \"VIOLATIONTYPETABLE\" union \nselect 'VIOLATIONVEHICLETYPE', count(*) from \"VIOLATIONVEHICLETYPE\" union \nselect 'WCAUTOPAYMENTS', count(*) from \"WCAUTOPAYMENTS\" union \nselect 'WCJACKET', count(*) from \"WCJACKET\" union \nselect 'WEATHERCONDTYPETABLE', count(*) from \"WEATHERCONDTYPETABLE\" union \nselect 'WITNESS', count(*) from \"WITNESS\" union \nselect 'WORKERSCOMPCLAIMANT', count(*) from \"WORKERSCOMPCLAIMANT\" union \nselect 'WORKERSCOMPTPA', count(*) from \"WORKERSCOMPTPA\" union \nselect 'WORKERSCOMPTYPES', count(*) from \"WORKERSCOMPTYPES\" union \nselect 'WORKRESTRICTIONHISTORY', count(*) from \"WORKRESTRICTIONHISTORY\" union \nselect 'WORKRESTRICTIONTYPE', count(*) from \"WORKRESTRICTIONTYPE\"",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "OdbcTable",
+              "schema": [],
+              "externalReferences": {
+                "connection": "e1a4b3bc-db91-4f2b-a860-a324f0004c5f"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "risk_sys_table_rowcount_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1_copy1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

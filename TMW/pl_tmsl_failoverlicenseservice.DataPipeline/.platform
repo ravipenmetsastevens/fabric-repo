@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_failoverlicenseservice"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ddd1d39-f233-9bec-4085-4f667b672b6d"
+  }
+}

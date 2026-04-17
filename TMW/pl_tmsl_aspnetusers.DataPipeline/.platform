@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_aspnetusers"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3704f760-e8b2-83f8-49c6-d90e10450b78"
+  }
+}

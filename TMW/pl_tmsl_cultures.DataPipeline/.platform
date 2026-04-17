@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_cultures"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "40769129-b401-9398-4158-348681847ee2"
+  }
+}

@@ -1,0 +1,88 @@
+table risk_weather_master
+	lineageTag: c0967b60-5465-43f6-a145-5c22f0ed1f6c
+	sourceLineageTag: [silver].[risk_weather_master]
+
+	column weather_mast_safety_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 230ef2ed-83db-470a-b553-a55e2e3e4eb4
+		sourceLineageTag: weather_mast_safety_code
+		summarizeBy: sum
+		sourceColumn: weather_mast_safety_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_mast_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 90582f5b-ba54-411a-81a1-2e6dd39cb285
+		sourceLineageTag: weather_mast_code
+		summarizeBy: sum
+		sourceColumn: weather_mast_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column weather_mast_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1cf16614-1724-407b-baa0-fdf4c67a0613
+		sourceLineageTag: weather_mast_description
+		summarizeBy: none
+		sourceColumn: weather_mast_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c7bb8371-2f23-44cd-abe8-1e0168818c0d
+		sourceLineageTag: weather_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: weather_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 947de2d5-6406-4871-9ad5-defd0c47fd4b
+		sourceLineageTag: weather_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: weather_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_mast_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 15159e0e-9616-47a2-b08a-90529a7a72fa
+		sourceLineageTag: weather_mast_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: weather_mast_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_mast_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c3feb9c9-e75b-42e1-9977-1e408937a379
+		sourceLineageTag: weather_mast_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: weather_mast_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_weather_master-ee260028-f0b7-4e5d-b54d-7ddc397c3bdb = entity
+		mode: directLake
+		source
+			entityName: risk_weather_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

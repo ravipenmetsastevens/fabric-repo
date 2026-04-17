@@ -1,0 +1,43 @@
+table ibmi_load_extension
+	lineageTag: 11fa1f17-24a3-424d-86ca-acf7586ed359
+	sourceLineageTag: [silver].[ibmi_load_extension]
+
+	column load_ext_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 12dd5e7e-d5a6-4815-a5f1-58f2a09522e5
+		sourceLineageTag: load_ext_load_number
+		summarizeBy: none
+		sourceColumn: load_ext_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_ext_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e9e831ab-8c8f-49de-a141-7a6f274fa44d
+		sourceLineageTag: load_ext_dispatch
+		summarizeBy: none
+		sourceColumn: load_ext_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_ext_business_unit_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80cb6093-f364-4f60-a115-04cffe95cd2a
+		sourceLineageTag: load_ext_business_unit_code
+		summarizeBy: none
+		sourceColumn: load_ext_business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_load_extension-f43424ff-d073-4dea-b4a7-fef21c8acf2e = entity
+		mode: directLake
+		source
+			entityName: ibmi_load_extension
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

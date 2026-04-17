@@ -1,0 +1,354 @@
+table ibmi_owner
+	lineageTag: e6745ade-993c-44f4-8806-f6365018fcb4
+	sourceLineageTag: [silver].[ibmi_owner]
+
+	column OWUNIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c95438f7-f048-4450-891d-806126ae4121
+		sourceLineageTag: OWUNIT
+		summarizeBy: none
+		sourceColumn: OWUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWNAME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 01a33900-0538-4d1e-9469-65ab7b86596d
+		sourceLineageTag: OWNAME
+		summarizeBy: none
+		sourceColumn: OWNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWADD1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3170e887-81d4-4262-8acd-76cd01af47bd
+		sourceLineageTag: OWADD1
+		summarizeBy: none
+		sourceColumn: OWADD1
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCITY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f685ba76-3cc6-4843-8c07-3655660cb43b
+		sourceLineageTag: OWCITY
+		summarizeBy: none
+		sourceColumn: OWCITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2dab1e75-6881-4b98-9f39-472a528ed840
+		sourceLineageTag: OWST
+		summarizeBy: none
+		sourceColumn: OWST
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWZIP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: afbbe3e1-f687-4e50-ab7e-e921fd608558
+		sourceLineageTag: OWZIP
+		summarizeBy: none
+		sourceColumn: OWZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWEXT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 89ec6078-cb38-4536-9c5f-16e189b4bd2c
+		sourceLineageTag: OWEXT
+		summarizeBy: none
+		sourceColumn: OWEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWADD2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d029682b-dadf-4a0b-a4d9-94044b8248d2
+		sourceLineageTag: OWADD2
+		summarizeBy: none
+		sourceColumn: OWADD2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCIT2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6aeb1c86-7ffb-4df3-8dc4-34d7789df2b6
+		sourceLineageTag: OWCIT2
+		summarizeBy: none
+		sourceColumn: OWCIT2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWST2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4484379a-2746-4b0d-aa85-fcebd170ac6e
+		sourceLineageTag: OWST2
+		summarizeBy: none
+		sourceColumn: OWST2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWZIP2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b022ecc0-1a70-4921-86d6-9e13f920a61e
+		sourceLineageTag: OWZIP2
+		summarizeBy: none
+		sourceColumn: OWZIP2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWEXT2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fec80ae0-8374-465b-8329-dc4a290a112f
+		sourceLineageTag: OWEXT2
+		summarizeBy: none
+		sourceColumn: OWEXT2
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWAC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8610a93-55ae-4189-b3be-3265f5a396f0
+		sourceLineageTag: OWAC
+		summarizeBy: none
+		sourceColumn: OWAC
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWTEL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b94abc35-b823-4e49-998a-5194dcab621f
+		sourceLineageTag: OWTEL
+		summarizeBy: none
+		sourceColumn: OWTEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWSS
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7c15400d-6776-4f3b-a598-fbc540f92eb5
+		sourceLineageTag: OWSS
+		summarizeBy: none
+		sourceColumn: OWSS
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWWCMP
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 16972ed7-dc33-45e4-8ef1-960bebabbd97
+		sourceLineageTag: OWWCMP
+		summarizeBy: sum
+		sourceColumn: OWWCMP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWPCRV
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: e0fff669-f5cc-4be7-9915-a86cfeab6a49
+		sourceLineageTag: OWPCRV
+		summarizeBy: sum
+		sourceColumn: OWPCRV
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWYTDG
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 242a82c3-b7ba-4d69-ac35-e53fbbde17dc
+		sourceLineageTag: OWYTDG
+		summarizeBy: sum
+		sourceColumn: OWYTDG
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWVACB
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 964fc39c-871b-49e1-b391-4042492a12df
+		sourceLineageTag: OWVACB
+		summarizeBy: sum
+		sourceColumn: OWVACB
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWUNSB
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 3ecab028-9c44-4a61-adec-54e2068589e9
+		sourceLineageTag: OWUNSB
+		summarizeBy: sum
+		sourceColumn: OWUNSB
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCMPR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec8c2588-0c63-4477-aaa3-191915f00c56
+		sourceLineageTag: OWCMPR
+		summarizeBy: none
+		sourceColumn: OWCMPR
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWDEL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 645474b7-297d-429e-8e74-39c122d0fab0
+		sourceLineageTag: OWDEL
+		summarizeBy: none
+		sourceColumn: OWDEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCHK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 764c6120-b212-422d-a81d-089831ed4b9b
+		sourceLineageTag: OWCHK
+		summarizeBy: none
+		sourceColumn: OWCHK
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWFC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b72f0a4-bb50-4978-a5b7-a854bf8ba643
+		sourceLineageTag: OWFC
+		summarizeBy: none
+		sourceColumn: OWFC
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWSF
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e07fda5a-3985-4a7e-8a6f-87c3d97ac30b
+		sourceLineageTag: OWSF
+		summarizeBy: none
+		sourceColumn: OWSF
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCNTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 616ea4ee-9a80-40c2-81d5-5763730e092e
+		sourceLineageTag: OWCNTY
+		summarizeBy: none
+		sourceColumn: OWCNTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWGST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cdd32e2c-dff7-4dcf-9a94-d4d2123d51fd
+		sourceLineageTag: OWGST
+		summarizeBy: none
+		sourceColumn: OWGST
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWGSTP
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: b7eea43b-a12a-48c1-8cb3-2cec8af6a33a
+		sourceLineageTag: OWGSTP
+		summarizeBy: sum
+		sourceColumn: OWGSTP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWGSTR
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 29b7fa8d-d84d-4e46-a856-f8c602f409d3
+		sourceLineageTag: OWGSTR
+		summarizeBy: sum
+		sourceColumn: OWGSTR
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWGSTC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e595e78e-c67f-4265-9ea5-9e707297ae86
+		sourceLineageTag: OWGSTC
+		summarizeBy: none
+		sourceColumn: OWGSTC
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCKTN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5588d5a5-c0ef-48bb-9373-a5c5847527e6
+		sourceLineageTag: OWCKTN
+		summarizeBy: none
+		sourceColumn: OWCKTN
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWCARD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 36103d34-3c6d-4e70-aaca-4da1339393c5
+		sourceLineageTag: OWCARD
+		summarizeBy: none
+		sourceColumn: OWCARD
+
+		annotation SummarizationSetBy = Automatic
+
+	column OW1099
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 54d575e2-8c87-4947-9e8f-39466e85a7b2
+		sourceLineageTag: OW1099
+		summarizeBy: none
+		sourceColumn: OW1099
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWFLET
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2db8dad8-1b9c-4993-9ae1-21997b172dac
+		sourceLineageTag: OWFLET
+		summarizeBy: none
+		sourceColumn: OWFLET
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_owner-4951fb21-5d7b-489a-a4b4-c8474487d04e = entity
+		mode: directLake
+		source
+			entityName: ibmi_owner
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,276 @@
+table ibmi_tlb_ordbill
+	lineageTag: 8b36def0-b7f7-485d-9056-8499a819f242
+	sourceLineageTag: [silver].[ibmi_tlb_ordbill]
+
+	column tlb_ordbill_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2497bbce-ab0a-470c-abbd-048d80a30b6e
+		sourceLineageTag: tlb_ordbill_load_number
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 71b8a566-38be-4bcc-8e15-2467caf58d00
+		sourceLineageTag: tlb_ordbill_sequence_number
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_rate_clerk_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8ea8e437-f88f-4056-875a-9dcaa22da5d1
+		sourceLineageTag: tlb_ordbill_rate_clerk_initials
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_rate_clerk_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9bd8ac4-e373-4066-9c47-cc67561ef554
+		sourceLineageTag: tlb_ordbill_invoice_number
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_void_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb11400b-dffa-471e-8ff3-da6eb0327bc3
+		sourceLineageTag: tlb_ordbill_void_invoice_number
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_void_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_billed_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ba1b3e11-99c8-4634-ba60-68527d873905
+		sourceLineageTag: tlb_ordbill_billed_date
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_billed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_load_bill_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 47630dcc-6990-4303-944b-99e76689e169
+		sourceLineageTag: tlb_ordbill_load_bill_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_load_bill_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_load_total_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: f1c6cdc9-5ed9-4b8c-b6b1-f63c7b9a6dce
+		sourceLineageTag: tlb_ordbill_load_total_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_load_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_load_book_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: df3c229e-6555-47bc-9dc2-4bb58118d766
+		sourceLineageTag: tlb_ordbill_load_book_month
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_load_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_load_book_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a605c50-4f7e-4a72-be97-edb3859a5444
+		sourceLineageTag: tlb_ordbill_load_book_year
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_load_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_billing_flagged
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2fb055d5-c329-4790-b944-a9d7e96229fb
+		sourceLineageTag: is_billing_flagged
+		summarizeBy: none
+		sourceColumn: is_billing_flagged
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_ar_status_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b447887-3493-40a0-85b8-a4eaf02ec2cc
+		sourceLineageTag: tlb_ordbill_ar_status_flag
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_ar_status_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_tariff_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3c9d802b-7271-4518-be88-2f428b442621
+		sourceLineageTag: tlb_ordbill_tariff_code
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_tariff_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_item_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 182f51a4-3fc6-42f1-8278-5ada81ab323e
+		sourceLineageTag: tlb_ordbill_item_code
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_item_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_line_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 37010d79-3533-45e3-ada1-145464aae211
+		sourceLineageTag: tlb_ordbill_line_code
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_rate_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3d67166d-d09f-4dac-a1b1-9d4dc9eca42d
+		sourceLineageTag: tlb_ordbill_rate_code
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_rate_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_billed_amount_linehaul
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 6d3eeb24-2840-4af9-a57a-514c421a8b1b
+		sourceLineageTag: tlb_ordbill_billed_amount_linehaul
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_billed_amount_linehaul
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_billed_amount_accessorial
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 6c97ab57-1292-49c1-a9a9-913118603830
+		sourceLineageTag: tlb_ordbill_billed_amount_accessorial
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_billed_amount_accessorial
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_total_amount_linehaul
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 0b8b55bd-9c6d-48d3-ba9c-9cde49bb9815
+		sourceLineageTag: tlb_ordbill_total_amount_linehaul
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_total_amount_linehaul
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_total_amount_accessorial
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: acbd6c47-aa2b-46e1-a61b-58b425f80610
+		sourceLineageTag: tlb_ordbill_total_amount_accessorial
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_total_amount_accessorial
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_load_fuel_surcharge_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 3e2c821c-5231-4aec-b054-8abb6f49df74
+		sourceLineageTag: tlb_ordbill_load_fuel_surcharge_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_load_fuel_surcharge_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_total_fuel_surcharge_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: f529a702-3a95-4403-9807-de13455c1a52
+		sourceLineageTag: tlb_ordbill_total_fuel_surcharge_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordbill_total_fuel_surcharge_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_audit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 80b640cb-1e04-4276-a23f-c48f2f9f6a66
+		sourceLineageTag: tlb_ordbill_audit_date
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_audit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_audit_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1365cccc-f1f1-40a6-a9c4-dfcc1a87c5ac
+		sourceLineageTag: tlb_ordbill_audit_initials
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_audit_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_print_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a9d704dd-ac17-420a-b444-b243e3dc58de
+		sourceLineageTag: tlb_ordbill_print_date
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_print_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordbill_cost_record_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ba250bc-2156-49c9-889e-1545259d40c0
+		sourceLineageTag: tlb_ordbill_cost_record_flag
+		summarizeBy: none
+		sourceColumn: tlb_ordbill_cost_record_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_tlb_ordbill-161f3eb0-256e-4db5-8b02-33c9bddde89a = entity
+		mode: directLake
+		source
+			entityName: ibmi_tlb_ordbill
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

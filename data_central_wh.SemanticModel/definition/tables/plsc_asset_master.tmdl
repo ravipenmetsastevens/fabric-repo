@@ -1,0 +1,104 @@
+table plsc_asset_master
+	lineageTag: 29de15ec-9be6-4707-acbc-c3eb8100ef56
+	sourceLineageTag: [silver].[plsc_asset_master]
+
+	column asset_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5d427737-43c4-41ae-bc87-1eceac21b3aa
+		sourceLineageTag: asset_id
+		summarizeBy: sum
+		sourceColumn: asset_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 22740be0-9466-429e-971c-207452941670
+		sourceLineageTag: unit_number
+		summarizeBy: none
+		sourceColumn: unit_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d064f1b6-8422-47e2-ae7f-6eb91c316ac5
+		sourceLineageTag: vin
+		summarizeBy: none
+		sourceColumn: vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_plate
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c0a5dbeb-df62-481f-872b-0525396da71e
+		sourceLineageTag: license_plate
+		summarizeBy: none
+		sourceColumn: license_plate
+
+		annotation SummarizationSetBy = Automatic
+
+	column plate_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c878a021-3b89-4a3f-bea5-614870ef84ac
+		sourceLineageTag: plate_state
+		summarizeBy: none
+		sourceColumn: plate_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column terminal
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f8f51c2-be0d-4e04-9fca-b4a5ceaf2a13
+		sourceLineageTag: terminal
+		summarizeBy: none
+		sourceColumn: terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column make
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46436acf-fc10-422f-b35f-61bb2c879d14
+		sourceLineageTag: make
+		summarizeBy: none
+		sourceColumn: make
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7f2391f5-3510-4c6a-98ef-07e8c1261315
+		sourceLineageTag: model
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column telematics_guid
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b037964b-b00f-46ea-ae28-d4384f88407b
+		sourceLineageTag: telematics_guid
+		summarizeBy: none
+		sourceColumn: telematics_guid
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_asset_master-1cf4c293-ae36-4118-855e-b9096ee15dd7 = entity
+		mode: directLake
+		source
+			entityName: plsc_asset_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

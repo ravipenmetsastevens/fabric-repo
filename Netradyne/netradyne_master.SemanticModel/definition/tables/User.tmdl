@@ -1,0 +1,132 @@
+table User
+	lineageTag: 7b151720-809e-4b6c-a1e8-5f72a2d96056
+
+	column user_username
+		dataType: string
+		lineageTag: d0cdfe13-3000-4543-abc4-6e487eadb9b3
+		summarizeBy: none
+		sourceColumn: user_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_firstname
+		dataType: string
+		lineageTag: 9a847ef3-9b5d-418d-8e47-6e4b5768e090
+		summarizeBy: none
+		sourceColumn: user_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_lastname
+		dataType: string
+		lineageTag: 6b897a29-ed89-4a06-9222-372c5a6cd5ec
+		summarizeBy: none
+		sourceColumn: user_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_email
+		dataType: string
+		lineageTag: 827e0d54-9a5c-4754-bc18-9000372eadb3
+		summarizeBy: none
+		sourceColumn: user_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_status
+		dataType: string
+		lineageTag: 01690867-2414-430d-9238-7c55c4af7d23
+		summarizeBy: none
+		sourceColumn: user_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data.roleId'
+		dataType: string
+		lineageTag: 13c28e40-3179-4ac1-aa44-53df76d679de
+		summarizeBy: none
+		sourceColumn: data.roleId
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_role
+		dataType: string
+		lineageTag: 1bad7313-5763-4cf5-b4a0-83639b7c6fb8
+		summarizeBy: none
+		sourceColumn: user_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_twofastatus
+		dataType: string
+		lineageTag: a13915a9-0973-4a8b-969c-f3260c1d624e
+		summarizeBy: none
+		sourceColumn: user_twofastatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_create_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 788d8b93-d6b3-4bac-aaf1-768cd2ac3d1e
+		summarizeBy: none
+		sourceColumn: user_create_date
+
+		variation Variation
+			isDefault
+			relationship: c30fddc7-3050-420c-a1a0-753f7b6f40f1
+			defaultHierarchy: LocalDateTable_26f2fa32-195f-4ed0-a978-4c2774dfb18d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column user_create_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 95610068-51fd-4622-9852-7bf3f6a2fb27
+		summarizeBy: none
+		sourceColumn: user_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column user_update_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 756cafa3-e04b-41bb-be67-a7d6eb63f5a1
+		summarizeBy: none
+		sourceColumn: user_update_date
+
+		variation Variation
+			isDefault
+			relationship: e6f12cc8-618b-455e-82c3-24d090e66346
+			defaultHierarchy: LocalDateTable_64514612-37df-453a-aec6-cef2c3ae4e42.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column user_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 83b4ed9f-a0da-41ea-81cb-d724488f0482
+		summarizeBy: none
+		sourceColumn: user_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition User = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_netr_user = Source{[Schema="silver",Item="netr_user"]}[Data]
+				in
+				    silver_netr_user
+
+	annotation PBI_ResultType = Table
+

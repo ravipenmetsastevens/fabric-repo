@@ -1,0 +1,125 @@
+table ibmi_toll_history
+	lineageTag: 321747d5-c738-461b-9bfc-d6a82981710a
+	sourceLineageTag: [silver].[ibmi_toll_history]
+
+	column toll_history_tag_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fd46dbc3-1b36-41cf-81a6-159a5c80cc51
+		sourceLineageTag: toll_history_tag_number
+		summarizeBy: none
+		sourceColumn: toll_history_tag_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 89a722d2-b527-4a39-8159-c277a90f8d84
+		sourceLineageTag: toll_history_truck_number
+		summarizeBy: none
+		sourceColumn: toll_history_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_toll_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8511057f-8a0d-4e3c-80ed-8b30169bc657
+		sourceLineageTag: toll_history_toll_date
+		summarizeBy: none
+		sourceColumn: toll_history_toll_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_location
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 26986d4b-4d3d-4ffc-ad20-956cdc11556c
+		sourceLineageTag: toll_history_location
+		summarizeBy: none
+		sourceColumn: toll_history_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 3489d513-6eb6-4caa-9533-4c58db5976ce
+		sourceLineageTag: toll_history_amount
+		summarizeBy: sum
+		sourceColumn: toll_history_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_owner_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c4e3d2fa-544f-4e7e-8f87-26c83a26b368
+		sourceLineageTag: toll_history_owner_code
+		summarizeBy: none
+		sourceColumn: toll_history_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a7b1850b-5291-426b-9082-eb1c92a9dd2c
+		sourceLineageTag: toll_history_division_code
+		summarizeBy: none
+		sourceColumn: toll_history_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27001e03-f87f-415d-b207-422570574bcc
+		sourceLineageTag: toll_history_load_number
+		summarizeBy: none
+		sourceColumn: toll_history_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_dispatch_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0927ee2c-d89d-498d-92ab-934972c48429
+		sourceLineageTag: toll_history_dispatch_number
+		summarizeBy: none
+		sourceColumn: toll_history_dispatch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_bill_to_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d34cd1f3-6ed7-47f3-b3e6-bdeec7964f5d
+		sourceLineageTag: toll_history_bill_to_code
+		summarizeBy: none
+		sourceColumn: toll_history_bill_to_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column toll_history_upload_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 343fb6cc-2f5a-41d4-bafc-f2be14412d67
+		sourceLineageTag: toll_history_upload_date
+		summarizeBy: none
+		sourceColumn: toll_history_upload_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_toll_history-74d87bd8-8b97-42e6-a695-c3f0675f45a4 = entity
+		mode: directLake
+		source
+			entityName: ibmi_toll_history
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

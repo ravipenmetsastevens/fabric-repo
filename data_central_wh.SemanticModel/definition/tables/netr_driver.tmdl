@@ -1,0 +1,178 @@
+table netr_driver
+	lineageTag: c1b22a8c-e6e1-478a-a9a1-fe29a29c8830
+	sourceLineageTag: [silver].[netr_driver]
+
+	column driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ed24eb4-4a1b-4f82-8350-1889aee95650
+		sourceLineageTag: driver_id
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_firstname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95e0f408-2085-4171-9da0-73ab989ce787
+		sourceLineageTag: driver_firstname
+		summarizeBy: none
+		sourceColumn: driver_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_lastname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b4dae42f-c59f-4ce7-bb8e-dbaaa6679852
+		sourceLineageTag: driver_lastname
+		summarizeBy: none
+		sourceColumn: driver_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_status_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f3c76682-74d7-4a0f-b3ce-57e4e88812f9
+		sourceLineageTag: driver_status_id
+		summarizeBy: sum
+		sourceColumn: driver_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_status_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb21fd0d-54a7-4125-8936-9216cd092d8b
+		sourceLineageTag: driver_status_descr
+		summarizeBy: none
+		sourceColumn: driver_status_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_username
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7eac38fa-79cc-4186-8e4b-05bbbf63060f
+		sourceLineageTag: driver_username
+		summarizeBy: none
+		sourceColumn: driver_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_email
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: adda048b-2fed-4f06-9fc4-6f158f1fc0ed
+		sourceLineageTag: driver_email
+		summarizeBy: none
+		sourceColumn: driver_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9da22c4-c83e-4b14-844c-2dcb8e2f12e5
+		sourceLineageTag: driver_licence_number
+		summarizeBy: none
+		sourceColumn: driver_licence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49d94031-116b-48f5-ba67-03bb65409796
+		sourceLineageTag: driver_licence_state
+		summarizeBy: none
+		sourceColumn: driver_licence_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5a32cf7a-0a79-4ffd-b14c-a8ecfe42fa0b
+		sourceLineageTag: driver_licence_country
+		summarizeBy: none
+		sourceColumn: driver_licence_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_group_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cae07fd0-7437-4847-bae8-dab701f6a9fa
+		sourceLineageTag: driver_group_name
+		summarizeBy: none
+		sourceColumn: driver_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_group_unique_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ebc32c12-b7c8-430c-8c30-b24573ac7fe8
+		sourceLineageTag: driver_group_unique_name
+		summarizeBy: none
+		sourceColumn: driver_group_unique_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ebdc6bfc-4806-40a8-985b-0d96b52a3bcb
+		sourceLineageTag: driver_create_date
+		summarizeBy: none
+		sourceColumn: driver_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: b2cb08f8-052a-4d87-a548-f3bacbf63276
+		sourceLineageTag: driver_create_time
+		summarizeBy: none
+		sourceColumn: driver_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e53bbeab-7543-4eb4-a386-b25768e0469a
+		sourceLineageTag: driver_update_date
+		summarizeBy: none
+		sourceColumn: driver_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: dd7d3120-2876-40ea-8593-c441623eec51
+		sourceLineageTag: driver_update_time
+		summarizeBy: none
+		sourceColumn: driver_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_driver-5acfbfbb-b814-434d-aaa0-f54b2782a019 = entity
+		mode: directLake
+		source
+			entityName: netr_driver
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

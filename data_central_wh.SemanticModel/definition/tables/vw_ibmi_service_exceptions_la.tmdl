@@ -1,0 +1,89 @@
+table vw_ibmi_service_exceptions_la
+	lineageTag: fc4c8bf2-d2bc-4d59-976d-6d7e1021343f
+	sourceLineageTag: [gold].[vw_ibmi_service_exceptions_la]
+
+	column serv_exc_la_late_appt_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 6684ca2c-f199-4297-b70e-910993e2ed56
+		sourceLineageTag: serv_exc_la_late_appt_time
+		summarizeBy: none
+		sourceColumn: serv_exc_la_late_appt_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ba675a6a-dc4e-4e27-b50a-2aac14e6f4b7
+		sourceLineageTag: serv_exc_la_arrival_date
+		summarizeBy: none
+		sourceColumn: serv_exc_la_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_arrival_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: a6e1476d-0b29-4df7-8bab-1da0b9295345
+		sourceLineageTag: serv_exc_la_arrival_time
+		summarizeBy: none
+		sourceColumn: serv_exc_la_arrival_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3412f33c-4b32-4e97-bc31-afefdf2c6c9a
+		sourceLineageTag: serv_exc_la_load_number
+		summarizeBy: none
+		sourceColumn: serv_exc_la_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_sequence_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4e3f2466-004d-4ac0-a145-eb26aa671af3
+		sourceLineageTag: serv_exc_la_sequence_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_la_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_stop_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6a4c57e0-e1e6-4b92-bf67-9811d4eef5b4
+		sourceLineageTag: serv_exc_la_stop_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_la_stop_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_late_appt_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4cdf8ba6-c39c-4ff5-9824-c820125c7d07
+		sourceLineageTag: serv_exc_la_late_appt_date
+		summarizeBy: none
+		sourceColumn: serv_exc_la_late_appt_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_service_exceptions_la-e93bfa8a-22a1-47d9-b31c-996cf7e7d456 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_service_exceptions_la
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

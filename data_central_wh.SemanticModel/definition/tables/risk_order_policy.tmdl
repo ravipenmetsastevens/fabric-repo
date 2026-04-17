@@ -1,0 +1,100 @@
+table risk_order_policy
+	lineageTag: 807fbffd-0490-47fa-be79-83d3c4020ec2
+	sourceLineageTag: [silver].[risk_order_policy]
+
+	column order_policy_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 48a84073-9cd5-4437-af93-48cdfea7609a
+		sourceLineageTag: order_policy_claim_record_code
+		summarizeBy: sum
+		sourceColumn: order_policy_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_policy_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4385110c-cebe-4ac5-80dc-bc249481e4b5
+		sourceLineageTag: order_policy_record_code
+		summarizeBy: sum
+		sourceColumn: order_policy_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_policy_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80f1a3a4-36c0-44c3-b725-becaa0797951
+		sourceLineageTag: order_policy_load_number
+		summarizeBy: none
+		sourceColumn: order_policy_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_dispatch
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: a6b080c4-d76a-4746-8847-77f813632380
+		sourceLineageTag: order_policy_dispatch
+		summarizeBy: sum
+		sourceColumn: order_policy_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2cffca33-88d9-42d8-a9a7-8d02c56499e7
+		sourceLineageTag: order_policy_create_datetime
+		summarizeBy: none
+		sourceColumn: order_policy_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f61a7ec2-4763-4c1a-8abd-d2c5ab2861d9
+		sourceLineageTag: order_policy_create_user_code
+		summarizeBy: none
+		sourceColumn: order_policy_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_last_change_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 444143c1-4c5a-424e-973b-8cf92657f0a3
+		sourceLineageTag: order_policy_last_change_datetime
+		summarizeBy: none
+		sourceColumn: order_policy_last_change_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_last_change_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8cd50d01-cb87-400d-b9d4-17847cbc698c
+		sourceLineageTag: order_policy_last_change_user_code
+		summarizeBy: none
+		sourceColumn: order_policy_last_change_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_order_policy-90afce9f-bc09-4ced-ba5f-def004bea823 = entity
+		mode: directLake
+		source
+			entityName: risk_order_policy
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

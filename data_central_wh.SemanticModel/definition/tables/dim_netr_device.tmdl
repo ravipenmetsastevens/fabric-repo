@@ -1,0 +1,106 @@
+table dim_netr_device
+	lineageTag: 0f0827cd-71bb-4cc0-ada6-b2e11b9c262b
+	sourceLineageTag: [gold].[dim_netr_device]
+
+	column device_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 61d5ccb0-28f8-4aab-84c8-d2d7424dda0a
+		sourceLineageTag: device_id
+		summarizeBy: sum
+		sourceColumn: device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 69a1a719-9250-4c84-a578-6cdb107e57d6
+		sourceLineageTag: device_driver_id
+		summarizeBy: none
+		sourceColumn: device_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7c2ae456-5e55-4c02-b1e0-28981bc1d6d7
+		sourceLineageTag: device_vehicle_vin
+		summarizeBy: none
+		sourceColumn: device_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 35046843-7eaf-4c7c-9ddd-655bf343d8d9
+		sourceLineageTag: device_vehicle_number
+		summarizeBy: none
+		sourceColumn: device_vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_product_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b6e08e27-29e7-48d7-8bb5-0fb9d65242c1
+		sourceLineageTag: device_product_type
+		summarizeBy: none
+		sourceColumn: device_product_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_updated_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 1400c212-381d-4125-8a89-54e532a14260
+		sourceLineageTag: device_updated_date
+		summarizeBy: none
+		sourceColumn: device_updated_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_updated_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 997d1312-68b7-484b-816c-8e1289115da9
+		sourceLineageTag: device_updated_time
+		summarizeBy: none
+		sourceColumn: device_updated_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_groupname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec847941-0054-46ea-bc3f-854f042b1dd0
+		sourceLineageTag: device_groupname
+		summarizeBy: none
+		sourceColumn: device_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_unique_groupname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5f509de9-7dce-4beb-8a47-c08dda7f865f
+		sourceLineageTag: device_unique_groupname
+		summarizeBy: none
+		sourceColumn: device_unique_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_netr_device-b32dd0fe-39dd-4d06-9966-f584d27ed360 = entity
+		mode: directLake
+		source
+			entityName: dim_netr_device
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

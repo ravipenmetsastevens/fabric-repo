@@ -1,0 +1,189 @@
+table Vehicle
+	lineageTag: 832d5650-c622-4d71-869a-17c112d8c700
+
+	column vehicle_vin
+		dataType: string
+		lineageTag: 80f70a2d-10c9-4bb8-9793-fee5136893ee
+		summarizeBy: none
+		sourceColumn: vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_number
+		dataType: string
+		lineageTag: 9af6fc55-fe0c-405c-9162-2498ac7bb0bc
+		summarizeBy: none
+		sourceColumn: vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_device_id
+		dataType: string
+		lineageTag: 3fcaa638-d37c-4fdb-82a0-b351fcd00388
+		summarizeBy: none
+		sourceColumn: vehicle_device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_licence_plate_number
+		dataType: string
+		lineageTag: 8ae6934f-0aee-4ab5-b02d-4b52c73b68c9
+		summarizeBy: none
+		sourceColumn: vehicle_licence_plate_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_class
+		dataType: string
+		lineageTag: ff8ff3f5-5711-40dd-9a13-95894ea1256c
+		summarizeBy: none
+		sourceColumn: vehicle_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_gvm
+		dataType: string
+		lineageTag: 5491afcc-25c2-4871-929c-2d967f05cad5
+		summarizeBy: none
+		sourceColumn: vehicle_gvm
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_group
+		dataType: string
+		lineageTag: 924c1dd6-4479-4f5e-82ec-259c031614c2
+		summarizeBy: none
+		sourceColumn: vehicle_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_battery_disconnect
+		dataType: string
+		lineageTag: 295ee17f-71e4-4cb0-98a2-1e8c3036fdfc
+		summarizeBy: none
+		sourceColumn: vehicle_battery_disconnect
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_reg_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: deb958c1-c2df-471d-be6f-bd7d0477a30c
+		summarizeBy: none
+		sourceColumn: vehicle_reg_date
+
+		variation Variation
+			isDefault
+			relationship: 032912a6-acff-4e3a-9389-b91877ecc49b
+			defaultHierarchy: LocalDateTable_373c1704-5606-4bda-b44d-70f772585586.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column vehicle_reg_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 9ec31ff1-73c1-4f7f-88ba-fd9a92cdada0
+		summarizeBy: none
+		sourceColumn: vehicle_reg_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column vehicle_update_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6a23db60-a838-4f7b-83db-24d609fe96fb
+		summarizeBy: none
+		sourceColumn: vehicle_update_date
+
+		variation Variation
+			isDefault
+			relationship: e5e80801-4016-479b-ad5d-c2547243a003
+			defaultHierarchy: LocalDateTable_52712c26-d957-4077-bcbe-92109a36b232.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column vehicle_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 2d837197-69f1-4f63-8d43-e17973cc3ad8
+		summarizeBy: none
+		sourceColumn: vehicle_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column vehicle_status
+		dataType: string
+		lineageTag: a308783f-71b7-4973-b65f-396e2f8fb0b1
+		summarizeBy: none
+		sourceColumn: vehicle_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_location_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7e2cfa51-3410-4d85-bf65-3e747e61608f
+		summarizeBy: none
+		sourceColumn: vehicle_location_date
+
+		variation Variation
+			isDefault
+			relationship: 4c9b43c4-dd70-4a55-9284-fc01a97763a3
+			defaultHierarchy: LocalDateTable_264b5461-f200-4472-8221-7efa9831223c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column vehicle_location_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 92be9dac-a893-4fb1-b53e-1fe082680fcc
+		summarizeBy: none
+		sourceColumn: vehicle_location_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column vehicle_location_latitude
+		dataType: double
+		lineageTag: 50e5281a-de47-49bb-b44a-7f5583eeb168
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: vehicle_location_latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column vehicle_location_longitude
+		dataType: double
+		lineageTag: adc82c7c-3574-4400-ad54-60e667364fce
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: vehicle_location_longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Vehicle = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_netr_vehicle = Source{[Schema="gold",Item="dim_netr_vehicle"]}[Data]
+				in
+				    gold_dim_netr_vehicle
+
+	annotation PBI_ResultType = Table
+

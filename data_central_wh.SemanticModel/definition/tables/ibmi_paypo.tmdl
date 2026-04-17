@@ -1,0 +1,308 @@
+table ibmi_paypo
+	lineageTag: 7ec6fd9e-04d4-4b47-970c-71beb37eb4d7
+	sourceLineageTag: [silver].[ibmi_paypo]
+
+	column has_benefits_package
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76b8f5c5-135e-423e-bd4a-d8c9ae46e9c5
+		sourceLineageTag: has_benefits_package
+		summarizeBy: none
+		sourceColumn: has_benefits_package
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_deduction_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7bcc8c8a-e82d-4785-ab98-61406ceb2b13
+		sourceLineageTag: paypo_deduction_type_code
+		summarizeBy: none
+		sourceColumn: paypo_deduction_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_deduction_subtype_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 893a424c-cdc1-4d62-8619-0e94bb3775ea
+		sourceLineageTag: paypo_deduction_subtype_code
+		summarizeBy: sum
+		sourceColumn: paypo_deduction_subtype_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_pay_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac7b58b7-937a-4566-9edf-e8c3d4ad7071
+		sourceLineageTag: paypo_pay_type
+		summarizeBy: none
+		sourceColumn: paypo_pay_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_credit_gl_account
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 231137b0-2797-4592-ad49-fdeca85beb7d
+		sourceLineageTag: paypo_credit_gl_account
+		summarizeBy: none
+		sourceColumn: paypo_credit_gl_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fd87dde8-d25c-4815-9bff-d4f17b26c46e
+		sourceLineageTag: paypo_commodity_code
+		summarizeBy: none
+		sourceColumn: paypo_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_last_update_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c108703a-d526-4fe8-80d7-2df3699a2f6a
+		sourceLineageTag: paypo_last_update_initials
+		summarizeBy: none
+		sourceColumn: paypo_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_divisions
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f268622-5712-4b7f-832c-237d2f1b242f
+		sourceLineageTag: paypo_divisions
+		summarizeBy: none
+		sourceColumn: paypo_divisions
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_max_limit_l2
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8478598c-c498-4a7b-b035-5cc2bf23e41e
+		sourceLineageTag: paypo_max_limit_l2
+		summarizeBy: sum
+		sourceColumn: paypo_max_limit_l2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_max_limit_l3
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 80f6f8a0-43a8-4d9a-b710-9752e8ff7cd8
+		sourceLineageTag: paypo_max_limit_l3
+		summarizeBy: sum
+		sourceColumn: paypo_max_limit_l3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_pay_class_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e386954-3b9e-465f-8000-07c8e23a9aa0
+		sourceLineageTag: paypo_pay_class_code
+		summarizeBy: none
+		sourceColumn: paypo_pay_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_pay_rate
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ced9384e-7b33-4a30-84f3-0deac4f6015e
+		sourceLineageTag: paypo_pay_rate
+		summarizeBy: none
+		sourceColumn: paypo_pay_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_split_for_teams
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bc7b0f2a-d9da-4186-84f7-8b9df0bac8ad
+		sourceLineageTag: is_split_for_teams
+		summarizeBy: none
+		sourceColumn: is_split_for_teams
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_creation_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: bd977cb8-e261-4653-a9bf-fe5205177ac3
+		sourceLineageTag: paypo_creation_date
+		summarizeBy: none
+		sourceColumn: paypo_creation_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_creation_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: f985f9a7-bf92-4977-aae1-68d1463eaa3c
+		sourceLineageTag: paypo_creation_time
+		summarizeBy: none
+		sourceColumn: paypo_creation_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_creation_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18a6f63a-4d59-48f0-92d8-e3c015a31923
+		sourceLineageTag: paypo_creation_initials
+		summarizeBy: none
+		sourceColumn: paypo_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 44a9b225-41ca-41e1-9373-951f34c89ff6
+		sourceLineageTag: paypo_last_update_date
+		summarizeBy: none
+		sourceColumn: paypo_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_last_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 3f4f768d-f50c-4e89-bd50-215567389d85
+		sourceLineageTag: paypo_last_update_time
+		summarizeBy: none
+		sourceColumn: paypo_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_taxable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2d8e92a2-8a18-44eb-8151-29a20379ff6e
+		sourceLineageTag: is_taxable
+		summarizeBy: none
+		sourceColumn: is_taxable
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2731c6c1-43a4-488d-bf10-602480b3cd2b
+		sourceLineageTag: paypo_gl_account_number
+		summarizeBy: none
+		sourceColumn: paypo_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_normal_rate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f20549e2-0406-45b0-9446-024ac08d90ed
+		sourceLineageTag: paypo_normal_rate
+		summarizeBy: sum
+		sourceColumn: paypo_normal_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_max_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d1f70265-bd30-4073-920c-e100bedeb7dd
+		sourceLineageTag: paypo_max_amount
+		summarizeBy: sum
+		sourceColumn: paypo_max_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column paypo_min_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 39fa2c2e-f29f-4867-b6fe-173337708791
+		sourceLineageTag: paypo_min_amount
+		summarizeBy: sum
+		sourceColumn: paypo_min_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column can_override_limit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e61cacb7-a607-4958-b522-72b4a81106a1
+		sourceLineageTag: can_override_limit
+		summarizeBy: none
+		sourceColumn: can_override_limit
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ae7b31f6-d130-497f-9fc2-6dc61a24168e
+		sourceLineageTag: paypo_type_code
+		summarizeBy: none
+		sourceColumn: paypo_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cddb320f-f0dd-419b-ab6d-547c391e4df9
+		sourceLineageTag: is_deleted
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_category
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9a8b887-c733-4f6d-a6ea-e482309beee3
+		sourceLineageTag: paypo_category
+		summarizeBy: none
+		sourceColumn: paypo_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column paypo_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 034e70e6-0e32-4e65-941c-bd78f88d88e8
+		sourceLineageTag: paypo_description
+		summarizeBy: none
+		sourceColumn: paypo_description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_paypo-81324c23-da7d-4c3d-a966-a82c612d71cd = entity
+		mode: directLake
+		source
+			entityName: ibmi_paypo
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,75 @@
+table RecordCount_config
+	lineageTag: 361afc37-5451-4fee-a63f-f497b3f43a42
+	sourceLineageTag: [silver].[RecordCount_config]
+
+	column object_schema
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 70357975-9e74-4b87-a03e-22197dea2648
+		sourceLineageTag: object_schema
+		summarizeBy: none
+		sourceColumn: object_schema
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 10657f3b-01c3-41f4-a2ed-ef125c89376d
+		sourceLineageTag: object_name
+		summarizeBy: none
+		sourceColumn: object_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3fad901d-b76e-4c88-82df-7762efc25151
+		sourceLineageTag: object_type
+		summarizeBy: none
+		sourceColumn: object_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column custom_count_sql
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c55cbe84-541d-4092-be95-83f682555569
+		sourceLineageTag: custom_count_sql
+		summarizeBy: none
+		sourceColumn: custom_count_sql
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_enabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: f4e48d35-37b3-4c54-913c-6800cf813651
+		sourceLineageTag: is_enabled
+		summarizeBy: none
+		sourceColumn: is_enabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1e2c55a7-8bcc-46bc-9cb5-89f0acd46315
+		sourceLineageTag: created_utc
+		summarizeBy: none
+		sourceColumn: created_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RecordCount_config-532da33f-e1b7-4b35-af39-1fb53860af6c = entity
+		mode: directLake
+		source
+			entityName: RecordCount_config
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

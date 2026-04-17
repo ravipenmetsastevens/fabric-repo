@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "WorkDay Hierarchy"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "73084143-b930-abeb-4fa2-ec0234952dea"
+  }
+}

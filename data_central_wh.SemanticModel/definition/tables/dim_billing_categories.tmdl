@@ -1,0 +1,33 @@
+table dim_billing_categories
+	lineageTag: d6f7045e-a54f-4f68-a16b-e6ee37832133
+	sourceLineageTag: [gold].[dim_billing_categories]
+
+	column billing_category
+		dataType: string
+		sourceProviderType: char
+		lineageTag: dd1a7002-2651-4ab3-a8d2-0af97467a832
+		sourceLineageTag: billing_category
+		summarizeBy: none
+		sourceColumn: billing_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_code
+		dataType: string
+		sourceProviderType: char
+		lineageTag: 86e8e5b4-54e5-443c-92ea-debd8cc9d1f9
+		sourceLineageTag: type_code
+		summarizeBy: none
+		sourceColumn: type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_billing_categories-ad17cbf9-cec6-41d4-b91e-6fffd378be63 = entity
+		mode: directLake
+		source
+			entityName: dim_billing_categories
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

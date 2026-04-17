@@ -1,0 +1,98 @@
+table Device
+	lineageTag: bb2f8319-9218-40af-85e5-27ff4ed59f92
+
+	column device_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ebb7e42e-4728-4568-a2b4-02302e825b25
+		summarizeBy: none
+		sourceColumn: device_id
+
+		annotation SummarizationSetBy = User
+
+	column device_driver_id
+		dataType: string
+		lineageTag: f7b4ab33-2649-4a56-b6cb-f38643f3f290
+		summarizeBy: none
+		sourceColumn: device_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_vin
+		dataType: string
+		lineageTag: 6810e5b6-7a59-4c07-b326-6086c98ed28d
+		summarizeBy: none
+		sourceColumn: device_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_number
+		dataType: string
+		lineageTag: d42a2679-35f6-465e-9044-b3876c40804c
+		summarizeBy: none
+		sourceColumn: device_vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_product_type
+		dataType: string
+		lineageTag: 9584021d-70ec-42f2-985a-9ba5bb71f0c2
+		summarizeBy: none
+		sourceColumn: device_product_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_updated_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b34f78bd-a378-4e27-9986-5c9188b68878
+		summarizeBy: none
+		sourceColumn: device_updated_date
+
+		variation Variation
+			isDefault
+			relationship: 42be587e-ae53-4b4d-b03c-1ebd4e52b0f5
+			defaultHierarchy: LocalDateTable_d0544e9d-a449-4dff-9286-ab5fe1e3d9a9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column device_updated_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 69eb4a3b-068b-484d-86e6-6a143c2dc343
+		summarizeBy: none
+		sourceColumn: device_updated_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column device_groupname
+		dataType: string
+		lineageTag: ae9b3fee-d1cb-4552-b955-c5c44a059fa7
+		summarizeBy: none
+		sourceColumn: device_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_unique_groupname
+		dataType: string
+		lineageTag: 73b02cd3-a336-4d99-a7ff-a80f544ff0b2
+		summarizeBy: none
+		sourceColumn: device_unique_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Device = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_netr_device = Source{[Schema="gold",Item="dim_netr_device"]}[Data]
+				in
+				    gold_dim_netr_device
+
+	annotation PBI_ResultType = Table
+

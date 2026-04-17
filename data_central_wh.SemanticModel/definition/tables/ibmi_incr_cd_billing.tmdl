@@ -1,0 +1,166 @@
+table ibmi_incr_cd_billing
+	lineageTag: 85fba17b-92af-46c4-8a8a-2fcc51a35225
+	sourceLineageTag: [silver].[ibmi_incr_cd_billing]
+
+	column cd_billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9db049af-e7ca-4269-9dff-87dd2511cf9f
+		sourceLineageTag: cd_billing_load_number
+		summarizeBy: none
+		sourceColumn: cd_billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 096b705c-23b7-42f1-a038-e3ae46d8b7b7
+		sourceLineageTag: cd_billing_sequence_number
+		summarizeBy: none
+		sourceColumn: cd_billing_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 75ee22cb-9e24-473e-9856-ddf9d9c74e09
+		sourceLineageTag: cd_billing_record_number
+		summarizeBy: sum
+		sourceColumn: cd_billing_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 65703d19-4117-4633-950d-65c1dce1cdf0
+		sourceLineageTag: is_deleted
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec3372b0-f0c9-477e-b59b-ea0803d679cf
+		sourceLineageTag: cd_billing_commodity_code
+		summarizeBy: none
+		sourceColumn: cd_billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 75c72b97-c14c-477b-becf-21a548fef5c0
+		sourceLineageTag: cd_billing_commodity_description
+		summarizeBy: none
+		sourceColumn: cd_billing_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_piece_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6210ac2d-16ce-4a07-bb4f-8ab1db83fdf5
+		sourceLineageTag: cd_billing_piece_count
+		summarizeBy: sum
+		sourceColumn: cd_billing_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_billing_actual_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 2d8c66b9-a20f-43b8-8de2-00dbd911c842
+		sourceLineageTag: cd_billing_actual_quantity_count
+		summarizeBy: sum
+		sourceColumn: cd_billing_actual_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_billing_billed_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 14d9f3c4-4ecc-4cb3-aeb8-0905c7801311
+		sourceLineageTag: cd_billing_billed_quantity_count
+		summarizeBy: sum
+		sourceColumn: cd_billing_billed_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_billing_billed_rate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b75c9b8b-f9a8-4f65-a276-9e09d538d48c
+		sourceLineageTag: cd_billing_billed_rate
+		summarizeBy: sum
+		sourceColumn: cd_billing_billed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_billing_billed_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 85ed45a3-89dc-43dc-953a-bc96e72ce294
+		sourceLineageTag: cd_billing_billed_amount
+		summarizeBy: sum
+		sourceColumn: cd_billing_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_billing_method_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f8ba4ba-2ef9-46fc-8ccb-a858dcaa31cd
+		sourceLineageTag: cd_billing_method_code
+		summarizeBy: none
+		sourceColumn: cd_billing_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_error_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c5621c97-09ae-4cb7-b174-7992c6ece3b0
+		sourceLineageTag: cd_billing_error_code
+		summarizeBy: none
+		sourceColumn: cd_billing_error_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_billing_gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c0721eb-1be2-484f-9ec0-58e6fb01574c
+		sourceLineageTag: cd_billing_gl_account_number
+		summarizeBy: none
+		sourceColumn: cd_billing_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_incr_cd_billing-e9b39dac-b533-4b6f-a947-c9d72fb93606 = entity
+		mode: directLake
+		source
+			entityName: ibmi_incr_cd_billing
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

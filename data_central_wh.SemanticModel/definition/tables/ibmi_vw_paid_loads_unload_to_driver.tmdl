@@ -1,0 +1,56 @@
+table ibmi_vw_paid_loads_unload_to_driver
+	lineageTag: 6c6f484c-a28a-4397-9efa-8805a1201e5f
+	sourceLineageTag: [silver].[ibmi_vw_paid_loads_unload_to_driver]
+
+	column deduction_history_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9622033-0e55-4374-a9d9-dd6d037fa53a
+		sourceLineageTag: deduction_history_load_number
+		summarizeBy: none
+		sourceColumn: deduction_history_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c0fd3166-2c7e-46a3-ae63-c577972c5202
+		sourceLineageTag: deduction_history_check_date
+		summarizeBy: none
+		sourceColumn: deduction_history_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 975289c1-9bda-40a0-a04e-0c3ea2057350
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Entity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4c608ed-69ce-4768-b93e-4e7f5dcfe914
+		sourceLineageTag: Entity
+		summarizeBy: none
+		sourceColumn: Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_vw_paid_loads_unload_to_driver-a5341f55-e17f-49de-9f26-45b5f6fe4bfe = entity
+		mode: directLake
+		source
+			entityName: ibmi_vw_paid_loads_unload_to_driver
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

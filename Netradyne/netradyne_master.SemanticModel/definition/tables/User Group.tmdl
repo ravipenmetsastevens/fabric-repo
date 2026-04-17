@@ -1,0 +1,38 @@
+table 'User Group'
+	lineageTag: df97020d-2ae4-4c28-a70d-3bf743afd86d
+
+	column group_id
+		dataType: string
+		lineageTag: 0eacc8b6-faeb-4304-a181-ea0f62c5b3be
+		summarizeBy: none
+		sourceColumn: group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column group_name
+		dataType: string
+		lineageTag: 49e33d88-5008-417e-a235-a93343d39ff0
+		summarizeBy: none
+		sourceColumn: group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column group_status
+		dataType: string
+		lineageTag: b72008d8-848b-4804-a8ef-0a3f5a734699
+		summarizeBy: none
+		sourceColumn: group_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Group' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_netr_group = Source{[Schema="silver",Item="netr_group"]}[Data]
+				in
+				    silver_netr_group
+
+	annotation PBI_ResultType = Table
+

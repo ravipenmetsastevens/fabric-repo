@@ -1,0 +1,34 @@
+table vw_ibmi_utlfile_min_record_date
+	lineageTag: 995e0433-d254-470b-b6d1-cd93c21497c7
+	sourceLineageTag: [gold].[vw_ibmi_utlfile_min_record_date]
+
+	column min_record_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 24339f8e-dc79-471b-9542-708cc3572b7c
+		sourceLineageTag: min_record_date
+		summarizeBy: none
+		sourceColumn: min_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column utlfile_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d878da9f-9dda-413c-9f8a-6025cfbe4af6
+		sourceLineageTag: utlfile_driver_code
+		summarizeBy: none
+		sourceColumn: utlfile_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_utlfile_min_record_date-1f45cfac-aa32-4266-b4ba-dd27a042bbd1 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_utlfile_min_record_date
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,72 @@
+table Trailers
+	lineageTag: 5f2cd3d4-8bfd-4acb-a9de-c18dba09ede4
+
+	column vehicleName
+		dataType: string
+		lineageTag: 3a714984-979b-44a9-bb26-6bc9457fec37
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column reeferSerialNumber
+		dataType: string
+		lineageTag: acc41b82-17c6-47c6-8a10-53e069d4b13b
+		summarizeBy: none
+		sourceColumn: reeferSerialNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_VIN
+		dataType: string
+		lineageTag: b95f4db5-0931-4d1f-88a6-aa03bcf3979c
+		summarizeBy: none
+		sourceColumn: trailer_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_VIN
+		dataType: string
+		lineageTag: 4f9e5250-90a9-4d91-a08f-1b51a6d6020e
+		summarizeBy: none
+		sourceColumn: truck_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column wirelessGen
+		dataType: string
+		lineageTag: 1a770fbe-a6da-4b87-8721-f77980b5095c
+		summarizeBy: none
+		sourceColumn: wirelessGen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isDoorLockFitted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 115a123d-ec9d-4750-b692-63ff19c29c95
+		summarizeBy: none
+		sourceColumn: isDoorLockFitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuelTankSize
+		dataType: int64
+		formatString: 0
+		lineageTag: 1143cbf9-1811-4a00-b442-32f7c88e5e8c
+		summarizeBy: sum
+		sourceColumn: fuelTankSize
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Trailers = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_thermoking_trailer = Source{[Schema="gold",Item="dim_thermoking_trailer"]}[Data]
+				in
+				    gold_dim_thermoking_trailer
+
+	changedProperty = Name
+

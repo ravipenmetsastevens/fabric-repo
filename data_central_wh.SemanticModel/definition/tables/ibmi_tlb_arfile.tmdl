@@ -1,0 +1,242 @@
+table ibmi_tlb_arfile
+	lineageTag: cc67186b-2e70-42b0-bb07-39b315a3ee1b
+	sourceLineageTag: [silver].[ibmi_tlb_arfile]
+
+	column tlb_arfile_record_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 529f1a8f-7a07-40c5-b7b6-2347d1d53bf4
+		sourceLineageTag: tlb_arfile_record_code
+		summarizeBy: none
+		sourceColumn: tlb_arfile_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 788723c0-42c5-40d5-a000-b71aa2f4ce12
+		sourceLineageTag: tlb_arfile_customer_code
+		summarizeBy: none
+		sourceColumn: tlb_arfile_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1047c557-b027-4d1c-8012-4117811b5ad5
+		sourceLineageTag: tlb_arfile_invoice_number
+		summarizeBy: none
+		sourceColumn: tlb_arfile_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_adj_batch_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 02f0d386-41a0-4c12-b7ed-7fdca711b2cf
+		sourceLineageTag: tlb_arfile_adj_batch_code
+		summarizeBy: none
+		sourceColumn: tlb_arfile_adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_record_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80e23880-746d-4e5c-add4-5e3e158432e7
+		sourceLineageTag: tlb_arfile_record_type
+		summarizeBy: none
+		sourceColumn: tlb_arfile_record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 69f0fc4b-a1e5-4509-b9c5-9cf9090668ed
+		sourceLineageTag: tlb_arfile_record_number
+		summarizeBy: sum
+		sourceColumn: tlb_arfile_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_arfile_invoice_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 30468db5-44f7-4e57-aba5-81c52d1761ca
+		sourceLineageTag: tlb_arfile_invoice_date
+		summarizeBy: none
+		sourceColumn: tlb_arfile_invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4236138a-fcf7-4cbf-a1cc-d0b7d3014263
+		sourceLineageTag: tlb_arfile_load_number
+		summarizeBy: none
+		sourceColumn: tlb_arfile_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_deposit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 734d4469-5a04-4419-b768-386bdbc22e6a
+		sourceLineageTag: tlb_arfile_deposit_date
+		summarizeBy: none
+		sourceColumn: tlb_arfile_deposit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_cust_order_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 73ad184e-c4f1-4f6f-a645-ba8d2fc0baf7
+		sourceLineageTag: tlb_arfile_cust_order_number
+		summarizeBy: none
+		sourceColumn: tlb_arfile_cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_book_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e88226b9-852d-4aee-b2d2-1334721ab3ef
+		sourceLineageTag: tlb_arfile_book_month
+		summarizeBy: none
+		sourceColumn: tlb_arfile_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_book_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5adec49d-fee2-44ec-be2e-2a77cb858dc6
+		sourceLineageTag: tlb_arfile_book_year
+		summarizeBy: none
+		sourceColumn: tlb_arfile_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9d771934-1bba-4320-8ba3-f21591266787
+		sourceLineageTag: tlb_arfile_amount
+		summarizeBy: sum
+		sourceColumn: tlb_arfile_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_arfile_balance_forward
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d41cae8c-b193-46bd-be84-8cf6cd88571a
+		sourceLineageTag: tlb_arfile_balance_forward
+		summarizeBy: sum
+		sourceColumn: tlb_arfile_balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_daily_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c43f54b-5137-4f82-8bef-1a2adaae68d5
+		sourceLineageTag: is_daily_pro_register
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb9df999-b07b-4109-b1a1-408b8a4632f0
+		sourceLineageTag: is_weekly_pro_register
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_monthly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 70bc2701-4379-49e1-8a3c-d34e42777c3b
+		sourceLineageTag: is_monthly_pro_register
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_non_current
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7c5f354f-dc5e-408f-a920-96ff49daf62a
+		sourceLineageTag: is_non_current
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_customer_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80db2ed9-ad10-4215-92b8-bf39fae7a041
+		sourceLineageTag: tlb_arfile_customer_name
+		summarizeBy: none
+		sourceColumn: tlb_arfile_customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_sequence_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5a5c9b67-98ff-4024-9c6a-282a3efd7bb8
+		sourceLineageTag: tlb_arfile_sequence_code
+		summarizeBy: none
+		sourceColumn: tlb_arfile_sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_statement_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 74d8187a-89de-4177-9236-c055e0b371d8
+		sourceLineageTag: tlb_arfile_statement_number
+		summarizeBy: none
+		sourceColumn: tlb_arfile_statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_arfile_dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 263778ec-6a0f-4d8f-a9cd-fe02c8d3bdfc
+		sourceLineageTag: tlb_arfile_dispatch_date
+		summarizeBy: none
+		sourceColumn: tlb_arfile_dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_tlb_arfile-546bc577-cedd-42a8-9e51-1b0dbfcc60bc = entity
+		mode: directLake
+		source
+			entityName: ibmi_tlb_arfile
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,163 @@
+table ibmi_commodity
+	lineageTag: 9bdb8768-8857-4dcd-bd7e-eb49296627d3
+	sourceLineageTag: [silver].[ibmi_commodity]
+
+	column commodity_key
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7a0ba5d3-1f05-43f1-95b6-8422c8467a2c
+		sourceLineageTag: commodity_key
+		summarizeBy: none
+		sourceColumn: commodity_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c4b843f-96c7-4dbe-b6be-2f3b205cf403
+		sourceLineageTag: commodity_code
+		summarizeBy: none
+		sourceColumn: commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d81e991c-b9d9-4504-ad8f-9b1f912f60e7
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_commodity_deleted
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 046c16c4-4dbc-4d90-bc07-ac117d67c54f
+		sourceLineageTag: is_commodity_deleted
+		summarizeBy: none
+		sourceColumn: is_commodity_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 62b481b5-1ea9-4271-be02-5f7779b25f7d
+		sourceLineageTag: commodity_description
+		summarizeBy: none
+		sourceColumn: commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f9e5fb69-3e28-4bcd-91a3-9746ae5f4576
+		sourceLineageTag: commodity_class
+		summarizeBy: none
+		sourceColumn: commodity_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_cost_center
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 13963966-cd62-49c0-b9f6-c03b28819176
+		sourceLineageTag: commodity_cost_center
+		summarizeBy: none
+		sourceColumn: commodity_cost_center
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_short_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4b4b25d9-936c-4a75-aef7-7acfd9721434
+		sourceLineageTag: commodity_short_descr
+		summarizeBy: none
+		sourceColumn: commodity_short_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_tdcc_charge_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d69eeeb9-2e01-416b-ade4-b9e6ca33a56a
+		sourceLineageTag: commodity_tdcc_charge_code
+		summarizeBy: none
+		sourceColumn: commodity_tdcc_charge_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_stcc_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e99d4680-9c24-440a-b8fa-e318c4d0c46d
+		sourceLineageTag: commodity_stcc_code
+		summarizeBy: none
+		sourceColumn: commodity_stcc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_nmfc_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2069cd96-30e8-4026-98d9-0b7a23403b91
+		sourceLineageTag: commodity_nmfc_code
+		summarizeBy: none
+		sourceColumn: commodity_nmfc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_revenue_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45484b2c-4426-4f64-bc1e-93bf5178331a
+		sourceLineageTag: commodity_revenue_type
+		summarizeBy: none
+		sourceColumn: commodity_revenue_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_gst_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 073b36a9-202a-4e12-9f98-b0ce4e9e1ee5
+		sourceLineageTag: commodity_gst_status
+		summarizeBy: none
+		sourceColumn: commodity_gst_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_gl_account
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d73b53a1-ebe2-4d86-976d-860566d8e16e
+		sourceLineageTag: commodity_gl_account
+		summarizeBy: none
+		sourceColumn: commodity_gl_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_washout_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76eb1229-984d-4219-8a1b-f64716841c51
+		sourceLineageTag: is_washout_required
+		summarizeBy: none
+		sourceColumn: is_washout_required
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_commodity-d3220a26-d8be-4e69-864e-91ae4410cbc8 = entity
+		mode: directLake
+		source
+			entityName: ibmi_commodity
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

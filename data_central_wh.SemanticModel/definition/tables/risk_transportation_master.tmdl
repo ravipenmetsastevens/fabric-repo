@@ -1,0 +1,226 @@
+table risk_transportation_master
+	lineageTag: b8a52fd1-733c-4ad6-a880-7622d8d08a5c
+	sourceLineageTag: [silver].[risk_transportation_master]
+
+	column trans_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3314b23f-5df0-4773-9258-d22793a66e58
+		sourceLineageTag: trans_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: trans_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c213b285-0324-4baa-bd32-e4c0cc1985d9
+		sourceLineageTag: trans_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: trans_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_last_change_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 96781c63-8d3f-4b13-8a42-776d0d4b488b
+		sourceLineageTag: trans_mast_last_change_datetime
+		summarizeBy: none
+		sourceColumn: trans_mast_last_change_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_last_change_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c2280093-8505-4199-9a17-c795a3a82766
+		sourceLineageTag: trans_mast_last_change_user_code
+		summarizeBy: none
+		sourceColumn: trans_mast_last_change_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_near_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ff7b6487-b02e-475c-97ba-b9cf79044b9c
+		sourceLineageTag: trans_mast_near_city
+		summarizeBy: none
+		sourceColumn: trans_mast_near_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_near_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1569ab59-6fa2-47b3-8b71-a1b67ab06ed6
+		sourceLineageTag: trans_mast_near_state
+		summarizeBy: none
+		sourceColumn: trans_mast_near_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_terminal_location
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 58198323-74b1-48dd-bd11-da62c2a32199
+		sourceLineageTag: trans_mast_terminal_location
+		summarizeBy: none
+		sourceColumn: trans_mast_terminal_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e881b394-f8b7-467a-a586-c02330e339f8
+		sourceLineageTag: trans_mast_dmol_code
+		summarizeBy: none
+		sourceColumn: trans_mast_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_road_surface_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 77260396-3399-42b3-99ec-59d5a2068020
+		sourceLineageTag: trans_mast_road_surface_code
+		summarizeBy: sum
+		sourceColumn: trans_mast_road_surface_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trans_mast_road_condition_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 661a480c-d5a6-4db2-a7fe-f037144c8277
+		sourceLineageTag: trans_mast_road_condition_code
+		summarizeBy: sum
+		sourceColumn: trans_mast_road_condition_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_divided_highway
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 28b8d6c5-c048-42a3-9e20-69e245a2db1b
+		sourceLineageTag: is_divided_highway
+		summarizeBy: none
+		sourceColumn: is_divided_highway
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_lane_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 659d7b92-ea2f-403c-a96f-b92fdfbb6ae2
+		sourceLineageTag: trans_mast_lane_count
+		summarizeBy: sum
+		sourceColumn: trans_mast_lane_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_carrier_claim_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8dd8904e-1a6e-4dfd-b209-f0bb1b31e04e
+		sourceLineageTag: trans_mast_carrier_claim_code
+		summarizeBy: none
+		sourceColumn: trans_mast_carrier_claim_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_accident_type_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c0d1a806-b9c3-4a4c-8b81-80deefd49ae6
+		sourceLineageTag: trans_mast_accident_type_code
+		summarizeBy: sum
+		sourceColumn: trans_mast_accident_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trans_mast_weather_condition_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b0c401fd-a74e-4f38-9c30-f4a7c04df8c3
+		sourceLineageTag: trans_mast_weather_condition_code
+		summarizeBy: sum
+		sourceColumn: trans_mast_weather_condition_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_dot_reportable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f5cd579a-b22f-4501-b1a7-dea9fc4aa209
+		sourceLineageTag: is_dot_reportable
+		summarizeBy: none
+		sourceColumn: is_dot_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_preventable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 211eed3c-4959-4c6a-b4ce-60eb0270a0fb
+		sourceLineageTag: is_preventable
+		summarizeBy: none
+		sourceColumn: is_preventable
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4d2399af-dc94-4153-848c-4a83f8e4c5ef
+		sourceLineageTag: trans_mast_dm_code
+		summarizeBy: none
+		sourceColumn: trans_mast_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: de01dce2-eb08-46a1-821d-deb03e2db139
+		sourceLineageTag: trans_mast_claim_record_code
+		summarizeBy: sum
+		sourceColumn: trans_mast_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_accident_or_incident
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bddb7d11-a90b-4297-8e83-94ce7d75a7be
+		sourceLineageTag: is_accident_or_incident
+		summarizeBy: none
+		sourceColumn: is_accident_or_incident
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_transportation_master-7f072f80-51a5-4a4a-89e2-27f5d058631f = entity
+		mode: directLake
+		source
+			entityName: risk_transportation_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

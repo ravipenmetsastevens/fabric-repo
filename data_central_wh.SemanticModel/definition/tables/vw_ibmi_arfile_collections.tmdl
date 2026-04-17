@@ -1,0 +1,57 @@
+table vw_ibmi_arfile_collections
+	lineageTag: 8c7bbe25-8b7d-40ca-93b6-c729285925de
+	sourceLineageTag: [silver].[vw_ibmi_arfile_collections]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3216a361-c26e-41ac-adcf-be77ebd68f9d
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_collected
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a34591f8-0597-40a6-ae19-84d6acab32a8
+		sourceLineageTag: amount_collected
+		summarizeBy: sum
+		sourceColumn: amount_collected
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column early_collected_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d0c8dd33-dc3e-4cdf-9021-949ed2e994b3
+		sourceLineageTag: early_collected_date
+		summarizeBy: none
+		sourceColumn: early_collected_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column late_collected_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9a3acd76-33d3-4edb-9e76-66d88e3b0aa8
+		sourceLineageTag: late_collected_date
+		summarizeBy: none
+		sourceColumn: late_collected_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_arfile_collections-8bbe599c-08b6-40a3-8f71-9b0a7fc508b7 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_arfile_collections
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

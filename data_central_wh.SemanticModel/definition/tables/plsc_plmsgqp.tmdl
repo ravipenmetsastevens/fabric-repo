@@ -1,0 +1,125 @@
+table plsc_plmsgqp
+	lineageTag: f6f064dc-7e4f-497f-b76e-4effd2860a4b
+	sourceLineageTag: [bronze].[plsc_plmsgqp]
+
+	column PLAPP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 717915a8-f695-48b0-a7bf-c75ac766b7b2
+		sourceLineageTag: PLAPP
+		summarizeBy: none
+		sourceColumn: PLAPP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLRECTS
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 007351f6-6084-410a-acf9-f5b044659906
+		sourceLineageTag: PLRECTS
+		summarizeBy: none
+		sourceColumn: PLRECTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLQUETS
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f4385447-05cb-4341-a0c4-3343e79b19f9
+		sourceLineageTag: PLQUETS
+		summarizeBy: none
+		sourceColumn: PLQUETS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLMSGTYP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 67fb8f41-0292-49ed-bb96-f2b964721be2
+		sourceLineageTag: PLMSGTYP
+		summarizeBy: none
+		sourceColumn: PLMSGTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLDRVCD1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad4d9dab-2631-41d9-b08f-bae9b4c9bdd4
+		sourceLineageTag: PLDRVCD1
+		summarizeBy: none
+		sourceColumn: PLDRVCD1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLDRVCD2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1cee508b-5b57-4d1a-b450-ad838224b44d
+		sourceLineageTag: PLDRVCD2
+		summarizeBy: none
+		sourceColumn: PLDRVCD2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLUNIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 194addbb-3bce-4c97-85af-e0106c4b2705
+		sourceLineageTag: PLUNIT
+		summarizeBy: none
+		sourceColumn: PLUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLORDER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db415a23-6d67-487b-b297-ab5fda1f9a61
+		sourceLineageTag: PLORDER
+		summarizeBy: none
+		sourceColumn: PLORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLDISP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0c88b321-5da6-4e8a-b7c8-acc44bb3609f
+		sourceLineageTag: PLDISP
+		summarizeBy: none
+		sourceColumn: PLDISP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPROC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 15b709e2-51b7-4041-a187-d1a1e228067c
+		sourceLineageTag: PLPROC
+		summarizeBy: none
+		sourceColumn: PLPROC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPAYLOD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8a2e4d1-3351-4d88-a7f9-af225ffb9c71
+		sourceLineageTag: PLPAYLOD
+		summarizeBy: none
+		sourceColumn: PLPAYLOD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plmsgqp-c6db57fe-e572-42a5-aa59-0ea749272fae = entity
+		mode: directLake
+		source
+			entityName: plsc_plmsgqp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

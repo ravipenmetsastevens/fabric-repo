@@ -1,0 +1,83 @@
+table ibmi_unit_extension
+	lineageTag: 0579864c-2eb3-4f52-be0f-8b7581212079
+	sourceLineageTag: [silver].[ibmi_unit_extension]
+
+	column unit_extn_carb_reg_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce0898c7-662f-4419-87a7-554943e8faa2
+		sourceLineageTag: unit_extn_carb_reg_code
+		summarizeBy: none
+		sourceColumn: unit_extn_carb_reg_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_extn_business_unit_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 70a7b454-eb51-470e-b771-4643c18a12c6
+		sourceLineageTag: unit_extn_business_unit_code
+		summarizeBy: none
+		sourceColumn: unit_extn_business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_digital_mirrors
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 62b62026-d32f-46a3-a0d0-6e4924e61080
+		sourceLineageTag: has_digital_mirrors
+		summarizeBy: none
+		sourceColumn: has_digital_mirrors
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_extn_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cbb0db00-8951-4561-84b4-861a5fd38181
+		sourceLineageTag: unit_extn_truck_number
+		summarizeBy: none
+		sourceColumn: unit_extn_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_extn_mobile_serial_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb6badf3-3f3a-4ca9-93f7-3d321bad5658
+		sourceLineageTag: unit_extn_mobile_serial_number
+		summarizeBy: none
+		sourceColumn: unit_extn_mobile_serial_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_automatic_trans
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7c89a87f-370c-4254-96a4-b485a7feba5e
+		sourceLineageTag: is_automatic_trans
+		summarizeBy: none
+		sourceColumn: is_automatic_trans
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_extn_truck_category
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cdc4d40d-39c6-454a-9ca7-fa871a6852a7
+		sourceLineageTag: unit_extn_truck_category
+		summarizeBy: none
+		sourceColumn: unit_extn_truck_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_unit_extension-97617e2b-70ad-4950-86c9-090016363821 = entity
+		mode: directLake
+		source
+			entityName: ibmi_unit_extension
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

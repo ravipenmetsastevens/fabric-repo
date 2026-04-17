@@ -1,0 +1,187 @@
+table vw_ibmi_tlb_billing_combined
+	lineageTag: 93cb64f3-83c6-4027-829c-50aa3363b81e
+	sourceLineageTag: [gold].[vw_ibmi_tlb_billing_combined]
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 95c0cc3f-17ab-465b-86da-1aaed151a222
+		sourceLineageTag: is_deleted
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4f7a8257-e745-46af-8a38-50e8e587409a
+		sourceLineageTag: billing_billed_date
+		summarizeBy: none
+		sourceColumn: billing_billed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_billed_rate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f2e2f9c1-c41f-4b57-91e6-ebd82fa7dd5b
+		sourceLineageTag: tlb_billing_billed_rate
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_billed_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: ddd7452a-356c-4a3d-99a3-3c762f73973b
+		sourceLineageTag: tlb_billing_billed_amount
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_method_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 361b8503-3bb7-4f61-a8e4-f78731fcc19e
+		sourceLineageTag: tlb_billing_method_code
+		summarizeBy: none
+		sourceColumn: tlb_billing_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_error_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0049bdc3-b2f7-4687-908a-a61a1e079c59
+		sourceLineageTag: tlb_billing_error_code
+		summarizeBy: none
+		sourceColumn: tlb_billing_error_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ffc39b2c-c46d-4a2a-a077-77cd6674b1ec
+		sourceLineageTag: tlb_billing_gl_account_number
+		summarizeBy: none
+		sourceColumn: tlb_billing_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_gl_cost_center_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 17301cd5-3f9a-4ccc-93b2-9b37218856d7
+		sourceLineageTag: tlb_billing_gl_cost_center_code
+		summarizeBy: none
+		sourceColumn: tlb_billing_gl_cost_center_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 27e7e256-3d20-4d12-a584-3c67549e5cd1
+		sourceLineageTag: tlb_billing_record_number
+		summarizeBy: sum
+		sourceColumn: tlb_billing_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7dbaa294-9d72-478f-abcf-1a1424ad512f
+		sourceLineageTag: tlb_billing_commodity_code
+		summarizeBy: none
+		sourceColumn: tlb_billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8b77b27-9e91-4e47-8f45-58f86ec0bf4d
+		sourceLineageTag: tlb_billing_commodity_description
+		summarizeBy: none
+		sourceColumn: tlb_billing_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_piece_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6a516518-1b9d-4b9d-a354-8cd18de6a10c
+		sourceLineageTag: tlb_billing_piece_count
+		summarizeBy: sum
+		sourceColumn: tlb_billing_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_actual_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: cc1619cd-c78f-4685-930e-d85fc5b76595
+		sourceLineageTag: tlb_billing_actual_quantity_count
+		summarizeBy: sum
+		sourceColumn: tlb_billing_actual_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_billed_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a515d7dc-6643-4b33-ae54-450fca87e5de
+		sourceLineageTag: tlb_billing_billed_quantity_count
+		summarizeBy: sum
+		sourceColumn: tlb_billing_billed_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d8ba15fb-4a65-48cd-880a-0e948b63d676
+		sourceLineageTag: tlb_billing_load_number
+		summarizeBy: none
+		sourceColumn: tlb_billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_billing_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2abe06f2-6622-4609-b13c-70f4c100d903
+		sourceLineageTag: tlb_billing_sequence_number
+		summarizeBy: none
+		sourceColumn: tlb_billing_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_tlb_billing_combined-b7d818f3-8163-4de4-a563-e2d3d0639992 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_tlb_billing_combined
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

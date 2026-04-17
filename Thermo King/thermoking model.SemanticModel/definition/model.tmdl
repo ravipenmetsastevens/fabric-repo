@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Trailers","Alarms","Locations","Reefer Status","Reefer Zones"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.132.1053.0 (24.08)
+
+ref table Trailers
+ref table DateTableTemplate_c3f4cb08-82b6-4a82-b31b-4ce51e91b3c7
+ref table Alarms
+ref table LocalDateTable_9cf95144-e527-4373-8f6a-193ef9d3e337
+ref table Locations
+ref table LocalDateTable_aa98eace-a30c-4260-b088-65bb81868615
+ref table 'Reefer Status'
+ref table LocalDateTable_e01cbd94-c85e-4bff-900a-8cdf45a33c10
+ref table 'Reefer Zones'
+ref table LocalDateTable_607d2221-9faa-43cb-b85f-e5e38ac8b38a
+
+ref cultureInfo en-US
+

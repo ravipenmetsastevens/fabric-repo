@@ -1,0 +1,640 @@
+table ibmi_trailer
+	lineageTag: 2b1a0162-99d9-44a7-9e85-469f1e0e13a7
+	sourceLineageTag: [silver].[ibmi_trailer]
+
+	column TRTRLR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb18c0e4-fbc4-4d3c-9c9d-5fa6fdcebb83
+		sourceLineageTag: TRTRLR
+		summarizeBy: none
+		sourceColumn: TRTRLR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TROWNR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 25b9cac3-6093-4468-b331-7c5a1fcfdb6a
+		sourceLineageTag: TROWNR
+		summarizeBy: none
+		sourceColumn: TROWNR
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f878b2f0-33db-4bbd-91c2-e0a91bb42067
+		sourceLineageTag: trailer_record_create_date
+		summarizeBy: none
+		sourceColumn: trailer_record_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 6dde4216-ac3e-4e4b-90e0-582422aa6189
+		sourceLineageTag: trailer_record_create_time
+		summarizeBy: none
+		sourceColumn: trailer_record_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCREI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 30a70b38-15b2-4d5a-b7f8-1b0e5a8715b4
+		sourceLineageTag: TRCREI
+		summarizeBy: none
+		sourceColumn: TRCREI
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a372a33d-51da-4ce6-824c-428d1bf33236
+		sourceLineageTag: trailer_record_update_date
+		summarizeBy: none
+		sourceColumn: trailer_record_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_record_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 11a36149-b35b-48d5-8563-8a30adcc6dec
+		sourceLineageTag: trailer_record_update_time
+		summarizeBy: none
+		sourceColumn: trailer_record_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRUPDI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 278bd20b-4a12-4c5b-bc36-9caf2f47361a
+		sourceLineageTag: TRUPDI
+		summarizeBy: none
+		sourceColumn: TRUPDI
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCO
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 74f53484-931c-45ee-bd73-e9b4e791cfbe
+		sourceLineageTag: TRCO
+		summarizeBy: none
+		sourceColumn: TRCO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDV
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c71fd013-7032-4cc8-ab72-4e3e80e07587
+		sourceLineageTag: TRDV
+		summarizeBy: none
+		sourceColumn: TRDV
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 591953e8-3c6d-4e8e-91ed-c6f651e66642
+		sourceLineageTag: TRTM
+		summarizeBy: none
+		sourceColumn: TRTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRYEAR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb72eb85-eda9-448d-8159-200e5ba538a1
+		sourceLineageTag: TRYEAR
+		summarizeBy: none
+		sourceColumn: TRYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMAKE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d73ef99b-6712-427e-a005-ff47aab65939
+		sourceLineageTag: TRMAKE
+		summarizeBy: none
+		sourceColumn: TRMAKE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRSER
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05255835-7c9a-4ee0-8630-50cf1e25efec
+		sourceLineageTag: TRSER
+		summarizeBy: none
+		sourceColumn: TRSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMNPR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d8fae0fd-bb4d-41e3-8b47-4ccaf268ce76
+		sourceLineageTag: TRMNPR
+		summarizeBy: none
+		sourceColumn: TRMNPR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRBAST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 61e59dc9-59d6-4f8f-a1b7-081e538fbd34
+		sourceLineageTag: TRBAST
+		summarizeBy: none
+		sourceColumn: TRBAST
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRNY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ba28d4ed-cd5b-4709-85ee-eacdaf928140
+		sourceLineageTag: TRNY
+		summarizeBy: none
+		sourceColumn: TRNY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6e9cfbe4-7837-429f-8132-4c67b5a29d0b
+		sourceLineageTag: TRTYPE
+		summarizeBy: none
+		sourceColumn: TRTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTRST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2a981bfc-0266-4340-998e-4a1231d8fd05
+		sourceLineageTag: TRTRST
+		summarizeBy: none
+		sourceColumn: TRTRST
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_purchase_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e8c38a2c-f696-4148-82ff-e9bd07ace5cb
+		sourceLineageTag: trailer_purchase_date
+		summarizeBy: none
+		sourceColumn: trailer_purchase_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRARA
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b25e5125-bd17-4dd1-adf9-45376c3cdbf3
+		sourceLineageTag: TRARA
+		summarizeBy: none
+		sourceColumn: TRARA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRORD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d79a2d95-f2dd-4bfe-a600-7f3beaeff1de
+		sourceLineageTag: TRORD
+		summarizeBy: none
+		sourceColumn: TRORD
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDISP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f80b2e8e-52f4-4410-a52e-29ba21fd24b4
+		sourceLineageTag: TRDISP
+		summarizeBy: none
+		sourceColumn: TRDISP
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRUNIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa56d314-2864-4713-aa50-674aa69cd9fa
+		sourceLineageTag: TRUNIT
+		summarizeBy: none
+		sourceColumn: TRUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDCTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c61d1d73-a34c-4933-8f32-bd9b7a16e984
+		sourceLineageTag: TRDCTY
+		summarizeBy: none
+		sourceColumn: TRDCTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e33d15cb-171a-4932-b45d-08cc98a76c5c
+		sourceLineageTag: TRDST
+		summarizeBy: none
+		sourceColumn: TRDST
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_eta_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4e2d2c67-51a4-483c-9c78-26094b20f6d2
+		sourceLineageTag: trailer_eta_date
+		summarizeBy: none
+		sourceColumn: trailer_eta_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCCTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92ab4432-2518-45dc-b541-501988e59a36
+		sourceLineageTag: TRCCTY
+		summarizeBy: none
+		sourceColumn: TRCCTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: adc37109-d189-4f21-a5fe-64edfca22d4b
+		sourceLineageTag: TRCST
+		summarizeBy: none
+		sourceColumn: TRCST
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_last_contact_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8750d83f-65b6-4022-9b16-cafba857f8f9
+		sourceLineageTag: trailer_last_contact_date
+		summarizeBy: none
+		sourceColumn: trailer_last_contact_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMSG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c54d101d-1517-4775-b2fa-4284a43c1d0d
+		sourceLineageTag: TRMSG
+		summarizeBy: none
+		sourceColumn: TRMSG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDLT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0bb5b94b-4ab0-47c0-bca2-f56d5b9d6b65
+		sourceLineageTag: TRDLT
+		summarizeBy: none
+		sourceColumn: TRDLT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRFLET
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68f1b35c-ab18-4f14-ad0c-4697f0b206bf
+		sourceLineageTag: TRFLET
+		summarizeBy: none
+		sourceColumn: TRFLET
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAXLE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ccf318b-c68a-45cb-be8f-1f43df4161e9
+		sourceLineageTag: TRAXLE
+		summarizeBy: none
+		sourceColumn: TRAXLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TREMWT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 65745839-8ff3-4f42-b9a8-ececbd3dbdfc
+		sourceLineageTag: TREMWT
+		summarizeBy: sum
+		sourceColumn: TREMWT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRGRWT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 2065eb08-a732-4105-8e4f-d1f4ec02c299
+		sourceLineageTag: TRGRWT
+		summarizeBy: sum
+		sourceColumn: TRGRWT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRHEIG
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 5728b0a3-bef8-48c4-89f0-aaa575b1d691
+		sourceLineageTag: TRHEIG
+		summarizeBy: sum
+		sourceColumn: TRHEIG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLENG
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: d2f781d0-849a-4049-8fd1-917abab5e79a
+		sourceLineageTag: TRLENG
+		summarizeBy: sum
+		sourceColumn: TRLENG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCOST
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: f40ce48a-e292-40f2-98bb-ab94f6456154
+		sourceLineageTag: TRCOST
+		summarizeBy: sum
+		sourceColumn: TRCOST
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRPRLD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4b9f50da-6900-46b3-9b63-b9d8b248f5f1
+		sourceLineageTag: TRPRLD
+		summarizeBy: none
+		sourceColumn: TRPRLD
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCONT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b6d6a485-b041-49de-a5ba-c7a46ed6227a
+		sourceLineageTag: TRCONT
+		summarizeBy: none
+		sourceColumn: TRCONT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRHOUR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: bd90be2b-e00c-443d-84e1-36c8f44b0fb1
+		sourceLineageTag: TRHOUR
+		summarizeBy: sum
+		sourceColumn: TRHOUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRHUB
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: ef4e4de5-d85f-43b6-8ad1-61e9c3b0b66d
+		sourceLineageTag: TRHUB
+		summarizeBy: sum
+		sourceColumn: TRHUB
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMULT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9be791d5-8683-4d07-88d6-8c6fceff333f
+		sourceLineageTag: TRMULT
+		summarizeBy: none
+		sourceColumn: TRMULT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRWIDE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: f34886a9-8319-4d97-9cfb-cf899d726b8d
+		sourceLineageTag: TRWIDE
+		summarizeBy: sum
+		sourceColumn: TRWIDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCUBE
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 42435086-a974-491c-9b4e-28a2281934d0
+		sourceLineageTag: TRCUBE
+		summarizeBy: sum
+		sourceColumn: TRCUBE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIDIM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: b92ef044-7a1f-43e9-b713-53f774f84d7b
+		sourceLineageTag: TRIDIM
+		summarizeBy: sum
+		sourceColumn: TRIDIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRDDIM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 8ebe9fb9-59ba-4807-bd99-4a3ed8c47491
+		sourceLineageTag: TRDDIM
+		summarizeBy: sum
+		sourceColumn: TRDDIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTSIZ
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7575bdbd-c079-4090-96cd-0f98c36b5f55
+		sourceLineageTag: TRTSIZ
+		summarizeBy: none
+		sourceColumn: TRTSIZ
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTTYP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 096a7fdd-b921-4f82-9ed6-0a5dd2f440c8
+		sourceLineageTag: TRTTYP
+		summarizeBy: none
+		sourceColumn: TRTTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRMISC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 82d6a7d2-401c-430d-8be7-df76114f9a04
+		sourceLineageTag: TRMISC
+		summarizeBy: none
+		sourceColumn: TRMISC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRPERC
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 693ab6ff-4f06-4467-b0c6-7fdd3f7165fb
+		sourceLineageTag: TRPERC
+		summarizeBy: sum
+		sourceColumn: TRPERC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLRAT
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 22856db6-8283-4318-bddb-cd88aca0d472
+		sourceLineageTag: TRLRAT
+		summarizeBy: sum
+		sourceColumn: TRLRAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRERAT
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 8adf7f71-5934-47ff-8257-0f18d226b82f
+		sourceLineageTag: TRERAT
+		summarizeBy: sum
+		sourceColumn: TRERAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLFLG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f21b70bf-5b0a-4493-8f3a-2d021e92fcc3
+		sourceLineageTag: TRLFLG
+		summarizeBy: none
+		sourceColumn: TRLFLG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRL#PL
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: cc1ab94e-6ace-4f36-bba0-4df068eae9aa
+		sourceLineageTag: TRL#PL
+		summarizeBy: sum
+		sourceColumn: TRL#PL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLTMP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3e149696-0a0e-47be-bd1c-71f13be9d262
+		sourceLineageTag: TRLTMP
+		summarizeBy: none
+		sourceColumn: TRLTMP
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRLCOD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e32356d3-4d70-4a65-8917-e03d75d5b082
+		sourceLineageTag: TRLCOD
+		summarizeBy: none
+		sourceColumn: TRLCOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRCUST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3734fb64-636d-49a5-a81c-7010883a5bd9
+		sourceLineageTag: TRCUST
+		summarizeBy: none
+		sourceColumn: TRCUST
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRGATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5d826505-60fb-4e83-b584-8ee5b0d5a716
+		sourceLineageTag: TRGATE
+		summarizeBy: none
+		sourceColumn: TRGATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRTYP2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: efd1a808-bdbd-44ce-8b8a-b00a91e12f88
+		sourceLineageTag: TRTYP2
+		summarizeBy: none
+		sourceColumn: TRTYP2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_trailer-3d02917f-9a1a-47e9-b027-a60a8d09dc8e = entity
+		mode: directLake
+		source
+			entityName: ibmi_trailer
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

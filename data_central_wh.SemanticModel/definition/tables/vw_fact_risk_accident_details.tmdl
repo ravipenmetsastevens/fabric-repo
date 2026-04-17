@@ -1,0 +1,236 @@
+table vw_fact_risk_accident_details
+	lineageTag: 40f0382b-24da-4945-9f68-fc13be66df8e
+	sourceLineageTag: [gold].[vw_fact_risk_accident_details]
+
+	column claim_mast_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 340eaa81-1cdc-491b-9338-910861781ff5
+		sourceLineageTag: claim_mast_record_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_claim_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cbfbc418-e854-407f-a12c-0940d88ffe0b
+		sourceLineageTag: claim_mast_claim_number
+		summarizeBy: none
+		sourceColumn: claim_mast_claim_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b0c18193-ef8c-401c-bfc1-3d49d92372e4
+		sourceLineageTag: claim_mast_occurance_date
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fa6f7ed8-ef43-4a50-a294-4f6f2f534c9c
+		sourceLineageTag: claim_mast_occurance_datetime
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 894bda16-ad19-4538-b0c3-de61b777a943
+		sourceLineageTag: claim_mast_truck_number
+		summarizeBy: none
+		sourceColumn: claim_mast_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e2d7b0c3-40c8-4d7c-8a08-faefd026a1ec
+		sourceLineageTag: involved_drv_driver_code
+		summarizeBy: none
+		sourceColumn: involved_drv_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_paid_loss_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c2f5f9c1-2847-4864-a713-71e727793605
+		sourceLineageTag: reserve_ttl_paid_loss_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_loss_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_paid_expense_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 759d1e3e-53a2-4f38-93e6-7773f7821d03
+		sourceLineageTag: reserve_ttl_paid_expense_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_expense_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_recovered_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b7f8d6f3-f8d7-4d95-8ada-a881fcaf90b0
+		sourceLineageTag: reserve_ttl_recovered_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_recovered_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_preventable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b0c6eeda-2293-480f-bef4-d01fff3b4d0b
+		sourceLineageTag: is_preventable
+		summarizeBy: none
+		sourceColumn: is_preventable
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb41eea4-bfb9-4817-baeb-be719d71b673
+		sourceLineageTag: trans_mast_dm_code
+		summarizeBy: none
+		sourceColumn: trans_mast_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column trans_mast_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4a028580-a0cf-4ff0-814c-974b2f083ba6
+		sourceLineageTag: trans_mast_dmol_code
+		summarizeBy: none
+		sourceColumn: trans_mast_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f06651c9-62da-443e-9b3b-8b7a36b5c0fb
+		sourceLineageTag: accident_type_description
+		summarizeBy: none
+		sourceColumn: accident_type_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_category
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ed6aff4c-ce2b-4a10-bd23-6c78119350e3
+		sourceLineageTag: accident_type_category
+		summarizeBy: none
+		sourceColumn: accident_type_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_reserve_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3f261cb8-2af5-49ae-98a5-25bed3367bf2
+		sourceLineageTag: reserve_ttl_reserve_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_reserve_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column involved_drv_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e9d84b47-8353-4154-9462-3074e588f69f
+		sourceLineageTag: involved_drv_dm_code
+		summarizeBy: none
+		sourceColumn: involved_drv_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f31be4ea-11d8-4f4e-89cd-854b5f672ac7
+		sourceLineageTag: order_policy_load_number
+		summarizeBy: none
+		sourceColumn: order_policy_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_policy_dispatch
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: c57a52f9-1a98-4d2a-9604-7db52cd676aa
+		sourceLineageTag: order_policy_dispatch
+		summarizeBy: sum
+		sourceColumn: order_policy_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5ba6fe04-9f4b-47d9-9965-a566677f29fd
+		sourceLineageTag: accident_desc_description
+		summarizeBy: none
+		sourceColumn: accident_desc_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_accident_or_incident
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4b2e6479-5ae6-4d9d-acc7-c32f4a08fa93
+		sourceLineageTag: is_accident_or_incident
+		summarizeBy: none
+		sourceColumn: is_accident_or_incident
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_dot_reportable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f81a23e2-6b78-4d57-9de8-96f80b38f11a
+		sourceLineageTag: is_dot_reportable
+		summarizeBy: none
+		sourceColumn: is_dot_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_fact_risk_accident_details-46ca16dc-3627-4d7c-aced-4526f108fc20 = entity
+		mode: directLake
+		source
+			entityName: vw_fact_risk_accident_details
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

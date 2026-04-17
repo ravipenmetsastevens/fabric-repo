@@ -1,0 +1,35 @@
+table vw_pilot_dhr_billing_fsc
+	lineageTag: 7ad3d35c-553e-4dbb-bc06-6d2de54f05dd
+	sourceLineageTag: [silver].[vw_pilot_dhr_billing_fsc]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 08ef9a91-6533-4226-8b4b-e074a37ec301
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column fsc_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a6728264-9abe-40e8-afe1-72034c3bfee2
+		sourceLineageTag: fsc_amount
+		summarizeBy: sum
+		sourceColumn: fsc_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_pilot_dhr_billing_fsc-8e64394b-4f71-4497-a5b2-ce4111054683 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_billing_fsc
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

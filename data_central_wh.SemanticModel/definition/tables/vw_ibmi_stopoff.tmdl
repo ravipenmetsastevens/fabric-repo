@@ -1,0 +1,533 @@
+table vw_ibmi_stopoff
+	lineageTag: e3b42f86-5c53-4c92-b2c2-b1d4df134e7e
+	sourceLineageTag: [gold].[vw_ibmi_stopoff]
+
+	column stopoff_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b3a7756-c805-457f-884f-ded2af1ab4e0
+		sourceLineageTag: stopoff_load_number
+		summarizeBy: none
+		sourceColumn: stopoff_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_stop_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9dda231c-8d28-45d6-8ac9-0a4abbb34d07
+		sourceLineageTag: stopoff_stop_number
+		summarizeBy: sum
+		sourceColumn: stopoff_stop_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_stop_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a8c2351-b63c-4e7c-b152-38926bcd13e6
+		sourceLineageTag: stopoff_stop_type
+		summarizeBy: none
+		sourceColumn: stopoff_stop_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_stop_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b0dba5e7-4f5c-433f-844c-88f2c869b74e
+		sourceLineageTag: stopoff_stop_code
+		summarizeBy: none
+		sourceColumn: stopoff_stop_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c632125d-6c84-42c4-bba3-c86ef0a84aab
+		sourceLineageTag: stopoff_customer_code
+		summarizeBy: none
+		sourceColumn: stopoff_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 10a0f919-e1aa-4bf9-a575-19598631d8aa
+		sourceLineageTag: stopoff_city_code
+		summarizeBy: none
+		sourceColumn: stopoff_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_time_at_dispatch
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 6c966e3c-8be2-45ed-a86b-b845be03d5c6
+		sourceLineageTag: stopoff_appt_time_at_dispatch
+		summarizeBy: none
+		sourceColumn: stopoff_appt_time_at_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_created_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b8a79db4-3e51-46aa-a092-650597eafe0d
+		sourceLineageTag: stopoff_appt_created_initials
+		summarizeBy: none
+		sourceColumn: stopoff_appt_created_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_created_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 38ea0e5e-9fff-4451-ad52-25547a1e60e7
+		sourceLineageTag: stopoff_appt_created_date
+		summarizeBy: none
+		sourceColumn: stopoff_appt_created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_created_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 1f8ce4ff-6f64-4273-b1f9-044891d7db7b
+		sourceLineageTag: stopoff_appt_created_time
+		summarizeBy: none
+		sourceColumn: stopoff_appt_created_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_message
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76333e72-43d1-46b3-8968-4a3ffc26b822
+		sourceLineageTag: stopoff_message
+		summarizeBy: none
+		sourceColumn: stopoff_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_appt_created
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e960bc4c-9b0c-459f-83f1-2b9fe77b7f55
+		sourceLineageTag: is_appt_created
+		summarizeBy: none
+		sourceColumn: is_appt_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_date_at_dispatch
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 670b36b9-db8a-47ea-9a09-7589ed93042e
+		sourceLineageTag: stopoff_appt_date_at_dispatch
+		summarizeBy: none
+		sourceColumn: stopoff_appt_date_at_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_pallets_on
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8e0931c8-d49e-4780-a773-259c385f5784
+		sourceLineageTag: stopoff_pallets_on
+		summarizeBy: sum
+		sourceColumn: stopoff_pallets_on
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_pallets_off
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1acf678f-21b3-4e02-9ced-528bf1e06148
+		sourceLineageTag: stopoff_pallets_off
+		summarizeBy: sum
+		sourceColumn: stopoff_pallets_off
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_load_unload_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 21757cdd-b83c-49aa-823a-21703fa9c6d6
+		sourceLineageTag: stopoff_load_unload_type
+		summarizeBy: none
+		sourceColumn: stopoff_load_unload_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a689816c-5a0a-45e8-8bee-55b413335b8a
+		sourceLineageTag: stopoff_truck_number
+		summarizeBy: none
+		sourceColumn: stopoff_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f1e94863-6e04-47e0-89ff-708bf208b2a2
+		sourceLineageTag: stopoff_trailer_number
+		summarizeBy: none
+		sourceColumn: stopoff_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d444ea3-2afd-4c30-83b5-e7906606876f
+		sourceLineageTag: stopoff_dispatch
+		summarizeBy: none
+		sourceColumn: stopoff_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_shipper_specific_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1edd259b-cf31-4b54-b538-bea667248589
+		sourceLineageTag: stopoff_shipper_specific_code
+		summarizeBy: none
+		sourceColumn: stopoff_shipper_specific_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_seal_1_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 848ffa38-93f5-4562-a740-5eb989a05bcc
+		sourceLineageTag: stopoff_seal_1_code
+		summarizeBy: none
+		sourceColumn: stopoff_seal_1_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_seal_2_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e91a6fb-e947-4a49-9b41-474232d4df9b
+		sourceLineageTag: stopoff_seal_2_code
+		summarizeBy: none
+		sourceColumn: stopoff_seal_2_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_weight
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f7c12c80-6740-4c61-b9ba-c448da9cf224
+		sourceLineageTag: stopoff_weight
+		summarizeBy: sum
+		sourceColumn: stopoff_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_pieces
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1b23c39d-25e4-42fb-a001-a90055ade7bc
+		sourceLineageTag: stopoff_pieces
+		summarizeBy: none
+		sourceColumn: stopoff_pieces
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_unit_of_measure
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eb7d922b-6b03-4946-ace5-55426c77aa5b
+		sourceLineageTag: stopoff_unit_of_measure
+		summarizeBy: none
+		sourceColumn: stopoff_unit_of_measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_late_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: c649bce5-d20b-4584-b808-9323c58f80a1
+		sourceLineageTag: stopoff_appt_late_time
+		summarizeBy: none
+		sourceColumn: stopoff_appt_late_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0b32e2da-041a-4a62-8fd2-5f662c5c1b1e
+		sourceLineageTag: stopoff_arrival_date
+		summarizeBy: none
+		sourceColumn: stopoff_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_arrival_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 113e4e3a-84cd-4ac0-b367-b1bbc07e6e0c
+		sourceLineageTag: stopoff_arrival_time
+		summarizeBy: none
+		sourceColumn: stopoff_arrival_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_load_unload_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2251c2e5-f026-4668-8230-1178f16d9b9e
+		sourceLineageTag: stopoff_load_unload_date
+		summarizeBy: none
+		sourceColumn: stopoff_load_unload_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_load_unload_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 844e911e-4b35-4847-9a9f-f58737fdb830
+		sourceLineageTag: stopoff_load_unload_time
+		summarizeBy: none
+		sourceColumn: stopoff_load_unload_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_appt_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f6619b77-8bab-4953-9685-31614f575389
+		sourceLineageTag: is_appt_required
+		summarizeBy: none
+		sourceColumn: is_appt_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_last_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea039ecb-0e91-4feb-9e2e-820eb6c40d38
+		sourceLineageTag: stopoff_last_status
+		summarizeBy: none
+		sourceColumn: stopoff_last_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_est_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e340a136-0fb9-4f0a-8c64-61b88af1f3c7
+		sourceLineageTag: stopoff_est_arrival_date
+		summarizeBy: none
+		sourceColumn: stopoff_est_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_est_arrival_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: ac218600-3bcb-40db-8151-b1d6f854b980
+		sourceLineageTag: stopoff_est_arrival_time
+		summarizeBy: none
+		sourceColumn: stopoff_est_arrival_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_early_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 999df486-f07a-40bd-bdf5-6d6ad9d26881
+		sourceLineageTag: stopoff_appt_early_date
+		summarizeBy: none
+		sourceColumn: stopoff_appt_early_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_late_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 5e80a612-7206-4e29-8633-6d2b675007a5
+		sourceLineageTag: stopoff_appt_late_date
+		summarizeBy: none
+		sourceColumn: stopoff_appt_late_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_appt_early_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 5e7107a3-d550-4627-9680-6ddf74374d5c
+		sourceLineageTag: stopoff_appt_early_time
+		summarizeBy: none
+		sourceColumn: stopoff_appt_early_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0e0bbf42-02b6-4e9b-898a-699619aba6ad
+		sourceLineageTag: stopoff_state
+		summarizeBy: none
+		sourceColumn: stopoff_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_customer_area_code
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4a6d983d-c6b6-4438-94a9-0719b0bcee1c
+		sourceLineageTag: stopoff_customer_area_code
+		summarizeBy: sum
+		sourceColumn: stopoff_customer_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_customer_phone_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 02385b76-4632-4502-840f-eef123ed8b22
+		sourceLineageTag: stopoff_customer_phone_number
+		summarizeBy: sum
+		sourceColumn: stopoff_customer_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stopoff_contact_info
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf730d9f-33a2-49b9-b9b8-52aa71aa2cb4
+		sourceLineageTag: stopoff_contact_info
+		summarizeBy: none
+		sourceColumn: stopoff_contact_info
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_shipper_edi_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95b107ac-8042-48bb-9ffd-286cb69e49c0
+		sourceLineageTag: stopoff_shipper_edi_code
+		summarizeBy: none
+		sourceColumn: stopoff_shipper_edi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_consignee_edi_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4fc55ab7-9f20-4710-9f9d-996b6acb46f0
+		sourceLineageTag: stopoff_consignee_edi_code
+		summarizeBy: none
+		sourceColumn: stopoff_consignee_edi_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_arrival_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7d84ee0d-13df-41b5-b34b-c5262208773a
+		sourceLineageTag: actual_arrival_dt
+		summarizeBy: none
+		sourceColumn: actual_arrival_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_arrival_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5908a0d9-7601-4841-88a1-2bedf8528376
+		sourceLineageTag: est_arrival_dt
+		summarizeBy: none
+		sourceColumn: est_arrival_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnTimePickupLateCount
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6117fdbe-7f1d-437c-acb5-b556e31363a6
+		sourceLineageTag: OnTimePickupLateCount
+		summarizeBy: sum
+		sourceColumn: OnTimePickupLateCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnTimeDeliveryLateCount
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 742ae1aa-6021-4325-9f05-c4da21c8af75
+		sourceLineageTag: OnTimeDeliveryLateCount
+		summarizeBy: sum
+		sourceColumn: OnTimeDeliveryLateCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column stopoff_dispatch_new
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7d73416f-e0b4-4209-9b1e-4703cab37aa4
+		sourceLineageTag: stopoff_dispatch_new
+		summarizeBy: none
+		sourceColumn: stopoff_dispatch_new
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0dd49752-71d0-4077-b4af-3d2dcd83a653
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_stopoff-b2fe63c5-5b6a-4cec-a08b-16407c6b31ec = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_stopoff
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

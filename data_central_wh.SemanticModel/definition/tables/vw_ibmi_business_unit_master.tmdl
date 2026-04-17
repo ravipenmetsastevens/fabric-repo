@@ -1,0 +1,43 @@
+table vw_ibmi_business_unit_master
+	lineageTag: d4e1b12d-8f44-4caf-8afc-bdd0f1d23ff2
+	sourceLineageTag: [gold].[vw_ibmi_business_unit_master]
+
+	column business_unit_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d5c6261-0e96-4f2f-9f14-8ca543c0904f
+		sourceLineageTag: business_unit_class
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 703f6de8-98d3-465a-916e-dd816ebd048a
+		sourceLineageTag: business_unit_description
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 109e7c5e-5fc4-4f30-9214-d6ada4c6407a
+		sourceLineageTag: business_unit_code
+		summarizeBy: none
+		sourceColumn: business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_business_unit_master-b781b894-604e-4d22-8196-94e8f807dce3 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_business_unit_master
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

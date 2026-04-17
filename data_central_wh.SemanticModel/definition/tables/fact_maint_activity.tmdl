@@ -1,0 +1,319 @@
+table fact_maint_activity
+	lineageTag: 14c15e3d-834e-4fcb-b8a2-cfc8490f3cd4
+	sourceLineageTag: [gold].[fact_maint_activity]
+
+	column repair_order_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dd1c7416-cab1-4651-847d-2c582605278e
+		sourceLineageTag: repair_order_id
+		summarizeBy: sum
+		sourceColumn: repair_order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_group
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b80507e9-e232-4245-be84-2953274ee5d5
+		sourceLineageTag: ro_group
+		summarizeBy: none
+		sourceColumn: ro_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 96d8c01e-3b58-42e5-b1f5-404a870291f4
+		sourceLineageTag: ro_vin
+		summarizeBy: none
+		sourceColumn: ro_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_unit_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4d252dca-3e67-4e6a-91d8-271c30d5bf4e
+		sourceLineageTag: ro_unit_number
+		summarizeBy: none
+		sourceColumn: ro_unit_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_unit_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 28cb02f1-2396-4bb2-ae0b-edec1d5fb06e
+		sourceLineageTag: ro_unit_type
+		summarizeBy: none
+		sourceColumn: ro_unit_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_vendor_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b9f28c4-485f-4f32-b007-cb0d253a9106
+		sourceLineageTag: ro_vendor_name
+		summarizeBy: none
+		sourceColumn: ro_vendor_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_location_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 909edc95-34ea-481d-a558-8b4946e2f681
+		sourceLineageTag: ro_location_type
+		summarizeBy: none
+		sourceColumn: ro_location_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78ce200e-fd2a-45ea-bc34-9ee3c89eb6df
+		sourceLineageTag: ro_status
+		summarizeBy: none
+		sourceColumn: ro_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_open_closed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 399073c7-0530-427b-b67e-6821d1532ea0
+		sourceLineageTag: ro_open_closed
+		summarizeBy: none
+		sourceColumn: ro_open_closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_created_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2a17bd45-c852-4bb2-9935-e9d0e98764c0
+		sourceLineageTag: ro_created_datetime
+		summarizeBy: none
+		sourceColumn: ro_created_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_created_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ccf3a9cf-59c4-4c78-91cf-7bf4e0486aea
+		sourceLineageTag: ro_created_date
+		summarizeBy: none
+		sourceColumn: ro_created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_started_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9cf3836b-7749-4b90-b705-096fabbaeb4e
+		sourceLineageTag: ro_started_datetime
+		summarizeBy: none
+		sourceColumn: ro_started_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_started_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 1ebd2ecb-d8cd-4d1a-ae15-686279e38c98
+		sourceLineageTag: ro_started_date
+		summarizeBy: none
+		sourceColumn: ro_started_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_expected_finish_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f72df606-1444-4d7b-831a-9850df7753c7
+		sourceLineageTag: ro_expected_finish_datetime
+		summarizeBy: none
+		sourceColumn: ro_expected_finish_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_expected_finish_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 951161fb-1f6e-4003-b2ed-18d19c9fd1ab
+		sourceLineageTag: ro_expected_finish_date
+		summarizeBy: none
+		sourceColumn: ro_expected_finish_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_finished_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9f3db76b-93f9-4331-b999-a8c0b1617a0c
+		sourceLineageTag: ro_finished_datetime
+		summarizeBy: none
+		sourceColumn: ro_finished_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_finished_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c104885f-4034-45ff-bbc5-cce95af0c905
+		sourceLineageTag: ro_finished_date
+		summarizeBy: none
+		sourceColumn: ro_finished_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoiced_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b8679e36-4520-4474-9ec8-44c57de7cd20
+		sourceLineageTag: ro_invoiced_datetime
+		summarizeBy: none
+		sourceColumn: ro_invoiced_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoiced_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7bc9eb61-cd2a-4a10-8d4a-7ce3e26cb685
+		sourceLineageTag: ro_invoiced_date
+		summarizeBy: none
+		sourceColumn: ro_invoiced_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoice_paid_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6651f802-a3bd-461a-a20c-e178b9c8d495
+		sourceLineageTag: ro_invoice_paid_datetime
+		summarizeBy: none
+		sourceColumn: ro_invoice_paid_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_invoice_paid_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6a287f8b-10b4-42b6-b6b4-4f2faa0275b0
+		sourceLineageTag: ro_invoice_paid_date
+		summarizeBy: none
+		sourceColumn: ro_invoice_paid_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_down_hours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f6b52b2c-3b07-4459-baba-d82e17172216
+		sourceLineageTag: ro_down_hours
+		summarizeBy: sum
+		sourceColumn: ro_down_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column ro_additional_charges
+		dataType: double
+		sourceProviderType: float
+		lineageTag: aa8b530e-d83b-48e4-b475-3994b20e9c3a
+		sourceLineageTag: ro_additional_charges
+		summarizeBy: sum
+		sourceColumn: ro_additional_charges
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_tax_total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c2fc4e2f-77b9-41c5-86f6-1022ecfecaf8
+		sourceLineageTag: ro_tax_total
+		summarizeBy: sum
+		sourceColumn: ro_tax_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_credit_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c46b8bcf-677d-411b-9030-bc068176c46c
+		sourceLineageTag: ro_credit_amount
+		summarizeBy: sum
+		sourceColumn: ro_credit_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_estimate
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9cb1fa1f-afdf-4efd-a4d7-e1e646bbb78a
+		sourceLineageTag: ro_estimate
+		summarizeBy: sum
+		sourceColumn: ro_estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_grand_total
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 015334d7-f60b-44e5-95f3-b466217b735d
+		sourceLineageTag: ro_grand_total
+		summarizeBy: sum
+		sourceColumn: ro_grand_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ro_paid_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ec4929d8-6b49-43c8-bdb1-0cdcbf77c171
+		sourceLineageTag: ro_paid_amount
+		summarizeBy: sum
+		sourceColumn: ro_paid_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_maint_activity-d85cf412-f4ba-42f2-ad9c-c94ddeeceeec = entity
+		mode: directLake
+		source
+			entityName: fact_maint_activity
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

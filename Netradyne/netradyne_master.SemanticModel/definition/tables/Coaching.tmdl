@@ -1,0 +1,123 @@
+table Coaching
+	lineageTag: 0302f240-53ad-4679-841a-7c0cb0a54abd
+
+	column coaching_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d99cfb5-8058-46a5-8ad6-2b2f56e4b823
+		summarizeBy: sum
+		sourceColumn: coaching_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_driver_id
+		dataType: string
+		lineageTag: d66125c3-313b-4281-8750-84b518ad8d87
+		summarizeBy: none
+		sourceColumn: coaching_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_create_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5e0bd941-d07e-41b1-9f66-64928d2a68ad
+		summarizeBy: none
+		sourceColumn: coaching_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column coaching_create_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d4f9f8a7-f0b1-429a-a880-a269c263a840
+		summarizeBy: none
+		sourceColumn: coaching_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column coaching_complete_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1862d5e8-00d6-4f79-8948-eb2584f12d94
+		summarizeBy: none
+		sourceColumn: coaching_complete_date
+
+		variation Variation
+			isDefault
+			relationship: aeab6a13-e266-4ebd-8c11-5f211fe8ec73
+			defaultHierarchy: LocalDateTable_da32b726-e4f8-4bb7-a307-861168e9565e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column coaching_complete_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 18cab23e-11f9-4a2e-8bb0-7b06ae992a8e
+		summarizeBy: none
+		sourceColumn: coaching_complete_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column coaching_status
+		dataType: string
+		lineageTag: 12ca69e3-26dc-4d65-aefc-1a031226484b
+		summarizeBy: none
+		sourceColumn: coaching_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_update_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 28fd0397-daaf-4df0-96bc-b61fac35fc9a
+		summarizeBy: none
+		sourceColumn: coaching_update_date
+
+		variation Variation
+			isDefault
+			relationship: 270be134-58a9-4784-8a43-e58992954ca7
+			defaultHierarchy: LocalDateTable_51e9644d-6920-43ed-886c-440295abf735.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column coaching_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: ccc11c70-51df-4345-944d-f5a62864ebbe
+		summarizeBy: none
+		sourceColumn: coaching_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column coaching_type
+		dataType: string
+		lineageTag: 8258fc83-19ce-45f8-a1c9-5d7c0ae1f4cc
+		summarizeBy: none
+		sourceColumn: coaching_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Coaching = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_netr_coaching = Source{[Schema="gold",Item="fact_netr_coaching"]}[Data]
+				in
+				    gold_fact_netr_coaching
+
+	annotation PBI_ResultType = Table
+

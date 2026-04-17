@@ -1,0 +1,336 @@
+table ibmi_tlb_tlbinv
+	lineageTag: f5b42883-c9d7-4562-a0c2-3ed916d8eab1
+	sourceLineageTag: [silver].[ibmi_tlb_tlbinv]
+
+	column tlb_tlbinv_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 25ec6521-ebe0-4b2c-8160-8c427c2a6049
+		sourceLineageTag: tlb_tlbinv_status_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_carrier_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b8ffeb35-3ffd-4b79-b5cd-268aa9a36193
+		sourceLineageTag: tlb_tlbinv_carrier_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_carrier_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18b7f3f0-7d2a-4cc7-8e2e-87e75fa94b6e
+		sourceLineageTag: tlb_tlbinv_division_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3e07f359-16af-41cd-97fd-690a8785935f
+		sourceLineageTag: tlb_tlbinv_load_number
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0eb18a7d-a5ed-4991-b031-b114d004d7bf
+		sourceLineageTag: tlb_tlbinv_dispatch
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_original_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2dff6998-a6af-4ccb-91e2-d1de3952e1ba
+		sourceLineageTag: tlb_tlbinv_original_load_number
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_original_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_maint_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 0f4feb32-02e1-4f0b-bde8-6c2adc4334cd
+		sourceLineageTag: tlb_tlbinv_maint_time
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_maint_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_paid_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3f78241c-4448-4051-951f-88d36184274e
+		sourceLineageTag: tlb_tlbinv_paid_year
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_paid_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dbfb53a0-23f5-4753-83e6-12c81c41e9d8
+		sourceLineageTag: tlb_tlbinv_create_user_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7a4dde85-4d58-4173-8528-2f6982f86228
+		sourceLineageTag: tlb_tlbinv_create_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: b963cc83-7045-4393-b9c0-8a64dca37eee
+		sourceLineageTag: tlb_tlbinv_create_time
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_maint_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b0111d5-29bf-467c-bee8-56b828c9c5aa
+		sourceLineageTag: tlb_tlbinv_maint_user_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_maint_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_maint_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ca7b1ca2-7022-40e0-af65-8bc8d0b6556f
+		sourceLineageTag: tlb_tlbinv_maint_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_maint_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_voided
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 40eb016b-e3a0-4dd7-99f6-c818b7c0871d
+		sourceLineageTag: is_voided
+		summarizeBy: none
+		sourceColumn: is_voided
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_expensed_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 71657dcd-42f1-403e-ad39-3c9981bec53d
+		sourceLineageTag: tlb_tlbinv_expensed_month
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_expensed_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_expensed_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5f01107e-d410-4870-8c71-64803b472334
+		sourceLineageTag: tlb_tlbinv_expensed_year
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_expensed_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_voided_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 82d28e64-6b1d-4257-8d35-c0ef4792e4bd
+		sourceLineageTag: tlb_tlbinv_voided_month
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_voided_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_voided_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6baa5a72-8f7c-43c7-b104-07c8bea36f35
+		sourceLineageTag: tlb_tlbinv_voided_year
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_voided_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_paid_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e7eecc6-e32c-4674-897a-aee17527e002
+		sourceLineageTag: tlb_tlbinv_paid_month
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_paid_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_reference
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 41d380b5-66f3-4503-a0ed-c5b95649915d
+		sourceLineageTag: tlb_tlbinv_reference
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_fund_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2a8c109a-75de-4620-97b3-6bb976060cc5
+		sourceLineageTag: tlb_tlbinv_fund_code
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_check_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a08840d6-1f49-4820-b450-6991890bc3bf
+		sourceLineageTag: tlb_tlbinv_check_number
+		summarizeBy: sum
+		sourceColumn: tlb_tlbinv_check_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: fbc9eacc-6912-4d6c-8905-92a87f893d5b
+		sourceLineageTag: tlb_tlbinv_check_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_check_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 429bcacf-738a-46ce-96f0-2cd55c4337db
+		sourceLineageTag: tlb_tlbinv_check_amount
+		summarizeBy: sum
+		sourceColumn: tlb_tlbinv_check_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_expensed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac6ebbf2-56cf-421d-a838-795930bdce7d
+		sourceLineageTag: is_expensed
+		summarizeBy: none
+		sourceColumn: is_expensed
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_original_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b04d44c-7e1a-4ce2-bf84-01b2f3ef681f
+		sourceLineageTag: tlb_tlbinv_original_dispatch
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_original_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_carrier_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53ae1a8e-f292-4a92-9bee-7f11cb763d8a
+		sourceLineageTag: tlb_tlbinv_carrier_invoice_number
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_carrier_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_invoice_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6ba20adf-df92-4d94-bd7e-0ffd14dbd8e5
+		sourceLineageTag: tlb_tlbinv_invoice_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_due_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8b49f2a2-355b-4bc0-b1d0-8e64ec774d90
+		sourceLineageTag: tlb_tlbinv_due_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_due_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_to_pay_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 24cd39b4-e2a9-41e9-99b3-608a38978f59
+		sourceLineageTag: tlb_tlbinv_to_pay_date
+		summarizeBy: none
+		sourceColumn: tlb_tlbinv_to_pay_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_tlbinv_invoice_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3b4338bc-c273-4ab7-9022-2d31d37bed11
+		sourceLineageTag: tlb_tlbinv_invoice_amount
+		summarizeBy: sum
+		sourceColumn: tlb_tlbinv_invoice_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ibmi_tlb_tlbinv-21cdb738-2fe9-4830-8ee9-3b9ea6cdaba2 = entity
+		mode: directLake
+		source
+			entityName: ibmi_tlb_tlbinv
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,166 @@
+table vw_fact_incr_billing_all
+	lineageTag: de64b27b-287b-45e0-96a8-47ebb7ff722d
+	sourceLineageTag: [gold].[vw_fact_incr_billing_all]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78a200c9-7f40-49e1-9c59-d2cea417e36f
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53b67bd4-4ad1-4def-a04b-738c14654273
+		sourceLineageTag: billing_sequence_number
+		summarizeBy: none
+		sourceColumn: billing_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 02582455-e307-41ec-8fcf-b6925d1e0d4b
+		sourceLineageTag: billing_record_number
+		summarizeBy: sum
+		sourceColumn: billing_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d50bbb6e-820d-40c3-b053-ae14105bfc6e
+		sourceLineageTag: is_deleted
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b4e816f-4cd8-44b0-a7aa-0da4f97c0eea
+		sourceLineageTag: billing_commodity_code
+		summarizeBy: none
+		sourceColumn: billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 11c7470a-e5f6-4b1a-a78e-72e3d8f62abd
+		sourceLineageTag: billing_commodity_description
+		summarizeBy: none
+		sourceColumn: billing_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_error_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d26f34bb-fe72-41e3-b91f-679d7494edf3
+		sourceLineageTag: billing_error_code
+		summarizeBy: none
+		sourceColumn: billing_error_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4bb77092-1f78-479f-ada0-290ff5838779
+		sourceLineageTag: billing_gl_account_number
+		summarizeBy: none
+		sourceColumn: billing_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_piece_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 77d001b8-2b2e-4b39-a1ad-5a0f7faf970d
+		sourceLineageTag: billing_piece_count
+		summarizeBy: sum
+		sourceColumn: billing_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_actual_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: db83c6fc-9e2a-480b-83e5-264ad122e182
+		sourceLineageTag: billing_actual_quantity_count
+		summarizeBy: sum
+		sourceColumn: billing_actual_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_quantity_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 13c8b4f7-ce96-4470-9eb8-56c3246a31a8
+		sourceLineageTag: billing_billed_quantity_count
+		summarizeBy: sum
+		sourceColumn: billing_billed_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_rate
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 06ffc40d-a48a-42cf-a93c-7c3dead45215
+		sourceLineageTag: billing_billed_rate
+		summarizeBy: sum
+		sourceColumn: billing_billed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_billed_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 48273b99-0450-4d81-97da-6ee0a11ef751
+		sourceLineageTag: billing_billed_amount
+		summarizeBy: sum
+		sourceColumn: billing_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billing_method_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2035e80f-0efa-4dac-84aa-2a3bdd77432e
+		sourceLineageTag: billing_method_code
+		summarizeBy: none
+		sourceColumn: billing_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_fact_incr_billing_all-e629c8fb-24a1-4242-8709-a44d45e979de = entity
+		mode: directLake
+		source
+			entityName: vw_fact_incr_billing_all
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

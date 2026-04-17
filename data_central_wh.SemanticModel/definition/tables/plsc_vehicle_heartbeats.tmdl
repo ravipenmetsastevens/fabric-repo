@@ -1,0 +1,303 @@
+table plsc_vehicle_heartbeats
+	lineageTag: d909e958-2d29-4ad5-81c5-7e91bd3c54aa
+	sourceLineageTag: [silver].[plsc_vehicle_heartbeats]
+
+	column windows_mask
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e84fbfe-9a06-40ba-82a9-a4cbb7ca994f
+		sourceLineageTag: windows_mask
+		summarizeBy: none
+		sourceColumn: windows_mask
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		sourceProviderType: char
+		lineageTag: e03535f6-e6b5-4872-8c2b-c4db71e76c0d
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_desc
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2e8aa048-73ec-4609-a0a9-28e0aa9fb407
+		sourceLineageTag: location_desc
+		summarizeBy: none
+		sourceColumn: location_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_cardinal
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f7dd5c70-ad42-443e-bec1-b2efc8834b2b
+		sourceLineageTag: heading_cardinal
+		summarizeBy: none
+		sourceColumn: heading_cardinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1bfffa89-fd10-4ebc-8cd7-b4dcbf96c40e
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		sourceProviderType: char
+		lineageTag: 009c15bc-2132-4861-809c-03a45c37913e
+		sourceLineageTag: state
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column plt_truck_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b32aa518-7423-491e-9b09-14ea7d1ae67c
+		sourceLineageTag: plt_truck_id
+		summarizeBy: none
+		sourceColumn: plt_truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column heartbeat_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 968ccf9a-3e8c-45d1-b6b7-bcaff43db4c1
+		sourceLineageTag: heartbeat_id
+		summarizeBy: none
+		sourceColumn: heartbeat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column msg_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e9202a5-12d1-45ce-84cd-ebd364850b6e
+		sourceLineageTag: msg_type
+		summarizeBy: none
+		sourceColumn: msg_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column recv_utc_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0696698f-381a-4319-8524-3c975c5330b8
+		sourceLineageTag: recv_utc_raw
+		summarizeBy: none
+		sourceColumn: recv_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_utc_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3d0f6dc3-53e4-4319-bdd2-a3395bf9753b
+		sourceLineageTag: log_utc_raw
+		summarizeBy: none
+		sourceColumn: log_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d51e64f9-043e-4ea8-854a-776df81d24a6
+		sourceLineageTag: speed_raw
+		summarizeBy: none
+		sourceColumn: speed_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odo_j1939_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9890a7ed-9095-44de-8f0e-0cddff428fbb
+		sourceLineageTag: odo_j1939_raw
+		summarizeBy: none
+		sourceColumn: odo_j1939_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_deg_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fe1f6619-48db-435d-93a9-faee72f39a15
+		sourceLineageTag: heading_deg_raw
+		summarizeBy: none
+		sourceColumn: heading_deg_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignition_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f785c4d0-775f-40c2-a111-e287a7003277
+		sourceLineageTag: ignition_raw
+		summarizeBy: none
+		sourceColumn: ignition_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column rpm_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 90c42ea4-7edc-4896-96c9-5f577d9d70d7
+		sourceLineageTag: rpm_raw
+		summarizeBy: none
+		sourceColumn: rpm_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column eng_hrs_total
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f007822a-9298-4cea-a00d-d98b3cc72e1c
+		sourceLineageTag: eng_hrs_total
+		summarizeBy: none
+		sourceColumn: eng_hrs_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column acu_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 092de1e0-4ef6-4c59-9c85-d3fafcd8f66a
+		sourceLineageTag: acu_raw
+		summarizeBy: none
+		sourceColumn: acu_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_count_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: de159b19-59c9-4326-911e-9351cace7b64
+		sourceLineageTag: sat_count_raw
+		summarizeBy: none
+		sourceColumn: sat_count_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gps_fix_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d62e1f88-885b-4049-9506-1e0817951958
+		sourceLineageTag: gps_fix_raw
+		summarizeBy: none
+		sourceColumn: gps_fix_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column hdop_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b9c49e12-8c16-4b8e-9e1e-ac8a26c97d1a
+		sourceLineageTag: hdop_raw
+		summarizeBy: none
+		sourceColumn: hdop_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2791c96a-cc78-43f8-8ada-76052a73f277
+		sourceLineageTag: odometer_raw
+		summarizeBy: none
+		sourceColumn: odometer_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_total
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f744bde7-b7de-4c51-a3d6-9697d56f7014
+		sourceLineageTag: fuel_total
+		summarizeBy: none
+		sourceColumn: fuel_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ee30b6da-466d-4e1c-a008-16f4161b9037
+		sourceLineageTag: latitude_raw
+		summarizeBy: none
+		sourceColumn: latitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 54f5c85c-5057-49d2-930f-264b981d31ad
+		sourceLineageTag: longitude_raw
+		summarizeBy: none
+		sourceColumn: longitude_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_grade_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a97ee8cc-3d3e-4af2-9e10-bafadd6042ea
+		sourceLineageTag: road_grade_raw
+		summarizeBy: none
+		sourceColumn: road_grade_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column eng_hrs_j1939
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4e77a134-cd6e-4683-9b0e-2205b76267dc
+		sourceLineageTag: eng_hrs_j1939
+		summarizeBy: none
+		sourceColumn: eng_hrs_j1939
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_unit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d8e4ab36-f02d-4c86-8b92-afda35407f5e
+		sourceLineageTag: distance_unit
+		summarizeBy: none
+		sourceColumn: distance_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_instant
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 00b24862-65a8-4e5d-868c-f451f07fb12e
+		sourceLineageTag: fuel_instant
+		summarizeBy: none
+		sourceColumn: fuel_instant
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_vehicle_heartbeats-19550a21-7de5-4986-9a64-ecc1bd13707e = entity
+		mode: directLake
+		source
+			entityName: plsc_vehicle_heartbeats
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

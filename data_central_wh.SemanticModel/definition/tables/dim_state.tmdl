@@ -1,0 +1,43 @@
+table dim_state
+	lineageTag: 3ec06285-0798-4a0b-b785-a46852c6ec9b
+	sourceLineageTag: [gold].[dim_state]
+
+	column state_state_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c3a663d3-4fc3-4d98-86d3-f52db4e2db1d
+		sourceLineageTag: state_state_code
+		summarizeBy: none
+		sourceColumn: state_state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cce66ba3-2a13-477b-a0b9-b5e0faf03900
+		sourceLineageTag: state_name
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_area
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2c5254e9-ee73-45a0-8641-6aa7f0a64e5c
+		sourceLineageTag: state_area
+		summarizeBy: none
+		sourceColumn: state_area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_state-cdcc0125-5a25-480b-b6bc-2ec055a60872 = entity
+		mode: directLake
+		source
+			entityName: dim_state
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

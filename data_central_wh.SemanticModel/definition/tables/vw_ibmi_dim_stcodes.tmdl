@@ -1,0 +1,93 @@
+table vw_ibmi_dim_stcodes
+	lineageTag: ccf9bbf0-7512-4412-877d-5efa55864c5f
+	sourceLineageTag: [gold].[vw_ibmi_dim_stcodes]
+
+	column stcodes_settlement_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0ed565f0-0b82-495f-ad22-f0c5bebe4fff
+		sourceLineageTag: stcodes_settlement_code
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_description_trimmed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d22d3c51-1939-4993-a31d-5c1d9ba66c32
+		sourceLineageTag: stcodes_description_trimmed
+		summarizeBy: none
+		sourceColumn: stcodes_description_trimmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9f4930a-42dc-4a37-8cd7-c958442f4d73
+		sourceLineageTag: stcodes_description
+		summarizeBy: none
+		sourceColumn: stcodes_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_credit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d3b6a8c7-dd5f-4329-ac98-2c971725a510
+		sourceLineageTag: stcodes_credit_account_number
+		summarizeBy: none
+		sourceColumn: stcodes_credit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_debit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 020b67b6-3cd1-4306-8aec-e3ae8077c81a
+		sourceLineageTag: stcodes_debit_account_number
+		summarizeBy: none
+		sourceColumn: stcodes_debit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_settlement_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c3e973fc-719b-4865-8a16-735ff7742ff7
+		sourceLineageTag: stcodes_settlement_type
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_deduction_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a73def91-1e9f-4957-8123-2287ae52f818
+		sourceLineageTag: stcodes_deduction_code
+		summarizeBy: none
+		sourceColumn: stcodes_deduction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e538c138-d379-43b5-9d8f-2a435a47a7d4
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_dim_stcodes-402e009a-d231-4dc2-8062-e1815765cab9 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_dim_stcodes
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

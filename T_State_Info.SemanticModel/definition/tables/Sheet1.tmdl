@@ -1,0 +1,39 @@
+table Sheet1
+	lineageTag: 30d0b541-b8dd-4338-a52c-552fe29f4736
+
+	column Column1
+		dataType: string
+		lineageTag: f671b7bc-0c44-4b95-8f65-970de0d649df
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: a14f3ec5-d63e-40f2-8c6a-b3643ebb6b42
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: a9ba1436-4a8b-4b53-a74d-0731e292dad8
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(Web.Contents("https://stevenstransport-my.sharepoint.com/personal/jeremy_shahan_stevenstransport_com/Documents/Apps/Microsoft Power Query/Uploaded Files/T_State_Info.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Sheet1", Kind = "Sheet"]}[Data],
+				  #"Changed Type" = Table.TransformColumnTypes(#"Navigation 1", {{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}, "en-US")
+				in
+				  #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

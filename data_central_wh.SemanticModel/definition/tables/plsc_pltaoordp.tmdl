@@ -1,0 +1,97 @@
+table plsc_pltaoordp
+	lineageTag: 62e20c9e-23f2-4196-85c1-2e8d3fa6ce36
+	sourceLineageTag: [bronze].[plsc_pltaoordp]
+
+	column PLAOORD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 816bcee9-3288-41b9-b738-b7473eecb255
+		sourceLineageTag: PLAOORD
+		summarizeBy: none
+		sourceColumn: PLAOORD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAOMTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 93d39ef4-1e9a-4a29-91c0-13ec51ec16bb
+		sourceLineageTag: PLAOMTYPE
+		summarizeBy: none
+		sourceColumn: PLAOMTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAOUNIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: edea2f16-1aa8-4bc4-b3fc-b429a56e1a70
+		sourceLineageTag: PLAOUNIT
+		summarizeBy: none
+		sourceColumn: PLAOUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAODATE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: bef2ecd1-76e3-421b-97b0-c9932fc40046
+		sourceLineageTag: PLAODATE
+		summarizeBy: sum
+		sourceColumn: PLAODATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLAOTIME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 668acba1-0765-4447-a90e-8dce77d568c7
+		sourceLineageTag: PLAOTIME
+		summarizeBy: none
+		sourceColumn: PLAOTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAOPRDATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 512f2eda-1795-4c9c-af4b-48a0b0e0ef60
+		sourceLineageTag: PLAOPRDATE
+		summarizeBy: none
+		sourceColumn: PLAOPRDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAOPROC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5e1c686-ad73-4241-aae9-a5b1af06cb6c
+		sourceLineageTag: PLAOPROC
+		summarizeBy: none
+		sourceColumn: PLAOPROC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLAORETY
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a3d53ae5-dc9f-455e-9832-4e209366d684
+		sourceLineageTag: PLAORETY
+		summarizeBy: sum
+		sourceColumn: PLAORETY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition plsc_pltaoordp-48a09318-12de-419e-9f6f-eaa0132fcaa6 = entity
+		mode: directLake
+		source
+			entityName: plsc_pltaoordp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

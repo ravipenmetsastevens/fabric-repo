@@ -1,0 +1,35 @@
+table vw_ibmi_paid_miles_all
+	lineageTag: 2c391609-a6e7-4588-82ac-d7842699d757
+	sourceLineageTag: [silver].[vw_ibmi_paid_miles_all]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 050c90ab-16f7-4b92-8d1e-981f52f8b34c
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column miles_paid
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0f6289db-52bb-478a-874a-96ea7d99bec2
+		sourceLineageTag: miles_paid
+		summarizeBy: sum
+		sourceColumn: miles_paid
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_ibmi_paid_miles_all-6eae1578-6594-4a7a-9367-ad435e5b9cdb = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_paid_miles_all
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

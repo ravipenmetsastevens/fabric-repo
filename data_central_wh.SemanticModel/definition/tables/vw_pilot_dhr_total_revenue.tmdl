@@ -1,0 +1,35 @@
+table vw_pilot_dhr_total_revenue
+	lineageTag: e92bdd08-dfc2-45e5-ae34-a92f50aac6bf
+	sourceLineageTag: [silver].[vw_pilot_dhr_total_revenue]
+
+	column order_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1609d42d-8e35-4ecc-8517-3c38fdf11509
+		sourceLineageTag: order_load_number
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 40c92aa5-62a3-484a-9e65-b02f2879b0e5
+		sourceLineageTag: revenue_amount
+		summarizeBy: sum
+		sourceColumn: revenue_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_pilot_dhr_total_revenue-0170bec3-fdb7-46e3-803e-688ac15a9040 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_total_revenue
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

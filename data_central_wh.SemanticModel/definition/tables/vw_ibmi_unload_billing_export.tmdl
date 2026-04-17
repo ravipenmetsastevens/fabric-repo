@@ -1,0 +1,212 @@
+table vw_ibmi_unload_billing_export
+	lineageTag: 68226517-892c-4928-a6fc-923f3854da5c
+	sourceLineageTag: [silver].[vw_ibmi_unload_billing_export]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c9e7992f-170a-49bf-9220-edc84d7f8124
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column division
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: adf2cffa-48cd-4192-8ce9-14e97364309c
+		sourceLineageTag: division
+		summarizeBy: none
+		sourceColumn: division
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b9383a5d-4e98-454c-9367-c6491c3f19fd
+		sourceLineageTag: pickup_date
+		summarizeBy: none
+		sourceColumn: pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column billto_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b9fcfdfd-31dc-4a3a-a06b-fcbbd72b78ff
+		sourceLineageTag: billto_name
+		summarizeBy: none
+		sourceColumn: billto_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column rate_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9ecbdf1-dabe-487f-a037-69a09234d7ea
+		sourceLineageTag: rate_type
+		summarizeBy: none
+		sourceColumn: rate_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: ea3cbdcc-08f6-45cb-a856-8933d9c997fc
+		sourceLineageTag: order_miles
+		summarizeBy: sum
+		sourceColumn: order_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_miles
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: ab31e9ab-bfac-4d2d-8816-7a8583d5b072
+		sourceLineageTag: paid_miles
+		summarizeBy: sum
+		sourceColumn: paid_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billed_miles
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8adc3377-f14e-4259-bd87-9d171218f5ae
+		sourceLineageTag: billed_miles
+		summarizeBy: sum
+		sourceColumn: billed_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column revenue_amt
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fb1bdb6e-9876-4d77-bf79-9bea42999663
+		sourceLineageTag: revenue_amt
+		summarizeBy: sum
+		sourceColumn: revenue_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latest_billed_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9f4f5152-b167-4759-b667-861681df06d5
+		sourceLineageTag: latest_billed_date
+		summarizeBy: none
+		sourceColumn: latest_billed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unloading_billed_amt
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e2e6f8ca-55db-4ce9-b1ec-b3742ee7410c
+		sourceLineageTag: unloading_billed_amt
+		summarizeBy: sum
+		sourceColumn: unloading_billed_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_to_driver
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e6fc9e76-042e-4f39-9538-cc43ef969133
+		sourceLineageTag: amount_to_driver
+		summarizeBy: sum
+		sourceColumn: amount_to_driver
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earliest_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 03ad587c-f7f1-439c-a990-8cd1c8a1ce63
+		sourceLineageTag: earliest_check_date
+		summarizeBy: none
+		sourceColumn: earliest_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 98eb05c1-9d69-4118-850d-a28a4f3138dc
+		sourceLineageTag: latest_check_date
+		summarizeBy: none
+		sourceColumn: latest_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column earliest_collected_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ca2f7cda-7cd6-460d-b9d3-906f1aee021a
+		sourceLineageTag: earliest_collected_date
+		summarizeBy: none
+		sourceColumn: earliest_collected_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_collected_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: db2c8609-ad84-460e-8fb7-f54ba6542793
+		sourceLineageTag: latest_collected_date
+		summarizeBy: none
+		sourceColumn: latest_collected_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d0d350ea-302f-4d78-849e-d24645433036
+		sourceLineageTag: team_flag
+		summarizeBy: none
+		sourceColumn: team_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column collected_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3dc36f9a-9f21-49d1-9daa-9b616699f742
+		sourceLineageTag: collected_amount
+		summarizeBy: sum
+		sourceColumn: collected_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_ibmi_unload_billing_export-55f6501d-64af-4a75-b54e-161f1c2c1fbe = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_unload_billing_export
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

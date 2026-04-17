@@ -1,0 +1,511 @@
+table vw_ibmi_service_exceptions
+	lineageTag: a9b74f43-e9da-4666-a0e2-d956f76f5bd6
+	sourceLineageTag: [gold].[vw_ibmi_service_exceptions]
+
+	column is_road_condition_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c71d2b2d-6af0-4b51-a242-b411f989915d
+		sourceLineageTag: is_road_condition_responsible
+		summarizeBy: none
+		sourceColumn: is_road_condition_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fc897ec3-dd13-4f35-9ecd-7f9fb2121c89
+		sourceLineageTag: serv_exc_region_code
+		summarizeBy: none
+		sourceColumn: serv_exc_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_planner_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 06c28126-0de2-4806-b9d1-4f9ef37b7e0c
+		sourceLineageTag: serv_exc_planner_code
+		summarizeBy: none
+		sourceColumn: serv_exc_planner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_severity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 40bbc115-c647-4129-950b-086e84faa2d5
+		sourceLineageTag: serv_exc_severity
+		summarizeBy: none
+		sourceColumn: serv_exc_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_appt_change_reason_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9018677b-d1fe-4bb7-8d0d-ac7d3227d2a8
+		sourceLineageTag: serv_exc_appt_change_reason_code
+		summarizeBy: none
+		sourceColumn: serv_exc_appt_change_reason_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_reportable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a2f5229f-7dc5-4994-a96b-1eb356415a58
+		sourceLineageTag: is_driver_reportable
+		summarizeBy: none
+		sourceColumn: is_driver_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_exception_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d23c6cf6-01ab-4f9a-be5c-f0084b46e3ac
+		sourceLineageTag: serv_exc_exception_status_code
+		summarizeBy: none
+		sourceColumn: serv_exc_exception_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_regional_manager_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aef42ab6-29f4-4fbb-a70d-a3ab43a6228e
+		sourceLineageTag: serv_exc_regional_manager_code
+		summarizeBy: none
+		sourceColumn: serv_exc_regional_manager_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4ec78af6-ed2d-415a-ac7e-5d3f6f4b5d33
+		sourceLineageTag: serv_exc_last_update_date
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_last_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 956e469b-3e61-40ab-9888-1448922c9324
+		sourceLineageTag: serv_exc_last_update_time
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_last_update_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9877ef67-4e2e-40ac-9a65-d11da85f4114
+		sourceLineageTag: serv_exc_last_update_user_code
+		summarizeBy: none
+		sourceColumn: serv_exc_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_no_charge
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6fdba083-8539-4d4d-ba8e-d8d736bb46f3
+		sourceLineageTag: is_no_charge
+		summarizeBy: none
+		sourceColumn: is_no_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_rail_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 43f56502-192d-48e0-b138-2fc50b64eedf
+		sourceLineageTag: is_rail_responsible
+		summarizeBy: none
+		sourceColumn: is_rail_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_planner_signoff
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cec25639-785e-4e36-81ec-f682959518ff
+		sourceLineageTag: has_planner_signoff
+		summarizeBy: none
+		sourceColumn: has_planner_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_occurance_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: bc960bfe-6873-40a2-aa07-75f201dbd8bc
+		sourceLineageTag: serv_exc_occurance_date
+		summarizeBy: none
+		sourceColumn: serv_exc_occurance_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_occurance_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: a4bd218e-26c9-4371-b7ed-f6dcb019a004
+		sourceLineageTag: serv_exc_occurance_time
+		summarizeBy: none
+		sourceColumn: serv_exc_occurance_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 3c1d4145-e50d-471d-b52e-be8377cea1df
+		sourceLineageTag: serv_exc_create_date
+		summarizeBy: none
+		sourceColumn: serv_exc_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 9f0428dd-917b-47eb-92bd-90023cf865ae
+		sourceLineageTag: serv_exc_create_time
+		summarizeBy: none
+		sourceColumn: serv_exc_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 475aed80-6366-49a5-910f-7005f38f41e0
+		sourceLineageTag: serv_exc_create_user_code
+		summarizeBy: none
+		sourceColumn: serv_exc_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_create_program_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88e961c6-84a4-447e-8475-d503345dd5df
+		sourceLineageTag: serv_exc_create_program_code
+		summarizeBy: none
+		sourceColumn: serv_exc_create_program_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weather_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2949fa75-585b-4b37-9f04-f136035d7ab0
+		sourceLineageTag: is_weather_responsible
+		summarizeBy: none
+		sourceColumn: is_weather_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_sales_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4114cbe3-36e1-424b-b1ae-655b7f69dffd
+		sourceLineageTag: is_sales_responsible
+		summarizeBy: none
+		sourceColumn: is_sales_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_csr_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72978f42-318b-463f-9cb7-62d572ccfd3a
+		sourceLineageTag: is_csr_responsible
+		summarizeBy: none
+		sourceColumn: is_csr_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_planner_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b75943f4-7106-4cf6-80e4-412dae3b0fc2
+		sourceLineageTag: is_planner_responsible
+		summarizeBy: none
+		sourceColumn: is_planner_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_dm_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ade2acb-b1dc-4602-966b-e58d360c4059
+		sourceLineageTag: is_dm_responsible
+		summarizeBy: none
+		sourceColumn: is_dm_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_brokerage_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1db89fc5-61ca-4001-8586-fbb1ad24aaa1
+		sourceLineageTag: is_brokerage_responsible
+		summarizeBy: none
+		sourceColumn: is_brokerage_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_customer_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f741959d-f206-480a-b93c-6668f0e720b9
+		sourceLineageTag: is_customer_responsible
+		summarizeBy: none
+		sourceColumn: is_customer_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_shipper_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ab693b0-5663-4835-9df8-77f694fdf93d
+		sourceLineageTag: is_shipper_responsible
+		summarizeBy: none
+		sourceColumn: is_shipper_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_loadat_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3f0f3416-cb66-4258-aa6b-bd13e4b533e9
+		sourceLineageTag: is_loadat_responsible
+		summarizeBy: none
+		sourceColumn: is_loadat_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_consignee_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 774edfdf-56d9-4806-9eea-dbeb8a0ba571
+		sourceLineageTag: is_consignee_responsible
+		summarizeBy: none
+		sourceColumn: is_consignee_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 36bee280-b015-4657-8448-6329db466553
+		sourceLineageTag: is_driver_responsible
+		summarizeBy: none
+		sourceColumn: is_driver_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_equipment_responsible
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 598df4f9-83f3-4c25-bfcb-a7e0f4f62b17
+		sourceLineageTag: is_equipment_responsible
+		summarizeBy: none
+		sourceColumn: is_equipment_responsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 08197e74-8923-4a92-b231-cea12133508b
+		sourceLineageTag: serv_exc_dmol_code
+		summarizeBy: none
+		sourceColumn: serv_exc_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_csr_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a1b610b-1faa-47d5-8d1d-dabfc627123a
+		sourceLineageTag: serv_exc_csr_code
+		summarizeBy: none
+		sourceColumn: serv_exc_csr_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_stop_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5c67fbdb-98a8-4b65-b5cb-eef102846094
+		sourceLineageTag: serv_exc_stop_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_stop_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_customer_reportable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cf9ab4ab-9d54-447f-b87c-5fe834adeefb
+		sourceLineageTag: is_customer_reportable
+		summarizeBy: none
+		sourceColumn: is_customer_reportable
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_csr_signoff
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9881ceeb-5338-42e5-bdb1-d372a9906ab6
+		sourceLineageTag: has_csr_signoff
+		summarizeBy: none
+		sourceColumn: has_csr_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_dm_signoff
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a2b59d7f-46d0-435e-812c-2ef68e6369d5
+		sourceLineageTag: has_dm_signoff
+		summarizeBy: none
+		sourceColumn: has_dm_signoff
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2b24c1d0-1fd6-4bda-8bfd-de286425dc0b
+		sourceLineageTag: serv_exc_dispatch
+		summarizeBy: none
+		sourceColumn: serv_exc_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_order_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e09a996d-5fc2-4a02-bd41-cf7ccbfc4782
+		sourceLineageTag: serv_exc_order_status_code
+		summarizeBy: none
+		sourceColumn: serv_exc_order_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a14c79b9-7344-4315-bbf4-9ea6d0b0b41b
+		sourceLineageTag: serv_exc_truck_number
+		summarizeBy: none
+		sourceColumn: serv_exc_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ddbe616b-9892-441a-b0a1-02ee4880544e
+		sourceLineageTag: serv_exc_trailer_number
+		summarizeBy: none
+		sourceColumn: serv_exc_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f90ec9a4-f54c-439f-b41a-e51f93aee136
+		sourceLineageTag: serv_exc_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: serv_exc_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 355d5354-1fed-45ce-ae0f-dcf70cf08934
+		sourceLineageTag: serv_exc_dm_code
+		summarizeBy: none
+		sourceColumn: serv_exc_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f36dbbd3-4be9-403b-aed2-8d6e4651c10f
+		sourceLineageTag: serv_exc_load_number
+		summarizeBy: none
+		sourceColumn: serv_exc_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_sequence_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e8b31af4-d9bd-44f2-91b4-d0ec259e399e
+		sourceLineageTag: serv_exc_sequence_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c19947b-3cf5-481a-ad83-c6343d883c05
+		sourceLineageTag: serv_exc_type
+		summarizeBy: none
+		sourceColumn: serv_exc_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column stop_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0cd90c12-e9bb-4cab-a07b-5414779a2645
+		sourceLineageTag: stop_type
+		summarizeBy: none
+		sourceColumn: stop_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 029c0e17-53fa-456f-bef3-93bd5f3c734f
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_service_exceptions-ef540ac6-81f6-4c19-bb3d-b7ac7cb1e1bb = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_service_exceptions
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

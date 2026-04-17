@@ -1,0 +1,54 @@
+table vw_ibmi_load_master_dead_head_origin
+	lineageTag: 8292076f-5f78-4105-a719-bf26af9a6944
+	sourceLineageTag: [silver].[vw_ibmi_load_master_dead_head_origin]
+
+	column load_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88167268-e7a2-4ade-b8f5-9e8bde9ed841
+		sourceLineageTag: load_load_number
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dead_head_origin_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e6ba43e-3eed-4fda-842c-61dc0dab9ea1
+		sourceLineageTag: load_dead_head_origin_city_code
+		summarizeBy: none
+		sourceColumn: load_dead_head_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dead_head_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 050a3019-d4ba-42ba-907e-af568c2c85aa
+		sourceLineageTag: load_dead_head_origin_state
+		summarizeBy: none
+		sourceColumn: load_dead_head_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_dead_head
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: ec478db5-cb43-4e70-a0a0-02d10acf4343
+		sourceLineageTag: load_miles_dead_head
+		summarizeBy: sum
+		sourceColumn: load_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_load_master_dead_head_origin-da0a110d-f228-4084-a4db-da54d601d5e6 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_load_master_dead_head_origin
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

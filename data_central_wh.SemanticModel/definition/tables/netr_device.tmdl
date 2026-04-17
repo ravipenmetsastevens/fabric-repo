@@ -1,0 +1,147 @@
+table netr_device
+	lineageTag: 89f897d0-a926-4ab5-8844-fe3b33d362bb
+	sourceLineageTag: [silver].[netr_device]
+
+	column device_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d2d0c21d-6360-441a-bfc6-0c70f69a77a0
+		sourceLineageTag: device_id
+		summarizeBy: sum
+		sourceColumn: device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_product_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 48376d52-463b-409e-9a8f-79606e78ac40
+		sourceLineageTag: device_product_type
+		summarizeBy: none
+		sourceColumn: device_product_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a0bc337-7bd3-4c38-ae22-3abdac2f0b7c
+		sourceLineageTag: device_vehicle_vin
+		summarizeBy: none
+		sourceColumn: device_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce99eeb9-a69b-4f07-aa80-aeaff354b36b
+		sourceLineageTag: device_vehicle_number
+		summarizeBy: none
+		sourceColumn: device_vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ce4cb091-f062-44ea-bbb8-6261764922b8
+		sourceLineageTag: device_vehicle_status
+		summarizeBy: sum
+		sourceColumn: device_vehicle_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_vehicle_license_plate_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce689872-87fc-446f-9a33-cbdc142ba64b
+		sourceLineageTag: device_vehicle_license_plate_number
+		summarizeBy: none
+		sourceColumn: device_vehicle_license_plate_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_driver_firstname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5bbe9adc-5e5a-433c-9ce3-507580bc6640
+		sourceLineageTag: device_driver_firstname
+		summarizeBy: none
+		sourceColumn: device_driver_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_driver_lastname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 242c976a-1158-46f7-af83-206761144e24
+		sourceLineageTag: device_driver_lastname
+		summarizeBy: none
+		sourceColumn: device_driver_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 210ca597-26af-4e99-bd92-aa978e87a99e
+		sourceLineageTag: device_driver_id
+		summarizeBy: none
+		sourceColumn: device_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_updated_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9c9cf2a0-069e-43fc-8576-214b605fb158
+		sourceLineageTag: device_updated_date
+		summarizeBy: none
+		sourceColumn: device_updated_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_updated_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: fe28df6a-d635-4e41-bc86-fd238a385935
+		sourceLineageTag: device_updated_time
+		summarizeBy: none
+		sourceColumn: device_updated_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_groupname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b864a5a5-6662-4e35-96b6-07ca7ba530b1
+		sourceLineageTag: device_groupname
+		summarizeBy: none
+		sourceColumn: device_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_unique_groupname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bd0c7da2-0044-44c9-9862-f22dbf5d0f1b
+		sourceLineageTag: device_unique_groupname
+		summarizeBy: none
+		sourceColumn: device_unique_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_device-ae2c1bd3-ed7c-41a7-b66e-d217d18607a2 = entity
+		mode: directLake
+		source
+			entityName: netr_device
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

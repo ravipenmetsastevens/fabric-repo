@@ -1,0 +1,85 @@
+table dim_thermoking_trailer
+	lineageTag: 3ba9b99b-68f1-4238-bfaf-908f137400be
+	sourceLineageTag: [gold].[dim_thermoking_trailer]
+
+	column vehicleName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a27aae42-07e2-4289-a0e2-06bfa96af9f0
+		sourceLineageTag: vehicleName
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column reeferSerialNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 604d7730-0055-4b28-9b7a-0369f5c2d6a6
+		sourceLineageTag: reeferSerialNumber
+		summarizeBy: none
+		sourceColumn: reeferSerialNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_VIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 830b2554-18a1-442b-8b82-dd1badb99520
+		sourceLineageTag: trailer_VIN
+		summarizeBy: none
+		sourceColumn: trailer_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_VIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0562c50f-b6ba-41ac-a9a3-b462504558f6
+		sourceLineageTag: truck_VIN
+		summarizeBy: none
+		sourceColumn: truck_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column wirelessGen
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4e4ef789-1311-4463-ad7c-04a99e94ac22
+		sourceLineageTag: wirelessGen
+		summarizeBy: none
+		sourceColumn: wirelessGen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isDoorLockFitted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 87d76f8c-7757-4b07-9438-cee39d88fc90
+		sourceLineageTag: isDoorLockFitted
+		summarizeBy: none
+		sourceColumn: isDoorLockFitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuelTankSize
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8005e63c-14de-4ff9-8259-7b21ec69a03b
+		sourceLineageTag: fuelTankSize
+		summarizeBy: sum
+		sourceColumn: fuelTankSize
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_thermoking_trailer-bbe07a22-03bb-499b-bf8f-dbc33ec8e33b = entity
+		mode: directLake
+		source
+			entityName: dim_thermoking_trailer
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

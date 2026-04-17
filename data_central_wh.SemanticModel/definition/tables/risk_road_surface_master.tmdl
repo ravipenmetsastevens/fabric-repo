@@ -1,0 +1,97 @@
+table risk_road_surface_master
+	lineageTag: 063c22e0-9526-4028-b2c6-673ecdb4d2f2
+	sourceLineageTag: [silver].[risk_road_surface_master]
+
+	column road_surf_mast_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 90a6d38f-a5a7-4a32-bc96-5e0db22986a5
+		sourceLineageTag: road_surf_mast_code
+		summarizeBy: sum
+		sourceColumn: road_surf_mast_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column road_surf_mast_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 23a2d211-42a6-468a-b575-e195e9197c99
+		sourceLineageTag: road_surf_mast_description
+		summarizeBy: none
+		sourceColumn: road_surf_mast_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_surf_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a4bf7063-b9a1-498c-bf5c-94172d0cc78f
+		sourceLineageTag: road_surf_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: road_surf_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_surf_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b18a58f-78f9-4e01-8e16-2fd1b2470c0d
+		sourceLineageTag: road_surf_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: road_surf_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_surf_mast_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e0bc87e0-1b15-468a-9232-863c1d2910c7
+		sourceLineageTag: road_surf_mast_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: road_surf_mast_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_surf_mast_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0019152-1d3d-425e-bc39-0f718549e70e
+		sourceLineageTag: road_surf_mast_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: road_surf_mast_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_act_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b08396e-9204-4737-ba77-588251557542
+		sourceLineageTag: has_act_status
+		summarizeBy: none
+		sourceColumn: has_act_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_surf_mast_safety_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 750ad688-70d0-41b1-9171-bbff75b4e644
+		sourceLineageTag: road_surf_mast_safety_code
+		summarizeBy: none
+		sourceColumn: road_surf_mast_safety_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_road_surface_master-96371187-9250-4aa7-bc8a-ed71adcfb2a8 = entity
+		mode: directLake
+		source
+			entityName: risk_road_surface_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

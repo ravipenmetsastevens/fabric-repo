@@ -1,0 +1,290 @@
+table plsc_driver_perf_slices
+	lineageTag: 370631df-eb23-4a56-86c3-e1d87c1d063b
+	sourceLineageTag: [silver].[plsc_driver_perf_slices]
+
+	column engine_hours_end
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 88024f4c-f4a4-48b6-aa5a-948bc91a79b7
+		sourceLineageTag: engine_hours_end
+		summarizeBy: sum
+		sourceColumn: engine_hours_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: bb1832b2-28ea-42a8-ab81-3d5c00667b1a
+		sourceLineageTag: load_date
+		summarizeBy: none
+		sourceColumn: load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_high_rpm
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: a790e136-120b-4e7f-af22-59267854fd9e
+		sourceLineageTag: minutes_high_rpm
+		summarizeBy: sum
+		sourceColumn: minutes_high_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_engine_load_pct
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 932a962b-59b9-4176-bc6a-cd1a5f31b7fa
+		sourceLineageTag: avg_engine_load_pct
+		summarizeBy: sum
+		sourceColumn: avg_engine_load_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_rpm
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f8fa523d-9534-447f-97b1-0cee7c5effb6
+		sourceLineageTag: max_rpm
+		summarizeBy: sum
+		sourceColumn: max_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_speed_mph
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 23092291-c1b8-4154-9ac0-db908522eeaf
+		sourceLineageTag: max_speed_mph
+		summarizeBy: sum
+		sourceColumn: max_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_end_mi
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 046430e6-2d3a-4ee0-9c6b-27e6b10fc9fb
+		sourceLineageTag: odometer_end_mi
+		summarizeBy: sum
+		sourceColumn: odometer_end_mi
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_distance_mi
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 7bd4b50b-7894-4a40-9a76-44cbc40b692a
+		sourceLineageTag: trip_distance_mi
+		summarizeBy: sum
+		sourceColumn: trip_distance_mi
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_moving
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 014440ec-faee-4fcb-be68-485c9b0e3fe5
+		sourceLineageTag: minutes_moving
+		summarizeBy: sum
+		sourceColumn: minutes_moving
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_move_gal
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: ba33b62b-fedc-44e7-93b5-6e70f950d9a9
+		sourceLineageTag: fuel_move_gal
+		summarizeBy: sum
+		sourceColumn: fuel_move_gal
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_idle_gal
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 5731fb34-ff5a-45b8-bbf1-4b8e302fcba8
+		sourceLineageTag: fuel_idle_gal
+		summarizeBy: sum
+		sourceColumn: fuel_idle_gal
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_pto_gal
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 4a5c9a8d-a999-49d3-8471-3657ab62d642
+		sourceLineageTag: fuel_pto_gal
+		summarizeBy: sum
+		sourceColumn: fuel_pto_gal
+
+		annotation SummarizationSetBy = Automatic
+
+	column overspeed_events
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 76383b5a-ae9f-40ad-87ac-386530e4e13e
+		sourceLineageTag: overspeed_events
+		summarizeBy: sum
+		sourceColumn: overspeed_events
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_overspeed
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: d696a377-085a-4ebd-982c-41bf1036b120
+		sourceLineageTag: minutes_overspeed
+		summarizeBy: sum
+		sourceColumn: minutes_overspeed
+
+		annotation SummarizationSetBy = Automatic
+
+	column slice_end_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d955a395-312c-45b4-85bb-6096dd628477
+		sourceLineageTag: slice_end_utc
+		summarizeBy: none
+		sourceColumn: slice_end_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column miles_driven
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: bb061f7b-fd5e-4104-a2f8-266be02a93f2
+		sourceLineageTag: miles_driven
+		summarizeBy: sum
+		sourceColumn: miles_driven
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_driving
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 695a1cef-a1d2-44c0-9534-a938d7a8f220
+		sourceLineageTag: minutes_driving
+		summarizeBy: sum
+		sourceColumn: minutes_driving
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_idle_internal
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 713a1b4a-8f32-47aa-ab45-ead138afef38
+		sourceLineageTag: minutes_idle_internal
+		summarizeBy: sum
+		sourceColumn: minutes_idle_internal
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_idle_shutdown
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: d19435b2-a9db-4434-9b2c-7b0af022554a
+		sourceLineageTag: minutes_idle_shutdown
+		summarizeBy: sum
+		sourceColumn: minutes_idle_shutdown
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_idle_stopped
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: ce0378bf-3500-4ffd-859a-e0710e389052
+		sourceLineageTag: minutes_idle_stopped
+		summarizeBy: sum
+		sourceColumn: minutes_idle_stopped
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05de7b15-f5a5-4390-88e1-dd3a118d74de
+		sourceLineageTag: load_id
+		summarizeBy: none
+		sourceColumn: load_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77cd5330-c13c-4123-ac40-9066b6357455
+		sourceLineageTag: primary_driver_id
+		summarizeBy: none
+		sourceColumn: primary_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column co_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4f21949b-9574-4aab-87f0-3be66e1bd937
+		sourceLineageTag: co_driver_id
+		summarizeBy: none
+		sourceColumn: co_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e367609a-931b-4e19-9f25-0a68a21aef25
+		sourceLineageTag: snapshot_type
+		summarizeBy: none
+		sourceColumn: snapshot_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column server_received_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6fbe7e58-6898-4104-9282-88000cf23233
+		sourceLineageTag: server_received_at
+		summarizeBy: none
+		sourceColumn: server_received_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column slice_start_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 836d5f02-34d3-4bac-bcda-9680006aae4a
+		sourceLineageTag: slice_start_utc
+		summarizeBy: none
+		sourceColumn: slice_start_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 31a1f495-fb0c-4db1-8095-804335dc4ac0
+		sourceLineageTag: truck_id
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_driver_perf_slices-09297d8f-e3c4-4c95-b7c2-4ec2d52948d6 = entity
+		mode: directLake
+		source
+			entityName: plsc_driver_perf_slices
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

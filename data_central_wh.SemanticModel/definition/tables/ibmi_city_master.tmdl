@@ -1,0 +1,415 @@
+table ibmi_city_master
+	lineageTag: 0229a250-32b9-4ac4-8303-97647e5cd46f
+	sourceLineageTag: [silver].[ibmi_city_master]
+
+	column city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9982d31e-8ba7-45bf-be17-ebee1055eef6
+		sourceLineageTag: city_code
+		summarizeBy: none
+		sourceColumn: city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bde0fcd3-5c6f-476d-80c0-b73adf8816b2
+		sourceLineageTag: city_state
+		summarizeBy: none
+		sourceColumn: city_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_short_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5328408c-d0bf-435a-9aeb-246617599e6d
+		sourceLineageTag: city_short_code
+		summarizeBy: none
+		sourceColumn: city_short_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_record_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: f7f04c7e-bb48-4394-b976-e451b989c601
+		sourceLineageTag: city_record_number
+		summarizeBy: sum
+		sourceColumn: city_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 570dae4d-97ef-42b8-8c5a-4e7d2c666bc2
+		sourceLineageTag: city_country
+		summarizeBy: none
+		sourceColumn: city_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_latitude
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57f2d2d1-02e1-48e7-8fa2-616d4699f2cb
+		sourceLineageTag: direction_latitude
+		summarizeBy: none
+		sourceColumn: direction_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_longitude
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77631c5d-3e30-4bb1-80f6-a5a4892b2b55
+		sourceLineageTag: direction_longitude
+		summarizeBy: none
+		sourceColumn: direction_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column commercial_zone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bee203d6-8ee4-4c2d-b726-564d87d52d1e
+		sourceLineageTag: commercial_zone
+		summarizeBy: none
+		sourceColumn: commercial_zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column county_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 92a318bf-1590-439e-8ca9-d8f119b11f20
+		sourceLineageTag: county_code
+		summarizeBy: sum
+		sourceColumn: county_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bea_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 2064e093-afbf-4831-8e23-b207896d5651
+		sourceLineageTag: bea_code
+		summarizeBy: sum
+		sourceColumn: bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column gu_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 51abb78e-874d-4fc0-92d8-2499740874c9
+		sourceLineageTag: gu_code
+		summarizeBy: none
+		sourceColumn: gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column smsa_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 237b2e9b-1690-4881-b892-2d4b4285a0af
+		sourceLineageTag: smsa_code
+		summarizeBy: sum
+		sourceColumn: smsa_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7b3d0fce-b982-4890-b239-ae7776f7588b
+		sourceLineageTag: city_zip
+		summarizeBy: none
+		sourceColumn: city_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_zip_suffix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa1b0289-e011-4783-8ca8-ff34b1a771e3
+		sourceLineageTag: city_zip_suffix
+		summarizeBy: none
+		sourceColumn: city_zip_suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column splc_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 32995b41-49b0-4308-825b-59c8a7aa7ed6
+		sourceLineageTag: splc_code
+		summarizeBy: sum
+		sourceColumn: splc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7ff88887-c7ee-4f20-b095-92094944db90
+		sourceLineageTag: city_area_code
+		summarizeBy: none
+		sourceColumn: city_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_territory_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27396867-28dd-44eb-8f59-c0a1bd4a394e
+		sourceLineageTag: city_territory_code
+		summarizeBy: none
+		sourceColumn: city_territory_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_timezone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 43e4f2ac-e568-4ea3-b9f7-c9ff0ef04bce
+		sourceLineageTag: city_timezone
+		summarizeBy: none
+		sourceColumn: city_timezone
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_same_state_twice
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 131db92f-2b34-4730-80ca-470d407611ef
+		sourceLineageTag: is_same_state_twice
+		summarizeBy: none
+		sourceColumn: is_same_state_twice
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_half_zone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 598ee14c-bc9b-4a70-ad73-6ba16c6f8cdb
+		sourceLineageTag: is_half_zone
+		summarizeBy: none
+		sourceColumn: is_half_zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_daylight_savings
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0e0ba050-4a6d-4926-a319-aad388ad3332
+		sourceLineageTag: has_daylight_savings
+		summarizeBy: none
+		sourceColumn: has_daylight_savings
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_household_movers
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 804ed923-3256-47d4-9e97-650843f4e1a4
+		sourceLineageTag: is_household_movers
+		summarizeBy: none
+		sourceColumn: is_household_movers
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_big_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0e612b2a-579e-4c67-83c8-ae9c6aa6bf67
+		sourceLineageTag: is_big_city_code
+		summarizeBy: none
+		sourceColumn: is_big_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_duplicate_city_in_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 068efe83-08da-4fc2-acf2-27913828eb0e
+		sourceLineageTag: has_duplicate_city_in_state
+		summarizeBy: none
+		sourceColumn: has_duplicate_city_in_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column near_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4e4fa471-e49a-4a69-8175-3904449bd37e
+		sourceLineageTag: near_city_code
+		summarizeBy: none
+		sourceColumn: near_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_from_near_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 55ddd2d1-2e6b-455a-b4d0-662f35980b78
+		sourceLineageTag: direction_from_near_city
+		summarizeBy: none
+		sourceColumn: direction_from_near_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_from_near_city
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 37b856eb-1f8f-4252-a4d4-9b44afcb6a4c
+		sourceLineageTag: distance_from_near_city
+		summarizeBy: sum
+		sourceColumn: distance_from_near_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_city_in_two_counties
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d50f4fc3-524c-4b49-bb08-8113ed527ee8
+		sourceLineageTag: is_city_in_two_counties
+		summarizeBy: none
+		sourceColumn: is_city_in_two_counties
+
+		annotation SummarizationSetBy = Automatic
+
+	column other_county_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: e3a6f693-fc62-4630-ba0e-9cc2fa42289b
+		sourceLineageTag: other_county_code
+		summarizeBy: sum
+		sourceColumn: other_county_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_size_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a56328c-eb39-451e-9eea-af69113c0550
+		sourceLineageTag: city_size_code
+		summarizeBy: none
+		sourceColumn: city_size_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_level_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9d514c41-eeee-4f3f-8446-1413a58db1c9
+		sourceLineageTag: city_level_code
+		summarizeBy: none
+		sourceColumn: city_level_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_city_population_est
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80775b8d-93fa-4a8a-91b8-c218ba1eeee9
+		sourceLineageTag: is_city_population_est
+		summarizeBy: none
+		sourceColumn: is_city_population_est
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_population
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 6d3f2e3c-8b32-4f86-b9a9-1b440a1de4c0
+		sourceLineageTag: city_population
+		summarizeBy: sum
+		sourceColumn: city_population
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce0e4ee8-a52b-4944-9a4b-dee8f29e5d82
+		sourceLineageTag: city_name
+		summarizeBy: none
+		sourceColumn: city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f4c38aaa-aacf-4151-a265-e0f19ec7aaf3
+		sourceLineageTag: city_short_name
+		summarizeBy: none
+		sourceColumn: city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_latitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9e83d783-d3e0-46a0-a6f7-6ff710f8df36
+		sourceLineageTag: city_latitude
+		summarizeBy: sum
+		sourceColumn: city_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column city_longitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0cf8e1ab-4bd1-43ee-8aa4-f9ea916d17f8
+		sourceLineageTag: city_longitude
+		summarizeBy: sum
+		sourceColumn: city_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_county_qualified
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c98598b4-d048-43fe-9887-66a0fa602fb4
+		sourceLineageTag: is_county_qualified
+		summarizeBy: none
+		sourceColumn: is_county_qualified
+
+		annotation SummarizationSetBy = Automatic
+
+	column milemarker_abbrev
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f5a8cc0f-568f-4e9a-9f19-845b5d668dab
+		sourceLineageTag: milemarker_abbrev
+		summarizeBy: none
+		sourceColumn: milemarker_abbrev
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_city_master-5637ac52-2f5b-43b0-b08f-1e0757591122 = entity
+		mode: directLake
+		source
+			entityName: ibmi_city_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

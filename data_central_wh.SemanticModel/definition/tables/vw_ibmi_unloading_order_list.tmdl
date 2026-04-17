@@ -1,0 +1,65 @@
+table vw_ibmi_unloading_order_list
+	lineageTag: 721d9490-7729-4950-90d8-8f29b521f7f8
+	sourceLineageTag: [silver].[vw_ibmi_unloading_order_list]
+
+	column order_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e2847c5e-b6bf-4640-a938-60b277317bf1
+		sourceLineageTag: order_load_number
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b716f9fb-d9ca-4aa3-969a-feea0c6155bd
+		sourceLineageTag: order_division_code
+		summarizeBy: none
+		sourceColumn: order_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e761b807-f6e0-40a2-803c-6f377a211cf5
+		sourceLineageTag: order_early_pickup_date
+		summarizeBy: none
+		sourceColumn: order_early_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b8df8aba-a03b-4324-a3d6-449fd42fe695
+		sourceLineageTag: cust_name
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles_billable
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: f46b9947-18ce-4cc7-96f2-582b7c0d0d72
+		sourceLineageTag: order_miles_billable
+		summarizeBy: sum
+		sourceColumn: order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_unloading_order_list-cfe69fb1-673e-4428-a19d-bab0e8421d15 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_unloading_order_list
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,76 @@
+table plsc_plactordp
+	lineageTag: 508f09c5-dfb4-4356-859e-f6fea77c127f
+	sourceLineageTag: [bronze].[plsc_plactordp]
+
+	column PLACTORD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b7db5dd-25d3-4e28-bba7-dc3aba70d36c
+		sourceLineageTag: PLACTORD
+		summarizeBy: none
+		sourceColumn: PLACTORD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLACTDISP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e23bae18-2d7c-40f2-8b46-64a4e1065990
+		sourceLineageTag: PLACTDISP
+		summarizeBy: none
+		sourceColumn: PLACTDISP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLDRVCODE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38f23037-b9ac-4541-8010-73e30b0bbb36
+		sourceLineageTag: PLDRVCODE
+		summarizeBy: none
+		sourceColumn: PLDRVCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLMHDATE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b99d6baf-0e70-42e9-97f4-7000f88b2d2b
+		sourceLineageTag: PLMHDATE
+		summarizeBy: sum
+		sourceColumn: PLMHDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLMHDATE_CONV
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6aeb3297-1120-4d6c-b23d-0c96efa8d11f
+		sourceLineageTag: PLMHDATE_CONV
+		summarizeBy: none
+		sourceColumn: PLMHDATE_CONV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLMHTIME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f8a32ba-b7d3-4903-9e87-042c1ba44161
+		sourceLineageTag: PLMHTIME
+		summarizeBy: none
+		sourceColumn: PLMHTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plactordp-97031e09-0604-4990-995d-6cddf208d2ea = entity
+		mode: directLake
+		source
+			entityName: plsc_plactordp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

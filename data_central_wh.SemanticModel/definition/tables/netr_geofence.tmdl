@@ -1,0 +1,215 @@
+table netr_geofence
+	lineageTag: b29985cb-c788-4838-bddb-c0e06ed7a522
+	sourceLineageTag: [silver].[netr_geofence]
+
+	column geofence_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 55203729-e153-4515-99bf-7ef4a374014d
+		sourceLineageTag: geofence_id
+		summarizeBy: sum
+		sourceColumn: geofence_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4644546c-afdc-455d-9134-b5bc1ce157eb
+		sourceLineageTag: geofence_name
+		summarizeBy: none
+		sourceColumn: geofence_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57ea286f-1fd7-494b-b202-b33c373c7739
+		sourceLineageTag: geofence_type
+		summarizeBy: none
+		sourceColumn: geofence_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_sub_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c7c50934-7e38-4d96-91cc-b536078fc5ed
+		sourceLineageTag: geofence_sub_type
+		summarizeBy: none
+		sourceColumn: geofence_sub_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_shape
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 399f9b7e-a143-460b-8cb4-d7c66ff87099
+		sourceLineageTag: geofence_shape
+		summarizeBy: none
+		sourceColumn: geofence_shape
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 066d3bba-f562-4e5b-bc45-399c81620007
+		sourceLineageTag: geofence_country
+		summarizeBy: none
+		sourceColumn: geofence_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d965aa37-ddc0-4bc5-beca-451cd2811e49
+		sourceLineageTag: geofence_state
+		summarizeBy: none
+		sourceColumn: geofence_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8c317c86-6474-49a2-8002-473e1e187dd2
+		sourceLineageTag: geofence_city
+		summarizeBy: none
+		sourceColumn: geofence_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_street
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 056ccf3b-2d05-4deb-be84-65034f5e2bc6
+		sourceLineageTag: geofence_street
+		summarizeBy: none
+		sourceColumn: geofence_street
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_zipcode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d59d81d-1526-437d-9d7f-304f62cc5d98
+		sourceLineageTag: geofence_zipcode
+		summarizeBy: none
+		sourceColumn: geofence_zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_radius
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 13d9d3ea-907b-4c15-bc78-8cf516e60767
+		sourceLineageTag: geofence_radius
+		summarizeBy: sum
+		sourceColumn: geofence_radius
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geofence_duration
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9b2977f8-e8cf-4e5b-ba90-354a50c46a16
+		sourceLineageTag: geofence_duration
+		summarizeBy: sum
+		sourceColumn: geofence_duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data.center'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6bfbefc-7264-478e-8718-80b483f27922
+		sourceLineageTag: data.center
+		summarizeBy: none
+		sourceColumn: data.center
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_center_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 23a7912f-a07f-49c8-a2a0-13ca1b39fd7b
+		sourceLineageTag: geofence_center_latitude
+		summarizeBy: sum
+		sourceColumn: geofence_center_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geofence_center_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: abbd7a1f-db0f-4d26-9f02-f5946370dbfb
+		sourceLineageTag: geofence_center_longitude
+		summarizeBy: sum
+		sourceColumn: geofence_center_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'data.polygon'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 30db57d9-0c30-4cf0-8681-b020758c372b
+		sourceLineageTag: data.polygon
+		summarizeBy: none
+		sourceColumn: data.polygon
+
+		annotation SummarizationSetBy = Automatic
+
+	column geofence_polygon_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 7b1bd637-22a4-40cd-bb39-6ed85d6beb28
+		sourceLineageTag: geofence_polygon_latitude
+		summarizeBy: sum
+		sourceColumn: geofence_polygon_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column geofence_polygon_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c8a07d7b-c6d5-4641-bac1-8dfb2fd08f82
+		sourceLineageTag: geofence_polygon_longitude
+		summarizeBy: sum
+		sourceColumn: geofence_polygon_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'data.status'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9e90944c-13c4-4ade-9699-802d49c09432
+		sourceLineageTag: data.status
+		summarizeBy: none
+		sourceColumn: data.status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_geofence-97fff3c5-822e-4095-b832-3f0a3c9f9e23 = entity
+		mode: directLake
+		source
+			entityName: netr_geofence
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

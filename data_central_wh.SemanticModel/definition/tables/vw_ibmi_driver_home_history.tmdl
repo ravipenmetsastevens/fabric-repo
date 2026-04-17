@@ -1,0 +1,45 @@
+table vw_ibmi_driver_home_history
+	lineageTag: 847ace86-04db-4a25-b9d8-81a4e9b1ca77
+	sourceLineageTag: [gold].[vw_ibmi_driver_home_history]
+
+	column drv_home_hist_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a735b74b-80fc-409a-b8fb-ee1bb248616a
+		sourceLineageTag: drv_home_hist_driver_code
+		summarizeBy: none
+		sourceColumn: drv_home_hist_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_hist_previous_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9e03b04e-8f37-48f8-81f9-4ca2b4000ac0
+		sourceLineageTag: drv_home_hist_previous_arrival_date
+		summarizeBy: none
+		sourceColumn: drv_home_hist_previous_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_hist_departure_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 5b7cfede-5f0f-4881-8133-3ef073e528c2
+		sourceLineageTag: drv_home_hist_departure_date
+		summarizeBy: none
+		sourceColumn: drv_home_hist_departure_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_driver_home_history-b9952c4a-b381-49aa-8c6a-15c3a9a522a3 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_driver_home_history
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

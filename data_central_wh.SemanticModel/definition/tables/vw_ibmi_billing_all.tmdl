@@ -1,0 +1,159 @@
+table vw_ibmi_billing_all
+	lineageTag: f900f5e9-e9cd-4b3b-8d3e-87165295d51f
+	sourceLineageTag: [silver].[vw_ibmi_billing_all]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 457abcf5-30e5-4b22-b3fa-e981437afcbe
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dab4c33c-e3ed-4650-8f21-c031f7ceeceb
+		sourceLineageTag: billing_sequence_number
+		summarizeBy: none
+		sourceColumn: billing_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_record_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 48e4362e-bece-4617-a210-29be4c556384
+		sourceLineageTag: billing_record_number
+		summarizeBy: sum
+		sourceColumn: billing_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: fb8bc82f-f167-43d4-b761-2f02ce30dd85
+		sourceLineageTag: is_deleted
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d449b32e-a567-4fe4-859d-011994a48fd3
+		sourceLineageTag: billing_commodity_code
+		summarizeBy: none
+		sourceColumn: billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 32fc4fdf-db64-4cf3-bee4-dcbaa5cd6911
+		sourceLineageTag: billing_commodity_description
+		summarizeBy: none
+		sourceColumn: billing_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_error_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 90ffd502-df15-463f-aa40-1bb1f30fca90
+		sourceLineageTag: billing_error_code
+		summarizeBy: none
+		sourceColumn: billing_error_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0e9ceb41-0ccf-4784-a867-f140717689f1
+		sourceLineageTag: billing_gl_account_number
+		summarizeBy: none
+		sourceColumn: billing_gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_piece_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: b486078d-7aa5-4701-9b80-5b70ddcb0f60
+		sourceLineageTag: billing_piece_count
+		summarizeBy: sum
+		sourceColumn: billing_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_actual_quantity_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 586039aa-2f01-4dad-a8af-c0c518445d29
+		sourceLineageTag: billing_actual_quantity_count
+		summarizeBy: sum
+		sourceColumn: billing_actual_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_quantity_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 77a16d97-3083-43e6-bd03-e9b7d236381e
+		sourceLineageTag: billing_billed_quantity_count
+		summarizeBy: sum
+		sourceColumn: billing_billed_quantity_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_rate
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 7b12b5c4-69fb-4fd3-9640-a45d0c89f6be
+		sourceLineageTag: billing_billed_rate
+		summarizeBy: sum
+		sourceColumn: billing_billed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_billed_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: a45cc929-5946-4f8f-9b34-45574c67b53b
+		sourceLineageTag: billing_billed_amount
+		summarizeBy: sum
+		sourceColumn: billing_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_method_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7443447a-7d1a-4fc0-90a7-a1be79e27d05
+		sourceLineageTag: billing_method_code
+		summarizeBy: none
+		sourceColumn: billing_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_billing_all-7fcffba1-5ce8-471b-a0bd-3d0d8ea3aa20 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_billing_all
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

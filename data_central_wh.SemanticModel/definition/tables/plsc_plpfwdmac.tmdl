@@ -1,0 +1,47 @@
+table plsc_plpfwdmac
+	lineageTag: 4040831c-f4f9-4576-b13d-d9456a4a5535
+	sourceLineageTag: [bronze].[plsc_plpfwdmac]
+
+	column OMMAC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 59d93d26-4606-45af-aff7-92138fc40e3f
+		sourceLineageTag: OMMAC
+		summarizeBy: sum
+		sourceColumn: OMMAC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OMFWD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5e00e7b0-62db-4608-8879-46abcf2535b2
+		sourceLineageTag: OMFWD
+		summarizeBy: sum
+		sourceColumn: OMFWD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PSTITLE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f131843-5d2c-423c-a95c-44b01253b068
+		sourceLineageTag: PSTITLE
+		summarizeBy: none
+		sourceColumn: PSTITLE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plpfwdmac-64552b76-946c-45fd-ba63-05a1066534ca = entity
+		mode: directLake
+		source
+			entityName: plsc_plpfwdmac
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

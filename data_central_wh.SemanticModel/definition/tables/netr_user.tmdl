@@ -1,0 +1,137 @@
+table netr_user
+	lineageTag: 02c33f94-af5f-4401-af41-1633829338d4
+	sourceLineageTag: [silver].[netr_user]
+
+	column user_username
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3d79931f-ae01-44e9-93ab-c02548b81615
+		sourceLineageTag: user_username
+		summarizeBy: none
+		sourceColumn: user_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_firstname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45275b99-6b93-4c30-be80-63dad9c31a7a
+		sourceLineageTag: user_firstname
+		summarizeBy: none
+		sourceColumn: user_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_lastname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0287ce67-2186-4305-bee0-e27c687ee418
+		sourceLineageTag: user_lastname
+		summarizeBy: none
+		sourceColumn: user_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_email
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d90397ad-cf73-415d-81db-51935ab7dede
+		sourceLineageTag: user_email
+		summarizeBy: none
+		sourceColumn: user_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2f52ffc0-0a99-4fa7-9fd1-3a62c4499b81
+		sourceLineageTag: user_status
+		summarizeBy: none
+		sourceColumn: user_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data.roleId'
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b1c875d5-918a-4323-914b-205ab4ae4770
+		sourceLineageTag: data.roleId
+		summarizeBy: none
+		sourceColumn: data.roleId
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_role
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bd49b208-ffed-48a5-87f9-698a16d655fe
+		sourceLineageTag: user_role
+		summarizeBy: none
+		sourceColumn: user_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_twofastatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ae8fd970-ce99-4514-982c-a68b707cf879
+		sourceLineageTag: user_twofastatus
+		summarizeBy: none
+		sourceColumn: user_twofastatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 03d9dd6d-3a3f-475d-8c31-ed07e26bb136
+		sourceLineageTag: user_create_date
+		summarizeBy: none
+		sourceColumn: user_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: b7a8e0c5-3a8b-4a62-a423-14ad19fa9ca2
+		sourceLineageTag: user_create_time
+		summarizeBy: none
+		sourceColumn: user_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 700342eb-54b3-4b65-86ba-5e2edaf7e30f
+		sourceLineageTag: user_update_date
+		summarizeBy: none
+		sourceColumn: user_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: dc6c5184-c05f-4649-a2e6-6d0f09b4ac6f
+		sourceLineageTag: user_update_time
+		summarizeBy: none
+		sourceColumn: user_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_user-8e43d1be-3797-4ddb-97a3-f9e806202caf = entity
+		mode: directLake
+		source
+			entityName: netr_user
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

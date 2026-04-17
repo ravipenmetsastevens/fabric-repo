@@ -1,0 +1,970 @@
+table ibmi_unit
+	lineageTag: 27028ece-1847-4249-9f70-d791db3d926b
+	sourceLineageTag: [silver].[ibmi_unit]
+
+	column unit_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dbe83ab1-adb5-4e25-b13f-000d394fada3
+		sourceLineageTag: unit_truck_number
+		summarizeBy: none
+		sourceColumn: unit_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_owner_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3d65b045-0dd3-436c-b735-27093b93bf54
+		sourceLineageTag: unit_owner_code
+		summarizeBy: none
+		sourceColumn: unit_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_truck_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 82136b90-0f2a-48f5-864c-12de2c0a0a29
+		sourceLineageTag: unit_truck_division_code
+		summarizeBy: none
+		sourceColumn: unit_truck_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a55478cf-9ff0-4885-a9d9-1227057c2524
+		sourceLineageTag: unit_year
+		summarizeBy: none
+		sourceColumn: unit_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_make
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3534329e-b25c-4048-8ed3-3a2cfd106a9e
+		sourceLineageTag: unit_make
+		summarizeBy: none
+		sourceColumn: unit_make
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46f10f12-3b1c-465d-bdf6-91868c1d530a
+		sourceLineageTag: unit_vin
+		summarizeBy: none
+		sourceColumn: unit_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_carbon_compliant
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0911fbf-948a-4afa-ac36-ab3eddf1fd83
+		sourceLineageTag: is_carbon_compliant
+		summarizeBy: none
+		sourceColumn: is_carbon_compliant
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_team_gone_solo
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4ddeb08c-212a-4714-8325-f0a8f61e888f
+		sourceLineageTag: has_team_gone_solo
+		summarizeBy: none
+		sourceColumn: has_team_gone_solo
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_truck_sold_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7cc779d5-0f97-4f73-9c6d-be76ac6f4950
+		sourceLineageTag: unit_truck_sold_flag
+		summarizeBy: none
+		sourceColumn: unit_truck_sold_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_jake
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac056e0d-5d05-4d1d-b970-001c17b71beb
+		sourceLineageTag: has_jake
+		summarizeBy: none
+		sourceColumn: has_jake
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_cruise
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53ace5e0-dbe8-4270-8e78-44ec0423af84
+		sourceLineageTag: has_cruise
+		summarizeBy: none
+		sourceColumn: has_cruise
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_speed_control
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 22ada230-3851-4e6b-b5d8-6054507e0284
+		sourceLineageTag: unit_speed_control
+		summarizeBy: none
+		sourceColumn: unit_speed_control
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_esp
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72820952-3142-4f00-8fca-5c78bffc494a
+		sourceLineageTag: has_esp
+		summarizeBy: none
+		sourceColumn: has_esp
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_apu
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 19f83b35-0a50-4b53-8f05-3d04e223225c
+		sourceLineageTag: has_apu
+		summarizeBy: none
+		sourceColumn: has_apu
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_model_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7118be69-d3eb-4467-a81e-fa73908282b0
+		sourceLineageTag: unit_model_code
+		summarizeBy: none
+		sourceColumn: unit_model_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_gate_check_location
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 31f4da29-7ffd-4815-95ce-60960aa66ba0
+		sourceLineageTag: unit_gate_check_location
+		summarizeBy: none
+		sourceColumn: unit_gate_check_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_dedicated_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c67ee16d-c085-4389-b5bc-669c9dd7c9f8
+		sourceLineageTag: unit_dedicated_customer_code
+		summarizeBy: none
+		sourceColumn: unit_dedicated_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_subtype
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d0a3b21e-0767-44cf-9722-f181c1a44365
+		sourceLineageTag: unit_subtype
+		summarizeBy: none
+		sourceColumn: unit_subtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_available_for_limited_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5580f4da-c226-4de6-9b8c-7b1aa52c76c9
+		sourceLineageTag: is_available_for_limited_dispatch
+		summarizeBy: none
+		sourceColumn: is_available_for_limited_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_temp_hold_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 93e5308f-adfa-4d64-8a64-4aba66432b96
+		sourceLineageTag: unit_temp_hold_date
+		summarizeBy: none
+		sourceColumn: unit_temp_hold_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 903cb403-b754-4bf7-ab58-01e95de96e55
+		sourceLineageTag: unit_dmol_code
+		summarizeBy: none
+		sourceColumn: unit_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_customer_site_flagged
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea9bae98-4b47-4cbd-8306-26a5f794cfc7
+		sourceLineageTag: is_customer_site_flagged
+		summarizeBy: none
+		sourceColumn: is_customer_site_flagged
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ca1baec3-566e-4395-8724-ad2ae0eaef78
+		sourceLineageTag: unit_last_update_date
+		summarizeBy: none
+		sourceColumn: unit_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_last_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 09a37cc2-87c2-45ad-aa5c-cfa1cb5c09cb
+		sourceLineageTag: unit_last_update_time
+		summarizeBy: none
+		sourceColumn: unit_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_last_update_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: de834a74-db4b-4931-921e-635a33b0a5b3
+		sourceLineageTag: unit_last_update_initials
+		summarizeBy: none
+		sourceColumn: unit_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_city_truck
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2c2679e6-8ce7-4a10-9ff8-d7e338fe5fe5
+		sourceLineageTag: is_city_truck
+		summarizeBy: none
+		sourceColumn: is_city_truck
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_last_satalite_location_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 11b8c7c9-f018-4786-ab04-4dcb364e8e8d
+		sourceLineageTag: unit_last_satalite_location_short_name
+		summarizeBy: none
+		sourceColumn: unit_last_satalite_location_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_next_stop_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 860e29c2-1df8-47b0-96c2-22ea30dff8e0
+		sourceLineageTag: unit_next_stop_short_name
+		summarizeBy: none
+		sourceColumn: unit_next_stop_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_proj_avail_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 7fa7e8a9-fae6-4a9f-8a9d-994b4685defa
+		sourceLineageTag: unit_proj_avail_time
+		summarizeBy: none
+		sourceColumn: unit_proj_avail_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_proj_avail_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: dc11d33e-bf67-4cbc-a6bf-8eb3443e7f40
+		sourceLineageTag: unit_proj_avail_date
+		summarizeBy: none
+		sourceColumn: unit_proj_avail_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_pta_change_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 09beb136-ca50-46f2-a038-9599945e6dec
+		sourceLineageTag: unit_pta_change_date
+		summarizeBy: none
+		sourceColumn: unit_pta_change_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f92e48b9-c208-4263-8800-5f52c4329e61
+		sourceLineageTag: unit_dm_code
+		summarizeBy: none
+		sourceColumn: unit_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_purchase_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 0d41926b-4f24-4f3d-adb3-4d9aac591967
+		sourceLineageTag: unit_previous_purchase_time
+		summarizeBy: none
+		sourceColumn: unit_previous_purchase_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_latitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9e1c8212-c67d-429d-85b8-e53a82a3b58d
+		sourceLineageTag: unit_latitude
+		summarizeBy: sum
+		sourceColumn: unit_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_longitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 233e8a96-fe64-4c61-97de-e48da02affdc
+		sourceLineageTag: unit_longitude
+		summarizeBy: sum
+		sourceColumn: unit_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column has_fleet_license
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 896e37de-7763-48e3-90f1-6f0c530e5b48
+		sourceLineageTag: has_fleet_license
+		summarizeBy: none
+		sourceColumn: has_fleet_license
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_2_character_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 40f4d64a-48d1-44e6-9872-d8c6ea9116ab
+		sourceLineageTag: unit_2_character_code
+		summarizeBy: none
+		sourceColumn: unit_2_character_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_last_satalite_location
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b3249699-b8cc-4a14-86bd-b1292577cf9e
+		sourceLineageTag: unit_last_satalite_location
+		summarizeBy: none
+		sourceColumn: unit_last_satalite_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_first_purchase_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 21485ae4-0ea0-4bff-9403-cd56a2ff9aa6
+		sourceLineageTag: unit_first_purchase_date
+		summarizeBy: none
+		sourceColumn: unit_first_purchase_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_first_purchase_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 33945761-40ec-4520-925f-a489f3439e8d
+		sourceLineageTag: unit_first_purchase_time
+		summarizeBy: none
+		sourceColumn: unit_first_purchase_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNPGAL
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e4f92c2f-2c73-4963-870e-f3a9c2e4e527
+		sourceLineageTag: UNPGAL
+		summarizeBy: sum
+		sourceColumn: UNPGAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNPMPG
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a92392e6-65dd-4a77-a4a4-67b88cdd92de
+		sourceLineageTag: UNPMPG
+		summarizeBy: sum
+		sourceColumn: UNPMPG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_previous_hub_miles
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: def10bcf-8f22-41eb-997e-06b9f26b721b
+		sourceLineageTag: unit_previous_hub_miles
+		summarizeBy: sum
+		sourceColumn: unit_previous_hub_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_previous_purchase_date
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b2d35c4d-2b6d-4c83-ad0f-2a8f1144dbd7
+		sourceLineageTag: unit_previous_purchase_date
+		summarizeBy: sum
+		sourceColumn: unit_previous_purchase_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_fuel_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d5fa28ae-fcd1-41c0-a42b-9b62b4d8c53f
+		sourceLineageTag: unit_fuel_type_code
+		summarizeBy: none
+		sourceColumn: unit_fuel_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_avas_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b472d418-529a-4479-a347-94a34e6b912b
+		sourceLineageTag: has_avas_code
+		summarizeBy: none
+		sourceColumn: has_avas_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 642200bd-d633-4dae-8385-11921bc45a28
+		sourceLineageTag: unit_destination_area_code
+		summarizeBy: none
+		sourceColumn: unit_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_lastest_hub_miles
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4df7ce69-fd20-445b-acad-1388acfabc3c
+		sourceLineageTag: unit_lastest_hub_miles
+		summarizeBy: sum
+		sourceColumn: unit_lastest_hub_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_lastest_purchase_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 674bae46-4f75-4c7b-b93c-d9beaa32cfda
+		sourceLineageTag: unit_lastest_purchase_date
+		summarizeBy: none
+		sourceColumn: unit_lastest_purchase_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_lastest_purchase_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: f0de480d-b55c-4e16-8dcc-d83c0a8d952c
+		sourceLineageTag: unit_lastest_purchase_time
+		summarizeBy: none
+		sourceColumn: unit_lastest_purchase_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_truck_deleted
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 22f2c0ad-590a-4ffe-a6dc-d14b47f5646a
+		sourceLineageTag: is_truck_deleted
+		summarizeBy: none
+		sourceColumn: is_truck_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_truck_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c95f5047-ef13-4ccc-a8e0-1f0bf7790141
+		sourceLineageTag: unit_truck_type
+		summarizeBy: none
+		sourceColumn: unit_truck_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_axle_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb7fe052-46ea-46db-a5ef-dfcc94adfa33
+		sourceLineageTag: unit_axle_count
+		summarizeBy: none
+		sourceColumn: unit_axle_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_fleet_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5d7906c-de89-4e3d-91b3-69e2b3e99eb3
+		sourceLineageTag: unit_fleet_code
+		summarizeBy: none
+		sourceColumn: unit_fleet_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_preplan_load
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 331c00c0-979e-4438-83cf-40e44638f984
+		sourceLineageTag: unit_preplan_load
+		summarizeBy: none
+		sourceColumn: unit_preplan_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_preplan_committed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cf2c2614-2bc4-4a02-8e87-5d69483e95df
+		sourceLineageTag: is_preplan_committed
+		summarizeBy: none
+		sourceColumn: is_preplan_committed
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: b9eefc2d-a3ed-43ce-a332-cc6b09496428
+		sourceLineageTag: unit_contact_time
+		summarizeBy: none
+		sourceColumn: unit_contact_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f099061c-65ce-46dc-9c8d-d5cedb99d908
+		sourceLineageTag: unit_contact_initials
+		summarizeBy: none
+		sourceColumn: unit_contact_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dabcef94-4849-4122-8d16-964b3d4e9c28
+		sourceLineageTag: unit_contact_city_code
+		summarizeBy: none
+		sourceColumn: unit_contact_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 834f126c-d6ee-47dc-ad39-269fa71e9cc3
+		sourceLineageTag: unit_contact_state
+		summarizeBy: none
+		sourceColumn: unit_contact_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_city_short_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a8b40118-be0b-46ae-a084-837edd0d3b4b
+		sourceLineageTag: unit_contact_city_short_description
+		summarizeBy: none
+		sourceColumn: unit_contact_city_short_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_message_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c61658ec-c3b1-41b2-8b21-ad4db8a23947
+		sourceLineageTag: has_message_flag
+		summarizeBy: none
+		sourceColumn: has_message_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_empty_weight
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3de83dff-fd4a-46b0-8cfc-1db48c3951b8
+		sourceLineageTag: unit_empty_weight
+		summarizeBy: sum
+		sourceColumn: unit_empty_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_gross_weight
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 7ef20abd-1cb9-4e51-b979-0b24e6a45323
+		sourceLineageTag: unit_gross_weight
+		summarizeBy: sum
+		sourceColumn: unit_gross_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_eta_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 54c05534-4d51-43e1-8f32-0ff4aafc4605
+		sourceLineageTag: unit_eta_date
+		summarizeBy: none
+		sourceColumn: unit_eta_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_eta_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 29b411af-6560-4999-a40a-50588d403ba3
+		sourceLineageTag: unit_eta_time
+		summarizeBy: none
+		sourceColumn: unit_eta_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_eta_change_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 50650b40-564f-457d-895c-58a84f2d6a97
+		sourceLineageTag: unit_eta_change_date
+		summarizeBy: none
+		sourceColumn: unit_eta_change_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_contact_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2cc06eae-9806-44cf-a227-88ed0e0e2d4c
+		sourceLineageTag: unit_contact_date
+		summarizeBy: none
+		sourceColumn: unit_contact_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b8a91c16-c7cb-4701-ac2b-6312166b8acc
+		sourceLineageTag: unit_destination_city_code
+		summarizeBy: none
+		sourceColumn: unit_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 423a5db3-e64d-4ff4-b753-aedd744453ee
+		sourceLineageTag: unit_destination_state
+		summarizeBy: none
+		sourceColumn: unit_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c4209ed-6122-4440-9d4f-b5e5a4ef06bd
+		sourceLineageTag: unit_destination_region_code
+		summarizeBy: none
+		sourceColumn: unit_destination_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_bea_code
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6decdc58-d6a9-45c9-8c5e-527579c9f935
+		sourceLineageTag: unit_destination_bea_code
+		summarizeBy: sum
+		sourceColumn: unit_destination_bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_destination_gu_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c30e9467-a356-42ae-a4b4-fcc248797505
+		sourceLineageTag: unit_destination_gu_code
+		summarizeBy: none
+		sourceColumn: unit_destination_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_destination_city_short_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e37cab8c-6c50-4fbb-8013-93d77a5aa1ea
+		sourceLineageTag: unit_destination_city_short_description
+		summarizeBy: none
+		sourceColumn: unit_destination_city_short_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_trailer_1_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9044d241-e276-4833-a243-04b779678084
+		sourceLineageTag: unit_previous_trailer_1_code
+		summarizeBy: none
+		sourceColumn: unit_previous_trailer_1_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d4572cb1-8b21-4590-b853-b7a421bbf397
+		sourceLineageTag: unit_status_code
+		summarizeBy: none
+		sourceColumn: unit_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_current_load
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c3dd0361-3d6a-4793-9a06-0f0f78f1e616
+		sourceLineageTag: unit_current_load
+		summarizeBy: none
+		sourceColumn: unit_current_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_current_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6e43379-f6d6-4576-afdf-bc538a4466d1
+		sourceLineageTag: unit_current_dispatch
+		summarizeBy: none
+		sourceColumn: unit_current_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_load
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 851ad3d1-1429-472e-8e67-0d65dc236a04
+		sourceLineageTag: unit_previous_load
+		summarizeBy: none
+		sourceColumn: unit_previous_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 729e4e67-32eb-40b2-8105-136997564197
+		sourceLineageTag: unit_previous_dispatch
+		summarizeBy: none
+		sourceColumn: unit_previous_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_hire_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b8fc2855-570f-4bb9-a908-aa5f7a090209
+		sourceLineageTag: unit_hire_date
+		summarizeBy: none
+		sourceColumn: unit_hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0ef22549-07a2-4607-8d6a-b79fa478dc98
+		sourceLineageTag: unit_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: unit_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_seat_2_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a2ea043-de85-4545-87f0-3ee50ba9bd9c
+		sourceLineageTag: unit_seat_2_driver_code
+		summarizeBy: none
+		sourceColumn: unit_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_trailer_1_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b6bd9c45-77bb-40e9-90e2-c52dfe53cfd4
+		sourceLineageTag: unit_trailer_1_code
+		summarizeBy: none
+		sourceColumn: unit_trailer_1_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f2c3aac1-6a65-4c27-8189-6417dc17d4ec
+		sourceLineageTag: unit_previous_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: unit_previous_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_previous_seat_2_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aae66809-8bd9-420f-980a-60230c0cd3b9
+		sourceLineageTag: unit_previous_seat_2_driver_code
+		summarizeBy: none
+		sourceColumn: unit_previous_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_base_license_plate
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c89d8353-1e2c-4a36-90ac-fb759cb40ee1
+		sourceLineageTag: unit_base_license_plate
+		summarizeBy: none
+		sourceColumn: unit_base_license_plate
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_base_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a94be349-b2bd-457c-9637-7cc2a4dbe1db
+		sourceLineageTag: unit_base_state
+		summarizeBy: none
+		sourceColumn: unit_base_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_new_york_license
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dee184e5-f614-449b-946e-bac77f5aef6e
+		sourceLineageTag: unit_new_york_license
+		summarizeBy: none
+		sourceColumn: unit_new_york_license
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_other
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea1f3d34-74b0-4577-b466-1f8cfd6f3591
+		sourceLineageTag: unit_other
+		summarizeBy: none
+		sourceColumn: unit_other
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_term_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 50e40131-5f0f-4b7c-b1da-01617160a1ba
+		sourceLineageTag: unit_term_date
+		summarizeBy: none
+		sourceColumn: unit_term_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_pay_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa4d97bd-2dcd-40a4-ba44-a1424e7fb837
+		sourceLineageTag: unit_pay_type
+		summarizeBy: none
+		sourceColumn: unit_pay_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_unit-a3a4e87d-81bd-4474-9a05-245e5c46e577 = entity
+		mode: directLake
+		source
+			entityName: ibmi_unit
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

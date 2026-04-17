@@ -1,0 +1,334 @@
+table dim_customer_temp
+	lineageTag: 1515cb7f-e77d-4d30-943d-36ac602aa5d2
+	sourceLineageTag: [gold].[dim_customer_temp]
+
+	column customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b69b7b07-acc5-4dc5-aa1d-98ea453d00d1
+		sourceLineageTag: customer_code
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1df92d23-2701-466f-b361-6b1404724ecf
+		sourceLineageTag: cust_city_code
+		summarizeBy: none
+		sourceColumn: cust_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b1e05011-ee6e-4b71-8443-3b23ae748c66
+		sourceLineageTag: cust_area_code
+		summarizeBy: none
+		sourceColumn: cust_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aac168bd-9ac2-42ec-ae4c-7ad051612dd1
+		sourceLineageTag: cust_division_code
+		summarizeBy: none
+		sourceColumn: cust_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b67fa7db-d529-4328-819e-b4f8f8a2a361
+		sourceLineageTag: is_deleted
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 977326e7-80ce-4538-995a-7be6c9e2d57e
+		sourceLineageTag: cust_name
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_line_1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c697cb5-9253-42ee-999c-aa4054fd1a3b
+		sourceLineageTag: cust_address_line_1
+		summarizeBy: none
+		sourceColumn: cust_address_line_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_line_2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84931f9e-1b85-4ec9-9045-afa68f1d4732
+		sourceLineageTag: cust_address_line_2
+		summarizeBy: none
+		sourceColumn: cust_address_line_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e4ea312c-f555-42d5-ae1e-c83966aef0a2
+		sourceLineageTag: cust_address_city
+		summarizeBy: none
+		sourceColumn: cust_address_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 51ccc028-232c-4473-82bf-125deb3682f6
+		sourceLineageTag: cust_address_state
+		summarizeBy: none
+		sourceColumn: cust_address_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 47230141-3834-48ab-b9af-64462b9622ca
+		sourceLineageTag: cust_address_zip
+		summarizeBy: none
+		sourceColumn: cust_address_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_address_zip_extn
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a6ee7a05-2467-41f4-bcee-61eeb8ec7279
+		sourceLineageTag: cust_address_zip_extn
+		summarizeBy: none
+		sourceColumn: cust_address_zip_extn
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_to_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56f381ab-70c7-4605-b3c6-e879d4a888df
+		sourceLineageTag: bill_to_code
+		summarizeBy: none
+		sourceColumn: bill_to_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_to_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76641410-d2d2-48e5-b495-0e729145ac7e
+		sourceLineageTag: bill_to_name
+		summarizeBy: none
+		sourceColumn: bill_to_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_salesperson
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c205f7f1-031b-4b63-bd9c-aac4ca0114db
+		sourceLineageTag: cust_salesperson
+		summarizeBy: none
+		sourceColumn: cust_salesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_shipper_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5c4bb76a-bf9b-4c07-82b8-090ccc5e051b
+		sourceLineageTag: cust_shipper_code
+		summarizeBy: none
+		sourceColumn: cust_shipper_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_shipper_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4107f6b8-e520-4eba-b33e-f1ddc13a02b3
+		sourceLineageTag: cust_shipper_area_code
+		summarizeBy: none
+		sourceColumn: cust_shipper_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_shipper_phone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 17d6d8e1-24be-484f-b792-9e74436b4497
+		sourceLineageTag: cust_shipper_phone
+		summarizeBy: none
+		sourceColumn: cust_shipper_phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ab68e854-c413-474f-b918-108e28c8a033
+		sourceLineageTag: cust_country
+		summarizeBy: none
+		sourceColumn: cust_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column controlling_shipper
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0215f871-3d83-42a2-8c30-980c04e17118
+		sourceLineageTag: controlling_shipper
+		summarizeBy: none
+		sourceColumn: controlling_shipper
+
+		annotation SummarizationSetBy = Automatic
+
+	column controlling_shipper_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d645b20f-595b-4394-b14c-ba171fe4264f
+		sourceLineageTag: controlling_shipper_name
+		summarizeBy: none
+		sourceColumn: controlling_shipper_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_allow_as_shipper
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c2bdfd81-76d7-47ea-a0d9-3c8382a39cf5
+		sourceLineageTag: is_allow_as_shipper
+		summarizeBy: none
+		sourceColumn: is_allow_as_shipper
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_allow_as_bill_to
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4dd4e5b9-39aa-4cab-997b-2523edc6a243
+		sourceLineageTag: is_allow_as_bill_to
+		summarizeBy: none
+		sourceColumn: is_allow_as_bill_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_allow_as_load_at
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b972473-4cb2-49f5-9ba0-f4eb18d827ee
+		sourceLineageTag: is_allow_as_load_at
+		summarizeBy: none
+		sourceColumn: is_allow_as_load_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_allow_as_consignee
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8bdc6740-cefa-4aad-9df0-3970eed0640f
+		sourceLineageTag: is_allow_as_consignee
+		summarizeBy: none
+		sourceColumn: is_allow_as_consignee
+
+		annotation SummarizationSetBy = Automatic
+
+	column edi_profile_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: faa6d2a0-b798-4c1b-a2f4-1e205f537edb
+		sourceLineageTag: edi_profile_code
+		summarizeBy: none
+		sourceColumn: edi_profile_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_division_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f29d99bb-7cd5-4fef-bc71-9eb09c927b30
+		sourceLineageTag: cust_division_name
+		summarizeBy: none
+		sourceColumn: cust_division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6e595c0e-7386-4866-a526-cf28a0bfea4a
+		sourceLineageTag: commodity_code
+		summarizeBy: none
+		sourceColumn: commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ba06fdf-4b92-43c6-b1f0-9df920f1e8ff
+		sourceLineageTag: commodity_description
+		summarizeBy: none
+		sourceColumn: commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column pu_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 40a275c3-e236-4229-b709-1422903d4413
+		sourceLineageTag: pu_area_code
+		summarizeBy: none
+		sourceColumn: pu_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pu_area_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 82419098-5e57-4499-a792-35e38a2373d0
+		sourceLineageTag: pu_area_name
+		summarizeBy: none
+		sourceColumn: pu_area_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_activity_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7336597d-8bad-4b1b-8b25-ed88d87750af
+		sourceLineageTag: last_activity_date
+		summarizeBy: none
+		sourceColumn: last_activity_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customer_temp-ee5d364d-45f5-48a9-bc17-ae99be860bbb = entity
+		mode: directLake
+		source
+			entityName: dim_customer_temp
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

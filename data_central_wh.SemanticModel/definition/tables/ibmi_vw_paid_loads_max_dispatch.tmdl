@@ -1,0 +1,33 @@
+table ibmi_vw_paid_loads_max_dispatch
+	lineageTag: 6a9b1448-7d55-44e3-8ff3-ab73e5a0cb0b
+	sourceLineageTag: [silver].[ibmi_vw_paid_loads_max_dispatch]
+
+	column load_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d160b5a3-bb8d-435b-892e-2e52fb6230fa
+		sourceLineageTag: load_load_number
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 55219362-7efe-419b-9072-4c7ca4ba0359
+		sourceLineageTag: max_dispatch
+		summarizeBy: none
+		sourceColumn: max_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_vw_paid_loads_max_dispatch-6e91427d-2bf2-4da6-8050-5e606586d3a7 = entity
+		mode: directLake
+		source
+			entityName: ibmi_vw_paid_loads_max_dispatch
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

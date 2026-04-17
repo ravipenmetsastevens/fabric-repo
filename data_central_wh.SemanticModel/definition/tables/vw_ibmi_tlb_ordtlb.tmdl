@@ -1,0 +1,128 @@
+table vw_ibmi_tlb_ordtlb
+	lineageTag: 6bffe149-9e0a-4d6c-857c-79c3629978a8
+	sourceLineageTag: [gold].[vw_ibmi_tlb_ordtlb]
+
+	column tlb_ordtlb_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6080fe22-fb6b-4c35-9ce1-f496c70da170
+		sourceLineageTag: tlb_ordtlb_load_number
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_carrier_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb5379e8-ee94-4cf8-b776-6503565fa035
+		sourceLineageTag: tlb_ordtlb_carrier_code
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_carrier_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_expense_accrued
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dbdd9c4c-0a94-4ad5-8697-2b4ab29db605
+		sourceLineageTag: is_expense_accrued
+		summarizeBy: none
+		sourceColumn: is_expense_accrued
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_expense_accrual_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 00b18d47-d44c-43d4-9f5b-59d6cfe92c81
+		sourceLineageTag: tlb_ordtlb_expense_accrual_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordtlb_expense_accrual_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_ordtlb_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4b81becc-81e0-4e8b-bb5c-df6b0976651d
+		sourceLineageTag: tlb_ordtlb_check_date
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_broker_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c766ac3-7389-45fb-888c-846ebe4ad86f
+		sourceLineageTag: tlb_ordtlb_broker_code
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_broker_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_driver_full_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ca98ec6-5257-4e82-bce6-1c9547fc43d0
+		sourceLineageTag: tlb_ordtlb_driver_full_name
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_driver_full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cfbc14ed-8006-47f2-9935-163ae879a5d4
+		sourceLineageTag: tlb_ordtlb_truck_number
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8ce5ced0-5e20-4f13-9f07-f9cabedba971
+		sourceLineageTag: tlb_ordtlb_trailer_number
+		summarizeBy: none
+		sourceColumn: tlb_ordtlb_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_ordtlb_truck_pay_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 7fd5dfcf-fab8-487a-9fb7-3f594e74649f
+		sourceLineageTag: tlb_ordtlb_truck_pay_amount
+		summarizeBy: sum
+		sourceColumn: tlb_ordtlb_truck_pay_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_trip_settled
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 48c0c136-1213-4e4d-ab3a-55c3d14cc74e
+		sourceLineageTag: is_trip_settled
+		summarizeBy: none
+		sourceColumn: is_trip_settled
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_tlb_ordtlb-e449bbd0-7044-4fd3-b6e2-f23581c1cd73 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_tlb_ordtlb
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

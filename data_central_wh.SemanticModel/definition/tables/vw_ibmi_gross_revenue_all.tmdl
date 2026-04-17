@@ -1,0 +1,46 @@
+table vw_ibmi_gross_revenue_all
+	lineageTag: 433c52da-965d-46c8-98e6-64149a568263
+	sourceLineageTag: [silver].[vw_ibmi_gross_revenue_all]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 228e8eb4-0c0b-44bc-b83f-2ad29509997c
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billed_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d04269e7-c9a6-46db-8a77-25f68b6f0c5a
+		sourceLineageTag: billed_amount
+		summarizeBy: sum
+		sourceColumn: billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column last_date_billed
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c25547bc-6c55-4814-9fa4-54a66efb3817
+		sourceLineageTag: last_date_billed
+		summarizeBy: none
+		sourceColumn: last_date_billed
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_gross_revenue_all-cdb075a5-fd28-4cae-91e6-e39fecf7b165 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_gross_revenue_all
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

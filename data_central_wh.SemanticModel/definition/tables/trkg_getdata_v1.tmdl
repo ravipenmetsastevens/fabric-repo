@@ -1,0 +1,908 @@
+table trkg_getdata_v1
+	lineageTag: 76931c5a-1824-4c86-900e-39f68201e0a0
+	sourceLineageTag: [silver].[trkg_getdata_v1]
+
+	column vehicleName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1d8f4497-73aa-4162-8c37-d5cabae6954d
+		sourceLineageTag: vehicleName
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column externalId
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0985094d-d25d-4154-8b4b-62e02dcff71d
+		sourceLineageTag: externalId
+		summarizeBy: none
+		sourceColumn: externalId
+
+		annotation SummarizationSetBy = Automatic
+
+	column reeferSerialNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4a84894-c92e-44d3-a115-ed4b82059075
+		sourceLineageTag: reeferSerialNumber
+		summarizeBy: none
+		sourceColumn: reeferSerialNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_VIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf2616ca-c52c-40ac-ac81-9805f0243918
+		sourceLineageTag: truck_VIN
+		summarizeBy: none
+		sourceColumn: truck_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailer_VIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4ed90590-ef45-4d8d-a1da-eebb5299ad30
+		sourceLineageTag: trailer_VIN
+		summarizeBy: none
+		sourceColumn: trailer_VIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7b266c26-d0aa-4de8-b858-4b3363281bc1
+		sourceLineageTag: dataDate
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: ed900b87-a2fc-4587-bd9c-fe446349c3bd
+		sourceLineageTag: dataTime
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column databaseInsertionDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d15708dc-1bd9-4100-a1ea-450ef82b5a73
+		sourceLineageTag: databaseInsertionDate
+		summarizeBy: none
+		sourceColumn: databaseInsertionDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column databaseInsertionTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: fbd7ed6f-cff4-49b6-95ae-406d55377245
+		sourceLineageTag: databaseInsertionTime
+		summarizeBy: none
+		sourceColumn: databaseInsertionTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column thermoking_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a31d418a-41d1-46c5-abd0-be95ff388924
+		sourceLineageTag: thermoking_latitude
+		summarizeBy: sum
+		sourceColumn: thermoking_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column thermoking_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: fc59e27c-5b30-4e24-9165-3d38c72445b6
+		sourceLineageTag: thermoking_longitude
+		summarizeBy: sum
+		sourceColumn: thermoking_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column locationDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 936db1cb-4f88-4f15-a598-aab5bb309a95
+		sourceLineageTag: locationDescription
+		summarizeBy: none
+		sourceColumn: locationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 393316af-5619-4c0e-a80a-1357f6bda958
+		sourceLineageTag: speed
+		summarizeBy: sum
+		sourceColumn: speed
+
+		annotation SummarizationSetBy = Automatic
+
+	column powerOn
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c584f309-0281-4285-8983-8277eeb3fd1c
+		sourceLineageTag: powerOn
+		summarizeBy: none
+		sourceColumn: powerOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastIgnitionStatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49320fa7-2e2e-4cbe-8d97-158a2c404e72
+		sourceLineageTag: lastIgnitionStatus
+		summarizeBy: none
+		sourceColumn: lastIgnitionStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column voltage
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 48e35bfc-184b-4641-a4b8-6ae343979eb3
+		sourceLineageTag: voltage
+		summarizeBy: sum
+		sourceColumn: voltage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuelLevel
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d7f35500-fd9b-48ab-9820-b18716d9f5fa
+		sourceLineageTag: fuelLevel
+		summarizeBy: sum
+		sourceColumn: fuelLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column wirelessGen
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c6a51dd6-c085-499f-96c4-9b2f1b65181f
+		sourceLineageTag: wirelessGen
+		summarizeBy: none
+		sourceColumn: wirelessGen
+
+		annotation SummarizationSetBy = Automatic
+
+	column avgFuelRateControllerOn
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d86f00ad-490a-4ab0-adcd-04644289cdc6
+		sourceLineageTag: avgFuelRateControllerOn
+		summarizeBy: none
+		sourceColumn: avgFuelRateControllerOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column avgFuelRateTrip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ab24e24-b852-4682-929a-5df1e366df33
+		sourceLineageTag: avgFuelRateTrip
+		summarizeBy: none
+		sourceColumn: avgFuelRateTrip
+
+		annotation SummarizationSetBy = Automatic
+
+	column dischargeAir1
+		dataType: double
+		sourceProviderType: float
+		lineageTag: efa8ec4a-152b-486d-b8b1-b27f2dceff94
+		sourceLineageTag: dischargeAir1
+		summarizeBy: sum
+		sourceColumn: dischargeAir1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dischargeAir2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e5cd7406-fda5-4479-a6ab-302a998c2252
+		sourceLineageTag: dischargeAir2
+		summarizeBy: none
+		sourceColumn: dischargeAir2
+
+		annotation SummarizationSetBy = Automatic
+
+	column dischargeAir3
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 241f3ada-ccec-435a-98a4-ec9dec26a2d0
+		sourceLineageTag: dischargeAir3
+		summarizeBy: none
+		sourceColumn: dischargeAir3
+
+		annotation SummarizationSetBy = Automatic
+
+	column returnAir1
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 91b54523-413a-4095-bf95-38e7af6da1e2
+		sourceLineageTag: returnAir1
+		summarizeBy: sum
+		sourceColumn: returnAir1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column returnAir2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a1e7f072-2d16-4d30-a9f6-dd122a1fd9e1
+		sourceLineageTag: returnAir2
+		summarizeBy: none
+		sourceColumn: returnAir2
+
+		annotation SummarizationSetBy = Automatic
+
+	column returnAir3
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c0aaf796-59f7-431a-80f3-0703bb741435
+		sourceLineageTag: returnAir3
+		summarizeBy: none
+		sourceColumn: returnAir3
+
+		annotation SummarizationSetBy = Automatic
+
+	column setPoint1
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 10eff2ff-f183-4b0b-aae5-e6b7477dd180
+		sourceLineageTag: setPoint1
+		summarizeBy: sum
+		sourceColumn: setPoint1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column setPoint2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 63ea1f95-9ea4-46b7-8d3d-b3bfacee27be
+		sourceLineageTag: setPoint2
+		summarizeBy: none
+		sourceColumn: setPoint2
+
+		annotation SummarizationSetBy = Automatic
+
+	column setPoint3
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49e1c7cf-4da7-4acd-93c5-db135dd3a3d5
+		sourceLineageTag: setPoint3
+		summarizeBy: none
+		sourceColumn: setPoint3
+
+		annotation SummarizationSetBy = Automatic
+
+	column doorStatus
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: af559257-0a97-441b-a4c3-f85c054fdc48
+		sourceLineageTag: doorStatus
+		summarizeBy: sum
+		sourceColumn: doorStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column doorlockfitted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: a08f2d2c-fd62-4593-a970-27f09d74ecc6
+		sourceLineageTag: doorlockfitted
+		summarizeBy: none
+		sourceColumn: doorlockfitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column doorlocked
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 026376e5-aaac-478e-ac82-9150214b83ef
+		sourceLineageTag: doorlocked
+		summarizeBy: none
+		sourceColumn: doorlocked
+
+		annotation SummarizationSetBy = Automatic
+
+	column operatingMode1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45c3e6b1-667f-444f-9fac-10142756ed6b
+		sourceLineageTag: operatingMode1
+		summarizeBy: none
+		sourceColumn: operatingMode1
+
+		annotation SummarizationSetBy = Automatic
+
+	column operatingMode2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 20f4bdbb-af4d-41d6-a92a-db3feb274686
+		sourceLineageTag: operatingMode2
+		summarizeBy: none
+		sourceColumn: operatingMode2
+
+		annotation SummarizationSetBy = Automatic
+
+	column operatingMode3
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 666fb758-ec53-4e7e-9132-b902c24b9d21
+		sourceLineageTag: operatingMode3
+		summarizeBy: none
+		sourceColumn: operatingMode3
+
+		annotation SummarizationSetBy = Automatic
+
+	column engineHours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2fcb53f3-04bb-490d-8c71-1332a93c43a3
+		sourceLineageTag: engineHours
+		summarizeBy: sum
+		sourceColumn: engineHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column engineRpm
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 53bea8fd-15a0-49ed-9bdf-ee524f226f09
+		sourceLineageTag: engineRpm
+		summarizeBy: sum
+		sourceColumn: engineRpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column electricalHours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: cfc4b396-1baf-4031-b3a7-13030d0025a0
+		sourceLineageTag: electricalHours
+		summarizeBy: sum
+		sourceColumn: electricalHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column totalHours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 111de531-139f-44f2-861b-f47c8f22662f
+		sourceLineageTag: totalHours
+		summarizeBy: sum
+		sourceColumn: totalHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column ambientTemperature
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 6ae399df-d87d-471e-80a5-49605f12dcc7
+		sourceLineageTag: ambientTemperature
+		summarizeBy: sum
+		sourceColumn: ambientTemperature
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column zone1Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d332f46a-a05c-47e3-86ac-d6a10ad906f5
+		sourceLineageTag: zone1Active
+		summarizeBy: none
+		sourceColumn: zone1Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone1Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e2c86706-596c-45d5-9918-3551c69253a6
+		sourceLineageTag: zone1Configured
+		summarizeBy: none
+		sourceColumn: zone1Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone1DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c9e1e07a-97ce-468f-bca0-b429e64d89cc
+		sourceLineageTag: zone1DoorOpen
+		summarizeBy: none
+		sourceColumn: zone1DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone2Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e42615dc-6e13-44cc-91b4-def4938b9132
+		sourceLineageTag: zone2Active
+		summarizeBy: none
+		sourceColumn: zone2Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone2Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e085607a-3d31-40ab-a471-d79549a8f020
+		sourceLineageTag: zone2Configured
+		summarizeBy: none
+		sourceColumn: zone2Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone2DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e2369658-495a-4f55-967f-497929cbc973
+		sourceLineageTag: zone2DoorOpen
+		summarizeBy: none
+		sourceColumn: zone2DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone3Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0d65eeb8-e666-44fa-9686-95c145b53f5c
+		sourceLineageTag: zone3Active
+		summarizeBy: none
+		sourceColumn: zone3Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone3Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 1050c5f9-444d-4456-a0d9-23dad93e662f
+		sourceLineageTag: zone3Configured
+		summarizeBy: none
+		sourceColumn: zone3Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone3DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 1ee548c3-2d10-453f-9162-19338a9ebb5d
+		sourceLineageTag: zone3DoorOpen
+		summarizeBy: none
+		sourceColumn: zone3DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column unitMode
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: a817f884-52cf-47d9-8fab-f2587c5173ac
+		sourceLineageTag: unitMode
+		summarizeBy: none
+		sourceColumn: unitMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column unitModeDetail
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6343018d-7fe1-40cf-979f-87c81346465b
+		sourceLineageTag: unitModeDetail
+		summarizeBy: none
+		sourceColumn: unitModeDetail
+
+		annotation SummarizationSetBy = Automatic
+
+	column powerSource
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0faa3372-d592-4f2b-8c49-431c7663038a
+		sourceLineageTag: powerSource
+		summarizeBy: none
+		sourceColumn: powerSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignitionStatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ea5a30e-421f-4007-94bc-71423391739f
+		sourceLineageTag: ignitionStatus
+		summarizeBy: none
+		sourceColumn: ignitionStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column bufferSize
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8d58777d-793e-4405-a551-4e8dfd7307e2
+		sourceLineageTag: bufferSize
+		summarizeBy: none
+		sourceColumn: bufferSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column devicePortA
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 10a8382f-6056-4c5c-8f10-f1f0958e8e80
+		sourceLineageTag: devicePortA
+		summarizeBy: none
+		sourceColumn: devicePortA
+
+		annotation SummarizationSetBy = Automatic
+
+	column devicePortB
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 33d43747-ff87-4d7e-9db6-98ae1f01ad6f
+		sourceLineageTag: devicePortB
+		summarizeBy: none
+		sourceColumn: devicePortB
+
+		annotation SummarizationSetBy = Automatic
+
+	column devicePortC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f3dd780c-7be1-4d71-afd5-281b125af0aa
+		sourceLineageTag: devicePortC
+		summarizeBy: none
+		sourceColumn: devicePortC
+
+		annotation SummarizationSetBy = Automatic
+
+	column commStatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e85ecda-53b7-4ad4-b998-caed67f8db85
+		sourceLineageTag: commStatus
+		summarizeBy: none
+		sourceColumn: commStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmDataDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f40447ab-ece4-4715-afbe-20d5e1d886d1
+		sourceLineageTag: alarmDataDate
+		summarizeBy: none
+		sourceColumn: alarmDataDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmDataTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 449b6a03-c697-4219-8715-0c0ea5cc2328
+		sourceLineageTag: alarmDataTime
+		summarizeBy: none
+		sourceColumn: alarmDataTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ab3b8e94-ee5b-481a-a522-87a43b0a76a3
+		sourceLineageTag: alarmCode
+		summarizeBy: sum
+		sourceColumn: alarmCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b7467d8-e6f4-47d1-a15e-6f8b2bec3edd
+		sourceLineageTag: alarmDescription
+		summarizeBy: none
+		sourceColumn: alarmDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmSeverity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1fe8209e-93c4-4046-8d2e-cc562f569543
+		sourceLineageTag: alarmSeverity
+		summarizeBy: none
+		sourceColumn: alarmSeverity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmZone
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2d8298bd-9cb2-4bff-b514-fb9d62585238
+		sourceLineageTag: alarmZone
+		summarizeBy: sum
+		sourceColumn: alarmZone
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmRecommendation
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56c09bfe-95ea-4d7b-a501-02cf8ac9d392
+		sourceLineageTag: alarmRecommendation
+		summarizeBy: none
+		sourceColumn: alarmRecommendation
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuelTankSize
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 07081183-4032-4fa9-8164-e1d1419134ea
+		sourceLineageTag: fuelTankSize
+		summarizeBy: sum
+		sourceColumn: fuelTankSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column multiTemp
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: dd90e59e-20f5-42b5-8417-2222b61b1744
+		sourceLineageTag: multiTemp
+		summarizeBy: none
+		sourceColumn: multiTemp
+
+		annotation SummarizationSetBy = Automatic
+
+	column batteryHours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: cd3fef30-25b9-46f4-80e7-bd8da446ea85
+		sourceLineageTag: batteryHours
+		summarizeBy: sum
+		sourceColumn: batteryHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column batteryHealth
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e77419d-eb45-43b7-a91d-74ead73822fc
+		sourceLineageTag: batteryHealth
+		summarizeBy: none
+		sourceColumn: batteryHealth
+
+		annotation SummarizationSetBy = Automatic
+
+	column batteryCharge
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f560ffd4-7ad4-4ddc-8db9-c69d4d39b76b
+		sourceLineageTag: batteryCharge
+		summarizeBy: none
+		sourceColumn: batteryCharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column batteryEstimatedAutonomyHours
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad1d6d10-6eef-4bfe-ac16-3b46459d2383
+		sourceLineageTag: batteryEstimatedAutonomyHours
+		summarizeBy: none
+		sourceColumn: batteryEstimatedAutonomyHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column maintenanceHours
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0f5a0adf-3d5d-4e9e-9743-fb82077e0311
+		sourceLineageTag: maintenanceHours
+		summarizeBy: sum
+		sourceColumn: maintenanceHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column humidity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4ff3892-a496-40e2-b0b0-0e77c3042a72
+		sourceLineageTag: humidity
+		summarizeBy: none
+		sourceColumn: humidity
+
+		annotation SummarizationSetBy = Automatic
+
+	column axle_load_sum
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 12d29286-94a4-4993-a5d8-47e0417c3d1b
+		sourceLineageTag: axle_load_sum
+		summarizeBy: none
+		sourceColumn: axle_load_sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column wheel_tyre_pressure
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b128711e-c5ef-41b6-a884-61512a5bfb13
+		sourceLineageTag: wheel_tyre_pressure
+		summarizeBy: none
+		sourceColumn: wheel_tyre_pressure
+
+		annotation SummarizationSetBy = Automatic
+
+	column wheel_brake_lining
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2bd64955-6732-45a5-99cc-ae381763c1a5
+		sourceLineageTag: wheel_brake_lining
+		summarizeBy: none
+		sourceColumn: wheel_brake_lining
+
+		annotation SummarizationSetBy = Automatic
+
+	column wheelBrakeLiningState
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 609fe300-e754-4d20-b02d-556d5058d377
+		sourceLineageTag: wheelBrakeLiningState
+		summarizeBy: none
+		sourceColumn: wheelBrakeLiningState
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_coupled
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d68cb626-a344-44da-aef8-900f3429e543
+		sourceLineageTag: is_coupled
+		summarizeBy: none
+		sourceColumn: is_coupled
+
+		annotation SummarizationSetBy = Automatic
+
+	column dtc_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f18eeab2-3509-461f-8721-c0b1a15c0f3e
+		sourceLineageTag: dtc_number
+		summarizeBy: none
+		sourceColumn: dtc_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column dtc_severity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce4db3df-e299-430f-b3bf-5be050f36ca6
+		sourceLineageTag: dtc_severity
+		summarizeBy: none
+		sourceColumn: dtc_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b47f487c-a0f2-4065-a55d-b95edc24de4b
+		sourceLineageTag: odometer
+		summarizeBy: none
+		sourceColumn: odometer
+
+		annotation SummarizationSetBy = Automatic
+
+	column tyrePressureDetection
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4be9028f-4e30-4e41-a006-3c1bd962311f
+		sourceLineageTag: tyrePressureDetection
+		summarizeBy: none
+		sourceColumn: tyrePressureDetection
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoFenceName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b606e140-f297-4a67-aeaa-cb58619e6bfa
+		sourceLineageTag: geoFenceName
+		summarizeBy: none
+		sourceColumn: geoFenceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoAccessTypeDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88535a1f-aa73-4143-b816-49884eecb5fa
+		sourceLineageTag: geoAccessTypeDescription
+		summarizeBy: none
+		sourceColumn: geoAccessTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column controllerStatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a617e5bd-d006-4d7b-9f97-8c215ed1cd47
+		sourceLineageTag: controllerStatus
+		summarizeBy: none
+		sourceColumn: controllerStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition trkg_getdata_v1-8fe25ac2-1d88-4fd6-a1b6-e1533be845d5 = entity
+		mode: directLake
+		source
+			entityName: trkg_getdata_v1
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

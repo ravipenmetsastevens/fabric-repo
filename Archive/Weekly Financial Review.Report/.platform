@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Weekly Financial Review"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "db9d8aff-3e4d-ba2c-40bf-c93a88eec8d9"
+  }
+}

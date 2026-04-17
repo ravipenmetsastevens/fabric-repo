@@ -1,0 +1,1484 @@
+table ibmi_order_incremental_test_bronze
+	lineageTag: 64f01472-3c88-4838-80b8-dfb72ff6b6e6
+	sourceLineageTag: [dbo].[ibmi_order_incremental_test_bronze]
+
+	column LASTUP
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 17fcc11b-aad3-4f5d-9c95-11959ac48897
+		sourceLineageTag: LASTUP
+		summarizeBy: none
+		sourceColumn: LASTUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column LSTUPD
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 48866670-aba9-449f-9482-cafd8cf78100
+		sourceLineageTag: LSTUPD
+		summarizeBy: none
+		sourceColumn: LSTUPD
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDAT
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 3d08a7e0-d59f-49e7-ae7f-d475644af8c6
+		sourceLineageTag: CREDAT
+		summarizeBy: none
+		sourceColumn: CREDAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORARA
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ecac0811-ad9f-4366-b0f4-6224e6bc9490
+		sourceLineageTag: ORARA
+		summarizeBy: none
+		sourceColumn: ORARA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORODR#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2e77258-e0af-40f4-8748-31905fbd87ec
+		sourceLineageTag: ORODR#
+		summarizeBy: none
+		sourceColumn: ORODR#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSTAT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1123f970-fc8a-4fb8-b6d8-84adc068452b
+		sourceLineageTag: ORSTAT
+		summarizeBy: none
+		sourceColumn: ORSTAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDATE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 00cb22fb-44e3-40c1-9007-7d8beb9036f2
+		sourceLineageTag: ORDATE
+		summarizeBy: sum
+		sourceColumn: ORDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORTIME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: df0ce6ca-7d5f-41c8-9053-86166284bf58
+		sourceLineageTag: ORTIME
+		summarizeBy: none
+		sourceColumn: ORTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCUST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ee477fe-dec7-4a53-84c2-363550c0fa62
+		sourceLineageTag: ORCUST
+		summarizeBy: none
+		sourceColumn: ORCUST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCONS
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4300a36a-425c-4ebe-884d-a8396c2933ae
+		sourceLineageTag: ORCONS
+		summarizeBy: none
+		sourceColumn: ORCONS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORBILL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5a5e50bd-7cdb-44e8-b1ca-36beb2ed8698
+		sourceLineageTag: ORBILL
+		summarizeBy: none
+		sourceColumn: ORBILL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLDAT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 316203c4-da93-4077-b136-ea6b4188d254
+		sourceLineageTag: ORLDAT
+		summarizeBy: none
+		sourceColumn: ORLDAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPDAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: dd40915a-98b7-4ca1-a486-afd11f8cfdbf
+		sourceLineageTag: ORPDAT
+		summarizeBy: sum
+		sourceColumn: ORPDAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORPTIM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8129a01f-9f8c-44c1-ae54-bd14581bcd9a
+		sourceLineageTag: ORPTIM
+		summarizeBy: none
+		sourceColumn: ORPTIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORRPIK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fba6f058-fb48-4929-8866-854dbbe89c95
+		sourceLineageTag: ORRPIK
+		summarizeBy: none
+		sourceColumn: ORRPIK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDDAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e9f52dbe-ff2b-42a8-beb6-856cbbbebfef
+		sourceLineageTag: ORDDAT
+		summarizeBy: sum
+		sourceColumn: ORDDAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDTIM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e8342115-9d41-4dfd-885c-36b7e4749c2c
+		sourceLineageTag: ORDTIM
+		summarizeBy: none
+		sourceColumn: ORDTIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORRDEL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 63d2a645-46f9-4eb9-84fd-9839157c55fc
+		sourceLineageTag: ORRDEL
+		summarizeBy: none
+		sourceColumn: ORRDEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCOMC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 437fe87b-27e9-4052-8346-54e6aba28d40
+		sourceLineageTag: ORCOMC
+		summarizeBy: none
+		sourceColumn: ORCOMC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCOMD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a722c92b-e8bc-438d-ab6d-80e05927680c
+		sourceLineageTag: ORCOMD
+		summarizeBy: none
+		sourceColumn: ORCOMD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORINIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4eafb3c9-cd5e-4dee-9641-8e8466cc179c
+		sourceLineageTag: ORINIT
+		summarizeBy: none
+		sourceColumn: ORINIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCAC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: c8cafa69-52ea-4c5d-b9a2-124435a822e2
+		sourceLineageTag: ORCAC
+		summarizeBy: sum
+		sourceColumn: ORCAC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORCPHN
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e8657b9b-17e6-48da-b85e-5220a0859bec
+		sourceLineageTag: ORCPHN
+		summarizeBy: sum
+		sourceColumn: ORCPHN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORRAC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0aa2faee-8005-4a28-8915-6db3a8322c9b
+		sourceLineageTag: ORRAC
+		summarizeBy: sum
+		sourceColumn: ORRAC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORRPHN
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e304ace2-dd5f-4b13-ac50-809873ae3138
+		sourceLineageTag: ORRPHN
+		summarizeBy: sum
+		sourceColumn: ORRPHN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORCTIM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a8507fa9-5a74-437d-9513-b8e23a11384b
+		sourceLineageTag: ORCTIM
+		summarizeBy: none
+		sourceColumn: ORCTIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORWGT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 746c569d-c358-4b0e-99f8-aab63b6287d0
+		sourceLineageTag: ORWGT
+		summarizeBy: sum
+		sourceColumn: ORWGT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORTWGT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: ecb12c8f-c205-4267-98ef-fe91307f631b
+		sourceLineageTag: ORTWGT
+		summarizeBy: sum
+		sourceColumn: ORTWGT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORHOOK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a4802a4-2346-4309-b086-77f411615de7
+		sourceLineageTag: ORHOOK
+		summarizeBy: none
+		sourceColumn: ORHOOK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORRACK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0c3ec29a-5299-47c3-bf4e-e2b10af114db
+		sourceLineageTag: ORRACK
+		summarizeBy: none
+		sourceColumn: ORRACK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPLLT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 511a5e92-7cc8-424d-b961-da5c7bb84033
+		sourceLineageTag: ORPLLT
+		summarizeBy: none
+		sourceColumn: ORPLLT
+
+		annotation SummarizationSetBy = Automatic
+
+	column OROCTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4a2a9412-84cf-4fb0-8e25-3d47ef577ba4
+		sourceLineageTag: OROCTY
+		summarizeBy: none
+		sourceColumn: OROCTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OROST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ce32c63-7610-4a88-b5f3-e53a9c988464
+		sourceLineageTag: OROST
+		summarizeBy: none
+		sourceColumn: OROST
+
+		annotation SummarizationSetBy = Automatic
+
+	column OROBEA
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5d85cf02-c12c-49d3-9c8c-a2129cc4fda1
+		sourceLineageTag: OROBEA
+		summarizeBy: sum
+		sourceColumn: OROBEA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OROGU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03635a85-b113-4a17-adc6-df1b8955ba1f
+		sourceLineageTag: OROGU
+		summarizeBy: none
+		sourceColumn: OROGU
+
+		annotation SummarizationSetBy = Automatic
+
+	column OROSNM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c419cbdd-9469-48db-bac9-4758dc2a3bff
+		sourceLineageTag: OROSNM
+		summarizeBy: none
+		sourceColumn: OROSNM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDCTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38925470-aa6f-4ad7-be30-ef91d30edb83
+		sourceLineageTag: ORDCTY
+		summarizeBy: none
+		sourceColumn: ORDCTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f5dec0b7-a962-4382-8f59-4a77daa94a61
+		sourceLineageTag: ORDST
+		summarizeBy: none
+		sourceColumn: ORDST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDBEA
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a4431b65-ac01-4f23-a4dc-965eedfbbb44
+		sourceLineageTag: ORDBEA
+		summarizeBy: sum
+		sourceColumn: ORDBEA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDGU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: edb34f92-5f4f-40ca-a77d-c28d3c5f1629
+		sourceLineageTag: ORDGU
+		summarizeBy: none
+		sourceColumn: ORDGU
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDSNM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b1a62f4-e09d-4421-be20-119aae380888
+		sourceLineageTag: ORDSNM
+		summarizeBy: none
+		sourceColumn: ORDSNM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORMILE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 39980602-1ccc-416a-af4d-c9563388b4de
+		sourceLineageTag: ORMILE
+		summarizeBy: sum
+		sourceColumn: ORMILE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORLDMI
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: c6ecefec-a726-4605-9983-b6d9d549ad5f
+		sourceLineageTag: ORLDMI
+		summarizeBy: sum
+		sourceColumn: ORLDMI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OREMIL
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9e0e5a49-b9e1-47bd-b0c3-4a8c56d1099d
+		sourceLineageTag: OREMIL
+		summarizeBy: sum
+		sourceColumn: OREMIL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORRST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38b4ba76-5636-4f49-9ff3-0bbe90641574
+		sourceLineageTag: ORRST
+		summarizeBy: none
+		sourceColumn: ORRST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSTP#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8e1941b1-54ca-4af9-9997-57220907d190
+		sourceLineageTag: ORSTP#
+		summarizeBy: none
+		sourceColumn: ORSTP#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLD#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b8ba62f-2145-4b51-b5d4-6a39d8e88248
+		sourceLineageTag: ORLD#
+		summarizeBy: none
+		sourceColumn: ORLD#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPDRV
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0cd3b263-ef13-4bc8-a9ac-85104b1ede56
+		sourceLineageTag: ORPDRV
+		summarizeBy: none
+		sourceColumn: ORPDRV
+
+		annotation SummarizationSetBy = Automatic
+
+	column OR#DSP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e5180369-9d6b-4c4b-9457-f4539f729592
+		sourceLineageTag: OR#DSP
+		summarizeBy: none
+		sourceColumn: OR#DSP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDSP#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa8eb351-4348-4d70-8700-9c4b22e5633c
+		sourceLineageTag: ORDSP#
+		summarizeBy: none
+		sourceColumn: ORDSP#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORTRLR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72c0955c-754a-4b6c-8952-9752a207bd43
+		sourceLineageTag: ORTRLR
+		summarizeBy: none
+		sourceColumn: ORTRLR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORESTR
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f0fe3eae-84af-47dd-b3c8-e6e3d8ca73d6
+		sourceLineageTag: ORESTR
+		summarizeBy: sum
+		sourceColumn: ORESTR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORNWPK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5151c972-7c6c-4f09-b996-c1df558ba210
+		sourceLineageTag: ORNWPK
+		summarizeBy: none
+		sourceColumn: ORNWPK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORINAR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f2347fd7-a41b-43b0-8126-bb330cfedc7e
+		sourceLineageTag: ORINAR
+		summarizeBy: none
+		sourceColumn: ORINAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCSH#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cc485673-1886-43f2-b027-c6c32b1a9a82
+		sourceLineageTag: ORCSH#
+		summarizeBy: none
+		sourceColumn: ORCSH#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCNS#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66a1ebf2-7b1f-4f1d-8900-d242e752d40c
+		sourceLineageTag: ORCNS#
+		summarizeBy: none
+		sourceColumn: ORCNS#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORORBY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e8973b37-7539-4483-a506-36cc002a291f
+		sourceLineageTag: ORORBY
+		summarizeBy: none
+		sourceColumn: ORORBY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLS#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1420354a-1364-4899-80c3-856c6f10080d
+		sourceLineageTag: ORLS#
+		summarizeBy: none
+		sourceColumn: ORLS#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPIEC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6a4be283-9f05-4fb4-af12-f5a92519f885
+		sourceLineageTag: ORPIEC
+		summarizeBy: none
+		sourceColumn: ORPIEC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPORC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66559098-551c-49b3-bb40-80d30704c4a8
+		sourceLineageTag: ORPORC
+		summarizeBy: none
+		sourceColumn: ORPORC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORMAN#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d1f658e0-b199-430b-b923-f78b0e8276aa
+		sourceLineageTag: ORMAN#
+		summarizeBy: none
+		sourceColumn: ORMAN#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCUBE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0fc4f5f5-6781-48e7-a6fc-3c89bf41fb3a
+		sourceLineageTag: ORCUBE
+		summarizeBy: none
+		sourceColumn: ORCUBE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSPEC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 537b65b2-8831-4925-bc6f-eb99e13b9467
+		sourceLineageTag: ORSPEC
+		summarizeBy: none
+		sourceColumn: ORSPEC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORAPDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5b480dfb-205a-49b5-9401-c4a2138042f8
+		sourceLineageTag: ORAPDT
+		summarizeBy: sum
+		sourceColumn: ORAPDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORAPTM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8e524215-bbed-4e3e-8f95-c6769f802b13
+		sourceLineageTag: ORAPTM
+		summarizeBy: none
+		sourceColumn: ORAPTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORAPNM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ff8a9a9d-d318-434b-8677-e2a8f6fa01eb
+		sourceLineageTag: ORAPNM
+		summarizeBy: none
+		sourceColumn: ORAPNM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORAPIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d7d06d18-fbd7-4fde-b210-2affdc22a75c
+		sourceLineageTag: ORAPIN
+		summarizeBy: none
+		sourceColumn: ORAPIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORADDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 19cc0a3d-12aa-4741-9c8f-ddd01305be56
+		sourceLineageTag: ORADDT
+		summarizeBy: sum
+		sourceColumn: ORADDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORADTM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9909eb06-a745-4f48-a759-4cc27f11e1c5
+		sourceLineageTag: ORADTM
+		summarizeBy: none
+		sourceColumn: ORADTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORADNM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cd171ea0-ee31-42e9-bc85-b2f5d147aeb3
+		sourceLineageTag: ORADNM
+		summarizeBy: none
+		sourceColumn: ORADNM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORADIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8022a889-06dd-425a-8dab-bd3b8bcea5a7
+		sourceLineageTag: ORADIN
+		summarizeBy: none
+		sourceColumn: ORADIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPREQ
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: da030009-ed60-45de-a643-0aa145ecb370
+		sourceLineageTag: ORPREQ
+		summarizeBy: sum
+		sourceColumn: ORPREQ
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORARR
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f2b78a47-a4bc-4bd8-a84f-e950c5e0ea27
+		sourceLineageTag: ORARR
+		summarizeBy: sum
+		sourceColumn: ORARR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORCPIC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b5574b34-2d83-4021-b002-f28f08828dba
+		sourceLineageTag: ORCPIC
+		summarizeBy: sum
+		sourceColumn: ORCPIC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORCWGT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e5e40d40-db01-4c39-b02d-dbd83b874b58
+		sourceLineageTag: ORCWGT
+		summarizeBy: sum
+		sourceColumn: ORCWGT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORSHDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1397a467-e24f-407b-adc0-d0efbb9f2a1f
+		sourceLineageTag: ORSHDT
+		summarizeBy: sum
+		sourceColumn: ORSHDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORSHTM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d5394916-0d7d-43a2-bd4f-40429c6fc157
+		sourceLineageTag: ORSHTM
+		summarizeBy: none
+		sourceColumn: ORSHTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORTMPH
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 86e07eb6-cf3b-47f0-afc0-664571757566
+		sourceLineageTag: ORTMPH
+		summarizeBy: sum
+		sourceColumn: ORTMPH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORTMPL
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 62dc9282-1a5c-4131-ae9f-77b4925e6169
+		sourceLineageTag: ORTMPL
+		summarizeBy: sum
+		sourceColumn: ORTMPL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OREQTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7666c698-dae4-4c7f-8444-46cd73b11cb5
+		sourceLineageTag: OREQTY
+		summarizeBy: none
+		sourceColumn: OREQTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORUPDD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: cb758a06-05de-4ad5-91cf-cf3301c52789
+		sourceLineageTag: ORUPDD
+		summarizeBy: sum
+		sourceColumn: ORUPDD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORUPDT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1b228cf0-c411-4da0-a247-b6464c2193d0
+		sourceLineageTag: ORUPDT
+		summarizeBy: none
+		sourceColumn: ORUPDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORUPDI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2d763f3a-6f2e-4351-aa45-e54656fa7193
+		sourceLineageTag: ORUPDI
+		summarizeBy: none
+		sourceColumn: ORUPDI
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCO#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1990c81d-d674-4261-9c03-1f2a97181b5b
+		sourceLineageTag: ORCO#
+		summarizeBy: none
+		sourceColumn: ORCO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDV#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a212bed-8636-4f08-8d4c-53ede1491be1
+		sourceLineageTag: ORDV#
+		summarizeBy: none
+		sourceColumn: ORDV#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORTM#
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec232b4b-9539-42ba-8ba7-8eb0e5245b81
+		sourceLineageTag: ORTM#
+		summarizeBy: none
+		sourceColumn: ORTM#
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSEL1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4022e714-e383-43ef-afda-45161b98204a
+		sourceLineageTag: ORSEL1
+		summarizeBy: none
+		sourceColumn: ORSEL1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSEL2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a6076261-27e0-4c67-8280-7154f41813cf
+		sourceLineageTag: ORSEL2
+		summarizeBy: none
+		sourceColumn: ORSEL2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSERV
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: be5b82b5-4ba3-43c5-a208-1683bf3ca493
+		sourceLineageTag: ORSERV
+		summarizeBy: none
+		sourceColumn: ORSERV
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCMTM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ce2cedc-d0f0-4a83-90db-40ab3959e5b5
+		sourceLineageTag: ORCMTM
+		summarizeBy: none
+		sourceColumn: ORCMTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORHAZM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 747b7fad-8e41-430a-9026-9ae7702d4103
+		sourceLineageTag: ORHAZM
+		summarizeBy: none
+		sourceColumn: ORHAZM
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREDI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 899b5c23-a8d0-478a-84ee-8e2d5648ee3f
+		sourceLineageTag: OREDI
+		summarizeBy: none
+		sourceColumn: OREDI
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREDIC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0d17395d-9d21-466c-821d-b0a898e05184
+		sourceLineageTag: OREDIC
+		summarizeBy: none
+		sourceColumn: OREDIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDLD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d99c19ce-e427-4f78-9df3-e53f3856c999
+		sourceLineageTag: ORDLD
+		summarizeBy: none
+		sourceColumn: ORDLD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDULD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 58da730b-f6b5-48ad-8845-f7e8f5fbe42b
+		sourceLineageTag: ORDULD
+		summarizeBy: none
+		sourceColumn: ORDULD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSDR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18bd0ae7-6504-4720-a057-f33dc2e5ef67
+		sourceLineageTag: ORSDR
+		summarizeBy: none
+		sourceColumn: ORSDR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORSDRR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f1539e5-3855-47b8-a621-a7c4ba1fd495
+		sourceLineageTag: ORSDRR
+		summarizeBy: none
+		sourceColumn: ORSDRR
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREDMB
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 29dfbca1-7f67-4d71-b18c-c879228661c9
+		sourceLineageTag: OREDMB
+		summarizeBy: none
+		sourceColumn: OREDMB
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORBBOC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 344b4e61-d989-42d5-bec0-0d3c871a3026
+		sourceLineageTag: ORBBOC
+		summarizeBy: none
+		sourceColumn: ORBBOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORJIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 72784f5a-4203-40c2-8242-f4146667a008
+		sourceLineageTag: ORJIT
+		summarizeBy: none
+		sourceColumn: ORJIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCDED
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d87be9e4-1136-4776-a05a-a8be386c24a2
+		sourceLineageTag: ORCDED
+		summarizeBy: none
+		sourceColumn: ORCDED
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORAGNT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 96d5608e-a5fb-4feb-8525-447abd621143
+		sourceLineageTag: ORAGNT
+		summarizeBy: none
+		sourceColumn: ORAGNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREDFB
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a8fb8ae7-9fdf-4b9a-8a0e-1277ab9558c8
+		sourceLineageTag: OREDFB
+		summarizeBy: none
+		sourceColumn: OREDFB
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREDIO
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1593b42-6eac-42f3-b557-48d9a39dff36
+		sourceLineageTag: OREDIO
+		summarizeBy: none
+		sourceColumn: OREDIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORQUT#
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e92a2b26-d5f7-48b9-9b26-cfde22bc53f7
+		sourceLineageTag: ORQUT#
+		summarizeBy: sum
+		sourceColumn: ORQUT#
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OROPLM
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4a53df08-466b-4fbd-ab8b-3c91822bdbf7
+		sourceLineageTag: OROPLM
+		summarizeBy: sum
+		sourceColumn: OROPLM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDPLM
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4dd9e48a-72f8-4cf0-8afb-a2be4c777cb2
+		sourceLineageTag: ORDPLM
+		summarizeBy: sum
+		sourceColumn: ORDPLM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORCCTY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 35792a16-79fa-4729-8f46-ee534ca4bc9a
+		sourceLineageTag: ORCCTY
+		summarizeBy: none
+		sourceColumn: ORCCTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f1413488-0654-49a3-b6ff-a27b50d8674c
+		sourceLineageTag: ORCST
+		summarizeBy: none
+		sourceColumn: ORCST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLCDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 51f07373-a62c-4b73-bd4d-d00fdc0c18b7
+		sourceLineageTag: ORLCDT
+		summarizeBy: sum
+		sourceColumn: ORLCDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORECDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: dbe1415f-874f-4f7c-9791-7c054bb430b2
+		sourceLineageTag: ORECDT
+		summarizeBy: sum
+		sourceColumn: ORECDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORRATO
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 961a904a-0862-4640-9dd4-5654455ea48d
+		sourceLineageTag: ORRATO
+		summarizeBy: none
+		sourceColumn: ORRATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLDWG
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1c7ec0dd-bd7d-44da-a1b9-9508140b2e3e
+		sourceLineageTag: ORLDWG
+		summarizeBy: sum
+		sourceColumn: ORLDWG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORLGT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5913f268-f555-4afc-9514-f8bfc9c10f07
+		sourceLineageTag: ORLGT
+		summarizeBy: sum
+		sourceColumn: ORLGT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORHGT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 971c49a8-0861-4734-b11c-d7aefc875728
+		sourceLineageTag: ORHGT
+		summarizeBy: sum
+		sourceColumn: ORHGT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORWDT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 7f08da03-1095-41ac-88c6-3ea39fc4b874
+		sourceLineageTag: ORWDT
+		summarizeBy: sum
+		sourceColumn: ORWDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORPMTF
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 430a549f-fa59-4440-b76c-f90b3d85eb54
+		sourceLineageTag: ORPMTF
+		summarizeBy: none
+		sourceColumn: ORPMTF
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORPCOM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4858b6fc-ddc2-457b-967a-b3eee43bbceb
+		sourceLineageTag: ORPCOM
+		summarizeBy: none
+		sourceColumn: ORPCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORLAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f6a2f3df-67f6-4c0b-b1c0-ea39222a215a
+		sourceLineageTag: ORLAT
+		summarizeBy: sum
+		sourceColumn: ORLAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORLONG
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8a48d1ac-4f0e-4d9c-98c3-8b009039261d
+		sourceLineageTag: ORLONG
+		summarizeBy: sum
+		sourceColumn: ORLONG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORTEN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cdf0581f-fba2-478a-95b9-e9afada3fb6f
+		sourceLineageTag: ORTEN
+		summarizeBy: none
+		sourceColumn: ORTEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORHRS
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 062d2c04-d693-4583-953f-c96a2bad4fdd
+		sourceLineageTag: ORHRS
+		summarizeBy: sum
+		sourceColumn: ORHRS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORMIN
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a94374bb-b95a-430a-b6dc-9f17a1e540f9
+		sourceLineageTag: ORMIN
+		summarizeBy: sum
+		sourceColumn: ORMIN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OROZN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92392ed5-939d-4218-b721-b23d3d398c65
+		sourceLineageTag: OROZN
+		summarizeBy: none
+		sourceColumn: OROZN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORORG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7752cbc7-64a2-4f1f-bea5-d58b37a6e5b8
+		sourceLineageTag: ORORG
+		summarizeBy: none
+		sourceColumn: ORORG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDZN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 795f7e0f-21b2-46db-801b-4d7570a44537
+		sourceLineageTag: ORDZN
+		summarizeBy: none
+		sourceColumn: ORDZN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDRG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 001423ab-51ff-4a87-b2c7-dbb18fbeb196
+		sourceLineageTag: ORDRG
+		summarizeBy: none
+		sourceColumn: ORDRG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORTBRT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f736916-515a-48e9-a734-ec7c78e55d62
+		sourceLineageTag: ORTBRT
+		summarizeBy: none
+		sourceColumn: ORTBRT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORNZN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c7be832f-7678-40fc-94dc-b79014862bb3
+		sourceLineageTag: ORNZN
+		summarizeBy: none
+		sourceColumn: ORNZN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORNRG
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f21cf84-4216-47d0-9595-bc7bb3c36494
+		sourceLineageTag: ORNRG
+		summarizeBy: none
+		sourceColumn: ORNRG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORNBEA
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 622c2850-8494-4bda-8559-ce639b59282e
+		sourceLineageTag: ORNBEA
+		summarizeBy: sum
+		sourceColumn: ORNBEA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORNGU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b3b5ab81-cc66-482e-a235-5415c60990c0
+		sourceLineageTag: ORNGU
+		summarizeBy: none
+		sourceColumn: ORNGU
+
+		annotation SummarizationSetBy = Automatic
+
+	column OREFM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8309b532-0e99-4ecc-a804-d44d1e1e1717
+		sourceLineageTag: OREFM
+		summarizeBy: none
+		sourceColumn: OREFM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORCARF
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c829f374-0861-4d98-86a3-812f5ef76f8f
+		sourceLineageTag: ORCARF
+		summarizeBy: none
+		sourceColumn: ORCARF
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORUTYP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b750fd9b-a9f5-4443-bf9f-84b44c1892c1
+		sourceLineageTag: ORUTYP
+		summarizeBy: none
+		sourceColumn: ORUTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORTTYP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f33328f4-f7f9-412b-b86a-abab0b35ff63
+		sourceLineageTag: ORTTYP
+		summarizeBy: none
+		sourceColumn: ORTTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDTYP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f1138752-514b-4caa-97a0-a8393386fd2f
+		sourceLineageTag: ORDTYP
+		summarizeBy: none
+		sourceColumn: ORDTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORHAZC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9d438e78-ea4b-4fe7-a7c2-3453f34b117b
+		sourceLineageTag: ORHAZC
+		summarizeBy: none
+		sourceColumn: ORHAZC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORFIL
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 07bd38ea-7b01-42d3-84d2-445d1bc72bff
+		sourceLineageTag: ORFIL
+		summarizeBy: none
+		sourceColumn: ORFIL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_order_incremental_test_bronze-a835dcc9-cda1-49d8-a67a-5b5898c926b0 = entity
+		mode: directLake
+		source
+			entityName: ibmi_order_incremental_test_bronze
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

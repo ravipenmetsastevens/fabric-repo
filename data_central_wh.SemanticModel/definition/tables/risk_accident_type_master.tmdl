@@ -1,0 +1,107 @@
+table risk_accident_type_master
+	lineageTag: bb74c77f-d8b0-4eef-8833-7a00f6927e1a
+	sourceLineageTag: [silver].[risk_accident_type_master]
+
+	column accident_type_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1f5a8e53-8796-4f01-9b77-4091802a710f
+		sourceLineageTag: accident_type_code
+		summarizeBy: sum
+		sourceColumn: accident_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accident_type_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46d3afc2-7232-442b-b01e-b3e8cd89a76c
+		sourceLineageTag: accident_type_description
+		summarizeBy: none
+		sourceColumn: accident_type_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 930bfa3d-2269-4f8e-9700-1448847b4fcd
+		sourceLineageTag: accident_type_create_datetime
+		summarizeBy: none
+		sourceColumn: accident_type_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 809feada-8033-4d11-99fb-c3684ae4723b
+		sourceLineageTag: accident_type_create_user_code
+		summarizeBy: none
+		sourceColumn: accident_type_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 737ed602-c279-44f1-9d56-182cf0c54614
+		sourceLineageTag: accident_type_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: accident_type_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80b50b9e-79cf-45a3-9d31-9d29d6f8d1ed
+		sourceLineageTag: accident_type_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: accident_type_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_category
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5ab59b9-19ee-445c-be4c-ef5474ccc6ed
+		sourceLineageTag: accident_type_category
+		summarizeBy: none
+		sourceColumn: accident_type_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_on_road
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76b8bcec-06f7-4b3d-8329-8d3ba729a20d
+		sourceLineageTag: is_on_road
+		summarizeBy: none
+		sourceColumn: is_on_road
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_type_safety_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 881d8f38-09ca-4c7f-912e-151d64b2c7a5
+		sourceLineageTag: accident_type_safety_type_code
+		summarizeBy: none
+		sourceColumn: accident_type_safety_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_accident_type_master-c7f6da70-2221-49dd-8090-bb2dfc44b583 = entity
+		mode: directLake
+		source
+			entityName: risk_accident_type_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

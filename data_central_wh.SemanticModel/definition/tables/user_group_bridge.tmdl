@@ -1,0 +1,43 @@
+table user_group_bridge
+	lineageTag: aa27e680-83af-499b-8223-1e342a111b68
+	sourceLineageTag: [silver].[user_group_bridge]
+
+	column user_username
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 43faa99c-09c6-4923-8d63-ff78951192ef
+		sourceLineageTag: user_username
+		summarizeBy: none
+		sourceColumn: user_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_group_uniquename
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aa762dd5-56cc-4f53-aaed-d42177f3c054
+		sourceLineageTag: user_group_uniquename
+		summarizeBy: none
+		sourceColumn: user_group_uniquename
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_groupname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 93ba8e53-375f-46bd-b933-79146adab4b5
+		sourceLineageTag: user_groupname
+		summarizeBy: none
+		sourceColumn: user_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition user_group_bridge-417b5e9c-bd04-4d81-bfc2-9b2f39843d1b = entity
+		mode: directLake
+		source
+			entityName: user_group_bridge
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

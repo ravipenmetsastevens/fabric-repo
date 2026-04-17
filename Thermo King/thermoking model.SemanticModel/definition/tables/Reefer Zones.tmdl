@@ -1,0 +1,132 @@
+table 'Reefer Zones'
+	lineageTag: 1b2bb358-d59d-4896-a920-719e2930a727
+
+	column vehicleName
+		dataType: string
+		lineageTag: 412222b6-08e9-4219-9653-e4892b52bfe1
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fbf01d78-1de2-4333-b9e5-0ab119c17846
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		variation Variation
+			isDefault
+			relationship: dc112c8c-2fc1-4c3d-b63c-3752a60912e8
+			defaultHierarchy: LocalDateTable_607d2221-9faa-43cb-b85f-e5e38ac8b38a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column dataTime
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3661448a-402d-46aa-9d70-4262b256de79
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column isZone1Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d439972f-8b74-4b09-9ef1-0a152324e91c
+		summarizeBy: none
+		sourceColumn: isZone1Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone1Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2a917a8d-8f2f-430a-a655-42c687941361
+		summarizeBy: none
+		sourceColumn: isZone1Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone1DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: acf51212-3505-4400-9949-97f2884705da
+		summarizeBy: none
+		sourceColumn: isZone1DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5ccea4f4-d319-4124-971a-b1c937d9522e
+		summarizeBy: none
+		sourceColumn: isZone2Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f48efa52-014d-48a5-a390-91880810b235
+		summarizeBy: none
+		sourceColumn: isZone2Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a5e28195-3d06-4721-942a-4f0648416206
+		summarizeBy: none
+		sourceColumn: isZone2DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e426bbcd-6612-48da-ad8e-fb7ea7190061
+		summarizeBy: none
+		sourceColumn: isZone3Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 46d52bce-e8b5-41db-b571-a15b9fd3794f
+		summarizeBy: none
+		sourceColumn: isZone3Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b36d3364-94ee-4bd4-b859-6f591387b103
+		summarizeBy: none
+		sourceColumn: isZone3DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Reefer Zones' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_thermoking_reefer_zones = Source{[Schema="gold",Item="fact_thermoking_reefer_zones"]}[Data]
+				in
+				    gold_fact_thermoking_reefer_zones
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

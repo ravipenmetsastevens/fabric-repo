@@ -1,0 +1,88 @@
+table risk_road_condition_master
+	lineageTag: 120cb12a-bc7b-4c03-98e9-599224c9e597
+	sourceLineageTag: [silver].[risk_road_condition_master]
+
+	column road_cond_mast_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: d0b4f889-0a76-42b7-b6b4-406335f90020
+		sourceLineageTag: road_cond_mast_code
+		summarizeBy: sum
+		sourceColumn: road_cond_mast_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column road_cond_mast_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fd028f2d-a80c-445c-83cb-19d01048cf80
+		sourceLineageTag: road_cond_mast_description
+		summarizeBy: none
+		sourceColumn: road_cond_mast_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_cond_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8254b4a2-eb90-42ae-84d2-bcdc21d79ce0
+		sourceLineageTag: road_cond_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: road_cond_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_cond_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8ddb978a-790e-4c68-871f-e301c82894ac
+		sourceLineageTag: road_cond_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: road_cond_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_cond_mast_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 47de6285-2987-4295-addc-88b66df53c86
+		sourceLineageTag: road_cond_mast_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: road_cond_mast_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_cond_mast_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4a5f7037-60e2-4e8f-aad6-19285c7fe627
+		sourceLineageTag: road_cond_mast_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: road_cond_mast_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_cond_mast_safety_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1333285b-4c18-4e19-9e6d-f874989594f0
+		sourceLineageTag: road_cond_mast_safety_code
+		summarizeBy: sum
+		sourceColumn: road_cond_mast_safety_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_road_condition_master-5ade9b90-da06-411c-a0ab-a9398c2a859c = entity
+		mode: directLake
+		source
+			entityName: risk_road_condition_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

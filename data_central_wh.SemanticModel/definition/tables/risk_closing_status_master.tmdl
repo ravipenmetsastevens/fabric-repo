@@ -1,0 +1,127 @@
+table risk_closing_status_master
+	lineageTag: 55cde242-8c58-4c97-bccf-45e847fa4e84
+	sourceLineageTag: [silver].[risk_closing_status_master]
+
+	column closing_stat_mast_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 39fe6e01-0375-4488-9333-181b1f4dfbb0
+		sourceLineageTag: closing_stat_mast_code
+		summarizeBy: sum
+		sourceColumn: closing_stat_mast_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column closing_stat_mast_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66e5957e-851a-4477-b129-cb1dc1245126
+		sourceLineageTag: closing_stat_mast_description
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column closing_stat_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 902c4f04-df2e-47bf-991e-f7ead5b7a22e
+		sourceLineageTag: closing_stat_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column closing_stat_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 002e26cf-f490-44b0-95b6-48253a244c41
+		sourceLineageTag: closing_stat_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column closing_stat_mast_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 93df823f-8ee6-477a-b98b-4a3955b873b2
+		sourceLineageTag: closing_stat_mast_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column closing_stat_mast_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 140109d3-7b77-407a-8cb2-3e6db70a6027
+		sourceLineageTag: closing_stat_mast_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_zero_outstanding
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e9a15a3b-439f-4f40-b419-b10d5754326a
+		sourceLineageTag: has_zero_outstanding
+		summarizeBy: none
+		sourceColumn: has_zero_outstanding
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_close_diary
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b6f7735-b048-46ed-a4f1-6a59c0468111
+		sourceLineageTag: has_close_diary
+		summarizeBy: none
+		sourceColumn: has_close_diary
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_zero_recovery
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c80b72c-66ae-45bc-a5b5-340202b37196
+		sourceLineageTag: has_zero_recovery
+		summarizeBy: none
+		sourceColumn: has_zero_recovery
+
+		annotation SummarizationSetBy = Automatic
+
+	column closing_stat_mast_action_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5211619a-0125-4aa0-8362-c09ceefc7c4e
+		sourceLineageTag: closing_stat_mast_action_code
+		summarizeBy: none
+		sourceColumn: closing_stat_mast_action_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_close_adjustments
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2e8b93fb-606e-4272-b278-44b0b5ed88af
+		sourceLineageTag: has_close_adjustments
+		summarizeBy: none
+		sourceColumn: has_close_adjustments
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_closing_status_master-fc3afca9-bd32-45fc-8bc2-fecd8dbffdbb = entity
+		mode: directLake
+		source
+			entityName: risk_closing_status_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

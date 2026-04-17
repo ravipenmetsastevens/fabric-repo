@@ -1,0 +1,38 @@
+table 'User Group Bridge'
+	lineageTag: 87a6cf28-b11e-4cba-ab28-a6aff89c79b2
+
+	column user_username
+		dataType: string
+		lineageTag: 945d41d0-300c-4286-b181-f857d1cb1e9a
+		summarizeBy: none
+		sourceColumn: user_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_group_uniquename
+		dataType: string
+		lineageTag: c90beae1-c5ad-41f7-91ae-156a25db62eb
+		summarizeBy: none
+		sourceColumn: user_group_uniquename
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_groupname
+		dataType: string
+		lineageTag: df19fd40-5473-4ee6-8d2e-559d624e597f
+		summarizeBy: none
+		sourceColumn: user_groupname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'User Group Bridge' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    silver_user_group_bridge = Source{[Schema="silver",Item="user_group_bridge"]}[Data]
+				in
+				    silver_user_group_bridge
+
+	annotation PBI_ResultType = Table
+

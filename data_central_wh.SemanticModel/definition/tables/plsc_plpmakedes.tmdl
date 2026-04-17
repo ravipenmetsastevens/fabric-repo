@@ -1,0 +1,33 @@
+table plsc_plpmakedes
+	lineageTag: 03e88172-9904-4075-89da-e9c4e1ef76cd
+	sourceLineageTag: [bronze].[plsc_plpmakedes]
+
+	column MAKENAME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1a66c853-7d9b-4db1-a113-fbf45659f770
+		sourceLineageTag: MAKENAME
+		summarizeBy: none
+		sourceColumn: MAKENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAKEDESC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ef0cfd3-9e10-41cd-819a-7dab0b6e0b56
+		sourceLineageTag: MAKEDESC
+		summarizeBy: none
+		sourceColumn: MAKEDESC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plpmakedes-dd01a8cd-9a6c-471f-98a8-98036feea5da = entity
+		mode: directLake
+		source
+			entityName: plsc_plpmakedes
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

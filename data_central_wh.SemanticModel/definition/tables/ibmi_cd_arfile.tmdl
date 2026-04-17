@@ -1,0 +1,242 @@
+table ibmi_cd_arfile
+	lineageTag: b0acea50-c8d0-4e93-85d6-d4e71e72f72f
+	sourceLineageTag: [silver].[ibmi_cd_arfile]
+
+	column cd_arfile_record_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b015a103-e6c6-4262-8427-6c1654a43049
+		sourceLineageTag: cd_arfile_record_code
+		summarizeBy: none
+		sourceColumn: cd_arfile_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9825f721-5a47-4c63-982c-6dae6d46c568
+		sourceLineageTag: cd_arfile_customer_code
+		summarizeBy: none
+		sourceColumn: cd_arfile_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 110d4049-e91d-4303-a750-4d4e1ceb27dc
+		sourceLineageTag: cd_arfile_invoice_number
+		summarizeBy: none
+		sourceColumn: cd_arfile_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_adj_batch_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eec23b4e-318a-40fa-907d-93c823ea2e32
+		sourceLineageTag: cd_arfile_adj_batch_code
+		summarizeBy: none
+		sourceColumn: cd_arfile_adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_record_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4ce4b07-4116-4f2f-a8ab-207cfd380a45
+		sourceLineageTag: cd_arfile_record_type
+		summarizeBy: none
+		sourceColumn: cd_arfile_record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 636a7bdd-98b8-488c-9568-bb2217e738af
+		sourceLineageTag: cd_arfile_record_number
+		summarizeBy: sum
+		sourceColumn: cd_arfile_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_arfile_invoice_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0b647cb3-aa10-4772-b605-dfba8f49502d
+		sourceLineageTag: cd_arfile_invoice_date
+		summarizeBy: none
+		sourceColumn: cd_arfile_invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b5cd95b-89f8-4434-a990-83380535cdb8
+		sourceLineageTag: cd_arfile_load_number
+		summarizeBy: none
+		sourceColumn: cd_arfile_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_deposit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 56e0baa2-03a4-4a0e-aa0b-b07d94a071da
+		sourceLineageTag: cd_arfile_deposit_date
+		summarizeBy: none
+		sourceColumn: cd_arfile_deposit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_cust_order_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 19b70c3d-8c0a-46b1-8ffb-c85ad664b8a9
+		sourceLineageTag: cd_arfile_cust_order_number
+		summarizeBy: none
+		sourceColumn: cd_arfile_cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_book_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a92fab6-2481-4582-96c1-c5e6cb455968
+		sourceLineageTag: cd_arfile_book_month
+		summarizeBy: none
+		sourceColumn: cd_arfile_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_book_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9078c79c-6481-479a-8271-008e948fa058
+		sourceLineageTag: cd_arfile_book_year
+		summarizeBy: none
+		sourceColumn: cd_arfile_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6c80bc5a-3e91-42af-bcc3-a40a6b8c286a
+		sourceLineageTag: cd_arfile_amount
+		summarizeBy: sum
+		sourceColumn: cd_arfile_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_arfile_balance_forward
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: ccb9b1ee-fce8-463d-8933-96e238fba0e0
+		sourceLineageTag: cd_arfile_balance_forward
+		summarizeBy: sum
+		sourceColumn: cd_arfile_balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_daily_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a9f4c5c7-024c-4a6e-8cd6-88c147532eb1
+		sourceLineageTag: is_daily_pro_register
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7f0868ea-85df-475b-aabd-8093358444e4
+		sourceLineageTag: is_weekly_pro_register
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_monthly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b0fad890-6c00-4950-971d-3223800c53c6
+		sourceLineageTag: is_monthly_pro_register
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_non_current
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0560059b-2ec5-43a3-a1b3-50eec96bdb07
+		sourceLineageTag: is_non_current
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_customer_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dd60ae42-37e8-4ce6-bd71-bd43d001d59a
+		sourceLineageTag: cd_arfile_customer_name
+		summarizeBy: none
+		sourceColumn: cd_arfile_customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_sequence_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3ed461b2-3315-45e2-a217-e2ee523fa8f6
+		sourceLineageTag: cd_arfile_sequence_code
+		summarizeBy: none
+		sourceColumn: cd_arfile_sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_statement_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b98681a9-f76d-4127-a133-cbba434d66a1
+		sourceLineageTag: cd_arfile_statement_number
+		summarizeBy: none
+		sourceColumn: cd_arfile_statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_arfile_dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d6ad9815-a38b-4f7e-b278-44a8bb8950c3
+		sourceLineageTag: cd_arfile_dispatch_date
+		summarizeBy: none
+		sourceColumn: cd_arfile_dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_cd_arfile-0824dbd6-6e36-43d8-b5d4-6a5b3629647b = entity
+		mode: directLake
+		source
+			entityName: ibmi_cd_arfile
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

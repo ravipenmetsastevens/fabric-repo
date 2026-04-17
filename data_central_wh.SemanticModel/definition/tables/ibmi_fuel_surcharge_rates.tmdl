@@ -1,0 +1,74 @@
+table ibmi_fuel_surcharge_rates
+	lineageTag: 758f0335-67ae-42d6-b8f5-9438d444c245
+	sourceLineageTag: [silver].[ibmi_fuel_surcharge_rates]
+
+	column fuel_surcharge_rates_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f9c238b-3478-4cf5-8b31-e92102895c65
+		sourceLineageTag: fuel_surcharge_rates_customer_code
+		summarizeBy: none
+		sourceColumn: fuel_surcharge_rates_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rates_customer_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 472b4f1f-d7aa-4f57-a610-188d0602626d
+		sourceLineageTag: fuel_surcharge_rates_customer_type_code
+		summarizeBy: none
+		sourceColumn: fuel_surcharge_rates_customer_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rates_dry_rate
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 99131b3e-6826-465c-b3fc-a8bc38ef3922
+		sourceLineageTag: fuel_surcharge_rates_dry_rate
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge_rates_dry_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rates_effective_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 14a4cd36-e19f-4183-abdb-04da006b1d84
+		sourceLineageTag: fuel_surcharge_rates_effective_date
+		summarizeBy: none
+		sourceColumn: fuel_surcharge_rates_effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rates_reefer_rate
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 944fbe43-3374-4efe-b8d2-b0d98f0950f8
+		sourceLineageTag: fuel_surcharge_rates_reefer_rate
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge_rates_reefer_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_surcharge_rates_intermodal_rate
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 65b76cb9-968c-47d9-aba2-5964e9b16dc7
+		sourceLineageTag: fuel_surcharge_rates_intermodal_rate
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge_rates_intermodal_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_fuel_surcharge_rates-9f4ea1de-f6c1-4a75-a634-91e5878a7ff8 = entity
+		mode: directLake
+		source
+			entityName: ibmi_fuel_surcharge_rates
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

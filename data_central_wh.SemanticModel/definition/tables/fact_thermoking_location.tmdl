@@ -1,0 +1,121 @@
+table fact_thermoking_location
+	lineageTag: 0af093ae-b6fa-4074-8df7-a46ec2b1bfd1
+	sourceLineageTag: [gold].[fact_thermoking_location]
+
+	column vehicleName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c38d471f-b069-48a3-8255-f67105653424
+		sourceLineageTag: vehicleName
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 86f4452e-c3ed-4aa9-80e9-ad273ab7c9b0
+		sourceLineageTag: dataDate
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 03ec0772-5462-41bf-9f3a-57415ef54138
+		sourceLineageTag: dataTime
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column thermoking_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ccee335a-309a-4e71-aa8b-e332fa2a23e9
+		sourceLineageTag: thermoking_latitude
+		summarizeBy: sum
+		sourceColumn: thermoking_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column thermoking_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 458d3a16-f1c0-4abf-8103-6f474f93ce4b
+		sourceLineageTag: thermoking_longitude
+		summarizeBy: sum
+		sourceColumn: thermoking_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column locationDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 825370c1-384f-44f3-967a-13cc455540f3
+		sourceLineageTag: locationDescription
+		summarizeBy: none
+		sourceColumn: locationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_kmph
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4f4a5b32-405d-4fce-9ca0-0cc8f0d1abde
+		sourceLineageTag: speed_kmph
+		summarizeBy: sum
+		sourceColumn: speed_kmph
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_mph
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e2da17e7-db18-41ee-a73f-8d8e6b41285e
+		sourceLineageTag: speed_mph
+		summarizeBy: sum
+		sourceColumn: speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoFenceName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cbff202c-b4eb-4b4c-84fa-587de2c5b9fb
+		sourceLineageTag: geoFenceName
+		summarizeBy: none
+		sourceColumn: geoFenceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoAccessTypeDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68e2cb14-2c09-46b2-b25d-253b9e862575
+		sourceLineageTag: geoAccessTypeDescription
+		summarizeBy: none
+		sourceColumn: geoAccessTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_thermoking_location-8711a1c2-500a-4504-a6e3-dda73a06f2a2 = entity
+		mode: directLake
+		source
+			entityName: fact_thermoking_location
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

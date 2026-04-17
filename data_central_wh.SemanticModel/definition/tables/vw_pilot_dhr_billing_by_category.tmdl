@@ -1,0 +1,45 @@
+table vw_pilot_dhr_billing_by_category
+	lineageTag: 8851e390-bc16-4e35-bf2e-a3266bd9392d
+	sourceLineageTag: [silver].[vw_pilot_dhr_billing_by_category]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 74f8b42c-ea93-49bf-a6fc-4b560b1d03f2
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_category
+		dataType: string
+		sourceProviderType: char
+		lineageTag: 58ded8a2-afe0-4b0b-bfae-d4f401831d1a
+		sourceLineageTag: billing_category
+		summarizeBy: none
+		sourceColumn: billing_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column billed_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 90c6bb92-b8fb-4532-bd32-f845fc2850cf
+		sourceLineageTag: billed_amount
+		summarizeBy: sum
+		sourceColumn: billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_pilot_dhr_billing_by_category-3b644f46-cfbc-4682-9d96-ff7536237531 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_billing_by_category
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

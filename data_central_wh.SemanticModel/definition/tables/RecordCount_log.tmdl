@@ -1,0 +1,118 @@
+table RecordCount_log
+	lineageTag: 0730d276-fc70-40e8-9947-f414bf6e7cab
+	sourceLineageTag: [silver].[RecordCount_log]
+
+	column finished_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 47550b94-1a98-4a42-ac7b-d5bafb61e055
+		sourceLineageTag: finished_utc
+		summarizeBy: none
+		sourceColumn: finished_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_ms
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1464c336-163f-4113-9115-228b6d514913
+		sourceLineageTag: duration_ms
+		summarizeBy: sum
+		sourceColumn: duration_ms
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c009f43e-507f-450c-a127-029c717cdbba
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_message
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ea829ad-68b3-495a-b8b3-29eb3001146e
+		sourceLineageTag: error_message
+		summarizeBy: none
+		sourceColumn: error_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_schema
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a7cf79d9-26f0-4f78-b749-8a2bffe3de9f
+		sourceLineageTag: object_schema
+		summarizeBy: none
+		sourceColumn: object_schema
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dc60e911-08f2-4da1-9a3e-cea54f9f143f
+		sourceLineageTag: object_name
+		summarizeBy: none
+		sourceColumn: object_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column object_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4268497d-d3ce-42ae-b9fd-b1ab8752e7b2
+		sourceLineageTag: object_type
+		summarizeBy: none
+		sourceColumn: object_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 56267d05-b5fd-4105-b8b9-4f5b85908016
+		sourceLineageTag: record_count
+		summarizeBy: sum
+		sourceColumn: record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_zero_count
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 72d46e13-0aac-41a9-be16-07d6507c571c
+		sourceLineageTag: is_zero_count
+		summarizeBy: none
+		sourceColumn: is_zero_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column started_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ba343817-235d-4082-9ad5-fa71965a7e90
+		sourceLineageTag: started_utc
+		summarizeBy: none
+		sourceColumn: started_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RecordCount_log-8cb91cfe-7d25-4cc3-9382-4d8492318178 = entity
+		mode: directLake
+		source
+			entityName: RecordCount_log
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

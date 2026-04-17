@@ -1,0 +1,144 @@
+table fact_thermoking_reefer_zones
+	lineageTag: 201aace0-018e-4128-8234-143146d96ea6
+	sourceLineageTag: [gold].[fact_thermoking_reefer_zones]
+
+	column vehicleName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cfcdefcf-f7c0-4aca-9fa5-2a6602ec310b
+		sourceLineageTag: vehicleName
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 893b40bb-154e-4838-9d27-f638b33821fa
+		sourceLineageTag: dataDate
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: cf5c9425-3c7b-4914-b745-78e10f34489d
+		sourceLineageTag: dataTime
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone1Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: bdbb0619-1d31-4cdd-8d49-ec1f6ea6c9f4
+		sourceLineageTag: isZone1Active
+		summarizeBy: none
+		sourceColumn: isZone1Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone1Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d8a657be-3caf-47b8-9f2d-76b4b4fcf3e2
+		sourceLineageTag: isZone1Configured
+		summarizeBy: none
+		sourceColumn: isZone1Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone1DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: e7263016-d799-4e07-8f4c-48ce8c0ac78c
+		sourceLineageTag: isZone1DoorOpen
+		summarizeBy: none
+		sourceColumn: isZone1DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 2a3a1a66-291c-42dd-8d97-33537182e7cc
+		sourceLineageTag: isZone2Active
+		summarizeBy: none
+		sourceColumn: isZone2Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d78d43aa-6f91-446f-b76e-8389520a452b
+		sourceLineageTag: isZone2Configured
+		summarizeBy: none
+		sourceColumn: isZone2Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone2DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: f25df814-d6ac-453e-bcd4-d6ee2d146775
+		sourceLineageTag: isZone2DoorOpen
+		summarizeBy: none
+		sourceColumn: isZone2DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0d96edeb-18db-41b9-8724-29d8aaa4daa2
+		sourceLineageTag: isZone3Active
+		summarizeBy: none
+		sourceColumn: isZone3Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3Configured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 9a9f97d4-d777-486f-ab07-c5e4b41b87b5
+		sourceLineageTag: isZone3Configured
+		summarizeBy: none
+		sourceColumn: isZone3Configured
+
+		annotation SummarizationSetBy = Automatic
+
+	column isZone3DoorOpen
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: df5a9236-9f71-457d-8ff0-9bdaedd8e5bd
+		sourceLineageTag: isZone3DoorOpen
+		summarizeBy: none
+		sourceColumn: isZone3DoorOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_thermoking_reefer_zones-7772c269-97ed-4f8d-9c19-be45250943cc = entity
+		mode: directLake
+		source
+			entityName: fact_thermoking_reefer_zones
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

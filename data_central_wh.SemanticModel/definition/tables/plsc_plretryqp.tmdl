@@ -1,0 +1,179 @@
+table plsc_plretryqp
+	lineageTag: a87a9926-04d5-4190-8015-6dd9fa34ef3e
+	sourceLineageTag: [bronze].[plsc_plretryqp]
+
+	column PLQTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1edf9e0a-574a-44e6-9e86-4ae93d7cbd30
+		sourceLineageTag: PLQTYPE
+		summarizeBy: none
+		sourceColumn: PLQTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRWJU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 89c9ae70-d5dc-4a86-af30-06aa45069fd9
+		sourceLineageTag: PLCRWJU
+		summarizeBy: none
+		sourceColumn: PLCRWJU
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRWJD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e80594ab-1c54-4184-b6cf-4503e727f07b
+		sourceLineageTag: PLCRWJD
+		summarizeBy: sum
+		sourceColumn: PLCRWJD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLCRWJT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8d07b153-9f6a-4b65-89c5-b97179c51ffa
+		sourceLineageTag: PLCRWJT
+		summarizeBy: none
+		sourceColumn: PLCRWJT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCNWJI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3e4e7648-b54c-4814-a2e6-5075ff4c3faa
+		sourceLineageTag: PLCNWJI
+		summarizeBy: none
+		sourceColumn: PLCNWJI
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCMWJI
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 15971eb0-8dd6-4d50-9362-60a872207a94
+		sourceLineageTag: PLCMWJI
+		summarizeBy: none
+		sourceColumn: PLCMWJI
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCMWJR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0e5bf4b-2c1a-4990-869f-6309bcf3afba
+		sourceLineageTag: PLCMWJR
+		summarizeBy: none
+		sourceColumn: PLCMWJR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRWPU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 48cbd2d0-534e-428f-aa09-505317ec8886
+		sourceLineageTag: PLCRWPU
+		summarizeBy: none
+		sourceColumn: PLCRWPU
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRWPD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3fd975fc-6c40-49c1-abe2-ceef93dd8456
+		sourceLineageTag: PLCRWPD
+		summarizeBy: sum
+		sourceColumn: PLCRWPD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLCRWPT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53d53e4d-744f-42f4-a6d2-e786a612ee52
+		sourceLineageTag: PLCRWPT
+		summarizeBy: none
+		sourceColumn: PLCRWPT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCNWPO
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b91a465f-5886-433d-8824-574da22c7c64
+		sourceLineageTag: PLCNWPO
+		summarizeBy: none
+		sourceColumn: PLCNWPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCNWPD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0723d9e-f621-4064-856b-1617c1d6e350
+		sourceLineageTag: PLCNWPD
+		summarizeBy: none
+		sourceColumn: PLCNWPD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRFFU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 89fd77b9-28da-4bed-a2d7-5b1eb8741478
+		sourceLineageTag: PLCRFFU
+		summarizeBy: none
+		sourceColumn: PLCRFFU
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLCRFFD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 34d34cb1-6509-4ee3-94e4-bf188c3327d7
+		sourceLineageTag: PLCRFFD
+		summarizeBy: sum
+		sourceColumn: PLCRFFD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLCRFFT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f306d911-689f-4cd5-ae72-abeaa98b88c0
+		sourceLineageTag: PLCRFFT
+		summarizeBy: none
+		sourceColumn: PLCRFFT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLQSEND
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 471bdcfa-ee4b-44e0-8009-c6bfecadceca
+		sourceLineageTag: PLQSEND
+		summarizeBy: none
+		sourceColumn: PLQSEND
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plretryqp-3461cf69-11db-4bd9-aef5-e1c8772343d0 = entity
+		mode: directLake
+		source
+			entityName: plsc_plretryqp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

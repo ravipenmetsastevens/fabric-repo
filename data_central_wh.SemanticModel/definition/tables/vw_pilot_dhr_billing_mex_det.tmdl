@@ -1,0 +1,35 @@
+table vw_pilot_dhr_billing_mex_det
+	lineageTag: 5ef902fe-59b6-410b-a7ea-4644457a913f
+	sourceLineageTag: [silver].[vw_pilot_dhr_billing_mex_det]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0be99cec-6c36-45a8-8106-d82830c3f305
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column mex_det_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 39849f94-777d-4a03-96eb-da2dbea10809
+		sourceLineageTag: mex_det_amount
+		summarizeBy: sum
+		sourceColumn: mex_det_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_pilot_dhr_billing_mex_det-54ec3666-3a66-465c-b88c-a55b92ddede5 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_billing_mex_det
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

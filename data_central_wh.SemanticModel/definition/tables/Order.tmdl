@@ -1,0 +1,159 @@
+table Order
+	lineageTag: 1ee41c5b-0f20-4823-a984-0416f5bb6113
+	sourceLineageTag: [gold].[Order]
+
+	column order_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2300a470-0a4e-483a-952a-0cdb6c388002
+		sourceLineageTag: order_load_number
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderStatus
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e24f29cd-eb90-42b7-b407-934f4d8e289d
+		sourceLineageTag: OrderStatus
+		summarizeBy: none
+		sourceColumn: OrderStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 2ce7a04a-7bd7-4439-8671-754e78aea495
+		sourceLineageTag: order_date
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4dfd0049-4254-45c1-a900-f1bb9dbdd9dc
+		sourceLineageTag: order_customer_code
+		summarizeBy: none
+		sourceColumn: order_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_creation_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e4b21e8c-dfcf-4ae4-9db9-1f68b0f9da42
+		sourceLineageTag: order_creation_initials
+		summarizeBy: none
+		sourceColumn: order_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c5a4575-3e62-4276-b7af-fc1eefdf3772
+		sourceLineageTag: order_origin_city_code
+		summarizeBy: none
+		sourceColumn: order_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 107a6f14-7073-4509-9446-661c0b2532c2
+		sourceLineageTag: order_destination_city_code
+		summarizeBy: none
+		sourceColumn: order_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles_billable
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a7956d05-989a-4c4a-ac7b-4a2b00f15332
+		sourceLineageTag: order_miles_billable
+		summarizeBy: sum
+		sourceColumn: order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_load_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 79b943b2-19d7-4b60-9e80-9b0ce641e786
+		sourceLineageTag: order_load_type
+		summarizeBy: none
+		sourceColumn: order_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_revenue_estimation
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9c321d27-698f-4a9c-adbd-264878a939d0
+		sourceLineageTag: order_revenue_estimation
+		summarizeBy: sum
+		sourceColumn: order_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_load_volume
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c9ba7578-4acf-48e4-9fc5-7a3b45369d12
+		sourceLineageTag: order_load_volume
+		summarizeBy: none
+		sourceColumn: order_load_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9cacad0b-7a35-4a1d-9d00-d7eb17c48b7b
+		sourceLineageTag: order_ship_date
+		summarizeBy: none
+		sourceColumn: order_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_receipt_signed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a05bbf4e-c489-4b01-a70f-8ee583bbe852
+		sourceLineageTag: is_delivery_receipt_signed
+		summarizeBy: none
+		sourceColumn: is_delivery_receipt_signed
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivery_receipt_req
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 732e62f2-0ccc-4897-b3a7-79f40eca8d8b
+		sourceLineageTag: order_delivery_receipt_req
+		summarizeBy: none
+		sourceColumn: order_delivery_receipt_req
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Order-a50f050c-9006-4a97-b87c-3e6bd37cc9dc = entity
+		mode: directLake
+		source
+			entityName: Order
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

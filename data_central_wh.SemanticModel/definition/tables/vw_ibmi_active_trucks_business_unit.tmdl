@@ -1,0 +1,63 @@
+table vw_ibmi_active_trucks_business_unit
+	lineageTag: f91cc3da-bf27-41fa-8172-5304a60d47df
+	sourceLineageTag: [silver].[vw_ibmi_active_trucks_business_unit]
+
+	column unit_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5de9cbc5-f121-4785-8afa-4389776b7208
+		sourceLineageTag: unit_truck_number
+		summarizeBy: none
+		sourceColumn: unit_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f7cebd24-e8f3-4f89-9897-362007f4e238
+		sourceLineageTag: unit_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: unit_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_seat_2_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 188af740-e838-4501-8b86-0cf57e217f12
+		sourceLineageTag: unit_seat_2_driver_code
+		summarizeBy: none
+		sourceColumn: unit_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 87c8ee01-77d1-4696-ba17-a92ae35d138d
+		sourceLineageTag: business_unit_class
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 158d5f78-cf44-49da-a1b1-8f811ce01082
+		sourceLineageTag: business_unit_description
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_active_trucks_business_unit-dc99ae5e-321e-4ad8-a594-987a64a76068 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_active_trucks_business_unit
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

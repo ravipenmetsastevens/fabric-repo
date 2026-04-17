@@ -1,0 +1,418 @@
+table netr_alert
+	lineageTag: 9fedeccb-b3a5-4188-ba0d-dc01dce0cffc
+	sourceLineageTag: [silver].[netr_alert]
+
+	column alert_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 09632865-af14-4df8-a528-a17e87e4f8a8
+		sourceLineageTag: alert_id
+		summarizeBy: sum
+		sourceColumn: alert_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 3909afd5-b160-421a-8ad4-79e3aed0ec04
+		sourceLineageTag: alert_date
+		summarizeBy: none
+		sourceColumn: alert_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 7a254489-9d08-4cf2-97e9-a8c94d4e85da
+		sourceLineageTag: alert_time
+		summarizeBy: none
+		sourceColumn: alert_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_duration
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 52a9e625-9087-4ba7-a9f3-760858fe9528
+		sourceLineageTag: alert_duration
+		summarizeBy: sum
+		sourceColumn: alert_duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5ed3552b-a50e-453d-b129-8b33593f4dcf
+		sourceLineageTag: alert_type_id
+		summarizeBy: sum
+		sourceColumn: alert_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d819049f-aa38-45ee-a091-c652843769e2
+		sourceLineageTag: alert_type_descr
+		summarizeBy: none
+		sourceColumn: alert_type_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type_sub_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e01a7b0f-20a5-448a-864b-3b01446832ea
+		sourceLineageTag: alert_type_sub_id
+		summarizeBy: none
+		sourceColumn: alert_type_sub_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type_sub_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0a3a7f1-9681-4cea-8bc9-4421b6e9be0b
+		sourceLineageTag: alert_type_sub_descr
+		summarizeBy: none
+		sourceColumn: alert_type_sub_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_severity
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d151d08d-5161-4f1d-845b-ed5a89324169
+		sourceLineageTag: alert_severity
+		summarizeBy: sum
+		sourceColumn: alert_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_severity_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6c8f419-5844-4619-9630-d4511557bb35
+		sourceLineageTag: alert_severity_descr
+		summarizeBy: none
+		sourceColumn: alert_severity_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_category
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4249c1b8-fd67-4a71-a916-44bee63c6d86
+		sourceLineageTag: alert_category
+		summarizeBy: sum
+		sourceColumn: alert_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_category_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 88336603-987b-4c91-8af3-20b9dba766d1
+		sourceLineageTag: alert_category_descr
+		summarizeBy: none
+		sourceColumn: alert_category_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_cause_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a731bee5-62db-48e2-8682-1fa9da51f72d
+		sourceLineageTag: alert_cause_id
+		summarizeBy: sum
+		sourceColumn: alert_cause_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_cause_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 055671e9-4ace-463e-859d-b1c2bf94cea0
+		sourceLineageTag: alert_cause_descr
+		summarizeBy: none
+		sourceColumn: alert_cause_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_weather_prediction
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f14f47e-7596-416a-95f2-16ec7579ef1a
+		sourceLineageTag: alert_weather_prediction
+		summarizeBy: none
+		sourceColumn: alert_weather_prediction
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 586d0203-0f93-48d9-a062-5781b4463a11
+		sourceLineageTag: alert_gps_date
+		summarizeBy: none
+		sourceColumn: alert_gps_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 096702b4-591c-4965-a21f-08657b2fadc4
+		sourceLineageTag: alert_gps_time
+		summarizeBy: none
+		sourceColumn: alert_gps_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b64c7732-ebde-461a-94ed-55482ba9be42
+		sourceLineageTag: alert_gps_latitude
+		summarizeBy: sum
+		sourceColumn: alert_gps_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_gps_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 6dba98f6-fff1-4af8-8d76-9054f067cc6b
+		sourceLineageTag: alert_gps_longitude
+		summarizeBy: sum
+		sourceColumn: alert_gps_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_vehicle_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bc3ceae8-502f-470e-b8a3-5530f07f4e65
+		sourceLineageTag: alert_vehicle_vin
+		summarizeBy: none
+		sourceColumn: alert_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_vehicleNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 67095ce9-ac02-4b87-b41c-2a14b66f6d91
+		sourceLineageTag: alert_vehicle_vehicleNumber
+		summarizeBy: none
+		sourceColumn: alert_vehicle_vehicleNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_status_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: dccd1f77-8499-46c8-9339-08e37d501ff2
+		sourceLineageTag: alert_vehicle_status_id
+		summarizeBy: sum
+		sourceColumn: alert_vehicle_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_status_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d255693d-dd7a-4f11-85d2-d6d83c4f556c
+		sourceLineageTag: alert_vehicle_status_descr
+		summarizeBy: none
+		sourceColumn: alert_vehicle_status_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_driver_firstname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e805ea9f-9631-4105-ad42-39885c2a2332
+		sourceLineageTag: alert_driver_firstname
+		summarizeBy: none
+		sourceColumn: alert_driver_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_driver_lastname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7785e04f-ac5b-4143-83f1-936ff585acea
+		sourceLineageTag: alert_driver_lastname
+		summarizeBy: none
+		sourceColumn: alert_driver_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d60cb707-5122-4203-999a-e97df1cae08b
+		sourceLineageTag: alert_driver_id
+		summarizeBy: none
+		sourceColumn: alert_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 03874e74-927b-41a7-ba5a-3d2a8a4952d5
+		sourceLineageTag: alert_video_id
+		summarizeBy: sum
+		sourceColumn: alert_video_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_status_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e26d5ddb-26cb-4ea3-b2bb-81953ba2d5ca
+		sourceLineageTag: alert_video_status_id
+		summarizeBy: sum
+		sourceColumn: alert_video_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_status_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f7bc16fa-fdf2-49ef-a579-5e6c8301cc0f
+		sourceLineageTag: alert_video_status_descr
+		summarizeBy: none
+		sourceColumn: alert_video_status_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_position_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2366f84d-5701-413f-a3da-e1419235179d
+		sourceLineageTag: alert_video_position_id
+		summarizeBy: sum
+		sourceColumn: alert_video_position_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_position_decr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bef3c83d-f366-4497-9c5c-6078279ddb2d
+		sourceLineageTag: alert_video_position_decr
+		summarizeBy: none
+		sourceColumn: alert_video_position_decr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e52d9bfa-51cb-4918-82e1-2f211517c3b0
+		sourceLineageTag: alert_video_date
+		summarizeBy: none
+		sourceColumn: alert_video_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_video_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 34a4aae2-68e6-46b3-b25c-e320288f0797
+		sourceLineageTag: alert_video_time
+		summarizeBy: none
+		sourceColumn: alert_video_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_camera_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 93e4e283-1fb3-49e3-957b-578a51e61929
+		sourceLineageTag: alert_camera_id
+		summarizeBy: none
+		sourceColumn: alert_camera_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_status_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 55e2c5c5-ab73-4f44-9d7a-484664fbf421
+		sourceLineageTag: alert_status_id
+		summarizeBy: sum
+		sourceColumn: alert_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_status_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cf2feed3-939f-4d27-982c-0f829d257309
+		sourceLineageTag: alert_status_descr
+		summarizeBy: none
+		sourceColumn: alert_status_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_speed
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b5beb3df-bff9-41b1-a640-106c40010804
+		sourceLineageTag: alert_speed
+		summarizeBy: sum
+		sourceColumn: alert_speed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed_limit
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 63a5dfca-0018-4f62-af9e-870fac85f27c
+		sourceLineageTag: alert_speed_limit
+		summarizeBy: sum
+		sourceColumn: alert_speed_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition netr_alert-77fcf3d9-05e6-4d68-87b5-4e7c9273aaf6 = entity
+		mode: directLake
+		source
+			entityName: netr_alert
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

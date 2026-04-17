@@ -1,0 +1,45 @@
+table ibmi_driver_home_history
+	lineageTag: 7722f082-8bd3-47e0-b415-fd07fa2e6a64
+	sourceLineageTag: [silver].[ibmi_driver_home_history]
+
+	column drv_home_hist_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8e19bb82-8e7b-409b-87f6-2122367f4c9d
+		sourceLineageTag: drv_home_hist_driver_code
+		summarizeBy: none
+		sourceColumn: drv_home_hist_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_hist_previous_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 48fddf78-196f-41bd-a27b-408d54d7e79d
+		sourceLineageTag: drv_home_hist_previous_arrival_date
+		summarizeBy: none
+		sourceColumn: drv_home_hist_previous_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_home_hist_departure_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c3eb1f6f-85ab-4d25-a274-5d2f123e3d50
+		sourceLineageTag: drv_home_hist_departure_date
+		summarizeBy: none
+		sourceColumn: drv_home_hist_departure_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_driver_home_history-3ef735d5-c680-4423-af9f-54a2351f5e0e = entity
+		mode: directLake
+		source
+			entityName: ibmi_driver_home_history
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

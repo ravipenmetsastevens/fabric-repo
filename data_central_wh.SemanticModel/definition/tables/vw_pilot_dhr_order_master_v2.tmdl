@@ -1,0 +1,253 @@
+table vw_pilot_dhr_order_master_v2
+	lineageTag: c5c450e2-58a9-4de9-b7fd-d0544d68ddd9
+	sourceLineageTag: [silver].[vw_pilot_dhr_order_master_v2]
+
+	column order_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49086f5c-af5c-4fcd-bec0-bcd3c22dcfac
+		sourceLineageTag: order_load_number
+		summarizeBy: none
+		sourceColumn: order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6e938c76-962d-4d19-b7e2-2e0b9d7e181f
+		sourceLineageTag: order_status_code
+		summarizeBy: none
+		sourceColumn: order_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5ee98913-fbf4-4da8-92e2-ba15f7df645d
+		sourceLineageTag: order_customer_code
+		summarizeBy: none
+		sourceColumn: order_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_consignee_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ee654bed-5000-442c-974e-d0ea8ac5d858
+		sourceLineageTag: order_consignee_code
+		summarizeBy: none
+		sourceColumn: order_consignee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_billto_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 197e0bb2-8c45-4640-b222-3b6b77812785
+		sourceLineageTag: order_billto_code
+		summarizeBy: none
+		sourceColumn: order_billto_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_loadat_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 48353c6d-6627-4dda-b4c1-cca6d53dbe89
+		sourceLineageTag: order_loadat_code
+		summarizeBy: none
+		sourceColumn: order_loadat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_early_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 99c6e055-cb65-4e7b-b8c0-a02cd786159f
+		sourceLineageTag: order_early_pickup_date
+		summarizeBy: none
+		sourceColumn: order_early_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_pallet_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d41b18d2-6777-42d5-a3be-c3c9251f31b2
+		sourceLineageTag: order_pallet_count
+		summarizeBy: none
+		sourceColumn: order_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 34d443ff-f9a2-4830-8426-dec86bcab5c1
+		sourceLineageTag: order_origin_city_code
+		summarizeBy: none
+		sourceColumn: order_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b515af7e-d13b-48c7-9f37-aadd7b13cd5c
+		sourceLineageTag: order_origin_state
+		summarizeBy: none
+		sourceColumn: order_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 177dd3c2-ad0f-4159-a043-ad43177ac0e0
+		sourceLineageTag: order_destination_city_code
+		summarizeBy: none
+		sourceColumn: order_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: adb4c6bd-2e1f-463e-b2be-d408a71b3989
+		sourceLineageTag: order_destination_state
+		summarizeBy: none
+		sourceColumn: order_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_miles_billable
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e6c18f00-19fd-4adb-9b91-17f35f69edb6
+		sourceLineageTag: order_miles_billable
+		summarizeBy: sum
+		sourceColumn: order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_revenue_estimation
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 260446f1-dbb8-4016-a121-06e7c7e26fc3
+		sourceLineageTag: order_revenue_estimation
+		summarizeBy: sum
+		sourceColumn: order_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7f9c431b-215f-4382-bd4b-46e440058414
+		sourceLineageTag: order_ship_date
+		summarizeBy: none
+		sourceColumn: order_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_temp_high
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9886e146-1953-4075-9d9e-c4fc2b37c898
+		sourceLineageTag: order_temp_high
+		summarizeBy: sum
+		sourceColumn: order_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_temp_low
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 18c12811-832a-4355-a243-8177284e32cb
+		sourceLineageTag: order_temp_low
+		summarizeBy: sum
+		sourceColumn: order_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a612b65e-9846-4da7-9e79-b687dfa31499
+		sourceLineageTag: order_division_code
+		summarizeBy: none
+		sourceColumn: order_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 667e5806-0e43-496f-b274-8855365ed580
+		sourceLineageTag: order_destination_area_code
+		summarizeBy: none
+		sourceColumn: order_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_destination_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 433be8a6-53a1-47e7-b15a-9c5cadebb59b
+		sourceLineageTag: order_destination_region_code
+		summarizeBy: none
+		sourceColumn: order_destination_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_to_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 721351ec-ba93-40a3-88ee-bb44e0ae944e
+		sourceLineageTag: bill_to_name
+		summarizeBy: none
+		sourceColumn: bill_to_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cf24b810-f4fe-4767-8963-655a81570a08
+		sourceLineageTag: cust_name
+		summarizeBy: none
+		sourceColumn: cust_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_at_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aab12f76-7a16-4246-a286-8470088fc946
+		sourceLineageTag: load_at_name
+		summarizeBy: none
+		sourceColumn: load_at_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_pilot_dhr_order_master_v2-9019d964-7a4e-4578-b055-7b0a55c33ec0 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_order_master_v2
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

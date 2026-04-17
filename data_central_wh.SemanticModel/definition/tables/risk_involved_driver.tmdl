@@ -1,0 +1,232 @@
+table risk_involved_driver
+	lineageTag: 5b9ed57d-37ab-4c34-a2dd-9b2dc07f90a2
+	sourceLineageTag: [silver].[risk_involved_driver]
+
+	column involved_drv_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c436b046-86d2-4316-9623-2f034dbfb68c
+		sourceLineageTag: involved_drv_claim_record_code
+		summarizeBy: sum
+		sourceColumn: involved_drv_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column involved_drv_involved_party_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 0874b4fa-b08a-4338-afef-dac86dee5162
+		sourceLineageTag: involved_drv_involved_party_code
+		summarizeBy: sum
+		sourceColumn: involved_drv_involved_party_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column was_seatbelt_used
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa4bdf51-f6e3-4e26-b774-1d5ebe923f85
+		sourceLineageTag: was_seatbelt_used
+		summarizeBy: none
+		sourceColumn: was_seatbelt_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column was_drug_test_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 70888452-5935-4e93-a5a8-45399e85a092
+		sourceLineageTag: was_drug_test_required
+		summarizeBy: none
+		sourceColumn: was_drug_test_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2a4a545-04b9-41ca-a523-c93b9e0debbb
+		sourceLineageTag: involved_drv_driver_code
+		summarizeBy: none
+		sourceColumn: involved_drv_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56621596-7085-4d14-9053-821cc3df2b43
+		sourceLineageTag: involved_drv_dm_code
+		summarizeBy: none
+		sourceColumn: involved_drv_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_driver_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0eb8e99-f0e5-4e41-bd89-55ea4cb2b499
+		sourceLineageTag: involved_drv_driver_type
+		summarizeBy: none
+		sourceColumn: involved_drv_driver_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_trainer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f6640eaf-f9f4-47ba-b2de-99c5a934194f
+		sourceLineageTag: involved_drv_trainer_code
+		summarizeBy: none
+		sourceColumn: involved_drv_trainer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_license_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2c1e23a2-a218-4f2e-a23e-4027a98e3704
+		sourceLineageTag: involved_drv_license_number
+		summarizeBy: none
+		sourceColumn: involved_drv_license_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_birth_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 26d33931-00c3-4575-a085-8de2607d895f
+		sourceLineageTag: involved_drv_birth_date
+		summarizeBy: none
+		sourceColumn: involved_drv_birth_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_hire_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ddde5c9c-61bd-4668-a9f9-00fdaaf03ea4
+		sourceLineageTag: involved_drv_hire_date
+		summarizeBy: none
+		sourceColumn: involved_drv_hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fe683a0e-4f56-4649-8889-813c153c9324
+		sourceLineageTag: involved_drv_create_datetime
+		summarizeBy: none
+		sourceColumn: involved_drv_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27c687a6-cf09-49ea-b445-347ad1ef9b6f
+		sourceLineageTag: involved_drv_create_user_code
+		summarizeBy: none
+		sourceColumn: involved_drv_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 751c252e-7d99-46ba-90be-7ff2bff7aecd
+		sourceLineageTag: involved_drv_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: involved_drv_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 98d89712-56ef-4123-b6eb-7c778fcc886b
+		sourceLineageTag: involved_drv_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: involved_drv_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column was_injured
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8d5d2683-d212-4e57-83e0-d6995c58072a
+		sourceLineageTag: was_injured
+		summarizeBy: none
+		sourceColumn: was_injured
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_vehicle_owner
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 052f8d75-e649-432f-9ec1-fd7f14d8620e
+		sourceLineageTag: is_vehicle_owner
+		summarizeBy: none
+		sourceColumn: is_vehicle_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_license_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ab8b6f6b-7cb5-4531-a6b5-cf10b5138fe4
+		sourceLineageTag: involved_drv_license_state
+		summarizeBy: none
+		sourceColumn: involved_drv_license_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_social_security
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 01f2de24-e195-4d2f-8d22-da2ba456a478
+		sourceLineageTag: involved_drv_social_security
+		summarizeBy: sum
+		sourceColumn: involved_drv_social_security
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_gender
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 162a7140-1928-4ff1-bf11-62ec19a17d95
+		sourceLineageTag: involved_drv_gender
+		summarizeBy: none
+		sourceColumn: involved_drv_gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_drv_marital_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 67a29130-2b3d-4b2d-a226-fc85f24a2c7f
+		sourceLineageTag: involved_drv_marital_status
+		summarizeBy: none
+		sourceColumn: involved_drv_marital_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_involved_driver-20a6c63e-3188-4b7a-95e4-c455000dcf4a = entity
+		mode: directLake
+		source
+			entityName: risk_involved_driver
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

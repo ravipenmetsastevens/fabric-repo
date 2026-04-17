@@ -1,0 +1,151 @@
+table netr_coaching
+	lineageTag: df7b6e43-1af1-4a9a-8ab4-af2c91319fcf
+	sourceLineageTag: [silver].[netr_coaching]
+
+	column coaching_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 07a17894-c6f3-4901-bc43-e55da4ea5069
+		sourceLineageTag: coaching_id
+		summarizeBy: sum
+		sourceColumn: coaching_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9a3efee4-295b-4ac8-830d-537528251d78
+		sourceLineageTag: coaching_create_date
+		summarizeBy: none
+		sourceColumn: coaching_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 5057c7a3-95f2-4898-af87-b7b06f50e681
+		sourceLineageTag: coaching_create_time
+		summarizeBy: none
+		sourceColumn: coaching_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_complete_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ebcc665e-342c-4c16-95cc-723a8b5ecae4
+		sourceLineageTag: coaching_complete_date
+		summarizeBy: none
+		sourceColumn: coaching_complete_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_complete_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 611c8255-9f7a-4de0-af25-bf7fc9b11e43
+		sourceLineageTag: coaching_complete_time
+		summarizeBy: none
+		sourceColumn: coaching_complete_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_status_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 58ccb296-32f1-491b-aaee-1a152d66c755
+		sourceLineageTag: coaching_status_id
+		summarizeBy: sum
+		sourceColumn: coaching_status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column configDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5d2a379f-bc58-4ae9-bf5a-155e77937518
+		sourceLineageTag: configDescription
+		summarizeBy: none
+		sourceColumn: configDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_driver_firstname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 58794bb5-3df0-42e0-89ec-960496bd4224
+		sourceLineageTag: coaching_driver_firstname
+		summarizeBy: none
+		sourceColumn: coaching_driver_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_driver_lastname
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: daee54b9-bb3f-402e-955a-d56f8b55c348
+		sourceLineageTag: coaching_driver_lastname
+		summarizeBy: none
+		sourceColumn: coaching_driver_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c116c695-9c6d-40a9-8210-56ad58aff427
+		sourceLineageTag: coaching_driver_id
+		summarizeBy: none
+		sourceColumn: coaching_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ba8601cf-8b0e-4aee-b614-9f863cc21a5c
+		sourceLineageTag: coaching_update_date
+		summarizeBy: none
+		sourceColumn: coaching_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: f8e711f5-3985-40c7-ad5c-f61a5dc78831
+		sourceLineageTag: coaching_update_time
+		summarizeBy: none
+		sourceColumn: coaching_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5fcacacb-37ff-4c60-92a8-b8419d190528
+		sourceLineageTag: coaching_type
+		summarizeBy: none
+		sourceColumn: coaching_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_coaching-459bbf3c-a002-482c-9d83-723cc7f61bcc = entity
+		mode: directLake
+		source
+			entityName: netr_coaching
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,115 @@
+table risk_claim_reserve_total
+	lineageTag: cc544c95-2364-4b7c-bc9e-37ab95272f9c
+	sourceLineageTag: [silver].[risk_claim_reserve_total]
+
+	column reserve_ttl_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f0dd63e0-22e2-47b7-85d0-c4852dd2d6d8
+		sourceLineageTag: reserve_ttl_claim_record_code
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_last_change_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a92556ad-3342-47a3-9e8c-b6b835847f86
+		sourceLineageTag: reserve_ttl_last_change_datetime
+		summarizeBy: none
+		sourceColumn: reserve_ttl_last_change_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_last_change_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03272d39-cdcc-4db9-b2ee-b6a523e3a653
+		sourceLineageTag: reserve_ttl_last_change_user_code
+		summarizeBy: none
+		sourceColumn: reserve_ttl_last_change_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_reserve_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9580450b-3148-48c8-bd33-49f1c64c56de
+		sourceLineageTag: reserve_ttl_reserve_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_reserve_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_paid_loss_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a75b6f86-d4d0-40df-80fb-9a6e2ef34a44
+		sourceLineageTag: reserve_ttl_paid_loss_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_loss_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_paid_expense_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 8afc140c-3177-44e5-aca2-022b377079eb
+		sourceLineageTag: reserve_ttl_paid_expense_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_paid_expense_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_recovered_total_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c4959137-2fc0-40b1-80ef-5dde4deed126
+		sourceLineageTag: reserve_ttl_recovered_total_amount
+		summarizeBy: sum
+		sourceColumn: reserve_ttl_recovered_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reserve_ttl_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f83545b9-6b83-4f3c-90f6-781a32bd6383
+		sourceLineageTag: reserve_ttl_create_datetime
+		summarizeBy: none
+		sourceColumn: reserve_ttl_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserve_ttl_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5d31d18e-3dcb-4581-a11b-671759934e9c
+		sourceLineageTag: reserve_ttl_create_user_code
+		summarizeBy: none
+		sourceColumn: reserve_ttl_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_claim_reserve_total-66fbf11b-d9f5-4122-bf03-17cab336fdd7 = entity
+		mode: directLake
+		source
+			entityName: risk_claim_reserve_total
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,73 @@
+table plsc_dispatch_planned_orders
+	lineageTag: aad1d45c-25a8-44be-8cf4-474333eee867
+	sourceLineageTag: [silver].[plsc_dispatch_planned_orders]
+
+	column driver_code_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f795c858-0a36-4885-8393-9b08cd5a0fa5
+		sourceLineageTag: driver_code_raw
+		summarizeBy: none
+		sourceColumn: driver_code_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_date_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ff39d447-d4d0-4472-8ca3-105165c4d1de
+		sourceLineageTag: mh_date_raw
+		summarizeBy: none
+		sourceColumn: mh_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_date_iso_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ba752924-52d0-4e88-bcbf-23a272a3dee1
+		sourceLineageTag: mh_date_iso_raw
+		summarizeBy: none
+		sourceColumn: mh_date_iso_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column mh_time_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 86f94265-0333-4e67-be04-ca45a5ac09da
+		sourceLineageTag: mh_time_raw
+		summarizeBy: none
+		sourceColumn: mh_time_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_order_id_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 91eda93e-1650-4202-a42f-67d2c7f2414a
+		sourceLineageTag: planned_order_id_raw
+		summarizeBy: none
+		sourceColumn: planned_order_id_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_status_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46b78e55-e79c-4d1e-8656-594fb7a34b2e
+		sourceLineageTag: dispatch_status_raw
+		summarizeBy: none
+		sourceColumn: dispatch_status_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_dispatch_planned_orders-a97caee5-25d7-4260-bcca-3c7e59bef7f9 = entity
+		mode: directLake
+		source
+			entityName: plsc_dispatch_planned_orders
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

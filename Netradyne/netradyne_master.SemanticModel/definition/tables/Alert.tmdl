@@ -1,0 +1,211 @@
+table Alert
+	lineageTag: b08cd14c-3ab7-4933-891d-762781d78981
+
+	column alert_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 07d49317-b660-4fbe-950e-418e8c4cc532
+		summarizeBy: sum
+		sourceColumn: alert_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_driver_id
+		dataType: string
+		lineageTag: d2f8d074-7fce-45aa-8990-0e7a34dfd4c5
+		summarizeBy: none
+		sourceColumn: alert_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_vin
+		dataType: string
+		lineageTag: e0793d2b-6cc5-4235-ad31-ab96cd45a5a6
+		summarizeBy: none
+		sourceColumn: alert_vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_device_id
+		dataType: string
+		lineageTag: 1a83aacb-8b5a-4b94-98e8-e3433999e20f
+		summarizeBy: none
+		sourceColumn: alert_device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 38ca7e0e-1baf-420e-a01d-ee4370a64d1d
+		summarizeBy: none
+		sourceColumn: alert_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column alert_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 2f829a0e-e4d3-4936-9fde-e12cd12c04bf
+		summarizeBy: none
+		sourceColumn: alert_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column alert_duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 111eda8f-da6a-4f3e-b599-3b56ebdce744
+		summarizeBy: sum
+		sourceColumn: alert_duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_type
+		dataType: string
+		lineageTag: a474936d-c826-4560-9060-1c6cfeb122c6
+		summarizeBy: none
+		sourceColumn: alert_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_sub_type
+		dataType: string
+		lineageTag: 8d6f7cfd-6743-4fc8-b3df-9e5ddb3376a3
+		summarizeBy: none
+		sourceColumn: alert_sub_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_severity
+		dataType: string
+		lineageTag: fd8239d6-4de3-4f26-9c3c-0c304863601d
+		summarizeBy: none
+		sourceColumn: alert_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_category
+		dataType: string
+		lineageTag: ad28b44f-783c-4f9d-92d9-2a2f4656df45
+		summarizeBy: none
+		sourceColumn: alert_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_cause
+		dataType: string
+		lineageTag: 4a625449-8e8f-48ef-9772-a01c846557eb
+		summarizeBy: none
+		sourceColumn: alert_cause
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_weather
+		dataType: string
+		lineageTag: 395c5678-6c70-4239-bb74-7e1c8d43154d
+		summarizeBy: none
+		sourceColumn: alert_weather
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_vehicle_status
+		dataType: string
+		lineageTag: 284b2447-76f3-4760-aa87-946821ec7c2a
+		summarizeBy: none
+		sourceColumn: alert_vehicle_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_gps_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2c1e0f82-e35d-462a-834a-bd2c2f5b8ff9
+		summarizeBy: none
+		sourceColumn: alert_gps_date
+
+		variation Variation
+			isDefault
+			relationship: d1deba4d-c321-4cf7-ad96-794bc71310d8
+			defaultHierarchy: LocalDateTable_e0b3af64-e8d6-4cc2-acb3-17ce1e071d05.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column alert_gps_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 00be0bfb-343f-49ec-951b-a11fe0e47ce2
+		summarizeBy: none
+		sourceColumn: alert_gps_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column alert_gps_latitude
+		dataType: double
+		lineageTag: f5f651cf-e615-4e51-941f-41431b50a2c5
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: alert_gps_latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_gps_longitude
+		dataType: double
+		lineageTag: 20e00834-09b3-419e-b128-459e61bec93c
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: alert_gps_longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed
+		dataType: double
+		lineageTag: 11653e88-a8cf-4ced-ab07-effec656d08d
+		summarizeBy: sum
+		sourceColumn: alert_speed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_speed_limit
+		dataType: double
+		lineageTag: 1a8ac8d9-7806-4797-8691-a4f5b9a01dc4
+		summarizeBy: sum
+		sourceColumn: alert_speed_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_status
+		dataType: string
+		lineageTag: 43c02caf-430e-43fd-8bd6-debfe315023c
+		summarizeBy: none
+		sourceColumn: alert_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Alert = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_netr_alert = Source{[Schema="gold",Item="fact_netr_alert"]}[Data]
+				in
+				    gold_fact_netr_alert
+
+	annotation PBI_ResultType = Table
+

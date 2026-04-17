@@ -1,0 +1,147 @@
+table netr_vehicle
+	lineageTag: 9de54aa5-cac9-48bb-a43a-c81c6aa58ad7
+	sourceLineageTag: [silver].[netr_vehicle]
+
+	column vehicle_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84a61c56-412a-4b0f-83d7-0235c75fadba
+		sourceLineageTag: vehicle_vin
+		summarizeBy: none
+		sourceColumn: vehicle_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac6a217a-6b02-4f75-aea0-777589cf68a3
+		sourceLineageTag: vehicle_number
+		summarizeBy: none
+		sourceColumn: vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_device_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf79e048-3568-4d48-852d-4cf4329fb755
+		sourceLineageTag: vehicle_device_id
+		summarizeBy: none
+		sourceColumn: vehicle_device_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_licence_plate_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 44950559-c183-43f0-9ed7-56ed0282259e
+		sourceLineageTag: vehicle_licence_plate_number
+		summarizeBy: none
+		sourceColumn: vehicle_licence_plate_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c6ea24b1-b848-4afc-a99e-a753d0c209f1
+		sourceLineageTag: vehicle_class
+		summarizeBy: none
+		sourceColumn: vehicle_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_gvm
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d69c0b34-67a3-4ca8-9165-02d1fa4c3766
+		sourceLineageTag: vehicle_gvm
+		summarizeBy: none
+		sourceColumn: vehicle_gvm
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_group
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0035bf33-3bbc-45dd-8c13-4482def51d24
+		sourceLineageTag: vehicle_group
+		summarizeBy: none
+		sourceColumn: vehicle_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_battery_disconnect
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eb6efb3d-c94d-4b87-b2a8-e2be4dc2892b
+		sourceLineageTag: vehicle_battery_disconnect
+		summarizeBy: none
+		sourceColumn: vehicle_battery_disconnect
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_reg_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c328dd50-a334-4169-898f-0ee7218de9c2
+		sourceLineageTag: vehicle_reg_date
+		summarizeBy: none
+		sourceColumn: vehicle_reg_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_reg_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 74843a42-c7ae-4b4e-9b70-240fbeea49fc
+		sourceLineageTag: vehicle_reg_time
+		summarizeBy: none
+		sourceColumn: vehicle_reg_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 26e5bbea-20b0-4b69-921b-8f93a95db713
+		sourceLineageTag: vehicle_update_date
+		summarizeBy: none
+		sourceColumn: vehicle_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: b800d86c-2f50-4031-b5cc-3a06c8ff53cb
+		sourceLineageTag: vehicle_update_time
+		summarizeBy: none
+		sourceColumn: vehicle_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 155939fe-70df-48cd-a622-f8cea115582d
+		sourceLineageTag: vehicle_status
+		summarizeBy: none
+		sourceColumn: vehicle_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_vehicle-8811e169-e71c-4217-991e-bfd0bccd9c33 = entity
+		mode: directLake
+		source
+			entityName: netr_vehicle
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

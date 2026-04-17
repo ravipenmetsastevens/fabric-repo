@@ -1,0 +1,43 @@
+table ibmi_business_unit_master
+	lineageTag: 9d83b7c6-ba7a-4663-a1aa-438ffa328ef7
+	sourceLineageTag: [silver].[ibmi_business_unit_master]
+
+	column business_unit_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 532e47d4-44fa-4931-86d1-e3ad2dcb9e07
+		sourceLineageTag: business_unit_class
+		summarizeBy: none
+		sourceColumn: business_unit_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b656f8ef-85a3-4b70-a8bf-58eb32e5c9fa
+		sourceLineageTag: business_unit_description
+		summarizeBy: none
+		sourceColumn: business_unit_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_unit_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7a78b61f-cb69-4b32-9b7f-35df9052a4e7
+		sourceLineageTag: business_unit_code
+		summarizeBy: none
+		sourceColumn: business_unit_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_business_unit_master-e19ef38a-f451-480c-acfb-69a71e707b52 = entity
+		mode: directLake
+		source
+			entityName: ibmi_business_unit_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

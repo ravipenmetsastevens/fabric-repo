@@ -1,0 +1,142 @@
+relationship 42be587e-ae53-4b4d-b03c-1ebd4e52b0f5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Device.device_updated_date
+	toColumn: LocalDateTable_d0544e9d-a449-4dff-9286-ab5fe1e3d9a9.Date
+
+relationship cc9ca225-10a9-4c3d-adba-4abfc93718cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.driver_create_date
+	toColumn: LocalDateTable_2a5840c7-0904-4a3c-9f9e-895009b999f4.Date
+
+relationship 78853a6b-41cc-4737-94bd-fecb7c387bde
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Driver.driver_update_date
+	toColumn: LocalDateTable_db24acf7-04af-4adf-8653-395485b9e9ac.Date
+
+relationship 032912a6-acff-4e3a-9389-b91877ecc49b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Vehicle.vehicle_reg_date
+	toColumn: LocalDateTable_373c1704-5606-4bda-b44d-70f772585586.Date
+
+relationship e5e80801-4016-479b-ad5d-c2547243a003
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Vehicle.vehicle_update_date
+	toColumn: LocalDateTable_52712c26-d957-4077-bcbe-92109a36b232.Date
+
+relationship 4c9b43c4-dd70-4a55-9284-fc01a97763a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Vehicle.vehicle_location_date
+	toColumn: LocalDateTable_264b5461-f200-4472-8221-7efa9831223c.Date
+
+relationship d1deba4d-c321-4cf7-ad96-794bc71310d8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Alert.alert_gps_date
+	toColumn: LocalDateTable_e0b3af64-e8d6-4cc2-acb3-17ce1e071d05.Date
+
+relationship aeab6a13-e266-4ebd-8c11-5f211fe8ec73
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Coaching.coaching_complete_date
+	toColumn: LocalDateTable_da32b726-e4f8-4bb7-a307-861168e9565e.Date
+
+relationship 270be134-58a9-4784-8a43-e58992954ca7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Coaching.coaching_update_date
+	toColumn: LocalDateTable_51e9644d-6920-43ed-886c-440295abf735.Date
+
+relationship c30fddc7-3050-420c-a1a0-753f7b6f40f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.user_create_date
+	toColumn: LocalDateTable_26f2fa32-195f-4ed0-a978-4c2774dfb18d.Date
+
+relationship e6f12cc8-618b-455e-82c3-24d090e66346
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.user_update_date
+	toColumn: LocalDateTable_64514612-37df-453a-aec6-cef2c3ae4e42.Date
+
+relationship a7a32f56-f591-4d8d-a5fd-c89e16a9210b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.date_key_pk
+	toColumn: LocalDateTable_c4bc171f-74cf-44e7-8d58-32dfe9c1e595.Date
+
+relationship 203f54d1-4c50-4a5d-acda-0e635bf1afbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_first_of_week
+	toColumn: LocalDateTable_f0ca2e1d-7862-468b-bcfe-87b2355feba0.Date
+
+relationship 12dbb51f-e896-4501-9de6-26bb88725b61
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_last_of_week
+	toColumn: LocalDateTable_f07b59a4-60e6-42ab-89a6-48ca21e46656.Date
+
+relationship 3f2c9752-d1a8-40f9-a9db-396d6ede6df6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_first_of_month_date
+	toColumn: LocalDateTable_8c17940e-6bba-4ecb-861d-e439e724b81d.Date
+
+relationship 274f5d8d-e34a-4eef-b318-63f7e6a88296
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_last_of_month_date
+	toColumn: LocalDateTable_6234c6c1-43d7-413c-b50e-62cb00064d7e.Date
+
+relationship 89516712-55f6-489b-8b9b-d145022bc93a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_first_of_next_month_date
+	toColumn: LocalDateTable_3a531df5-0792-4eb1-b8c1-e2cf6ec1ede7.Date
+
+relationship 27bc6f21-3245-4d2f-8b1c-965490fe1ae9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_last_of_next_month_date
+	toColumn: LocalDateTable_c135047e-1338-4f3a-b07b-c008865c751a.Date
+
+relationship 5210fb07-2c65-444a-8b85-1aaae89b70f6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_first_of_quarter_date
+	toColumn: LocalDateTable_47d31f44-ce2a-4795-af6b-d2a2c5c2aa4c.Date
+
+relationship e50f50d2-4417-42c5-8ed7-8c2306a96ddf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_last_of_quarter_date
+	toColumn: LocalDateTable_1a739d24-c0bf-48dd-9a42-a8d21a02b999.Date
+
+relationship ad989394-9520-478f-a2ab-ceb304b22a11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_first_of_year
+	toColumn: LocalDateTable_6c3c99d4-a757-4a9f-ab32-ff7b4375826d.Date
+
+relationship c9cb305f-cc8c-4211-8a60-2b9a9a97a6a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.the_last_of_year
+	toColumn: LocalDateTable_4c5384ff-eafb-48e0-884c-5ec79362d465.Date
+
+relationship 398266bd-9eb9-a2ef-0ffa-26a76380edbd
+	fromColumn: Device.device_vehicle_vin
+	toColumn: Vehicle.vehicle_vin
+
+relationship 0173b44b-b12b-cc3f-b69f-16fb89a1541e
+	fromColumn: Alert.alert_date
+	toColumn: Calendar.date_key_pk
+
+relationship 81ed0844-db8f-01c5-5d1b-e7297deb8eb7
+	fromColumn: Alert.alert_device_id
+	toColumn: Device.device_id
+
+relationship 3bb0a51f-f878-5093-4458-93ab8241cddb
+	fromColumn: Coaching.coaching_driver_id
+	toColumn: Driver.driver_id
+
+relationship d30caace-6160-4e1a-2f65-c15aec741cb9
+	fromColumn: Alert.alert_driver_id
+	toColumn: Driver.driver_id
+
+relationship 5f278fcb-c8c9-1a99-000c-e2190d6aed43
+	fromColumn: 'User Group Bridge'.user_username
+	toColumn: User.user_username
+
+relationship 95624701-a1d9-327b-416e-32cdc6182845
+	fromColumn: 'User Group Bridge'.user_group_uniquename
+	toColumn: 'User Group'.group_id
+
+relationship c9f37692-5f8b-67fe-67f3-7f385ef9c398
+	fromColumn: Coaching.coaching_create_date
+	toColumn: Calendar.date_key_pk
+

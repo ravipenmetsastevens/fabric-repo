@@ -1,0 +1,107 @@
+table plsc_pltppordp
+	lineageTag: 187d1ab3-4a08-4c78-936f-5b7ef68adf54
+	sourceLineageTag: [bronze].[plsc_pltppordp]
+
+	column PLPPORD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 83f21d8b-cad5-42af-abbf-a72b04c7d3e5
+		sourceLineageTag: PLPPORD
+		summarizeBy: none
+		sourceColumn: PLPPORD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9f728e90-a97a-4dd4-b5f5-98ed4f7499fd
+		sourceLineageTag: PLPPTYPE
+		summarizeBy: none
+		sourceColumn: PLPPTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPUNIT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c0098a73-882b-4c15-ac9c-118b6c9f6678
+		sourceLineageTag: PLPPUNIT
+		summarizeBy: none
+		sourceColumn: PLPPUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPDRV1
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 018457b4-14ef-4fc3-bcfb-cf91d4cd85d2
+		sourceLineageTag: PLPPDRV1
+		summarizeBy: none
+		sourceColumn: PLPPDRV1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPDRV2
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf6c665c-3401-41bc-bc03-209a20738349
+		sourceLineageTag: PLPPDRV2
+		summarizeBy: none
+		sourceColumn: PLPPDRV2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPDATE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3740588c-ef18-49ab-b54a-e093cc08c0a7
+		sourceLineageTag: PLPPDATE
+		summarizeBy: sum
+		sourceColumn: PLPPDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLPPTIME
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e5793ce-5890-404e-b696-ecb6ef3ea5d4
+		sourceLineageTag: PLPPTIME
+		summarizeBy: none
+		sourceColumn: PLPPTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPPROC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a8c31e52-101d-400c-a918-8b3b15c6d216
+		sourceLineageTag: PLPPPROC
+		summarizeBy: none
+		sourceColumn: PLPPPROC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLPPRETY
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 94eaf0df-3e8a-4aa5-b2cc-ae80277d0064
+		sourceLineageTag: PLPPRETY
+		summarizeBy: sum
+		sourceColumn: PLPPRETY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition plsc_pltppordp-9076ae2c-74dc-47bc-9a20-d1cd15105b67 = entity
+		mode: directLake
+		source
+			entityName: plsc_pltppordp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

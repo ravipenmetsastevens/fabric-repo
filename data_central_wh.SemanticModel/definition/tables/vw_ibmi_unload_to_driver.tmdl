@@ -1,0 +1,57 @@
+table vw_ibmi_unload_to_driver
+	lineageTag: 35a1b193-2f94-4604-8fcf-18030bc7808c
+	sourceLineageTag: [silver].[vw_ibmi_unload_to_driver]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb4bafa6-e343-4600-9253-869725cacc3a
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3a1c96a1-bdcd-4459-a7f1-3818a56bd72d
+		sourceLineageTag: driver_amount
+		summarizeBy: sum
+		sourceColumn: driver_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column early_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: be681845-994e-4d52-b29b-250120bf77f4
+		sourceLineageTag: early_check_date
+		summarizeBy: none
+		sourceColumn: early_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column late_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 99c132f5-9913-413d-84be-b7dadf999619
+		sourceLineageTag: late_check_date
+		summarizeBy: none
+		sourceColumn: late_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_unload_to_driver-c23a4d4c-7cd5-4b06-b60c-d37f96f2d3d5 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_unload_to_driver
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

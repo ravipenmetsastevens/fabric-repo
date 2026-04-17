@@ -1,0 +1,79 @@
+table netr_vehicle_location
+	lineageTag: 8003b17a-f7cf-4e36-b8bb-5acd8c510f3a
+	sourceLineageTag: [silver].[netr_vehicle_location]
+
+	column location_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d93de83f-7ef0-46bc-91cd-4f57666b15dc
+		sourceLineageTag: location_vin
+		summarizeBy: none
+		sourceColumn: location_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_vehicle_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3331c51c-74d7-4053-b3f1-3e0f4a071a39
+		sourceLineageTag: location_vehicle_number
+		summarizeBy: none
+		sourceColumn: location_vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e2b6b3fe-b4b7-470c-b01e-ad8c891f9c0d
+		sourceLineageTag: location_date
+		summarizeBy: none
+		sourceColumn: location_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 060b4e62-5040-4efb-9cf6-56d7b5062dfc
+		sourceLineageTag: location_time
+		summarizeBy: none
+		sourceColumn: location_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 252556bc-1c15-4341-a195-82dc13f802b8
+		sourceLineageTag: location_latitude
+		summarizeBy: sum
+		sourceColumn: location_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column location_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e4250d7b-b2be-45fa-ad9b-1bc47b8ae3c9
+		sourceLineageTag: location_longitude
+		summarizeBy: sum
+		sourceColumn: location_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition netr_vehicle_location-490cbd99-df37-41c6-b418-28e313a095cb = entity
+		mode: directLake
+		source
+			entityName: netr_vehicle_location
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

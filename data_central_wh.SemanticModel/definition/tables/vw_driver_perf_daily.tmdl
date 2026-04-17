@@ -1,0 +1,193 @@
+table vw_driver_perf_daily
+	lineageTag: bd269f2f-3e38-4d67-b3d2-a48cdd1d7346
+	sourceLineageTag: [silver].[vw_driver_perf_daily]
+
+	column odo_delta_mi
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: ab4fd490-04f6-42d2-a8fe-e35980d80bf0
+		sourceLineageTag: odo_delta_mi
+		summarizeBy: sum
+		sourceColumn: odo_delta_mi
+
+		annotation SummarizationSetBy = Automatic
+
+	column overspeed_events
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2f9efb0e-e498-4125-b89d-eaff6c6ae37e
+		sourceLineageTag: overspeed_events
+		summarizeBy: sum
+		sourceColumn: overspeed_events
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_overspeed
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 75183b64-ea1b-46b1-9efb-b83a84bc17bf
+		sourceLineageTag: minutes_overspeed
+		summarizeBy: sum
+		sourceColumn: minutes_overspeed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_speed_mph
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7cfca03d-2092-4975-95ab-4c2988a371fa
+		sourceLineageTag: max_speed_mph
+		summarizeBy: sum
+		sourceColumn: max_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_rpm
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0bd2d4bc-3fce-43bb-93e6-3196ed97d517
+		sourceLineageTag: max_rpm
+		summarizeBy: sum
+		sourceColumn: max_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_high_rpm
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 00aef7a0-c059-400f-9757-91a773b8b035
+		sourceLineageTag: minutes_high_rpm
+		summarizeBy: sum
+		sourceColumn: minutes_high_rpm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engine_hours
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 38635d15-27ca-4baf-8ab5-5e90f21b1114
+		sourceLineageTag: engine_hours
+		summarizeBy: sum
+		sourceColumn: engine_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column miles_driven
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 2d0dd93c-fafd-4018-86d6-ef68a8a1145c
+		sourceLineageTag: miles_driven
+		summarizeBy: sum
+		sourceColumn: miles_driven
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_driving
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 20d7d35e-fe84-48f5-98a5-f5b5018995f2
+		sourceLineageTag: minutes_driving
+		summarizeBy: sum
+		sourceColumn: minutes_driving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_moving
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b4102f08-096c-4c2e-879d-c86614608b87
+		sourceLineageTag: minutes_moving
+		summarizeBy: sum
+		sourceColumn: minutes_moving
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minutes_idle
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5526efda-19c5-4509-aad8-eb7e669f929b
+		sourceLineageTag: minutes_idle
+		summarizeBy: sum
+		sourceColumn: minutes_idle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_used_gal
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 82e32a1c-4f77-454f-a09e-7f406b851acc
+		sourceLineageTag: fuel_used_gal
+		summarizeBy: sum
+		sourceColumn: fuel_used_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_idle_gal
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 93cbf498-0e8f-4ee6-8205-b91924e889c4
+		sourceLineageTag: fuel_idle_gal
+		summarizeBy: sum
+		sourceColumn: fuel_idle_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b6e3d4d8-5860-4b1b-a8e8-022307e42b55
+		sourceLineageTag: driver_id
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4954776a-1959-4921-bc6e-0b2d5e251b56
+		sourceLineageTag: truck_id
+		summarizeBy: none
+		sourceColumn: truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column perf_date_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a9e45ecc-3c30-4a25-8663-60d0d6039932
+		sourceLineageTag: perf_date_utc
+		summarizeBy: none
+		sourceColumn: perf_date_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_driver_perf_daily-317aae4e-f0e9-4ca9-ac06-0d80226e85cc = entity
+		mode: directLake
+		source
+			entityName: vw_driver_perf_daily
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

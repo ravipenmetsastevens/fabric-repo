@@ -1,0 +1,371 @@
+table ibmi_paid_load
+	lineageTag: f1d0179d-5c57-4484-9895-c566bf783871
+	sourceLineageTag: [silver].[ibmi_paid_load]
+
+	column paid_loads_paid_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 69464eba-d9cc-4b46-9270-8b694a3fa060
+		sourceLineageTag: paid_loads_paid_date
+		summarizeBy: none
+		sourceColumn: paid_loads_paid_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2746836c-83b5-446e-9124-b0a84c0384d7
+		sourceLineageTag: paid_loads_load_number
+		summarizeBy: none
+		sourceColumn: paid_loads_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_customer_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3cee922e-351c-4718-8fb9-a2d7bddd8f8e
+		sourceLineageTag: paid_loads_customer_name
+		summarizeBy: none
+		sourceColumn: paid_loads_customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_dead_head_origin_city_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec078524-b3b9-49c8-9019-6a2a92665e11
+		sourceLineageTag: paid_loads_dead_head_origin_city_name
+		summarizeBy: none
+		sourceColumn: paid_loads_dead_head_origin_city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_dead_head_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8911e7e4-5b87-40da-99d2-16359e078269
+		sourceLineageTag: paid_loads_dead_head_origin_state
+		summarizeBy: none
+		sourceColumn: paid_loads_dead_head_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_origin_city_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f9439c2e-a5ff-4ec9-90a9-a2cbae2a44e2
+		sourceLineageTag: paid_loads_origin_city_name
+		summarizeBy: none
+		sourceColumn: paid_loads_origin_city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 405c8d2a-2126-4296-984c-663028a58faa
+		sourceLineageTag: paid_loads_origin_state
+		summarizeBy: none
+		sourceColumn: paid_loads_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_destination_city_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c2fa26ba-89c1-472d-9a25-4d977d9b032b
+		sourceLineageTag: paid_loads_destination_city_name
+		summarizeBy: none
+		sourceColumn: paid_loads_destination_city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_destination_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05edbfdc-cab4-4a26-a2c4-8d5501dd1c02
+		sourceLineageTag: paid_loads_destination_state
+		summarizeBy: none
+		sourceColumn: paid_loads_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 49d19e07-b2b5-4361-815f-55a1d6b273eb
+		sourceLineageTag: paid_loads_pickup_date
+		summarizeBy: none
+		sourceColumn: paid_loads_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 92a7a3e5-7b4e-497f-b8f8-97e92de508ef
+		sourceLineageTag: paid_loads_delivery_date
+		summarizeBy: none
+		sourceColumn: paid_loads_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_miles_dead_head
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: b8438bb0-bf76-4142-a31e-49ecffa784fd
+		sourceLineageTag: paid_loads_miles_dead_head
+		summarizeBy: sum
+		sourceColumn: paid_loads_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_miles_loaded
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: dd51b135-9ef9-45e9-98fb-ca247e1664b3
+		sourceLineageTag: paid_loads_miles_loaded
+		summarizeBy: sum
+		sourceColumn: paid_loads_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_miles_total
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 5df20053-77e2-4f14-91ae-be40f3dc5dc9
+		sourceLineageTag: paid_loads_miles_total
+		summarizeBy: sum
+		sourceColumn: paid_loads_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_pallet_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 01083d53-19e9-447e-a3b2-1ab8b434331f
+		sourceLineageTag: paid_loads_pallet_count
+		summarizeBy: sum
+		sourceColumn: paid_loads_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_stop_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ef75ba6b-0a7d-49df-8727-7029a1795c2d
+		sourceLineageTag: paid_loads_stop_count
+		summarizeBy: none
+		sourceColumn: paid_loads_stop_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_total
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: c9b0c066-61e6-46c7-b08a-46505a94fe93
+		sourceLineageTag: paid_loads_billed_total
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_linehaul
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 546e2dff-7cd3-4ab0-ac4d-dbc1cd641792
+		sourceLineageTag: paid_loads_billed_linehaul
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_linehaul
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_fuel_surcharge
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 15607055-1421-4c92-ac69-ae2f3b1b66c3
+		sourceLineageTag: paid_loads_billed_fuel_surcharge
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_fuel_surcharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_unloading
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: bcd9cb3f-62b5-4bfc-a8c4-ddd05b61ac5e
+		sourceLineageTag: paid_loads_billed_unloading
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_unloading
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_pallet_charge
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: c1f5a71b-e730-4cfe-9d81-54d82d6cf1c7
+		sourceLineageTag: paid_loads_billed_pallet_charge
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_pallet_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_other_charge
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 11d74c67-34b0-4761-b2b7-bfa910551b8c
+		sourceLineageTag: paid_loads_billed_other_charge
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_other_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_mexico_charge
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 97b2f07c-c824-4788-ac59-de72382fadcf
+		sourceLineageTag: paid_loads_billed_mexico_charge
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_mexico_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_stopoff_charge
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 91727157-a43d-4c69-ab3c-ee335e8868aa
+		sourceLineageTag: paid_loads_billed_stopoff_charge
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_stopoff_charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_detention
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 459a0fd2-7e5c-4a03-982d-4773a62454ef
+		sourceLineageTag: paid_loads_billed_detention
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_detention
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_dead_head
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 7c5ad847-635f-4a3c-b628-02b9a8cf0730
+		sourceLineageTag: paid_loads_billed_dead_head
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_unload_paid_to_driver
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: bc545bf2-74c5-4851-8c0d-6e11781fa9f5
+		sourceLineageTag: paid_loads_unload_paid_to_driver
+		summarizeBy: sum
+		sourceColumn: paid_loads_unload_paid_to_driver
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_billed_tolls
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 4e13d587-f3e1-416b-ae15-a31af5019279
+		sourceLineageTag: paid_loads_billed_tolls
+		summarizeBy: sum
+		sourceColumn: paid_loads_billed_tolls
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_mph
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: a2c7b85f-47da-4ab3-bb3f-41610b1ef03a
+		sourceLineageTag: paid_loads_mph
+		summarizeBy: sum
+		sourceColumn: paid_loads_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_origin_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 576fcfb0-7caf-497d-b541-5a3a234d7afb
+		sourceLineageTag: paid_loads_origin_area_code
+		summarizeBy: none
+		sourceColumn: paid_loads_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_destination_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 62a7cd47-a845-4d34-8fc6-5d8a56515c98
+		sourceLineageTag: paid_loads_destination_area_code
+		summarizeBy: none
+		sourceColumn: paid_loads_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_salesperson_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 589725c1-02d1-4ccd-a1a9-465c114971c5
+		sourceLineageTag: paid_loads_salesperson_code
+		summarizeBy: none
+		sourceColumn: paid_loads_salesperson_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: daaf3572-4e9f-4d10-ba8d-cdf83c57bb43
+		sourceLineageTag: paid_loads_dm_code
+		summarizeBy: none
+		sourceColumn: paid_loads_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b9715dc-e906-46af-bb69-0438be936330
+		sourceLineageTag: paid_loads_dmol_code
+		summarizeBy: none
+		sourceColumn: paid_loads_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_loads_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 515c20bb-40bb-4152-a78f-b710a337acb0
+		sourceLineageTag: paid_loads_truck_number
+		summarizeBy: none
+		sourceColumn: paid_loads_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_paid_load-2e94470b-146e-4654-90a7-d576863979d2 = entity
+		mode: directLake
+		source
+			entityName: ibmi_paid_load
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,164 @@
+table vw_ibmi_driver_bio
+	lineageTag: 77648ee5-c794-41b7-b342-2cfee1b15853
+	sourceLineageTag: [gold].[vw_ibmi_driver_bio]
+
+	column drv_bio_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: aa2e0906-1089-4ccf-9393-1e969ef7f61b
+		sourceLineageTag: drv_bio_last_update_date
+		summarizeBy: none
+		sourceColumn: drv_bio_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_last_update_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dabfde64-f8b1-48b0-9c72-39ffc55a2cb6
+		sourceLineageTag: drv_bio_last_update_user_code
+		summarizeBy: none
+		sourceColumn: drv_bio_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_family_life
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 847e64b8-5000-404b-adfa-523897b64ba0
+		sourceLineageTag: drv_bio_family_life
+		summarizeBy: none
+		sourceColumn: drv_bio_family_life
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_preferred_home_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1012f0f6-e5ab-4a5f-8154-d0faaac2cb08
+		sourceLineageTag: drv_bio_preferred_home_city
+		summarizeBy: none
+		sourceColumn: drv_bio_preferred_home_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_preferred_home_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d167189-bf4f-4941-9332-bef1deed2c2e
+		sourceLineageTag: drv_bio_preferred_home_state
+		summarizeBy: none
+		sourceColumn: drv_bio_preferred_home_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_safe_haven
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 345b8843-ccba-4274-a2a3-bd8af3fe8cf7
+		sourceLineageTag: drv_bio_safe_haven
+		summarizeBy: none
+		sourceColumn: drv_bio_safe_haven
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_hobbies
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4816d778-9113-4f3d-bccc-1cd4c4a87b5a
+		sourceLineageTag: drv_bio_hobbies
+		summarizeBy: none
+		sourceColumn: drv_bio_hobbies
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_stevens_goals
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 29adef8a-3bbd-4013-aa6d-6bd670682e7d
+		sourceLineageTag: drv_bio_stevens_goals
+		summarizeBy: none
+		sourceColumn: drv_bio_stevens_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_why_join
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d0ebc08-dc59-4953-a9c2-edf02025ab87
+		sourceLineageTag: drv_bio_why_join
+		summarizeBy: none
+		sourceColumn: drv_bio_why_join
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_satisfaction_level
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9d5254b7-3803-49f5-bc10-d42dcf8c16a2
+		sourceLineageTag: drv_bio_satisfaction_level
+		summarizeBy: none
+		sourceColumn: drv_bio_satisfaction_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_expectations_met
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0eeb2a5e-bea3-47d2-a55c-5841b372dd26
+		sourceLineageTag: drv_bio_expectations_met
+		summarizeBy: none
+		sourceColumn: drv_bio_expectations_met
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_short_term_goals
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 352dfb8b-a547-45c8-9e91-1b0d94a55ec4
+		sourceLineageTag: drv_bio_short_term_goals
+		summarizeBy: none
+		sourceColumn: drv_bio_short_term_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_long_term_goals
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: eb9ad5f6-e867-4afc-b54e-ca6867edeee0
+		sourceLineageTag: drv_bio_long_term_goals
+		summarizeBy: none
+		sourceColumn: drv_bio_long_term_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_success
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0a0c5642-b745-46ee-9475-b4e52150dad7
+		sourceLineageTag: drv_bio_success
+		summarizeBy: none
+		sourceColumn: drv_bio_success
+
+		annotation SummarizationSetBy = Automatic
+
+	column drv_bio_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e7fa2420-56c3-48ac-b55b-868d6978f917
+		sourceLineageTag: drv_bio_driver_code
+		summarizeBy: none
+		sourceColumn: drv_bio_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_driver_bio-26458d1c-9a43-4524-94d3-bfc9166a17f1 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_driver_bio
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,67 @@
+table plsc_pldrvhdrp
+	lineageTag: 9529ce10-e16b-450f-8aa5-b62d3f11309f
+	sourceLineageTag: [bronze].[plsc_pldrvhdrp]
+
+	column PLHDRDRV
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45c814a9-f165-46f7-be4d-7f158d6f67c9
+		sourceLineageTag: PLHDRDRV
+		summarizeBy: none
+		sourceColumn: PLHDRDRV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLHDRSBJ
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66de423b-c603-44ac-b9a3-3df155201130
+		sourceLineageTag: PLHDRSBJ
+		summarizeBy: none
+		sourceColumn: PLHDRSBJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLHDRXID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8fbed5eb-6e71-4676-94f4-00410d54208d
+		sourceLineageTag: PLHDRXID
+		summarizeBy: none
+		sourceColumn: PLHDRXID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLHDRDATE
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: eb78673d-2dff-4586-a21c-185555f23980
+		sourceLineageTag: PLHDRDATE
+		summarizeBy: sum
+		sourceColumn: PLHDRDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLHDRTIME
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 03c3d8da-c394-468a-be51-104ef2dc5c1f
+		sourceLineageTag: PLHDRTIME
+		summarizeBy: sum
+		sourceColumn: PLHDRTIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition plsc_pldrvhdrp-57370826-021e-4a94-ac88-29129460593e = entity
+		mode: directLake
+		source
+			entityName: plsc_pldrvhdrp
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

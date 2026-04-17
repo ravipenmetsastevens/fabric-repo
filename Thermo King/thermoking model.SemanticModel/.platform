@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "thermoking model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "58528a13-cf0c-89b2-4442-94a34dbf87e7"
+  }
+}

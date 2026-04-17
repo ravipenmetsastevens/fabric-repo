@@ -1,0 +1,94 @@
+table ibmi_comments_intermodal
+	lineageTag: bb0757ff-e609-4ccc-910d-c0412d8a7a15
+	sourceLineageTag: [silver].[ibmi_comments_intermodal]
+
+	column comments_intermodal_record_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 0105c665-6cd3-4274-bc98-f6a31564907b
+		sourceLineageTag: comments_intermodal_record_date
+		summarizeBy: none
+		sourceColumn: comments_intermodal_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ffd5ecd9-c682-4d54-968a-44963ddd9f0b
+		sourceLineageTag: comments_intermodal_load_number
+		summarizeBy: none
+		sourceColumn: comments_intermodal_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_record_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad4a180e-3e7e-4480-b2be-62c69f23af17
+		sourceLineageTag: comments_intermodal_record_number
+		summarizeBy: none
+		sourceColumn: comments_intermodal_record_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_record_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 80c9ace6-ad84-4ba0-9f30-f4e47ea9b0ce
+		sourceLineageTag: comments_intermodal_record_type
+		summarizeBy: none
+		sourceColumn: comments_intermodal_record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_location
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ed3094a6-70dd-4612-b343-73175078a6b5
+		sourceLineageTag: comments_intermodal_location
+		summarizeBy: none
+		sourceColumn: comments_intermodal_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a113d941-4e91-45af-9bc5-54f58a0e6645
+		sourceLineageTag: comments_intermodal_description
+		summarizeBy: none
+		sourceColumn: comments_intermodal_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_delete_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ba715001-5573-4808-9884-cf179886d565
+		sourceLineageTag: comments_intermodal_delete_code
+		summarizeBy: none
+		sourceColumn: comments_intermodal_delete_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments_intermodal_user_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad9a4620-5983-4b38-a177-6775f790d7c2
+		sourceLineageTag: comments_intermodal_user_initials
+		summarizeBy: none
+		sourceColumn: comments_intermodal_user_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_comments_intermodal-6f3da4dd-6e9c-4395-9e9b-1566bcab64eb = entity
+		mode: directLake
+		source
+			entityName: ibmi_comments_intermodal
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

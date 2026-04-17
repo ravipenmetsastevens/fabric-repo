@@ -1,0 +1,280 @@
+table vw_ibmi_de26_worksheet
+	lineageTag: 378d94b4-b85a-411a-9ba2-b60a537cf294
+	sourceLineageTag: [silver].[vw_ibmi_de26_worksheet]
+
+	column load_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 95e72e06-e37e-46c8-b75a-3bc187acc2fa
+		sourceLineageTag: load_count
+		summarizeBy: sum
+		sourceColumn: load_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_group_count
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3059182c-9d73-47a9-bb73-4c5e2dd9b2ba
+		sourceLineageTag: unit_group_count
+		summarizeBy: sum
+		sourceColumn: unit_group_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column lane_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92b5befb-1198-42fd-a622-18a222685981
+		sourceLineageTag: lane_code
+		summarizeBy: none
+		sourceColumn: lane_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column scac_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4628bf78-587d-45a3-9fc4-e5137435b867
+		sourceLineageTag: scac_code
+		summarizeBy: none
+		sourceColumn: scac_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84804b00-8252-432a-a3e8-ba03c2d1f94e
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_division
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 108a2966-e275-45fa-a42e-656fce1f6f54
+		sourceLineageTag: order_division
+		summarizeBy: none
+		sourceColumn: order_division
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 403a3e65-3669-40ea-b19f-092db4c5ca41
+		sourceLineageTag: truck_number
+		summarizeBy: none
+		sourceColumn: truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_division
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 21fe9b0d-9e97-4112-a32e-4d7068f96931
+		sourceLineageTag: truck_division
+		summarizeBy: none
+		sourceColumn: truck_division
+
+		annotation SummarizationSetBy = Automatic
+
+	column truck_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: deb237fa-af93-444d-8064-a05d3e98c41b
+		sourceLineageTag: truck_dm_code
+		summarizeBy: none
+		sourceColumn: truck_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column protection_class
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ecfc79ce-09ca-45a2-ba9a-fde9f2f3940e
+		sourceLineageTag: protection_class
+		summarizeBy: none
+		sourceColumn: protection_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_temp_low
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 54fed48c-405d-4c58-8dba-8315630a1a3f
+		sourceLineageTag: order_temp_low
+		summarizeBy: sum
+		sourceColumn: order_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_temp_high
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 96cc9df9-7acd-4b4e-854a-cda4659e79b2
+		sourceLineageTag: order_temp_high
+		summarizeBy: sum
+		sourceColumn: order_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+	column bol_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 42cd0783-58ad-4543-95cf-f77662657e05
+		sourceLineageTag: bol_number
+		summarizeBy: none
+		sourceColumn: bol_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column po_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8ca1eb4f-07bd-4f8b-a3a4-5d32d02f9652
+		sourceLineageTag: po_number
+		summarizeBy: none
+		sourceColumn: po_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 947432c8-88dc-4553-b162-02603dfa6c10
+		sourceLineageTag: order_ship_date
+		summarizeBy: none
+		sourceColumn: order_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: adf35bbe-6f6b-4cef-8e72-6d20968e7e12
+		sourceLineageTag: origin_name
+		summarizeBy: none
+		sourceColumn: origin_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3b63176c-2e5c-4f88-96cb-eba5460ef169
+		sourceLineageTag: origin_city
+		summarizeBy: none
+		sourceColumn: origin_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b4a7a22c-3c7c-4b36-bd2a-cc0196be0b47
+		sourceLineageTag: origin_state
+		summarizeBy: none
+		sourceColumn: origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f6d2af9a-fb91-4894-99e4-d07d8a95baf3
+		sourceLineageTag: origin_zip
+		summarizeBy: none
+		sourceColumn: origin_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c2907249-7fa3-4ad4-8257-d099b1e86752
+		sourceLineageTag: destination_name
+		summarizeBy: none
+		sourceColumn: destination_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2a7effbb-a54e-4110-9edf-7da12d4e42fd
+		sourceLineageTag: destination_city
+		summarizeBy: none
+		sourceColumn: destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6804560a-15a3-45c2-9b71-700d3ebcdb61
+		sourceLineageTag: destination_state
+		summarizeBy: none
+		sourceColumn: destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f3a23bd7-d4b5-43c2-9773-037b417a1ff2
+		sourceLineageTag: destination_zip
+		summarizeBy: none
+		sourceColumn: destination_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column dh_miles
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: ebb6521e-e17f-48b9-ac26-4ad7caba0eed
+		sourceLineageTag: dh_miles
+		summarizeBy: sum
+		sourceColumn: dh_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_miles
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 105ae471-e325-41ce-be21-a8ec076c8d8b
+		sourceLineageTag: loaded_miles
+		summarizeBy: sum
+		sourceColumn: loaded_miles
+
+		annotation SummarizationSetBy = Automatic
+
+	column dh_origin_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9db1b304-4c80-4299-9fc5-e4c54fe1ff16
+		sourceLineageTag: dh_origin_zip
+		summarizeBy: none
+		sourceColumn: dh_origin_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_de26_worksheet-4e076cf5-f821-4ef3-bf36-d2045001a0dd = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_de26_worksheet
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

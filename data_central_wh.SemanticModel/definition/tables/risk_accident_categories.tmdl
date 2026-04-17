@@ -1,0 +1,33 @@
+table risk_accident_categories
+	lineageTag: 0c7b92a5-f99a-442b-be70-52c4b5aee11d
+	sourceLineageTag: [silver].[risk_accident_categories]
+
+	column accident_type_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 64ce99d6-7025-4484-8b14-f5c3c5dd81c4
+		sourceLineageTag: accident_type_description
+		summarizeBy: none
+		sourceColumn: accident_type_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_category
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1f6a619c-1e4d-4650-af30-349cd0a2c14c
+		sourceLineageTag: accident_category
+		summarizeBy: none
+		sourceColumn: accident_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_accident_categories-4f773836-9c0f-469d-af6d-b65f09704e22 = entity
+		mode: directLake
+		source
+			entityName: risk_accident_categories
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,326 @@
+table plsc_pltmhbdp_old
+	lineageTag: 8cc6406a-229c-41fd-88aa-62b03e66b919
+	sourceLineageTag: [bronze].[plsc_pltmhbdp_old]
+
+	column PLTHTRUCK
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c930594b-4690-45e2-9d8a-b9938dc9fa11
+		sourceLineageTag: PLTHTRUCK
+		summarizeBy: none
+		sourceColumn: PLTHTRUCK
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHHBID
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03c041cd-2e7e-441d-9d8a-7ed27b13de3e
+		sourceLineageTag: PLTHHBID
+		summarizeBy: none
+		sourceColumn: PLTHHBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 51d96384-d0c0-41b5-9e0f-04c385e15526
+		sourceLineageTag: PLTHTYPE
+		summarizeBy: none
+		sourceColumn: PLTHTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRECV
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8dfe8d0a-9b70-49d6-bb8d-20040016d1e1
+		sourceLineageTag: PLTHRECV
+		summarizeBy: none
+		sourceColumn: PLTHRECV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHLOGA
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 703212ca-8833-41b1-8222-fae2d3caec97
+		sourceLineageTag: PLTHLOGA
+		summarizeBy: none
+		sourceColumn: PLTHLOGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHSPEED
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1fa6bb4d-226a-40f9-8e84-9d44d6c1b1f3
+		sourceLineageTag: PLTHSPEED
+		summarizeBy: sum
+		sourceColumn: PLTHSPEED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHODO
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a59719d3-cfac-41d1-add9-58d5ecf8563f
+		sourceLineageTag: PLTHODO
+		summarizeBy: sum
+		sourceColumn: PLTHODO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHODOJ
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 23c25860-6ecc-4ab6-b8ee-aca1c23d4904
+		sourceLineageTag: PLTHODOJ
+		summarizeBy: none
+		sourceColumn: PLTHODOJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHHEAD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fb3784a9-22d5-4007-acbe-15f8571043a7
+		sourceLineageTag: PLTHHEAD
+		summarizeBy: sum
+		sourceColumn: PLTHHEAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHIGNS
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bcd991f4-e9e0-4708-a6f8-cd7d1b556306
+		sourceLineageTag: PLTHIGNS
+		summarizeBy: none
+		sourceColumn: PLTHIGNS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRPM
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 820a8241-324d-4018-815d-1d027a2c54d8
+		sourceLineageTag: PLTHRPM
+		summarizeBy: sum
+		sourceColumn: PLTHRPM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHENGH
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 6989c72c-589a-41f7-a5e7-755f6165f488
+		sourceLineageTag: PLTHENGH
+		summarizeBy: sum
+		sourceColumn: PLTHENGH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHENGHJ
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f3c244a-b229-4003-b301-bd6a05aec59a
+		sourceLineageTag: PLTHENGHJ
+		summarizeBy: none
+		sourceColumn: PLTHENGHJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHWINM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 79071845-7e2a-4b9a-a096-af7ee79c73a5
+		sourceLineageTag: PLTHWINM
+		summarizeBy: none
+		sourceColumn: PLTHWINM
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHACU
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 14bad799-ccc9-4f0c-b42f-4da3b735c13a
+		sourceLineageTag: PLTHACU
+		summarizeBy: none
+		sourceColumn: PLTHACU
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHSAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 035f27c6-c6c8-4bd9-b755-ce8e1e32c1a4
+		sourceLineageTag: PLTHSAT
+		summarizeBy: sum
+		sourceColumn: PLTHSAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHGPSV
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 32f74419-f195-41d8-b70f-401cd2cddbcf
+		sourceLineageTag: PLTHGPSV
+		summarizeBy: none
+		sourceColumn: PLTHGPSV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHHDOP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f34eb4da-87cc-4ce1-8dc2-005e2e5e8979
+		sourceLineageTag: PLTHHDOP
+		summarizeBy: none
+		sourceColumn: PLTHHDOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHFUEL
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f1e5f7db-4430-4c22-a8fe-61d7a7a2e13d
+		sourceLineageTag: PLTHFUEL
+		summarizeBy: sum
+		sourceColumn: PLTHFUEL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHFUELU
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9b5147e3-ada7-4714-a0f7-6c1edab9969f
+		sourceLineageTag: PLTHFUELU
+		summarizeBy: sum
+		sourceColumn: PLTHFUELU
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHLAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 538879cb-1938-48ad-a0da-1166cfd3cbb6
+		sourceLineageTag: PLTHLAT
+		summarizeBy: sum
+		sourceColumn: PLTHLAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHLON
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 3d5b4922-4b37-4ee4-8878-8a6a01152348
+		sourceLineageTag: PLTHLON
+		summarizeBy: sum
+		sourceColumn: PLTHLON
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHLOCD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1f0989bb-46b1-41e1-8292-471d4d5b3eb7
+		sourceLineageTag: PLTHLOCD
+		summarizeBy: none
+		sourceColumn: PLTHLOCD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRPD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4bce0da3-f7d3-4d8a-85ab-640bf13f46e9
+		sourceLineageTag: PLTHRPD
+		summarizeBy: sum
+		sourceColumn: PLTHRPD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PLTHRUM
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 162cf1e1-dd5a-48b0-9b77-25e0a80eab14
+		sourceLineageTag: PLTHRUM
+		summarizeBy: none
+		sourceColumn: PLTHRUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRDIR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 90d6d35a-0016-4e34-84b5-4a52288ae996
+		sourceLineageTag: PLTHRDIR
+		summarizeBy: none
+		sourceColumn: PLTHRDIR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRCITY
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0c449121-8d8f-405e-8cd8-c133d307993c
+		sourceLineageTag: PLTHRCITY
+		summarizeBy: none
+		sourceColumn: PLTHRCITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRSTATE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3251ef80-4437-42f7-8bfe-dff1b169ba6d
+		sourceLineageTag: PLTHRSTATE
+		summarizeBy: none
+		sourceColumn: PLTHRSTATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLTHRCUNTR
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3cd6e18f-103d-4332-9c47-db948f64d6c5
+		sourceLineageTag: PLTHRCUNTR
+		summarizeBy: none
+		sourceColumn: PLTHRCUNTR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_pltmhbdp_old-4d9a0fc9-586c-40c9-bebc-112c4af84a7c = entity
+		mode: directLake
+		source
+			entityName: plsc_pltmhbdp_old
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

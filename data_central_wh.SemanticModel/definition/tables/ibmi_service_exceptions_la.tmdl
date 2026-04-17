@@ -1,0 +1,89 @@
+table ibmi_service_exceptions_la
+	lineageTag: 9e73bb39-9729-448a-aa65-f9a876f85d53
+	sourceLineageTag: [silver].[ibmi_service_exceptions_la]
+
+	column serv_exc_la_late_appt_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 07d9c2c4-75ac-4477-9aa0-fd655764aa4c
+		sourceLineageTag: serv_exc_la_late_appt_date
+		summarizeBy: none
+		sourceColumn: serv_exc_la_late_appt_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_late_appt_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 3f395b70-56fb-474f-89c3-c550ab95a7e7
+		sourceLineageTag: serv_exc_la_late_appt_time
+		summarizeBy: none
+		sourceColumn: serv_exc_la_late_appt_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_arrival_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8666061c-424f-4203-89cf-d94b8e8d17b2
+		sourceLineageTag: serv_exc_la_arrival_date
+		summarizeBy: none
+		sourceColumn: serv_exc_la_arrival_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_arrival_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 7936822d-1a21-433e-8643-41229825bed3
+		sourceLineageTag: serv_exc_la_arrival_time
+		summarizeBy: none
+		sourceColumn: serv_exc_la_arrival_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb540bfe-a3bd-460f-bd92-93920ba6f0cd
+		sourceLineageTag: serv_exc_la_load_number
+		summarizeBy: none
+		sourceColumn: serv_exc_la_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_sequence_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f82d8821-c4a3-4cea-bb54-311fc911ec19
+		sourceLineageTag: serv_exc_la_sequence_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_la_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column serv_exc_la_stop_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4fc6493d-6f46-4f63-ac97-bbe2794d05bf
+		sourceLineageTag: serv_exc_la_stop_number
+		summarizeBy: sum
+		sourceColumn: serv_exc_la_stop_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_service_exceptions_la-04526087-2f92-4c2d-b4fc-4a2c0529a405 = entity
+		mode: directLake
+		source
+			entityName: ibmi_service_exceptions_la
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

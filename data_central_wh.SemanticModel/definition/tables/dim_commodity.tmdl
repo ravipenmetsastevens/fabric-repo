@@ -1,0 +1,144 @@
+table dim_commodity
+	lineageTag: 8288e932-6ddf-477e-b7a8-d3889190995e
+	sourceLineageTag: [gold].[dim_commodity]
+
+	column commodity_id_pk
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 38c51012-a1ce-47b2-bc2c-469c6d5dbd61
+		sourceLineageTag: commodity_id_pk
+		summarizeBy: sum
+		sourceColumn: commodity_id_pk
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_key
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38cc59cc-1dbe-4e7e-a17c-4e8f392bcbde
+		sourceLineageTag: commodity_key
+		summarizeBy: none
+		sourceColumn: commodity_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 979f88a5-55b3-48bc-98b4-ca58da26febd
+		sourceLineageTag: commodity_code
+		summarizeBy: none
+		sourceColumn: commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8de7757-e0d7-4eac-9853-07a023dc1e8c
+		sourceLineageTag: commodity_division_code
+		summarizeBy: none
+		sourceColumn: commodity_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_division_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ee157b9c-dcd7-4784-8b6a-d4f57b3a2bb5
+		sourceLineageTag: commodity_division_name
+		summarizeBy: none
+		sourceColumn: commodity_division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_division_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2b930f2b-8d1c-4d98-9a6a-c9538a4203a5
+		sourceLineageTag: commodity_division_status
+		summarizeBy: none
+		sourceColumn: commodity_division_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_commodity_deleted
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8142bd2c-ca3d-4515-b7a0-a2399b9f7d30
+		sourceLineageTag: is_commodity_deleted
+		summarizeBy: none
+		sourceColumn: is_commodity_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_short_descr
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 73fff420-c06f-42bf-bb12-fc2b785d7b15
+		sourceLineageTag: commodity_short_descr
+		summarizeBy: none
+		sourceColumn: commodity_short_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 75d21d4e-b8fc-42fb-9f88-892c88d9dfef
+		sourceLineageTag: commodity_description
+		summarizeBy: none
+		sourceColumn: commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_gl_acct
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 894782cd-d1dd-4472-ae63-ebc06f8f684c
+		sourceLineageTag: commodity_gl_acct
+		summarizeBy: none
+		sourceColumn: commodity_gl_acct
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_gl_acct_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 384e1f4d-70c7-40e4-a82e-7a94714a8da8
+		sourceLineageTag: commodity_gl_acct_description
+		summarizeBy: none
+		sourceColumn: commodity_gl_acct_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_revenue_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d451722c-f662-49f4-be0e-ed03ad4e221c
+		sourceLineageTag: commodity_revenue_type
+		summarizeBy: none
+		sourceColumn: commodity_revenue_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_washout_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 97ab1e2f-4f4f-4ac5-9760-8374fd6aa637
+		sourceLineageTag: is_washout_required
+		summarizeBy: none
+		sourceColumn: is_washout_required
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_commodity-7541dbdd-7e63-41a1-a94e-ed8501d6e647 = entity
+		mode: directLake
+		source
+			entityName: dim_commodity
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

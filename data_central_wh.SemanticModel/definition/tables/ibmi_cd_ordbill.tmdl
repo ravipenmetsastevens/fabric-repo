@@ -1,0 +1,276 @@
+table ibmi_cd_ordbill
+	lineageTag: 904597cd-58a0-49af-bf78-80b9e404e68d
+	sourceLineageTag: [silver].[ibmi_cd_ordbill]
+
+	column cd_ordbill_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95c97e44-17c5-4fd4-8684-1de3e1ccc36a
+		sourceLineageTag: cd_ordbill_load_number
+		summarizeBy: none
+		sourceColumn: cd_ordbill_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_sequence_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4007e6ea-9be7-4f69-9892-ee5531265d23
+		sourceLineageTag: cd_ordbill_sequence_number
+		summarizeBy: none
+		sourceColumn: cd_ordbill_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_rate_clerk_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: caa38be8-375b-4b7f-8d19-45464656450d
+		sourceLineageTag: cd_ordbill_rate_clerk_initials
+		summarizeBy: none
+		sourceColumn: cd_ordbill_rate_clerk_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: faff4c1c-b97e-4b1e-bacb-eb77bc3f605c
+		sourceLineageTag: cd_ordbill_invoice_number
+		summarizeBy: none
+		sourceColumn: cd_ordbill_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_void_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5158f98-aee0-468e-b84c-4b6cdaf54489
+		sourceLineageTag: cd_ordbill_void_invoice_number
+		summarizeBy: none
+		sourceColumn: cd_ordbill_void_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_billed_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: cc926232-7ee7-4da5-b005-f37bbeb3d4d2
+		sourceLineageTag: cd_ordbill_billed_date
+		summarizeBy: none
+		sourceColumn: cd_ordbill_billed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_load_bill_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 6fc5d003-9a5a-4249-980a-c061f2dbda23
+		sourceLineageTag: cd_ordbill_load_bill_amount
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_load_bill_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_load_total_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 85087283-731c-4bc7-85c3-c4b46d8035aa
+		sourceLineageTag: cd_ordbill_load_total_amount
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_load_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_load_book_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 496aabb4-6cd3-418f-83af-2e2d0c0e9513
+		sourceLineageTag: cd_ordbill_load_book_month
+		summarizeBy: none
+		sourceColumn: cd_ordbill_load_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_load_book_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1d42491-f71e-4f78-b960-b0ded503ec02
+		sourceLineageTag: cd_ordbill_load_book_year
+		summarizeBy: none
+		sourceColumn: cd_ordbill_load_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_billing_flagged
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 058b8380-4596-4731-8d51-5d203ec3dd80
+		sourceLineageTag: is_billing_flagged
+		summarizeBy: none
+		sourceColumn: is_billing_flagged
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_ar_status_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 18a85c20-1f69-4e47-9d50-07322cc31bf7
+		sourceLineageTag: cd_ordbill_ar_status_flag
+		summarizeBy: none
+		sourceColumn: cd_ordbill_ar_status_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_tariff_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2f41c12-aa06-4b81-a3b7-4e20e62e6876
+		sourceLineageTag: cd_ordbill_tariff_code
+		summarizeBy: none
+		sourceColumn: cd_ordbill_tariff_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_item_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 702985d2-73c3-4f38-9f05-1a202e1c1ac5
+		sourceLineageTag: cd_ordbill_item_code
+		summarizeBy: none
+		sourceColumn: cd_ordbill_item_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_line_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 784390e8-7231-42f6-80e7-e109293bffbd
+		sourceLineageTag: cd_ordbill_line_code
+		summarizeBy: none
+		sourceColumn: cd_ordbill_line_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_rate_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 50d90d3a-c26b-4f96-b018-ab89f16df877
+		sourceLineageTag: cd_ordbill_rate_code
+		summarizeBy: none
+		sourceColumn: cd_ordbill_rate_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_billed_amount_linehaul
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 1776aa66-3633-4f59-968d-02a8d950a4f9
+		sourceLineageTag: cd_ordbill_billed_amount_linehaul
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_billed_amount_linehaul
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_billed_amount_accessorial
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 865533fd-c22a-432a-85e5-dd63a55812c9
+		sourceLineageTag: cd_ordbill_billed_amount_accessorial
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_billed_amount_accessorial
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_total_amount_linehaul
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 31a85dd9-aac0-42e2-8c30-5971049ffcca
+		sourceLineageTag: cd_ordbill_total_amount_linehaul
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_total_amount_linehaul
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_total_amount_accessorial
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: e2d5acaa-3ce8-4d8b-9624-2c2a20a75c8e
+		sourceLineageTag: cd_ordbill_total_amount_accessorial
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_total_amount_accessorial
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_load_fuel_surcharge_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: b93fa88d-911a-450b-8994-d4184eab83b3
+		sourceLineageTag: cd_ordbill_load_fuel_surcharge_amount
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_load_fuel_surcharge_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_total_fuel_surcharge_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 156e1a5c-8f68-4b72-b525-9340ed6280f4
+		sourceLineageTag: cd_ordbill_total_fuel_surcharge_amount
+		summarizeBy: sum
+		sourceColumn: cd_ordbill_total_fuel_surcharge_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_audit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 3a021291-93a0-4109-a116-3dc52c2ebdcf
+		sourceLineageTag: cd_ordbill_audit_date
+		summarizeBy: none
+		sourceColumn: cd_ordbill_audit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_audit_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2240622b-4e08-4d3b-9c13-07cc6ad2f6fb
+		sourceLineageTag: cd_ordbill_audit_initials
+		summarizeBy: none
+		sourceColumn: cd_ordbill_audit_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_print_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e3353b92-f069-4204-a771-d331d665d03f
+		sourceLineageTag: cd_ordbill_print_date
+		summarizeBy: none
+		sourceColumn: cd_ordbill_print_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_ordbill_cost_record_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 77dd8c55-092d-4730-b972-5199a4dba048
+		sourceLineageTag: cd_ordbill_cost_record_flag
+		summarizeBy: none
+		sourceColumn: cd_ordbill_cost_record_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_cd_ordbill-b6ef850b-c968-4070-8bd6-3762a707a2e0 = entity
+		mode: directLake
+		source
+			entityName: ibmi_cd_ordbill
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

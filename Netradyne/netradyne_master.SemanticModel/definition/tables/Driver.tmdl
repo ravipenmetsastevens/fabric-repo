@@ -1,0 +1,156 @@
+table Driver
+	lineageTag: eadbaaa9-d906-422c-9f9d-6aac923461c8
+
+	column driver_id
+		dataType: string
+		lineageTag: fda633eb-d36a-4a27-8737-67b5678066a3
+		summarizeBy: none
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_firstname
+		dataType: string
+		lineageTag: 4730041b-1c9d-46b6-bfe5-5e41a3105ee2
+		summarizeBy: none
+		sourceColumn: driver_firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_lastname
+		dataType: string
+		lineageTag: 30b36d69-90c4-41a5-bc5a-9ab1584bf954
+		summarizeBy: none
+		sourceColumn: driver_lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_status_descr
+		dataType: string
+		lineageTag: 773dce42-1c98-40b4-8c55-828f13497b19
+		summarizeBy: none
+		sourceColumn: driver_status_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_username
+		dataType: string
+		lineageTag: 69ffcc9b-8768-400c-8019-47743505f8b8
+		summarizeBy: none
+		sourceColumn: driver_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_email
+		dataType: string
+		lineageTag: e9b0c0cd-a643-491c-9344-8ffa4483d116
+		summarizeBy: none
+		sourceColumn: driver_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_number
+		dataType: string
+		lineageTag: e6395b32-3fcc-4367-880f-4c2e5c3cbd8f
+		summarizeBy: none
+		sourceColumn: driver_licence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_state
+		dataType: string
+		lineageTag: 79ab6bd1-838e-488d-978e-c6a4e430900a
+		summarizeBy: none
+		sourceColumn: driver_licence_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_licence_country
+		dataType: string
+		lineageTag: 36f7c94c-3464-4b17-8fe8-610bb90c3326
+		summarizeBy: none
+		sourceColumn: driver_licence_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_group_name
+		dataType: string
+		lineageTag: beed23ae-eb8e-466a-b551-2fdd4796d9f3
+		summarizeBy: none
+		sourceColumn: driver_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_group_unique_name
+		dataType: string
+		lineageTag: a2cc328e-d114-4fad-afbf-93c13f81d390
+		summarizeBy: none
+		sourceColumn: driver_group_unique_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_create_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ed013d93-bddc-4fd7-aa61-d5bf5520add0
+		summarizeBy: none
+		sourceColumn: driver_create_date
+
+		variation Variation
+			isDefault
+			relationship: cc9ca225-10a9-4c3d-adba-4abfc93718cc
+			defaultHierarchy: LocalDateTable_2a5840c7-0904-4a3c-9f9e-895009b999f4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column driver_create_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3cf63741-b371-4b48-aaaa-65c5231af069
+		summarizeBy: none
+		sourceColumn: driver_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column driver_update_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0a00ba57-f45e-4a02-9db0-840eddc4e25b
+		summarizeBy: none
+		sourceColumn: driver_update_date
+
+		variation Variation
+			isDefault
+			relationship: 78853a6b-41cc-4737-94bd-fecb7c387bde
+			defaultHierarchy: LocalDateTable_db24acf7-04af-4adf-8653-395485b9e9ac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column driver_update_time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d9579512-9765-4136-8a23-37069ec975ab
+		summarizeBy: none
+		sourceColumn: driver_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition Driver = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_dim_netr_driver = Source{[Schema="gold",Item="dim_netr_driver"]}[Data]
+				in
+				    gold_dim_netr_driver
+
+	annotation PBI_ResultType = Table
+

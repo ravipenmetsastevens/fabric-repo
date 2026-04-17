@@ -1,0 +1,386 @@
+table vw_plsc_vehicle_heartbeats_enriched
+	lineageTag: 8486455b-083b-40dd-9396-d492efe34847
+	sourceLineageTag: [gold].[vw_plsc_vehicle_heartbeats_enriched]
+
+	column plt_truck_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b79c98ba-87de-4278-b04b-e8121b2182e1
+		sourceLineageTag: plt_truck_id
+		summarizeBy: none
+		sourceColumn: plt_truck_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column heartbeat_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 587f7bb2-cb26-414b-b8cf-09024c15a789
+		sourceLineageTag: heartbeat_id
+		summarizeBy: none
+		sourceColumn: heartbeat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column msg_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2026a6cc-bd50-471c-919f-fc5e40490776
+		sourceLineageTag: msg_type
+		summarizeBy: none
+		sourceColumn: msg_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column recv_utc_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 956a55b6-aabe-4853-a470-080c0f5bae97
+		sourceLineageTag: recv_utc_raw
+		summarizeBy: none
+		sourceColumn: recv_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_utc_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aa853371-9784-4bb0-b941-6b2be0f51c57
+		sourceLineageTag: log_utc_raw
+		summarizeBy: none
+		sourceColumn: log_utc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column recv_utc_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ab3a47f1-9db3-42bb-b21d-7f67b9569e61
+		sourceLineageTag: recv_utc_dt
+		summarizeBy: none
+		sourceColumn: recv_utc_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_cardinal
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4755447f-f477-4258-b6a7-72174919c634
+		sourceLineageTag: heading_cardinal
+		summarizeBy: none
+		sourceColumn: heading_cardinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c46d6ccd-7abc-4475-b4d5-16b62ef6bcc8
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9dee65b5-f361-44bc-a30d-634bba322433
+		sourceLineageTag: state
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8bf2813e-89ce-4b47-a8c3-8135d7a3914b
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_instant
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 067795e7-7234-47f0-943b-c6e135ef8bdf
+		sourceLineageTag: fuel_instant
+		summarizeBy: none
+		sourceColumn: fuel_instant
+
+		annotation SummarizationSetBy = Automatic
+
+	column windows_mask
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7b6f8a98-e837-4f74-b141-899cbd2d722f
+		sourceLineageTag: windows_mask
+		summarizeBy: none
+		sourceColumn: windows_mask
+
+		annotation SummarizationSetBy = Automatic
+
+	column acu_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d7885532-01d8-4d8c-803d-bf65f6e103f5
+		sourceLineageTag: acu_raw
+		summarizeBy: none
+		sourceColumn: acu_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_count_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 23895e7f-6f43-434a-a20f-7b3027879f81
+		sourceLineageTag: sat_count_raw
+		summarizeBy: none
+		sourceColumn: sat_count_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column gps_fix_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 540ede58-a083-4d11-af6c-0885e9ca7282
+		sourceLineageTag: gps_fix_raw
+		summarizeBy: none
+		sourceColumn: gps_fix_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column hdop_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 812b5921-6fd5-48aa-9d9f-572fe353d0ee
+		sourceLineageTag: hdop_raw
+		summarizeBy: none
+		sourceColumn: hdop_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_unit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e82502b5-020c-4ff7-a2f2-2c649bbe7d18
+		sourceLineageTag: distance_unit
+		summarizeBy: none
+		sourceColumn: distance_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 7407dfeb-aa85-43d0-8609-858faa904f4d
+		sourceLineageTag: latitude
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 56249dbe-cb63-4956-a3b1-ffc09727d314
+		sourceLineageTag: longitude
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column location_desc
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49141897-b6fe-4a97-a4f9-8cb8a092d71f
+		sourceLineageTag: location_desc
+		summarizeBy: none
+		sourceColumn: location_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column heading_deg_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f40c9cd-4982-4902-b5c3-540f475d1717
+		sourceLineageTag: heading_deg_raw
+		summarizeBy: none
+		sourceColumn: heading_deg_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignition_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 067d3caa-ef25-4a38-b906-c5c588a08d45
+		sourceLineageTag: ignition_raw
+		summarizeBy: none
+		sourceColumn: ignition_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column rpm_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 00b88856-7d25-45bc-9764-962795dd7de1
+		sourceLineageTag: rpm_raw
+		summarizeBy: none
+		sourceColumn: rpm_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column odometer_coalesced_mi
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: cc46f800-09f5-4a7b-afdb-0f5e562795fe
+		sourceLineageTag: odometer_coalesced_mi
+		summarizeBy: sum
+		sourceColumn: odometer_coalesced_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engine_hours_coalesced
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4d3d1839-1059-451c-b18d-fae7741a35bd
+		sourceLineageTag: engine_hours_coalesced
+		summarizeBy: sum
+		sourceColumn: engine_hours_coalesced
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_total
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0e7a3103-6b34-45bd-a9f1-2f19b0b8377e
+		sourceLineageTag: fuel_total
+		summarizeBy: sum
+		sourceColumn: fuel_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column odo_delta_mi
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fbfc5337-0a9b-42a5-a37c-9bda29c6d04f
+		sourceLineageTag: odo_delta_mi
+		summarizeBy: sum
+		sourceColumn: odo_delta_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column engine_hours_delta
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: c4972b48-0f03-40dd-be94-e26b358ee14e
+		sourceLineageTag: engine_hours_delta
+		summarizeBy: sum
+		sourceColumn: engine_hours_delta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_delta_gal
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 4419fc7f-716b-46bd-a778-719e7188e154
+		sourceLineageTag: fuel_delta_gal
+		summarizeBy: sum
+		sourceColumn: fuel_delta_gal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column log_utc_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 50a0750c-e8bb-461c-96bb-f0e53508c6ba
+		sourceLineageTag: log_utc_dt
+		summarizeBy: none
+		sourceColumn: log_utc_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column dt_base
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b4101bc1-02e8-4591-b1e8-e73e1eac085f
+		sourceLineageTag: dt_base
+		summarizeBy: none
+		sourceColumn: dt_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c01f698d-1058-4c01-80e8-28a189ef28fa
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour_of_day
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 041496b0-8fa2-42c7-a1c2-53ea1f08c809
+		sourceLineageTag: hour_of_day
+		summarizeBy: sum
+		sourceColumn: hour_of_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour_start
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime
+		lineageTag: ae220258-abd7-492b-9515-b0cb84ea354e
+		sourceLineageTag: hour_start
+		summarizeBy: none
+		sourceColumn: hour_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_start_monday
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e656b5dd-258e-4106-b895-bdcfe88b2774
+		sourceLineageTag: week_start_monday
+		summarizeBy: none
+		sourceColumn: week_start_monday
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_plsc_vehicle_heartbeats_enriched-caf477b2-f007-4b20-9e3b-dd5a7439b30e = entity
+		mode: directLake
+		source
+			entityName: vw_plsc_vehicle_heartbeats_enriched
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

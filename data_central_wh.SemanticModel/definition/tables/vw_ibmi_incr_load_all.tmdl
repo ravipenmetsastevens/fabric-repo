@@ -1,0 +1,387 @@
+table vw_ibmi_incr_load_all
+	lineageTag: f589a4bb-993d-4ec0-a637-f9ced285890f
+	sourceLineageTag: [silver].[vw_ibmi_incr_load_all]
+
+	column is_deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 5848b0e4-ca82-48fa-8019-81b01ddf6419
+		sourceLineageTag: is_deleted
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e972d6ab-9374-43aa-bbda-c49c42b979da
+		sourceLineageTag: load_trip_jacket_received_date
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_hub_start
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 26305e31-1137-467a-b7a7-e3205cb338c4
+		sourceLineageTag: load_miles_hub_start
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_hub_end
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 11a16de5-eeb1-46b5-bbf1-72345d1dd0be
+		sourceLineageTag: load_miles_hub_end
+		summarizeBy: sum
+		sourceColumn: load_miles_hub_end
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_unit_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 535d84a6-e624-4f56-a051-dc3277784f9f
+		sourceLineageTag: load_unit_division_code
+		summarizeBy: none
+		sourceColumn: load_unit_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_team_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8966bfc-0ac8-4481-985a-789911e86c86
+		sourceLineageTag: load_team_status_code
+		summarizeBy: none
+		sourceColumn: load_team_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trainer_team_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4014fecf-3f29-4218-83be-adccdec5f9ac
+		sourceLineageTag: load_trainer_team_code
+		summarizeBy: none
+		sourceColumn: load_trainer_team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_payroll_approval_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0141fd61-5a77-4d17-8902-542e9e6764bf
+		sourceLineageTag: load_payroll_approval_flag
+		summarizeBy: none
+		sourceColumn: load_payroll_approval_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d81e41a5-8522-4511-a7eb-ffc706904112
+		sourceLineageTag: load_truck_dmol_code
+		summarizeBy: none
+		sourceColumn: load_truck_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 25d290c4-992f-4e02-bd34-b326cb60fd1b
+		sourceLineageTag: load_truck_dm_code
+		summarizeBy: none
+		sourceColumn: load_truck_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dmol_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 47ccf1e2-011c-4029-91bb-ee3cc6d48460
+		sourceLineageTag: load_driver_dmol_code
+		summarizeBy: none
+		sourceColumn: load_driver_dmol_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_driver_dm_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c7b379e5-9b7e-4cd6-9462-b704d0491166
+		sourceLineageTag: load_driver_dm_code
+		summarizeBy: none
+		sourceColumn: load_driver_dm_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trip_jacket_received_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a622507-687e-40d9-9c09-e6ba72c7d0dd
+		sourceLineageTag: load_trip_jacket_received_flag
+		summarizeBy: none
+		sourceColumn: load_trip_jacket_received_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_destination_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0af1dee6-f47e-4cf0-bfba-193650c3523a
+		sourceLineageTag: load_destination_area_code
+		summarizeBy: none
+		sourceColumn: load_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_extension
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b9325c42-b839-4fcd-ba4f-5ce3f617fbab
+		sourceLineageTag: load_route_line_extension
+		summarizeBy: none
+		sourceColumn: load_route_line_extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 76aadbba-227e-41ab-a229-de0b7826e949
+		sourceLineageTag: load_dispatch_end_date
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_end_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c5e5bbb3-fab1-4462-9601-7da153b37202
+		sourceLineageTag: load_dispatch_end_time
+		summarizeBy: none
+		sourceColumn: load_dispatch_end_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_multiple_trailers_on_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a5b9f1fc-0d42-4ea3-9969-dd16588dfcef
+		sourceLineageTag: load_multiple_trailers_on_dispatch
+		summarizeBy: none
+		sourceColumn: load_multiple_trailers_on_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_settlement_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 50a9c332-a75e-46ee-9d8f-c29af01fd77f
+		sourceLineageTag: load_settlement_flag
+		summarizeBy: none
+		sourceColumn: load_settlement_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7a82e2c8-9218-492d-aeb6-a3954ca733d1
+		sourceLineageTag: load_route_status
+		summarizeBy: none
+		sourceColumn: load_route_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_dead_head
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 435e0c04-4bfc-4280-af99-6d174dfcd214
+		sourceLineageTag: load_miles_dead_head
+		summarizeBy: sum
+		sourceColumn: load_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_total
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 32169aa3-4a60-4635-92bd-d90b983ae36d
+		sourceLineageTag: load_miles_total
+		summarizeBy: sum
+		sourceColumn: load_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_miles_loaded
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f3652a69-e641-4d87-ab50-93dd9a816f63
+		sourceLineageTag: load_miles_loaded
+		summarizeBy: sum
+		sourceColumn: load_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column load_mile_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8acf5dbe-2bb2-4aad-b3d3-c74144f0e47c
+		sourceLineageTag: load_mile_flag
+		summarizeBy: none
+		sourceColumn: load_mile_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3fc98981-2292-492f-9ed4-2ea3cc927f1a
+		sourceLineageTag: load_initials
+		summarizeBy: none
+		sourceColumn: load_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb5ad46f-4b71-4f9e-9aec-98cc75d2d46b
+		sourceLineageTag: load_dispatch_time
+		summarizeBy: none
+		sourceColumn: load_dispatch_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b69b622f-0624-4ffa-b6ce-dcd880ea0a64
+		sourceLineageTag: load_truck_number
+		summarizeBy: none
+		sourceColumn: load_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cce441a3-08b3-4826-96a2-550d30508088
+		sourceLineageTag: load_trailer_number
+		summarizeBy: none
+		sourceColumn: load_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e6f3ae3f-3af7-4ee0-b11e-c32da4d2cfed
+		sourceLineageTag: load_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: load_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_seat_2_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e22ea2df-d8b7-4c87-bc28-6bf260309486
+		sourceLineageTag: load_seat_2_driver_code
+		summarizeBy: none
+		sourceColumn: load_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_route_line_codes
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cfb2ee73-4199-4c7e-a6cd-5aea45629a4b
+		sourceLineageTag: load_route_line_codes
+		summarizeBy: none
+		sourceColumn: load_route_line_codes
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_origin_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 408c9cea-209b-4e3f-85f8-c903f68cf050
+		sourceLineageTag: load_origin_area_code
+		summarizeBy: none
+		sourceColumn: load_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3f5563b5-b311-45c8-b545-8d2a6669023c
+		sourceLineageTag: load_load_number
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c8112a13-0534-4140-9e4a-3dc3b7e6863f
+		sourceLineageTag: load_dispatch
+		summarizeBy: none
+		sourceColumn: load_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 337d2b1f-ab18-4414-8c5a-3b601a413b63
+		sourceLineageTag: load_status
+		summarizeBy: none
+		sourceColumn: load_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 51afc5ee-60e6-4fde-b214-d0fa0db19026
+		sourceLineageTag: load_dispatch_date
+		summarizeBy: none
+		sourceColumn: load_dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_incr_load_all-e190afea-1ae9-44b7-ad91-2223af4aeaa7 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_incr_load_all
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

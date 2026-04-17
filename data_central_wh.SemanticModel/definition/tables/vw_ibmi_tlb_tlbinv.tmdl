@@ -1,0 +1,314 @@
+table vw_ibmi_tlb_tlbinv
+	lineageTag: 93354008-709a-4890-868a-0beab4faf4fc
+	sourceLineageTag: [gold].[vw_ibmi_tlb_tlbinv]
+
+	column paid_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: baa390f2-82e1-4c56-a9ec-ef98715ca629
+		sourceLineageTag: paid_year
+		summarizeBy: none
+		sourceColumn: paid_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c4556dd0-f9a9-43ee-acd2-00f97dd806ca
+		sourceLineageTag: create_user_code
+		summarizeBy: none
+		sourceColumn: create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4a34e017-11ca-4c2c-b6ee-72695eb75ad3
+		sourceLineageTag: create_date
+		summarizeBy: none
+		sourceColumn: create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column maint_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ad51a4ff-83c3-4eb6-adca-e620a54aecad
+		sourceLineageTag: maint_user_code
+		summarizeBy: none
+		sourceColumn: maint_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column maint_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4f187387-595a-4a89-92ab-4f44b6434c0d
+		sourceLineageTag: maint_date
+		summarizeBy: none
+		sourceColumn: maint_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_voided
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 081ea4f6-1402-4fac-ad02-a3e52913a4a4
+		sourceLineageTag: is_voided
+		summarizeBy: none
+		sourceColumn: is_voided
+
+		annotation SummarizationSetBy = Automatic
+
+	column expensed_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0dcba5fc-93b6-4e2d-98a7-5a23e423540a
+		sourceLineageTag: expensed_month
+		summarizeBy: none
+		sourceColumn: expensed_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column expensed_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3b91277f-f536-4909-a5ad-55311f3a371b
+		sourceLineageTag: expensed_year
+		summarizeBy: none
+		sourceColumn: expensed_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column voided_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 161d5070-6eb6-4011-8459-c70c0bc08ed3
+		sourceLineageTag: voided_month
+		summarizeBy: none
+		sourceColumn: voided_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column voided_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 66890ccd-25d9-41ec-a486-8c35a2d8f0d5
+		sourceLineageTag: voided_year
+		summarizeBy: none
+		sourceColumn: voided_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dfda8b3b-d107-48f1-ab03-c9d688503692
+		sourceLineageTag: paid_month
+		summarizeBy: none
+		sourceColumn: paid_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column reference
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 01532cbf-5692-4e91-b0f8-807e4654d620
+		sourceLineageTag: reference
+		summarizeBy: none
+		sourceColumn: reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column fund_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 05e544b1-746f-407e-918d-bc4b8a567d9e
+		sourceLineageTag: fund_code
+		summarizeBy: none
+		sourceColumn: fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 00fb44b9-769a-428a-a263-185f82a62cba
+		sourceLineageTag: check_number
+		summarizeBy: sum
+		sourceColumn: check_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a9dcd97d-2970-453f-aec0-8aaa45b8756b
+		sourceLineageTag: check_date
+		summarizeBy: none
+		sourceColumn: check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 01ce61c7-d328-4f49-8fe0-fc3a5f97be4e
+		sourceLineageTag: check_amount
+		summarizeBy: sum
+		sourceColumn: check_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_expensed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 08e1b3de-d28d-4ad5-a6be-07ac25a74056
+		sourceLineageTag: is_expensed
+		summarizeBy: none
+		sourceColumn: is_expensed
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e3adb980-49f0-4554-ac0a-26436ec394da
+		sourceLineageTag: original_dispatch
+		summarizeBy: none
+		sourceColumn: original_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8c6619d3-a05d-4523-9258-66a13bccc02b
+		sourceLineageTag: carrier_invoice_number
+		summarizeBy: none
+		sourceColumn: carrier_invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d708f7a9-a320-4a92-9028-b578a14c2738
+		sourceLineageTag: invoice_date
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column due_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8796fef6-dc57-4c69-a2b6-a9621d18690f
+		sourceLineageTag: due_date
+		summarizeBy: none
+		sourceColumn: due_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column to_pay_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 29cdb17b-bcef-42f3-a03f-e4f8d9690ae8
+		sourceLineageTag: to_pay_date
+		summarizeBy: none
+		sourceColumn: to_pay_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fb85a0cd-5b62-4cef-b5aa-4a1d29ac775f
+		sourceLineageTag: invoice_amount
+		summarizeBy: sum
+		sourceColumn: invoice_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e986a21f-eaa5-42ef-b6ce-0b6aaddb25af
+		sourceLineageTag: status_code
+		summarizeBy: none
+		sourceColumn: status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c32a4f27-9d2a-416b-9f43-eaeb03917c90
+		sourceLineageTag: carrier_code
+		summarizeBy: none
+		sourceColumn: carrier_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a24ac5dd-8b1a-4ea5-9a5a-2f21bd3a75cb
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f8100b7a-63c2-49a9-a23c-2b1b1c4d6461
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2377762e-5b89-4914-8358-2fbd7d00a326
+		sourceLineageTag: dispatch
+		summarizeBy: none
+		sourceColumn: dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7dd9ecc6-0513-48de-b5a1-328f00b17572
+		sourceLineageTag: original_load_number
+		summarizeBy: none
+		sourceColumn: original_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_tlb_tlbinv-9357734b-9da7-492b-af71-0c6bef5b1e49 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_tlb_tlbinv
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

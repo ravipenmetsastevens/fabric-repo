@@ -1,0 +1,77 @@
+table risk_accident_description
+	lineageTag: 5416d150-476e-4d4e-bf59-fa882a005b58
+	sourceLineageTag: [silver].[risk_accident_description]
+
+	column accident_desc_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ee0ae618-1d40-4542-9874-3db1013130db
+		sourceLineageTag: accident_desc_claim_record_code
+		summarizeBy: sum
+		sourceColumn: accident_desc_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accident_desc_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb2f3d00-2c60-4c7f-8438-8cfdea2d026e
+		sourceLineageTag: accident_desc_description
+		summarizeBy: none
+		sourceColumn: accident_desc_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5f574806-61dc-445a-a01d-bc5af5eb7863
+		sourceLineageTag: accident_desc_create_datetime
+		summarizeBy: none
+		sourceColumn: accident_desc_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b4ae1d39-22aa-44bf-8a50-d980531163dc
+		sourceLineageTag: accident_desc_create_user_code
+		summarizeBy: none
+		sourceColumn: accident_desc_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_last_change_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 2c705b1b-6196-4ff9-985c-95b38a01044f
+		sourceLineageTag: accident_desc_last_change_datetime
+		summarizeBy: none
+		sourceColumn: accident_desc_last_change_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column accident_desc_last_change_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9bb3b0f3-2a09-4ba4-8f10-ff3fb1dfa186
+		sourceLineageTag: accident_desc_last_change_user_code
+		summarizeBy: none
+		sourceColumn: accident_desc_last_change_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_accident_description-14a151a0-05aa-4467-9c86-0211b122d290 = entity
+		mode: directLake
+		source
+			entityName: risk_accident_description
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

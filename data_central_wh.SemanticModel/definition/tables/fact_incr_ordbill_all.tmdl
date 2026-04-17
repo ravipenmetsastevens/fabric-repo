@@ -1,0 +1,35 @@
+table fact_incr_ordbill_all
+	lineageTag: 587b0b2c-331b-4baf-b2e0-ef3837be8a0c
+	sourceLineageTag: [gold].[fact_incr_ordbill_all]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 557202a4-2169-4700-871d-165f8b4f8792
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 92046415-6cae-4c1d-b34d-d684deac7900
+		sourceLineageTag: bill_amount
+		summarizeBy: sum
+		sourceColumn: bill_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_incr_ordbill_all-dd9836e7-5e4b-4941-8492-e2fd3aebe260 = entity
+		mode: directLake
+		source
+			entityName: fact_incr_ordbill_all
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

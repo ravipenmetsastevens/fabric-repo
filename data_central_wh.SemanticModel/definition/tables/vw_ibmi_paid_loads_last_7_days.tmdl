@@ -1,0 +1,44 @@
+table vw_ibmi_paid_loads_last_7_days
+	lineageTag: 6ce89657-534d-4ff7-8fec-abd786011603
+	sourceLineageTag: [silver].[vw_ibmi_paid_loads_last_7_days]
+
+	column earnings_history_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c8ef4ea-0534-4186-9a25-7283689fb230
+		sourceLineageTag: earnings_history_load_number
+		summarizeBy: none
+		sourceColumn: earnings_history_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 01c22f45-dca6-4c42-8542-3181d0998825
+		sourceLineageTag: max_date
+		summarizeBy: none
+		sourceColumn: max_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 938317d6-d3fd-4c80-aaca-b7a9f39d16b8
+		sourceLineageTag: max_dispatch
+		summarizeBy: none
+		sourceColumn: max_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_paid_loads_last_7_days-8f3bc11c-7a6a-4258-a3a8-430a6e1fdbeb = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_paid_loads_last_7_days
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

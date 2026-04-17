@@ -1,0 +1,285 @@
+table plsc_backupveh
+	lineageTag: 68f9ec5e-32cd-4cb3-8cc5-584923de322e
+	sourceLineageTag: [bronze].[plsc_backupveh]
+
+	column PHVEH
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e1559f87-5a7d-4642-9df7-b595c82e03a3
+		sourceLineageTag: PHVEH
+		summarizeBy: none
+		sourceColumn: PHVEH
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHTIME
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: abd85e96-fe95-473e-8ce8-c5cd90cfc821
+		sourceLineageTag: PHTIME
+		summarizeBy: sum
+		sourceColumn: PHTIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHTIME_DT
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7459e883-9f57-476d-88e5-1153a509e48f
+		sourceLineageTag: PHTIME_DT
+		summarizeBy: none
+		sourceColumn: PHTIME_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHARRV
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 12d4e1d0-e068-42d9-920b-6d8930b0e5a9
+		sourceLineageTag: PHARRV
+		summarizeBy: sum
+		sourceColumn: PHARRV
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHARRV_DT
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 92113267-661f-42c7-9bff-73c2cb99acb2
+		sourceLineageTag: PHARRV_DT
+		summarizeBy: none
+		sourceColumn: PHARRV_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHTYPE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6a16bb83-45d0-4d3e-8378-9551359aa19c
+		sourceLineageTag: PHTYPE
+		summarizeBy: none
+		sourceColumn: PHTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHPSRC
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dd3c3cbd-0f8b-4d20-ae84-9cba73314733
+		sourceLineageTag: PHPSRC
+		summarizeBy: none
+		sourceColumn: PHPSRC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHSIOT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 17f3372b-eded-41f3-a496-a711d48c1b9a
+		sourceLineageTag: PHSIOT
+		summarizeBy: none
+		sourceColumn: PHSIOT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHIGST
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 595bf3b1-583b-4a92-bdd9-b7139d5647f1
+		sourceLineageTag: PHIGST
+		summarizeBy: none
+		sourceColumn: PHIGST
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHMACT
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 13e92e30-afb6-4aac-87d9-acd69f9949aa
+		sourceLineageTag: PHMACT
+		summarizeBy: none
+		sourceColumn: PHMACT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHMAC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: cce79159-e33c-489e-b879-a43a869cad2e
+		sourceLineageTag: PHMAC
+		summarizeBy: sum
+		sourceColumn: PHMAC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHVER
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a60b6bfb-4c4d-4b2d-919c-5a1a593b83d5
+		sourceLineageTag: PHVER
+		summarizeBy: sum
+		sourceColumn: PHVER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHGMH
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: cf5252ae-87ff-4f0a-a8c9-de7ce043233d
+		sourceLineageTag: PHGMH
+		summarizeBy: sum
+		sourceColumn: PHGMH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHBTIN
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 127b0f81-ac57-4367-8961-7ed63f8892d4
+		sourceLineageTag: PHBTIN
+		summarizeBy: none
+		sourceColumn: PHBTIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHNXST
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 29718cf1-a11b-4f16-8372-7e26ef2be392
+		sourceLineageTag: PHNXST
+		summarizeBy: sum
+		sourceColumn: PHNXST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHNXSA
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5cb13b3b-27c9-4259-abfc-f8ce64abd5f5
+		sourceLineageTag: PHNXSA
+		summarizeBy: sum
+		sourceColumn: PHNXSA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHLSST
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: e43b368f-6fc4-44a4-a452-5824d58352b8
+		sourceLineageTag: PHLSST
+		summarizeBy: sum
+		sourceColumn: PHLSST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHLSSA
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1018f6f1-22f2-4489-ae1f-edbdcb4ed074
+		sourceLineageTag: PHLSSA
+		summarizeBy: sum
+		sourceColumn: PHLSSA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHLAT
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: af571a0a-e85e-4be1-83e5-a828b2618c5f
+		sourceLineageTag: PHLAT
+		summarizeBy: sum
+		sourceColumn: PHLAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHLON
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 640f673b-a6ef-4c1c-b87a-8bba672f6cf6
+		sourceLineageTag: PHLON
+		summarizeBy: sum
+		sourceColumn: PHLON
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHLTDD
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fcfac632-507f-43e9-8d68-cd94bde50d81
+		sourceLineageTag: PHLTDD
+		summarizeBy: sum
+		sourceColumn: PHLTDD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHDIRC
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: d0f0a4e3-04ec-4896-bcc7-bce11d44345d
+		sourceLineageTag: PHDIRC
+		summarizeBy: sum
+		sourceColumn: PHDIRC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHSPED
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 8dbaf753-c382-47e1-bce1-f61a6d1167ec
+		sourceLineageTag: PHSPED
+		summarizeBy: sum
+		sourceColumn: PHSPED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PHODOM
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: bc01fad5-3dca-41ff-8aae-682bed516edd
+		sourceLineageTag: PHODOM
+		summarizeBy: sum
+		sourceColumn: PHODOM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition plsc_backupveh-9ea9d31d-4878-446e-af29-d69217ba355f = entity
+		mode: directLake
+		source
+			entityName: plsc_backupveh
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

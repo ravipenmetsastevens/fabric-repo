@@ -1,0 +1,33 @@
+table vw_ibmi_team_loads
+	lineageTag: 99d4b372-1ea1-41fc-9a79-7a233855ad30
+	sourceLineageTag: [silver].[vw_ibmi_team_loads]
+
+	column load_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f9fba666-f1c0-4c4c-88a3-733e2a59787f
+		sourceLineageTag: load_load_number
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9ee648bb-62a1-4008-8329-7a50e8dcc387
+		sourceLineageTag: team_flag
+		summarizeBy: none
+		sourceColumn: team_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_team_loads-96527843-61f5-4b1a-b55e-6069e2e8c0a5 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_team_loads
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

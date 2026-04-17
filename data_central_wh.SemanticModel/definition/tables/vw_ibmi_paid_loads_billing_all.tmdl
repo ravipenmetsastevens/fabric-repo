@@ -1,0 +1,53 @@
+table vw_ibmi_paid_loads_billing_all
+	lineageTag: e411fb02-f1f7-4f05-9022-bda19c7febb2
+	sourceLineageTag: [silver].[vw_ibmi_paid_loads_billing_all]
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d518e63a-af66-41fa-bfa7-fbde5d97e6aa
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a5950184-7836-426e-856b-c01f7eb581ba
+		sourceLineageTag: commodity_code
+		summarizeBy: none
+		sourceColumn: commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a1421624-9dc3-4373-946f-0065b5de2a48
+		sourceLineageTag: commodity_description
+		summarizeBy: none
+		sourceColumn: commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column billed_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 3d9a6a72-bdb2-455d-85de-06dcaa69fc3b
+		sourceLineageTag: billed_amount
+		summarizeBy: sum
+		sourceColumn: billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_paid_loads_billing_all-0094360b-b763-4447-a0f0-3e1efe3516f2 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_paid_loads_billing_all
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

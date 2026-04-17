@@ -1,0 +1,53 @@
+table vw_ibmi_division
+	lineageTag: b5ffde9a-81b4-49ac-a2b9-a7947509c012
+	sourceLineageTag: [gold].[vw_ibmi_division]
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84b5551c-954d-4f06-9a4e-3fdf8fe1c89c
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b258c7a9-6264-4f91-95e1-f6f34e848053
+		sourceLineageTag: division_status
+		summarizeBy: none
+		sourceColumn: division_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0f2ffce7-b7c1-4ff4-bebe-8eaaca32586a
+		sourceLineageTag: division_name
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_fleet_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 241d06fe-1352-47c7-869d-fe84078d72fa
+		sourceLineageTag: division_fleet_name
+		summarizeBy: none
+		sourceColumn: division_fleet_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_division-2b95404a-df7d-4dff-8cd5-95c903e08106 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_division
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

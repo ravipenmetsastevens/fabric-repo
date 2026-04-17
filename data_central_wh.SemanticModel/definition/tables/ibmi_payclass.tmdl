@@ -1,0 +1,177 @@
+table ibmi_payclass
+	lineageTag: ffb11526-f216-4128-9049-6fbc038f7096
+	sourceLineageTag: [silver].[ibmi_payclass]
+
+	column has_cafeteria_pay
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f15ece51-fce0-462e-b65c-b258230854dc
+		sourceLineageTag: has_cafeteria_pay
+		summarizeBy: none
+		sourceColumn: has_cafeteria_pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_employee_workers_comp
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 180b2ff2-d3f6-4798-b28c-27e0a71ad81c
+		sourceLineageTag: has_employee_workers_comp
+		summarizeBy: none
+		sourceColumn: has_employee_workers_comp
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_employer_workers_comp
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fd88f37e-2eb8-4e30-b46a-337d1c7f7d91
+		sourceLineageTag: has_employer_workers_comp
+		summarizeBy: none
+		sourceColumn: has_employer_workers_comp
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_truck_expense_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d9e5c209-1d58-4f92-a6d9-284390a7adc7
+		sourceLineageTag: payclass_truck_expense_account_number
+		summarizeBy: none
+		sourceColumn: payclass_truck_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_expense_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c76678ef-7a26-44c5-80ef-498c83d07245
+		sourceLineageTag: payclass_expense_account_number
+		summarizeBy: none
+		sourceColumn: payclass_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_bucket_code
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 7b15b371-c255-4e8e-bc89-4ff90ad37367
+		sourceLineageTag: payclass_bucket_code
+		summarizeBy: sum
+		sourceColumn: payclass_bucket_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_income_taxable
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 12ead650-188e-4525-93c5-86696b83f443
+		sourceLineageTag: is_income_taxable
+		summarizeBy: none
+		sourceColumn: is_income_taxable
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_unemployment_insurance
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ba95de01-7b41-448b-9ba6-b53251eb6f3e
+		sourceLineageTag: has_unemployment_insurance
+		summarizeBy: none
+		sourceColumn: has_unemployment_insurance
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_cpp_pension_pay
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9a98f77d-22b7-4b73-97bc-b9304e9b2fe6
+		sourceLineageTag: has_cpp_pension_pay
+		summarizeBy: none
+		sourceColumn: has_cpp_pension_pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_union_dues
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6dbbecc2-4c78-48e1-9b55-e13bf564d821
+		sourceLineageTag: has_union_dues
+		summarizeBy: none
+		sourceColumn: has_union_dues
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_401k_pay
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 43a4d7dc-2a9e-49e3-94fb-7dfe0809e1f3
+		sourceLineageTag: has_401k_pay
+		summarizeBy: none
+		sourceColumn: has_401k_pay
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_class_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d89f30a-c441-4b73-9bd7-4cbfe9715def
+		sourceLineageTag: payclass_class_code
+		summarizeBy: none
+		sourceColumn: payclass_class_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_unit_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7ab233ce-2750-4d64-8068-3cf20a802edf
+		sourceLineageTag: payclass_unit_type_code
+		summarizeBy: none
+		sourceColumn: payclass_unit_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_pay_rate_factor
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 60defa63-3bdd-43c3-8aea-c548a61fb5c0
+		sourceLineageTag: payclass_pay_rate_factor
+		summarizeBy: sum
+		sourceColumn: payclass_pay_rate_factor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payclass_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1d013a5a-5105-4726-aaa2-42bae4ae2f05
+		sourceLineageTag: payclass_description
+		summarizeBy: none
+		sourceColumn: payclass_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column payclass_unbank_overtime_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bea10172-0962-43ef-987d-8e44f8327843
+		sourceLineageTag: payclass_unbank_overtime_code
+		summarizeBy: none
+		sourceColumn: payclass_unbank_overtime_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_payclass-69875eab-4db5-44a5-990e-442a8714e935 = entity
+		mode: directLake
+		source
+			entityName: ibmi_payclass
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

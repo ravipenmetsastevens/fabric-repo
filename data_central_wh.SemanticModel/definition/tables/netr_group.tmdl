@@ -1,0 +1,43 @@
+table netr_group
+	lineageTag: 3ecbcd80-de9c-4717-9e15-73532036dd39
+	sourceLineageTag: [silver].[netr_group]
+
+	column group_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78c9f421-f7ad-4d32-9d67-a4cd2dc6d9db
+		sourceLineageTag: group_id
+		summarizeBy: none
+		sourceColumn: group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column group_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 03091855-5ba6-4d8f-adbf-61185ca13789
+		sourceLineageTag: group_name
+		summarizeBy: none
+		sourceColumn: group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column group_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f81b4e20-0db9-4d50-9f2d-e269185ed359
+		sourceLineageTag: group_status
+		summarizeBy: none
+		sourceColumn: group_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition netr_group-509126bc-bb7c-4438-80c9-408aa6003457 = entity
+		mode: directLake
+		source
+			entityName: netr_group
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

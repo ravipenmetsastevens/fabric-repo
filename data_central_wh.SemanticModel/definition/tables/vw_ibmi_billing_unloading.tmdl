@@ -1,0 +1,35 @@
+table vw_ibmi_billing_unloading
+	lineageTag: a9a9c753-5ca4-4d17-b2da-be2900550757
+	sourceLineageTag: [silver].[vw_ibmi_billing_unloading]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7f4e376c-7f5d-41a3-a36b-ab1eacd17755
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_unloading_billed
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: faa0d66b-7ba8-4954-9d75-7784926debb5
+		sourceLineageTag: total_unloading_billed
+		summarizeBy: sum
+		sourceColumn: total_unloading_billed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_ibmi_billing_unloading-02d61c18-d5ff-4f56-89f5-87bae8dd7d8a = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_billing_unloading
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

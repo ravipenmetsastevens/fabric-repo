@@ -1,0 +1,303 @@
+table plsc_vehicle_health
+	lineageTag: f8bba5f6-e4c2-4a57-9a31-0b93881c2cac
+	sourceLineageTag: [silver].[plsc_vehicle_health]
+
+	column vh_ign_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8997129e-ee43-40b2-b623-a20852c16ead
+		sourceLineageTag: vh_ign_raw
+		summarizeBy: none
+		sourceColumn: vh_ign_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_rpm_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db09949e-9542-46f7-b86a-ab8a914ad096
+		sourceLineageTag: vh_rpm_raw
+		summarizeBy: none
+		sourceColumn: vh_rpm_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_engine_hrs_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6adc2316-9d20-4495-bad2-994662fd740f
+		sourceLineageTag: vh_engine_hrs_raw
+		summarizeBy: none
+		sourceColumn: vh_engine_hrs_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_sat_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: be302ac8-97e9-4153-9d0b-67cc9ebfbfa1
+		sourceLineageTag: vh_sat_raw
+		summarizeBy: none
+		sourceColumn: vh_sat_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_gpsv_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5521007f-5713-4878-a141-e5c2f6e8a353
+		sourceLineageTag: vh_gpsv_raw
+		summarizeBy: none
+		sourceColumn: vh_gpsv_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_hdop_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6a7a2576-103b-4069-bc8c-f2b4ef33a9a1
+		sourceLineageTag: vh_hdop_raw
+		summarizeBy: none
+		sourceColumn: vh_hdop_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_odo_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7769be83-acb5-4e0e-9028-33e5c5aefb41
+		sourceLineageTag: vh_odo_raw
+		summarizeBy: none
+		sourceColumn: vh_odo_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_odoj_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 129e67d1-cf47-4f52-9071-721d22a7fd53
+		sourceLineageTag: vh_odoj_raw
+		summarizeBy: none
+		sourceColumn: vh_odoj_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_heading_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3f92edd1-0716-4021-ba1e-aec32902e2bf
+		sourceLineageTag: vh_heading_raw
+		summarizeBy: none
+		sourceColumn: vh_heading_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_lon_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 52f7963a-7277-4438-9f5b-47f9c4ff1380
+		sourceLineageTag: vh_lon_raw
+		summarizeBy: none
+		sourceColumn: vh_lon_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_loc_desc_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fb11210c-ba43-4f0d-81b3-e33b5db84e84
+		sourceLineageTag: vh_loc_desc_raw
+		summarizeBy: none
+		sourceColumn: vh_loc_desc_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_rpd_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a055cc2e-a09e-4599-b691-6c7b3c3293c4
+		sourceLineageTag: vh_rpd_raw
+		summarizeBy: none
+		sourceColumn: vh_rpd_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_engine_hrs_j_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 651970c6-8ca8-4a36-890f-3915198229c1
+		sourceLineageTag: vh_engine_hrs_j_raw
+		summarizeBy: none
+		sourceColumn: vh_engine_hrs_j_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_winm_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 39aae66c-88bd-405a-9f42-21b91098c4ab
+		sourceLineageTag: vh_winm_raw
+		summarizeBy: none
+		sourceColumn: vh_winm_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_acu_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f20d5b00-c743-4b8c-956f-f52459fe31cf
+		sourceLineageTag: vh_acu_raw
+		summarizeBy: none
+		sourceColumn: vh_acu_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_city_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ce00255b-6409-40c0-9080-1ace28b3f0a8
+		sourceLineageTag: vh_city_raw
+		summarizeBy: none
+		sourceColumn: vh_city_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_state_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b8eebaa5-6065-4bc1-833c-d43b04f0c89f
+		sourceLineageTag: vh_state_raw
+		summarizeBy: none
+		sourceColumn: vh_state_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_country_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1dbe33e3-c08f-42e6-8ecb-aabf522ca7b0
+		sourceLineageTag: vh_country_raw
+		summarizeBy: none
+		sourceColumn: vh_country_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_fuel_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1b4b04e1-3ad0-4831-ac59-c74e3120b137
+		sourceLineageTag: vh_fuel_raw
+		summarizeBy: none
+		sourceColumn: vh_fuel_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_fuel_unit_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 52b9ff99-c75f-4cbd-9003-cdf37d96418a
+		sourceLineageTag: vh_fuel_unit_raw
+		summarizeBy: none
+		sourceColumn: vh_fuel_unit_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_lat_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf261931-db69-4b58-897b-bf799558e452
+		sourceLineageTag: vh_lat_raw
+		summarizeBy: none
+		sourceColumn: vh_lat_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_type_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0ce606c1-9133-4126-a18d-9f3f13d751ca
+		sourceLineageTag: vh_type_raw
+		summarizeBy: none
+		sourceColumn: vh_type_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_recv_ts_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 344f4c84-f842-40ca-b862-d39f9b415694
+		sourceLineageTag: vh_recv_ts_raw
+		summarizeBy: none
+		sourceColumn: vh_recv_ts_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_logger_ts_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5061476a-9bfb-4174-8a85-9c5f115aee36
+		sourceLineageTag: vh_logger_ts_raw
+		summarizeBy: none
+		sourceColumn: vh_logger_ts_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_speed_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0177f2e3-3186-42c8-84f3-f98dea8ce676
+		sourceLineageTag: vh_speed_raw
+		summarizeBy: none
+		sourceColumn: vh_speed_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_run_unit_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e1e9a621-db11-4ea6-980e-75d5036db4b7
+		sourceLineageTag: vh_run_unit_raw
+		summarizeBy: none
+		sourceColumn: vh_run_unit_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_run_dir_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d1169ca3-7232-4c49-86ae-cfef2fd3bebb
+		sourceLineageTag: vh_run_dir_raw
+		summarizeBy: none
+		sourceColumn: vh_run_dir_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_truck_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e2b6969-39c6-4200-bf5f-664a50de543f
+		sourceLineageTag: vh_truck_raw
+		summarizeBy: none
+		sourceColumn: vh_truck_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column vh_hbid_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5bc2c5b3-256c-4923-85d3-5c571e939903
+		sourceLineageTag: vh_hbid_raw
+		summarizeBy: none
+		sourceColumn: vh_hbid_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_vehicle_health-0bab84ea-db59-4c5d-a3fd-1c64561f59b1 = entity
+		mode: directLake
+		source
+			entityName: plsc_vehicle_health
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

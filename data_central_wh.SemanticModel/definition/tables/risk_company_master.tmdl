@@ -1,0 +1,384 @@
+table risk_company_master
+	lineageTag: e0ae19ff-047f-4fdf-af25-c1a52e8b8b82
+	sourceLineageTag: [silver].[risk_company_master]
+
+	column company_mast_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4fc897bc-634b-47ba-b4d7-bd40df6cce17
+		sourceLineageTag: company_mast_record_code
+		summarizeBy: sum
+		sourceColumn: company_mast_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column company_mast_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 24d6e1f8-b84f-4f69-9397-0736bfcad7d0
+		sourceLineageTag: company_mast_name
+		summarizeBy: none
+		sourceColumn: company_mast_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_company_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9ec29baa-accb-4305-907a-e4c97feb51ca
+		sourceLineageTag: company_mast_company_code
+		summarizeBy: none
+		sourceColumn: company_mast_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_tax_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68822910-344c-48ab-b284-b1bfe5ddc6bd
+		sourceLineageTag: company_mast_tax_id
+		summarizeBy: none
+		sourceColumn: company_mast_tax_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_new_claims_to_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c36aa90-c68d-45ed-af36-0e2b57e44247
+		sourceLineageTag: is_new_claims_to_register
+		summarizeBy: none
+		sourceColumn: is_new_claims_to_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_forced_date_reported
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 799ec79c-49c6-4961-afc8-413c1207a2b1
+		sourceLineageTag: is_forced_date_reported
+		summarizeBy: none
+		sourceColumn: is_forced_date_reported
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_manual_claim_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db933c68-0b82-40d6-b1e1-f4c6cf424a8b
+		sourceLineageTag: is_manual_claim_number
+		summarizeBy: none
+		sourceColumn: is_manual_claim_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_company_specific_master_tables
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6619be8f-9a26-488a-911a-f84a79d383ca
+		sourceLineageTag: has_company_specific_master_tables
+		summarizeBy: none
+		sourceColumn: has_company_specific_master_tables
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_check_request_disabled
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b94bda5-49d7-4dd6-815e-1d8f5f20c414
+		sourceLineageTag: is_check_request_disabled
+		summarizeBy: none
+		sourceColumn: is_check_request_disabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_fiscal_year_start_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9740835d-6f4e-4d42-9721-8e8f398ea65e
+		sourceLineageTag: company_mast_fiscal_year_start_date
+		summarizeBy: none
+		sourceColumn: company_mast_fiscal_year_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_closed_claim_read_only
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: afa38273-6e5a-422d-b840-e3065e80dabc
+		sourceLineageTag: is_closed_claim_read_only
+		summarizeBy: none
+		sourceColumn: is_closed_claim_read_only
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_excess_recovery_allowed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 24ddbd77-1ec7-4933-bcf7-274602ff8615
+		sourceLineageTag: is_excess_recovery_allowed
+		summarizeBy: none
+		sourceColumn: is_excess_recovery_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b5956311-66da-4f3e-84d2-fe69852650a5
+		sourceLineageTag: company_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: company_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b275b76f-758b-4fac-badd-24f0b1c61a43
+		sourceLineageTag: company_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: company_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_last_changed_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c9105c5f-327b-4168-984d-9b6bef02500c
+		sourceLineageTag: company_mast_last_changed_datetime
+		summarizeBy: none
+		sourceColumn: company_mast_last_changed_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_last_changed_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a9113f0e-046e-4b71-b03e-35176e932b1e
+		sourceLineageTag: company_mast_last_changed_user_code
+		summarizeBy: none
+		sourceColumn: company_mast_last_changed_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_fund_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ed0aa97f-7911-4c54-aa52-7f5a34cf260e
+		sourceLineageTag: company_mast_fund_code
+		summarizeBy: sum
+		sourceColumn: company_mast_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column company_mast_claim_date_usage_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ae7413b-9ddc-448a-99ed-2cece389c8e1
+		sourceLineageTag: company_mast_claim_date_usage_code
+		summarizeBy: none
+		sourceColumn: company_mast_claim_date_usage_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_branch_specific_allowed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 90a6eaf1-e35f-4213-b9ca-112ef67fa9e2
+		sourceLineageTag: is_branch_specific_allowed
+		summarizeBy: none
+		sourceColumn: is_branch_specific_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_closing_status_extended
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4610b88e-a9d9-4e22-83cb-50db2050ccc5
+		sourceLineageTag: is_closing_status_extended
+		summarizeBy: none
+		sourceColumn: is_closing_status_extended
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_payment_on_closed_allowed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1790f39c-9c32-46a7-ab5c-907257ca8f3a
+		sourceLineageTag: is_payment_on_closed_allowed
+		summarizeBy: none
+		sourceColumn: is_payment_on_closed_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_next_avail_claim_record
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 556ea2cb-9b02-4b20-b889-6f3b18271b2f
+		sourceLineageTag: company_mast_next_avail_claim_record
+		summarizeBy: sum
+		sourceColumn: company_mast_next_avail_claim_record
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_next_avail_pre_claim_record
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: fb482a9a-6b5d-4c70-972b-f18b79ca7b53
+		sourceLineageTag: company_mast_next_avail_pre_claim_record
+		summarizeBy: sum
+		sourceColumn: company_mast_next_avail_pre_claim_record
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_attached_adjustment_to_claimant
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 38aaebad-745b-4310-8cb4-fd62f8d1f9a9
+		sourceLineageTag: is_attached_adjustment_to_claimant
+		summarizeBy: none
+		sourceColumn: is_attached_adjustment_to_claimant
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_allowed_deduction_at
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 75503244-eec3-45c5-8d80-747c79609086
+		sourceLineageTag: company_mast_allowed_deduction_at
+		summarizeBy: none
+		sourceColumn: company_mast_allowed_deduction_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_forced_salvage_to_reserve
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7975cdf2-eb9d-4da7-b6d0-28e1ff9dbae6
+		sourceLineageTag: is_forced_salvage_to_reserve
+		summarizeBy: none
+		sourceColumn: is_forced_salvage_to_reserve
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_forced_salvage_to_equipment
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a037acf4-2d88-4719-824b-68eebc38c0f3
+		sourceLineageTag: is_forced_salvage_to_equipment
+		summarizeBy: none
+		sourceColumn: is_forced_salvage_to_equipment
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_posted_recovery_to_gl
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3dcb8d82-8d44-4f12-a07e-a00f121016a4
+		sourceLineageTag: is_posted_recovery_to_gl
+		summarizeBy: none
+		sourceColumn: is_posted_recovery_to_gl
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_claim_mask
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8357a6b2-0b22-451f-a51e-179d5c857052
+		sourceLineageTag: company_mast_claim_mask
+		summarizeBy: none
+		sourceColumn: company_mast_claim_mask
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_claim_record_reset
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b5ce894e-8d65-43da-98a6-b9221650be1d
+		sourceLineageTag: is_claim_record_reset
+		summarizeBy: none
+		sourceColumn: is_claim_record_reset
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_forced_time_reported
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 61dbfb42-135a-443d-b1a3-40cebb7f8d1a
+		sourceLineageTag: is_forced_time_reported
+		summarizeBy: none
+		sourceColumn: is_forced_time_reported
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_use_reserve_type_for_payments
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d298525b-9895-41c2-8827-6e7908d88b9a
+		sourceLineageTag: is_use_reserve_type_for_payments
+		summarizeBy: none
+		sourceColumn: is_use_reserve_type_for_payments
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_bonus_deduction_allowed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 423aafbc-d8c0-445c-9f87-cbc9e7b5e6a2
+		sourceLineageTag: is_bonus_deduction_allowed
+		summarizeBy: none
+		sourceColumn: is_bonus_deduction_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_bonus_deduction_limit
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c2ea9aef-de0c-42ab-abe8-242402b8f669
+		sourceLineageTag: company_mast_bonus_deduction_limit
+		summarizeBy: sum
+		sourceColumn: company_mast_bonus_deduction_limit
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_salary_deduction_allowed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e7f3d779-d5d8-460a-81fb-7cd0ba86f3a6
+		sourceLineageTag: is_salary_deduction_allowed
+		summarizeBy: none
+		sourceColumn: is_salary_deduction_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_mast_salary_deduction_limit
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 537e1a67-a957-450e-84d0-06f05d68b55c
+		sourceLineageTag: company_mast_salary_deduction_limit
+		summarizeBy: sum
+		sourceColumn: company_mast_salary_deduction_limit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_company_master-e69b51ed-336d-407b-b589-e14aa3822934 = entity
+		mode: directLake
+		source
+			entityName: risk_company_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

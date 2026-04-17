@@ -1,0 +1,298 @@
+table vw_ibmi_invoice
+	lineageTag: 432a0103-3994-4316-8e4f-13c50fe97cc1
+	sourceLineageTag: [gold].[vw_ibmi_invoice]
+
+	column invoiceAmount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: f7904c70-7ad9-4241-8d1c-b0a9d10b0bbf
+		sourceLineageTag: invoiceAmount
+		summarizeBy: sum
+		sourceColumn: invoiceAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_deleted
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f952e8ae-385e-42e9-8773-78d94228655b
+		sourceLineageTag: is_deleted
+		summarizeBy: sum
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column loadDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 24a4294f-7aa9-411b-95ea-8a5444666ab9
+		sourceLineageTag: loadDate
+		summarizeBy: none
+		sourceColumn: loadDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column refreshDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 1dd96a1a-fe57-40bf-aab2-893bd3f74fe0
+		sourceLineageTag: refreshDate
+		summarizeBy: none
+		sourceColumn: refreshDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column sourceSystem
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a855323a-6161-4e3a-8cc6-3d11ec083770
+		sourceLineageTag: sourceSystem
+		summarizeBy: none
+		sourceColumn: sourceSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1080ec5f-fd5e-47cf-bf9f-6633b8136d51
+		sourceLineageTag: checkNumber
+		summarizeBy: none
+		sourceColumn: checkNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c472ef84-f996-4455-b002-a22b52b0b041
+		sourceLineageTag: checkDate
+		summarizeBy: none
+		sourceColumn: checkDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkAmount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: fcee79b4-beb5-4ea1-b7bf-b2bba6024ca7
+		sourceLineageTag: checkAmount
+		summarizeBy: sum
+		sourceColumn: checkAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column invoiceDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 272d2ae3-06f4-42ab-bd7e-302730b877f4
+		sourceLineageTag: invoiceDate
+		summarizeBy: none
+		sourceColumn: invoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column updateDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 20ad664e-44a7-4a0d-a5fc-1f8399afb297
+		sourceLineageTag: updateDate
+		summarizeBy: none
+		sourceColumn: updateDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column paymentDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d0ddf70e-f19d-4a7c-a7e5-7e2d63531f1c
+		sourceLineageTag: paymentDate
+		summarizeBy: none
+		sourceColumn: paymentDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 961c85da-7949-41c7-ae8b-f5a21b43862e
+		sourceLineageTag: modifiedDate
+		summarizeBy: none
+		sourceColumn: modifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 53960191-e165-4714-b717-f49a84f8a8e8
+		sourceLineageTag: modifiedTime
+		summarizeBy: none
+		sourceColumn: modifiedTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookMonth
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57eb915e-4bd0-4d7b-af3c-9ffe9436f9c0
+		sourceLineageTag: bookMonth
+		summarizeBy: none
+		sourceColumn: bookMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookYear
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49405f2f-d970-41af-87bd-f0d5998ddb30
+		sourceLineageTag: bookYear
+		summarizeBy: none
+		sourceColumn: bookYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column voidFlag
+		dataType: string
+		sourceProviderType: char
+		lineageTag: 7449161e-76e0-4b6c-a6b6-96b36351115b
+		sourceLineageTag: voidFlag
+		summarizeBy: none
+		sourceColumn: voidFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column refNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8bddd9a9-58f6-4297-b4ba-902b1d33c3ed
+		sourceLineageTag: refNumber
+		summarizeBy: none
+		sourceColumn: refNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoiceNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 79aa008c-ab60-48da-b645-a33042bfe681
+		sourceLineageTag: invoiceNumber
+		summarizeBy: none
+		sourceColumn: invoiceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrierCode
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cfd9773e-792f-4704-bd13-ff2e3096f6d4
+		sourceLineageTag: carrierCode
+		summarizeBy: none
+		sourceColumn: carrierCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column enteredUser
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3262e1bf-b1f4-4175-ad0c-2a5490c94514
+		sourceLineageTag: enteredUser
+		summarizeBy: none
+		sourceColumn: enteredUser
+
+		annotation SummarizationSetBy = Automatic
+
+	column enteredDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f01b6656-354c-4896-aa49-42e677c2bc55
+		sourceLineageTag: enteredDate
+		summarizeBy: none
+		sourceColumn: enteredDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column enteredTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 31b06ebb-8b28-49f0-ba6e-c2d668a6c41d
+		sourceLineageTag: enteredTime
+		summarizeBy: none
+		sourceColumn: enteredTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedUser
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f67a2232-e887-43fc-8dde-a8e474ba2a32
+		sourceLineageTag: modifiedUser
+		summarizeBy: none
+		sourceColumn: modifiedUser
+
+		annotation SummarizationSetBy = Automatic
+
+	column loadNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3a0d74cb-cccb-4ea1-8ad8-30491c8b13c5
+		sourceLineageTag: loadNumber
+		summarizeBy: none
+		sourceColumn: loadNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatchNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a0199df6-9030-4bbb-a996-f658d0e0a057
+		sourceLineageTag: dispatchNumber
+		summarizeBy: none
+		sourceColumn: dispatchNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column divisionNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c4f53da9-14b1-47ef-95ee-9952e81f77b2
+		sourceLineageTag: divisionNumber
+		summarizeBy: none
+		sourceColumn: divisionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column orderNumber
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: acb61c2a-b5f7-42b4-bc7c-dc0c28e9a66a
+		sourceLineageTag: orderNumber
+		summarizeBy: none
+		sourceColumn: orderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_ibmi_invoice-b0a2c7d0-bca9-4cbf-bd97-b552e0d6423c = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_invoice
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

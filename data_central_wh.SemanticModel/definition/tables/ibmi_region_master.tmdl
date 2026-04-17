@@ -1,0 +1,33 @@
+table ibmi_region_master
+	lineageTag: c3b26df7-7141-483d-9c12-ffb4f80dc0db
+	sourceLineageTag: [silver].[ibmi_region_master]
+
+	column region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1bc69f39-2899-450b-a7be-926c4d87f107
+		sourceLineageTag: region_code
+		summarizeBy: none
+		sourceColumn: region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6d7e84bf-435d-4530-af25-4e69154483ec
+		sourceLineageTag: region_name
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_region_master-40712f75-6279-47f0-a760-f1e4c2b8ad3f = entity
+		mode: directLake
+		source
+			entityName: ibmi_region_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

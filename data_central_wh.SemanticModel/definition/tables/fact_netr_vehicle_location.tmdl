@@ -1,0 +1,79 @@
+table fact_netr_vehicle_location
+	lineageTag: 25b440ea-5b6b-4f4c-aa42-340e5f993097
+	sourceLineageTag: [gold].[fact_netr_vehicle_location]
+
+	column location_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 059a7510-3091-467f-9710-b5205daa8584
+		sourceLineageTag: location_vin
+		summarizeBy: none
+		sourceColumn: location_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_vehicle_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 932dc6fc-7be8-4006-a330-6a2ad7d5f956
+		sourceLineageTag: location_vehicle_number
+		summarizeBy: none
+		sourceColumn: location_vehicle_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a691af61-62eb-40e9-ac58-a1a3206aa1e1
+		sourceLineageTag: location_date
+		summarizeBy: none
+		sourceColumn: location_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 9d28d85e-3d9d-460d-a4a9-dac62e90c469
+		sourceLineageTag: location_time
+		summarizeBy: none
+		sourceColumn: location_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c7ce9044-41ff-4e02-ab13-87373c986744
+		sourceLineageTag: location_latitude
+		summarizeBy: sum
+		sourceColumn: location_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column location_longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ab21ba61-77d7-424f-be70-4420444a0a52
+		sourceLineageTag: location_longitude
+		summarizeBy: sum
+		sourceColumn: location_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_netr_vehicle_location-39fa1d19-22d2-495f-a39e-e938c368a718 = entity
+		mode: directLake
+		source
+			entityName: fact_netr_vehicle_location
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

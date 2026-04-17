@@ -1,0 +1,34 @@
+table vw_loaded_call_contact_by_load
+	lineageTag: 5f70fdc4-cf64-4198-9484-8a63f2eb7847
+	sourceLineageTag: [gold].[vw_loaded_call_contact_by_load]
+
+	column loaded_call_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ffd29b32-b592-4efc-9cda-6a3d0c565f6f
+		sourceLineageTag: loaded_call_load_number
+		summarizeBy: none
+		sourceColumn: loaded_call_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7b7f93fc-c5a6-4b67-bacf-9369ddd02b57
+		sourceLineageTag: loaded_call_contact_date
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_loaded_call_contact_by_load-8e9069f5-f7a0-407d-b990-cfcfe14946bf = entity
+		mode: directLake
+		source
+			entityName: vw_loaded_call_contact_by_load
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

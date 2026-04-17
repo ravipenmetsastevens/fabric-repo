@@ -1,0 +1,85 @@
+table plsc_plpmiles
+	lineageTag: df6db92f-7915-4ed3-8a6d-fcbae2759617
+	sourceLineageTag: [bronze].[plsc_plpmiles]
+
+	column PPMMN
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 230b5b08-7fb9-4ce2-b272-59b6ad62d93b
+		sourceLineageTag: PPMMN
+		summarizeBy: sum
+		sourceColumn: PPMMN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PPEIDNP
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 10e63251-5059-482a-9b92-a52deab6a313
+		sourceLineageTag: PPEIDNP
+		summarizeBy: none
+		sourceColumn: PPEIDNP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPMAC_P
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 42a64270-fb86-4d2a-95f1-b2216238b91f
+		sourceLineageTag: PPMAC_P
+		summarizeBy: none
+		sourceColumn: PPMAC_P
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPVER_P
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bec02bf1-496c-499e-a137-e3ff47f20edf
+		sourceLineageTag: PPVER_P
+		summarizeBy: none
+		sourceColumn: PPVER_P
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPLOAD
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d0231ef4-4099-483c-be76-6183996bad1d
+		sourceLineageTag: PPLOAD
+		summarizeBy: none
+		sourceColumn: PPLOAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPLOADMILE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 44f9ef09-e18c-49ec-bd52-d835fcaa7ef0
+		sourceLineageTag: PPLOADMILE
+		summarizeBy: none
+		sourceColumn: PPLOADMILE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPEMTMILE
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea2f93d1-8e97-4c64-aaa2-71a3a63489b8
+		sourceLineageTag: PPEMTMILE
+		summarizeBy: none
+		sourceColumn: PPEMTMILE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_plpmiles-3c169be3-8844-4f17-bde3-74ce8294445b = entity
+		mode: directLake
+		source
+			entityName: plsc_plpmiles
+			schemaName: bronze
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

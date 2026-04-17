@@ -1,0 +1,422 @@
+table ibmi_deduction_history
+	lineageTag: 1e4e7bad-5c92-45fd-bbe6-17c64f75f9ad
+	sourceLineageTag: [silver].[ibmi_deduction_history]
+
+	column deduction_history_employee_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d3bfb703-cf78-48ea-830b-ec4448d7a391
+		sourceLineageTag: deduction_history_employee_code
+		summarizeBy: none
+		sourceColumn: deduction_history_employee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_run_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 79968dcb-a3b2-4ffb-a456-3e954925a583
+		sourceLineageTag: deduction_history_run_code
+		summarizeBy: none
+		sourceColumn: deduction_history_run_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_benefit_package_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1e98d062-8b25-44c7-8808-516020aa1609
+		sourceLineageTag: deduction_history_benefit_package_code
+		summarizeBy: none
+		sourceColumn: deduction_history_benefit_package_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_deduction_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c3337606-c6f6-4e10-9f71-44eb5d89fbd5
+		sourceLineageTag: deduction_history_deduction_type
+		summarizeBy: none
+		sourceColumn: deduction_history_deduction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_deduction_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: d6a00dae-e57f-41ab-a49f-57e458cc8227
+		sourceLineageTag: deduction_history_deduction_code
+		summarizeBy: sum
+		sourceColumn: deduction_history_deduction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_wage_dump_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1ec37af9-4883-4408-a087-4d158033e7cf
+		sourceLineageTag: deduction_history_wage_dump_code
+		summarizeBy: none
+		sourceColumn: deduction_history_wage_dump_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_deduct_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0e0d161e-ace0-4573-900a-b274e3810d9e
+		sourceLineageTag: deduction_history_deduct_date
+		summarizeBy: none
+		sourceColumn: deduction_history_deduct_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_sequence_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 0f6be285-4ded-4b64-85fd-bef54a5f0153
+		sourceLineageTag: deduction_history_sequence_number
+		summarizeBy: sum
+		sourceColumn: deduction_history_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_department_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3bcf60d9-2c00-4f19-b830-cab14e214461
+		sourceLineageTag: deduction_history_department_code
+		summarizeBy: none
+		sourceColumn: deduction_history_department_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_job_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 92b0d555-8233-44ba-bd03-0da44ae77e4e
+		sourceLineageTag: deduction_history_job_description
+		summarizeBy: none
+		sourceColumn: deduction_history_job_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_add_or_replace
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3e75fb7c-c78c-4111-b6e7-31dd6eaec850
+		sourceLineageTag: is_add_or_replace
+		summarizeBy: none
+		sourceColumn: is_add_or_replace
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_charge_or_reimbursement
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ff5f7541-c354-4ca8-b082-01b7df619bea
+		sourceLineageTag: is_charge_or_reimbursement
+		summarizeBy: none
+		sourceColumn: is_charge_or_reimbursement
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_on_hold
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8da5534a-e204-4e27-ab77-3120f2133d22
+		sourceLineageTag: is_on_hold
+		summarizeBy: none
+		sourceColumn: is_on_hold
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27076ad6-ab79-41eb-9059-991e30598696
+		sourceLineageTag: deduction_history_division_code
+		summarizeBy: none
+		sourceColumn: deduction_history_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e12eaf35-65b6-4ea2-8f4d-02180bf818ab
+		sourceLineageTag: deduction_history_load_number
+		summarizeBy: none
+		sourceColumn: deduction_history_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_dispatch_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f3187f2d-b302-4ec1-b976-32619e6ad322
+		sourceLineageTag: deduction_history_dispatch_number
+		summarizeBy: none
+		sourceColumn: deduction_history_dispatch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e40fbcb2-f7ba-441b-a3ef-29626128b857
+		sourceLineageTag: deduction_history_truck_number
+		summarizeBy: none
+		sourceColumn: deduction_history_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_owner_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c6cbe0f0-e268-4aef-9760-939e8aa0922e
+		sourceLineageTag: deduction_history_owner_code
+		summarizeBy: none
+		sourceColumn: deduction_history_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_truck_expense_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 12cbd40c-a9c9-4344-a777-36885fcf387f
+		sourceLineageTag: deduction_history_truck_expense_account_number
+		summarizeBy: none
+		sourceColumn: deduction_history_truck_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_wage_dump
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ebc48e45-fddc-46db-9454-ee937ea00a28
+		sourceLineageTag: is_wage_dump
+		summarizeBy: none
+		sourceColumn: is_wage_dump
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_expense_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b4c45e10-e7e3-4a91-acdd-1f4e16f5bac0
+		sourceLineageTag: deduction_history_expense_account_number
+		summarizeBy: none
+		sourceColumn: deduction_history_expense_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_earnings_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 339f7f17-7867-4fd3-9e43-55e49a36dd1f
+		sourceLineageTag: deduction_history_earnings_date
+		summarizeBy: none
+		sourceColumn: deduction_history_earnings_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_expensed_book_month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: a6c79d09-a747-4497-ad3c-35f83a4633fb
+		sourceLineageTag: deduction_history_expensed_book_month
+		summarizeBy: sum
+		sourceColumn: deduction_history_expensed_book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_expensed_book_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 364296b5-f1a3-4202-b967-f04103eb23c2
+		sourceLineageTag: deduction_history_expensed_book_year
+		summarizeBy: sum
+		sourceColumn: deduction_history_expensed_book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_check_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: eb38b7a1-6e74-423c-b0ac-c8b8a690dbb4
+		sourceLineageTag: deduction_history_check_date
+		summarizeBy: none
+		sourceColumn: deduction_history_check_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_check_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27551281-1197-4c64-92c0-7ec2379cc5a7
+		sourceLineageTag: deduction_history_check_number
+		summarizeBy: none
+		sourceColumn: deduction_history_check_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_voided
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 57f2ada7-800b-439a-92dc-eed039b1ba92
+		sourceLineageTag: is_voided
+		summarizeBy: none
+		sourceColumn: is_voided
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_deduction_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 5440d0dc-b67b-4665-8647-f60e6e34d16e
+		sourceLineageTag: deduction_history_deduction_amount
+		summarizeBy: sum
+		sourceColumn: deduction_history_deduction_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_employee_share_deducted
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: d6117a6e-283d-4b4a-94fc-47bd2d169723
+		sourceLineageTag: deduction_history_employee_share_deducted
+		summarizeBy: sum
+		sourceColumn: deduction_history_employee_share_deducted
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_company_share
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 0e4abb3f-34dc-4a1a-afac-576bb96d26ac
+		sourceLineageTag: deduction_history_company_share
+		summarizeBy: sum
+		sourceColumn: deduction_history_company_share
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_earnings_gross_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: bf48ef7d-b25a-4d15-8777-143248dfa9c7
+		sourceLineageTag: deduction_history_earnings_gross_amount
+		summarizeBy: sum
+		sourceColumn: deduction_history_earnings_gross_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_quantity
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: d05ed37f-b7f2-42b0-b396-ab6806e748d4
+		sourceLineageTag: deduction_history_quantity
+		summarizeBy: sum
+		sourceColumn: deduction_history_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_purchase_order_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2fb13ea-567c-46a7-a742-956e2f626dbb
+		sourceLineageTag: deduction_history_purchase_order_number
+		summarizeBy: none
+		sourceColumn: deduction_history_purchase_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_advance_reference_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cf9c5269-9d26-4cd0-b4dd-35f72936da29
+		sourceLineageTag: deduction_history_advance_reference_code
+		summarizeBy: none
+		sourceColumn: deduction_history_advance_reference_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_advance_vendor_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 987e0574-4f8e-4065-8d24-c2c53d9d328a
+		sourceLineageTag: deduction_history_advance_vendor_code
+		summarizeBy: none
+		sourceColumn: deduction_history_advance_vendor_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_location_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7ec6d2eb-54d6-4365-8dff-c6cba97df1e4
+		sourceLineageTag: deduction_history_location_city_code
+		summarizeBy: none
+		sourceColumn: deduction_history_location_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_location_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 25f31107-dc79-4e49-b4a6-a0e1bb025cea
+		sourceLineageTag: deduction_history_location_state
+		summarizeBy: none
+		sourceColumn: deduction_history_location_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_audit_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2ef8ed88-bb56-45be-9178-88d5551050de
+		sourceLineageTag: deduction_history_audit_user_code
+		summarizeBy: none
+		sourceColumn: deduction_history_audit_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_audit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a4217a3b-4bcb-4dcb-9c7a-b9c13606beac
+		sourceLineageTag: deduction_history_audit_date
+		summarizeBy: none
+		sourceColumn: deduction_history_audit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column deduction_history_audit_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 4608f7cc-8303-4b31-8aeb-5075202225f1
+		sourceLineageTag: deduction_history_audit_time
+		summarizeBy: none
+		sourceColumn: deduction_history_audit_time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_deduction_history-efc627c7-b248-496a-bc1f-8b6aae1f8897 = entity
+		mode: directLake
+		source
+			entityName: ibmi_deduction_history
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

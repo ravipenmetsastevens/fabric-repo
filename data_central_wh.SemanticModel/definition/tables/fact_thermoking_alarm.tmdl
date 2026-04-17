@@ -1,0 +1,97 @@
+table fact_thermoking_alarm
+	lineageTag: ba9116ce-85d1-40c0-8c53-e751c568e8bd
+	sourceLineageTag: [gold].[fact_thermoking_alarm]
+
+	column vehicleName
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3fb55023-ac1a-4960-a1d4-d31ae1d92d50
+		sourceLineageTag: vehicleName
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 544d1ad3-4725-4864-b722-8653ba3be198
+		sourceLineageTag: dataDate
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataTime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 25b012ad-50cb-4413-b3b4-f5346b4b8dbf
+		sourceLineageTag: dataTime
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmCode
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1c04ff8d-52dc-454b-af6a-c4be9a1206fb
+		sourceLineageTag: alarmCode
+		summarizeBy: sum
+		sourceColumn: alarmCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmDescription
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95cf65c7-792e-4fe0-91eb-16a65d9659d8
+		sourceLineageTag: alarmDescription
+		summarizeBy: none
+		sourceColumn: alarmDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmSeverity
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9c20689a-ab71-4b7c-b4c9-762c38dd0470
+		sourceLineageTag: alarmSeverity
+		summarizeBy: none
+		sourceColumn: alarmSeverity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmRecommendation
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b0b0ebd2-1420-4d70-8204-6e18f5010857
+		sourceLineageTag: alarmRecommendation
+		summarizeBy: none
+		sourceColumn: alarmRecommendation
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmZone
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 349101c5-2596-4ae4-b9d4-fe1a72fed5dc
+		sourceLineageTag: alarmZone
+		summarizeBy: sum
+		sourceColumn: alarmZone
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_thermoking_alarm-34ac3dbe-aa35-4006-90e6-0dc52448e9ce = entity
+		mode: directLake
+		source
+			entityName: fact_thermoking_alarm
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,120 @@
+table fact_netr_coaching
+	lineageTag: ac22975a-0446-495e-966f-04b841585c1d
+	sourceLineageTag: [gold].[fact_netr_coaching]
+
+	column coaching_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8f72ae50-01a9-40ad-ac85-357ffe7be1dc
+		sourceLineageTag: coaching_id
+		summarizeBy: sum
+		sourceColumn: coaching_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_driver_id
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2509d1af-0ace-417f-bbf6-66cef941867a
+		sourceLineageTag: coaching_driver_id
+		summarizeBy: none
+		sourceColumn: coaching_driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8e64fa2d-c401-4a88-9b9e-185c5bace98e
+		sourceLineageTag: coaching_create_date
+		summarizeBy: none
+		sourceColumn: coaching_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 019e71c1-a3ad-4036-8e58-f117db1ac00a
+		sourceLineageTag: coaching_create_time
+		summarizeBy: none
+		sourceColumn: coaching_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_complete_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ceff03c0-d922-4831-9ffa-92f9ad3c2c41
+		sourceLineageTag: coaching_complete_date
+		summarizeBy: none
+		sourceColumn: coaching_complete_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_complete_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 3494d510-5725-4631-b733-c4ff3b4dcd04
+		sourceLineageTag: coaching_complete_time
+		summarizeBy: none
+		sourceColumn: coaching_complete_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6b0535b-3a18-4b88-a87a-b71df32c2a14
+		sourceLineageTag: coaching_status
+		summarizeBy: none
+		sourceColumn: coaching_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e038bd21-2a42-462f-821a-8406844b43b3
+		sourceLineageTag: coaching_update_date
+		summarizeBy: none
+		sourceColumn: coaching_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 5c7507a1-f187-472a-8337-ac47b275a97d
+		sourceLineageTag: coaching_update_time
+		summarizeBy: none
+		sourceColumn: coaching_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column coaching_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e383295-bd92-4801-af3c-334a03874718
+		sourceLineageTag: coaching_type
+		summarizeBy: none
+		sourceColumn: coaching_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_netr_coaching-b77b3f2b-ae8e-4ef2-a150-ca9b603b6f36 = entity
+		mode: directLake
+		source
+			entityName: fact_netr_coaching
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

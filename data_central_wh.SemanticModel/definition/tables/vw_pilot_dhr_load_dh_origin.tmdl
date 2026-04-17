@@ -1,0 +1,55 @@
+table vw_pilot_dhr_load_dh_origin
+	lineageTag: bc9b3a8a-591b-491d-be6f-17a2f6bcf279
+	sourceLineageTag: [silver].[vw_pilot_dhr_load_dh_origin]
+
+	column load_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 91dea406-a606-4bbb-94c4-4e6ee0d02df3
+		sourceLineageTag: load_load_number
+		summarizeBy: none
+		sourceColumn: load_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dead_head_origin_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c374c2c-5d42-4c9d-afa2-aacc083d6533
+		sourceLineageTag: load_dead_head_origin_city_code
+		summarizeBy: none
+		sourceColumn: load_dead_head_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_dead_head_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2cb7a323-c247-4302-be71-3b0bf6300dbb
+		sourceLineageTag: load_dead_head_origin_state
+		summarizeBy: none
+		sourceColumn: load_dead_head_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_miles_dead_head
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1c2b79f9-7b82-424e-b732-ee082962edac
+		sourceLineageTag: load_miles_dead_head
+		summarizeBy: sum
+		sourceColumn: load_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_pilot_dhr_load_dh_origin-d4a2d561-7431-43aa-b2a9-a137121ecc63 = entity
+		mode: directLake
+		source
+			entityName: vw_pilot_dhr_load_dh_origin
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

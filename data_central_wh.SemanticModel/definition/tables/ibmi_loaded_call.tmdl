@@ -1,0 +1,189 @@
+table ibmi_loaded_call
+	lineageTag: ba1ad3bb-105a-4d1b-8060-9b25c2805bd5
+	sourceLineageTag: [silver].[ibmi_loaded_call]
+
+	column loaded_call_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 36bde82a-0eb9-4a82-a00c-df8d2f1eacb5
+		sourceLineageTag: loaded_call_truck_number
+		summarizeBy: none
+		sourceColumn: loaded_call_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 315f9933-fbab-4a01-87ba-6a1f9743da96
+		sourceLineageTag: loaded_call_load_number
+		summarizeBy: none
+		sourceColumn: loaded_call_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_dispatch
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 04c7fdf4-7732-4059-b6a1-b06c4a370d3b
+		sourceLineageTag: loaded_call_dispatch
+		summarizeBy: none
+		sourceColumn: loaded_call_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_call_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1cb25a60-58cc-4264-b798-d75da86bf2df
+		sourceLineageTag: loaded_call_call_number
+		summarizeBy: none
+		sourceColumn: loaded_call_call_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8478a6f7-332a-46ff-9861-2fb99794f63d
+		sourceLineageTag: loaded_call_trailer_number
+		summarizeBy: none
+		sourceColumn: loaded_call_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_seat_1_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f180a3c6-7d33-4ea0-a603-469dd52134d8
+		sourceLineageTag: loaded_call_seat_1_driver_code
+		summarizeBy: none
+		sourceColumn: loaded_call_seat_1_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d752996e-cd4a-44a0-afa7-d4895c584e0a
+		sourceLineageTag: loaded_call_initials
+		summarizeBy: none
+		sourceColumn: loaded_call_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_message_details
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e995798d-b404-49b9-86d3-1f5fc354aa38
+		sourceLineageTag: loaded_call_message_details
+		summarizeBy: none
+		sourceColumn: loaded_call_message_details
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_hub_reading
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: ad2d77c4-797d-4633-858c-74231b5109bf
+		sourceLineageTag: loaded_call_hub_reading
+		summarizeBy: sum
+		sourceColumn: loaded_call_hub_reading
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column loaded_call_temp_reading
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: b3d56ae6-728d-42ac-9939-6abc0d674110
+		sourceLineageTag: loaded_call_temp_reading
+		summarizeBy: sum
+		sourceColumn: loaded_call_temp_reading
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column loaded_call_hub_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9a270d7a-4608-465f-9843-46e406f7e7d1
+		sourceLineageTag: loaded_call_hub_flag
+		summarizeBy: none
+		sourceColumn: loaded_call_hub_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_seat_2_driver_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 34516712-a524-46e8-a208-6737093b1eba
+		sourceLineageTag: loaded_call_seat_2_driver_code
+		summarizeBy: none
+		sourceColumn: loaded_call_seat_2_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f7757245-40ca-4b57-9da9-184268b891eb
+		sourceLineageTag: loaded_call_contact_date
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_contact_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 1c235c12-2974-4f44-9cb5-3a8e3c90851b
+		sourceLineageTag: loaded_call_contact_time
+		summarizeBy: none
+		sourceColumn: loaded_call_contact_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db594e6e-d375-4329-80c1-0969f4a6081c
+		sourceLineageTag: loaded_call_type_code
+		summarizeBy: none
+		sourceColumn: loaded_call_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_location_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 109befd4-c21e-4b08-a420-0946227a9fb4
+		sourceLineageTag: loaded_call_location_code
+		summarizeBy: none
+		sourceColumn: loaded_call_location_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column loaded_call_city_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d283cf0a-74f4-4e66-b860-d275036cea6b
+		sourceLineageTag: loaded_call_city_short_name
+		summarizeBy: none
+		sourceColumn: loaded_call_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_loaded_call-22076357-4f28-4301-af6d-37f395969ad1 = entity
+		mode: directLake
+		source
+			entityName: ibmi_loaded_call
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

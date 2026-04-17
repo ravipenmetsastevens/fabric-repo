@@ -1,0 +1,44 @@
+table tmp_alert_dates
+	lineageTag: e039b007-2b21-4f11-ac82-f749f56f41c3
+	sourceLineageTag: [dbo].[tmp_alert_dates]
+
+	column alert_date
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c725574a-d142-4d69-beab-7c4f4af8163f
+		sourceLineageTag: alert_date
+		summarizeBy: none
+		sourceColumn: alert_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_date_unix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 55e2fbbb-c243-4f47-a56b-190dc825a9ff
+		sourceLineageTag: alert_date_unix
+		summarizeBy: none
+		sourceColumn: alert_date_unix
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_complete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 3067f77e-aac4-4c01-97ad-a59674dfc805
+		sourceLineageTag: is_complete
+		summarizeBy: none
+		sourceColumn: is_complete
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tmp_alert_dates-1f60042f-4ca3-4ef6-820b-7e38d1d7a434 = entity
+		mode: directLake
+		source
+			entityName: tmp_alert_dates
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

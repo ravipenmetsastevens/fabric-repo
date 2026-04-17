@@ -1,0 +1,241 @@
+table dim_city
+	lineageTag: 950bd1af-252f-47a2-8ccb-330a3a19e19e
+	sourceLineageTag: [gold].[dim_city]
+
+	column city_id_pk
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: efa68d70-d05e-4bd6-a531-5d8c649eb740
+		sourceLineageTag: city_id_pk
+		summarizeBy: sum
+		sourceColumn: city_id_pk
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 767e35d4-dbe1-4ce5-a05f-06ab408e1e26
+		sourceLineageTag: city_code
+		summarizeBy: none
+		sourceColumn: city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 70efa744-5615-41f6-ac13-ab62d8f53aec
+		sourceLineageTag: city_state
+		summarizeBy: none
+		sourceColumn: city_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_short_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: dbb5eb48-3f1d-47c3-8cfb-224e6dae8e60
+		sourceLineageTag: city_short_code
+		summarizeBy: none
+		sourceColumn: city_short_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_country
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bb80c8b5-87d3-4954-ac0a-ee4233973d56
+		sourceLineageTag: city_country
+		summarizeBy: none
+		sourceColumn: city_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column county_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: cf586bff-8633-470d-9240-f943c8f033ff
+		sourceLineageTag: county_code
+		summarizeBy: sum
+		sourceColumn: county_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_zip
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 177cab41-3202-4ad5-8719-d014076c43f8
+		sourceLineageTag: city_zip
+		summarizeBy: none
+		sourceColumn: city_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_zip_suffix
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f5f87e8-21cc-4d33-8b50-dedd85aa5fe0
+		sourceLineageTag: city_zip_suffix
+		summarizeBy: none
+		sourceColumn: city_zip_suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7e4163f2-d17f-429a-bbcb-0c990bbeb229
+		sourceLineageTag: city_area_code
+		summarizeBy: none
+		sourceColumn: city_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6de7ac0f-d051-46fd-8a48-ec04e64a0b38
+		sourceLineageTag: city_area_name
+		summarizeBy: none
+		sourceColumn: city_area_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fdd27907-aefd-48be-b405-a96f5e4205f7
+		sourceLineageTag: city_area_short_name
+		summarizeBy: none
+		sourceColumn: city_area_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_zone_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a826e14c-97b3-412d-8f94-990cf6c1db1d
+		sourceLineageTag: city_area_zone_code
+		summarizeBy: none
+		sourceColumn: city_area_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_area_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 00e1e53d-97af-446d-b181-3a8ce7253159
+		sourceLineageTag: city_area_region_code
+		summarizeBy: none
+		sourceColumn: city_area_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_timezone
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1968fee8-2485-4deb-a3f5-d92b20d4f6f2
+		sourceLineageTag: city_timezone
+		summarizeBy: none
+		sourceColumn: city_timezone
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_from_near_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: db222c31-2a6b-4895-8062-699b010fe2b0
+		sourceLineageTag: direction_from_near_city
+		summarizeBy: none
+		sourceColumn: direction_from_near_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_from_near_city
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 8d377dbe-b0a2-4a63-8940-f77da0963079
+		sourceLineageTag: distance_from_near_city
+		summarizeBy: sum
+		sourceColumn: distance_from_near_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_city_population_est
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: abe4b84c-dba2-4e40-bfe1-11f0e313b24f
+		sourceLineageTag: is_city_population_est
+		summarizeBy: none
+		sourceColumn: is_city_population_est
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_population
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 27b7f61c-9604-4b9f-b1bc-f42f556cecb7
+		sourceLineageTag: city_population
+		summarizeBy: sum
+		sourceColumn: city_population
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4f8198d7-ed08-4ce7-a2d6-130508c90f3f
+		sourceLineageTag: city_name
+		summarizeBy: none
+		sourceColumn: city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: feb0c63a-0663-4e06-a418-756319f08a42
+		sourceLineageTag: city_short_name
+		summarizeBy: none
+		sourceColumn: city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_latitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: a33f5f05-c3b8-40aa-bc40-eaa6af3b64ed
+		sourceLineageTag: city_latitude
+		summarizeBy: sum
+		sourceColumn: city_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column city_longitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: bb189af9-6a65-4c78-8b5d-ad2f33f7840f
+		sourceLineageTag: city_longitude
+		summarizeBy: sum
+		sourceColumn: city_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_city-97475f6d-8921-4639-ba4c-65fc84ec02e6 = entity
+		mode: directLake
+		source
+			entityName: dim_city
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

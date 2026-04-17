@@ -1,0 +1,53 @@
+table ibmi_division
+	lineageTag: 81e8de06-ce73-4c6d-a1b7-7ad772ab95cb
+	sourceLineageTag: [silver].[ibmi_division]
+
+	column division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 440040bf-02bb-448a-a004-43f5a63864ae
+		sourceLineageTag: division_code
+		summarizeBy: none
+		sourceColumn: division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_status
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: de2689a4-45af-43a3-97fc-9e8e3f07c73f
+		sourceLineageTag: division_status
+		summarizeBy: none
+		sourceColumn: division_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: edfa3bab-dd3c-44be-b385-d5e5d50e3cbe
+		sourceLineageTag: division_name
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_fleet_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 219f9638-7c77-44e4-bead-76ef9ef338ef
+		sourceLineageTag: division_fleet_name
+		summarizeBy: none
+		sourceColumn: division_fleet_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_division-b4ede265-5bf1-47e5-aa54-a1f79717c4f5 = entity
+		mode: directLake
+		source
+			entityName: ibmi_division
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,319 @@
+table fact_ar_weekly_snapshot
+	lineageTag: 2d1bcd61-7c2c-4883-8da4-fd61518068ad
+	sourceLineageTag: [gold].[fact_ar_weekly_snapshot]
+
+	column record_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3513b1c4-4ff7-4367-a9a2-31ccb23bba43
+		sourceLineageTag: record_code
+		summarizeBy: none
+		sourceColumn: record_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ddb1cda7-99b8-47c5-9660-c06f9c081971
+		sourceLineageTag: customer_code
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3a72d2cc-5670-4723-9ffc-23dd7c4b335d
+		sourceLineageTag: invoice_number
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column adj_batch_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 08c3a14a-68dd-441d-98c5-9a846fbda96b
+		sourceLineageTag: adj_batch_code
+		summarizeBy: none
+		sourceColumn: adj_batch_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 56e39c2e-8e83-44d1-bd37-9e0a64e1ed53
+		sourceLineageTag: record_type
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_number
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 459a4b2b-cac9-46c2-9587-9f9bcd1a51bb
+		sourceLineageTag: record_number
+		summarizeBy: sum
+		sourceColumn: record_number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Open_30
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c3c31496-911f-4bea-98e6-79509bf477ee
+		sourceLineageTag: Open_30
+		summarizeBy: sum
+		sourceColumn: Open_30
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_45
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d6d4d837-d3c3-4ccf-9c92-e2fe992bfb40
+		sourceLineageTag: Open_45
+		summarizeBy: sum
+		sourceColumn: Open_45
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_60
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ea872887-5cad-4f1c-8f73-8f7aadecd33e
+		sourceLineageTag: Open_60
+		summarizeBy: sum
+		sourceColumn: Open_60
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_90
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6a0c59f2-6ca3-403f-b43a-0f7e1148debb
+		sourceLineageTag: Open_90
+		summarizeBy: sum
+		sourceColumn: Open_90
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_120
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c587e14e-d322-4f05-bc98-8697ddc5c179
+		sourceLineageTag: Open_120
+		summarizeBy: sum
+		sourceColumn: Open_120
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ce56dea9-da2b-455c-a7e1-58a45b1102fc
+		sourceLineageTag: deposit_date
+		summarizeBy: none
+		sourceColumn: deposit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cust_order_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 921cf21a-ffec-4ad0-9025-638f06289a5a
+		sourceLineageTag: cust_order_number
+		summarizeBy: none
+		sourceColumn: cust_order_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 95f472f4-aca0-4e40-8884-86a050062e0a
+		sourceLineageTag: book_month
+		summarizeBy: none
+		sourceColumn: book_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column book_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 34c79f8c-3fcd-4170-93de-055f577959d9
+		sourceLineageTag: book_year
+		summarizeBy: none
+		sourceColumn: book_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: eb8e614e-9101-45b9-ace2-87e4ce737590
+		sourceLineageTag: SnapshotDate
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysOpen
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: ce9d88fe-ab3d-4534-9e8b-4e414208e702
+		sourceLineageTag: DaysOpen
+		summarizeBy: sum
+		sourceColumn: DaysOpen
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_daily_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 27424094-5907-4170-b771-84e8e473b622
+		sourceLineageTag: is_daily_pro_register
+		summarizeBy: none
+		sourceColumn: is_daily_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 895d9460-65fe-487a-9bc1-7eafc3a5bb86
+		sourceLineageTag: is_weekly_pro_register
+		summarizeBy: none
+		sourceColumn: is_weekly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_monthly_pro_register
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cebbbdf6-a107-4f2c-8a96-944b8a3c12f0
+		sourceLineageTag: is_monthly_pro_register
+		summarizeBy: none
+		sourceColumn: is_monthly_pro_register
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_non_current
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 82984007-2497-47ae-8004-81c4ec9f4c0e
+		sourceLineageTag: is_non_current
+		summarizeBy: none
+		sourceColumn: is_non_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c7530785-3593-4450-8c50-999ca42f1443
+		sourceLineageTag: invoice_date
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ffe98c9-9176-4f0f-b991-002ecaab98ed
+		sourceLineageTag: load_number
+		summarizeBy: none
+		sourceColumn: load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a28b4ce0-affe-4122-95ce-c9ece5eb1dc2
+		sourceLineageTag: customer_name
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sequence_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5a6be13b-b1e4-473c-aab2-43c11d4e1a9a
+		sourceLineageTag: sequence_code
+		summarizeBy: none
+		sourceColumn: sequence_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53a66a35-ea52-4d5d-8eb2-575f6fd3a74b
+		sourceLineageTag: statement_number
+		summarizeBy: none
+		sourceColumn: statement_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatch_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3934db41-f86c-4ae4-bb60-4b5f5a52e1ab
+		sourceLineageTag: dispatch_date
+		summarizeBy: none
+		sourceColumn: dispatch_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9db00cfe-c633-4960-a051-a4fe8fbca450
+		sourceLineageTag: amount
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column balance_forward
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0c9aecd5-9148-4c75-8c57-a5c286567cbc
+		sourceLineageTag: balance_forward
+		summarizeBy: sum
+		sourceColumn: balance_forward
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_ar_weekly_snapshot-60e0e92a-629e-4bd2-9fe9-a6745edaa343 = entity
+		mode: directLake
+		source
+			entityName: fact_ar_weekly_snapshot
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

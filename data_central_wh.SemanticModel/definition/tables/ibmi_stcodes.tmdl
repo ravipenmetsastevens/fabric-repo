@@ -1,0 +1,125 @@
+table ibmi_stcodes
+	lineageTag: d9998332-fe3e-4c06-b103-78fbf032f84f
+	sourceLineageTag: [silver].[ibmi_stcodes]
+
+	column stcodes_deduction_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f81fc901-184f-4ccb-8542-606a4367c4f1
+		sourceLineageTag: stcodes_deduction_code
+		summarizeBy: none
+		sourceColumn: stcodes_deduction_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_creation_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b11cdcf3-45fe-4c99-b0ec-0dfd6563fa04
+		sourceLineageTag: stcodes_creation_date
+		summarizeBy: none
+		sourceColumn: stcodes_creation_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_creation_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 39a863eb-90ad-47cc-929f-c7f7049698cb
+		sourceLineageTag: stcodes_creation_user_code
+		summarizeBy: none
+		sourceColumn: stcodes_creation_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: e017a69f-032c-4491-8207-20af19245ef5
+		sourceLineageTag: stcodes_last_update_date
+		summarizeBy: none
+		sourceColumn: stcodes_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_last_update_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e2209c6e-7452-4422-91a9-4d5c7a78db8a
+		sourceLineageTag: stcodes_last_update_user_code
+		summarizeBy: none
+		sourceColumn: stcodes_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_settlement_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 76f18fd4-136b-439d-bf7f-eceaa87ee2b1
+		sourceLineageTag: stcodes_settlement_code
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5114cdb1-7010-4505-b4d5-97572476541e
+		sourceLineageTag: stcodes_description
+		summarizeBy: none
+		sourceColumn: stcodes_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_credit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2de6e9bf-8dbe-4770-841f-86bf6ac7864b
+		sourceLineageTag: stcodes_credit_account_number
+		summarizeBy: none
+		sourceColumn: stcodes_credit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_debit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6b1df78c-2713-40ec-bf59-2c97b79600d4
+		sourceLineageTag: stcodes_debit_account_number
+		summarizeBy: none
+		sourceColumn: stcodes_debit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column stcodes_settlement_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f7061328-1a43-4a6c-9951-986745454d26
+		sourceLineageTag: stcodes_settlement_type
+		summarizeBy: none
+		sourceColumn: stcodes_settlement_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0679792a-f434-4bfb-8cf8-ea5321bf5dc3
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_stcodes-6edf4a96-9cc0-4d47-8121-705ad207c201 = entity
+		mode: directLake
+		source
+			entityName: ibmi_stcodes
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

@@ -1,0 +1,383 @@
+table risk_claim_master
+	lineageTag: d9e917a8-df8c-4dbd-b499-8744ff222db3
+	sourceLineageTag: [silver].[risk_claim_master]
+
+	column claim_mast_company_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a1eced72-1325-492f-b662-3b110975f18d
+		sourceLineageTag: claim_mast_company_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 808e0769-9e0a-4ac7-9402-f25ff9ee6b1f
+		sourceLineageTag: claim_mast_record_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_pre_claim_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 45eeba8b-8603-4a59-a539-a8ba2210e76f
+		sourceLineageTag: claim_mast_pre_claim_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_pre_claim_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3338f95c-44ba-4cb4-80c7-b777bfc0e3d0
+		sourceLineageTag: claim_mast_type
+		summarizeBy: none
+		sourceColumn: claim_mast_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_claim_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c2db59a-3b46-40c1-8422-55972409b2a1
+		sourceLineageTag: claim_mast_claim_number
+		summarizeBy: none
+		sourceColumn: claim_mast_claim_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 98d48f72-a21b-4036-86ea-5ebec7a80985
+		sourceLineageTag: claim_mast_occurance_date
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_current_status_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 28d5ff25-e6ad-47db-bb8b-7b40f4292b64
+		sourceLineageTag: claim_mast_current_status_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_current_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_closing_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 81999b2b-1a09-464f-bb16-28264f1a71b7
+		sourceLineageTag: claim_mast_closing_date
+		summarizeBy: none
+		sourceColumn: claim_mast_closing_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_closing_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: ff67d279-4563-49af-b7d8-5f84feda847c
+		sourceLineageTag: claim_mast_closing_time
+		summarizeBy: none
+		sourceColumn: claim_mast_closing_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_closing_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5a4e794d-d3df-4dc0-9a0c-5f46bd04bbd7
+		sourceLineageTag: claim_mast_closing_datetime
+		summarizeBy: none
+		sourceColumn: claim_mast_closing_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_misc_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cb6f5944-8e3f-4114-9968-5a7b0db058b8
+		sourceLineageTag: claim_mast_misc_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_misc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_coequipment_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7bfb8b1d-91d3-48a3-b374-5d90fe44cbc4
+		sourceLineageTag: claim_mast_coequipment_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_coequipment_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9c73543d-2530-4784-9252-29c0c2ba5b1e
+		sourceLineageTag: claim_mast_truck_number
+		summarizeBy: none
+		sourceColumn: claim_mast_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_trailer_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d580a6f3-ffa4-432f-83a0-f5916ef9ddfc
+		sourceLineageTag: claim_mast_trailer_number
+		summarizeBy: none
+		sourceColumn: claim_mast_trailer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_driver_home_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8f1c1bfe-886d-4f50-9c88-569f6fae43b2
+		sourceLineageTag: claim_mast_driver_home_code
+		summarizeBy: none
+		sourceColumn: claim_mast_driver_home_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_primary_adjuster_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 00100575-86b8-45f7-8f07-6ff9fde763ff
+		sourceLineageTag: claim_mast_primary_adjuster_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_primary_adjuster_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 289ceafb-6815-41fc-9d64-5df4ee70ef0b
+		sourceLineageTag: claim_mast_create_datetime
+		summarizeBy: none
+		sourceColumn: claim_mast_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ec38c4e0-fdc3-414b-8cf4-c4ac4cb163d2
+		sourceLineageTag: claim_mast_create_user_code
+		summarizeBy: none
+		sourceColumn: claim_mast_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8acc7aa1-e3f5-4b85-b2fd-12bb2791af93
+		sourceLineageTag: claim_mast_last_update_date
+		summarizeBy: none
+		sourceColumn: claim_mast_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_last_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: 294a5d2e-cefe-4ea8-8dce-0cbae3ab0d6b
+		sourceLineageTag: claim_mast_last_update_time
+		summarizeBy: none
+		sourceColumn: claim_mast_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_last_update_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e464c192-605a-425e-aeae-fb2e85822916
+		sourceLineageTag: claim_mast_last_update_datetime
+		summarizeBy: none
+		sourceColumn: claim_mast_last_update_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_last_update_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 788017e8-292a-4dac-aa22-54f5700286fd
+		sourceLineageTag: claim_mast_last_update_user_code
+		summarizeBy: none
+		sourceColumn: claim_mast_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_involved_driver_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: da7f2a4e-2d67-42df-a50a-a1e8546bef37
+		sourceLineageTag: claim_mast_involved_driver_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_involved_driver_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_claimant_customer_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d9d1cd79-72d8-4c6f-a751-7de5033fa767
+		sourceLineageTag: claim_mast_claimant_customer_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_claimant_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_wc_claimant_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1b84bef7-da54-4378-bc31-04ff9bda0d93
+		sourceLineageTag: claim_mast_wc_claimant_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_wc_claimant_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_witness_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: aa23270e-0c4b-4537-8fc8-c6c21bef46d7
+		sourceLineageTag: claim_mast_witness_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_witness_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_create_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 9906d07f-2cec-4c2b-9471-3042e79f4320
+		sourceLineageTag: claim_mast_create_date
+		summarizeBy: none
+		sourceColumn: claim_mast_create_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_create_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: d534ac33-09a9-4dd3-adef-de6d773a13c1
+		sourceLineageTag: claim_mast_create_time
+		summarizeBy: none
+		sourceColumn: claim_mast_create_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: d27f77da-43af-478c-9d03-5a88c443ea52
+		sourceLineageTag: claim_mast_occurance_time
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_occurance_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 02a85915-889d-4871-8a06-70f8c8ee19b7
+		sourceLineageTag: claim_mast_occurance_datetime
+		summarizeBy: none
+		sourceColumn: claim_mast_occurance_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_cargo_included
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a867f37b-a363-46ae-afa6-d9c2f2cc19f5
+		sourceLineageTag: is_cargo_included
+		summarizeBy: none
+		sourceColumn: is_cargo_included
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_reported_by_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 74a337c5-9dd3-4392-9d0b-e33998c8c07a
+		sourceLineageTag: claim_mast_reported_by_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_reported_by_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_mast_claimant_company_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5b3f56e8-83a4-4a1d-b8b5-d68ffc050bc1
+		sourceLineageTag: claim_mast_claimant_company_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_claimant_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_mast_claimant_individual_code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 125a758d-0166-47e8-b700-2de6327bcb85
+		sourceLineageTag: claim_mast_claimant_individual_code
+		summarizeBy: sum
+		sourceColumn: claim_mast_claimant_individual_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_claim_master-68e92960-cd21-4414-8749-bfef0cf659db = entity
+		mode: directLake
+		source
+			entityName: risk_claim_master
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

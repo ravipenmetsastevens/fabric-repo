@@ -1,0 +1,74 @@
+table ibmi_gl_account
+	lineageTag: 8fe8f9cd-a3c7-45e0-9bf9-61cf4ff215a5
+	sourceLineageTag: [silver].[ibmi_gl_account]
+
+	column gl_acct_key
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: cb041fc2-dbe8-43b8-a689-8dd863785897
+		sourceLineageTag: gl_acct_key
+		summarizeBy: none
+		sourceColumn: gl_acct_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column gl_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 741a3831-4f9d-4ed9-92e6-8646169b8bd0
+		sourceLineageTag: gl_account_number
+		summarizeBy: none
+		sourceColumn: gl_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column gl_account_level
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1cf87106-2a1d-43a5-84a4-5306209391d6
+		sourceLineageTag: gl_account_level
+		summarizeBy: sum
+		sourceColumn: gl_account_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column gl_account_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fc2d5256-8356-4e15-a4b3-e7cb2beb1c16
+		sourceLineageTag: gl_account_description
+		summarizeBy: none
+		sourceColumn: gl_account_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column gl_consolidation_account
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c1e93b88-d05a-42ca-9b8b-3ea77e4814c3
+		sourceLineageTag: gl_consolidation_account
+		summarizeBy: none
+		sourceColumn: gl_consolidation_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column gl_account_answer
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ea5618f9-dca3-4934-a32d-10eb80c0f427
+		sourceLineageTag: gl_account_answer
+		summarizeBy: none
+		sourceColumn: gl_account_answer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_gl_account-bae55a21-181d-48d6-ba6f-f06180f15e38 = entity
+		mode: directLake
+		source
+			entityName: ibmi_gl_account
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

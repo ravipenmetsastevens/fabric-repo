@@ -1,0 +1,403 @@
+table ibmi_settlement_revenue_history
+	lineageTag: 99bf1cda-81b1-46a5-8957-d54c69b5b2bb
+	sourceLineageTag: [silver].[ibmi_settlement_revenue_history]
+
+	column set_rev_hist_owner_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 63dd936c-4127-474a-b176-d13a3dd18361
+		sourceLineageTag: set_rev_hist_owner_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_truck_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 223ecf1e-c4b7-4626-9b2e-07b9095cfcb8
+		sourceLineageTag: set_rev_hist_truck_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_truck_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 78334ba4-47df-4b9b-99ff-456bbb8c9a88
+		sourceLineageTag: set_rev_hist_load_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_dispatch_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 53bf7874-1599-4cc3-8f8c-f7315b16b8d0
+		sourceLineageTag: set_rev_hist_dispatch_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_dispatch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_sequence_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 3155e884-f475-4eac-840e-e14bfa3acbb8
+		sourceLineageTag: set_rev_hist_sequence_number
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_sequence_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_date
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: d8753d48-5d83-42c6-9bb7-027155d1f92f
+		sourceLineageTag: set_rev_hist_load_date
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7a600bfb-93ba-4ded-8ccc-5446e188f751
+		sourceLineageTag: set_rev_hist_load_year
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_load_date_revised
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 58f8dd19-69c1-42ea-9cb2-fedf982b9743
+		sourceLineageTag: set_rev_hist_load_date_revised
+		summarizeBy: none
+		sourceColumn: set_rev_hist_load_date_revised
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_record_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 634d5f82-07e0-4225-b4bb-08271a05a9bf
+		sourceLineageTag: set_rev_hist_record_date
+		summarizeBy: none
+		sourceColumn: set_rev_hist_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_origin_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac655bd5-c40c-4a84-bb07-32b4a13329e1
+		sourceLineageTag: set_rev_hist_origin_city
+		summarizeBy: none
+		sourceColumn: set_rev_hist_origin_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_destination_city
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3b34d1ed-dc90-4637-ba00-9218c8312eb2
+		sourceLineageTag: set_rev_hist_destination_city
+		summarizeBy: none
+		sourceColumn: set_rev_hist_destination_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_revenue_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: b323f525-86bc-4811-9646-8a08da07bd7b
+		sourceLineageTag: set_rev_hist_revenue_amount
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_revenue_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_fund_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7be70468-e78c-4374-b590-9e2f0773d4c9
+		sourceLineageTag: set_rev_hist_fund_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_segment_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9f192116-fb5d-42b6-ae9b-6cbaeaceb665
+		sourceLineageTag: set_rev_hist_segment_status_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_segment_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_miles_total
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 032f3ab8-7eeb-4eb1-b832-944a5486f46b
+		sourceLineageTag: set_rev_hist_miles_total
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_origin_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5cc6ee30-7f42-4cb9-b96b-41df336f87ec
+		sourceLineageTag: set_rev_hist_origin_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_origin_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_destination_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 14cfb800-f935-4c6f-92ae-bc6e93adfd03
+		sourceLineageTag: set_rev_hist_destination_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_destination_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_additional_pay_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: fd5bc447-2368-48f0-b72b-2b6aa1bd252b
+		sourceLineageTag: set_rev_hist_additional_pay_amount
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_additional_pay_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_additional_pay_fund_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4fc91c0-5c8b-4b10-82ac-8f6c9bca86f7
+		sourceLineageTag: set_rev_hist_additional_pay_fund_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_additional_pay_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_miles_loaded
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 9af973bc-8ff0-4d25-938f-f1fa8e093df4
+		sourceLineageTag: set_rev_hist_miles_loaded
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_loaded_mileage_rate
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: a7f6a32d-e51a-4c35-b4a6-216a944036d8
+		sourceLineageTag: set_rev_hist_loaded_mileage_rate
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_loaded_mileage_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_miles_dead_head
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal
+		lineageTag: 0e6518c5-c3a0-498a-8fff-cdfa0900b5f5
+		sourceLineageTag: set_rev_hist_miles_dead_head
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_miles_dead_head
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_dead_head_mileage_rate
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 04fdea9c-0a90-4172-8ea6-f34774ed1363
+		sourceLineageTag: set_rev_hist_dead_head_mileage_rate
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_dead_head_mileage_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_mileage_rate_fund_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 09f425ae-b269-4e8d-94a6-6f12229496ba
+		sourceLineageTag: set_rev_hist_mileage_rate_fund_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_mileage_rate_fund_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_debit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e945496d-3e52-47a8-975a-35b80de77357
+		sourceLineageTag: set_rev_hist_debit_account_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_debit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_credit_account_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a4dceca9-d1f8-4ae5-946c-a4c1d243dc31
+		sourceLineageTag: set_rev_hist_credit_account_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_credit_account_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_expense_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b577b02f-412e-4889-92d1-9f3b68b90f6b
+		sourceLineageTag: set_rev_hist_expense_month
+		summarizeBy: none
+		sourceColumn: set_rev_hist_expense_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_expense_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1c34f8a7-eb34-4893-81c6-d53b1c2ec8d2
+		sourceLineageTag: set_rev_hist_expense_year
+		summarizeBy: none
+		sourceColumn: set_rev_hist_expense_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_paid_month
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b512a41f-10f8-40d7-9787-11c4d813ccfd
+		sourceLineageTag: set_rev_hist_paid_month
+		summarizeBy: none
+		sourceColumn: set_rev_hist_paid_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_paid_year
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6a5aa916-7a5a-421a-81cf-86be63551628
+		sourceLineageTag: set_rev_hist_paid_year
+		summarizeBy: none
+		sourceColumn: set_rev_hist_paid_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_expensed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7371f0ab-597f-4b42-a5bf-11939f250efd
+		sourceLineageTag: is_expensed
+		summarizeBy: none
+		sourceColumn: is_expensed
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_domestic_amount
+		dataType: decimal
+		sourceProviderType: decimal
+		lineageTag: 56967d05-2d56-4b16-9cbf-ee53189a1f61
+		sourceLineageTag: set_rev_hist_domestic_amount
+		summarizeBy: sum
+		sourceColumn: set_rev_hist_domestic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_domestic_expensed_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 084e68b1-6b11-4afa-9113-34ffd196ce64
+		sourceLineageTag: set_rev_hist_domestic_expensed_date
+		summarizeBy: none
+		sourceColumn: set_rev_hist_domestic_expensed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_revenue_type_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c04dcb92-686f-46bd-a2c0-50f75f88a0de
+		sourceLineageTag: set_rev_hist_revenue_type_code
+		summarizeBy: none
+		sourceColumn: set_rev_hist_revenue_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_voucher_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d59bd7d6-2986-4684-b2d2-b70455a6774f
+		sourceLineageTag: set_rev_hist_voucher_number
+		summarizeBy: none
+		sourceColumn: set_rev_hist_voucher_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 861950b1-5728-4c0f-b592-e8b4f99ecbd7
+		sourceLineageTag: set_rev_hist_last_update_date
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_last_update_time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: time
+		lineageTag: d7bde9bb-6b1f-4580-acf9-fac5ec860fe7
+		sourceLineageTag: set_rev_hist_last_update_time
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column set_rev_hist_last_update_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7be252e0-193c-4f9f-b9d7-a48d90bc56c1
+		sourceLineageTag: set_rev_hist_last_update_initials
+		summarizeBy: none
+		sourceColumn: set_rev_hist_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_settlement_revenue_history-607dcfcc-fbcf-496b-bcba-595ef862b330 = entity
+		mode: directLake
+		source
+			entityName: ibmi_settlement_revenue_history
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

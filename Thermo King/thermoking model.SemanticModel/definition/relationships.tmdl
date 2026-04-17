@@ -1,0 +1,36 @@
+relationship 665bec70-7d08-4c2c-8f00-ca9f78795732
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Alarms.dataDate
+	toColumn: LocalDateTable_9cf95144-e527-4373-8f6a-193ef9d3e337.Date
+
+relationship 90e0f4a4-d1fd-4aad-812c-0e3d23040c00
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Locations.dataDate
+	toColumn: LocalDateTable_aa98eace-a30c-4260-b088-65bb81868615.Date
+
+relationship 2fd2645f-22e5-4618-a322-543d3d5b3ca7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Reefer Status'.dataDate
+	toColumn: LocalDateTable_e01cbd94-c85e-4bff-900a-8cdf45a33c10.Date
+
+relationship dc112c8c-2fc1-4c3d-b63c-3752a60912e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Reefer Zones'.dataDate
+	toColumn: LocalDateTable_607d2221-9faa-43cb-b85f-e5e38ac8b38a.Date
+
+relationship AutoDetected_37b531c0-0a0e-4d7f-8107-7cee59f25c35
+	fromColumn: Alarms.vehicleName
+	toColumn: Trailers.vehicleName
+
+relationship AutoDetected_665a6668-205b-43cb-a9b5-995bb6304f33
+	fromColumn: Locations.vehicleName
+	toColumn: Trailers.vehicleName
+
+relationship AutoDetected_6e8e4145-843c-4dbb-9a86-51a3d0173dec
+	fromColumn: 'Reefer Status'.vehicleName
+	toColumn: Trailers.vehicleName
+
+relationship AutoDetected_fbba8d85-9d02-4496-ac2a-b215c590fdd0
+	fromColumn: 'Reefer Zones'.vehicleName
+	toColumn: Trailers.vehicleName
+

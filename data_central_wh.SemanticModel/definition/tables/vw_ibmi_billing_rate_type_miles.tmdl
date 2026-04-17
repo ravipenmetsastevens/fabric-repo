@@ -1,0 +1,45 @@
+table vw_ibmi_billing_rate_type_miles
+	lineageTag: e5094403-7a6f-46d2-ba52-44c78605bc7c
+	sourceLineageTag: [silver].[vw_ibmi_billing_rate_type_miles]
+
+	column billing_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 86d1a516-932d-4d71-a00b-476f185d260e
+		sourceLineageTag: billing_load_number
+		summarizeBy: none
+		sourceColumn: billing_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 45e27cc0-9b34-4855-bd0b-a56a2d52c613
+		sourceLineageTag: billing_commodity_code
+		summarizeBy: none
+		sourceColumn: billing_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column billed_miles
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 970aec81-233a-4820-861e-2e034e78040b
+		sourceLineageTag: billed_miles
+		summarizeBy: sum
+		sourceColumn: billed_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_ibmi_billing_rate_type_miles-2e776544-b8ba-4f94-ae54-027b1b694e76 = entity
+		mode: directLake
+		source
+			entityName: vw_ibmi_billing_rate_type_miles
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

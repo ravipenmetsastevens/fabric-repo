@@ -1,0 +1,93 @@
+table plsc_order_activity
+	lineageTag: 1d465e69-0dbc-4357-b241-56568372e58d
+	sourceLineageTag: [silver].[plsc_order_activity]
+
+	column ao_date_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1b59740c-ed37-4607-b1c9-789c6c190462
+		sourceLineageTag: ao_date_raw
+		summarizeBy: none
+		sourceColumn: ao_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_time_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f0ac35f0-971b-45f0-9e69-eb1b15128fc6
+		sourceLineageTag: ao_time_raw
+		summarizeBy: none
+		sourceColumn: ao_time_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_pr_date_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 13f009ae-0983-4b03-aa91-29925d49278c
+		sourceLineageTag: ao_pr_date_raw
+		summarizeBy: none
+		sourceColumn: ao_pr_date_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_proc_code_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6ec87034-f1c3-4b64-a944-85ba7a92f0e7
+		sourceLineageTag: ao_proc_code_raw
+		summarizeBy: none
+		sourceColumn: ao_proc_code_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_return_type_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c75f6c4c-dab9-41da-a80b-cce87b321f87
+		sourceLineageTag: ao_return_type_raw
+		summarizeBy: none
+		sourceColumn: ao_return_type_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_order_id_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6f847f9d-725e-4bd3-9c4d-8a945c84153e
+		sourceLineageTag: ao_order_id_raw
+		summarizeBy: none
+		sourceColumn: ao_order_id_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_movement_type_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9b5fdeb2-b1c1-404f-907a-b4220d83a755
+		sourceLineageTag: ao_movement_type_raw
+		summarizeBy: none
+		sourceColumn: ao_movement_type_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column ao_unit_raw
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: de9f9720-4f41-49b7-9f7a-bdf126ac7689
+		sourceLineageTag: ao_unit_raw
+		summarizeBy: none
+		sourceColumn: ao_unit_raw
+
+		annotation SummarizationSetBy = Automatic
+
+	partition plsc_order_activity-e1d18057-f692-478c-983f-1ba3737664bf = entity
+		mode: directLake
+		source
+			entityName: plsc_order_activity
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

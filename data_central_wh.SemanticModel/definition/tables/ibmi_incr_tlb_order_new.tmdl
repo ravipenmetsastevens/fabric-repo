@@ -1,0 +1,1049 @@
+table ibmi_incr_tlb_order_new
+	lineageTag: 6db65702-43d8-4d4d-b115-8a35f27f030b
+	sourceLineageTag: [silver].[ibmi_incr_tlb_order_new]
+
+	column tlb_order_origin_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b28717ad-cec4-474d-a29e-373cf6145b9f
+		sourceLineageTag: tlb_order_origin_area_code
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_load_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6682787e-a01b-48a2-b715-78081d511021
+		sourceLineageTag: tlb_order_load_number
+		summarizeBy: none
+		sourceColumn: tlb_order_load_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_status_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 97fc4585-3641-4a42-8cf2-29eeed7c83b7
+		sourceLineageTag: tlb_order_status_code
+		summarizeBy: none
+		sourceColumn: tlb_order_status_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 1eb75f0a-2c5c-4f80-b6f2-a65997e18895
+		sourceLineageTag: tlb_order_date
+		summarizeBy: none
+		sourceColumn: tlb_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ee7f664e-47c6-48a3-bd3b-d8bba285ee4b
+		sourceLineageTag: tlb_order_time
+		summarizeBy: none
+		sourceColumn: tlb_order_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_customer_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 91be574c-2e50-4a5b-8080-fceada6f36f9
+		sourceLineageTag: tlb_order_customer_code
+		summarizeBy: none
+		sourceColumn: tlb_order_customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_carry_over_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e645a472-e708-430b-8e06-347276f2987f
+		sourceLineageTag: tlb_order_carry_over_flag
+		summarizeBy: none
+		sourceColumn: tlb_order_carry_over_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_truck_type_requirement_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bf6623cc-a7cc-4752-8080-a2de67245eea
+		sourceLineageTag: tlb_order_truck_type_requirement_code
+		summarizeBy: none
+		sourceColumn: tlb_order_truck_type_requirement_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_delivery_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bda9b536-0692-42e2-87ea-c537960c4374
+		sourceLineageTag: tlb_order_delivery_code
+		summarizeBy: none
+		sourceColumn: tlb_order_delivery_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_origin_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b707c917-352b-4a20-90b6-e6003557267f
+		sourceLineageTag: tlb_order_origin_region_code
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_zone_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 361117d2-3f5b-42b6-b5fd-f99fa882b048
+		sourceLineageTag: tlb_order_destination_zone_code
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_region_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f59fb252-9e40-415c-9441-2bf4b106da23
+		sourceLineageTag: tlb_order_destination_region_code
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_to_be_rated
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 511c8a06-c7a0-439f-98b7-f4295273dfb0
+		sourceLineageTag: is_to_be_rated
+		summarizeBy: none
+		sourceColumn: is_to_be_rated
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_new_gu_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e851b95e-c932-4f9c-984f-6b99c2afed00
+		sourceLineageTag: has_new_gu_code
+		summarizeBy: none
+		sourceColumn: has_new_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_exclude_from_model
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac818526-6879-43f1-a8b0-09473f3752b7
+		sourceLineageTag: is_exclude_from_model
+		summarizeBy: none
+		sourceColumn: is_exclude_from_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_permit_complete
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d42d9b5e-cde3-4226-8d80-2d5f6daf1ff6
+		sourceLineageTag: has_permit_complete
+		summarizeBy: none
+		sourceColumn: has_permit_complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_latitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: dc910db6-bd02-4c79-97c4-492a1d509e72
+		sourceLineageTag: tlb_order_latitude
+		summarizeBy: sum
+		sourceColumn: tlb_order_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_longitude
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: de087086-7c27-4403-bf6f-10165e934cbd
+		sourceLineageTag: tlb_order_longitude
+		summarizeBy: sum
+		sourceColumn: tlb_order_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_tentitive_load
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac12ac3a-38bc-435a-8bb3-e70e9c493f41
+		sourceLineageTag: is_tentitive_load
+		summarizeBy: none
+		sourceColumn: is_tentitive_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_hours_under_dispatch
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 44b1776b-9fde-4968-897b-fbf3be06eaff
+		sourceLineageTag: tlb_order_hours_under_dispatch
+		summarizeBy: sum
+		sourceColumn: tlb_order_hours_under_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_origin_zone_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3b9cf2cd-91e6-4e98-9341-5f1560b52225
+		sourceLineageTag: tlb_order_origin_zone_code
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_zone_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_current_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1b4617d4-2bfe-4609-8e25-82441ee54d05
+		sourceLineageTag: tlb_order_current_state
+		summarizeBy: none
+		sourceColumn: tlb_order_current_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_loaded_call_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 01524e16-3993-4ba2-b8c3-b3ba801d2b44
+		sourceLineageTag: tlb_order_loaded_call_date
+		summarizeBy: none
+		sourceColumn: tlb_order_loaded_call_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_empty_call_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 220972d4-be66-4ca6-b251-b17ac7ec717f
+		sourceLineageTag: tlb_order_empty_call_date
+		summarizeBy: none
+		sourceColumn: tlb_order_empty_call_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_trailer_length
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 65e2bf17-3548-4b6c-b242-31b4756e5b32
+		sourceLineageTag: tlb_order_trailer_length
+		summarizeBy: sum
+		sourceColumn: tlb_order_trailer_length
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_trailer_height
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 5fd345f5-97a5-483b-a831-2f17870e89cc
+		sourceLineageTag: tlb_order_trailer_height
+		summarizeBy: sum
+		sourceColumn: tlb_order_trailer_height
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column has_permit
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5b2a5ce7-a1ce-4976-ac00-ca16ce0258cb
+		sourceLineageTag: has_permit
+		summarizeBy: none
+		sourceColumn: has_permit
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_delivery_receipt_req
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 84c89ca5-5637-4f25-b9e6-a440a0592fc5
+		sourceLineageTag: tlb_order_delivery_receipt_req
+		summarizeBy: none
+		sourceColumn: tlb_order_delivery_receipt_req
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_edi_message_billing_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 152a65a3-0b72-46f2-96a0-453a6d23af89
+		sourceLineageTag: tlb_order_edi_message_billing_flag
+		summarizeBy: none
+		sourceColumn: tlb_order_edi_message_billing_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_load_just_in_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b4193f88-01fe-403c-a67f-2983a0c55c4a
+		sourceLineageTag: is_load_just_in_time
+		summarizeBy: none
+		sourceColumn: is_load_just_in_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_edi_billing_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1bb7146a-4be4-4dac-b24b-7cdec14c8ec2
+		sourceLineageTag: tlb_order_edi_billing_code
+		summarizeBy: none
+		sourceColumn: tlb_order_edi_billing_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_inbound_or_outbound
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 96935c6d-8b01-4d74-8af5-497a3dfa6b7b
+		sourceLineageTag: is_edi_inbound_or_outbound
+		summarizeBy: none
+		sourceColumn: is_edi_inbound_or_outbound
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_current_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e7128018-cf0e-474e-aaef-6273a9005a39
+		sourceLineageTag: tlb_order_current_city_code
+		summarizeBy: none
+		sourceColumn: tlb_order_current_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_driver_commit_flag
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 49f21d2f-2776-4dc8-8431-93d22688d24f
+		sourceLineageTag: tlb_order_driver_commit_flag
+		summarizeBy: none
+		sourceColumn: tlb_order_driver_commit_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_load
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: da3c9150-cf50-46b6-a5e0-9ec44e1ebb3d
+		sourceLineageTag: is_edi_load
+		summarizeBy: none
+		sourceColumn: is_edi_load
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_edi_stats_complete
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fa8f0528-6336-433c-9ba3-8416f1232d72
+		sourceLineageTag: is_edi_stats_complete
+		summarizeBy: none
+		sourceColumn: is_edi_stats_complete
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_loaded
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d6fc6159-0e81-4113-9e33-d56ee539e394
+		sourceLineageTag: is_driver_loaded
+		summarizeBy: none
+		sourceColumn: is_driver_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_driver_unloaded
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c12a829-d082-488f-acb4-6ccf7e45e8c5
+		sourceLineageTag: is_driver_unloaded
+		summarizeBy: none
+		sourceColumn: is_driver_unloaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_receipt_signed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3d45f543-428e-4639-bf21-d9a522495caa
+		sourceLineageTag: is_delivery_receipt_signed
+		summarizeBy: none
+		sourceColumn: is_delivery_receipt_signed
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_last_update_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e79f0a09-32d3-4766-9f8b-444a50b8e69b
+		sourceLineageTag: tlb_order_last_update_initials
+		summarizeBy: none
+		sourceColumn: tlb_order_last_update_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_company_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 07c92489-cf2d-4830-b435-476bdc01e886
+		sourceLineageTag: tlb_order_company_code
+		summarizeBy: none
+		sourceColumn: tlb_order_company_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_division_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4c72fcbe-cd59-4ca1-a3b2-6d3868bb0bfc
+		sourceLineageTag: tlb_order_division_code
+		summarizeBy: none
+		sourceColumn: tlb_order_division_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_lane_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f4cb1a25-2c57-4a0b-b9cc-d6835ae42ada
+		sourceLineageTag: tlb_order_lane_code
+		summarizeBy: none
+		sourceColumn: tlb_order_lane_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_seal_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b5455ac-2499-43c7-ae47-c07ff034ff1a
+		sourceLineageTag: tlb_order_seal_code
+		summarizeBy: none
+		sourceColumn: tlb_order_seal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_service_failure_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5fc04db8-7015-481c-92a7-4ca887ccd29a
+		sourceLineageTag: tlb_order_service_failure_code
+		summarizeBy: none
+		sourceColumn: tlb_order_service_failure_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_ship_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d7d059c9-459b-4f91-a824-ada97bcb6709
+		sourceLineageTag: tlb_order_ship_date
+		summarizeBy: none
+		sourceColumn: tlb_order_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_ship_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 506aedc4-9bbb-4fd2-a149-8a885af62ae3
+		sourceLineageTag: order_ship_time
+		summarizeBy: none
+		sourceColumn: order_ship_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_temp_high
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 12d5ecf1-8538-4bcc-83be-aa6adf428b10
+		sourceLineageTag: tlb_order_temp_high
+		summarizeBy: sum
+		sourceColumn: tlb_order_temp_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_temp_low
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 924c52ee-735d-46e4-afa4-47b36762e21b
+		sourceLineageTag: tlb_order_temp_low
+		summarizeBy: sum
+		sourceColumn: tlb_order_temp_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_last_update_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ef47f204-9bd5-42bd-99d9-d9065f472e2f
+		sourceLineageTag: tlb_order_last_update_date
+		summarizeBy: none
+		sourceColumn: tlb_order_last_update_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_last_update_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3252a35f-7bb4-41e8-9f39-1c7ff1c8558d
+		sourceLineageTag: tlb_order_last_update_time
+		summarizeBy: none
+		sourceColumn: tlb_order_last_update_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_message
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 738112c7-4b0e-405e-82d6-af9e7e88f264
+		sourceLineageTag: tlb_order_message
+		summarizeBy: none
+		sourceColumn: tlb_order_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_late_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f47e9a52-2b21-401b-9c82-fc81f7dc0655
+		sourceLineageTag: tlb_order_late_pickup_date
+		summarizeBy: none
+		sourceColumn: tlb_order_late_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_late_pickup_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 64397e39-a604-4661-a138-a53cb3b02d64
+		sourceLineageTag: tlb_order_late_pickup_time
+		summarizeBy: none
+		sourceColumn: tlb_order_late_pickup_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_late_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 530db28d-6ae2-4027-98f0-a3ad74042524
+		sourceLineageTag: tlb_order_late_delivery_date
+		summarizeBy: none
+		sourceColumn: tlb_order_late_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_late_delivery_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68d494ac-c498-41df-a6e3-fc237d24f49c
+		sourceLineageTag: tlb_order_late_delivery_time
+		summarizeBy: none
+		sourceColumn: tlb_order_late_delivery_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_required_pallet_count
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 9f664303-eea6-4442-9fdf-451a26e8d412
+		sourceLineageTag: tlb_order_required_pallet_count
+		summarizeBy: sum
+		sourceColumn: tlb_order_required_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_bill_of_lading
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 7d3c2474-d367-4db1-b757-4ecd61be9df1
+		sourceLineageTag: tlb_order_bill_of_lading
+		summarizeBy: none
+		sourceColumn: tlb_order_bill_of_lading
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_purchase_order
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 257180f0-d89a-4cff-b6db-7199e0359661
+		sourceLineageTag: tlb_order_purchase_order
+		summarizeBy: none
+		sourceColumn: tlb_order_purchase_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_pick_up_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 482eab8f-6d76-494d-b04f-6e59cd7e426e
+		sourceLineageTag: tlb_order_pick_up_code
+		summarizeBy: none
+		sourceColumn: tlb_order_pick_up_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_piece_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: f6c1cf69-7a52-427c-81f6-0329e8213c3a
+		sourceLineageTag: tlb_order_piece_count
+		summarizeBy: none
+		sourceColumn: tlb_order_piece_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_collection_method_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d92e6b9f-0d7d-4b7f-95dd-6815fb489f76
+		sourceLineageTag: tlb_order_collection_method_code
+		summarizeBy: none
+		sourceColumn: tlb_order_collection_method_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_load_volume
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 16ff076e-ee8e-477f-b6e9-9ee366790dba
+		sourceLineageTag: tlb_order_load_volume
+		summarizeBy: none
+		sourceColumn: tlb_order_load_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_stop_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3c7fdd67-f83d-4707-9a41-3df67513835f
+		sourceLineageTag: tlb_order_stop_count
+		summarizeBy: none
+		sourceColumn: tlb_order_stop_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_dispatch_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c02cc4a3-e652-4899-8b25-2e0f71a55011
+		sourceLineageTag: tlb_order_dispatch_count
+		summarizeBy: none
+		sourceColumn: tlb_order_dispatch_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_preload_trailer
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 434769cc-53a0-4a41-93e3-892d572a833e
+		sourceLineageTag: tlb_order_preload_trailer
+		summarizeBy: none
+		sourceColumn: tlb_order_preload_trailer
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_revenue_estimation
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 129ccbb5-ea94-48a2-b8a7-baa2a5243ba2
+		sourceLineageTag: tlb_order_revenue_estimation
+		summarizeBy: sum
+		sourceColumn: tlb_order_revenue_estimation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_new_origin_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9eb48a24-394c-407c-a436-c81635beb870
+		sourceLineageTag: tlb_order_new_origin_area_code
+		summarizeBy: none
+		sourceColumn: tlb_order_new_origin_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 3b5d0ee0-4bb6-4ae8-ab5f-8b5e5ee2b1cf
+		sourceLineageTag: tlb_order_destination_area_code
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 47e53160-263a-4ad2-91f0-daa5e89b948e
+		sourceLineageTag: tlb_order_destination_state
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_bea_code
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 2abb8014-3096-47ef-ade1-2573e9c411ea
+		sourceLineageTag: tlb_order_destination_bea_code
+		summarizeBy: sum
+		sourceColumn: tlb_order_destination_bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_destination_gu_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 310bb48d-1faa-4dc9-a14c-9abd0bae05e3
+		sourceLineageTag: tlb_order_destination_gu_code
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_city_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b7887d4a-c33f-41ba-ad96-daf8bd9cd576
+		sourceLineageTag: tlb_order_destination_city_short_name
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_miles_billable
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: c8d9a6c0-443e-401d-8fc3-f402388b3b9c
+		sourceLineageTag: tlb_order_miles_billable
+		summarizeBy: sum
+		sourceColumn: tlb_order_miles_billable
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_load_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ac0fb51e-7891-4806-92e5-66ed4ea80cd9
+		sourceLineageTag: tlb_order_load_type
+		summarizeBy: none
+		sourceColumn: tlb_order_load_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_origin_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: fdc7b527-cca5-45ad-8fbe-731ba61770c7
+		sourceLineageTag: tlb_order_origin_city_code
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_origin_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 1780647a-722c-4883-a70c-7dda2d99d4d6
+		sourceLineageTag: tlb_order_origin_state
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_origin_bea_code
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 1310af36-92b4-4d1d-8305-10ae0c30a2d5
+		sourceLineageTag: tlb_order_origin_bea_code
+		summarizeBy: sum
+		sourceColumn: tlb_order_origin_bea_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_origin_gu_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 59841a64-6680-488b-913c-89212b8b2bd6
+		sourceLineageTag: tlb_order_origin_gu_code
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_gu_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_origin_city_short_name
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 28287896-383f-4cd5-9b6a-af2ec225fd9e
+		sourceLineageTag: tlb_order_origin_city_short_name
+		summarizeBy: none
+		sourceColumn: tlb_order_origin_city_short_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_destination_city_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 4fe48e88-4398-4413-9b7d-69ac147ed523
+		sourceLineageTag: tlb_order_destination_city_code
+		summarizeBy: none
+		sourceColumn: tlb_order_destination_city_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_customer_phone_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 0b65f760-7d00-4680-953c-635cd1897de7
+		sourceLineageTag: tlb_order_customer_phone_area_code
+		summarizeBy: none
+		sourceColumn: tlb_order_customer_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_customer_phone_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d2144407-e0f4-42a7-b7dc-14fb5d6f7659
+		sourceLineageTag: tlb_order_customer_phone_number
+		summarizeBy: none
+		sourceColumn: tlb_order_customer_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_consignee_phone_area_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: ff5d9aa6-f1b5-42c5-8df3-183095c6f598
+		sourceLineageTag: tlb_order_consignee_phone_area_code
+		summarizeBy: none
+		sourceColumn: tlb_order_consignee_phone_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_consignee_phone_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 24feb680-261b-4977-8af9-0e37435a8ce9
+		sourceLineageTag: tlb_order_consignee_phone_number
+		summarizeBy: none
+		sourceColumn: tlb_order_consignee_phone_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_load_weight
+		dataType: double
+		sourceProviderType: decimal
+		lineageTag: 0f351e17-2894-4b3f-973c-53a89e4b6086
+		sourceLineageTag: tlb_order_load_weight
+		summarizeBy: sum
+		sourceColumn: tlb_order_load_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tlb_order_pallet_count
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e3f38a28-bd8b-494d-9c62-34a526e2f8c6
+		sourceLineageTag: tlb_order_pallet_count
+		summarizeBy: none
+		sourceColumn: tlb_order_pallet_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_early_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 7b4fcfad-5b56-453b-aa77-80268f9abbef
+		sourceLineageTag: tlb_order_early_delivery_date
+		summarizeBy: none
+		sourceColumn: tlb_order_early_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_early_delivery_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: a2fbc78c-1aa8-4fba-b908-e6059c294017
+		sourceLineageTag: tlb_order_early_delivery_time
+		summarizeBy: none
+		sourceColumn: tlb_order_early_delivery_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delivery_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 68bfb81b-1970-4b18-8017-a4eddce2ea11
+		sourceLineageTag: is_delivery_required
+		summarizeBy: none
+		sourceColumn: is_delivery_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_commodity_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 2f4be0fa-1fa0-496e-97e4-2aa68107b321
+		sourceLineageTag: tlb_order_commodity_code
+		summarizeBy: none
+		sourceColumn: tlb_order_commodity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_commodity_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 5c062acd-e567-4fd2-b6e7-f1f5b9a05752
+		sourceLineageTag: tlb_order_commodity_description
+		summarizeBy: none
+		sourceColumn: tlb_order_commodity_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_creation_initials
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 46c60360-7e0c-4c13-a3e1-cd6bf993604d
+		sourceLineageTag: tlb_order_creation_initials
+		summarizeBy: none
+		sourceColumn: tlb_order_creation_initials
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_consignee_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 578c0e47-96e0-4072-beee-537e80da1a32
+		sourceLineageTag: tlb_order_consignee_code
+		summarizeBy: none
+		sourceColumn: tlb_order_consignee_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_billto_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: c269ef82-f779-4e68-bebc-0d47005989cf
+		sourceLineageTag: tlb_order_billto_code
+		summarizeBy: none
+		sourceColumn: tlb_order_billto_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_loadat_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 79fa34c9-6334-40e9-9175-729b42eeade5
+		sourceLineageTag: tlb_order_loadat_code
+		summarizeBy: none
+		sourceColumn: tlb_order_loadat_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_early_pickup_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: bd26efef-7311-42b0-baf1-7202f5a78b11
+		sourceLineageTag: tlb_order_early_pickup_date
+		summarizeBy: none
+		sourceColumn: tlb_order_early_pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column tlb_order_early_pickup_time
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 08ade393-0d4a-4bb9-9105-6c545ffc9b15
+		sourceLineageTag: tlb_order_early_pickup_time
+		summarizeBy: none
+		sourceColumn: tlb_order_early_pickup_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_pickup_required
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: b1f5a63b-420e-4a1c-9b24-39c719b24760
+		sourceLineageTag: is_pickup_required
+		summarizeBy: none
+		sourceColumn: is_pickup_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: bd3c256e-2ff5-4517-b4e3-f0bbdd06fefd
+		sourceLineageTag: is_deleted
+		summarizeBy: none
+		sourceColumn: is_deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ibmi_incr_tlb_order_new-7566bb1d-e472-40fd-8918-68d1fe27d5f2 = entity
+		mode: directLake
+		source
+			entityName: ibmi_incr_tlb_order_new
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

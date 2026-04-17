@@ -1,0 +1,93 @@
+table Alarms
+	lineageTag: a331531c-f7a8-4693-a1ff-08e36bdba9d4
+
+	column vehicleName
+		dataType: string
+		lineageTag: affa0c36-d8c2-43be-ae16-eecfc692877b
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f4ea6808-1482-44d8-b172-cfd202c50be2
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		variation Variation
+			isDefault
+			relationship: 665bec70-7d08-4c2c-8f00-ca9f78795732
+			defaultHierarchy: LocalDateTable_9cf95144-e527-4373-8f6a-193ef9d3e337.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column dataTime
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 40da9522-b5fc-42d4-aa51-b5ebcf24a910
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column alarmCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 759b1a89-4d89-4631-9eb0-6ed051c328db
+		summarizeBy: count
+		sourceColumn: alarmCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmDescription
+		dataType: string
+		lineageTag: 114b433c-4929-45a6-a77a-ac8a5b0bcb88
+		summarizeBy: none
+		sourceColumn: alarmDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmSeverity
+		dataType: string
+		lineageTag: 84d41884-8e4e-43c1-8966-3c094714507e
+		summarizeBy: none
+		sourceColumn: alarmSeverity
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmRecommendation
+		dataType: string
+		lineageTag: 0b761171-a408-4417-8efe-12b5bcbdc622
+		summarizeBy: none
+		sourceColumn: alarmRecommendation
+
+		annotation SummarizationSetBy = Automatic
+
+	column alarmZone
+		dataType: int64
+		formatString: 0
+		lineageTag: 183dbce5-604a-41f6-a156-63def22154c5
+		summarizeBy: sum
+		sourceColumn: alarmZone
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Alarms = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_thermoking_alarm = Source{[Schema="gold",Item="fact_thermoking_alarm"]}[Data]
+				in
+				    gold_fact_thermoking_alarm
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

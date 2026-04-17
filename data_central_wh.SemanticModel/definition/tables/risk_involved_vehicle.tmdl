@@ -1,0 +1,222 @@
+table risk_involved_vehicle
+	lineageTag: bffe8ae1-47f0-4df9-8add-1d28adc6a06b
+	sourceLineageTag: [silver].[risk_involved_vehicle]
+
+	column involved_veh_claim_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: be7d75a0-61c5-4fa2-90c7-507bd5c4b2df
+		sourceLineageTag: involved_veh_claim_record_code
+		summarizeBy: sum
+		sourceColumn: involved_veh_claim_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column involved_veh_involved_party_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9b42af42-0528-40a1-9885-0c879eb3a450
+		sourceLineageTag: involved_veh_involved_party_code
+		summarizeBy: sum
+		sourceColumn: involved_veh_involved_party_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column involved_veh_record_code
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 92b1a8d9-d54f-4dde-8d7c-dd0a910a2d1c
+		sourceLineageTag: involved_veh_record_code
+		summarizeBy: sum
+		sourceColumn: involved_veh_record_code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column involved_veh_equipment_type
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: afc570b9-7bcf-48da-b349-c0c52a682403
+		sourceLineageTag: involved_veh_equipment_type
+		summarizeBy: none
+		sourceColumn: involved_veh_equipment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_equipment_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8a68ea34-b04f-462e-acd3-da2ea422093f
+		sourceLineageTag: involved_veh_equipment_code
+		summarizeBy: none
+		sourceColumn: involved_veh_equipment_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: acf74f1b-acc0-40a5-a71b-ec17ee987cb2
+		sourceLineageTag: involved_veh_year
+		summarizeBy: sum
+		sourceColumn: involved_veh_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_last_update_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 668d2fb3-70b2-43dc-9995-624bcdee318e
+		sourceLineageTag: involved_veh_last_update_user_code
+		summarizeBy: none
+		sourceColumn: involved_veh_last_update_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_vin
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: aaaffe64-e59f-4cde-a841-edbbbfcd3be0
+		sourceLineageTag: involved_veh_vin
+		summarizeBy: none
+		sourceColumn: involved_veh_vin
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_registration_state
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 864e95bc-613c-4f95-ba33-09e2183fb8d6
+		sourceLineageTag: involved_veh_registration_state
+		summarizeBy: none
+		sourceColumn: involved_veh_registration_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_damage_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e3a28fa1-163a-4952-aeb1-508b2734815a
+		sourceLineageTag: involved_veh_damage_description
+		summarizeBy: none
+		sourceColumn: involved_veh_damage_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_detail_description
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: e8a2061d-acb1-48e0-afc5-e273533d6f24
+		sourceLineageTag: involved_veh_detail_description
+		summarizeBy: none
+		sourceColumn: involved_veh_detail_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_create_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a2467fe4-50f5-42e2-84ad-e89121dbc6b1
+		sourceLineageTag: involved_veh_create_datetime
+		summarizeBy: none
+		sourceColumn: involved_veh_create_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_create_user_code
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 9667860f-cbc7-49f2-9772-e877fe7b6202
+		sourceLineageTag: involved_veh_create_user_code
+		summarizeBy: none
+		sourceColumn: involved_veh_create_user_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_last_update_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a40cc20d-fee4-4587-b898-582f16fec3aa
+		sourceLineageTag: involved_veh_last_update_datetime
+		summarizeBy: none
+		sourceColumn: involved_veh_last_update_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_make
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: bc2b917a-fb30-4dc9-9555-321c4b99950d
+		sourceLineageTag: involved_veh_make
+		summarizeBy: none
+		sourceColumn: involved_veh_make
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_model
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: afe5e70f-1100-415b-ae03-b46b085f513a
+		sourceLineageTag: involved_veh_model
+		summarizeBy: none
+		sourceColumn: involved_veh_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_damage
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c5f34dd-322a-4750-a26a-d7bdac03ed0b
+		sourceLineageTag: has_damage
+		summarizeBy: none
+		sourceColumn: has_damage
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_pictures
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: d58e8bde-5c59-40f3-81cf-28d261d3adf9
+		sourceLineageTag: has_pictures
+		summarizeBy: none
+		sourceColumn: has_pictures
+
+		annotation SummarizationSetBy = Automatic
+
+	column was_towed
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 8e15d726-083d-4b7f-8bbf-37edb8a7b017
+		sourceLineageTag: was_towed
+		summarizeBy: none
+		sourceColumn: was_towed
+
+		annotation SummarizationSetBy = Automatic
+
+	column involved_veh_tag_number
+		dataType: string
+		sourceProviderType: varchar
+		lineageTag: 6c8839ca-4a07-4a05-afd0-92bf37f79a5e
+		sourceLineageTag: involved_veh_tag_number
+		summarizeBy: none
+		sourceColumn: involved_veh_tag_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition risk_involved_vehicle-f0e72d5c-6994-4b16-82f6-ac09f79514f4 = entity
+		mode: directLake
+		source
+			entityName: risk_involved_vehicle
+			schemaName: silver
+			expressionSource: DatabaseQuery
+
+	annotation IsTableInBiModel = True
+

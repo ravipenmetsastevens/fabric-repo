@@ -1,0 +1,49 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Device","Driver","Vehicle","Alert","Coaching","User","User Group Bridge","User Group","Calendar"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.131.1203.0 (24.07)
+
+ref table Device
+ref table DateTableTemplate_fc35c08d-c49b-4213-ac6e-9883066ef4c3
+ref table LocalDateTable_d0544e9d-a449-4dff-9286-ab5fe1e3d9a9
+ref table Driver
+ref table LocalDateTable_2a5840c7-0904-4a3c-9f9e-895009b999f4
+ref table LocalDateTable_db24acf7-04af-4adf-8653-395485b9e9ac
+ref table Vehicle
+ref table LocalDateTable_373c1704-5606-4bda-b44d-70f772585586
+ref table LocalDateTable_52712c26-d957-4077-bcbe-92109a36b232
+ref table LocalDateTable_264b5461-f200-4472-8221-7efa9831223c
+ref table Alert
+ref table LocalDateTable_e0b3af64-e8d6-4cc2-acb3-17ce1e071d05
+ref table Coaching
+ref table LocalDateTable_da32b726-e4f8-4bb7-a307-861168e9565e
+ref table LocalDateTable_51e9644d-6920-43ed-886c-440295abf735
+ref table User
+ref table LocalDateTable_26f2fa32-195f-4ed0-a978-4c2774dfb18d
+ref table LocalDateTable_64514612-37df-453a-aec6-cef2c3ae4e42
+ref table 'User Group Bridge'
+ref table 'User Group'
+ref table Calendar
+ref table LocalDateTable_c4bc171f-74cf-44e7-8d58-32dfe9c1e595
+ref table LocalDateTable_f0ca2e1d-7862-468b-bcfe-87b2355feba0
+ref table LocalDateTable_f07b59a4-60e6-42ab-89a6-48ca21e46656
+ref table LocalDateTable_8c17940e-6bba-4ecb-861d-e439e724b81d
+ref table LocalDateTable_6234c6c1-43d7-413c-b50e-62cb00064d7e
+ref table LocalDateTable_3a531df5-0792-4eb1-b8c1-e2cf6ec1ede7
+ref table LocalDateTable_c135047e-1338-4f3a-b07b-c008865c751a
+ref table LocalDateTable_47d31f44-ce2a-4795-af6b-d2a2c5c2aa4c
+ref table LocalDateTable_1a739d24-c0bf-48dd-9a42-a8d21a02b999
+ref table LocalDateTable_6c3c99d4-a757-4a9f-ab32-ff7b4375826d
+ref table LocalDateTable_4c5384ff-eafb-48e0-884c-5ec79362d465
+
+ref cultureInfo en-US
+

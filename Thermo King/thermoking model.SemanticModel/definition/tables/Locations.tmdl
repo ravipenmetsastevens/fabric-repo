@@ -1,0 +1,113 @@
+table Locations
+	lineageTag: 01a0add6-b00e-4725-849b-eeb96db48c1a
+
+	column vehicleName
+		dataType: string
+		lineageTag: 49b67e30-bdcf-4f52-8e2c-7725725da87e
+		summarizeBy: none
+		sourceColumn: vehicleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 853e8538-d728-41f5-96e5-013b0bb5169c
+		summarizeBy: none
+		sourceColumn: dataDate
+
+		variation Variation
+			isDefault
+			relationship: 90e0f4a4-d1fd-4aad-812c-0e3d23040c00
+			defaultHierarchy: LocalDateTable_aa98eace-a30c-4260-b088-65bb81868615.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column dataTime
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3557adb6-07da-4ffb-96a0-3bd3a902ed15
+		summarizeBy: none
+		sourceColumn: dataTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column thermoking_latitude
+		dataType: double
+		lineageTag: 72614072-fe53-4fe9-823b-357fa63a78ff
+		summarizeBy: sum
+		sourceColumn: thermoking_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column thermoking_longitude
+		dataType: double
+		lineageTag: 4fb8bea6-3d2f-42e0-ba94-14e3ba685622
+		summarizeBy: sum
+		sourceColumn: thermoking_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column locationDescription
+		dataType: string
+		lineageTag: 5b321591-1aad-44a1-b611-7fe5b92f3e00
+		summarizeBy: none
+		sourceColumn: locationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_kmph
+		dataType: int64
+		formatString: 0
+		lineageTag: e17866cc-e1d3-44bf-bccf-075c5ba953d8
+		summarizeBy: sum
+		sourceColumn: speed_kmph
+
+		annotation SummarizationSetBy = Automatic
+
+	column speed_mph
+		dataType: int64
+		formatString: 0
+		lineageTag: 734002e8-9a54-454b-bf5e-f34b6bdf6abe
+		summarizeBy: sum
+		sourceColumn: speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoFenceName
+		dataType: string
+		lineageTag: 74be52ad-1408-466b-8814-7ad04249274b
+		summarizeBy: none
+		sourceColumn: geoFenceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column geoAccessTypeDescription
+		dataType: string
+		lineageTag: 68ffbeb7-eb14-454a-99bf-5f772a362048
+		summarizeBy: none
+		sourceColumn: geoAccessTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Locations = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com", "data_central_wh"),
+				    gold_fact_thermoking_location = Source{[Schema="gold",Item="fact_thermoking_location"]}[Data]
+				in
+				    gold_fact_thermoking_location
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

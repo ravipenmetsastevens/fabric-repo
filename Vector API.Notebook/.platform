@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Vector API"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9654d2fd-8b44-a52b-4aee-4cd58e26d247"
+  }
+}

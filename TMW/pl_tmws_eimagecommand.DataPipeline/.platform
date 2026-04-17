@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_eimagecommand"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "30501904-b4e1-8f1b-451e-f4c28a792c3e"
+  }
+}

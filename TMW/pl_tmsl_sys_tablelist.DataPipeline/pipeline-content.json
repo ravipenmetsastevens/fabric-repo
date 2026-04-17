@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SqlServerSource",
+            "sqlReaderQuery": "SELECT \n    t.NAME AS TableName,\n    i.name as indexName,\n    p.[Rows],\n    sum(a.total_pages) as TotalPages, \n    sum(a.used_pages) as UsedPages, \n    sum(a.data_pages) as DataPages,\n    (sum(a.total_pages) * 8) / 1024 as TotalSpaceMB, \n    (sum(a.used_pages) * 8) / 1024 as UsedSpaceMB, \n    (sum(a.data_pages) * 8) / 1024 as DataSpaceMB\nFROM \n    sys.tables t\nINNER JOIN      \n    sys.indexes i ON t.OBJECT_ID = i.object_id\nINNER JOIN \n    sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id\nINNER JOIN \n    sys.allocation_units a ON p.partition_id = a.container_id\nWHERE \n    t.NAME NOT LIKE 'dt%' AND\n    i.OBJECT_ID > 255 AND   \n    i.index_id <= 1\nGROUP BY \n    t.NAME, i.object_id, i.index_id, i.name, p.[Rows]\nORDER BY \n    object_name(i.object_id) ",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "SqlServerTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "ACCTDISBDL",
+                "database": "AMSLIC"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "23444ec2-2431-4bc7-82f3-78f535099a2d"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "tmsl_sys_tablelist"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_etables"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d6783cca-8e43-b361-471d-8d4353aad2c3"
+  }
+}

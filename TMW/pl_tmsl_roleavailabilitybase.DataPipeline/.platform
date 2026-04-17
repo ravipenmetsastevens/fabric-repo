@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmsl_roleavailabilitybase"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "919dde4c-9794-8521-4b92-a417c877cc29"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_calendar"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "063bbef1-0669-9acc-42a7-6c1ac62f33e4"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_calllog"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e8787b4f-a541-b739-4ea7-6e1df36e7f4f"
+  }
+}

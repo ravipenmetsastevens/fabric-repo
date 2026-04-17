@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_dwheartbeat"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "420cee51-4813-96b5-4257-01aeb281fb40"
+  }
+}

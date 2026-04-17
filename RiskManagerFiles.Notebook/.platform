@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "RiskManagerFiles"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "990b0f1c-e8ce-a7fb-4c02-f0ad91cdf08e"
+  }
+}

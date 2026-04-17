@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Dataflow1",
+        "type": "RefreshDataflow",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "dataflowId": "4f86e9d4-a92f-4b75-8f36-3fbc84795317",
+          "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d",
+          "notifyOption": "NoNotification"
+        }
+      }
+    ]
+  }
+}

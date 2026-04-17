@@ -1,0 +1,73 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "INCR CD Order to Bronze",
+        "description": "VW_INCR_CD_ORDER",
+        "type": "RefreshDataflow",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "dataflowId": "f9592292-bb53-4cde-a5df-502bc9d7d8de",
+          "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d",
+          "notifyOption": "NoNotification"
+        }
+      },
+      {
+        "name": "INCR CD Order to Silver",
+        "type": "SqlServerStoredProcedure",
+        "dependsOn": [
+          {
+            "activity": "Wait1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_ibmi_incr_cd_order_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            }
+          }
+        }
+      },
+      {
+        "name": "Wait1",
+        "type": "Wait",
+        "dependsOn": [
+          {
+            "activity": "INCR CD Order to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "waitTimeInSeconds": 60
+        }
+      }
+    ]
+  }
+}

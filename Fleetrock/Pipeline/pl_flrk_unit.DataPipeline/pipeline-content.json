@@ -1,0 +1,299 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "GetUnits?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_unit_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "units.vin",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vin",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.group",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "group",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.unit_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "unit_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.custom_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "custom_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.year",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "year",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.make",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "make",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.model",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "model",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.manufacturer",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "manufacturer",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.odometer_miles",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "odometer_miles",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.engine_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "engine_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.cost_center",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "cost_center",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.in_service_date",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "in_service_date",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.tag",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tag",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "units.status",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "status",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Units to Bronze",
+        "dependsOn": []
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_unit_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Units to Silver",
+        "dependsOn": [
+          {
+            "activity": "Units to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_dim_maint_unit]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Units Silver to Gold",
+        "dependsOn": [
+          {
+            "activity": "Units to Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

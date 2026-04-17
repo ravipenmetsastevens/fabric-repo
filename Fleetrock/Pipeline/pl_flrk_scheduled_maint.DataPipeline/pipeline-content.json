@@ -1,0 +1,309 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "GetScheduledMaintenance?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed&status=all"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_scheduled_maint_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "scheduled_maintenance.id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.group",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "group",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.vin",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vin",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.unit_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "unit_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.start_date",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "start_date",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.start_miles",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "start_miles",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.start_engine_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "start_engine_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.recurring",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "recurring",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.scheduled_days",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "scheduled_days",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.scheduled_miles",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "scheduled_miles",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.scheduled_engine_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "scheduled_engine_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.system_component_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "system_component_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.tag",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tag",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.notes",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.became_due",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "became_due",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "scheduled_maintenance.ro_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ro_number",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Scheduled Maintenance to Bronze",
+        "dependsOn": []
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_scheduled_maint_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Scheduled Maint to Silver",
+        "dependsOn": [
+          {
+            "activity": "Scheduled Maintenance to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_fact_maint_scheduled]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Scheduled Maint to Gold",
+        "dependsOn": [
+          {
+            "activity": "Scheduled Maint to Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

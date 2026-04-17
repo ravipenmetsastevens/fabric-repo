@@ -1,0 +1,245 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "GetDrivers?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed&status=all"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_driver_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "drivers.username",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "username",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.last_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "last_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.first_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "first_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.street_address",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "street_address",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.zip_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "zip_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.vin",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vin",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.odometer_miles",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "odometer_miles",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.escrow_balance",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "escrow_balance",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.start_date",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "start_date",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.end_date",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "end_date",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "drivers.status",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "status",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Driver to Bronze",
+        "dependsOn": []
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_driver_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Driver to Silver",
+        "dependsOn": [
+          {
+            "activity": "Driver to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

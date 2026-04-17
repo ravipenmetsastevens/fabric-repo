@@ -1,0 +1,2079 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('WITH x AS (\n    SELECT n FROM (VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9)) v(n)\n)\nSELECT ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS myNum\nFROM x ones, x tens, x hundreds, x thousands\nWHERE ones.n + 10*tens.n + 100*hundreds.n + 1000*thousands.n BETWEEN 1 AND ', variables('varMonthsBack'), ' ORDER BY 1 DESC;')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "data_central_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                  "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get a range of months to look back",
+        "dependsOn": [
+          {
+            "activity": "Set varMonthsBack",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": {
+                  "value": "@concat('GetRO?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed&event=created&start=', variables('varFromDate'), '&end=',variables('varToDate'))",
+                  "type": "Expression"
+                }
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_repair_order_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "repair_orders.id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.group",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "group",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.ro_group_hierarchy",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ro_group_hierarchy",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vin",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vin",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.unit_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "unit_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.unit_type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "unit_type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.custom_asset_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "custom_asset_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_company_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_company_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_province",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_province",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_zip_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_zip_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.vendor_timezone",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "vendor_timezone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.customer_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "customer_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.customer_company_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "customer_company_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.odometer_miles",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "odometer_miles",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.engine_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "engine_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.priority_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "priority_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.cost_center",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "cost_center",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tag",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tag",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.status",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "status",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.created_by",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "created_by",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_created",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_created",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_started",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_started",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_expected_finish",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_expected_finish",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_finished",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_finished",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_invoiced",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_invoiced",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.date_invoice_paid",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_invoice_paid",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.po_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "po_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.additional_charges",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "additional_charges",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tax_total",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tax_total",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.credit_amount",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "credit_amount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.estimate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "estimate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.grand_total",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "grand_total",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.paid_amount",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "paid_amount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.remit_to",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "remit_to",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.remit_to_company_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "remit_to_company_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.task_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.task_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_hourly_rate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_hourly_rate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_subtotal",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_subtotal",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_tax_rate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_tax_rate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_complaint",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_complaint",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_cause_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_cause_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_correction_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_correction_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_system_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_system_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.labor_system_component_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.labor_system_component_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.scheduled_maintenance_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.scheduled_maintenance_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.issue_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.issue_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.assigned_to",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.assigned_to",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.date_added",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.date_added",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.notes.note_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes.note_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.notes.note",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes.note",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.notes.added_by",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes.added_by",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.notes.date_added",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes.date_added",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.task_part_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.task_part_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_description",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_system_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_system_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_price",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_price",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_quantity",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_quantity",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_tax_rate",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_tax_rate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.part_location",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.part_location",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.tire_brand",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.tire_brand",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.tire_product_line",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.tire_product_line",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.tire_size",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.tire_size",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.tire_type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.tire_type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "repair_orders.tasks.parts.date_added",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "tasks.parts.date_added",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "collectionReference": "",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Repair Orders to Bronze - month 0",
+        "dependsOn": [
+          {
+            "activity": "Set the 0 month TO date",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT \r\n\t  DATEADD(month, DATEDIFF(month, 0, CONVERT(DATE, GETDATE())), 0) AS StartOfMonth\r\n\t, EOMONTH(CONVERT(DATE, GETDATE())) AS EndOfMonth",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "data_central_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                  "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get the 0 month dates",
+        "dependsOn": [
+          {
+            "activity": "ForEach1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "varFromDate",
+          "value": {
+            "value": "@formatDateTime(activity('Get the 0 month dates').output.firstRow.StartOfMonth, 'yyyy-MM-dd')",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set the 0 month FROM date",
+        "dependsOn": [
+          {
+            "activity": "Get the 0 month dates",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "varToDate",
+          "value": {
+            "value": "@formatDateTime(activity('Get the 0 month dates').output.firstRow.EndOfMonth, 'yyyy-MM-dd')",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set the 0 month TO date",
+        "dependsOn": [
+          {
+            "activity": "Set the 0 month FROM date",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@activity('Get a range of months to look back').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "varFromDate",
+                "value": {
+                  "value": "@formatDateTime(activity('Get the dates').output.firstRow.StartOfMonth, 'yyyy-MM-dd')",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set the FROM date",
+              "dependsOn": [
+                {
+                  "activity": "Get the dates",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Lookup",
+              "typeProperties": {
+                "source": {
+                  "type": "DataWarehouseSource",
+                  "sqlReaderQuery": {
+                    "value": "@concat('SELECT \n\t  DATEADD(month, DATEDIFF(month, 0, DATEADD(month, -', item().myNum , ', CONVERT(DATE, GETDATE()))), 0) AS StartOfMonth\n\t, EOMONTH(DATEADD(month, -', item().myNum, ', CONVERT(DATE, GETDATE()))) AS EndOfMonth')",
+                    "type": "Expression"
+                  },
+                  "partitionOption": "None",
+                  "queryTimeout": "02:00:00"
+                },
+                "datasetSettings": {
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "linkedService": {
+                    "name": "data_central_wh",
+                    "properties": {
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                        "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                      },
+                      "annotations": []
+                    }
+                  },
+                  "annotations": []
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Get the dates",
+              "dependsOn": []
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "varToDate",
+                "value": {
+                  "value": "@formatDateTime(activity('Get the dates').output.firstRow.EndOfMonth, 'yyyy-MM-dd')",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set the TO date",
+              "dependsOn": [
+                {
+                  "activity": "Set the FROM date",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "RestSource",
+                  "requestMethod": "GET",
+                  "httpRequestTimeout": "00:01:40",
+                  "requestInterval": "00.00:00:00.010",
+                  "datasetSettings": {
+                    "type": "RestResource",
+                    "typeProperties": {
+                      "relativeUrl": {
+                        "value": "@concat('GetRO?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed&event=created&start=', variables('varFromDate'), '&end=',variables('varToDate'))",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "externalReferences": {
+                      "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "LakehouseTableSink",
+                  "tableActionOption": "Append",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "table": "flrk_repair_order_bronze"
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "data_central_lh",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "type": "TabularTranslator",
+                  "mappings": [
+                    {
+                      "source": {
+                        "name": "repair_orders.id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.group",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "group",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.ro_group_hierarchy",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "ro_group_hierarchy",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vin",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vin",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.unit_number",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "unit_number",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.unit_type",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "unit_type",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.custom_asset_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "custom_asset_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_name",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_name",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_company_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_company_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_city",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_city",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_state",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_state",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_province",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_province",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_zip_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_zip_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.vendor_timezone",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "vendor_timezone",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.customer_name",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "customer_name",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.customer_company_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "customer_company_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.odometer_miles",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "odometer_miles",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.engine_hours",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "engine_hours",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.priority_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "priority_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.cost_center",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "cost_center",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tag",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tag",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.status",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "status",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.created_by",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "created_by",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_created",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_created",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_started",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_started",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_expected_finish",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_expected_finish",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_finished",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_finished",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_invoiced",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_invoiced",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.date_invoice_paid",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "date_invoice_paid",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.po_number",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "po_number",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.additional_charges",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "additional_charges",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tax_total",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tax_total",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.credit_amount",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "credit_amount",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.estimate",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "estimate",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.grand_total",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "grand_total",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.paid_amount",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "paid_amount",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.remit_to",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "remit_to",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.remit_to_company_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "remit_to_company_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.task_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.task_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_hourly_rate",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_hourly_rate",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_hours",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_hours",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_subtotal",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_subtotal",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_tax_rate",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_tax_rate",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_complaint",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_complaint",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_cause_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_cause_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_correction_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_correction_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_system_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_system_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.labor_system_component_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.labor_system_component_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.scheduled_maintenance_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.scheduled_maintenance_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.issue_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.issue_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.assigned_to",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.assigned_to",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.date_added",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.date_added",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.notes.note_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "notes.note_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.notes.note",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "notes.note",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.notes.added_by",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "notes.added_by",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.notes.date_added",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "notes.date_added",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.task_part_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.task_part_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_id",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_id",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_number",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_number",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_description",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_description",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_system_code",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_system_code",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_type",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_type",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_price",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_price",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_quantity",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_quantity",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_tax_rate",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_tax_rate",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.part_location",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.part_location",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.tire_brand",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.tire_brand",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.tire_product_line",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.tire_product_line",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.tire_size",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.tire_size",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.tire_type",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.tire_type",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "repair_orders.tasks.parts.date_added",
+                        "type": "String"
+                      },
+                      "sink": {
+                        "name": "tasks.parts.date_added",
+                        "physicalType": "string"
+                      }
+                    }
+                  ],
+                  "collectionReference": "",
+                  "typeConversion": true,
+                  "typeConversionSettings": {
+                    "allowDataTruncation": true,
+                    "treatBooleanAsNumber": false
+                  },
+                  "columnFlattenSettings": {
+                    "treatArrayAsString": false,
+                    "treatStructAsString": false,
+                    "flattenColumnDelimiter": "."
+                  }
+                },
+                "enableStaging": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Repair Orders to Bronze",
+              "dependsOn": [
+                {
+                  "activity": "Set the TO date",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "ForEach1",
+        "dependsOn": [
+          {
+            "activity": "Get a range of months to look back",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT CONVERT(VARCHAR, DATEDIFF(month, '2025-08-01', CONVERT(DATE, GETDATE()))) AS MonthsBack",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "data_central_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                  "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "How many months back do we need to go",
+        "dependsOn": [
+          {
+            "activity": "Clear out the landing table",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "varMonthsBack",
+          "value": {
+            "value": "@activity('How many months back do we need to go').output.firstRow.MonthsBack",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set varMonthsBack",
+        "dependsOn": [
+          {
+            "activity": "How many months back do we need to go",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "c92c89ad-d6d6-8bd8-4de6-6b4f8c63d0ba",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Clear out the landing table",
+        "dependsOn": []
+      },
+      {
+        "type": "Wait",
+        "typeProperties": {
+          "waitTimeInSeconds": 30
+        },
+        "name": "Wait1",
+        "dependsOn": [
+          {
+            "activity": "Repair Orders to Bronze - month 0",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Wait",
+        "typeProperties": {
+          "waitTimeInSeconds": 30
+        },
+        "name": "Wait2",
+        "dependsOn": [
+          {
+            "activity": "Script1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Wait",
+        "typeProperties": {
+          "waitTimeInSeconds": 30
+        },
+        "name": "Wait3",
+        "dependsOn": [
+          {
+            "activity": "Script2",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "database": "data_central_wh",
+          "scripts": [
+            {
+              "text": {
+                "value": "EXEC [dbo].[usp_flrk_repair_order_fullrec_silver];",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "externalReferences": {
+          "connection": "361791b1-f40c-4db5-9ab7-eb723c720aac"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script1",
+        "dependsOn": [
+          {
+            "activity": "Wait1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "database": "data_central_wh",
+          "scripts": [
+            {
+              "text": {
+                "value": "EXEC [dbo].[usp_flrk_fact_maint_repair_order];\n",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "externalReferences": {
+          "connection": "361791b1-f40c-4db5-9ab7-eb723c720aac"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script2",
+        "dependsOn": [
+          {
+            "activity": "Wait2",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "database": "data_central_wh",
+          "scripts": [
+            {
+              "text": {
+                "value": "EXEC [dbo].[usp_flrk_fact_maint_activity];",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "externalReferences": {
+          "connection": "361791b1-f40c-4db5-9ab7-eb723c720aac"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script3",
+        "dependsOn": [
+          {
+            "activity": "Wait3",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "varFromDate": {
+        "type": "String"
+      },
+      "varToDate": {
+        "type": "String"
+      },
+      "varMonthsBack": {
+        "type": "String"
+      }
+    }
+  }
+}

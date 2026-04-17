@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "_MASTER_Netradyne"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "47a5b918-b958-8efe-4e9f-7145f97b9609"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_ibmi_fuel_surcharge_rates"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "71574059-0429-8d2b-44dd-1539c710f0f4"
+  }
+}

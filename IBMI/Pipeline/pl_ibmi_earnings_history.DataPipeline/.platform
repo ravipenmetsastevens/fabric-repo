@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_ibmi_earnings_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3ad5afa3-9629-ba11-4077-6161bfcef778"
+  }
+}

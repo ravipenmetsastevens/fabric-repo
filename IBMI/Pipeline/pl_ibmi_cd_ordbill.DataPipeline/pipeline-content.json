@@ -1,0 +1,58 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Dataflow1",
+        "type": "RefreshDataflow",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "dataflowId": "a70ed887-312f-4323-b587-d28b1a42c8fd",
+          "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d",
+          "notifyOption": "NoNotification"
+        }
+      },
+      {
+        "name": "Stored procedure1",
+        "type": "SqlServerStoredProcedure",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_ibmi_cd_ordbill_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

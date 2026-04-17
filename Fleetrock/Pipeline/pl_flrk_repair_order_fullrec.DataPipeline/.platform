@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_flrk_repair_order_fullrec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "620799fa-4f0c-b458-4db8-e9bceb8e7b7c"
+  }
+}

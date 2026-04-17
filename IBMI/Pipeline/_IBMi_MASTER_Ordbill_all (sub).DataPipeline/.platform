@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "_IBMi_MASTER_Ordbill_all (sub)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e6d73576-2514-9242-4f72-db3990785852"
+  }
+}

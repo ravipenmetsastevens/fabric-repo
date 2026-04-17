@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_flrk_scheduled_maint"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7de1982f-bee4-85c1-4d9f-cdbae4229bd2"
+  }
+}

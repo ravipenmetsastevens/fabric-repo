@@ -1,0 +1,736 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "additionalColumns": [
+              {
+                "name": "supplier_type",
+                "value": "CUSTOMER"
+              }
+            ],
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "GetSuppliers?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_supplier_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "suppliers.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.custom_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "custom_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.street_address_1",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "street_address_1",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.street_address_2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "street_address_2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.zip_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "zip_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.country",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "country",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.phone",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "phone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.payment_term_days",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "payment_term_days",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.notes",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.date_added",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_added",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "supplier_type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "supplier_type",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get customer suppliers",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "additionalColumns": [
+              {
+                "name": "supplier_type",
+                "value": "VENDOR"
+              }
+            ],
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "GetSuppliers?username=paragon2&token=999a1ef4-1385-4bda-a66d-49fddc4660b3"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "flrk_supplier_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "suppliers.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.custom_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "custom_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.street_address_1",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "street_address_1",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.street_address_2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "street_address_2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.zip_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "zip_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.country",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "country",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.phone",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "phone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.payment_term_days",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "payment_term_days",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.notes",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "notes",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "suppliers.date_added",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "date_added",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "supplier_type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "supplier_type",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get vendor suppliers",
+        "dependsOn": [
+          {
+            "activity": "Get customer suppliers",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_supplier_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Suppliers Bronze to Silver",
+        "dependsOn": [
+          {
+            "activity": "Get vendor suppliers",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT\r\n\tsupplier_name\r\n\t, CONCAT(supplier_state , '/' , supplier_zip_code, '/', REPLACE(supplier_city,' ','%20'), '/', REPLACE(supplier_street_address_1,' ', '%20'), '?key=AlJaDsT1AcqRc2_1h0R2WXV0KOM_HwYfo39ilJBH_tf6l_6vtWHZloXevZPoZb-V') as webCall\r\nFROM gold.dim_maint_supplier\r\nWHERE supplier_street_address_1 IS NOT NULL\r\nAND supplier_latitude IS NULL",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "data_central_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                  "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Lookup1",
+        "dependsOn": [
+          {
+            "activity": "Suppliers Silver to Gold",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@activity('Lookup1').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "WebActivity",
+              "typeProperties": {
+                "method": "GET",
+                "relativeUrl": {
+                  "value": "@item().webCall",
+                  "type": "Expression"
+                },
+                "headers": {}
+              },
+              "externalReferences": {
+                "connection": "fd4b1967-6a83-4b63-8424-72db4d47de9c"
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Web1",
+              "dependsOn": []
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "varLat",
+                "value": {
+                  "value": "@string(activity('Web1').output.resourceSets[0].resources[0].point.coordinates[0])",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set variable1",
+              "dependsOn": [
+                {
+                  "activity": "Web1",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "varLong",
+                "value": {
+                  "value": "@string(activity('Web1').output.resourceSets[0].resources[0].point.coordinates[1])",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set variable2",
+              "dependsOn": [
+                {
+                  "activity": "Set variable1",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Script",
+              "typeProperties": {
+                "scripts": [
+                  {
+                    "text": {
+                      "value": "@CONCAT('UPDATE gold.dim_maint_supplier SET supplier_latitude = ', variables('varLat'), ', supplier_longitude = ', variables('varLong'), ' WHERE supplier_name = ''', variables('varSupplier'), '''')",
+                      "type": "Expression"
+                    },
+                    "type": "Query"
+                  }
+                ],
+                "scriptBlockExecutionTimeout": "02:00:00"
+              },
+              "linkedService": {
+                "name": "data_central_wh",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+                    "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+                  },
+                  "annotations": []
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Script1",
+              "dependsOn": [
+                {
+                  "activity": "Set variable3",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "varSupplier",
+                "value": {
+                  "value": "@item().supplier_name",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set variable3",
+              "dependsOn": [
+                {
+                  "activity": "Set variable2",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "ForEach1",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "Lookup1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_flrk_dim_maint_supplier]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Suppliers Silver to Gold",
+        "dependsOn": [
+          {
+            "activity": "Suppliers Bronze to Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "varLat": {
+        "type": "String"
+      },
+      "varLong": {
+        "type": "String"
+      },
+      "varSupplier": {
+        "type": "String"
+      }
+    }
+  }
+}

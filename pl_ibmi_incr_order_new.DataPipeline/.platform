@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_ibmi_incr_order_new"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f32483a2-ffe9-ba35-48b4-f7d65879fc86"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "IBMI_Weekly"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "819bb3df-7d74-8f19-461c-a2a68e06f3ef"
+  }
+}

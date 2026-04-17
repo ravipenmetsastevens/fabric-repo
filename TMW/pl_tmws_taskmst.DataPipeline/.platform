@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_taskmst"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f0729d40-a6de-b3e3-4ad9-261a37d28ba4"
+  }
+}

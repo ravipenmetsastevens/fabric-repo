@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_ufluids"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8626baa0-9727-a7fd-4457-7f03ff230ce3"
+  }
+}

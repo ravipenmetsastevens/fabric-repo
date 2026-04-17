@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_watchdogitem"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d23f6fd7-1361-a318-422d-e9a2c6026c02"
+  }
+}

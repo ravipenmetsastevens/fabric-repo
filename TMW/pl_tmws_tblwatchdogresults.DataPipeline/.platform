@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_tblwatchdogresults"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2129bf70-800d-b441-42ab-06a46be537d6"
+  }
+}

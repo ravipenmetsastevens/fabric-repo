@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_vendacct"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b2d48a28-a772-97c2-4586-fcf925ea99d5"
+  }
+}

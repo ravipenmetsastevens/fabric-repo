@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Origami Probe"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "676db5dc-2b5b-82bb-4e8a-a2b6c03baf5e"
+  }
+}

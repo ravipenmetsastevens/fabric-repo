@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_resnowmenusection"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cd4f0401-33bd-84cb-4287-c81d4ff4dd87"
+  }
+}

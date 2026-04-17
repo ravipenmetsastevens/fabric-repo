@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_resnowautomatedfixpkeyslog"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ee9b296a-dc0f-b653-4e9c-703410e8aa76"
+  }
+}

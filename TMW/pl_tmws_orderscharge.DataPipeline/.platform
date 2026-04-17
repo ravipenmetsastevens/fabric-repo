@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_orderscharge"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "040e9862-1a59-ba17-423e-1bb6d657333d"
+  }
+}

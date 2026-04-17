@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_payrolltime"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "77d37a21-dcb0-9dee-43f2-df087126221c"
+  }
+}

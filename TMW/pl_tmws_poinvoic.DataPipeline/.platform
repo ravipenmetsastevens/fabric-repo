@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_poinvoic"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "20be8298-018d-9a27-491f-d348c3a81911"
+  }
+}

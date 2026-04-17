@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_standmsg"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "44a710bc-ea82-b628-4f77-5e6e1f438e55"
+  }
+}

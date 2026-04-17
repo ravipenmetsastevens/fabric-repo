@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_tmws_resnowzip3translation"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "795b824a-ac89-9f75-42da-e80384e97bba"
+  }
+}

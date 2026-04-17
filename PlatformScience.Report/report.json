@@ -1,0 +1,102 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "04c976400a404a37bddd",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"a6ccafa060987673931c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":32.25806451612903,\"y\":0,\"z\":0,\"width\":1069.8924731182794,\"height\":338.7096774193548,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_time.Date.Variation.Date Hierarchy.Year\",\"active\":true},{\"queryRef\":\"date_time.Date.Variation.Date Hierarchy.Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"vw_driver_perf_daily.MilesDriven\"}],\"Y2\":[{\"queryRef\":\"vw_driver_perf_daily.EngineHours\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"date_time.Date.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Date Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"MilesDriven\"},\"Name\":\"vw_driver_perf_daily.MilesDriven\",\"NativeReferenceName\":\"MilesDriven\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"date_time.Date.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Date Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"EngineHours\"},\"Name\":\"vw_driver_perf_daily.EngineHours\",\"NativeReferenceName\":\"EngineHours\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"301debdad498454bd06e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"date_time\"}},\"Property\":\"FiscalYear\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FiscalYear\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}],[{\"Literal\":{\"Value\":\"2025L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 338.71,
+          "width": 1069.89,
+          "x": 32.26,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c5acc542d28e995c6870\",\"layouts\":[{\"id\":0,\"position\":{\"x\":32.25806451612903,\"y\":360.21505376344084,\"z\":1,\"width\":1069.8924731182794,\"height\":360.21505376344084,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"driver_master.drv_full_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"vw_driver_perf_daily.IdleFuel (gal)\"},{\"queryRef\":\"vw_driver_perf_daily.Non-Idle Fuel (gal)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"},\"Name\":\"driver_master.drv_full_name\",\"NativeReferenceName\":\"drv_full_name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"IdleFuel (gal)\"},\"Name\":\"vw_driver_perf_daily.IdleFuel (gal)\",\"NativeReferenceName\":\"IdleFuel (gal)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Non-Idle Fuel (gal)\"},\"Name\":\"vw_driver_perf_daily.Non-Idle Fuel (gal)\",\"NativeReferenceName\":\"Non-Idle Fuel (gal)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"IdleFuel (gal)\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"301debdad498454bd06e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"date_time\"}},\"Property\":\"FiscalYear\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FiscalYear\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}],[{\"Literal\":{\"Value\":\"2025L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"driver_master\"}},\"Property\":\"drv_full_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"IdleFuel (gal)\"}}}],\"Top\":20}}},\"Type\":2},{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 360.22,
+          "width": 1069.89,
+          "x": 32.26,
+          "y": 360.22,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "347bf230ae5e52503d0b",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"cb02715fce30839c084a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.129032258064516,\"y\":0,\"z\":2000,\"width\":1193.5483870967741,\"height\":103.2258064516129,\"tabOrder\":3001}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Parameter.Parameter\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Parameter\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Parameter\"},\"Name\":\"Parameter.Parameter\",\"NativeReferenceName\":\"Parameter\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Parameter\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Parameter Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''vw_driver_perf_daily''[EngineHours]'\"}}]]}}}]}}}}],\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Parameter\"}},\"Property\":\"Parameter Fields\"}},\"Right\":{\"Literal\":{\"Value\":\"'''vw_driver_perf_daily''[EngineHours]'\"}}}}},\"displayName\":\"EngineHours\"}]}}",
+          "filters": "[]",
+          "height": 103.23,
+          "width": 1193.55,
+          "x": 16.13,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"e6ab701515a3a6c7c9b9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":34.40860215053763,\"y\":138.70967741935482,\"z\":2001,\"width\":1175.268817204301,\"height\":539.7849462365591,\"tabOrder\":3002}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"vw_driver_perf_daily.EngineHours\"}],\"Category\":[{\"queryRef\":\"date_time.Date.Variation.Date Hierarchy.Year\",\"active\":true},{\"queryRef\":\"date_time.Date.Variation.Date Hierarchy.Month\",\"active\":true}],\"Series\":[{\"queryRef\":\"driver_master.drv_full_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"driver_master\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"date_time.Date.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Date Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"date_time.Date.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Date Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"drv_full_name\"},\"Name\":\"driver_master.drv_full_name\",\"NativeReferenceName\":\"Driver\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"EngineHours\"},\"Name\":\"vw_driver_perf_daily.EngineHours\",\"NativeReferenceName\":\"EngineHours\"}]},\"queryFieldParametersByRole\":{\"Y\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Parameter\"}},\"Property\":\"Parameter\"}}}]},\"columnProperties\":{\"driver_master.drv_full_name\":{\"displayName\":\"Driver\"},\"vw_driver_perf_daily.EngineHours\":{\"displayName\":\"EngineHours\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'RightCenter'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"38358e235be6c0db8a00\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"date_time\"}},\"Property\":\"FiscalMonthName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FiscalMonthName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"driver_master\"}},\"Property\":\"drv_full_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d1\",\"Entity\":\"driver_master\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"drv_full_name\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"MilesDriven\"}}}],\"Top\":10}}},\"Type\":2},{\"Name\":\"d1\",\"Entity\":\"driver_master\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"drv_full_name\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 539.78,
+          "width": 1175.27,
+          "x": 34.41,
+          "y": 138.71,
+          "z": 2001.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "76bae420686ec85209eb",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"e134ed72084a761b7733\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.903225806451612,\"y\":72.04301075268816,\"z\":0,\"width\":1096.774193548387,\"height\":352.68817204301075,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"driver_master.drv_full_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"vw_driver_perf_daily.Overspeed per 1000 mi\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"},\"Name\":\"driver_master.drv_full_name\",\"NativeReferenceName\":\"Driver\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Overspeed per 1000 mi\"},\"Name\":\"vw_driver_perf_daily.Overspeed per 1000 mi\",\"NativeReferenceName\":\"Overspeed per 1000 mi\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Overspeed per 1000 mi\"}}}]},\"columnProperties\":{\"driver_master.drv_full_name\":{\"displayName\":\"Driver\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"301debdad498454bd06e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"date_time\"}},\"Property\":\"FiscalYear\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_time\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FiscalYear\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2024L\"}}],[{\"Literal\":{\"Value\":\"2025L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"driver_master\"}},\"Property\":\"drv_full_name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"vw_driver_perf_daily\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Overspeed per 1000 mi\"}}}],\"Top\":20}}},\"Type\":2},{\"Name\":\"d\",\"Entity\":\"driver_master\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 352.69,
+          "width": 1096.77,
+          "x": 12.90,
+          "y": 72.04,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

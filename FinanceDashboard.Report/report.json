@@ -1,0 +1,165 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":{\"visual\":\"1.8.95\",\"report\":\"2.0.95\",\"page\":\"1.3.95\"}},\"customTheme\":{\"name\":\"Frontier\",\"type\":2,\"version\":{\"visual\":\"2.1.0\",\"report\":\"2.1.0\",\"page\":\"2.0.0\"}}},\"activeSectionIndex\":0,\"bookmarks\":[{\"displayName\":\"UTL-Slicer Panel Open\",\"name\":\"8f2e776855e5e000ca2a\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"2bacf645a563016a2bcc\",\"sections\":{\"2bacf645a563016a2bcc\":{\"visualContainers\":{},\"visualContainerGroups\":{\"a7db2675bef56a810397\":{\"isHidden\":false}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"a7db2675bef56a810397\",\"20120a12899e6039677f\",\"a1f6329355a41fd881ad\",\"61eec3ca8c72d336659a\",\"cf3c373a255b1799528b\",\"ad44963fe08e35d569b4\",\"f69180f36c01823c402e\",\"ec371ad7a25b0e4a7c51\",\"773900aecf112a791614\"],\"suppressData\":true,\"suppressActiveSection\":false,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"UTL-Slicer Panel Closed\",\"name\":\"2c881511038b462efb7e\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"2bacf645a563016a2bcc\",\"sections\":{\"2bacf645a563016a2bcc\":{\"visualContainers\":{},\"visualContainerGroups\":{\"a7db2675bef56a810397\":{\"isHidden\":true}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"a7db2675bef56a810397\",\"20120a12899e6039677f\",\"a1f6329355a41fd881ad\",\"61eec3ca8c72d336659a\",\"cf3c373a255b1799528b\",\"ad44963fe08e35d569b4\",\"f69180f36c01823c402e\",\"ec371ad7a25b0e4a7c51\",\"773900aecf112a791614\"],\"suppressData\":true,\"suppressActiveSection\":false,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"SAF-Slicer Panel Open\",\"name\":\"d3785649c00fb91f0a34\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"050091e05dfdde41b0be\",\"sections\":{\"050091e05dfdde41b0be\":{\"visualContainers\":{},\"visualContainerGroups\":{\"2efedfb8056e478bdf97\":{\"isHidden\":false}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"2efedfb8056e478bdf97\",\"0af0f0773c760d741b5a\",\"5cd8c4cb0bb22e99e79f\",\"e30b797c698e495b620f\",\"4cdd34621ce074a45d56\",\"d7af8c608e86a5fb1ce9\",\"7947d6b1d154736c9145\",\"508d9c7d5b8af189583d\",\"a56e291645bc748ec085\"],\"suppressData\":true,\"suppressActiveSection\":false,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"SAF-Slicer Panel Closed\",\"name\":\"8be192f3954d98abecea\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"050091e05dfdde41b0be\",\"sections\":{\"050091e05dfdde41b0be\":{\"visualContainers\":{},\"visualContainerGroups\":{\"2efedfb8056e478bdf97\":{\"isHidden\":true}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"2efedfb8056e478bdf97\",\"0af0f0773c760d741b5a\",\"5cd8c4cb0bb22e99e79f\",\"e30b797c698e495b620f\",\"4cdd34621ce074a45d56\",\"d7af8c608e86a5fb1ce9\",\"7947d6b1d154736c9145\",\"508d9c7d5b8af189583d\",\"a56e291645bc748ec085\"],\"suppressData\":true,\"suppressActiveSection\":false,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"SER-Slicer Panel Open\",\"name\":\"48fdf58e722c7f1f7da3\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"857fa4f3d30dcade95ed\",\"sections\":{\"857fa4f3d30dcade95ed\":{\"filters\":{\"byExpr\":[{\"name\":\"d99ccdce0fa53e4fd779\",\"type\":\"Categorical\",\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"IsLast13WeeksExclCurr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'X'\"}}]]}}}]},\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"IsLast13WeeksExclCurr\"}},\"howCreated\":1}]},\"visualContainers\":{},\"visualContainerGroups\":{\"cd1b919d6e6af146a121\":{\"isHidden\":false}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"cd1b919d6e6af146a121\",\"a1db77b6c4896b0e9d21\",\"5284914d3a04d796c0f5\",\"cab1450aa7f934b5869a\",\"1dc8543c390d9cd35164\",\"cca42d07c75426c99d7e\",\"bba32a5533bedc37851e\",\"783c9b3297a482dba1c4\",\"753aa1e41906f9d5c9b8\"],\"suppressData\":true,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"SER-Slicer Panel Closed\",\"name\":\"b8b3b59e64fe5330eb4c\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"857fa4f3d30dcade95ed\",\"sections\":{\"857fa4f3d30dcade95ed\":{\"filters\":{\"byExpr\":[{\"name\":\"d99ccdce0fa53e4fd779\",\"type\":\"Categorical\",\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"IsLast13WeeksExclCurr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'X'\"}}]]}}}]},\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"IsLast13WeeksExclCurr\"}},\"howCreated\":1}]},\"visualContainers\":{},\"visualContainerGroups\":{\"cd1b919d6e6af146a121\":{\"isHidden\":true}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"cd1b919d6e6af146a121\",\"a1db77b6c4896b0e9d21\",\"5284914d3a04d796c0f5\",\"cab1450aa7f934b5869a\",\"1dc8543c390d9cd35164\",\"cca42d07c75426c99d7e\",\"bba32a5533bedc37851e\",\"783c9b3297a482dba1c4\",\"753aa1e41906f9d5c9b8\"],\"suppressData\":true,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"WAG-Slicer Panel Open\",\"name\":\"3924727adb9c2e746696\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"fade3d6a011d2de61ca3\",\"sections\":{\"fade3d6a011d2de61ca3\":{\"filters\":{\"byExpr\":[{\"name\":\"98b3a33c413d642d1fe2\",\"type\":\"Categorical\",\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"IsLast13WeeksExclCurr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'X'\"}}]]}}}]},\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"IsLast13WeeksExclCurr\"}},\"howCreated\":1}]},\"visualContainers\":{},\"visualContainerGroups\":{\"6ed902799185a4fe022e\":{\"isHidden\":false}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"6ed902799185a4fe022e\",\"107573412e81206e6b1c\",\"45dc2a80eeded3abdcca\",\"2fb82e604ee5486c3a2f\",\"5862e87e5b8c5886f0f0\",\"b4bad029f5b2a64f2575\",\"6a1fcd3b3c8e425b7833\",\"4abc04176416ea64150b\",\"6c56e2d2955f8547e3dd\"],\"suppressData\":true,\"applyOnlyToTargetVisuals\":true}},{\"displayName\":\"WAG-Slicer Panel Closed\",\"name\":\"7e89ce6db9396ede871f\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"fade3d6a011d2de61ca3\",\"sections\":{\"fade3d6a011d2de61ca3\":{\"filters\":{\"byExpr\":[{\"name\":\"98b3a33c413d642d1fe2\",\"type\":\"Categorical\",\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"IsLast13WeeksExclCurr\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'X'\"}}]]}}}]},\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"IsLast13WeeksExclCurr\"}},\"howCreated\":1}]},\"visualContainers\":{},\"visualContainerGroups\":{\"6ed902799185a4fe022e\":{\"isHidden\":true}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"6ed902799185a4fe022e\",\"107573412e81206e6b1c\",\"45dc2a80eeded3abdcca\",\"2fb82e604ee5486c3a2f\",\"5862e87e5b8c5886f0f0\",\"b4bad029f5b2a64f2575\",\"6a1fcd3b3c8e425b7833\",\"4abc04176416ea64150b\",\"6c56e2d2955f8547e3dd\"],\"suppressData\":true,\"applyOnlyToTargetVisuals\":true}}],\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "filters": "[]",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Frontier",
+            "path": "BuiltInThemes/Frontier.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 8",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "05e3479369e37a60c4bc",
+      "ordinal": 6,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"f26afc805d80ac1d10a2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.516728624535316,\"y\":0,\"z\":0,\"width\":789.8884758364312,\"height\":408.0297397769517,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"MeasuresTable.Add Pay DF + LR\"},{\"queryRef\":\"MeasuresTable.Add Pay Layover\"},{\"queryRef\":\"MeasuresTable.Add Pay Repower\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresTable\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Add Pay DF + LR\"},\"Name\":\"MeasuresTable.Add Pay DF + LR\",\"NativeReferenceName\":\"Add Pay DF + LR\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Add Pay Layover\"},\"Name\":\"MeasuresTable.Add Pay Layover\",\"NativeReferenceName\":\"Add Pay Layover\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Add Pay Repower\"},\"Name\":\"MeasuresTable.Add Pay Repower\",\"NativeReferenceName\":\"Add Pay Repower\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Add Pay DF + LR\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 408.03,
+          "width": 789.89,
+          "x": 9.52,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 7",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "1e0743d01c51c68fe6db",
+      "ordinal": 5,
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 5",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"b5b292d1a7fc3be715e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"IsCurrentYear\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"IsCurrentYear\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"true\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "3add0e5d2dcafac31bb0",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"204dd11d72753fa6a150\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.429097605893187,\"y\":0,\"z\":0,\"width\":1005.377532228361,\"height\":673.0018416206262,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DivisionGroup.division_name\"},{\"queryRef\":\"MeasuresTable.StopOffStopCount\"},{\"queryRef\":\"MeasuresTable.SrvExpStopCount\"},{\"queryRef\":\"MeasuresTable.Ontime Pickup %\"},{\"queryRef\":\"MeasuresTable.OnTime Delivery %\"},{\"queryRef\":\"DivisionGroup.division_fleet_name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DivisionGroup\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"MeasuresTable\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"division_name\"},\"Name\":\"DivisionGroup.division_name\",\"NativeReferenceName\":\"division_name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"StopOffStopCount\"},\"Name\":\"MeasuresTable.StopOffStopCount\",\"NativeReferenceName\":\"StopOffStopCount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"SrvExpStopCount\"},\"Name\":\"MeasuresTable.SrvExpStopCount\",\"NativeReferenceName\":\"SrvExpStopCount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"On Time Pickup %\"},\"Name\":\"MeasuresTable.Ontime Pickup %\",\"NativeReferenceName\":\"Ontime Pickup %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"On Time Delivery %\"},\"Name\":\"MeasuresTable.OnTime Delivery %\",\"NativeReferenceName\":\"OnTime Delivery %\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"division_fleet_name\"},\"Name\":\"DivisionGroup.division_fleet_name\",\"NativeReferenceName\":\"division_fleet_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"division_fleet_name\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 673.00,
+          "width": 1005.38,
+          "x": 9.43,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3ca0b1d0bd4157181802",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5695dbc48bdb0167511d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.706319702602231,\"y\":0,\"z\":0,\"width\":1269.293680297398,\"height\":685.2044609665428,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(EarningsHistory.earnings_history_gross_amount)\"}],\"Rows\":[{\"queryRef\":\"PayGroup.pay_class_description\",\"active\":true},{\"queryRef\":\"DateTime.Year\"}],\"Columns\":[{\"queryRef\":\"DateTime.FiscalMonthName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"EarningsHistory\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"PayGroup\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earnings_history_gross_amount\"}},\"Function\":0},\"Name\":\"Sum(EarningsHistory.earnings_history_gross_amount)\",\"NativeReferenceName\":\"Sum of earnings_history_gross_amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"pay_class_description\"},\"Name\":\"PayGroup.pay_class_description\",\"NativeReferenceName\":\"pay_class_description\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"FiscalMonthName\"},\"Name\":\"DateTime.FiscalMonthName\",\"NativeReferenceName\":\"FiscalMonthName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"DateTime.Year\",\"NativeReferenceName\":\"Year\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 685.20,
+          "width": 1269.29,
+          "x": 10.71,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6ed127f5493be50ee357",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"99f284914e9db1136407\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.786372007366483,\"y\":11.786372007366483,\"z\":0,\"width\":1044.2725598526704,\"height\":565.7458563535912,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"EarningsHistory.earnings_history_description\"},{\"queryRef\":\"EarningsHistory.earnings_history_pay_class_code\"},{\"queryRef\":\"PayGroup.pay_class_code\"},{\"queryRef\":\"PayGroup.paypo_type_code\"},{\"queryRef\":\"MeasuresTable.Earnings Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"EarningsHistory\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"PayGroup\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"MeasuresTable\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earnings_history_pay_class_code\"},\"Name\":\"EarningsHistory.earnings_history_pay_class_code\",\"NativeReferenceName\":\"earnings_history_pay_class_code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earnings_history_description\"},\"Name\":\"EarningsHistory.earnings_history_description\",\"NativeReferenceName\":\"earnings_history_description\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Earnings Amount\"},\"Name\":\"MeasuresTable.Earnings Amount\",\"NativeReferenceName\":\"Earnings Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"paypo_type_code\"},\"Name\":\"PayGroup.paypo_type_code\",\"NativeReferenceName\":\"paypo_type_code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"pay_class_code\"},\"Name\":\"PayGroup.pay_class_code\",\"NativeReferenceName\":\"pay_class_code\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"240.35911602209944D\"}}}},\"selector\":{\"metadata\":\"EarningsHistory.earnings_history_description\"}}]}}}",
+          "filters": "[{\"name\":\"2ac2870dba304900ca49\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"PayGroup\"}},\"Property\":\"paypo_type_code\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"PayGroup\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"paypo_type_code\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'DF'\"}}],[{\"Literal\":{\"Value\":\"'LR'\"}}],[{\"Literal\":{\"Value\":\"'RC'\"}}],[{\"Literal\":{\"Value\":\"'RP'\"}}],[{\"Literal\":{\"Value\":\"'LO'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 565.75,
+          "width": 1044.27,
+          "x": 11.79,
+          "y": 11.79,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 4",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "c4be5cfce4acc025c57c",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"fe302dd953a1b6035412\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.429097605893187,\"y\":0,\"z\":0,\"width\":1270.570902394107,\"height\":720.1473296500922,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"SettlementCodes.stcodes_description\"},{\"queryRef\":\"SettlementCodes.stcodes_description_trimmed\"},{\"queryRef\":\"SettlRevenueHistory.set_rev_hist_origin_city\"},{\"queryRef\":\"SettlementCodes.stcodes_settlement_code\"},{\"queryRef\":\"Sum(SettlRevenueHistory.set_rev_hist_additional_pay_amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SettlementCodes\",\"Type\":0},{\"Name\":\"s1\",\"Entity\":\"SettlRevenueHistory\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"stcodes_description\"},\"Name\":\"SettlementCodes.stcodes_description\",\"NativeReferenceName\":\"stcodes_description\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"stcodes_description_trimmed\"},\"Name\":\"SettlementCodes.stcodes_description_trimmed\",\"NativeReferenceName\":\"stcodes_description_trimmed\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"stcodes_settlement_code\"},\"Name\":\"SettlementCodes.stcodes_settlement_code\",\"NativeReferenceName\":\"stcodes_settlement_code\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"set_rev_hist_additional_pay_amount\"}},\"Function\":0},\"Name\":\"Sum(SettlRevenueHistory.set_rev_hist_additional_pay_amount)\",\"NativeReferenceName\":\"Sum of set_rev_hist_additional_pay_amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"set_rev_hist_origin_city\"},\"Name\":\"SettlRevenueHistory.set_rev_hist_origin_city\",\"NativeReferenceName\":\"set_rev_hist_origin_city\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"stcodes_description_trimmed\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"162.1344244360427D\"}}}},\"selector\":{\"metadata\":\"Sum(SettlRevenueHistory.set_rev_hist_additional_pay_amount)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"263.9336862771013D\"}}}},\"selector\":{\"metadata\":\"SettlRevenueHistory.set_rev_hist_origin_city\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"290.5046083317878D\"}}}},\"selector\":{\"metadata\":\"SettlementCodes.stcodes_description_trimmed\"}}]}}}",
+          "filters": "[{\"name\":\"b3e9405dd286702a053d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"SettlementCodes\"}},\"Property\":\"stcodes_description\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SettlementCodes\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"stcodes_description\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"name\":\"ec0b9a001db9a3ce33cd\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DateTime\"}},\"Property\":\"MonthNameShort\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthNameShort\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Apr'\"}}],[{\"Literal\":{\"Value\":\"'Dec'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 720.15,
+          "width": 1270.57,
+          "x": 9.43,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 6",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d3af99be9016009c1c19",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3e256056a597ce385cef\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.00868809730669,\"y\":0,\"z\":0,\"width\":1004.205039096438,\"height\":493.7619461337967,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(OrdTabFact.tlb_ordtlb_truck_pay_amount)\"},{\"queryRef\":\"DateTime.MonthNameShort\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"o\",\"Entity\":\"OrdTabFact\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"DateTime\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"tlb_ordtlb_truck_pay_amount\"}},\"Function\":0},\"Name\":\"Sum(OrdTabFact.tlb_ordtlb_truck_pay_amount)\",\"NativeReferenceName\":\"Sum of tlb_ordtlb_truck_pay_amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthNameShort\"},\"Name\":\"DateTime.MonthNameShort\",\"NativeReferenceName\":\"MonthNameShort\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 493.76,
+          "width": 1004.21,
+          "x": 10.01,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Frontier"
+}

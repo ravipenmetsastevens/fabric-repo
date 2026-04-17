@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "e110cbab87b92b584d56",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"b4fd48ba27eb53a67c17\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.72644376899696,\"y\":0,\"z\":0,\"width\":590.3951367781156,\"height\":420.1823708206687,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DriverMaster.drv_address_city\"},{\"queryRef\":\"DriverMaster.drv_address_line_1\"},{\"queryRef\":\"DriverMaster.drv_full_name\"},{\"queryRef\":\"DriverMaster.drv_full_address\"},{\"queryRef\":\"DriverMaster.drv_code\"},{\"queryRef\":\"DriverMaster.drv_dm_code\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DriverMaster\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_address_city\"},\"Name\":\"DriverMaster.drv_address_city\",\"NativeReferenceName\":\"drv_address_city\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_address_line_1\"},\"Name\":\"DriverMaster.drv_address_line_1\",\"NativeReferenceName\":\"drv_address_line_1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_name\"},\"Name\":\"DriverMaster.drv_full_name\",\"NativeReferenceName\":\"drv_full_name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_full_address\"},\"Name\":\"DriverMaster.drv_full_address\",\"NativeReferenceName\":\"drv_full_address\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_code\"},\"Name\":\"DriverMaster.drv_code\",\"NativeReferenceName\":\"drv_code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"drv_dm_code\"},\"Name\":\"DriverMaster.drv_dm_code\",\"NativeReferenceName\":\"drv_dm_code\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 420.18,
+          "width": 590.40,
+          "x": 9.73,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

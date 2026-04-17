@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Driver Scorecard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8bf184ec-652f-b22f-4cd9-0d80b3ba5967"
+  }
+}

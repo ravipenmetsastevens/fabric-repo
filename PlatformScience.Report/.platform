@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "PlatformScience"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "080de84c-535e-a8d8-4121-6cd43447e4e8"
+  }
+}

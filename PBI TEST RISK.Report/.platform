@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "PBI TEST RISK"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "53809019-ff7b-83bc-4ba0-24b001ec3450"
+  }
+}

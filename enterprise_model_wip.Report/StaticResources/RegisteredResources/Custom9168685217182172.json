@@ -1,0 +1,72 @@
+{
+  "name": "Custom",
+  "dataColors": [
+    "#36413E",
+    "#D7D6D6",
+    "#5D5E60",
+    "#BEB2C8",
+    "#8D8D92",
+    "#5B1865",
+    "#F47C64",
+    "#6C6C74"
+  ],
+  "bad": "#FFFFFF",
+  "neutral": "#FFFFFF",
+  "good": "#FFFFFF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#E5E5E5"
+              }
+            },
+            "show": true,
+            "radius": 5
+          }
+        ],
+        "outspacePane": [
+          {
+            "foregroundColor": {
+              "solid": {
+                "color": "#343C3C"
+              }
+            },
+            "titleSize": 11,
+            "checkboxAndApplyColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#6C6C74"
+              }
+            },
+            "transparency": 90
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  }
+}

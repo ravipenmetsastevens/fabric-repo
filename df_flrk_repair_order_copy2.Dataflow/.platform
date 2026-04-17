@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_repair_order_copy2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6d993ab4-665f-9a10-4cf9-b1987c5d1ec4"
+  }
+}

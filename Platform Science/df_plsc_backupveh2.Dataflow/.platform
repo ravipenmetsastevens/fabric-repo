@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_plsc_backupveh2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "653a3402-3712-a0e4-45e9-67a31959449f"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_incr_settlement_revenue_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "909f74e7-bfe5-b4e6-40c4-410f5d8e81a2"
+  }
+}

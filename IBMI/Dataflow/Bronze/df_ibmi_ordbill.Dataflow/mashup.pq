@@ -1,0 +1,21 @@
+section Section1;
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "VW_ORDBILL_DataDestination", IsNewTarget = false], Settings = [Kind = "Manual", AllowCreation = false, ColumnSettings = [Mappings = {[SourceColumnName = "ORODR", DestinationColumnName = "ORODR"], [SourceColumnName = "ORSEQ", DestinationColumnName = "ORSEQ"], [SourceColumnName = "ORBINT", DestinationColumnName = "ORBINT"], [SourceColumnName = "ORINV", DestinationColumnName = "ORINV"], [SourceColumnName = "ORVINV", DestinationColumnName = "ORVINV"], [SourceColumnName = "ORBDAT", DestinationColumnName = "ORBDAT"], [SourceColumnName = "ORBAMT", DestinationColumnName = "ORBAMT"], [SourceColumnName = "ORTAMT", DestinationColumnName = "ORTAMT"], [SourceColumnName = "ORBOMO", DestinationColumnName = "ORBOMO"], [SourceColumnName = "ORBOYR", DestinationColumnName = "ORBOYR"], [SourceColumnName = "ORBLST", DestinationColumnName = "ORBLST"], [SourceColumnName = "ORARST", DestinationColumnName = "ORARST"], [SourceColumnName = "ORSTCD", DestinationColumnName = "ORSTCD"], [SourceColumnName = "ORSERI", DestinationColumnName = "ORSERI"], [SourceColumnName = "ORTARF", DestinationColumnName = "ORTARF"], [SourceColumnName = "ORITEM", DestinationColumnName = "ORITEM"], [SourceColumnName = "ORLINE", DestinationColumnName = "ORLINE"], [SourceColumnName = "ORSUMC", DestinationColumnName = "ORSUMC"], [SourceColumnName = "ORRATC", DestinationColumnName = "ORRATC"], [SourceColumnName = "ORHLDB", DestinationColumnName = "ORHLDB"], [SourceColumnName = "ORBAML", DestinationColumnName = "ORBAML"], [SourceColumnName = "ORBAMA", DestinationColumnName = "ORBAMA"], [SourceColumnName = "ORTAML", DestinationColumnName = "ORTAML"], [SourceColumnName = "ORTAMA", DestinationColumnName = "ORTAMA"], [SourceColumnName = "ORACAM", DestinationColumnName = "ORACAM"], [SourceColumnName = "ORACFL", DestinationColumnName = "ORACFL"], [SourceColumnName = "ORFSC", DestinationColumnName = "ORFSC"], [SourceColumnName = "ORTFSC", DestinationColumnName = "ORTFSC"], [SourceColumnName = "ORGSTR", DestinationColumnName = "ORGSTR"], [SourceColumnName = "ORGSTB", DestinationColumnName = "ORGSTB"], [SourceColumnName = "ORAUDT", DestinationColumnName = "ORAUDT"], [SourceColumnName = "ORAUIN", DestinationColumnName = "ORAUIN"], [SourceColumnName = "ORPRDT", DestinationColumnName = "ORPRDT"], [SourceColumnName = "ORCFLG", DestinationColumnName = "ORCFLG"], [SourceColumnName = "ORGSTC", DestinationColumnName = "ORGSTC"], [SourceColumnName = "ORFREV", DestinationColumnName = "ORFREV"], [SourceColumnName = "recordNumber", DestinationColumnName = "recordNumber"], [SourceColumnName = "loadDate", DestinationColumnName = "loadDate"], [SourceColumnName = "refreshDate", DestinationColumnName = "refreshDate"], [SourceColumnName = "sourceSystem", DestinationColumnName = "sourceSystem"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
+shared VW_ORDBILL = let
+  Source = DB2.Database("S10A3543.STEVENSTRANSPORT.COM:447", "S10A3543", [HierarchicalNavigation = true, Implementation = "Microsoft"]),
+  #"Navigation 1" = Source{[Schema = "FABRIC"]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[Name = "VW_ORDBILL"]}[Data],
+  #"Renamedcolumns" = Table.RenameColumns(#"Navigation 2", {{"ORODR#", "ORODR"}}),
+    AddRecordNumber = Table.AddIndexColumn(Renamedcolumns, "recordNumber", 1, 1, Int64.Type),
+    AddLoadDate = Table.AddColumn(AddRecordNumber, "loadDate", each DateTime.LocalNow(), type datetime),
+    AddRefreshDate = Table.AddColumn(AddLoadDate, "refreshDate", each Date.From(DateTime.LocalNow()), type date),
+    AddSourceSystem = Table.AddColumn(AddRefreshDate, "sourceSystem", each "IBM", type text)
+
+in
+    AddSourceSystem;
+shared VW_ORDBILL_DataDestination = let
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Navigation_1 = Pattern{[workspaceId = "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "f9a73da1-08e4-4f3d-a67f-74623bfde721"]}[Data],
+  TableNavigation = Navigation_2{[Id = "ibmi_ordbill_bronze", ItemKind = "Table"]}[Data]
+in
+  TableNavigation;

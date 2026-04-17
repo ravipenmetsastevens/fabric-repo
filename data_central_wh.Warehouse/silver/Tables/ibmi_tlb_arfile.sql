@@ -1,0 +1,25 @@
+CREATE TABLE [silver].[ibmi_tlb_arfile] (
+
+	[tlb_arfile_record_code] varchar(8000) NULL, 
+	[tlb_arfile_customer_code] varchar(8000) NULL, 
+	[tlb_arfile_invoice_number] varchar(8000) NULL, 
+	[tlb_arfile_adj_batch_code] varchar(8000) NULL, 
+	[tlb_arfile_record_type] varchar(8000) NULL, 
+	[tlb_arfile_record_number] decimal(34,6) NULL, 
+	[tlb_arfile_invoice_date] date NULL, 
+	[tlb_arfile_load_number] varchar(8000) NULL, 
+	[tlb_arfile_deposit_date] date NULL, 
+	[tlb_arfile_cust_order_number] varchar(8000) NULL, 
+	[tlb_arfile_book_month] varchar(8000) NULL, 
+	[tlb_arfile_book_year] varchar(8000) NULL, 
+	[tlb_arfile_amount] decimal(34,6) NULL, 
+	[tlb_arfile_balance_forward] decimal(34,6) NULL, 
+	[is_daily_pro_register] varchar(5) NOT NULL, 
+	[is_weekly_pro_register] varchar(5) NOT NULL, 
+	[is_monthly_pro_register] varchar(5) NOT NULL, 
+	[is_non_current] varchar(5) NOT NULL, 
+	[tlb_arfile_customer_name] varchar(8000) NULL, 
+	[tlb_arfile_sequence_code] varchar(8000) NULL, 
+	[tlb_arfile_statement_number] varchar(8000) NULL, 
+	[tlb_arfile_dispatch_date] date NULL
+);

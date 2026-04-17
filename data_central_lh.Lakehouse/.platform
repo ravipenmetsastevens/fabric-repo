@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "data_central_lh",
+    "description": "This is the central data lakehouse for injestion of data into Fabric.  Contains only raw and bronze level data.  Intended audience is data engineers only."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1"
+  }
+}

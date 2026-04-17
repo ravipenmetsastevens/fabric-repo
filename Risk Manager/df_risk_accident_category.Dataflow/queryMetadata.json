@@ -1,0 +1,38 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_risk_accident_category",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "Sheet1": {
+      "queryId": "9a39db25-0c3b-4abf-99ce-ce1a23badf89",
+      "queryName": "Sheet1",
+      "loadEnabled": false
+    },
+    "Sheet1_DataDestination": {
+      "queryId": "b103687f-46c7-4c30-a5c3-3d268a32c94e",
+      "queryName": "Sheet1_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://stevenstransport-my.sharepoint.com/personal/jeremy_shahan_stevenstransport_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"24f298b0-8c26-4085-92e7-80bf1607968e\",\"DatasourceId\":\"69a7a8a0-06ab-4dee-b715-9eedfa7ba94b\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"63ca6c12-afa9-4757-ab16-6a24d7056427\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    }
+  ]
+}

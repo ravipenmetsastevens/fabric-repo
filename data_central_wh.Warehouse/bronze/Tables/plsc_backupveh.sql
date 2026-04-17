@@ -1,0 +1,27 @@
+CREATE TABLE [bronze].[plsc_backupveh] (
+
+	[PHVEH] varchar(8000) NULL, 
+	[PHTIME] decimal(38,6) NULL, 
+	[PHTIME_DT] datetime2(6) NULL, 
+	[PHARRV] decimal(38,6) NULL, 
+	[PHARRV_DT] datetime2(6) NULL, 
+	[PHTYPE] varchar(8000) NULL, 
+	[PHPSRC] varchar(8000) NULL, 
+	[PHSIOT] varchar(8000) NULL, 
+	[PHIGST] varchar(8000) NULL, 
+	[PHMACT] varchar(8000) NULL, 
+	[PHMAC] decimal(38,6) NULL, 
+	[PHVER] decimal(38,6) NULL, 
+	[PHGMH] decimal(38,6) NULL, 
+	[PHBTIN] varchar(8000) NULL, 
+	[PHNXST] decimal(38,6) NULL, 
+	[PHNXSA] decimal(38,6) NULL, 
+	[PHLSST] decimal(38,6) NULL, 
+	[PHLSSA] decimal(38,6) NULL, 
+	[PHLAT] decimal(38,6) NULL, 
+	[PHLON] decimal(38,6) NULL, 
+	[PHLTDD] decimal(38,6) NULL, 
+	[PHDIRC] decimal(38,6) NULL, 
+	[PHSPED] decimal(38,6) NULL, 
+	[PHODOM] decimal(38,6) NULL
+);

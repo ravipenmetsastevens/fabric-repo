@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_paypo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "46f20809-213f-892b-44ed-d94c071ab73c"
+  }
+}

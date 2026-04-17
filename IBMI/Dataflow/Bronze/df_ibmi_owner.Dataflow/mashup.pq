@@ -1,0 +1,16 @@
+section Section1;
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "VW_OWNERS_DataDestination", IsNewTarget = false], Settings = [Kind = "Manual", AllowCreation = false, ColumnSettings = [Mappings = {[SourceColumnName = "OWUNIT", DestinationColumnName = "OWUNIT"], [SourceColumnName = "OWNAME", DestinationColumnName = "OWNAME"], [SourceColumnName = "OWADD1", DestinationColumnName = "OWADD1"], [SourceColumnName = "OWCITY", DestinationColumnName = "OWCITY"], [SourceColumnName = "OWST", DestinationColumnName = "OWST"], [SourceColumnName = "OWZIP", DestinationColumnName = "OWZIP"], [SourceColumnName = "OWEXT", DestinationColumnName = "OWEXT"], [SourceColumnName = "OWADD2", DestinationColumnName = "OWADD2"], [SourceColumnName = "OWCIT2", DestinationColumnName = "OWCIT2"], [SourceColumnName = "OWST2", DestinationColumnName = "OWST2"], [SourceColumnName = "OWZIP2", DestinationColumnName = "OWZIP2"], [SourceColumnName = "OWEXT2", DestinationColumnName = "OWEXT2"], [SourceColumnName = "OWAC", DestinationColumnName = "OWAC"], [SourceColumnName = "OWTEL", DestinationColumnName = "OWTEL"], [SourceColumnName = "OWSS", DestinationColumnName = "OWSS"], [SourceColumnName = "OWWCMP", DestinationColumnName = "OWWCMP"], [SourceColumnName = "OWPCRV", DestinationColumnName = "OWPCRV"], [SourceColumnName = "OWYTDG", DestinationColumnName = "OWYTDG"], [SourceColumnName = "OWVACB", DestinationColumnName = "OWVACB"], [SourceColumnName = "OWUNSB", DestinationColumnName = "OWUNSB"], [SourceColumnName = "OWCMPR", DestinationColumnName = "OWCMPR"], [SourceColumnName = "OWDEL", DestinationColumnName = "OWDEL"], [SourceColumnName = "OWCHK", DestinationColumnName = "OWCHK"], [SourceColumnName = "OWFC", DestinationColumnName = "OWFC"], [SourceColumnName = "OWSF", DestinationColumnName = "OWSF"], [SourceColumnName = "OWCNTY", DestinationColumnName = "OWCNTY"], [SourceColumnName = "OWGST", DestinationColumnName = "OWGST"], [SourceColumnName = "OWGSTP", DestinationColumnName = "OWGSTP"], [SourceColumnName = "OWGSTR", DestinationColumnName = "OWGSTR"], [SourceColumnName = "OWGSTC", DestinationColumnName = "OWGSTC"], [SourceColumnName = "OWCKTN", DestinationColumnName = "OWCKTN"], [SourceColumnName = "OWCARD", DestinationColumnName = "OWCARD"], [SourceColumnName = "OW1099", DestinationColumnName = "OW1099"], [SourceColumnName = "OWFLET", DestinationColumnName = "OWFLET"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
+shared VW_OWNERS = let
+  Source = DB2.Database("S10A3543.STEVENSTRANSPORT.COM:447", "S10A3543", [HierarchicalNavigation = true, Implementation = "Microsoft"]),
+  #"Navigation 1" = Source{[Schema = "FABRIC"]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[Name = "VW_OWNERS"]}[Data],
+  #"Renamed columns" = Table.RenameColumns(#"Navigation 2", {{"OWGST#", "OWGST"}})
+in
+  #"Renamed columns";
+shared VW_OWNERS_DataDestination = let
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Navigation_1 = Pattern{[workspaceId = "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "f9a73da1-08e4-4f3d-a67f-74623bfde721"]}[Data],
+  TableNavigation = Navigation_2{[Id = "ibmi_owner_bronze", ItemKind = "Table"]}[Data]
+in
+  TableNavigation;

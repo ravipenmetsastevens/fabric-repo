@@ -1,0 +1,43 @@
+{
+  "sources": [
+    {
+      "id": "7303837d-4c27-45c8-8aca-c9a0519d7e68",
+      "name": "SemanticModelLogs",
+      "type": "SampleData",
+      "properties": {
+        "type": "SemanticModelLogs"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "1039727f-1780-4f71-9229-d239c6db88f4",
+      "name": "73e4a570-7a8d-4c55-bc94-cc6ee8e668d6",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "3dd95282-2fd6-bab8-4b9d-4f2c538bab86",
+        "tableName": "SemanticModelLogs",
+        "connectionName": "Monitoring_DC_data_connection",
+        "mappingRuleName": "SemanticModelLogs_Mapping"
+      },
+      "inputNodes": [
+        {
+          "name": "Monitoring_Eventstream-stream"
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "c084fde0-4157-4d25-b076-663ab74d4829",
+      "name": "Monitoring_Eventstream-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": []
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

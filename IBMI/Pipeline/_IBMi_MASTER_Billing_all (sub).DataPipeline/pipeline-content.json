@@ -1,0 +1,103 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ExecutePipeline",
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "d451a359-5272-840a-409e-bd27c86ffc6a",
+            "type": "PipelineReference"
+          },
+          "parameters": {},
+          "waitOnCompletion": true
+        },
+        "policy": {
+          "secureInput": false
+        },
+        "name": "Billing",
+        "dependsOn": []
+      },
+      {
+        "type": "ExecutePipeline",
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "f148975a-63e9-bb41-4678-6c0c6de7a09e",
+            "type": "PipelineReference"
+          },
+          "parameters": {},
+          "waitOnCompletion": true
+        },
+        "policy": {
+          "secureInput": false
+        },
+        "name": "CD Billing",
+        "dependsOn": [
+          {
+            "activity": "Billing",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ExecutePipeline",
+        "typeProperties": {
+          "pipeline": {
+            "referenceName": "7986dcf8-431a-8118-4dc1-328516246581",
+            "type": "PipelineReference"
+          },
+          "parameters": {},
+          "waitOnCompletion": true
+        },
+        "policy": {
+          "secureInput": false
+        },
+        "name": "TLB Billing",
+        "dependsOn": [
+          {
+            "activity": "CD Billing",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_create_fact_billing_all]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            },
+            "annotations": []
+          },
+          "objectId": "f8578495-391e-4e7e-b791-4949397ba86f"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create fact Billing_all",
+        "dependsOn": [
+          {
+            "activity": "TLB Billing",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

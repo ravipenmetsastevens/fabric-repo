@@ -1,0 +1,309 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "netr alertType": {
+      "queryId": "b167b62a-0a4c-4c38-9571-2779d3189057",
+      "queryName": "netr alertType"
+    },
+    "netr alertSeverity": {
+      "queryId": "4d86311c-80ac-441a-b562-64c8a859da27",
+      "queryName": "netr alertSeverity"
+    },
+    "netr alertCategory": {
+      "queryId": "c3e7fae6-d58c-4bda-a1b6-430dab2e05d6",
+      "queryName": "netr alertCategory"
+    },
+    "netr alertCause": {
+      "queryId": "ab5fcf55-fa39-4667-9d07-87090adcaa1f",
+      "queryName": "netr alertCause"
+    },
+    "netr vehicleStatus": {
+      "queryId": "b13b1109-5ba2-4295-9cb2-23cdff003200",
+      "queryName": "netr vehicleStatus"
+    },
+    "netr cameraConfigurations": {
+      "queryId": "fa0e670d-7170-4561-bc92-408a0e42e41a",
+      "queryName": "netr cameraConfigurations"
+    },
+    "netr videoStatus": {
+      "queryId": "6e186f29-5725-47e9-b2b9-fedad78732e0",
+      "queryName": "netr videoStatus"
+    },
+    "netr requestStatus": {
+      "queryId": "e019beac-67e7-452b-a513-ffb42a7a8178",
+      "queryName": "netr requestStatus"
+    },
+    "netr userStatus": {
+      "queryId": "c57e7b61-0cba-409d-9a52-cbf75907e870",
+      "queryName": "netr userStatus"
+    },
+    "netr coachingSessionsStatus": {
+      "queryId": "651f9a12-2a44-4f17-8ea8-282f7b5a2a60",
+      "queryName": "netr coachingSessionsStatus"
+    },
+    "netr canStatus": {
+      "queryId": "a98bcbb3-c23c-4e02-b10c-2ae7ddc9256a",
+      "queryName": "netr canStatus"
+    },
+    "netr masterDisconnectedStatus": {
+      "queryId": "35fc02bb-d20f-4718-a316-b2d39448b289",
+      "queryName": "netr masterDisconnectedStatus"
+    },
+    "netr batteryConnectedStatus": {
+      "queryId": "8ca3859a-2725-4cfc-8f06-397ed6c53da3",
+      "queryName": "netr batteryConnectedStatus"
+    },
+    "netr batterySource": {
+      "queryId": "c292d33a-b6fb-4d07-8f9d-a80c71b29302",
+      "queryName": "netr batterySource"
+    },
+    "netr rolesDetail": {
+      "queryId": "a7673dfc-2ecf-4210-9292-471c5026a244",
+      "queryName": "netr rolesDetail"
+    },
+    "netr driverStatus": {
+      "queryId": "a44f31a4-72a8-42c8-b06c-53f5040784a2",
+      "queryName": "netr driverStatus"
+    },
+    "netr alertStatus": {
+      "queryId": "2464a3d9-a248-4608-84f7-1f70335da5c5",
+      "queryName": "netr alertStatus"
+    },
+    "netr deviceStatus": {
+      "queryId": "51c2fe87-666e-44fd-95c9-bc13b35ef722",
+      "queryName": "netr deviceStatus"
+    },
+    "netr inCabAudioAlertTypes": {
+      "queryId": "fdabece3-99ba-4ef2-814d-e7c28b4da1d2",
+      "queryName": "netr inCabAudioAlertTypes"
+    },
+    "netr alertSubTypes": {
+      "queryId": "e88cbebf-e691-4bd5-9b38-1ca47f6adf6e",
+      "queryName": "netr alertSubTypes"
+    },
+    "netr coachingCompletionReason": {
+      "queryId": "29703c8a-293d-4897-9ce2-eec2a6967a3e",
+      "queryName": "netr coachingCompletionReason"
+    },
+    "netr deviceHealthStatus": {
+      "queryId": "df0b217c-27ee-4d2f-aab3-438a0aaede55",
+      "queryName": "netr deviceHealthStatus"
+    },
+    "netr fnoInclusionTypes": {
+      "queryId": "35a4d50c-9589-4f10-b495-a1ff7627e231",
+      "queryName": "netr fnoInclusionTypes"
+    },
+    "netr vehicleHealthStatus": {
+      "queryId": "80d15170-1a2b-40e2-bee8-3f0462313c62",
+      "queryName": "netr vehicleHealthStatus"
+    },
+    "netr feedbackType": {
+      "queryId": "bb7ad8f9-709d-473d-971b-c40aaddb0048",
+      "queryName": "netr feedbackType"
+    },
+    "netr feedbackReason": {
+      "queryId": "f722017e-4dae-4a3b-96a4-ca286a1cf1a2",
+      "queryName": "netr feedbackReason"
+    },
+    "netr feedbackStatus": {
+      "queryId": "0dc7d5ac-49ae-4c95-b79e-b8d5565abe27",
+      "queryName": "netr feedbackStatus"
+    },
+    "netr alertStopSignSubSeverity": {
+      "queryId": "03eea0b9-b904-4fc7-a578-29b1a1364422",
+      "queryName": "netr alertStopSignSubSeverity"
+    },
+    "netr alertType_DataDestination": {
+      "queryId": "dd139afd-adc1-43cc-b30f-bab30819b329",
+      "queryName": "netr alertType_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertSeverity_DataDestination": {
+      "queryId": "ce9fdc7a-0055-4961-bf2d-f9008a923ff3",
+      "queryName": "netr alertSeverity_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertCategory_DataDestination": {
+      "queryId": "a2d8fc60-f7d3-4335-b104-56e827ec1975",
+      "queryName": "netr alertCategory_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertCause_DataDestination": {
+      "queryId": "8d9b509b-eefe-4404-9678-43fdf012e266",
+      "queryName": "netr alertCause_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr vehicleStatus_DataDestination": {
+      "queryId": "ee11dfa5-cbe2-428c-a9b9-dbaa48651b09",
+      "queryName": "netr vehicleStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr cameraConfigurations_DataDestination": {
+      "queryId": "e02882b9-8b3a-4e00-8a01-c58a1161ef75",
+      "queryName": "netr cameraConfigurations_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr videoStatus_DataDestination": {
+      "queryId": "9dd40a06-3ae3-466e-b8c0-e33f3dedeb53",
+      "queryName": "netr videoStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr requestStatus_DataDestination": {
+      "queryId": "bbe27b3a-62f4-42cf-a117-7dd472059900",
+      "queryName": "netr requestStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr userStatus_DataDestination": {
+      "queryId": "8166d319-8c3c-4d11-9f0f-bbd0befbe84a",
+      "queryName": "netr userStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr coachingSessionsStatus_DataDestination": {
+      "queryId": "555d608c-3fe1-4cec-94a9-55322ce6d386",
+      "queryName": "netr coachingSessionsStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr canStatus_DataDestination": {
+      "queryId": "ca5ffad5-8a1b-4a2c-a0de-d22e2c47b89e",
+      "queryName": "netr canStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr masterDisconnectedStatus_DataDestination": {
+      "queryId": "114ef10f-0e48-47a1-aeb1-7aa1f1322bfc",
+      "queryName": "netr masterDisconnectedStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr batteryConnectedStatus_DataDestination": {
+      "queryId": "e824941b-aded-4783-b91a-8d34b96cb139",
+      "queryName": "netr batteryConnectedStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr batterySource_DataDestination": {
+      "queryId": "ba1ecdc4-7019-49c2-aee3-cd0e9c932894",
+      "queryName": "netr batterySource_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr rolesDetail_DataDestination": {
+      "queryId": "aa564f42-0962-46d0-8c65-f052067284e7",
+      "queryName": "netr rolesDetail_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr driverStatus_DataDestination": {
+      "queryId": "9a302f9c-b905-4d50-812a-80ee47ea87f1",
+      "queryName": "netr driverStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertStatus_DataDestination": {
+      "queryId": "d7f91e43-ac3c-4c2b-8b20-9deaff7c7db3",
+      "queryName": "netr alertStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr deviceStatus_DataDestination": {
+      "queryId": "b79b2be5-1080-4f7a-b953-8e9f146c8ef0",
+      "queryName": "netr deviceStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr inCabAudioAlertTypes_DataDestination": {
+      "queryId": "3f091df3-0c7f-40c7-aab2-4a7ae427a23b",
+      "queryName": "netr inCabAudioAlertTypes_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertSubTypes_DataDestination": {
+      "queryId": "6e56e9f0-f62b-47dc-8f4a-59dbd18db0c7",
+      "queryName": "netr alertSubTypes_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr coachingCompletionReason_DataDestination": {
+      "queryId": "85507a35-8006-4dd5-a402-d0931903e8c7",
+      "queryName": "netr coachingCompletionReason_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr deviceHealthStatus_DataDestination": {
+      "queryId": "c3cb084b-5a4e-433d-bfdd-aaaeeb9d0daa",
+      "queryName": "netr deviceHealthStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr fnoInclusionTypes_DataDestination": {
+      "queryId": "5ee6c806-26fe-4fca-a3a6-8a9df3592ae0",
+      "queryName": "netr fnoInclusionTypes_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr vehicleHealthStatus_DataDestination": {
+      "queryId": "c26f1ce9-3f95-4f2d-a9bd-f312bb8b1b45",
+      "queryName": "netr vehicleHealthStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr feedbackType_DataDestination": {
+      "queryId": "a8859151-725f-4048-8bb6-8e9d896fc739",
+      "queryName": "netr feedbackType_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr feedbackReason_DataDestination": {
+      "queryId": "9c018e98-a3e5-47b6-8667-1fbe0d1ad7d0",
+      "queryName": "netr feedbackReason_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr feedbackStatus_DataDestination": {
+      "queryId": "78157138-0bfe-46cc-8ae8-ca07f4fc1174",
+      "queryName": "netr feedbackStatus_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "netr alertStopSignSubSeverity_DataDestination": {
+      "queryId": "84e52d11-c5e0-4de7-80c0-e3552d422ebe",
+      "queryName": "netr alertStopSignSubSeverity_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    },
+    {
+      "path": "https://fabricstoragescus.blob.core.windows.net/netradyne/",
+      "kind": "AzureBlobs",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"369251a3-37ef-4036-b172-026ea5cf2182\"}"
+    },
+    {
+      "path": "https://fabricstoragescus.blob.core.windows.net/",
+      "kind": "AzureBlobs",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"7b0024dc-048d-4bd1-98da-65388fda8b69\"}"
+    }
+  ]
+}

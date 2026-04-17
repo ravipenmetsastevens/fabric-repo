@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_stopoff_og_appt"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b9e3abff-95a8-b9de-4a91-e0d91beaca0d"
+  }
+}

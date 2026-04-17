@@ -1,0 +1,31 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "Query": {
+      "queryId": "d0320e37-db1b-44c3-bb18-58a462d379f0",
+      "queryName": "Query",
+      "loadEnabled": false
+    },
+    "Query_DataDestination": {
+      "queryId": "2099f103-c482-4b53-a412-9c15f9355e0b",
+      "queryName": "Query_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://www.fleetrock.com/API/GetRO?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed&event=created&start=01-01-2023&end=02-28-2023",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"d4470554-54e5-44c6-95e2-8af77caf15e1\",\"DatasourceId\":\"951219c3-8c78-49ee-9788-4c2a4f6a1328\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

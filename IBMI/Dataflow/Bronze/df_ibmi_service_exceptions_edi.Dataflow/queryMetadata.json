@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ibmi_stopoff_og_appt",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "VW_SERVICE_EXCEPTIONS_EDI": {
+      "queryId": "9e439858-c9f5-48e1-be3a-296f90d30683",
+      "queryName": "VW_SERVICE_EXCEPTIONS_EDI",
+      "loadEnabled": false
+    },
+    "VW_SERVICE_EXCEPTIONS_EDI_DataDestination": {
+      "queryId": "08776024-9356-4805-ab1c-e2a867bc93fa",
+      "queryName": "VW_SERVICE_EXCEPTIONS_EDI_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "S10A3543.STEVENSTRANSPORT.COM:447;S10A3543",
+      "kind": "DB2",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"fe8d619f-d699-4dfd-a770-a1fcc9a8331a\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    }
+  ]
+}

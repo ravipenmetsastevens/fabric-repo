@@ -1,0 +1,25 @@
+CREATE TABLE [silver].[ibmi_autorated_loads] (
+
+	[autorated_load_number] varchar(8000) NULL, 
+	[autorated_rated_date] date NULL, 
+	[autorated_status_code] varchar(8000) NULL, 
+	[autorated_contract_code] varchar(8000) NULL, 
+	[autorated_contract_date] date NULL, 
+	[autorated_rate_expiration_date] date NULL, 
+	[autorated_rate_effective_date] date NULL, 
+	[autorated_billto_code] varchar(8000) NULL, 
+	[autorated_origin_state] varchar(8000) NULL, 
+	[autorated_origin_city_code] varchar(8000) NULL, 
+	[autorated_destination_state] varchar(8000) NULL, 
+	[autorated_destination_city_code] varchar(8000) NULL, 
+	[autorated_origin_zip] varchar(8000) NULL, 
+	[autorated_destination_zip] varchar(8000) NULL, 
+	[autorated_rate_type_code] varchar(8000) NULL, 
+	[autorated_rate_per_mile] decimal(34,6) NULL, 
+	[autorated_minimum_rate] decimal(34,6) NULL, 
+	[autorated_flat_rate] decimal(34,6) NULL, 
+	[autorated_rate_match_note] varchar(8000) NULL, 
+	[autorated_create_date] date NULL, 
+	[autorated_create_time] time(0) NULL, 
+	[autorated_create_user_code] varchar(8000) NULL
+);

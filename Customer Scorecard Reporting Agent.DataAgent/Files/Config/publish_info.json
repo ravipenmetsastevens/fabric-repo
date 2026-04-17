@@ -1,0 +1,4 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/publishInfo/1.0.0/schema.json",
+  "description": "Answer business questions about transportation performance, service levels, customers, loads, orders, tender acceptance, service exceptions, EDI activity, and revenue using the connected semantic model."
+}

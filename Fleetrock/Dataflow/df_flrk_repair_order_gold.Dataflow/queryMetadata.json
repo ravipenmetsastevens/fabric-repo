@@ -1,0 +1,30 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "silver flrk_repair_order": {
+      "queryId": "75776a66-2e08-45d1-b2bc-e3acd632c75b",
+      "queryName": "silver flrk_repair_order"
+    },
+    "silver flrk_repair_order_DataDestination": {
+      "queryId": "2551761d-fcc1-4b19-8a76-b4a7a6d2f947",
+      "queryName": "silver flrk_repair_order_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"63ca6c12-afa9-4757-ab16-6a24d7056427\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_tlb_ordtlb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2ebc8c89-cd75-91e5-40d6-a4a59058b392"
+  }
+}

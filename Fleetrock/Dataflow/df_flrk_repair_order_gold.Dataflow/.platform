@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_repair_order_gold",
+    "description": "Not actually used to migrate data.  The dataflow was created to easily create the landing table which is now populated by the stored procedure"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3b036af8-5737-b7a6-40f8-57062d7c00c3"
+  }
+}

@@ -1,0 +1,3299 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "ce416b67-74b8-b0b0-4eef-17b0a55c22a2",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "Customer Scorecard Ver1",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {
+    "csdl_relationships": "[{\"FromTable\":\"Stops\",\"FromColumn\":\"Load_Number\",\"ToTable\":\"Orders\",\"ToColumn\":\"Load_Number\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Stops\",\"FromColumn\":\"Late_Appointment_Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Stops\",\"FromColumn\":\"LoadDispatch\",\"ToTable\":\"Loads\",\"ToColumn\":\"LoadDispatch\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Stops\",\"FromColumn\":\"Late_Service_Exception_Reason_Code\",\"ToTable\":\"Service_Exception_Types\",\"ToColumn\":\"Exception_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Stops\",\"FromColumn\":\"Division_Code\",\"ToTable\":\"Divisions\",\"ToColumn\":\"Division_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Service_Exceptions\",\"FromColumn\":\"Reason_Code\",\"ToTable\":\"Service_Exception_Types\",\"ToColumn\":\"Exception_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Service_Exceptions\",\"FromColumn\":\"Load_Stop\",\"ToTable\":\"Stops\",\"ToColumn\":\"Load_Stop\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Service_Exceptions\",\"FromColumn\":\"Load_Number\",\"ToTable\":\"Orders\",\"ToColumn\":\"Load_Number\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Orders\",\"FromColumn\":\"Bill_To_Customer_Code\",\"ToTable\":\"Bill_To_Customers\",\"ToColumn\":\"Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Orders\",\"FromColumn\":\"Load_At_Customer_Code\",\"ToTable\":\"Load_At_Customers\",\"ToColumn\":\"Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Orders\",\"FromColumn\":\"Division_Code\",\"ToTable\":\"Divisions\",\"ToColumn\":\"Division_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Orders\",\"FromColumn\":\"Late_Pickup_Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Orders\",\"FromColumn\":\"Late_Delivery_Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EDI_Orders\",\"FromColumn\":\"Customer_Order_Number\",\"ToTable\":\"EDI_Processing_History\",\"ToColumn\":\"Customer_Ship_Number\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToMany\"},{\"FromTable\":\"EDI_Orders\",\"FromColumn\":\"Bill_To_Customer_Code\",\"ToTable\":\"Bill_To_Customers\",\"ToColumn\":\"Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EDI_Orders\",\"FromColumn\":\"Tender_Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EDI_Orders\",\"FromColumn\":\"EDI_Customer_Code\",\"ToTable\":\"EDI_Customers\",\"ToColumn\":\"EDI_Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EDI_Processing_History\",\"FromColumn\":\"Customer_Code\",\"ToTable\":\"EDI_Customers\",\"ToColumn\":\"EDI_Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Accounts_Receivable\",\"FromColumn\":\"Invoice_Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Accounts_Receivable\",\"FromColumn\":\"Load_Number\",\"ToTable\":\"Orders\",\"ToColumn\":\"Load_Number\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Accounts_Receivable\",\"FromColumn\":\"Customer_Code\",\"ToTable\":\"Bill_To_Customers\",\"ToColumn\":\"Customer_Code\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"Date_Selection_Options\",\"FromColumn\":\"Date\",\"ToTable\":\"Calendar\",\"ToColumn\":\"Date\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
+  },
+  "elements": [
+    {
+      "id": "d2f3dfaa-aa43-4306-a5f1-365d5568a8f0",
+      "is_selected": true,
+      "display_name": "__Measures",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "4fce5ddc-f261-4a24-8b7b-2579971c285d",
+          "is_selected": true,
+          "display_name": "Accepted Tender Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0aa26fcd-2a68-4be8-bb42-a268c0fd0b5f",
+          "is_selected": true,
+          "display_name": "Bottom Customer Weighted On-Time Delivery Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "86b3b119-49bb-45de-a1a3-0bb495cfb605",
+          "is_selected": true,
+          "display_name": "Customer Delivery Weight",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05d48bd4-075a-431c-8b83-3885751bc63e",
+          "is_selected": true,
+          "display_name": "Customer Pickup Weight",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45885c75-e3de-4f0c-890a-c623a7c1be71",
+          "is_selected": true,
+          "display_name": "Customer Tender Acceptance Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbb0da11-9edf-439b-8da5-0890ae542c95",
+          "is_selected": true,
+          "display_name": "Customer Tender Acceptance Score",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ed8d395-e6ca-4abf-b206-9a4a132483e8",
+          "is_selected": true,
+          "display_name": "Customer Tender Acceptance Weight",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e81131dc-a19a-446e-97a0-9b20d1a2187c",
+          "is_selected": true,
+          "display_name": "Customer Weighted On-Time Delivery Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "07fea478-2552-478e-b0bb-4094cd841b64",
+          "is_selected": true,
+          "display_name": "Customer Weighted On-Time Delivery Score",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "24fb0f1e-165e-47e9-8274-ad63c659a120",
+          "is_selected": true,
+          "display_name": "Customer Weighted On-Time Pickup Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45a10f96-dea0-4d9c-82d0-ca01426b4695",
+          "is_selected": true,
+          "display_name": "Customer Weighted On-Time Pickup Score",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c133d620-7860-4d16-8590-aff3b55640d0",
+          "is_selected": true,
+          "display_name": "Delivery Stop Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db54ec84-8e64-4694-8754-b62cf807a74c",
+          "is_selected": true,
+          "display_name": "Is Customer Name Filtered",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8619e463-2cce-4da7-8b67-3b442f083468",
+          "is_selected": true,
+          "display_name": "Load Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1e68ee9-142a-408e-a172-ca339b1013cf",
+          "is_selected": true,
+          "display_name": "Load Count by Delivery Date",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ece0934c-040b-4c1a-849b-95940be2b42c",
+          "is_selected": true,
+          "display_name": "Measure by Pickup Date",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "27a8c8b1-435b-4ab8-afdf-40c91224908b",
+          "is_selected": true,
+          "display_name": "OG OTP % Unscrubbed Day",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b476832-1d76-471b-8077-f487ae047457",
+          "is_selected": true,
+          "display_name": "On-Time Delivery %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4988baac-643c-4bde-8ff9-4e0191de5a18",
+          "is_selected": true,
+          "display_name": "On-Time Delivery % (Exception Adjusted Day-Level)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7944a45c-fb52-4b01-843d-50478672a985",
+          "is_selected": true,
+          "display_name": "On-Time Delivery % (Exception Adjusted)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05d7a848-1b11-4235-a094-e8c7c8046f36",
+          "is_selected": true,
+          "display_name": "On-Time Delivery % (Original Day-Level)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "39d83a22-e95b-4220-a2ff-35325d123af4",
+          "is_selected": true,
+          "display_name": "On-Time Delivery % (Original)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7e2e856-14a6-47c1-afee-a101f8d80089",
+          "is_selected": true,
+          "display_name": "On-Time Delivery Goal",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9ec828c3-df41-458a-98dc-78705889913f",
+          "is_selected": true,
+          "display_name": "On-Time Delivery Goal Value",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a9e3b24e-d424-4182-b55c-6176144597f0",
+          "is_selected": true,
+          "display_name": "On-Time Pickup %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "940eb0bd-7406-4102-b095-efcd7b6c9138",
+          "is_selected": true,
+          "display_name": "On-Time Pickup % (Exception Adjusted Day-Level)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bba1708f-fe29-4eb2-9935-882e0ff731d3",
+          "is_selected": true,
+          "display_name": "On-Time Pickup % (Exception Adjusted)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ccea1c77-036e-4417-9502-0afd31044e24",
+          "is_selected": true,
+          "display_name": "On-Time Pickup Goal",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c3d0c3f-1923-4347-812d-276117f957aa",
+          "is_selected": true,
+          "display_name": "OTP % Scrubbed Day",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c58b53e8-d12c-4de6-afde-bee121489eea",
+          "is_selected": true,
+          "display_name": "Pickup Stop Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0c33e31a-5f54-425b-803f-56e85c1e656a",
+          "is_selected": true,
+          "display_name": "Rejected Tender Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51f27735-d7d5-4cf2-a89e-8cbb80c85707",
+          "is_selected": true,
+          "display_name": "Selected Bill-To Customer Filters",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d971eb17-cf93-48da-ab82-c58edffd14a1",
+          "is_selected": true,
+          "display_name": "Selected Filters Summary",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1c9e8133-84af-4887-8ec6-0768e1350878",
+          "is_selected": true,
+          "display_name": "Selected Order Filters",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a376d8b3-6676-4d49-ae7e-b98252717171",
+          "is_selected": true,
+          "display_name": "Tender Acceptance %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0e621771-8d79-4f69-af12-b125fd4e3ce9",
+          "is_selected": true,
+          "display_name": "Total Delivery Count Filtered",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5b2c69ab-17d3-4cf7-b0b0-40344da5d92c",
+          "is_selected": true,
+          "display_name": "Total Pickup Count Filtered",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "dbfef9eb-4dae-4ac8-9fe6-fd91eee46b7c",
+      "is_selected": true,
+      "display_name": "Accounts Receivable",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "e62367f0-a366-44b3-b80c-92d554d408f2",
+          "is_selected": true,
+          "display_name": "Adjustment Batch Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "799ca6bf-527f-48e8-939b-1cf1c1fd4af4",
+          "is_selected": true,
+          "display_name": "Amount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "51f141c4-c8f0-4acd-83ec-7ed9ff3ac6cd",
+          "is_selected": true,
+          "display_name": "Balance Forward",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1597c805-9fa0-48bc-825d-1ccbda9b3b61",
+          "is_selected": true,
+          "display_name": "Book Month",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "da4ff9c6-3302-48bb-a018-a5c59476ee98",
+          "is_selected": true,
+          "display_name": "Book Year",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "080f6b0b-6067-4f71-b595-652608d3a235",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "061b3eb5-a2c2-4c1e-9194-f14c4dde4869",
+          "is_selected": true,
+          "display_name": "Customer Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0996b9cc-489c-4e06-8a8c-ce46ea238c38",
+          "is_selected": true,
+          "display_name": "Customer Order Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8f567cbe-0503-4ed8-b8f0-447ea6ea3ca7",
+          "is_selected": true,
+          "display_name": "Deposit Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c27bee68-0d55-4257-b911-9db2d022cdc0",
+          "is_selected": true,
+          "display_name": "Dispatch Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "71ce83eb-e364-42c3-96ca-157ddb0a524d",
+          "is_selected": true,
+          "display_name": "Invoice Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "df5adaec-88c6-4c02-9a4c-307146c1b32f",
+          "is_selected": true,
+          "display_name": "Invoice Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "12fc2e67-f148-44f0-aae8-d0b63225e032",
+          "is_selected": true,
+          "display_name": "Is Daily PRO Register",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8221e830-02d4-4268-a213-c6d4ef3b5aad",
+          "is_selected": true,
+          "display_name": "Is Monthly PRO Register",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "22ac8786-9011-4c3c-8ad9-fca846d4ba5e",
+          "is_selected": true,
+          "display_name": "Is Non-Current",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a072ec04-72c6-4fff-b6ee-d917b3aa3e1e",
+          "is_selected": true,
+          "display_name": "Is Weekly PRO Register",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "610207f8-94da-40a9-b966-363a686dbea8",
+          "is_selected": true,
+          "display_name": "Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a6b4bf77-213d-4319-8dfd-aa92aa534094",
+          "is_selected": true,
+          "display_name": "Record Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "90a57bf6-fd3b-4a4d-aa4f-98486463d637",
+          "is_selected": true,
+          "display_name": "Record Number",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e8f7cb46-e603-416a-96c2-7f282ed07f0d",
+          "is_selected": true,
+          "display_name": "Record Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad6030e9-3843-4516-bef5-409de62d7953",
+          "is_selected": true,
+          "display_name": "Sequence Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5020fe40-1483-46f1-89de-e3fd7052bb6c",
+          "is_selected": true,
+          "display_name": "Statement Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e1c98fe6-23fb-444d-bb29-72c016a9e8b9",
+      "is_selected": true,
+      "display_name": "Bill-To Customers",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "69f511d1-6a13-420c-bd79-bcd6003a909e",
+          "is_selected": true,
+          "display_name": "City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0a6ceb2e-b829-4f2b-9619-d1d98be0e74d",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a49e1d64-563b-4ba3-9f3d-25d2cc875a15",
+          "is_selected": true,
+          "display_name": "Customer Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "418b946d-cc04-4fe1-838d-20949ea6739d",
+          "is_selected": true,
+          "display_name": "State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1ec76b1c-75c6-45fa-a71e-9585bef0d788",
+      "is_selected": true,
+      "display_name": "Calendar",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "d908cb42-a2d3-4344-a6cd-f0f8354932a4",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05e66acd-3b80-4305-bde6-c53178a9285c",
+          "is_selected": true,
+          "display_name": "Date Ordinal",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ecd127de-cf24-4001-9340-688642703b15",
+          "is_selected": true,
+          "display_name": "Day",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "925526c7-3c81-4a41-95e1-dc430480f898",
+          "is_selected": true,
+          "display_name": "Day Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41803f48-7eae-443e-84a7-813ad0772528",
+          "is_selected": true,
+          "display_name": "Day of Week",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "52e8c393-bd7d-4086-b490-f60bc21bcb25",
+          "is_selected": true,
+          "display_name": "Day of Week in Month",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0441aec4-d084-4c38-a282-1602ac73b7a9",
+          "is_selected": true,
+          "display_name": "Day of Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6822362a-6cde-4d9b-8413-5e2d6c0e7486",
+          "is_selected": true,
+          "display_name": "Day Suffix",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "42d1f347-7a02-4a8c-b17c-026e4436ed5e",
+          "is_selected": true,
+          "display_name": "DB2 Julian Date",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "29e84af6-6916-40a9-a46d-d8aeb8374545",
+          "is_selected": true,
+          "display_name": "DD/MM/YYYY",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "09e1de92-a79a-43c0-bd49-f676eb70149d",
+          "is_selected": true,
+          "display_name": "Has 53 ISO Weeks",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a206d3e9-048b-4993-b9c4-d2e995af363e",
+          "is_selected": true,
+          "display_name": "Has 53 Weeks",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d2f36b81-5c83-41c5-9b65-51aad22baafa",
+          "is_selected": true,
+          "display_name": "Is Completed Month",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b2207e1-8be0-4e46-9c2a-5e911aad0095",
+          "is_selected": true,
+          "display_name": "Is Last 2Years To Last Week",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcc3160c-a0ac-4592-a9bd-b2584c96e958",
+          "is_selected": true,
+          "display_name": "Is Last 4Weeks Excl Current",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a30e1f40-3a34-45ee-9329-4f750fee2444",
+          "is_selected": true,
+          "display_name": "Is Leap Year",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7c8a9e1-e8a2-447b-9ccb-e0373c4bc8f2",
+          "is_selected": true,
+          "display_name": "Is Weekend",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e4a7e21-f3a5-4b7b-a980-eb4eacae8786",
+          "is_selected": true,
+          "display_name": "ISO Week",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c9d34ed0-6fd7-446e-8f7f-8f3d39764363",
+          "is_selected": true,
+          "display_name": "ISO Week End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c9d8af0d-7d19-4beb-9bbd-a801df191ca2",
+          "is_selected": true,
+          "display_name": "ISO Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "01e33fc2-9442-4b4d-bb08-b5e009a6510b",
+          "is_selected": true,
+          "display_name": "Julian Date",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c81739d-48a2-40d7-a65d-a1fc52d161dd",
+          "is_selected": true,
+          "display_name": "MM/DD/YYYY",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dc22a498-e175-4db7-be2e-1aa655dbe5cb",
+          "is_selected": true,
+          "display_name": "Month End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "af841f4f-77cb-4600-9c4d-a87181d6f991",
+          "is_selected": true,
+          "display_name": "Month Letter",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6da3c403-2c6e-43b0-8b41-368a3cc08396",
+          "is_selected": true,
+          "display_name": "Month Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8a8d3578-3889-4805-9a2a-351a127fff00",
+          "is_selected": true,
+          "display_name": "Month Number",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9cd55374-ea61-4b75-9c20-c1198a9e9c3a",
+          "is_selected": true,
+          "display_name": "Month Start Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8b605de3-ac57-48b7-ab67-46eda5714148",
+          "is_selected": true,
+          "display_name": "Month Year",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "adc6984f-f536-4a11-86df-93f657d2ef30",
+          "is_selected": true,
+          "display_name": "Next Month End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c872e368-9564-4ad6-98c2-f03cbc92278d",
+          "is_selected": true,
+          "display_name": "Next Month Start Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d938121-fd0e-4f45-a31b-f9f8fef24c23",
+          "is_selected": true,
+          "display_name": "Quarter",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "58aae05c-c75a-47cc-a36d-d74ac4918b4f",
+          "is_selected": true,
+          "display_name": "Quarter End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb4f1ae8-e4e2-4721-8fbd-b2711ec0db4d",
+          "is_selected": true,
+          "display_name": "Quarter Start Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3f6635a7-7445-4df6-a097-a0fb438cb7fc",
+          "is_selected": true,
+          "display_name": "Week",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bc3d01b8-c03a-46c3-ba8a-4fdb70919fde",
+          "is_selected": true,
+          "display_name": "Week End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05a0afb8-39fb-487b-9c27-dfe9320ca5a8",
+          "is_selected": true,
+          "display_name": "Week of Month",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "99259b00-1368-4b8f-aa1e-f16bb170a5fa",
+          "is_selected": true,
+          "display_name": "Week Start Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "64e63ea1-e144-4021-8186-8f2c54d0754c",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25f689ed-889c-4404-9664-2a3e9cd9840a",
+          "is_selected": true,
+          "display_name": "Year End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2616953f-0923-49bf-ae1a-7c2ac6cef766",
+          "is_selected": true,
+          "display_name": "Year Start Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b71d110c-8c17-4b3e-b06b-a97980789a2e",
+          "is_selected": true,
+          "display_name": "YYYY-MM-DD",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0e17a0bd-1812-4a55-82dd-81f510ac42e8",
+          "is_selected": true,
+          "display_name": "YYYYMMDD",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "b530a4ca-b2c7-4067-b8fc-46f01e6f5493",
+      "is_selected": true,
+      "display_name": "Date Selection Options",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "21771a4b-ccae-4b0f-abde-a6768d3ece47",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c55c3943-4b11-4db5-96da-2d4b3e2d7b25",
+          "is_selected": true,
+          "display_name": "Date Index",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "91c82d29-9a38-49cf-96e3-d3645a463c87",
+          "is_selected": true,
+          "display_name": "Display Date Label",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e1ab21d-4bff-4fa5-bbd0-41c6a8740d6f",
+          "is_selected": true,
+          "display_name": "Matrix Sort Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "042846e9-3230-40ed-94ae-bf933b56fa78",
+          "is_selected": true,
+          "display_name": "Order",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a0f4c93d-cd14-4bd9-93dd-efebb4ca696c",
+          "is_selected": true,
+          "display_name": "Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "03dd9fe3-c786-46af-9ea0-086fffe48215",
+          "is_selected": true,
+          "display_name": "Visual Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "90bec70d-d71a-4440-b6d1-e84a43175bd2",
+      "is_selected": true,
+      "display_name": "Divisions",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "5ed9e72c-3152-4477-86fa-424ac73b1483",
+          "is_selected": true,
+          "display_name": "Division Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2d2ea3de-efd9-4233-882f-52fb39f407ea",
+          "is_selected": true,
+          "display_name": "Division Fleet Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "709d0515-72a3-4956-9c64-4b3e674d2521",
+          "is_selected": true,
+          "display_name": "Division Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5bb5f3d4-47e1-47dd-b2b8-6f60fb02780b",
+          "is_selected": true,
+          "display_name": "Division Status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "da376bfc-37fc-48d4-bbbb-2c9a1eeb2b93",
+      "is_selected": true,
+      "display_name": "EDI Customers",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "d2a8c958-c26e-4d12-b605-392764bc9551",
+          "is_selected": true,
+          "display_name": "990 Decline Response",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8747d49f-0bf6-44cf-9ba8-3b487b8e6fc4",
+          "is_selected": true,
+          "display_name": "Auto Accept Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcb4f5c0-cd99-41ab-83a8-ce9b7c737920",
+          "is_selected": true,
+          "display_name": "EDI Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16f100a9-1f54-4a30-9bfe-07215374717b",
+          "is_selected": true,
+          "display_name": "EDI Customer Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85977ddd-4d89-433d-8908-1733c5d85b14",
+          "is_selected": true,
+          "display_name": "EDI Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3e20273a-b261-4cc3-b00d-cfd91bac1ad4",
+          "is_selected": true,
+          "display_name": "Receiver Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fff82f22-c600-407f-a730-7aacba160ac5",
+          "is_selected": true,
+          "display_name": "Response Data Element",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "204092d4-1e6a-4df5-a980-5c1ab8f00340",
+          "is_selected": true,
+          "display_name": "Response Time",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "321f818f-52d4-4037-a914-c7e162df31f2",
+          "is_selected": true,
+          "display_name": "Sender Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3416d9b3-015a-4808-9b14-99d1dec232e5",
+          "is_selected": true,
+          "display_name": "Shipper Time Zone",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbc8c259-abc6-46e1-8904-a6ab11000145",
+          "is_selected": true,
+          "display_name": "TDCC Version",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "361046a6-b326-40c9-8fe2-2fc0743296e6",
+          "is_selected": true,
+          "display_name": "Transmit Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "de1bed3e-c485-477f-b22a-582d0cc8c090",
+          "is_selected": true,
+          "display_name": "Transmit To Party",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "26ed46fe-2ee1-4584-a395-1cfd4c7b5afe",
+      "is_selected": true,
+      "display_name": "EDI Orders",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "40655399-0151-46fc-a54b-8f36be794013",
+          "is_selected": true,
+          "display_name": "Agent Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "898b2eec-37a8-4a94-94f7-45442e463072",
+          "is_selected": true,
+          "display_name": "Bill Amount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "767275f3-707b-4f48-9135-657d8e96fc62",
+          "is_selected": true,
+          "display_name": "Bill of Lading",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d023f1e8-73be-4047-a917-2732e8b3cae9",
+          "is_selected": true,
+          "display_name": "Bill-To Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ef0f6fab-acc2-4953-9e37-4152aa4be907",
+          "is_selected": true,
+          "display_name": "Billable Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "93dff44a-cacd-4880-81a8-8c39ad80040c",
+          "is_selected": true,
+          "display_name": "Collection Method Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "269379a8-a5b5-4cb8-9c08-6accc1cac96f",
+          "is_selected": true,
+          "display_name": "Commodity Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "643c88e1-ecba-40e4-9a8e-b35d8656ce32",
+          "is_selected": true,
+          "display_name": "Commodity Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aa16e2dd-8c1f-43e6-a822-83df9b43884c",
+          "is_selected": true,
+          "display_name": "Company Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6da58ed4-39b9-447b-b656-09c2b9a5c250",
+          "is_selected": true,
+          "display_name": "Consignee Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7ddedb7-753d-440b-8e8c-8f137bb6bac4",
+          "is_selected": true,
+          "display_name": "Consignee Phone Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa58916f-2409-4119-8a03-612c0a769b4e",
+          "is_selected": true,
+          "display_name": "Consignee Phone Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b7e8d361-e138-421c-8c2d-945ab9b211bf",
+          "is_selected": true,
+          "display_name": "Consignee Ship Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dc256941-1a74-461e-8f8c-7f18b3bc8091",
+          "is_selected": true,
+          "display_name": "Creation Initials",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fec3b90b-385e-4203-9436-898ff1d93daa",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "600ed7cd-8807-416a-88ba-37468b666a65",
+          "is_selected": true,
+          "display_name": "Customer Order Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5e4a04d4-43b0-474c-9c72-2a8de9cbc5c1",
+          "is_selected": true,
+          "display_name": "Customer Phone Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ee13812-438e-46dd-a006-b55a488022ad",
+          "is_selected": true,
+          "display_name": "Customer Phone Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "98bd7859-67df-4a5d-81d2-223a287e8b57",
+          "is_selected": true,
+          "display_name": "Delivery Appointment Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c116e20-d5f0-4d30-a744-130bb503fa8b",
+          "is_selected": true,
+          "display_name": "Delivery Appointment Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3afa6ca6-f788-44dc-b82c-560f6bb95057",
+          "is_selected": true,
+          "display_name": "Delivery Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dbfe69ff-0472-4583-bc24-ea6bf8cde326",
+          "is_selected": true,
+          "display_name": "Delivery Required",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35e1d1f8-6277-44d0-8cf8-a37bbbbdbfc6",
+          "is_selected": true,
+          "display_name": "Delivery Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1d65c1a5-0d9e-4acc-8b9d-041fb1c4b3f6",
+          "is_selected": true,
+          "display_name": "Destination Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0d40c889-8856-4a6d-a1c3-c47386a3da13",
+          "is_selected": true,
+          "display_name": "Destination City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9399e194-e954-4803-ab87-838e54ae98af",
+          "is_selected": true,
+          "display_name": "Destination City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b733a7ec-c8d6-4ac1-b5ed-9983a42c2849",
+          "is_selected": true,
+          "display_name": "Destination State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "10ab7cdd-b1fb-4919-9e53-6ea5a61d257a",
+          "is_selected": true,
+          "display_name": "Division Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "67476ec9-c6e2-4e10-a288-6452c8bb2536",
+          "is_selected": true,
+          "display_name": "Driver Load Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fdaaa163-9dbc-46b8-9aa1-7d00440b3988",
+          "is_selected": true,
+          "display_name": "Driver Unload Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "91a78f97-5fa2-47ce-976e-8bc19ab8c641",
+          "is_selected": true,
+          "display_name": "EDI Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "745a26a4-ae79-4411-8c61-ab51debe0089",
+          "is_selected": true,
+          "display_name": "Estimated Revenue",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0ad9e7ce-0e0f-4fba-8420-9c5417f6f262",
+          "is_selected": true,
+          "display_name": "has_hazardous_material",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1d5a9f7b-c056-4d1e-b286-8040a0a1bde1",
+          "is_selected": true,
+          "display_name": "Just-in-Time Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8c42e2ba-0a88-436c-b20c-6b3816c10883",
+          "is_selected": true,
+          "display_name": "Load Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a48de4d-4e0c-4e8b-87f5-1fdad280211d",
+          "is_selected": true,
+          "display_name": "Load Volume",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bc388d39-ddb8-427f-83e7-771969ac46f9",
+          "is_selected": true,
+          "display_name": "Load Weight",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c813e0ce-34be-4eff-8eed-418c37c604e1",
+          "is_selected": true,
+          "display_name": "Load-At Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "483bddb7-fa3c-4e4b-b32b-20dc01e7222c",
+          "is_selected": true,
+          "display_name": "Manifest Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a744c09-e305-4706-9945-b8000343d26b",
+          "is_selected": true,
+          "display_name": "Order Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1ad36a47-6cba-4ca2-b6ee-461652a4d45f",
+          "is_selected": true,
+          "display_name": "Order Temperature High",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3d6222ee-0645-4284-8f51-57ed1789c23c",
+          "is_selected": true,
+          "display_name": "Order Temperature Low",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb1d1bda-a5eb-45aa-b8ea-8355ed379eda",
+          "is_selected": true,
+          "display_name": "Order Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e0763c2c-6586-4ea7-b235-1535c5666217",
+          "is_selected": true,
+          "display_name": "Origin Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7c48f2c3-54d3-44b7-80ab-5633e813c56c",
+          "is_selected": true,
+          "display_name": "Origin City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3f4d598b-1555-4741-9c51-9a383d82bd55",
+          "is_selected": true,
+          "display_name": "Origin City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "71fa56ae-c571-4f37-885e-f9959fba9d0b",
+          "is_selected": true,
+          "display_name": "Origin State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f3689750-965d-4000-b271-d4c5e19dd8e2",
+          "is_selected": true,
+          "display_name": "Pallet Count",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "823ad826-d3eb-4317-9aed-c4af54102712",
+          "is_selected": true,
+          "display_name": "Pickup Appointment Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a14eac8a-024f-45ee-b9f6-61deddbe4ccf",
+          "is_selected": true,
+          "display_name": "Pickup Appointment Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a19505d1-e343-44ff-ae10-f96e63840efd",
+          "is_selected": true,
+          "display_name": "Pickup Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9b4aca3c-8b66-4c1a-8bdc-82b4235d1f9a",
+          "is_selected": true,
+          "display_name": "Pickup Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fd035582-a779-43e6-90b9-97dc9618ef50",
+          "is_selected": true,
+          "display_name": "Pickup Required",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "031eaf5d-8634-4b72-802a-83fbbe1cdfab",
+          "is_selected": true,
+          "display_name": "Pickup Ship Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41c462db-8d1a-4ef3-8673-68613b45eaa9",
+          "is_selected": true,
+          "display_name": "Pickup Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2ecf416d-81a5-4bb3-8246-9b0c03537138",
+          "is_selected": true,
+          "display_name": "Piece Count",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "949c607c-e8db-4630-86cd-abd10aa18b32",
+          "is_selected": true,
+          "display_name": "Purchase Order",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b26b71e5-61d0-49ff-bf90-82e2d691ca8e",
+          "is_selected": true,
+          "display_name": "Required Pallet Count",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d136ad6b-4728-41b4-8b50-845f7baf4ba0",
+          "is_selected": true,
+          "display_name": "Response Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6e899b88-ffe1-48f5-a416-d71e9c40129a",
+          "is_selected": true,
+          "display_name": "Seal Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "34730eb1-0e9f-4594-ad85-d1253e7d28fd",
+          "is_selected": true,
+          "display_name": "Ship Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d69b3cc2-549a-4896-80ad-5c8d2f749dfe",
+          "is_selected": true,
+          "display_name": "Ship Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2258ed1e-8774-4473-9111-675b2b0d4c9c",
+          "is_selected": true,
+          "display_name": "Status Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4f868cb5-2e6a-4cbc-a1e9-57d37edc5a47",
+          "is_selected": true,
+          "display_name": "Stop Count",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "daf63d87-6229-455b-9c59-bf3f1ea36249",
+          "is_selected": true,
+          "display_name": "Tender Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fe4aaf6f-f5ed-459f-8d75-464d050faccd",
+          "is_selected": true,
+          "display_name": "Tender DateTime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c2626fe-c90e-43ed-9dd0-e6474eaba019",
+          "is_selected": true,
+          "display_name": "Tender Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "276a4ac1-be46-4f8c-a50c-4cec9bb4fb82",
+          "is_selected": true,
+          "display_name": "Total Amount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2f44180c-1e8c-4df3-9805-52577ab35c7e",
+          "is_selected": true,
+          "display_name": "Trailer Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "464e1023-06f8-4a9c-bdd5-b3033343e7a5",
+          "is_selected": true,
+          "display_name": "User Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "08783ba3-2d58-4a5b-942c-76a007ec978d",
+      "is_selected": true,
+      "display_name": "EDI Processing History",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "3cfe81ec-2ae6-49d8-b467-c7a70e7f82f8",
+          "is_selected": true,
+          "display_name": "Action",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5d744847-e491-4e69-bd41-afd3bdeeacbc",
+          "is_selected": true,
+          "display_name": "Action Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a9f51b54-d7da-497c-83ff-3824e23363d4",
+          "is_selected": true,
+          "display_name": "Action DateTime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "485ac2be-f594-449b-8b15-c45ac24efb93",
+          "is_selected": true,
+          "display_name": "Action Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e8b7f186-8dfe-4021-b7b5-647e863c60b4",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea301e08-7a5b-4c71-9d9e-3fe8dc90d3e3",
+          "is_selected": true,
+          "display_name": "Customer Ship Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "46692e19-f935-46a5-9412-9d3083d00090",
+          "is_selected": true,
+          "display_name": "Event Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f9e741cd-c881-4d26-87b0-d13054376924",
+          "is_selected": true,
+          "display_name": "Event Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ab6a388e-2820-4e72-ae80-def676033778",
+          "is_selected": true,
+          "display_name": "Event DateTime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1ab7853-108b-4cc8-aaeb-e7efb013c8ec",
+          "is_selected": true,
+          "display_name": "Event Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e2607ec-f511-41e0-aba8-1fcbf7efe26b",
+          "is_selected": true,
+          "display_name": "Event Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "048c11c0-22dd-4cb6-bd61-31ce1a77eef3",
+          "is_selected": true,
+          "display_name": "Pillsbury Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c2e7802c-f276-472a-989d-7f46f9f43581",
+          "is_selected": true,
+          "display_name": "Sequence Number",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "95edc7c9-dc45-4425-8710-1d87a4a340e9",
+          "is_selected": true,
+          "display_name": "STV Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e419a29-f849-4da5-b88d-95a9ec331e7a",
+          "is_selected": true,
+          "display_name": "Transmit Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81d93624-78bb-4b15-bc50-1759b2f66717",
+          "is_selected": true,
+          "display_name": "Transmit Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a6f300fa-28ca-4ad2-a369-32e9b458e36f",
+      "is_selected": true,
+      "display_name": "EDI Reject Details",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "28507d33-5da4-4f57-9435-b4546586c8a1",
+          "is_selected": true,
+          "display_name": "Bill of Lading",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "56e2a3dd-7f10-4cb0-8cc3-8817d79dd8ba",
+          "is_selected": true,
+          "display_name": "Billable Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "628a2bcd-c2ab-4286-b789-11cc91d1d04d",
+          "is_selected": true,
+          "display_name": "Customer Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8aacaf51-ff32-467f-8183-b14616976a85",
+          "is_selected": true,
+          "display_name": "Delivery Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d287094b-d135-4dff-8cab-e6aec122be00",
+          "is_selected": true,
+          "display_name": "Destination",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b59407fd-e1ba-4f29-b2fa-a37568f0f7aa",
+          "is_selected": true,
+          "display_name": "Load Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "37ece833-08ed-4f1d-aaab-e9895ed25cd8",
+          "is_selected": true,
+          "display_name": "Origin",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4478a8bd-8c3e-4629-b4ae-2721b88b8bbd",
+          "is_selected": true,
+          "display_name": "Pickup Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ac483783-29fd-4ce9-b343-57f624cfffb5",
+          "is_selected": true,
+          "display_name": "Reject Comment",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "72aab2b5-9224-4d60-bb3c-d109dee8191f",
+          "is_selected": true,
+          "display_name": "Reject Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e9e48a6-cf48-4c62-b863-4cf4e764f07a",
+          "is_selected": true,
+          "display_name": "Temperature High",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "80e9fefb-70de-46da-af90-04ab96b4ab10",
+          "is_selected": true,
+          "display_name": "Temperature Low",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1de07908-bd95-4a7e-881a-7a9124d6dbc3",
+          "is_selected": true,
+          "display_name": "Tender Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "39af95c6-3424-4e48-9627-8af00d4205b1",
+          "is_selected": true,
+          "display_name": "Tender Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "835a651f-16cb-4f42-9d31-ad2b43589067",
+          "is_selected": true,
+          "display_name": "User Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "be614a83-7d0d-4218-9f7d-f1bdc03c0c54",
+      "is_selected": true,
+      "display_name": "Load Types",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "778add25-ee20-4059-9ad2-785ce0b36f47",
+          "is_selected": true,
+          "display_name": "Load Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "7b90de68-9479-478e-81e9-d9215c24869b",
+      "is_selected": true,
+      "display_name": "Load-At Customers",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "bb693141-749d-414e-b006-172500f8c950",
+          "is_selected": true,
+          "display_name": "City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "12a096f6-7aa5-4c51-ab7d-b1aadaa49802",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "558ec3d6-28f5-4283-a4e6-e206e8e1e283",
+          "is_selected": true,
+          "display_name": "Customer Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "becb415a-e0dc-4906-83df-68fd939da303",
+          "is_selected": true,
+          "display_name": "State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "27d0dac0-b2f9-4f2b-b3ce-a0a3b747be22",
+      "is_selected": true,
+      "display_name": "Loads",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "44e869eb-d308-4ec3-a78d-a833f830a345",
+          "is_selected": true,
+          "display_name": "Business Class",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c66281dc-f1a8-404d-b6f5-c1d3c8971bd3",
+          "is_selected": true,
+          "display_name": "Business Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "198363d3-5272-4055-b6a3-26af75d2b672",
+          "is_selected": true,
+          "display_name": "Business Unit Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "243c431c-d3c0-4f62-8d36-471ec90e0eee",
+          "is_selected": true,
+          "display_name": "Deadhead Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c892bac1-a7f3-453e-92b9-3c85f9f7f09b",
+          "is_selected": true,
+          "display_name": "Destination Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5786db62-0386-4968-b505-e1cc589f1225",
+          "is_selected": true,
+          "display_name": "Dispatch Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c077a734-8a88-4197-a8df-ea8ef3cecc54",
+          "is_selected": true,
+          "display_name": "Dispatch End Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88ace3db-8d3d-4aed-a8dd-c375d93765c0",
+          "is_selected": true,
+          "display_name": "Dispatch End Time",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21e5057b-d9bb-4b12-a2a2-aa2722b4718f",
+          "is_selected": true,
+          "display_name": "Dispatch Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "01c8b852-d94a-43e6-9057-7b0e3fe7f2f3",
+          "is_selected": true,
+          "display_name": "Dispatch Time",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3b723a25-d499-46af-be62-238bf9fdd517",
+          "is_selected": true,
+          "display_name": "Driver DM Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7b87260c-580b-4b16-b6dd-9aa42e5d02dc",
+          "is_selected": true,
+          "display_name": "Driver DMOL Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e22d7d55-6291-49bc-b063-1c170e363631",
+          "is_selected": true,
+          "display_name": "Hub End Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "68535cb1-34bb-4fdc-a571-d117e3b4b69b",
+          "is_selected": true,
+          "display_name": "Hub Start Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4660fe2-7f20-449e-bcdf-566a95bb7b2a",
+          "is_selected": true,
+          "display_name": "Initials",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "942ee053-6a30-400d-acee-a365b952a4b3",
+          "is_selected": true,
+          "display_name": "Is Deleted",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16a0f606-fc4c-4987-9c65-78a627653520",
+          "is_selected": true,
+          "display_name": "Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7fe06a30-8f81-4ff0-a80a-6d25d3482a79",
+          "is_selected": true,
+          "display_name": "Load Status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1672e9dc-7153-457c-a482-087f0d048301",
+          "is_selected": true,
+          "display_name": "LoadDispatch",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ddfbcb6-00a8-4cbf-88a7-e396ef6b81ac",
+          "is_selected": true,
+          "display_name": "Loaded Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8bb5121b-edd0-45ce-b0f7-718199c047ad",
+          "is_selected": true,
+          "display_name": "Mile Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "786bd5d5-b8a3-4fd8-85fa-8af6bc9e7106",
+          "is_selected": true,
+          "display_name": "Miles Indicator",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a1312669-6b57-49e7-a4a2-5988d266ae69",
+          "is_selected": true,
+          "display_name": "Multiple Trailers on Dispatch",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8e1f078-e3b4-4452-8404-56fb831002a0",
+          "is_selected": true,
+          "display_name": "Origin Area Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1df7737-aacb-4d9c-986e-dcd4ad6df64d",
+          "is_selected": true,
+          "display_name": "Payroll Approval Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e576208f-8746-4675-962c-233c8e40f178",
+          "is_selected": true,
+          "display_name": "Route Line Codes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66f2f30c-cd5f-4583-966e-0481fe5a1683",
+          "is_selected": true,
+          "display_name": "Route Line Extension",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b784b80-dc70-432e-9041-de856c227a59",
+          "is_selected": true,
+          "display_name": "Route Status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7248ab58-17b9-42a1-a037-5b974616959d",
+          "is_selected": true,
+          "display_name": "Seat 1 Driver Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "13558c51-bbe8-4d7d-a44e-da63ac508c9a",
+          "is_selected": true,
+          "display_name": "Seat 2 Driver Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81535cd3-968b-42ef-8467-1b9a6ede32b3",
+          "is_selected": true,
+          "display_name": "Settlement Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d933afe3-e4b3-4b63-a7b2-2e1e3d2ba4c5",
+          "is_selected": true,
+          "display_name": "Team Status Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "93ad4088-401b-45ed-ac21-f47153723b52",
+          "is_selected": true,
+          "display_name": "Total Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a25f66fc-1e8d-488c-8be5-72c7b186a108",
+          "is_selected": true,
+          "display_name": "Trailer Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e3ae710e-ac9d-400c-9ec1-8e4ec1a2be76",
+          "is_selected": true,
+          "display_name": "Trainer Team Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7b5142b1-169c-43f8-b2db-3597d90183d9",
+          "is_selected": true,
+          "display_name": "Trip Jacket Received Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "699941fd-3444-441a-a275-27b75ab6a041",
+          "is_selected": true,
+          "display_name": "Trip Jacket Received Flag",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d7496395-676c-4f7c-8e02-96dfb53814b1",
+          "is_selected": true,
+          "display_name": "Truck DM Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fb7ca34c-828c-4936-8db2-8439ca3b65d7",
+          "is_selected": true,
+          "display_name": "Truck DMOL Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "56bcc421-bb1c-4737-8f01-fb9c8de2a941",
+          "is_selected": true,
+          "display_name": "Truck Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "adfb6a43-bbfd-411a-a65b-3a84ff7d25c9",
+          "is_selected": true,
+          "display_name": "Unit Division Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "9f7fe624-5aae-458d-a686-e86298c7d2d9",
+      "is_selected": true,
+      "display_name": "Orders",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "cfc6a859-2125-4f2b-8ec1-b8d7d02927dd",
+          "is_selected": true,
+          "display_name": "Bill-To Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c37e7526-c6c4-4823-a07d-64f1cfe2ca3b",
+          "is_selected": true,
+          "display_name": "Billable Miles",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "252abb3e-e630-41b3-96e2-11d0712d365c",
+          "is_selected": true,
+          "display_name": "Commodity Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0c0f45eb-5167-458f-b368-9802779ec03d",
+          "is_selected": true,
+          "display_name": "Commodity Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0730123e-c519-47ee-960e-dc090afe8cc5",
+          "is_selected": true,
+          "display_name": "Consignee Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "136c496d-63b6-4829-9d1b-7a2283657bee",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ee0ce19-eac0-411e-88df-10e62cf32766",
+          "is_selected": true,
+          "display_name": "Destination City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "67776b38-8f56-411b-904f-1ec40e29d6ca",
+          "is_selected": true,
+          "display_name": "Destination City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fc178eae-380f-4219-98e9-a9c274aff8bc",
+          "is_selected": true,
+          "display_name": "Destination State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "34579617-2f1b-497f-81dd-de1b99f4327a",
+          "is_selected": true,
+          "display_name": "Division Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "64648c79-a73d-425d-9b7f-53949ebcc716",
+          "is_selected": true,
+          "display_name": "Estimated Revenue",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e30c3998-915f-41a7-ae71-bc9e78a2e868",
+          "is_selected": true,
+          "display_name": "Lane",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5f1493bb-2571-4363-b4a9-2d46fcab9d50",
+          "is_selected": true,
+          "display_name": "Lane Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7b479f52-7329-48a7-8a45-e45842a56db1",
+          "is_selected": true,
+          "display_name": "Late Delivery Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bc2c0c85-359c-483f-8a93-ad5e0f5307f9",
+          "is_selected": true,
+          "display_name": "Late Delivery Time",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "32e780bc-8f84-4aef-a3ca-2ae00e5b9b1e",
+          "is_selected": true,
+          "display_name": "Late Pickup Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "efa03e52-d091-475f-bb22-87f3ab1faa4e",
+          "is_selected": true,
+          "display_name": "Late Pickup Time",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "24bd4456-6a0e-4ef2-8b2c-506f7ba051a3",
+          "is_selected": true,
+          "display_name": "Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f5c5d5a-e09b-437b-ad37-ccf6330ceab4",
+          "is_selected": true,
+          "display_name": "Load-At Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "83f3e884-e09b-4cd1-b0f5-e52a94aa9135",
+          "is_selected": true,
+          "display_name": "Origin City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0f517413-5e46-49e3-a52a-24e867566612",
+          "is_selected": true,
+          "display_name": "Origin City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f65c1631-6ae9-457b-ad67-5774f1ed7931",
+          "is_selected": true,
+          "display_name": "Origin State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "677b9928-35e9-44a3-8b83-0d08f299db51",
+          "is_selected": true,
+          "display_name": "Ship Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3facd336-360a-43b7-b8b4-cb2dd49a9e91",
+          "is_selected": true,
+          "display_name": "Ship Time",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c302769-7d38-46a7-9616-95ca3bc3b38c",
+          "is_selected": true,
+          "display_name": "Status Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a848553d-f644-4f88-9236-5620de162ca1",
+      "is_selected": true,
+      "display_name": "Report Options",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "eed1772c-a3b4-465e-82d5-98708f9257ef",
+          "is_selected": true,
+          "display_name": "Option Toggle",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b8b8622e-46e2-4aa5-988b-b67653a80726",
+          "is_selected": true,
+          "display_name": "Selected Option Toggle",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "59bdc98f-edca-4edb-b489-75082b35808b",
+      "is_selected": true,
+      "display_name": "Service Exception Types",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "8b7618bd-b277-4a45-8753-b92e1f1da3f7",
+          "is_selected": true,
+          "display_name": "Exception Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2412f745-2e34-41c2-b4ca-fcafc94f2ef5",
+          "is_selected": true,
+          "display_name": "Exception Code and Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f3689702-ce76-493f-b2ed-2985c032527d",
+          "is_selected": true,
+          "display_name": "Exception Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ace267d4-82d8-427f-b857-ac1e065f5c52",
+      "is_selected": true,
+      "display_name": "Service Exceptions",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "399b6d7a-ee21-45df-9356-596227939b38",
+          "is_selected": true,
+          "display_name": "Appointment Change Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50fb9d47-d2e7-48ad-9172-8c0c2183ead2",
+          "is_selected": true,
+          "display_name": "Appointment Change Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "064497eb-f24b-42b0-922b-5a5fbd9ca5bd",
+          "is_selected": true,
+          "display_name": "Created Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c344e99b-0239-4c45-b401-3e8f663d57e0",
+          "is_selected": true,
+          "display_name": "Created Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2e34c6ed-8d16-4aab-b853-7c5ec714d751",
+          "is_selected": true,
+          "display_name": "Exception Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8ffda295-09c5-4823-9b9f-9df4e9136f3f",
+          "is_selected": true,
+          "display_name": "Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f94192da-db90-4ec3-9d5b-9c554bd23dbc",
+          "is_selected": true,
+          "display_name": "Load Stop",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "595283cf-e149-4a3a-8ee2-eddc9511dd91",
+          "is_selected": true,
+          "display_name": "Reason Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "011a0f07-8af4-4b5f-a409-ca7c1ee68628",
+          "is_selected": true,
+          "display_name": "Stop Number",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3ba8d66c-c446-4922-86e8-7a80fc20ffbc",
+      "is_selected": true,
+      "display_name": "Stops",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "9e9846f3-3bd0-4bc6-957c-fde2ed477de4",
+          "is_selected": true,
+          "display_name": "Actual Arrival DateTime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db98634c-a38a-4426-92de-9fefea1a724d",
+          "is_selected": true,
+          "display_name": "Appointment Late Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50213b92-2e29-4303-8d70-1e7ddc7b688e",
+          "is_selected": true,
+          "display_name": "Appointment Required",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "19818e11-1b55-45f0-9636-1201509e0275",
+          "is_selected": true,
+          "display_name": "Arrival Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b24c937-c72f-447e-9cfc-24c4535ba8c5",
+          "is_selected": true,
+          "display_name": "Arrival Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aadbd5f9-ab6d-4bb3-9ec3-37afed3d2ece",
+          "is_selected": true,
+          "display_name": "Customer City Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b5372ce0-6363-4a50-b601-ad9d2e345474",
+          "is_selected": true,
+          "display_name": "Customer Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9f2ee1ff-18a0-42c2-bd39-ba180ea2106d",
+          "is_selected": true,
+          "display_name": "Customer Contact Info",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a513fcd6-5f93-42fd-a429-548ebbace6e1",
+          "is_selected": true,
+          "display_name": "Customer State",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2ccf2bf7-b27b-4a7a-9de5-c216a323f542",
+          "is_selected": true,
+          "display_name": "Division Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d39db66b-d7c1-484e-8bfb-6d41525877f1",
+          "is_selected": true,
+          "display_name": "Has Late Service Exception",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f273d390-fda6-4e8e-a881-b71eb320a2eb",
+          "is_selected": true,
+          "display_name": "Late Appointment Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b1173506-05b5-4242-b2c5-38b39d027dce",
+          "is_selected": true,
+          "display_name": "Late Appointment Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c316194b-51ba-4613-878f-70b3ff71410c",
+          "is_selected": true,
+          "display_name": "Late Delivery Count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b3c486ee-b221-46cd-ab41-c1a85c599691",
+          "is_selected": true,
+          "display_name": "Late Delivery Count Original",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6bef49ac-2512-4167-9c6d-bf6058b5c5ff",
+          "is_selected": true,
+          "display_name": "Late Delivery Count Original Day",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "917bb129-e562-4320-aaad-5392a2c7ce16",
+          "is_selected": true,
+          "display_name": "Late Pickup Count",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a2974b6f-9a1b-4b21-ad8c-937ce49dfe00",
+          "is_selected": true,
+          "display_name": "Late Pickup Count Original",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81c51ffb-22b2-4020-9f57-28cf792bbc82",
+          "is_selected": true,
+          "display_name": "Late Pickup Count Original Day",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a749b9c8-de1a-4d78-bb27-773ef0550d18",
+          "is_selected": true,
+          "display_name": "Late Service Exception Reason Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "794483c0-92cb-47c6-bd2c-02b880530c66",
+          "is_selected": true,
+          "display_name": "Load Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d89e8862-fdca-4ded-9014-137c60b70d12",
+          "is_selected": true,
+          "display_name": "Load Stop",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4e345623-9ae6-4682-9d9a-18c1a216bfeb",
+          "is_selected": true,
+          "display_name": "Load/Unload Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fe2b66f2-e23f-489e-a438-fa9847d2dadc",
+          "is_selected": true,
+          "display_name": "Load/Unload Time",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2151a9b3-094e-4bf4-ac28-e3176788f951",
+          "is_selected": true,
+          "display_name": "Load/Unload Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21a1bfbe-3388-40c6-84f8-af75dc0e52af",
+          "is_selected": true,
+          "display_name": "LoadDispatch",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "da8a6e7e-8b49-44ba-824d-0f9d73b5b01d",
+          "is_selected": true,
+          "display_name": "Original Appointment Late DateTime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ac9637b6-95b9-45ad-a415-b59a3dd226ce",
+          "is_selected": true,
+          "display_name": "Stop Number",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8cc552ac-fdcf-441a-ae1f-4eb6adbb635a",
+          "is_selected": true,
+          "display_name": "Stop Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "930f7063-5c63-47dd-9219-ca03eba1ac7f",
+          "is_selected": true,
+          "display_name": "stopoff_dispatch_new",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d5011e6-7bad-4c30-b0fc-f454b91e2097",
+          "is_selected": true,
+          "display_name": "Trailer Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7d8e7e00-f14f-4a34-9cf7-4a7bd93fb527",
+          "is_selected": true,
+          "display_name": "Truck Number",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

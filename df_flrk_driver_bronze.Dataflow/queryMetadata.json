@@ -1,0 +1,35 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "flrk_driver_bronze": {
+      "queryId": "97e145a7-64fa-45e5-8f4f-43898940496e",
+      "queryName": "flrk_driver_bronze"
+    },
+    "flrk_driver_bronze_DataDestination": {
+      "queryId": "ce441e12-d3ec-450c-97ed-948882cee99c",
+      "queryName": "flrk_driver_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"63ca6c12-afa9-4757-ab16-6a24d7056427\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

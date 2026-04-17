@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_plsc_plpmiles"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f206f16a-db88-a053-4b41-3ca8ed674633"
+  }
+}

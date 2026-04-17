@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_service_exception_codes_edi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ca4db03-b89d-a0e1-4d90-3a93c5ab3243"
+  }
+}

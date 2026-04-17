@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MirroredDatabase",
+    "displayName": "TenStreetSqlServer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "66031731-f476-b709-4861-7f9bba2f786a"
+  }
+}

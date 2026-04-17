@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_driver_bronze"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "275fd26c-793c-a31b-48da-e3e62395f342"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "VW_INCR_TLB_BILLING": {
+      "queryId": "0bedd017-324d-4a3a-b87c-53f8bec36a34",
+      "queryName": "VW_INCR_TLB_BILLING",
+      "loadEnabled": false
+    },
+    "VW_INCR_TLB_BILLING_DataDestination": {
+      "queryId": "e540402a-5c9d-4a0d-aa82-09d82e62e347",
+      "queryName": "VW_INCR_TLB_BILLING_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "S10A3543.STEVENSTRANSPORT.COM:447;S10A3543",
+      "kind": "DB2",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"fe8d619f-d699-4dfd-a770-a1fcc9a8331a\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    }
+  ]
+}

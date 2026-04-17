@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "VW_LOG_DEL_BILL_ORD"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "92a8aecc-a354-a321-42fc-a86560f3624b"
+  }
+}

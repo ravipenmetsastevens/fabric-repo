@@ -1,0 +1,27 @@
+CREATE TABLE [silver].[plsc_backup_vehicle_pings] (
+
+	[vehicle_id] varchar(20) NOT NULL, 
+	[gps_epoch_raw] varchar(24) NULL, 
+	[gps_timestamp_utc] varchar(40) NULL, 
+	[arrv_epoch_raw] varchar(24) NULL, 
+	[arrv_timestamp_utc] varchar(40) NULL, 
+	[msg_type_code] varchar(6) NULL, 
+	[latitude_raw] varchar(24) NULL, 
+	[longitude_raw] varchar(24) NULL, 
+	[trip_distance_raw] varchar(24) NULL, 
+	[heading_deg_raw] varchar(24) NULL, 
+	[speed_mph_raw] varchar(24) NULL, 
+	[odometer_miles_raw] varchar(24) NULL, 
+	[gm_hours_raw] varchar(24) NULL, 
+	[bt_input_raw] varchar(24) NULL, 
+	[next_stop_lat_raw] varchar(24) NULL, 
+	[next_stop_lon_raw] varchar(24) NULL, 
+	[last_stop_lat_raw] varchar(24) NULL, 
+	[last_stop_lon_raw] varchar(24) NULL, 
+	[position_source] varchar(10) NULL, 
+	[sio_type] varchar(6) NULL, 
+	[ignition_status_raw] varchar(6) NULL, 
+	[mobile_activity_raw] varchar(24) NULL, 
+	[mobile_machine_code_raw] varchar(24) NULL, 
+	[protocol_version_raw] varchar(24) NULL
+);

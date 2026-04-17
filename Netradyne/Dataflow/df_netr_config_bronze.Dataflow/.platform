@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_netr_config_bronze"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bcb9db25-0d6c-8557-4417-9cc137c19b7c"
+  }
+}

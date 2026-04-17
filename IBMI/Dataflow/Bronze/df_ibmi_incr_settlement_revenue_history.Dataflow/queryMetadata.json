@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ibmi_incr_settlement_revenue_history",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "VW_SETTLEMENT_REVENUE_HISTORY": {
+      "queryId": "1509ef9d-f9e1-4f65-829b-153e2d30f6a0",
+      "queryName": "VW_SETTLEMENT_REVENUE_HISTORY",
+      "loadEnabled": false
+    },
+    "VW_SETTLEMENT_REVENUE_HISTORY_DataDestination": {
+      "queryId": "e4f4ca57-94c6-4536-aafc-4581b06abe7f",
+      "queryName": "VW_SETTLEMENT_REVENUE_HISTORY_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "S10A3543.STEVENSTRANSPORT.COM:447;S10A3543",
+      "kind": "DB2",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"fe8d619f-d699-4dfd-a770-a1fcc9a8331a\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "data_central_wh",
+    "description": "First level Fabric warehouse intended for silver data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "397ba86f-4949-b791-4e7e-391ef8578495"
+  }
+}

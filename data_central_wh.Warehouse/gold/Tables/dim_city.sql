@@ -1,0 +1,25 @@
+CREATE TABLE [gold].[dim_city] (
+
+	[city_id_pk] int NULL, 
+	[city_code] varchar(8000) NULL, 
+	[city_state] varchar(8000) NULL, 
+	[city_short_code] varchar(8000) NULL, 
+	[city_country] varchar(8000) NULL, 
+	[county_code] decimal(3,0) NULL, 
+	[city_zip] varchar(8000) NULL, 
+	[city_zip_suffix] varchar(8000) NULL, 
+	[city_area_code] varchar(8000) NULL, 
+	[city_area_name] varchar(8000) NULL, 
+	[city_area_short_name] varchar(8000) NULL, 
+	[city_area_zone_code] varchar(8000) NULL, 
+	[city_area_region_code] varchar(8000) NULL, 
+	[city_timezone] varchar(8000) NULL, 
+	[direction_from_near_city] varchar(8000) NULL, 
+	[distance_from_near_city] decimal(3,0) NULL, 
+	[is_city_population_est] varchar(8000) NULL, 
+	[city_population] decimal(7,0) NULL, 
+	[city_name] varchar(8000) NULL, 
+	[city_short_name] varchar(8000) NULL, 
+	[city_latitude] decimal(10,7) NULL, 
+	[city_longitude] decimal(10,7) NULL
+);

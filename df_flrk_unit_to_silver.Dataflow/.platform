@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_unit_to_silver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "320cb279-b6e7-853e-458f-863bce6d8708"
+  }
+}

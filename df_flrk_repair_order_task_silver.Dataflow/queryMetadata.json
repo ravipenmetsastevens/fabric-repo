@@ -1,0 +1,30 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "flrk_repair_order_bronze": {
+      "queryId": "4b4f551d-adb9-4689-b99d-86d06773d895",
+      "queryName": "flrk_repair_order_bronze"
+    },
+    "flrk_repair_order_bronze_DataDestination": {
+      "queryId": "3e284182-fb38-4bf5-8b3a-8b236bc9f637",
+      "queryName": "flrk_repair_order_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"72b7636d-1529-496f-9c9b-3f78ae2b368a\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

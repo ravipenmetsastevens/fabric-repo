@@ -1,0 +1,30 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "silver flrk_unit": {
+      "queryId": "42472266-c6eb-4381-8017-1c39cad8cbc1",
+      "queryName": "silver flrk_unit"
+    },
+    "silver flrk_unit_DataDestination": {
+      "queryId": "38ac6dce-e136-4c32-bcbf-e28856c05513",
+      "queryName": "silver flrk_unit_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"63ca6c12-afa9-4757-ab16-6a24d7056427\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

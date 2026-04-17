@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_fuel_surcharge_rates"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b56e052-04a1-bd05-484b-cab2ddc6f4b4"
+  }
+}

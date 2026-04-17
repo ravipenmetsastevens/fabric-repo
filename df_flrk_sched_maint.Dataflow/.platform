@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_sched_maint"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "21304283-deeb-ae51-4b86-c046ad0cb3a8"
+  }
+}

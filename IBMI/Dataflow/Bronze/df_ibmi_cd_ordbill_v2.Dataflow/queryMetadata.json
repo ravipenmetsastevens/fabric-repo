@@ -1,0 +1,14 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_ibmi_cd_ordbill_v2",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "vW_CD_ORDBILL": {
+      "queryId": "8feb65ec-168b-44ea-90a8-ba82b773085b",
+      "queryName": "VW_CD_ORDBILL"
+    }
+  },
+  "allowNativeQueries": false
+}

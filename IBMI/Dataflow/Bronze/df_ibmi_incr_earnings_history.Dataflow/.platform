@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_incr_earnings_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ea2b502-4c16-a1d0-4985-84f1f7cd8d30"
+  }
+}

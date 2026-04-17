@@ -1,0 +1,16 @@
+section Section1;
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "flrk_scheduled_maint_bronze_DataDestination", IsNewTarget = false], Settings = [Kind = "Manual", AllowCreation = false, ColumnSettings = [Mappings = {[SourceColumnName = "sched_maint_id", DestinationColumnName = "sched_maint_id"], [SourceColumnName = "sm_group", DestinationColumnName = "sm_group"], [SourceColumnName = "sm_vin", DestinationColumnName = "sm_vin"], [SourceColumnName = "sm_unit_number", DestinationColumnName = "sm_unit_number"], [SourceColumnName = "sm_start_date", DestinationColumnName = "sm_start_date"], [SourceColumnName = "sm_start_engine_hours", DestinationColumnName = "sm_start_engine_hours"], [SourceColumnName = "sm_is_recurring", DestinationColumnName = "sm_is_recurring"], [SourceColumnName = "scheduled_days", DestinationColumnName = "scheduled_days"], [SourceColumnName = "scheduled_engine_hours", DestinationColumnName = "scheduled_engine_hours"], [SourceColumnName = "sm_system_component_code", DestinationColumnName = "sm_system_component_code"], [SourceColumnName = "sm_tag", DestinationColumnName = "sm_tag"], [SourceColumnName = "sm_notes", DestinationColumnName = "sm_notes"], [SourceColumnName = "sm_became_due_datetime", DestinationColumnName = "sm_became_due_datetime"], [SourceColumnName = "sm_ro_number", DestinationColumnName = "sm_ro_number"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
+shared flrk_scheduled_maint_bronze = let
+  Source = Lakehouse.Contents(null){[workspaceId = "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"]}[Data]{[lakehouseId = "f9a73da1-08e4-4f3d-a67f-74623bfde721"]}[Data],
+  #"Navigation 1" = Source{[Id = "flrk_scheduled_maint_bronze", ItemKind = "Table"]}[Data],
+  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"id", Int64.Type}, {"start_date", type date}, {"start_miles", Int64.Type}, {"start_engine_hours", Int64.Type}, {"recurring", type logical}, {"scheduled_days", Int64.Type}, {"scheduled_miles", Int64.Type}, {"scheduled_engine_hours", Int64.Type}, {"became_due", type datetime}, {"ro_number", Int64.Type}}),
+  #"Renamed columns" = Table.RenameColumns(#"Changed column type", {{"id", "sched_maint_id"}, {"group", "sm_group"}, {"vin", "sm_vin"}, {"unit_number", "sm_unit_number"}, {"start_date", "sm_start_date"}, {"start_miles", "sm_start_miles"}, {"start_engine_hours", "sm_start_engine_hours"}, {"recurring", "sm_is_recurring"}, {"scheduled_days", "scheduled_days"}, {"scheduled_miles", "scheduled_miles"}, {"system_component_code", "sm_system_component_code"}, {"tag", "sm_tag"}, {"notes", "sm_notes"}, {"became_due", "sm_became_due_datetime"}, {"ro_number", "sm_ro_number"}})
+in
+  #"Renamed columns";
+shared flrk_scheduled_maint_bronze_DataDestination = let
+  Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
+  Navigation_1 = Pattern{[workspaceId = "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"]}[Data],
+  Navigation_2 = Navigation_1{[warehouseId = "f8578495-391e-4e7e-b791-4949397ba86f"]}[Data],
+  TableNavigation = Navigation_2{[Schema = "silver", Item = "flrk_scheduled_maint"]}[Data]
+in
+  TableNavigation;

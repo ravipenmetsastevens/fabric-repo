@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_bill_ord_change_log"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b1e11ea9-05f8-9634-48de-e8c293ea4108"
+  }
+}

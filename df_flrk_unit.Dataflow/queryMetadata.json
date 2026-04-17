@@ -1,0 +1,31 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "GetUnits API": {
+      "queryId": "982ed0b1-e6eb-4ed8-8a57-b6816e4b9fb6",
+      "queryName": "GetUnits API",
+      "loadEnabled": false
+    },
+    "GetUnits API_DataDestination": {
+      "queryId": "7d0c2c29-aa2c-44e4-9800-e4cc20a259cd",
+      "queryName": "GetUnits API_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://www.fleetrock.com/API/GetUnits?username=paragon&token=c70314d6-e0f4-44cc-810a-1f39476023ed",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"d4470554-54e5-44c6-95e2-8af77caf15e1\",\"DatasourceId\":\"3bfb0225-845b-4931-8b78-63ae4cdd2b1d\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

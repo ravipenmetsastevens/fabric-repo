@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_deduction_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a02b6103-9b10-886e-4453-26c3601f0301"
+  }
+}

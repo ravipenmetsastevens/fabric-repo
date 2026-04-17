@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "ARWeeklySnapShot",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "gatewayObjectId": "fa68cec1-54f9-4cac-b1d0-75d32c52bd41",
+  "queriesMetadata": {
+    "ARFile": {
+      "queryId": "ed06c138-dc70-4a17-8b81-aaf07adaff5e",
+      "queryName": "ARFile"
+    },
+    "ARFile_DataDestination": {
+      "queryId": "8ca2a270-180d-4ed7-bdcd-4fcdfe16f97b",
+      "queryName": "ARFile_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"fa68cec1-54f9-4cac-b1d0-75d32c52bd41\",\"DatasourceId\":\"63ca6c12-afa9-4757-ab16-6a24d7056427\"}"
+    },
+    {
+      "path": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com;data_central_wh",
+      "kind": "SQL",
+      "connectionId": "{\"ClusterId\":\"24f298b0-8c26-4085-92e7-80bf1607968e\",\"DatasourceId\":\"361791b1-f40c-4db5-9ab7-eb723c720aac\"}"
+    }
+  ]
+}

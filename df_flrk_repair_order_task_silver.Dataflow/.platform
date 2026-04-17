@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_flrk_repair_order_task_silver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a54010f7-73a2-bfd9-47dc-bc8929b5cec8"
+  }
+}

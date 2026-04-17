@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_ibmi_driver_home_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "84df2d26-6871-b0d8-45d3-1a39a6d9a7f1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_temp_temps"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ff9355c9-b05c-8103-4542-bd4e2463345a"
+  }
+}

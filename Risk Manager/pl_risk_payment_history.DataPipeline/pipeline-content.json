@@ -1,0 +1,441 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "OdbcSource",
+            "query": "select * from PAYMENTHISTORY WHERE\n    CREATEDATE >= '2025-01-01 00:00:00.000'",
+            "datasetSettings": {
+              "type": "OdbcTable",
+              "typeProperties": {
+                "tableName": "\"PAYMENTHISTORY\""
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "d3bd087c-e50e-4a9f-b810-11428676261b"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "risk_payment_history_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "CLAIMMASTERRECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "CLAIMMASTERRECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "INVOLVEDPARTYRECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "INVOLVEDPARTYRECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYMENTRECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "PAYMENTRECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "BANKCODE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "BANKCODE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "MODEOFPAYMENTCODE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "MODEOFPAYMENTCODE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHECKNUMBER",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "CHECKNUMBER",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHECKSTATUS",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CHECKSTATUS",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SPECIALMESSAGERECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "SPECIALMESSAGERECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "VOUCHERNUMBER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "VOUCHERNUMBER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INVOICENUMBER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INVOICENUMBER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INVOICEDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "INVOICEDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "TRANSFERREDTOAPYN",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "TRANSFERREDTOAPYN",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATEAUTHORIZED",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "DATEAUTHORIZED",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "AUTHORIZEDBYUSERID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "AUTHORIZEDBYUSERID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYMENTAMOUNT",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "PAYMENTAMOUNT",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATETOPAY",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "DATETOPAY",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYEELINE1",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PAYEELINE1",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYEELINE2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PAYEELINE2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYEELINE3",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PAYEELINE3",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYEELINE4",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PAYEELINE4",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TAXID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "TAXID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CREATEDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEUSER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CREATEUSER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CHANGEDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEUSER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CHANGEUSER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CITY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CITY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "STATECODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "STATECODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "POSTALCODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "POSTALCODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "COUNTRYCODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "COUNTRYCODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYEETYPE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "PAYEETYPE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "BEGINSVCDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "BEGINSVCDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "ENDSVCDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "ENDSVCDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "PAYAMT2",
+                  "type": "Decimal"
+                },
+                "sink": {
+                  "name": "PAYAMT2",
+                  "physicalType": "decimal"
+                }
+              },
+              {
+                "source": {
+                  "name": "GLCODERID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "GLCODERID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "VENDORCODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "VENDORCODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "VENDTYPE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "VENDTYPE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHKAMTINT",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "CHKAMTINT",
+                  "physicalType": "integer"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze",
+        "dependsOn": []
+      }
+    ]
+  }
+}

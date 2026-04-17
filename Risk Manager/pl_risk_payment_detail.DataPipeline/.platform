@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_payment_detail"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3f5878ef-4377-b5a9-4759-99469c248774"
+  }
+}

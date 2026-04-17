@@ -1,0 +1,339 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "OdbcSource",
+            "query": "select * from SCHEDULEDACTIVITYHISTORY WHERE\n    CREATEDATE >= '2025-01-01 00:00:00.000'",
+            "datasetSettings": {
+              "type": "OdbcTable",
+              "typeProperties": {
+                "tableName": "\"SCHEDULEDACTIVITYHISTORY\""
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "d3bd087c-e50e-4a9f-b810-11428676261b"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "risk_sched_activity_history_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "CLAIMMASTERRECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "CLAIMMASTERRECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "INVOLVEDPARTYRECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "INVOLVEDPARTYRECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "FORMNAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "FORMNAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACTIVETAB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ACTIVETAB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TODORECORDID",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "TODORECORDID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACTIVITYTYPECODE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "ACTIVITYTYPECODE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACTDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "ACTDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACTUSERID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ACTUSERID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "RESPONSEREQUIRED",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "RESPONSEREQUIRED",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "NEXTACTTYPE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "NEXTACTTYPE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "NEXTACTDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "NEXTACTDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "NEXTACTUSERID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "NEXTACTUSERID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CREATEDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEUSER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CREATEUSER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CHANGEDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEUSER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CHANGEUSER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEDATE2",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CREATEDATE2",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CREATEUSER2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CREATEUSER2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEDATE2",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CHANGEDATE2",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CHANGEUSER2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CHANGEUSER2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRYDESC",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRYDESC",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRYTYPE",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DRYTYPE",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "HIGHPRIORITY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "HIGHPRIORITY",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze",
+        "dependsOn": [
+          {
+            "activity": "Notebook1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "6393985f-947d-4b1d-95a4-6b56bcbfda7b",
+          "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notebook1",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      }
+    ],
+    "variables": {
+      "varMaxID": {
+        "type": "String"
+      },
+      "varLoop": {
+        "type": "Integer",
+        "defaultValue": 1
+      },
+      "varTempLoop": {
+        "type": "Integer",
+        "defaultValue": 0
+      }
+    }
+  }
+}

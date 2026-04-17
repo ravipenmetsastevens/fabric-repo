@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_road_surface_master"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "55ceef0f-186b-bb51-4f51-10acd13bbbd8"
+  }
+}

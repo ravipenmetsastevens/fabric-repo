@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_trans_dtl_loss"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2e8d4cb4-6c58-aff3-4ad6-70a0761a8f3c"
+  }
+}

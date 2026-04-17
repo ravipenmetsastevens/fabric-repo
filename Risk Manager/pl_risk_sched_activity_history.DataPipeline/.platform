@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_sched_activity_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "31038649-0651-8c2c-4b97-54ec06399f52"
+  }
+}

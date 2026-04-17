@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_netr_vehicles_v1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2f3045f-2ca7-93b7-4739-9830423af657"
+  }
+}

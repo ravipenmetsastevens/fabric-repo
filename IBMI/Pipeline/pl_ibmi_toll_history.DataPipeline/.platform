@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_ibmi_toll_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ccfcfbb-7c31-9bf7-4aed-30c2f1019e1e"
+  }
+}

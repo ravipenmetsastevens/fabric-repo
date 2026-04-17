@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_manager_downloads"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "23ac1779-307b-a033-4946-6cfc3108dde4"
+  }
+}

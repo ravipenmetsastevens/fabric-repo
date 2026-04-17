@@ -1,0 +1,1212 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "WebActivity",
+        "typeProperties": {
+          "method": "POST",
+          "relativeUrl": "oauth/token",
+          "headers": {
+            "Content-Type": "application/json",
+            "api-version": "2.0"
+          },
+          "body": {
+            "client_id": "5",
+            "client_secret": "OunXz1jXKQ4M81lg70mrQuZQIq8Vjq451rv8DIlL",
+            "grant_type": "client_credentials",
+            "scope": "admin"
+          }
+        },
+        "externalReferences": {
+          "connection": "62b6f798-f6d9-4d99-a5f7-7d5cbe8bbf17"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Token POST",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "varToken",
+          "value": {
+            "value": "@activity('Get Token POST').output.access_token",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set Token",
+        "dependsOn": [
+          {
+            "activity": "Get Token POST",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "additionalHeaders": {
+              "Authorization": {
+                "value": "@concat('Bearer ', variables('varToken'))",
+                "type": "Expression"
+              },
+              "api-version": "2.0"
+            },
+            "paginationRules": {
+              "AbsoluteUrl": "$.meta.pagination.links.next"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "admin/drivers"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "62b6f798-f6d9-4d99-a5f7-7d5cbe8bbf17"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "plsc_driver_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "data.id",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.id",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.external_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.external_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.account_status",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.account_status",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.username",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.username",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.created_at",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.created_at",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.first_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.first_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.last_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.last_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.age",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.details.age",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.certifications",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.certifications",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.phone_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.phone_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.fax",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.fax",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.drivers_license_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.drivers_license_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.drivers_license_state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.drivers_license_state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.termination_date",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.termination_date",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.details.external_data",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.details.external_data",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.driver_groups",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.driver_groups",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.options.TRANSFLOFLEETID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.options.TRANSFLOFLEETID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.options.driveri_password",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.options.driveri_password",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.options.driveri_user_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.options.driveri_user_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.rulesets.ca_hos_ruleset",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.rulesets.ca_hos_ruleset",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.rulesets.us_hos_ruleset.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.rulesets.us_hos_ruleset.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.rulesets.us_hos_ruleset.machine_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.rulesets.us_hos_ruleset.machine_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.rulesets.us_hos_ruleset.description",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.rulesets.us_hos_ruleset.description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.rulesets.us_regional_ruleset",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.rulesets.us_regional_ruleset",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.exemptions.is_2hr_extension_available",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.exemptions.is_2hr_extension_available",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.exemptions.is_2hr_extension_available_manual",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.exemptions.is_2hr_extension_available_manual",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.ca_hos_enabled",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.ca_hos_enabled",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.sleeper_berth_split.enabled_timestamp",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.sleeper_berth_split.enabled_timestamp",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.sleeper_berth_split.disabled_timestamp",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.sleeper_berth_split.disabled_timestamp",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.hos_log_import_complete",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.hos_log_import_complete",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.is_sleeper_berth_split_enabled",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.is_sleeper_berth_split_enabled",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.parameter_group",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.parameter_group",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.exempt",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.exempt",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.grey_out_more_remaining_time_timers",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.grey_out_more_remaining_time_timers",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.hide_no_dvir_button",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.config.hide_no_dvir_button",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.role.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.role.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.role.display_name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.role.display_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.role.description",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.role.description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.id",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.terminal.id",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.external_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.external_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.parent_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.parent_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.nsc",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.nsc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.cvor",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.cvor",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.address",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.address",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.address2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.address2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.county",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.county",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.country_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.country_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.postal_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.postal_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.postal_splc",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.postal_splc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.latitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.latitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.longitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.longitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.open_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.open_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.external_data",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.external_data",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.time_zone",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.time_zone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.is_inventory_location",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.terminal.is_inventory_location",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.preferred",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.terminal.preferred",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.is_active",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.terminal.is_active",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.geofence",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.geofence",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.notes",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.notes",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.created_at",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.created_at",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal.updated_at",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal.updated_at",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.id",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.carrier.id",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.external_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.external_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.parent_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.parent_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.nsc",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.nsc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.cvor",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.cvor",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.type",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.address",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.address",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.address2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.address2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.city",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.city",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.county",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.county",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.state",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.state",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.country_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.country_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.postal_code",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.postal_code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.postal_splc",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.postal_splc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.latitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.latitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.longitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.longitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.open_hours",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.open_hours",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.external_data",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.external_data",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.time_zone",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.time_zone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.is_inventory_location",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.carrier.is_inventory_location",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.email",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.email",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.preferred",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.carrier.preferred",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.is_active",
+                  "type": "Boolean"
+                },
+                "sink": {
+                  "name": "data.carrier.is_active",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.geofence",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.geofence",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.notes",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.notes",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.created_at",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.created_at",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.carrier.updated_at",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.carrier.updated_at",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.total",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.total",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.count",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.count",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.per_page",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.per_page",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.current_page",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.current_page",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.total_pages",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.total_pages",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.links.next",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "meta.pagination.links.next",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.links.previous",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "meta.pagination.links.previous",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.driver_indication.code",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.config.driver_indication.code",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.driver_indication.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.driver_indication.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.driver_indication.abbreviation",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.config.driver_indication.abbreviation",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.config.driver_indication.mileage_limit",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.config.driver_indication.mileage_limit",
+                  "physicalType": "long"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "GET Drivers",
+        "dependsOn": [
+          {
+            "activity": "Set Token",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "varToken": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "WebActivity",
+        "typeProperties": {
+          "method": "POST",
+          "relativeUrl": "oauth/token",
+          "headers": {
+            "Content-Type": "application/json",
+            "api-version": "2.0"
+          },
+          "body": {
+            "client_id": "5",
+            "client_secret": "OunXz1jXKQ4M81lg70mrQuZQIq8Vjq451rv8DIlL",
+            "grant_type": "client_credentials",
+            "scope": "admin"
+          }
+        },
+        "externalReferences": {
+          "connection": "62b6f798-f6d9-4d99-a5f7-7d5cbe8bbf17"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Token POST",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "varToken",
+          "value": {
+            "value": "@activity('Get Token POST').output.access_token",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set Token",
+        "dependsOn": [
+          {
+            "activity": "Get Token POST",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "additionalHeaders": {
+              "Authorization": {
+                "value": "@concat('Bearer ', variables('varToken'))",
+                "type": "Expression"
+              },
+              "api-version": "2.0"
+            },
+            "paginationRules": {
+              "AbsoluteUrl": "$.meta.pagination.links.next"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "admin/assets"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "62b6f798-f6d9-4d99-a5f7-7d5cbe8bbf17"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "plsc_asset_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "data.id",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "data.id",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.external_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.external_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.hardware_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.hardware_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.make",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.make",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.model",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.model",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.license_plate_number",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.license_plate_number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.license_plate_jurisdiction",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.license_plate_jurisdiction",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "data.terminal",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "data.terminal",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.total",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.total",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.count",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.count",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.per_page",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.per_page",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.current_page",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.current_page",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.total_pages",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "meta.pagination.total_pages",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.links.previous",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "meta.pagination.links.previous",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "meta.pagination.links.next",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "meta.pagination.links.next",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "GET assets",
+        "dependsOn": [
+          {
+            "activity": "Set Token",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "varToken": {
+        "type": "String"
+      }
+    }
+  }
+}

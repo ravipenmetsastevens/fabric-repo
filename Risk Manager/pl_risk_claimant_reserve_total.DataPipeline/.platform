@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_claimant_reserve_total"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f9eef842-39c4-a1d3-4555-7dcf1f7bd59b"
+  }
+}

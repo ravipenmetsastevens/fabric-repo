@@ -1,0 +1,1021 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "OdbcSource",
+            "query": "select * from OSDFORM WHERE\n    CRDT >= '2020-01-01 00:00:00.000'",
+            "datasetSettings": {
+              "type": "OdbcTable",
+              "typeProperties": {
+                "tableName": "\"OSDFORM\""
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "d3bd087c-e50e-4a9f-b810-11428676261b"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "risk_odsform_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "FORMRID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "FORMRID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "PRECLMNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PRECLMNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CLMNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CLMNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "OCCURDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "OCCURDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "REPORTDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "REPORTDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "ORDERNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ORDERNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DISPATCH",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DISPATCH",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "SEALTYPE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SEALTYPE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SEALINTACT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SEALINTACT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SEALNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SEALNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERCODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRIVERCODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "UNITID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "UNITID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TRAILERID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "TRAILERID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SHIPPER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SHIPPER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CONSIGNEE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CONSIGNEE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PUATSHIPPER",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PUATSHIPPER",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PUCITY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PUCITY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALDROPS",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALDROPS",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "DROPINQUES",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DROPINQUES",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "REPOWERYN",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "REPOWERYN",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERONDOCK",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRIVERONDOCK",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PREORLIVELOAD",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PREORLIVELOAD",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOADEDBY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "LOADEDBY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "UNLOADEDBY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "UNLOADEDBY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERASST",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRIVERASST",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERCOUNT",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DRIVERCOUNT",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "PALLETIZED",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PALLETIZED",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SHRINKWRAP",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SHRINKWRAP",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DAMGLOADING",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DAMGLOADING",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "BOLMARKSLC",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "BOLMARKSLC",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "WHEREDAMAGEFND",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "WHEREDAMAGEFND",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LOADLOCKS",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "LOADLOCKS",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PHOTOSTAKEN",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PHOTOSTAKEN",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SHIPPERBOL",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SHIPPERBOL",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CUSTORDNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CUSTORDNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PONUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PONUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "BRKRSHPRPHN",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "BRKRSHPRPHN",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "BOLPIECECOUNT",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "BOLPIECECOUNT",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "BOLAMOUNT",
+                  "type": "Single"
+                },
+                "sink": {
+                  "name": "BOLAMOUNT",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "AMTRECEIVED",
+                  "type": "Single"
+                },
+                "sink": {
+                  "name": "AMTRECEIVED",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCROVR",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCROVR",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRDMG",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRDMG",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRSHFT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRSHFT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRACC",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRACC",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRSEAL",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRSEAL",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRSHRT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRSHRT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRWET",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRWET",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "INTRNSTOCCRTHFT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "INTRNSTOCCRTHFT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACCEPED",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ACCEPED",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "REFUSED",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "REFUSED",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "POLICENAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "POLICENAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "POLICEDEPT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "POLICEDEPT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "POLICEPHONE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "POLICEPHONE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TAKENBY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "TAKENBY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CRDT",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "CRDT",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "CRUS",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CRUS",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERNAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRIVERNAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CITYSTATE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CITYSTATE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PICKUPCITY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PICKUPCITY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "REPTTIME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "REPTTIME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SHIPPERNAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SHIPPERNAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERCOUNTYN",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRIVERCOUNTYN",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CONSIGEENAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "CONSIGEENAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "POLREPTNUMB",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "POLREPTNUMB",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "COCODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "COCODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DAMAGECAUSERID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DAMAGECAUSERID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "DAMAGECODERID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DAMAGECODERID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "DISPOSITIONRID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DISPOSITIONRID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "LTLORTL",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "LTLORTL",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ACCEPTREFUSE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "ACCEPTREFUSE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "BILLTO",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "BILLTO",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "BILLTONAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "BILLTONAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TERMINALLOC",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TERMINALLOC",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "FLTMNGR",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "FLTMNGR",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRVRSUPR",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "DRVRSUPR",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "TERMDESC",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "TERMDESC",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ESTAMT",
+                  "type": "Single"
+                },
+                "sink": {
+                  "name": "ESTAMT",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "CARRIERRID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "CARRIERRID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "DIVISION",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DIVISION",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "PREVENT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "PREVENT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "DENIEDAMT",
+                  "type": "Single"
+                },
+                "sink": {
+                  "name": "DENIEDAMT",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATERECEIVED",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "DATERECEIVED",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATEACKNOWLEDGED",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "DATEACKNOWLEDGED",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "DATEPAID",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "DATEPAID",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "REVIEWSTATUSRID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "REVIEWSTATUSRID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "DRIVERCLASS",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "DRIVERCLASS",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "PICKUPDATE",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "PICKUPDATE",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALREFUSED",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALREFUSED",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALDAMAGED",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALDAMAGED",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALOVER",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALOVER",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALSHORT",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALSHORT",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "TOTALKEPT",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "TOTALKEPT",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "SIGNEDBY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "SIGNEDBY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LEAKING",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "LEAKING",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "OSDTYPERID",
+                  "type": "Int32"
+                },
+                "sink": {
+                  "name": "OSDTYPERID",
+                  "physicalType": "integer"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 60,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze",
+        "dependsOn": []
+      }
+    ]
+  }
+}

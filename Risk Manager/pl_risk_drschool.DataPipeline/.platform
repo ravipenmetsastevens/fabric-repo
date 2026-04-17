@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_drschool"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2405a933-d078-843d-4af8-66f2521c120c"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "additionalHeaders": {
+              "Authorization": {
+                "value": "@variables('auth_token')",
+                "type": "Expression"
+              }
+            },
+            "paginationRules": {
+              "AbsoluteUrl": "$.links.next"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "devices"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "af8e3e52-c1a9-40f3-be32-8bfb4f6f13af"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "netr_devices_v1_bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "data_central_lh",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3bfde721-7462-a67f-4f3d-08e4f9a73da1",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Devices to Bronze",
+        "dependsOn": [
+          {
+            "activity": "Set auth_token",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "WebActivity",
+        "typeProperties": {
+          "method": "GET",
+          "headers": {
+            "Authorization": "Basic ZjIyODAzODctNDVkZC00NDQ1LTk5YjAtYjc0NDFhZTZlNDVlOkIxOTA4QjU1RTQwRjRCNUU0NUJENEIyMEU1NDQ3QjgyQjNDM0QyQzRGNzg0MjFBMDNDQTlFNTJDNkI0OENCNTU="
+          }
+        },
+        "externalReferences": {
+          "connection": "845c26f2-e6a8-41a7-bec2-0179606920ae"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get auth_token",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "auth_token",
+          "value": {
+            "value": "@concat('Bearer ', activity('GET auth_token').output.data[0].accessToken)",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set auth_token",
+        "dependsOn": [
+          {
+            "activity": "Get auth_token",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_netr_device_silver]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Devices to Silver",
+        "dependsOn": [
+          {
+            "activity": "Devices to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[usp_netr_device_gold]"
+        },
+        "linkedService": {
+          "name": "data_central_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "f8578495-391e-4e7e-b791-4949397ba86f",
+              "endpoint": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Devices to Gold",
+        "dependsOn": [
+          {
+            "activity": "Devices to Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "auth_token": {
+        "type": "String"
+      },
+      "varTotalCount": {
+        "type": "String"
+      }
+    }
+  }
+}

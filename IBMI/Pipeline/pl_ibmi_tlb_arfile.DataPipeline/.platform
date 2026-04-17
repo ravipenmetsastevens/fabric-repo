@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_ibmi_tlb_arfile"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5285d521-644b-8834-407b-37a9d2edc61f"
+  }
+}

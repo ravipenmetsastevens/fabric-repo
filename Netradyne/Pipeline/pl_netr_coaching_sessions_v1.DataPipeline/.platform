@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_netr_coaching_sessions_v1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "501aaed2-dbe4-904c-41f3-45f039e695c5"
+  }
+}

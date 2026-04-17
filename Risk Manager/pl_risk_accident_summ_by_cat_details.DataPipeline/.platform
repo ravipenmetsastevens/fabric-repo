@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_accident_summ_by_cat_details"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "756c84f7-51bf-91e3-4d8a-3bbf41f17d7e"
+  }
+}

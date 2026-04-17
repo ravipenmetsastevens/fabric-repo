@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_involved_vehicle"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0e373e6b-1b83-881f-400b-81823f92f83a"
+  }
+}

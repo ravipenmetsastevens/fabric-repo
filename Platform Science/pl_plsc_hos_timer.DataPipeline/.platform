@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_plsc_hos_timer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "00885e8d-b5ab-b9e3-4657-c686ef008930"
+  }
+}

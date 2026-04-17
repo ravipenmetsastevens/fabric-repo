@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_risk_claim_closing_history"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1d4376cf-00d4-b042-441b-e77eb7ca394f"
+  }
+}

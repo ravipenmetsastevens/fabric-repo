@@ -24012,6 +24012,1303 @@
         ]
       },
       {
+        "name": "vw_ibmi_edi_order_history",
+        "sourceLineageTag": "[gold].[vw_ibmi_edi_order_history]",
+        "columns": [
+          {
+            "name": "tender_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "tender_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "tender_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_origin_area_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_origin_area_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_origin_area_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_customer_order",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_customer_order",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_customer_order",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_status_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_status_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_status_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_order_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_order_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_order_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_customer_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_customer_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_customer_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_consignee_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_consignee_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_consignee_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_billto_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_billto_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_billto_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_loadat_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_loadat_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_loadat_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_pickup_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_pickup_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_pickup_required",
+            "dataType": "string",
+            "sourceColumn": "is_pickup_required",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_pickup_required",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_delivery_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_delivery_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_delivery_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_delivery_required",
+            "dataType": "string",
+            "sourceColumn": "is_delivery_required",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_delivery_required",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_commodity_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_commodity_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_commodity_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_commodity_description",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_commodity_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_commodity_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_creation_initials",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_creation_initials",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_creation_initials",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_customer_phone_area_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_customer_phone_area_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_customer_phone_area_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_customer_phone_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_customer_phone_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_customer_phone_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_consignee_phone_area_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_consignee_phone_area_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_consignee_phone_area_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_consignee_phone_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_consignee_phone_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_consignee_phone_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_load_weight",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_load_weight",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_load_weight",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pallet_count",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_pallet_count",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_pallet_count",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_bill_amount",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_bill_amount",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_bill_amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_total_amount",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_total_amount",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_total_amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_origin_city_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_origin_city_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_origin_city_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_origin_state",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_origin_state",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_origin_state",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_origin_city_short_name",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_origin_city_short_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_origin_city_short_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_destination_city_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_destination_city_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_destination_city_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_destination_state",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_destination_state",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_destination_state",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_destination_city_short_name",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_destination_city_short_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_destination_city_short_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_miles_billable",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_miles_billable",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_miles_billable",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_stop_count",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_stop_count",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_stop_count",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_trailer_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_trailer_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_trailer_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_revenue_estimation",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_revenue_estimation",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_revenue_estimation",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_destination_area_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_destination_area_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_destination_area_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_bill_of_lading",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_bill_of_lading",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_bill_of_lading",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_purchase_order",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_purchase_order",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_purchase_order",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_pickup_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_pickup_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_piece_count",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_piece_count",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_piece_count",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_collection_method_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_collection_method_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_collection_method_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_manifest_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_manifest_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_manifest_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_load_volume",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_load_volume",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_load_volume",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_appt_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_pickup_appt_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_pickup_appt_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_appt_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_pickup_appt_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_pickup_appt_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_delivery_appt_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_delivery_appt_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_delivery_appt_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_delivery_appt_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_delivery_appt_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_delivery_appt_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_required_pallet_count",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_required_pallet_count",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_required_pallet_count",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_consignee_ship_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_consignee_ship_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_consignee_ship_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_pickup_ship_number",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_pickup_ship_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_pickup_ship_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_ship_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_ship_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_ship_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_order_temp_high",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_order_temp_high",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_order_temp_high",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_order_temp_low",
+            "dataType": "double",
+            "sourceColumn": "edi_ord_hist_order_temp_low",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_ord_hist_order_temp_low",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_company_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_company_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_company_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_division_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_division_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_division_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_seal_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_seal_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_seal_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "has_hazardous_material",
+            "dataType": "string",
+            "sourceColumn": "has_hazardous_material",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "has_hazardous_material",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_driver_load_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_driver_load_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_driver_load_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_driver_unload_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_driver_unload_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_driver_unload_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_load_type",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_load_type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_load_type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_just_in_time_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_just_in_time_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_just_in_time_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_agent_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_agent_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_agent_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_tender_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_tender_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_ord_hist_tender_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_tender_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_tender_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_tender_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_response_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_ord_hist_response_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_ord_hist_response_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_edi_customer_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_edi_customer_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_edi_customer_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_ord_hist_user_code",
+            "dataType": "string",
+            "sourceColumn": "edi_ord_hist_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_ord_hist_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_ibmi_edi_order_history",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_ibmi_edi_processing_history",
+        "sourceLineageTag": "[gold].[vw_ibmi_edi_processing_history]",
+        "columns": [
+          {
+            "name": "event_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "event_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "event_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_customer_code",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_customer_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_customer_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_customer_ship_number",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_customer_ship_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_customer_ship_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_sequence_number",
+            "dataType": "double",
+            "sourceColumn": "edi_proc_hist_sequence_number",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "edi_proc_hist_sequence_number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_stv_load_number",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_stv_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_stv_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_action",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_action",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_action",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_action_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_action_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_proc_hist_action_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_action_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_action_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_proc_hist_action_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_event_code",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_event_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_event_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_event_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_event_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_proc_hist_event_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_event_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_event_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_proc_hist_event_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_event_description",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_event_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_event_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_trasmit_date",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_trasmit_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "edi_proc_hist_trasmit_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_transmit_time",
+            "dataType": "dateTime",
+            "sourceColumn": "edi_proc_hist_transmit_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "edi_proc_hist_transmit_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "edi_proc_hist_pillsbury_load_number",
+            "dataType": "string",
+            "sourceColumn": "edi_proc_hist_pillsbury_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "edi_proc_hist_pillsbury_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_ibmi_edi_processing_history",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
         "name": "vw_ibmi_incr_invoice",
         "sourceLineageTag": "[gold].[vw_ibmi_incr_invoice]",
         "columns": [
@@ -29466,6 +30763,21 @@
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
             "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_api",
+            "dataType": "int64",
+            "sourceColumn": "is_api",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "is_api",
+            "summarizeBy": "sum",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
